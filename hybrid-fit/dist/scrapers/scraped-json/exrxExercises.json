@@ -1,0 +1,4123 @@
+[
+  {
+    "muscle": "Sternocleidomastoid",
+    "url": "https://exrx.net/Lists/ExList/NeckWt#Sternocleidomastoid",
+    "exercises": [
+      {
+        "name": "Neck Flexion",
+        "url": "https://exrx.net/WeightExercises/Sternocleidomastoid/CBNeckFlx"
+      },
+      {
+        "name": "Neck Flexion",
+        "url": "https://exrx.net/WeightExercises/Sternocleidomastoid/LVNeckFlexionH"
+      },
+      {
+        "name": "Lateral Neck Flexion",
+        "url": "https://exrx.net/WeightExercises/Sternocleidomastoid/LVLateralNeckFlexionH"
+      },
+      {
+        "name": "Neck Flexion",
+        "url": "https://exrx.net/WeightExercises/Sternocleidomastoid/LVNeckFlx"
+      },
+      {
+        "name": "Lateral Neck Flexion",
+        "url": "https://exrx.net/WeightExercises/Sternocleidomastoid/LVNeckLtrFlx"
+      },
+      {
+        "name": "Neck Flexion",
+        "url": "https://exrx.net/WeightExercises/Sternocleidomastoid/WtNeckFlx"
+      },
+      {
+        "name": "Lateral Neck Flexion",
+        "url": "https://exrx.net/WeightExercises/Sternocleidomastoid/WtNeckLateralFlex"
+      },
+      {
+        "name": "Wall Front Neck Bridge",
+        "url": "https://exrx.net/WeightExercises/Sternocleidomastoid/BWWallFrontNeckBridge"
+      },
+      {
+        "name": "Wall Side Neck Bridge",
+        "url": "https://exrx.net/WeightExercises/Sternocleidomastoid/BWWallSideNeckBridge"
+      },
+      {
+        "name": "Retraction",
+        "url": "https://exrx.net/Stretches/Sternocleidomastoid/NeckRetraction"
+      },
+      {
+        "name": "Neck Flexion",
+        "url": "https://exrx.net/WeightExercises/Sternocleidomastoid/STNeckFlexion"
+      },
+      {
+        "name": "Lateral Neck Flexion",
+        "url": "https://exrx.net/WeightExercises/Sternocleidomastoid/STNeckLateralFlexion"
+      }
+    ]
+  },
+  {
+    "muscle": "Splenius",
+    "url": "https://exrx.net/Lists/ExList/NeckWt#Splenius",
+    "exercises": [
+      {
+        "name": "Neck Extension",
+        "url": "https://exrx.net/WeightExercises/Splenius/CBNeckExt"
+      },
+      {
+        "name": "Neck Extension",
+        "url": "https://exrx.net/WeightExercises/Splenius/LVNeckExtentionH"
+      },
+      {
+        "name": "Neck Extension",
+        "url": "https://exrx.net/WeightExercises/Splenius/LVNeckExt"
+      },
+      {
+        "name": "Seated Neck Extension",
+        "url": "https://exrx.net/WeightExercises/Splenius/WtNeckExt"
+      },
+      {
+        "name": "Harness",
+        "url": "https://exrx.net/WeightExercises/Splenius/WtNeckHarnessExt"
+      },
+      {
+        "name": "Neck Retraction",
+        "url": "https://exrx.net/WeightExercises/Splenius/BRNeckRetraction"
+      },
+      {
+        "name": "Wall Rear Neck Bridge",
+        "url": "https://exrx.net/WeightExercises/Splenius/BWWallRearNeckBridge"
+      },
+      {
+        "name": "Lying Neck Retraction",
+        "url": "https://exrx.net/WeightExercises/Splenius/LyingIsometricNeckRetr"
+      },
+      {
+        "name": "Neck Extensor",
+        "url": "https://exrx.net/Stretches/Splenius/Neck"
+      },
+      {
+        "name": "Neck Extension",
+        "url": "https://exrx.net/WeightExercises/Splenius/STNeckExtension"
+      }
+    ]
+  },
+  {
+    "muscle": "Anterior",
+    "url": "https://exrx.net/Lists/ExList/ShouldWt#Anterior",
+    "exercises": [
+      {
+        "name": "Front Raise",
+        "url": "https://exrx.net/WeightExercises/DeltoidAnterior/BBFrontRaise"
+      },
+      {
+        "name": "Military Press",
+        "url": "https://exrx.net/WeightExercises/DeltoidAnterior/BBMilitaryPress"
+      },
+      {
+        "name": "Seated",
+        "url": "https://exrx.net/WeightExercises/DeltoidAnterior/BBSeatedMilitaryPress"
+      },
+      {
+        "name": "Front Raise",
+        "url": "https://exrx.net/WeightExercises/DeltoidAnterior/CBSeatedFrontRaise"
+      },
+      {
+        "name": "Alternating",
+        "url": "https://exrx.net/WeightExercises/DeltoidAnterior/CBAlternatingFrontRaise"
+      },
+      {
+        "name": "One Arm",
+        "url": "https://exrx.net/WeightExercises/DeltoidAnterior/CBFrontRaise"
+      },
+      {
+        "name": "Shoulder Press",
+        "url": "https://exrx.net/WeightExercises/DeltoidAnterior/CBStandingShoulderPress"
+      },
+      {
+        "name": "Seated",
+        "url": "https://exrx.net/WeightExercises/DeltoidAnterior/CBShoulderPress"
+      },
+      {
+        "name": "Arnold Press",
+        "url": "https://exrx.net/WeightExercises/DeltoidAnterior/DBArnoldPress"
+      },
+      {
+        "name": "Front Raise",
+        "url": "https://exrx.net/WeightExercises/DeltoidAnterior/DBFrontRaise"
+      },
+      {
+        "name": "Alternating",
+        "url": "https://exrx.net/WeightExercises/DeltoidAnterior/DBAlternatingFrontRaise"
+      },
+      {
+        "name": "Shoulder Press",
+        "url": "https://exrx.net/WeightExercises/DeltoidAnterior/DBShoulderPress"
+      },
+      {
+        "name": "One Arm",
+        "url": "https://exrx.net/WeightExercises/DeltoidAnterior/DBOneArmShoulderPress"
+      },
+      {
+        "name": "Military Press",
+        "url": "https://exrx.net/WeightExercises/DeltoidAnterior/LVMilitaryPressH"
+      },
+      {
+        "name": "Reclined Shoulder Press",
+        "url": "https://exrx.net/WeightExercises/DeltoidAnterior/LVReclinedShoulderPressPL"
+      },
+      {
+        "name": "Shoulder Press",
+        "url": "https://exrx.net/WeightExercises/DeltoidAnterior/LVShoulderPressH"
+      },
+      {
+        "name": "Reclined Shoulder Press",
+        "url": "https://exrx.net/WeightExercises/DeltoidAnterior/LVReclinedShoulderPress"
+      },
+      {
+        "name": "Shoulder Press",
+        "url": "https://exrx.net/WeightExercises/DeltoidAnterior/LVShoulderPress"
+      },
+      {
+        "name": "Parallel Grip",
+        "url": "https://exrx.net/WeightExercises/DeltoidAnterior/LVShoulderPressParGrip"
+      },
+      {
+        "name": "Shoulder Press",
+        "url": "https://exrx.net/WeightExercises/DeltoidAnterior/SLShoulderPress"
+      },
+      {
+        "name": "Shoulder Press",
+        "url": "https://exrx.net/WeightExercises/DeltoidAnterior/SMShoulderPress"
+      },
+      {
+        "name": "Pike Press (between benches)",
+        "url": "https://exrx.net/WeightExercises/DeltoidAnterior/BWPikePress"
+      },
+      {
+        "name": "Elevated (between benches)",
+        "url": "https://exrx.net/WeightExercises/DeltoidAnterior/BWDeclinePikePress"
+      },
+      {
+        "name": "Front Raise",
+        "url": "https://exrx.net/WeightExercises/DeltoidAnterior/STFrontRaise"
+      },
+      {
+        "name": "Doorway",
+        "url": "https://exrx.net/Stretches/DeltoidAnterior/Doorway"
+      },
+      {
+        "name": "Wall",
+        "url": "https://exrx.net/Stretches/DeltoidAnterior/Wall"
+      }
+    ]
+  },
+  {
+    "muscle": "Lateral",
+    "url": "https://exrx.net/Lists/ExList/ShouldWt#Lateral",
+    "exercises": [
+      {
+        "name": "Upright Row",
+        "url": "https://exrx.net/WeightExercises/DeltoidLateral/BBUprightRow"
+      },
+      {
+        "name": "Lateral Raise",
+        "url": "https://exrx.net/WeightExercises/DeltoidLateral/CBLateralRaise"
+      },
+      {
+        "name": "One Arm",
+        "url": "https://exrx.net/WeightExercises/DeltoidLateral/CBOneArmLateralRaise"
+      },
+      {
+        "name": "Upright Row",
+        "url": "https://exrx.net/WeightExercises/DeltoidLateral/CBUprightRow"
+      },
+      {
+        "name": "One Arm",
+        "url": "https://exrx.net/WeightExercises/DeltoidLateral/CBOneArmUprightRow"
+      },
+      {
+        "name": "with rope",
+        "url": "https://exrx.net/WeightExercises/DeltoidLateral/CBUprightRowRope"
+      },
+      {
+        "name": "Y Raise",
+        "url": "https://exrx.net/WeightExercises/DeltoidLateral/CBYRaise"
+      },
+      {
+        "name": "Incline Lateral Raise",
+        "url": "https://exrx.net/WeightExercises/DeltoidLateral/DBInclineLateralRaise"
+      },
+      {
+        "name": "Lateral Raise",
+        "url": "https://exrx.net/WeightExercises/DeltoidLateral/DBLateralRaise"
+      },
+      {
+        "name": "Lying Lateral Raise",
+        "url": "https://exrx.net/WeightExercises/DeltoidLateral/DBLyingLateralRaise"
+      },
+      {
+        "name": "Upright Row",
+        "url": "https://exrx.net/WeightExercises/DeltoidLateral/DBUprightRow"
+      },
+      {
+        "name": "One Arm",
+        "url": "https://exrx.net/WeightExercises/DeltoidLateral/DBOneArmUprightRow"
+      },
+      {
+        "name": "Lateral Raise",
+        "url": "https://exrx.net/WeightExercises/DeltoidLateral/LVLateralRaiseH"
+      },
+      {
+        "name": "Lateral Raise",
+        "url": "https://exrx.net/WeightExercises/DeltoidLateral/LVLateralRaise"
+      },
+      {
+        "name": "other machine",
+        "url": "https://exrx.net/WeightExercises/DeltoidLateral/LVLateralRaise2"
+      },
+      {
+        "name": "Upright Row",
+        "url": "https://exrx.net/WeightExercises/DeltoidLateral/SMUprightRow"
+      },
+      {
+        "name": "Side Deltoid",
+        "url": "https://exrx.net/Stretches/DeltoidLateral/SideDelt"
+      },
+      {
+        "name": "Y Raise",
+        "url": "https://exrx.net/WeightExercises/DeltoidLateral/STYShoulderRaise"
+      },
+      {
+        "name": "Angled Side Bridge",
+        "url": "https://exrx.net/WeightExercises/Obliques/BWAngledSideBridge"
+      }
+    ]
+  },
+  {
+    "muscle": "Posterior",
+    "url": "https://exrx.net/Lists/ExList/ShouldWt#Posterior",
+    "exercises": [
+      {
+        "name": "Rear Delt Row",
+        "url": "https://exrx.net/WeightExercises/DeltoidPosterior/BBRearDeltRow"
+      },
+      {
+        "name": "Reverse Fly",
+        "url": "https://exrx.net/WeightExercises/DeltoidPosterior/CBStandingReverseFly"
+      },
+      {
+        "name": "Rear Delt Row",
+        "url": "https://exrx.net/WeightExercises/DeltoidPosterior/CBRearDeltRow"
+      },
+      {
+        "name": "with rope",
+        "url": "https://exrx.net/WeightExercises/DeltoidPosterior/CBStandingRearDeltRowRope"
+      },
+      {
+        "name": "Standing Rear Delt Row (with stirrups)",
+        "url": "https://exrx.net/WeightExercises/DeltoidPosterior/CBStandingRearDeltRowStirrups"
+      },
+      {
+        "name": "Rear Lateral Raise",
+        "url": "https://exrx.net/WeightExercises/DeltoidPosterior/CBRearLateralRaise"
+      },
+      {
+        "name": "Rear Lateral Raise",
+        "url": "https://exrx.net/WeightExercises/DeltoidPosterior/DBRearLateralRaise"
+      },
+      {
+        "name": "Rear Delt Row",
+        "url": "https://exrx.net/WeightExercises/DeltoidPosterior/DBRearDeltRow"
+      },
+      {
+        "name": "Seated Rear Lateral Raise",
+        "url": "https://exrx.net/WeightExercises/DeltoidPosterior/DBSeatedRearLateralRaise"
+      },
+      {
+        "name": "Lying Rear Lateral Raise",
+        "url": "https://exrx.net/WeightExercises/DeltoidPosterior/LVLyingRearLateralRaiseH"
+      },
+      {
+        "name": "Seated Rear Delt Row",
+        "url": "https://exrx.net/WeightExercises/DeltoidPosterior/LVRearDeltRowHammer"
+      },
+      {
+        "name": "alternative machine",
+        "url": "https://exrx.net/WeightExercises/DeltoidPosterior/LVRearDeltRowC"
+      },
+      {
+        "name": "Lying Rear Lateral Raise",
+        "url": "https://exrx.net/WeightExercises/DeltoidPosterior/LVLyingRearLateralRaise"
+      },
+      {
+        "name": "Seated Rear Delt Row",
+        "url": "https://exrx.net/WeightExercises/DeltoidPosterior/LVRearDeltRow"
+      },
+      {
+        "name": "Seated Reverse Fly",
+        "url": "https://exrx.net/WeightExercises/DeltoidPosterior/LVRearLateralRaise"
+      },
+      {
+        "name": "pronated grip",
+        "url": "https://exrx.net/WeightExercises/DeltoidPosterior/LVReverseFlyPronated"
+      },
+      {
+        "name": "Rear Delt Row",
+        "url": "https://exrx.net/WeightExercises/DeltoidPosterior/SMRearDeltRow"
+      },
+      {
+        "name": "Rear Delt Inverted Row (high bar)",
+        "url": "https://exrx.net/WeightExercises/DeltoidPosterior/BWRearDeltInvertedRowHigh"
+      },
+      {
+        "name": "Rear Delt Inverted Row (on hips)",
+        "url": "https://exrx.net/WeightExercises/DeltoidPosterior/BWRearDeltInvertedRowHips"
+      },
+      {
+        "name": "Rear Delt Row",
+        "url": "https://exrx.net/WeightExercises/DeltoidPosterior/STRearDeltRow"
+      },
+      {
+        "name": "Reverse Fly",
+        "url": "https://exrx.net/WeightExercises/DeltoidPosterior/STReverseFly"
+      },
+      {
+        "name": "Rear Deltoid",
+        "url": "https://exrx.net/Stretches/DeltoidPosterior/RearDelt"
+      }
+    ]
+  },
+  {
+    "muscle": "Supraspinatus",
+    "url": "https://exrx.net/Lists/ExList/ShouldWt#Supraspinatus",
+    "exercises": [
+      {
+        "name": "Front Lateral Raise",
+        "url": "https://exrx.net/WeightExercises/Supraspinatus/CBFrontLateralRaise"
+      },
+      {
+        "name": "Front Lateral Raise",
+        "url": "https://exrx.net/WeightExercises/Supraspinatus/DBFrontLateralRaise"
+      },
+      {
+        "name": "Full Can Lateral Raise",
+        "url": "https://exrx.net/WeightExercises/Supraspinatus/DBFullCanLateralRaise"
+      },
+      {
+        "name": "Lying Lateral Raise",
+        "url": "https://exrx.net/WeightExercises/DeltoidLateral/DBLyingLateralRaise"
+      },
+      {
+        "name": "Dumbbell Lying One Arm Rear Lateral Raise",
+        "url": "https://exrx.net/WeightExercises/DeltoidPosterior/DBOneArmRearLateralRaise"
+      }
+    ]
+  },
+  {
+    "muscle": "Triceps Brachii",
+    "url": "https://exrx.net/Lists/ExList/ArmWt#Triceps",
+    "exercises": [
+      {
+        "name": "Triceps Dip",
+        "url": "https://exrx.net/WeightExercises/Triceps/ASTriDip"
+      },
+      {
+        "name": "kneeling",
+        "url": "https://exrx.net/WeightExercises/Triceps/ASTriDipKneeling"
+      },
+      {
+        "name": "Close Grip Bench Press",
+        "url": "https://exrx.net/WeightExercises/Triceps/BBCloseGripBenchPress"
+      },
+      {
+        "name": "Lying Triceps Extension",
+        "url": "https://exrx.net/WeightExercises/Triceps/BBLyingTriExt"
+      },
+      {
+        "name": "Skull Crusher",
+        "url": "https://exrx.net/WeightExercises/Triceps/BBLyingTriExtSC"
+      },
+      {
+        "name": "Triceps Extension",
+        "url": "https://exrx.net/WeightExercises/Triceps/BBTriExt"
+      },
+      {
+        "name": "Bent-over Triceps Extension",
+        "url": "https://exrx.net/WeightExercises/Triceps/CBBentoverTriExt"
+      },
+      {
+        "name": "Lying Triceps Extension",
+        "url": "https://exrx.net/WeightExercises/Triceps/CBLyingTriExt"
+      },
+      {
+        "name": "Pushdown",
+        "url": "https://exrx.net/WeightExercises/Triceps/CBPushdown"
+      },
+      {
+        "name": "One Arm",
+        "url": "https://exrx.net/WeightExercises/Triceps/CBOneArmPushdown"
+      },
+      {
+        "name": "with back support",
+        "url": "https://exrx.net/WeightExercises/Triceps/CBPushdownSupport"
+      },
+      {
+        "name": "with V-bar attachment",
+        "url": "https://exrx.net/WeightExercises/Triceps/CBPushdownVBar"
+      },
+      {
+        "name": "Triceps Dip",
+        "url": "https://exrx.net/WeightExercises/Triceps/CBTriDip"
+      },
+      {
+        "name": "Triceps Extension",
+        "url": "https://exrx.net/WeightExercises/Triceps/CBTriExt"
+      },
+      {
+        "name": "with rope",
+        "url": "https://exrx.net/WeightExercises/Triceps/CBStandingTricepsExtensionRope"
+      },
+      {
+        "name": "Kickback",
+        "url": "https://exrx.net/WeightExercises/Triceps/DBKickback"
+      },
+      {
+        "name": "Lying Triceps Extension",
+        "url": "https://exrx.net/WeightExercises/Triceps/DBLyingTriExt"
+      },
+      {
+        "name": "One Arm Triceps Extension (on bench)",
+        "url": "https://exrx.net/WeightExercises/Triceps/DBOneArmTriExtBench"
+      },
+      {
+        "name": "Triceps Extension",
+        "url": "https://exrx.net/WeightExercises/Triceps/DBTriExt"
+      },
+      {
+        "name": "Close Grip Bench Press",
+        "url": "https://exrx.net/WeightExercises/Triceps/LVCloseGripBenchPressH"
+      },
+      {
+        "name": "Triceps Extension",
+        "url": "https://exrx.net/WeightExercises/Triceps/LVTriExtGripless"
+      },
+      {
+        "name": "Triceps Dip",
+        "url": "https://exrx.net/WeightExercises/Triceps/LVTriDipH"
+      },
+      {
+        "name": "Triceps Dip",
+        "url": "https://exrx.net/WeightExercises/Triceps/LVTriDip"
+      },
+      {
+        "name": "alternative machine",
+        "url": "https://exrx.net/WeightExercises/Triceps/LVTriDip2"
+      },
+      {
+        "name": "Triceps Extension",
+        "url": "https://exrx.net/WeightExercises/Triceps/LVTriExt"
+      },
+      {
+        "name": "with preacher pad",
+        "url": "https://exrx.net/WeightExercises/Triceps/LVTriExtPreacherPad"
+      },
+      {
+        "name": "Standing Triceps Dip",
+        "url": "https://exrx.net/WeightExercises/Triceps/SLStandingTricepsDip"
+      },
+      {
+        "name": "Close Grip Bench Press",
+        "url": "https://exrx.net/WeightExercises/Triceps/SMCloseGripBenchPress"
+      },
+      {
+        "name": "Bench Dip",
+        "url": "https://exrx.net/WeightExercises/Triceps/WtBenchDip"
+      },
+      {
+        "name": "Triceps Dip",
+        "url": "https://exrx.net/WeightExercises/Triceps/WtTriDip"
+      },
+      {
+        "name": "Triceps Dip",
+        "url": "https://exrx.net/WeightExercises/Triceps/ASTricepsDipBand"
+      },
+      {
+        "name": "Bench Dip",
+        "url": "https://exrx.net/WeightExercises/Triceps/BWBenchDip"
+      },
+      {
+        "name": "heel on floor",
+        "url": "https://exrx.net/WeightExercises/Triceps/BWBenchDipFloor"
+      },
+      {
+        "name": "Close Grip Push-up",
+        "url": "https://exrx.net/WeightExercises/Triceps/BWCloseGripPushup"
+      },
+      {
+        "name": "on knees",
+        "url": "https://exrx.net/WeightExercises/Triceps/BWCloseGripPushupKnees"
+      },
+      {
+        "name": "Incline on bar",
+        "url": "https://exrx.net/WeightExercises/Triceps/BWCloseGripInclinePushupBar"
+      },
+      {
+        "name": "Triceps Dip",
+        "url": "https://exrx.net/WeightExercises/Triceps/BWTriDip"
+      },
+      {
+        "name": "Triceps Extension",
+        "url": "https://exrx.net/WeightExercises/Triceps/STTricepsExtension"
+      },
+      {
+        "name": "Triceps Dip",
+        "url": "https://exrx.net/WeightExercises/Triceps/ASTricepsDipSelf"
+      },
+      {
+        "name": "Overhead",
+        "url": "https://exrx.net/Stretches/Triceps/Overhead"
+      },
+      {
+        "name": "Towel",
+        "url": "https://exrx.net/Stretches/Triceps/Towel"
+      }
+    ]
+  },
+  {
+    "muscle": "Biceps Brachii",
+    "url": "https://exrx.net/Lists/ExList/ArmWt#Biceps",
+    "exercises": [
+      {
+        "name": "Curl",
+        "url": "https://exrx.net/WeightExercises/Biceps/BBCurl"
+      },
+      {
+        "name": "Alternating Curl",
+        "url": "https://exrx.net/WeightExercises/Biceps/CBAlternatingCurl"
+      },
+      {
+        "name": "Curl",
+        "url": "https://exrx.net/WeightExercises/Biceps/CBCurl"
+      },
+      {
+        "name": "with stirrups",
+        "url": "https://exrx.net/WeightExercises/Biceps/CBCurlStirrups"
+      },
+      {
+        "name": "One Arm Curl",
+        "url": "https://exrx.net/WeightExercises/Biceps/CBOneArmCurl"
+      },
+      {
+        "name": "Curl",
+        "url": "https://exrx.net/WeightExercises/Biceps/DBCurl"
+      },
+      {
+        "name": "Incline Curl",
+        "url": "https://exrx.net/WeightExercises/Biceps/DBInclineCurl"
+      },
+      {
+        "name": "Curl",
+        "url": "https://exrx.net/WeightExercises/Biceps/LVCurl"
+      },
+      {
+        "name": "Inverted Biceps Row",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/BWUnderhandSupineRow"
+      },
+      {
+        "name": "Doorway",
+        "url": "https://exrx.net/Stretches/Biceps/Doorway"
+      },
+      {
+        "name": "Seated",
+        "url": "https://exrx.net/Stretches/Biceps/Seated"
+      },
+      {
+        "name": "Suspended Arm Curl",
+        "url": "https://exrx.net/WeightExercises/Brachialis/STArmCurl"
+      },
+      {
+        "name": "Preacher Curl",
+        "url": "https://exrx.net/WeightExercises/Brachialis/BBPreacherCurl"
+      },
+      {
+        "name": "Prone Incline Curl",
+        "url": "https://exrx.net/WeightExercises/Brachialis/BBProneInclineCurl"
+      },
+      {
+        "name": "Concentration Curl",
+        "url": "https://exrx.net/WeightExercises/Brachialis/CBConcentrationCurl"
+      },
+      {
+        "name": "Preacher Curl",
+        "url": "https://exrx.net/WeightExercises/Brachialis/CBPreacherCurl"
+      },
+      {
+        "name": "with stirrups",
+        "url": "https://exrx.net/WeightExercises/Brachialis/CBPreacherCurlStirrups"
+      },
+      {
+        "name": "Concentration Curl",
+        "url": "https://exrx.net/WeightExercises/Brachialis/DBConcentrationCurl"
+      },
+      {
+        "name": "Preacher Curl",
+        "url": "https://exrx.net/WeightExercises/Brachialis/DBPreacherCurl"
+      },
+      {
+        "name": "Preacher Curl",
+        "url": "https://exrx.net/WeightExercises/Brachialis/LVPreacherCurlH"
+      },
+      {
+        "name": "arms high",
+        "url": "https://exrx.net/WeightExercises/Brachialis/LVPreacherCurlHighPL"
+      },
+      {
+        "name": "Preacher Curl",
+        "url": "https://exrx.net/WeightExercises/Brachialis/LVPreacherCurl"
+      },
+      {
+        "name": "Isolateral, arms high",
+        "url": "https://exrx.net/WeightExercises/Brachialis/LVPreacherCurlHigh"
+      }
+    ]
+  },
+  {
+    "muscle": "Brachialis",
+    "url": "https://exrx.net/Lists/ExList/ArmWt#Brachialis",
+    "exercises": [
+      {
+        "name": "Preacher Curl",
+        "url": "https://exrx.net/WeightExercises/Brachialis/BBPreacherCurl"
+      },
+      {
+        "name": "Prone Incline Curl",
+        "url": "https://exrx.net/WeightExercises/Brachialis/BBProneInclineCurl"
+      },
+      {
+        "name": "Concentration Curl",
+        "url": "https://exrx.net/WeightExercises/Brachialis/CBConcentrationCurl"
+      },
+      {
+        "name": "Preacher Curl",
+        "url": "https://exrx.net/WeightExercises/Brachialis/CBPreacherCurl"
+      },
+      {
+        "name": "with stirrups",
+        "url": "https://exrx.net/WeightExercises/Brachialis/CBPreacherCurlStirrups"
+      },
+      {
+        "name": "Concentration Curl",
+        "url": "https://exrx.net/WeightExercises/Brachialis/DBConcentrationCurl"
+      },
+      {
+        "name": "Preacher Curl",
+        "url": "https://exrx.net/WeightExercises/Brachialis/DBPreacherCurl"
+      },
+      {
+        "name": "Preacher Curl",
+        "url": "https://exrx.net/WeightExercises/Brachialis/LVPreacherCurlH"
+      },
+      {
+        "name": "arms high",
+        "url": "https://exrx.net/WeightExercises/Brachialis/LVPreacherCurlHighPL"
+      },
+      {
+        "name": "Preacher Curl",
+        "url": "https://exrx.net/WeightExercises/Brachialis/LVPreacherCurl"
+      },
+      {
+        "name": "Isolateral, arms high",
+        "url": "https://exrx.net/WeightExercises/Brachialis/LVPreacherCurlHigh"
+      },
+      {
+        "name": "Arm          Curl",
+        "url": "https://exrx.net/WeightExercises/Brachialis/STArmCurl"
+      }
+    ]
+  },
+  {
+    "muscle": "Brachioradialis",
+    "url": "https://exrx.net/Lists/ExList/ForeArmWt#Brachioradialis",
+    "exercises": [
+      {
+        "name": "Reverse Curl",
+        "url": "https://exrx.net/WeightExercises/Brachioradialis/BBReverseCurl"
+      },
+      {
+        "name": "Hammer Curl",
+        "url": "https://exrx.net/WeightExercises/Brachioradialis/CBHammerCurl"
+      },
+      {
+        "name": "Reverse Curl",
+        "url": "https://exrx.net/WeightExercises/Brachioradialis/CBReverseCurl"
+      },
+      {
+        "name": "Hammer Curl",
+        "url": "https://exrx.net/WeightExercises/Brachioradialis/DBHammerCurl"
+      },
+      {
+        "name": "Reverse Curl",
+        "url": "https://exrx.net/WeightExercises/Brachioradialis/LVReverseCurl"
+      },
+      {
+        "name": "Standing",
+        "url": "https://exrx.net/Stretches/Brachioradialis/Standing"
+      }
+    ]
+  },
+  {
+    "muscle": "Flexors",
+    "url": "https://exrx.net/Lists/ExList/ForeArmWt#WristFlexors",
+    "exercises": [
+      {
+        "name": "Wrist Curl",
+        "url": "https://exrx.net/WeightExercises/WristFlexors/BBWristCurl"
+      },
+      {
+        "name": "Wrist Curl",
+        "url": "https://exrx.net/WeightExercises/WristFlexors/CBWristCurl"
+      },
+      {
+        "name": "Wrist Curl",
+        "url": "https://exrx.net/WeightExercises/WristFlexors/DBWristCurl"
+      },
+      {
+        "name": "Grip",
+        "url": "https://exrx.net/WeightExercises/WristFlexors/LVGripPL"
+      },
+      {
+        "name": "Wrist Curl",
+        "url": "https://exrx.net/WeightExercises/WristFlexors/LVWristCurlPL"
+      },
+      {
+        "name": "Grip",
+        "url": "https://exrx.net/WeightExercises/WristFlexors/LVGrip"
+      },
+      {
+        "name": "Wrist Curl",
+        "url": "https://exrx.net/WeightExercises/WristFlexors/LVWristCurl"
+      },
+      {
+        "name": "One Hand Grip",
+        "url": "https://exrx.net/WeightExercises/WristFlexors/SLGrip"
+      },
+      {
+        "name": "One Hand",
+        "url": "https://exrx.net/WeightExercises/WristFlexors/SLOneHandGripPlateLoaded"
+      },
+      {
+        "name": "Seated",
+        "url": "https://exrx.net/Stretches/WristFlexors/Seated"
+      },
+      {
+        "name": "Kneeling",
+        "url": "https://exrx.net/Stretches/WristFlexors/Kneeling"
+      }
+    ]
+  },
+  {
+    "muscle": "Extensors",
+    "url": "https://exrx.net/Lists/ExList/ForeArmWt#Extensors",
+    "exercises": [
+      {
+        "name": "Reverse Wrist Curl",
+        "url": "https://exrx.net/WeightExercises/WristExtensors/BBReverseWristCurl"
+      },
+      {
+        "name": "Reverse Wrist Curl",
+        "url": "https://exrx.net/WeightExercises/WristExtensors/CBReverseWristCurl"
+      },
+      {
+        "name": "Reverse Wrist Curl",
+        "url": "https://exrx.net/WeightExercises/WristExtensors/DBReverseWristCurl"
+      },
+      {
+        "name": "Reverse Wrist Curl",
+        "url": "https://exrx.net/WeightExercises/WristExtensors/LVReverseWristCurlPL"
+      },
+      {
+        "name": "Reverse Wrist Curl",
+        "url": "https://exrx.net/WeightExercises/WristExtensors/LVReverseWristCurl"
+      },
+      {
+        "name": "Kneeling",
+        "url": "https://exrx.net/Stretches/WristExtensors/Kneeling"
+      },
+      {
+        "name": "Single          Arm",
+        "url": "https://exrx.net/Stretches/WristExtensors/Single"
+      }
+    ]
+  },
+  {
+    "muscle": "Pronators",
+    "url": "https://exrx.net/Lists/ExList/ForeArmWt#Pronators",
+    "exercises": [
+      {
+        "name": "Seated Pronation",
+        "url": "https://exrx.net/WeightExercises/Pronators/DBSeatedPronation"
+      },
+      {
+        "name": "Seated Pronation",
+        "url": "https://exrx.net/WeightExercises/Pronators/LVSeatedPronation"
+      }
+    ]
+  },
+  {
+    "muscle": "Supinators",
+    "url": "https://exrx.net/Lists/ExList/ForeArmWt#Supinators",
+    "exercises": [
+      {
+        "name": "Seated Supination",
+        "url": "https://exrx.net/WeightExercises/Supinators/DBSeatedSupination"
+      },
+      {
+        "name": "Seated Supination",
+        "url": "https://exrx.net/WeightExercises/Supinators/LVSeatedSupination"
+      },
+      {
+        "name": "Dumbbell Curl",
+        "url": "https://exrx.net/WeightExercises/Biceps/DBCurl"
+      },
+      {
+        "name": "Dumbbell Incline Curl",
+        "url": "https://exrx.net/WeightExercises/Biceps/DBInclineCurl"
+      }
+    ]
+  },
+  {
+    "muscle": "General",
+    "url": "https://exrx.net/Lists/ExList/BackWt#General",
+    "exercises": [
+      {
+        "name": "Bent-over Row",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/BBBentOverRow"
+      },
+      {
+        "name": "Underhand",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/BBUnderhandBentOverRow"
+      },
+      {
+        "name": "One Arm Bent-over Row",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/CBOneArmBentoverRow"
+      },
+      {
+        "name": "One Arm Straight Back Seated High Row",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/CBOneArmStrBackHighRow"
+      },
+      {
+        "name": "Seated Row",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/CBSeatedRow"
+      },
+      {
+        "name": "Straight Back",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/CBStraightBackSeatedRow"
+      },
+      {
+        "name": "Seated Wide Grip Row",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/CBWideGripSeatedRow"
+      },
+      {
+        "name": "Straight Back",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/CBWideGripStrBackSeatedRow"
+      },
+      {
+        "name": "Bent-over Row",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/DBBentOverRow"
+      },
+      {
+        "name": "Lying Row",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/DBLyingRow"
+      },
+      {
+        "name": "Incline Row Neutral Grip",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/LVNeutralGripInclineRowPL"
+      },
+      {
+        "name": "Incline Row Wide Grip",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/LVWideGripInclineRowPL"
+      },
+      {
+        "name": "Narrow Grip",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/LVNarrowGripSeatedRowH"
+      },
+      {
+        "name": "Wide Grip",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/LVWideGripSeatedRowH"
+      },
+      {
+        "name": "Low Bar",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/LVWideLowGripSeatedRowH"
+      },
+      {
+        "name": "Seated Low Row",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/LVSeatedLowRow"
+      },
+      {
+        "name": "Seated High Row",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/LVSeatedHighRowPL"
+      },
+      {
+        "name": "T-bar Row",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/LVTBarRow"
+      },
+      {
+        "name": "Close grip",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/LVCloseGripTBarRow"
+      },
+      {
+        "name": "Seated High Row",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/LVSeatedHighRow"
+      },
+      {
+        "name": "Seated Row",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/LVSeatedRow"
+      },
+      {
+        "name": "Wide Grip",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/LVWideGripSeatedRow"
+      },
+      {
+        "name": "Seated Row (no chest pad)",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/LVSeatedRowNoPad"
+      },
+      {
+        "name": "Straight Back",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/LVStraightBackSeatedRowNoPad"
+      },
+      {
+        "name": "Underhand Seated Row",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/LVSeatedUnderhandRow"
+      },
+      {
+        "name": "Bent-over Row",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/SMBentOverRow"
+      },
+      {
+        "name": "Inverted Row",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/WTSupineRow"
+      },
+      {
+        "name": "Inverted Row",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/BWSupineRow"
+      },
+      {
+        "name": "Feet Elevated",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/BWSupineRowFeetElevated"
+      },
+      {
+        "name": "High Bar",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/BWSupineRowHigh"
+      },
+      {
+        "name": "Inverted Row",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/STInvertedRow"
+      },
+      {
+        "name": "Row",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/STRow"
+      },
+      {
+        "name": "One Arm",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/STOneArmRow"
+      },
+      {
+        "name": "Fixed Bar",
+        "url": "https://exrx.net/Stretches/BackGeneral/FixedBar"
+      },
+      {
+        "name": "Lever",
+        "url": "https://exrx.net/Stretches/BackGeneral/PCCrossHand"
+      },
+      {
+        "name": "Underhand Inverted Row",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/BWUnderhandSupineRow"
+      },
+      {
+        "name": "High Bar",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/BWUnderhandSupineRowHigh"
+      }
+    ]
+  },
+  {
+    "muscle": "Latissimus Dorsi & Teres Major",
+    "url": "https://exrx.net/Lists/ExList/BackWt#Latissimus",
+    "exercises": [
+      {
+        "name": "Chin-up",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/AsUnderhandChinup"
+      },
+      {
+        "name": "Pull-up (open-centered bar)",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/AsPullupOpenKneeling"
+      },
+      {
+        "name": "Standing",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/AsPullupOpen"
+      },
+      {
+        "name": "Parallel Close Grip Pull-up",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/AsCloseGripChinupKneeling"
+      },
+      {
+        "name": "Pullover",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/BBPullover"
+      },
+      {
+        "name": "Bent-over Pullover",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/CBBentoverPullover"
+      },
+      {
+        "name": "Close Grip Pulldown",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/CBCloseGripPulldown"
+      },
+      {
+        "name": "Pulldown",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/CBFrontPulldown"
+      },
+      {
+        "name": "Parallel Grip Pulldown",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/CBParallelGripPulldown"
+      },
+      {
+        "name": "Chinup",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/CBUnderhandChinup"
+      },
+      {
+        "name": "Parallel Close Grip Pull-up",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/CBParallelCloseGripChinup"
+      },
+      {
+        "name": "Parallel Grip Pull-up",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/CBParallelGripChinup"
+      },
+      {
+        "name": "Pull-up",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/CBPullup"
+      },
+      {
+        "name": "Underhand Pulldown",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/CBUnderhandPulldown"
+      },
+      {
+        "name": "Pulldown",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/LVPulldownH"
+      },
+      {
+        "name": "Underhand Pulldown",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/LVUnderhandPulldownH"
+      },
+      {
+        "name": "Close Grip Pulldown",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/LVCloseGripPulldown"
+      },
+      {
+        "name": "Front Pulldown",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/LVFrontPulldown"
+      },
+      {
+        "name": "Pulldown",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/LVPulldown"
+      },
+      {
+        "name": "Pullover",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/LVPullover"
+      },
+      {
+        "name": "Chin-up",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/WtUnderhandChinup"
+      },
+      {
+        "name": "Parallel Close Grip Pull-up",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/WtCloseGripChinup"
+      },
+      {
+        "name": "Pull-up",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/WtPullup"
+      },
+      {
+        "name": "Archer Pull-up",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/ASArcherPullupBand"
+      },
+      {
+        "name": "Chin-up",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/ASChinupBand"
+      },
+      {
+        "name": "Pull-up",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/ASPullupBand"
+      },
+      {
+        "name": "Parallel Grip",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/ASParallelGripPullupBand"
+      },
+      {
+        "name": "Archer Pull-up",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/BWArcherPullup"
+      },
+      {
+        "name": "Chin-up",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/BWUnderhandChinup"
+      },
+      {
+        "name": "One Arm Pull-up",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/BWOneArmPullup"
+      },
+      {
+        "name": "Parallel Close Grip Pull-up",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/BWCloseGripChinup"
+      },
+      {
+        "name": "Pull-up",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/BWPullup"
+      },
+      {
+        "name": "Chin-up",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/AsUnderhandChinupPartner"
+      },
+      {
+        "name": "Pull-up",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/AsChinupPartner"
+      },
+      {
+        "name": "Chin-up",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/AsUnderhandChinupSelf"
+      },
+      {
+        "name": "Pull-up",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/AsChinupSelf"
+      },
+      {
+        "name": "Pull-up",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/STPullup"
+      },
+      {
+        "name": "Self-assisted",
+        "url": "https://exrx.net/WeightExercises/LatissimusDorsi/STSelfAssistedPullup"
+      },
+      {
+        "name": "Wheel Rollout",
+        "url": "https://exrx.net/WeightExercises/HipFlexors/BWKneelingWheelRollout"
+      },
+      {
+        "name": "Bar",
+        "url": "https://exrx.net/Stretches/LatissimusDorsi/Bar"
+      },
+      {
+        "name": "Lever",
+        "url": "https://exrx.net/Stretches/LatissimusDorsi/PCUnderhand"
+      },
+      {
+        "name": "Overhead",
+        "url": "https://exrx.net/Stretches/LatissimusDorsi/Overhead"
+      },
+      {
+        "name": "Supine Lat",
+        "url": "https://exrx.net/Stretches/LatissimusDorsi/Supine"
+      },
+      {
+        "name": "Standing Side Reach",
+        "url": "https://exrx.net/Stretches/LatissimusDorsi/StandingSideReach"
+      },
+      {
+        "name": "Fixed Bar Back Stretch",
+        "url": "https://exrx.net/Stretches/BackGeneral/FixedBar"
+      }
+    ]
+  },
+  {
+    "muscle": "Upper",
+    "url": "https://exrx.net/Lists/ExList/BackWt#UpperTrap",
+    "exercises": [
+      {
+        "name": "Shrug",
+        "url": "https://exrx.net/WeightExercises/TrapeziusUpper/BBShrug"
+      },
+      {
+        "name": "Trap Bar Shrug",
+        "url": "https://exrx.net/WeightExercises/TrapeziusUpper/TBShrug"
+      },
+      {
+        "name": "Shrug",
+        "url": "https://exrx.net/WeightExercises/TrapeziusUpper/CBShrug"
+      },
+      {
+        "name": "Shrug with stirrups",
+        "url": "https://exrx.net/WeightExercises/TrapeziusUpper/CBShrugStirrups"
+      },
+      {
+        "name": "Shrug",
+        "url": "https://exrx.net/WeightExercises/TrapeziusUpper/DBShrug"
+      },
+      {
+        "name": "Seated Shrug",
+        "url": "https://exrx.net/WeightExercises/TrapeziusUpper/LVSeatedShrug"
+      },
+      {
+        "name": "Shrug",
+        "url": "https://exrx.net/WeightExercises/TrapeziusUpper/LVShrugH"
+      },
+      {
+        "name": "Shrug",
+        "url": "https://exrx.net/WeightExercises/TrapeziusUpper/LVShrug"
+      },
+      {
+        "name": "Gripless Shrug",
+        "url": "https://exrx.net/WeightExercises/TrapeziusUpper/SLXGripShrug"
+      },
+      {
+        "name": "Shrug",
+        "url": "https://exrx.net/WeightExercises/TrapeziusUpper/SMShrug"
+      },
+      {
+        "name": "Clean",
+        "url": "https://exrx.net/WeightExercises/OlympicLifts/HangClean"
+      },
+      {
+        "name": "Inverted Shrug",
+        "url": "https://exrx.net/WeightExercises/TrapeziusUpper/BWInvertedShrugPB"
+      },
+      {
+        "name": "Inverted Shrug",
+        "url": "https://exrx.net/WeightExercises/TrapeziusUpper/BWInvertedShrugRings"
+      },
+      {
+        "name": "Upper Trapezius",
+        "url": "https://exrx.net/Stretches/TrapeziusUpper/Trap"
+      }
+    ]
+  },
+  {
+    "muscle": "Middle",
+    "url": "https://exrx.net/Lists/ExList/BackWt#MiddleTrap",
+    "exercises": [
+      {
+        "name": "Fixed        Bar Rhomboids",
+        "url": "https://exrx.net/Stretches/Rhomboids/FixedBar"
+      },
+      {
+        "name": "Rear        Deltoid Stretch",
+        "url": "https://exrx.net/Stretches/DeltoidPosterior/RearDelt"
+      },
+      {
+        "name": "Side        Deltoid Stretch",
+        "url": "https://exrx.net/Stretches/DeltoidLateral/SideDelt"
+      }
+    ]
+  },
+  {
+    "muscle": "Lower",
+    "url": "https://exrx.net/Lists/ExList/BackWt#Trapezius",
+    "exercises": [
+      {
+        "name": "Fixed        Bar Back Stretch",
+        "url": "https://exrx.net/Stretches/BackGeneral/FixedBar"
+      },
+      {
+        "name": "Rear        Deltoid Stretch",
+        "url": "https://exrx.net/Stretches/DeltoidPosterior/RearDelt"
+      },
+      {
+        "name": "Side        Deltoid Stretch",
+        "url": "https://exrx.net/Stretches/DeltoidLateral/SideDelt"
+      }
+    ]
+  },
+  {
+    "muscle": "Levator Scapulae",
+    "url": "https://exrx.net/Lists/ExList/BackWt#UpperTrap",
+    "exercises": [
+      {
+        "name": "Shrug",
+        "url": "https://exrx.net/WeightExercises/TrapeziusUpper/BBShrug"
+      },
+      {
+        "name": "Trap Bar Shrug",
+        "url": "https://exrx.net/WeightExercises/TrapeziusUpper/TBShrug"
+      },
+      {
+        "name": "Shrug",
+        "url": "https://exrx.net/WeightExercises/TrapeziusUpper/CBShrug"
+      },
+      {
+        "name": "Shrug with stirrups",
+        "url": "https://exrx.net/WeightExercises/TrapeziusUpper/CBShrugStirrups"
+      },
+      {
+        "name": "Shrug",
+        "url": "https://exrx.net/WeightExercises/TrapeziusUpper/DBShrug"
+      },
+      {
+        "name": "Seated Shrug",
+        "url": "https://exrx.net/WeightExercises/TrapeziusUpper/LVSeatedShrug"
+      },
+      {
+        "name": "Shrug",
+        "url": "https://exrx.net/WeightExercises/TrapeziusUpper/LVShrugH"
+      },
+      {
+        "name": "Shrug",
+        "url": "https://exrx.net/WeightExercises/TrapeziusUpper/LVShrug"
+      },
+      {
+        "name": "Gripless Shrug",
+        "url": "https://exrx.net/WeightExercises/TrapeziusUpper/SLXGripShrug"
+      },
+      {
+        "name": "Shrug",
+        "url": "https://exrx.net/WeightExercises/TrapeziusUpper/SMShrug"
+      },
+      {
+        "name": "Clean",
+        "url": "https://exrx.net/WeightExercises/OlympicLifts/HangClean"
+      },
+      {
+        "name": "Inverted Shrug",
+        "url": "https://exrx.net/WeightExercises/TrapeziusUpper/BWInvertedShrugPB"
+      },
+      {
+        "name": "Inverted Shrug",
+        "url": "https://exrx.net/WeightExercises/TrapeziusUpper/BWInvertedShrugRings"
+      },
+      {
+        "name": "Upper Trapezius",
+        "url": "https://exrx.net/Stretches/TrapeziusUpper/Trap"
+      }
+    ]
+  },
+  {
+    "muscle": "Rhomboids",
+    "url": "https://exrx.net/Lists/ExList/BackWt#Rhomboids",
+    "exercises": [
+      {
+        "name": "Fixed Bar",
+        "url": "https://exrx.net/Stretches/Rhomboids/FixedBar"
+      },
+      {
+        "name": "Hugging",
+        "url": "https://exrx.net/Stretches/Rhomboids/Hugging"
+      },
+      {
+        "name": "Fixed        Bar Back Stretch",
+        "url": "https://exrx.net/Stretches/BackGeneral/FixedBar"
+      },
+      {
+        "name": "Rear        Deltoid Stretch",
+        "url": "https://exrx.net/Stretches/DeltoidPosterior/RearDelt"
+      },
+      {
+        "name": "Side        Deltoid Stretch",
+        "url": "https://exrx.net/Stretches/DeltoidLateral/SideDelt"
+      }
+    ]
+  },
+  {
+    "muscle": "Infraspinatus & Teres Minor",
+    "url": "https://exrx.net/Lists/ExList/BackWt#Infraspinatus",
+    "exercises": [
+      {
+        "name": "Standing Shoulder External Rotation",
+        "url": "https://exrx.net/WeightExercises/Infraspinatus/CBStandingExternalRotation"
+      },
+      {
+        "name": "Lying Shoulder External Rotation",
+        "url": "https://exrx.net/WeightExercises/Infraspinatus/DBLyingExternalRotation"
+      },
+      {
+        "name": "Upright Shoulder External Rotation (with support)",
+        "url": "https://exrx.net/WeightExercises/Infraspinatus/DBUprightExternalRotationSupport"
+      },
+      {
+        "name": "Shoulder External Rotation",
+        "url": "https://exrx.net/WeightExercises/Infraspinatus/LVShoulderExternalRotationPL"
+      },
+      {
+        "name": "Shoulder External Rotation",
+        "url": "https://exrx.net/WeightExercises/Infraspinatus/LVExternalRotation"
+      },
+      {
+        "name": "Broomstick",
+        "url": "https://exrx.net/Stretches/Infraspinatus/Broomstick"
+      },
+      {
+        "name": "Side Lying",
+        "url": "https://exrx.net/Stretches/Infraspinatus/SideLying"
+      },
+      {
+        "name": "Side Lying Teres Minor",
+        "url": "https://exrx.net/Stretches/Infraspinatus/SideLyingTeresMinor"
+      },
+      {
+        "name": "Shoulder External Rotation",
+        "url": "https://exrx.net/WeightExercises/Infraspinatus/STShoulderExternalRotation"
+      },
+      {
+        "name": "Fixed Bar Back Stretch",
+        "url": "https://exrx.net/Stretches/BackGeneral/FixedBar"
+      }
+    ]
+  },
+  {
+    "muscle": "Subscapularis",
+    "url": "https://exrx.net/Lists/ExList/BackWt#Subscapularis",
+    "exercises": [
+      {
+        "name": "Standing Shoulder Internal Rotation",
+        "url": "https://exrx.net/WeightExercises/Subscapularis/CBStandingInternalRotation"
+      },
+      {
+        "name": "Shoulder Internal Rotation (on floor)",
+        "url": "https://exrx.net/WeightExercises/Subscapularis/DBInternalRotationFloor"
+      },
+      {
+        "name": "Shoulder Internal Rotation",
+        "url": "https://exrx.net/WeightExercises/Subscapularis/LVShoulderInternalRotationPL"
+      },
+      {
+        "name": "Shoulder Internal Rotation",
+        "url": "https://exrx.net/WeightExercises/Subscapularis/LVInternalRotation"
+      },
+      {
+        "name": "Broomstick",
+        "url": "https://exrx.net/Stretches/Subscapularis/Broomstick"
+      },
+      {
+        "name": "Doorway",
+        "url": "https://exrx.net/Stretches/Subscapularis/Doorway"
+      }
+    ]
+  },
+  {
+    "muscle": "General",
+    "url": "https://exrx.net/Lists/ExList/ChestWt#General",
+    "exercises": [
+      {
+        "name": "Chest Dip",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/AsChestDip"
+      },
+      {
+        "name": "kneeling",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/AsChestDipKneeling"
+      },
+      {
+        "name": "Bench Press",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/BBBenchPress"
+      },
+      {
+        "name": "Power Lift",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/BBBenchPressPowerLift"
+      },
+      {
+        "name": "Decline Bench Press",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/BBDeclineBenchPress"
+      },
+      {
+        "name": "Lying Fly",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/CBLyingFly"
+      },
+      {
+        "name": "Seated Fly",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/CBSeatedFly"
+      },
+      {
+        "name": "Standing Fly",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/CBStandingFly"
+      },
+      {
+        "name": "Bench Press",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/CBBenchPress"
+      },
+      {
+        "name": "Chest Press",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/CBChestPress"
+      },
+      {
+        "name": "Standing",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/CBStandingChestPress"
+      },
+      {
+        "name": "Decline Chest Press",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/CBDeclineChestPress"
+      },
+      {
+        "name": "Bench Press",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/DBBenchPress"
+      },
+      {
+        "name": "Decline Bench Press",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/DBDeclineBenchPress"
+      },
+      {
+        "name": "Fly",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/DBFly"
+      },
+      {
+        "name": "Pullover",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/DBPullover"
+      },
+      {
+        "name": "Bench Press",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/LVBenchPressH"
+      },
+      {
+        "name": "Chest Dip",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/LVChestDipH"
+      },
+      {
+        "name": "Chest Press",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/LVChestPressH"
+      },
+      {
+        "name": "Decline Chest Press",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/LVDeclineChestPressPL"
+      },
+      {
+        "name": "Chest Dip",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/LVChestDip"
+      },
+      {
+        "name": "Lying Fly",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/LVLyingFly"
+      },
+      {
+        "name": "Pec Deck Fly",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/LVPecDeckFly"
+      },
+      {
+        "name": "Seated Fly",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/LVSeatedFly"
+      },
+      {
+        "name": "Bench Press",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/LVBenchPress"
+      },
+      {
+        "name": "Chest Press",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/LVChestPressS"
+      },
+      {
+        "name": "alternative machine",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/LVChestPress"
+      },
+      {
+        "name": "Decline Chest Press",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/LVDeclineChestPress"
+      },
+      {
+        "name": "Standing Chest Dip",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/SLStandingChestDip"
+      },
+      {
+        "name": "Bench Press",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/SMBenchPress"
+      },
+      {
+        "name": "Decline Bench Press",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/SMDeclineBenchPress"
+      },
+      {
+        "name": "Chest Dip",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/WtChestDip"
+      },
+      {
+        "name": "Push-up",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/WtPushup"
+      },
+      {
+        "name": "Chest Dip",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/ASChestDipBand"
+      },
+      {
+        "name": "Chest Dip",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/BWChestDip"
+      },
+      {
+        "name": "Push-up",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/BWPushup"
+      },
+      {
+        "name": "Archer",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/BWArcherPushup"
+      },
+      {
+        "name": "Incline",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/BWInclinePushup"
+      },
+      {
+        "name": "on knees",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/BWPushupKnee"
+      },
+      {
+        "name": "Chest Dip",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/AsChestDipSelf"
+      },
+      {
+        "name": "Self-assisted Chest Dip",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/STSelfAssistedChestDip"
+      },
+      {
+        "name": "Chest Press",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/STChestPress"
+      },
+      {
+        "name": "Fly",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/STFly"
+      },
+      {
+        "name": "Behind Head",
+        "url": "https://exrx.net/Stretches/ChestGeneral/BehindHead"
+      },
+      {
+        "name": "Doorway",
+        "url": "https://exrx.net/Stretches/ChestGeneral/Doorway"
+      },
+      {
+        "name": "Straight Arm",
+        "url": "https://exrx.net/Stretches/ChestGeneral/StraightArm"
+      },
+      {
+        "name": "Doorway Chest Stretch",
+        "url": "https://exrx.net/Stretches/PectoralisMinor/Doorway"
+      }
+    ]
+  },
+  {
+    "muscle": "Sternal",
+    "url": "https://exrx.net/Lists/ExList/ChestWt#General",
+    "exercises": [
+      {
+        "name": "Chest Dip",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/AsChestDip"
+      },
+      {
+        "name": "kneeling",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/AsChestDipKneeling"
+      },
+      {
+        "name": "Bench Press",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/BBBenchPress"
+      },
+      {
+        "name": "Power Lift",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/BBBenchPressPowerLift"
+      },
+      {
+        "name": "Decline Bench Press",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/BBDeclineBenchPress"
+      },
+      {
+        "name": "Lying Fly",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/CBLyingFly"
+      },
+      {
+        "name": "Seated Fly",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/CBSeatedFly"
+      },
+      {
+        "name": "Standing Fly",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/CBStandingFly"
+      },
+      {
+        "name": "Bench Press",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/CBBenchPress"
+      },
+      {
+        "name": "Chest Press",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/CBChestPress"
+      },
+      {
+        "name": "Standing",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/CBStandingChestPress"
+      },
+      {
+        "name": "Decline Chest Press",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/CBDeclineChestPress"
+      },
+      {
+        "name": "Bench Press",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/DBBenchPress"
+      },
+      {
+        "name": "Decline Bench Press",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/DBDeclineBenchPress"
+      },
+      {
+        "name": "Fly",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/DBFly"
+      },
+      {
+        "name": "Pullover",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/DBPullover"
+      },
+      {
+        "name": "Bench Press",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/LVBenchPressH"
+      },
+      {
+        "name": "Chest Dip",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/LVChestDipH"
+      },
+      {
+        "name": "Chest Press",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/LVChestPressH"
+      },
+      {
+        "name": "Decline Chest Press",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/LVDeclineChestPressPL"
+      },
+      {
+        "name": "Chest Dip",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/LVChestDip"
+      },
+      {
+        "name": "Lying Fly",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/LVLyingFly"
+      },
+      {
+        "name": "Pec Deck Fly",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/LVPecDeckFly"
+      },
+      {
+        "name": "Seated Fly",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/LVSeatedFly"
+      },
+      {
+        "name": "Bench Press",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/LVBenchPress"
+      },
+      {
+        "name": "Chest Press",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/LVChestPressS"
+      },
+      {
+        "name": "alternative machine",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/LVChestPress"
+      },
+      {
+        "name": "Decline Chest Press",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/LVDeclineChestPress"
+      },
+      {
+        "name": "Standing Chest Dip",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/SLStandingChestDip"
+      },
+      {
+        "name": "Bench Press",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/SMBenchPress"
+      },
+      {
+        "name": "Decline Bench Press",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/SMDeclineBenchPress"
+      },
+      {
+        "name": "Chest Dip",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/WtChestDip"
+      },
+      {
+        "name": "Push-up",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/WtPushup"
+      },
+      {
+        "name": "Chest Dip",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/ASChestDipBand"
+      },
+      {
+        "name": "Chest Dip",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/BWChestDip"
+      },
+      {
+        "name": "Push-up",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/BWPushup"
+      },
+      {
+        "name": "Archer",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/BWArcherPushup"
+      },
+      {
+        "name": "Incline",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/BWInclinePushup"
+      },
+      {
+        "name": "on knees",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/BWPushupKnee"
+      },
+      {
+        "name": "Chest Dip",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/AsChestDipSelf"
+      },
+      {
+        "name": "Self-assisted Chest Dip",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/STSelfAssistedChestDip"
+      },
+      {
+        "name": "Chest Press",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/STChestPress"
+      },
+      {
+        "name": "Fly",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/STFly"
+      },
+      {
+        "name": "Behind Head",
+        "url": "https://exrx.net/Stretches/ChestGeneral/BehindHead"
+      },
+      {
+        "name": "Doorway",
+        "url": "https://exrx.net/Stretches/ChestGeneral/Doorway"
+      },
+      {
+        "name": "Straight Arm",
+        "url": "https://exrx.net/Stretches/ChestGeneral/StraightArm"
+      },
+      {
+        "name": "Doorway Chest Stretch",
+        "url": "https://exrx.net/Stretches/PectoralisMinor/Doorway"
+      }
+    ]
+  },
+  {
+    "muscle": "Clavicular",
+    "url": "https://exrx.net/Lists/ExList/ChestWt#Clavicular",
+    "exercises": [
+      {
+        "name": "Incline Bench Press",
+        "url": "https://exrx.net/WeightExercises/PectoralClavicular/BBInclineBenchPress"
+      },
+      {
+        "name": "Incline Bench Press",
+        "url": "https://exrx.net/WeightExercises/PectoralClavicular/CBInclineBenchPress"
+      },
+      {
+        "name": "Incline Chest Press",
+        "url": "https://exrx.net/WeightExercises/PectoralClavicular/CBInclineChestPress"
+      },
+      {
+        "name": "Incline Fly",
+        "url": "https://exrx.net/WeightExercises/PectoralClavicular/CBInclineFly"
+      },
+      {
+        "name": "Incline Bench Press",
+        "url": "https://exrx.net/WeightExercises/PectoralClavicular/DBInclineBenchPress"
+      },
+      {
+        "name": "Incline Fly",
+        "url": "https://exrx.net/WeightExercises/PectoralClavicular/DBInclineFly"
+      },
+      {
+        "name": "Incline Chest Press",
+        "url": "https://exrx.net/WeightExercises/PectoralClavicular/LVInclineChestPressPL"
+      },
+      {
+        "name": "on Military Press Machine",
+        "url": "https://exrx.net/WeightExercises/PectoralClavicular/LVInclineChestPressOnHammerMilitaryPress"
+      },
+      {
+        "name": "Incline Bench Press",
+        "url": "https://exrx.net/WeightExercises/PectoralClavicular/LVInclineBenchPress"
+      },
+      {
+        "name": "Incline Chest Press",
+        "url": "https://exrx.net/WeightExercises/PectoralClavicular/LVInclineChestPress"
+      },
+      {
+        "name": "bilaterally loaded",
+        "url": "https://exrx.net/WeightExercises/PectoralClavicular/LVInclineChestPressH"
+      },
+      {
+        "name": "Incline Fly",
+        "url": "https://exrx.net/WeightExercises/PectoralClavicular/LVInclineFly"
+      },
+      {
+        "name": "Incline Bench Press",
+        "url": "https://exrx.net/WeightExercises/PectoralClavicular/SMInclineBenchPress"
+      },
+      {
+        "name": "Decline Push-up",
+        "url": "https://exrx.net/WeightExercises/PectoralClavicular/BWDeclinePushup"
+      },
+      {
+        "name": "on stability ball",
+        "url": "https://exrx.net/WeightExercises/PectoralClavicular/BWDeclinePushupOnBall"
+      },
+      {
+        "name": "Doorway Chest Stretch",
+        "url": "https://exrx.net/Stretches/ChestGeneral/Doorway"
+      }
+    ]
+  },
+  {
+    "muscle": "Pectoralis Minor",
+    "url": "https://exrx.net/Lists/ExList/ChestWt#Pectoralis",
+    "exercises": [
+      {
+        "name": "Chest Dip",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/AsChestDip"
+      },
+      {
+        "name": "Standing Fly",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/CBStandingFly"
+      },
+      {
+        "name": "Chest Dip",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/LVChestDip"
+      },
+      {
+        "name": "Chest Dip",
+        "url": "https://exrx.net/WeightExercises/PectoralSternal/WtChestDip"
+      },
+      {
+        "name": "Doorway Chest",
+        "url": "https://exrx.net/Stretches/PectoralisMinor/Doorway"
+      },
+      {
+        "name": "Wall Angel",
+        "url": "https://exrx.net/Stretches/PectoralisMinor/Wall"
+      },
+      {
+        "name": "Doorway Chest Stretch",
+        "url": "https://exrx.net/Stretches/ChestGeneral/Doorway"
+      },
+      {
+        "name": "Broomstick Stretch",
+        "url": "https://exrx.net/Stretches/Subscapularis/Broomstick"
+      },
+      {
+        "name": "Suspended Angel",
+        "url": "https://exrx.net/WeightExercises/Other/STAngle"
+      }
+    ]
+  },
+  {
+    "muscle": "Serratus Anterior",
+    "url": "https://exrx.net/Lists/ExList/ChestWt#Anterior",
+    "exercises": [
+      {
+        "name": "Incline Shoulder Raise",
+        "url": "https://exrx.net/WeightExercises/SerratusAnterior/BBInclineShoulderRaise"
+      },
+      {
+        "name": "Incline Shoulder Raise",
+        "url": "https://exrx.net/WeightExercises/SerratusAnterior/CBInclineShoulderRaise"
+      },
+      {
+        "name": "Incline Shoulder Raise",
+        "url": "https://exrx.net/WeightExercises/SerratusAnterior/DBInclineShoulderRaise"
+      },
+      {
+        "name": "Incline Shoulder Raise",
+        "url": "https://exrx.net/WeightExercises/SerratusAnterior/LVInclineShoulderRaisePL"
+      },
+      {
+        "name": "Incline Shoulder Raise",
+        "url": "https://exrx.net/WeightExercises/SerratusAnterior/LVInclineShoulderRaise"
+      },
+      {
+        "name": "Incline Shoulder Raise",
+        "url": "https://exrx.net/WeightExercises/SerratusAnterior/SMInclineShoulderRaise"
+      },
+      {
+        "name": "Push-up Plus",
+        "url": "https://exrx.net/WeightExercises/SerratusAnterior/BWPushUpPlus"
+      }
+    ]
+  },
+  {
+    "muscle": "Rectus Abdominis",
+    "url": "https://exrx.net/Lists/ExList/WaistWt#Rectus",
+    "exercises": [
+      {
+        "name": "Push Crunch",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/BBPushCrunch"
+      },
+      {
+        "name": "Kneeling Crunch",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/CBKneelingCrunch"
+      },
+      {
+        "name": "Seated Crunch",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/CBSeatedCrunch"
+      },
+      {
+        "name": "Standing Crunch",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/CBStandingCrunch"
+      },
+      {
+        "name": "Overhead (rope)",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/CBStandingOverheadCrunch"
+      },
+      {
+        "name": "Push Crunch",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/DBPushCrunch"
+      },
+      {
+        "name": "Lying Crunch",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/LVLyingCrunchPL"
+      },
+      {
+        "name": "Seated Leg Raise Crunch",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/LVSeatedLegRaiseCrunchPL"
+      },
+      {
+        "name": "Seated Crunch",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/LVSeatedCrunch"
+      },
+      {
+        "name": "Arm Bar",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/LVSeatedCrunchArmBar"
+      },
+      {
+        "name": "Arm Pad",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/LVSeatedCrunchArmPad"
+      },
+      {
+        "name": "Chest Pad",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/LVSeatedCrunchChestPad"
+      },
+      {
+        "name": "Leg Hip Raise (Ab Coaster)",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/SLLegHipRaise"
+      },
+      {
+        "name": "Crunch",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/WtCrunch"
+      },
+      {
+        "name": "arms crossed",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/WtCrunchX"
+      },
+      {
+        "name": "on ball",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/WtBallCrunch"
+      },
+      {
+        "name": "Incline Crunch",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/WtInclineCrunch"
+      },
+      {
+        "name": "arms crossed",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/WtInclineCrunchX"
+      },
+      {
+        "name": "Incline Sit-up",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/WtInclineSitUp"
+      },
+      {
+        "name": "arms crossed",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/WtInclineSitUpX"
+      },
+      {
+        "name": "Sit-up",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/WtSitUp"
+      },
+      {
+        "name": "arms crossed",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/WtSitUpX"
+      },
+      {
+        "name": "Standing Twisting Crunch",
+        "url": "https://exrx.net/WeightExercises/Obliques/CBStandingTwistingCrunch"
+      },
+      {
+        "name": "Seated Twisting Leg Raise Crunch",
+        "url": "https://exrx.net/WeightExercises/Obliques/LVSeatedTwistingLegRaiseCrunch"
+      },
+      {
+        "name": "Incline Twisting Crunch",
+        "url": "https://exrx.net/WeightExercises/Obliques/WtInclineTwistingCrunch"
+      },
+      {
+        "name": "Side Crunch",
+        "url": "https://exrx.net/WeightExercises/Obliques/WtSideCrunch"
+      },
+      {
+        "name": "Twisting Crunch",
+        "url": "https://exrx.net/WeightExercises/Obliques/WtTwistingCrunch"
+      },
+      {
+        "name": "on ball",
+        "url": "https://exrx.net/WeightExercises/Obliques/WtTwistingBallCrunch"
+      },
+      {
+        "name": "Incline Twisting Sit-up",
+        "url": "https://exrx.net/WeightExercises/Obliques/WtInclineTwistingSitUp"
+      },
+      {
+        "name": "arms crossed",
+        "url": "https://exrx.net/WeightExercises/Obliques/WtInclineTwistingSitUpX"
+      },
+      {
+        "name": "Twisting Sit-up",
+        "url": "https://exrx.net/WeightExercises/Obliques/WtTwistingSitUp"
+      },
+      {
+        "name": "arms crossed",
+        "url": "https://exrx.net/WeightExercises/Obliques/WtTwistingSitUpX"
+      },
+      {
+        "name": "Crunch",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/BWCrunch"
+      },
+      {
+        "name": "arms crossed",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/BWCrunchX"
+      },
+      {
+        "name": "arms down",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/BWCrunchAD"
+      },
+      {
+        "name": "Incline Crunch",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/BWInclineCrunch"
+      },
+      {
+        "name": "arms down",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/BWInclineCrunchDown"
+      },
+      {
+        "name": "on ball",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/BWBallCrunch"
+      },
+      {
+        "name": "arms crossed",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/BWBallCrunchX"
+      },
+      {
+        "name": "Hanging Leg Hip Raise (with ab straps)",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/BWHangingLegHipRaiseAbStrap"
+      },
+      {
+        "name": "Incline Situp",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/BWInclineSitUp"
+      },
+      {
+        "name": "arms crossed",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/BWInclineSitUpX"
+      },
+      {
+        "name": "Sit-up",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/BWSitUp"
+      },
+      {
+        "name": "arms crossed",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/BWSitUpX"
+      },
+      {
+        "name": "arms down",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/BWSitUpAD"
+      },
+      {
+        "name": "Jack-knife",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/STJackknife"
+      },
+      {
+        "name": "Pull Through",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/STPullThrough"
+      },
+      {
+        "name": "Front Plank",
+        "url": "https://exrx.net/WeightExercises/RectusAbdominis/BWFrontPlank"
+      },
+      {
+        "name": "Lying (Prone)",
+        "url": "https://exrx.net/Stretches/RectusAbdominis/Prone"
+      },
+      {
+        "name": "Standing",
+        "url": "https://exrx.net/Stretches/RectusAbdominis/Standing"
+      }
+    ]
+  },
+  {
+    "muscle": "Transverse Abdominis",
+    "url": "https://exrx.net/Lists/ExList/WaistWt#Transverse",
+    "exercises": [
+      {
+        "name": "Abdominal Vacuum",
+        "url": "https://exrx.net/WeightExercises/TransverseAbdominis/AbdominalVacuum"
+      }
+    ]
+  },
+  {
+    "muscle": "Obliques",
+    "url": "https://exrx.net/Lists/ExList/WaistWt#Obliques",
+    "exercises": [
+      {
+        "name": "Side Bend",
+        "url": "https://exrx.net/WeightExercises/Obliques/CBSideBend"
+      },
+      {
+        "name": "Side Crunch",
+        "url": "https://exrx.net/WeightExercises/Obliques/CBSideCrunch"
+      },
+      {
+        "name": "Seated Twist",
+        "url": "https://exrx.net/WeightExercises/Obliques/CBSeatedTwist"
+      },
+      {
+        "name": "Standing Twisting Crunch",
+        "url": "https://exrx.net/WeightExercises/Obliques/CBStandingTwistingCrunch"
+      },
+      {
+        "name": "Twist",
+        "url": "https://exrx.net/WeightExercises/Obliques/CBTwist"
+      },
+      {
+        "name": "Side Bend",
+        "url": "https://exrx.net/WeightExercises/Obliques/DBSideBend"
+      },
+      {
+        "name": "Seated Twisting Leg Raise Crunch",
+        "url": "https://exrx.net/WeightExercises/Obliques/LVSeatedTwistingLegRaiseCrunch"
+      },
+      {
+        "name": "Seated Side Leg Raise Crunch",
+        "url": "https://exrx.net/WeightExercises/Obliques/LVSeatedSideLegRaiseCrunch"
+      },
+      {
+        "name": "Kneeling Twist",
+        "url": "https://exrx.net/WeightExercises/Obliques/LVKneelingTwist"
+      },
+      {
+        "name": "Seated Twist",
+        "url": "https://exrx.net/WeightExercises/Obliques/LVTwist"
+      },
+      {
+        "name": "lower body",
+        "url": "https://exrx.net/WeightExercises/Obliques/LVTwistLower"
+      },
+      {
+        "name": "gripless",
+        "url": "https://exrx.net/WeightExercises/Obliques/LVTwistGripless"
+      },
+      {
+        "name": "Side Leg Hip Raise (Ab Coaster)",
+        "url": "https://exrx.net/WeightExercises/Obliques/SLSideHipRaiseAbCoaster"
+      },
+      {
+        "name": "Incline Twisting Crunch",
+        "url": "https://exrx.net/WeightExercises/Obliques/WtInclineTwistingCrunch"
+      },
+      {
+        "name": "Side Crunch",
+        "url": "https://exrx.net/WeightExercises/Obliques/WtSideCrunch"
+      },
+      {
+        "name": "Twisting Crunch",
+        "url": "https://exrx.net/WeightExercises/Obliques/WtTwistingCrunch"
+      },
+      {
+        "name": "on ball",
+        "url": "https://exrx.net/WeightExercises/Obliques/WtTwistingBallCrunch"
+      },
+      {
+        "name": "Incline Twisting Sit-up",
+        "url": "https://exrx.net/WeightExercises/Obliques/WtInclineTwistingSitUp"
+      },
+      {
+        "name": "arms crossed",
+        "url": "https://exrx.net/WeightExercises/Obliques/WtInclineTwistingSitUpX"
+      },
+      {
+        "name": "Twisting Sit-up",
+        "url": "https://exrx.net/WeightExercises/Obliques/WtTwistingSitUp"
+      },
+      {
+        "name": "arms crossed",
+        "url": "https://exrx.net/WeightExercises/Obliques/WtTwistingSitUpX"
+      },
+      {
+        "name": "Push Pull",
+        "url": "https://exrx.net/WeightExercises/Power/CBPushPull"
+      },
+      {
+        "name": "One Arm Straight Leg Deadlift",
+        "url": "https://exrx.net/WeightExercises/ErectorSpinae/DBOneArmStraightLegDeadlift"
+      },
+      {
+        "name": "Power Twist",
+        "url": "https://exrx.net/WeightExercises/Power/LVPowerTwist"
+      },
+      {
+        "name": "45° Side Bend",
+        "url": "https://exrx.net/WeightExercises/Obliques/BW45SideBendHandsBehindHead"
+      },
+      {
+        "name": "Side Bend on ball",
+        "url": "https://exrx.net/WeightExercises/Obliques/BWBallSideBend"
+      },
+      {
+        "name": "Hanging",
+        "url": "https://exrx.net/WeightExercises/Obliques/BWHangingTwistingLegRaise"
+      },
+      {
+        "name": "Leg Hip Raise",
+        "url": "https://exrx.net/WeightExercises/Obliques/BWHangingTwistingLegHipRaise"
+      },
+      {
+        "name": "Incline Twisting Sit-up",
+        "url": "https://exrx.net/WeightExercises/Obliques/BWInclineTwistingSitUp"
+      },
+      {
+        "name": "arms crossed",
+        "url": "https://exrx.net/WeightExercises/Obliques/BWInclineTwistingSitUpX"
+      },
+      {
+        "name": "Twisting Sit-up",
+        "url": "https://exrx.net/WeightExercises/Obliques/BWTwistingSitUp"
+      },
+      {
+        "name": "arms crossed",
+        "url": "https://exrx.net/WeightExercises/Obliques/BWTwistingSitUpX"
+      },
+      {
+        "name": "Incline Twisting Crunch",
+        "url": "https://exrx.net/WeightExercises/Obliques/BWInclineTwistingCrunch"
+      },
+      {
+        "name": "arms crossed",
+        "url": "https://exrx.net/WeightExercises/Obliques/BWInclineTwistingCrunchX"
+      },
+      {
+        "name": "Side Crunch",
+        "url": "https://exrx.net/WeightExercises/Obliques/BWSideCrunch"
+      },
+      {
+        "name": "Twisting Crunch",
+        "url": "https://exrx.net/WeightExercises/Obliques/BWTwistingCrunch"
+      },
+      {
+        "name": "arms crossed",
+        "url": "https://exrx.net/WeightExercises/Obliques/BWTwistingCrunchX"
+      },
+      {
+        "name": "on ball",
+        "url": "https://exrx.net/WeightExercises/Obliques/BWTwistingBallCrunch"
+      },
+      {
+        "name": "Side Bend",
+        "url": "https://exrx.net/WeightExercises/Obliques/STSideBend"
+      },
+      {
+        "name": "Twisting Jack-knife",
+        "url": "https://exrx.net/WeightExercises/Obliques/STTwistingJackknife"
+      },
+      {
+        "name": "Side Plank",
+        "url": "https://exrx.net/WeightExercises/Obliques/BWSidePlank"
+      },
+      {
+        "name": "Bent Knee",
+        "url": "https://exrx.net/WeightExercises/Obliques/BWBentKneeSidePlank"
+      },
+      {
+        "name": "Lying Crossover",
+        "url": "https://exrx.net/Stretches/Obliques/LyingCrossover"
+      },
+      {
+        "name": "Pretzel",
+        "url": "https://exrx.net/Stretches/Obliques/Pretzel"
+      }
+    ]
+  },
+  {
+    "muscle": "Quadratus Lumborum",
+    "url": "https://exrx.net/Lists/ExList/WaistWt#Quadratus",
+    "exercises": []
+  },
+  {
+    "muscle": "Erector Spinae",
+    "url": "https://exrx.net/Lists/ExList/WaistWt#Erector",
+    "exercises": [
+      {
+        "name": "Hyperextension",
+        "url": "https://exrx.net/WeightExercises/ErectorSpinae/BBHyperextension"
+      },
+      {
+        "name": "Hyperextension (45°)",
+        "url": "https://exrx.net/WeightExercises/ErectorSpinae/BB45Hyperextension"
+      },
+      {
+        "name": "Bent Knee Good-morning",
+        "url": "https://exrx.net/WeightExercises/ErectorSpinae/BBBentKneeGoodMorning"
+      },
+      {
+        "name": "Deadlift",
+        "url": "https://exrx.net/WeightExercises/ErectorSpinae/BBDeadlift"
+      },
+      {
+        "name": "Stiff-leg Deadlift",
+        "url": "https://exrx.net/WeightExercises/ErectorSpinae/BBStiffLegDeadlift"
+      },
+      {
+        "name": "Straight-leg Deadlift",
+        "url": "https://exrx.net/WeightExercises/ErectorSpinae/BBStraightLegDeadlift"
+      },
+      {
+        "name": "Stiff-leg Deadlift",
+        "url": "https://exrx.net/WeightExercises/ErectorSpinae/CBStiffLegDeadlift"
+      },
+      {
+        "name": "One Arm Straight Leg Deadlift",
+        "url": "https://exrx.net/WeightExercises/ErectorSpinae/DBOneArmStraightLegDeadlift"
+      },
+      {
+        "name": "Deadlift",
+        "url": "https://exrx.net/WeightExercises/ErectorSpinae/LVDeadlift"
+      },
+      {
+        "name": "Stiff-leg Deadlift",
+        "url": "https://exrx.net/WeightExercises/ErectorSpinae/LVStiffLegDeadlift"
+      },
+      {
+        "name": "Back Extension",
+        "url": "https://exrx.net/WeightExercises/ErectorSpinae/LVBackExtensionN"
+      },
+      {
+        "name": "on older machine",
+        "url": "https://exrx.net/WeightExercises/ErectorSpinae/LVBackExtension"
+      },
+      {
+        "name": "Bent Knee Good-morning",
+        "url": "https://exrx.net/WeightExercises/ErectorSpinae/SMBentKneeGoodMorning"
+      },
+      {
+        "name": "Deadlift",
+        "url": "https://exrx.net/WeightExercises/ErectorSpinae/SMDeadlift"
+      },
+      {
+        "name": "Stiff-leg Deadlift",
+        "url": "https://exrx.net/WeightExercises/ErectorSpinae/SMStiffLegDeadlift"
+      },
+      {
+        "name": "Hyperextension",
+        "url": "https://exrx.net/WeightExercises/ErectorSpinae/WtHyperextension"
+      },
+      {
+        "name": "Hyperextension (45°)",
+        "url": "https://exrx.net/WeightExercises/ErectorSpinae/Wt45Hyperextension"
+      },
+      {
+        "name": "Seated Row",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/CBSeatedRow"
+      },
+      {
+        "name": "Wide Grip",
+        "url": "https://exrx.net/WeightExercises/BackGeneral/CBWideGripSeatedRow"
+      },
+      {
+        "name": "Back Extension (on ball)",
+        "url": "https://exrx.net/WeightExercises/ErectorSpinae/BWHyperextensionBall"
+      },
+      {
+        "name": "Bird Dog",
+        "url": "https://exrx.net/WeightExercises/ErectorSpinae/BWBirdDog"
+      },
+      {
+        "name": "Alternating",
+        "url": "https://exrx.net/WeightExercises/ErectorSpinae/BWAlternatingBirdDog"
+      },
+      {
+        "name": "Hyperextension (45°)",
+        "url": "https://exrx.net/WeightExercises/ErectorSpinae/BW45HyperextensionHips"
+      },
+      {
+        "name": "arms crossed",
+        "url": "https://exrx.net/WeightExercises/ErectorSpinae/BW45HyperextensionArmsCrossed"
+      },
+      {
+        "name": "hands behind neck",
+        "url": "https://exrx.net/WeightExercises/ErectorSpinae/BW45HyperextensionNeck"
+      },
+      {
+        "name": "arms up",
+        "url": "https://exrx.net/WeightExercises/ErectorSpinae/BW45HyperextensionArmsUp"
+      },
+      {
+        "name": "Superman",
+        "url": "https://exrx.net/WeightExercises/ErectorSpinae/Superman"
+      },
+      {
+        "name": "Contralateral",
+        "url": "https://exrx.net/WeightExercises/ErectorSpinae/ContraLateralSuperman"
+      },
+      {
+        "name": "Pull Through",
+        "url": "https://exrx.net/WeightExercises/ErectorSpinae/STPullThrough"
+      },
+      {
+        "name": "Rear Bridge",
+        "url": "https://exrx.net/WeightExercises/ErectorSpinae/BackPlank"
+      },
+      {
+        "name": "Incline Rear Bridge",
+        "url": "https://exrx.net/WeightExercises/ErectorSpinae/RearInclinePlank"
+      },
+      {
+        "name": "Cat",
+        "url": "https://exrx.net/Stretches/ErectorSpinae/Cat"
+      },
+      {
+        "name": "Lying",
+        "url": "https://exrx.net/Stretches/ErectorSpinae/Lying"
+      },
+      {
+        "name": "Seated",
+        "url": "https://exrx.net/Stretches/ErectorSpinae/SeatedFloor"
+      }
+    ]
+  },
+  {
+    "muscle": "Gluteus Maximus",
+    "url": "https://exrx.net/Lists/ExList/HipsWt#Gluteus",
+    "exercises": [
+      {
+        "name": "Bent Knee Good-morning",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/BBBentKneeGoodMorning"
+      },
+      {
+        "name": "Deadlifts",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/BBDeadlift"
+      },
+      {
+        "name": "Stiff-leg Deadlift",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/BBStiffLegDeadlift"
+      },
+      {
+        "name": "Straight-back",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/BBStrBackStiffLegDeadlift"
+      },
+      {
+        "name": "Hip Thrust",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/BBHipThrust"
+      },
+      {
+        "name": "Lunge",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/BBLunge"
+      },
+      {
+        "name": "Rear Lunge",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/BBRearLunge"
+      },
+      {
+        "name": "Single Leg Split Squat",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/BBSingleLegSplitSquat"
+      },
+      {
+        "name": "Single Leg Squat",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/BBSingleLegSquat"
+      },
+      {
+        "name": "Split Squat",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/BBSplitSquat"
+      },
+      {
+        "name": "Squat",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/BBSquat"
+      },
+      {
+        "name": "Front Squat",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/BBFrontSquat"
+      },
+      {
+        "name": "Safety Squat",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/SBSquat"
+      },
+      {
+        "name": "Step-up",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/BBStepUp"
+      },
+      {
+        "name": "Glute Kickback",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/CBGluteKickback"
+      },
+      {
+        "name": "Rear Lunge",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/CBRearLunge"
+      },
+      {
+        "name": "Two Arms",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/CBLungeTwoArm"
+      },
+      {
+        "name": "Squat",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/CBSquat"
+      },
+      {
+        "name": "Standing Hip Extension",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/CBStandingHipExtension"
+      },
+      {
+        "name": "Bent-over",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/CBBentOverHipExtension"
+      },
+      {
+        "name": "Step-up",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/CBStepUp"
+      },
+      {
+        "name": "Stiff-leg Deadlift",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/CBStiffLegDeadlift"
+      },
+      {
+        "name": "Straight-back",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/CBStrBackStiffLegDeadlift"
+      },
+      {
+        "name": "Lunge",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/DBLunge"
+      },
+      {
+        "name": "Rear Lunge",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/DBRearLunge"
+      },
+      {
+        "name": "Split Squat",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/DBSplitSquat"
+      },
+      {
+        "name": "Squat",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/DBSquat"
+      },
+      {
+        "name": "Front Squat",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/DBFrontSquat"
+      },
+      {
+        "name": "Step-up",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/DBStepUp"
+      },
+      {
+        "name": "Step Down",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/DBStepDown"
+      },
+      {
+        "name": "Deadlift",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/LVDeadlift"
+      },
+      {
+        "name": "Stiff-leg Deadlift",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/LVStiffLegDeadlift"
+      },
+      {
+        "name": "Straight-back",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/LVStrBackStiffLegDeadlift"
+      },
+      {
+        "name": "45° Leg Press",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/LV45LegPress"
+      },
+      {
+        "name": "Lying Leg Press",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/LVLyingLegPressH"
+      },
+      {
+        "name": "Seated Leg Press",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/LVSeatedLegPressH"
+      },
+      {
+        "name": "Lying Hip Extension",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/LVLyingHipExtensionH"
+      },
+      {
+        "name": "Reverse Hyper-extension",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/LVReverseHyperextension"
+      },
+      {
+        "name": "Single Leg Split Squat",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/LVSingleLegSplitSquat"
+      },
+      {
+        "name": "Single Leg Squat",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/LVSingleLegSquat"
+      },
+      {
+        "name": "Split Squat",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/LVSplitSquat"
+      },
+      {
+        "name": "Squat",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/LVSquatPL"
+      },
+      {
+        "name": "Front Squat",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/LVFrontSquatPL"
+      },
+      {
+        "name": "Bent-over",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/LVBentOverHipExtension"
+      },
+      {
+        "name": "Lying",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/LVLyingHipExtension"
+      },
+      {
+        "name": "Standing",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/LVStandingHipExtension"
+      },
+      {
+        "name": "alternative machine",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/LVStandingHipExtensionTech"
+      },
+      {
+        "name": "Seated Leg Press",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/LVSeatedLegPress"
+      },
+      {
+        "name": "Bent-over",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/LVBentOverRearKick"
+      },
+      {
+        "name": "Kneeling",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/LVKneelingHipExtension"
+      },
+      {
+        "name": "Standing",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/LVSingleLegStandingLegPress"
+      },
+      {
+        "name": "Squat",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/LVSquat"
+      },
+      {
+        "name": "V-Squat",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/LVVSquat"
+      },
+      {
+        "name": "45° Leg Press",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/SL45LegPress"
+      },
+      {
+        "name": "Lying Leg Press",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/SLLyingLegPress"
+      },
+      {
+        "name": "Seated Leg Press",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/SLSeatedLegPress"
+      },
+      {
+        "name": "Kneeling",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/SLKneelingHipExtension"
+      },
+      {
+        "name": "Standing",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/SLStandingHipExtension"
+      },
+      {
+        "name": "Squat",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/SLSquat"
+      },
+      {
+        "name": "Hack Squat",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/SLHackSquat"
+      },
+      {
+        "name": "Bent Knee Good-morning",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/SMBentKneeGoodMorning"
+      },
+      {
+        "name": "Deadlift",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/SMDeadlift"
+      },
+      {
+        "name": "Stiff-leg Deadlift",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/SMStiffLegDeadlift"
+      },
+      {
+        "name": "Straight-back",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/SMStrBackStiffLegDeadlift"
+      },
+      {
+        "name": "Rear Lunge",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/SMRearLunge"
+      },
+      {
+        "name": "Squat",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/SMSquat"
+      },
+      {
+        "name": "Reverse Hyper-extension",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/WtReverseHyperextension"
+      },
+      {
+        "name": "Single Leg Squat",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/WtSingleLegSquat"
+      },
+      {
+        "name": "Front Squat",
+        "url": "https://exrx.net/WeightExercises/Kettlebell/KBFrontSquat"
+      },
+      {
+        "name": "Lunge",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/BWLunge"
+      },
+      {
+        "name": "Rear Lunge",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/BWRearLunge"
+      },
+      {
+        "name": "Single Leg Squat",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/BWSingleLegSquat"
+      },
+      {
+        "name": "Single Leg Box Squat (pistol)",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/BWSingleLegBoxSquat"
+      },
+      {
+        "name": "Split Squat",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/BWSplitSquat"
+      },
+      {
+        "name": "Single Leg Split Squat",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/BWSingleLegSplitSquat"
+      },
+      {
+        "name": "Single Leg Stiff Leg Deadlift",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/BWSingleLegStiffLegDeadlift"
+      },
+      {
+        "name": "Squat",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/BWSquat"
+      },
+      {
+        "name": "Step-up",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/BWStepUp"
+      },
+      {
+        "name": "Step Down",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/BWStepDown"
+      },
+      {
+        "name": "Single Leg Squat (leg wrapped)",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/AsSingleLegSquatLegSelf"
+      },
+      {
+        "name": "Step Down",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/ASStepDownSelf"
+      },
+      {
+        "name": "Hip Bridge",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/STHipBridge"
+      },
+      {
+        "name": "Single Leg Squat",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/STSingleLegSquat"
+      },
+      {
+        "name": "Single Leg Split Squat",
+        "url": "https://exrx.net/WeightExercises/GluteusMaximus/STSplitSquat"
+      },
+      {
+        "name": "Lying",
+        "url": "https://exrx.net/Stretches/GluteusMaximus/Lying"
+      },
+      {
+        "name": "Modified",
+        "url": "https://exrx.net/Stretches/GluteusMaximus/LyingModified"
+      },
+      {
+        "name": "PNF",
+        "url": "https://exrx.net/Stretches/GluteusMaximus/PNFLying"
+      },
+      {
+        "name": "Lying Wall",
+        "url": "https://exrx.net/Stretches/GluteusMaximus/LyingWall"
+      },
+      {
+        "name": "Chair",
+        "url": "https://exrx.net/Stretches/GluteusMaximus/Seated"
+      },
+      {
+        "name": "Floor",
+        "url": "https://exrx.net/Stretches/GluteusMaximus/SeatedFloor"
+      },
+      {
+        "name": "PNF",
+        "url": "https://exrx.net/Stretches/GluteusMaximus/PNFSeated"
+      },
+      {
+        "name": "Squatting",
+        "url": "https://exrx.net/Stretches/GluteusMaximus/Squatting"
+      }
+    ]
+  },
+  {
+    "muscle": "Abductors",
+    "url": "https://exrx.net/Lists/ExList/HipsWt#Abductors",
+    "exercises": [
+      {
+        "name": "Hip Abduction",
+        "url": "https://exrx.net/WeightExercises/HipAbductor/CBHipAbduction"
+      },
+      {
+        "name": "Seated Hip Internal Rotation",
+        "url": "https://exrx.net/WeightExercises/HipAbductor/CBSeatedHipInternalRotation"
+      },
+      {
+        "name": "Lying Hip Abduction",
+        "url": "https://exrx.net/WeightExercises/HipAbductor/DBLyingHipAbduction"
+      },
+      {
+        "name": "Seated Hip Abduction",
+        "url": "https://exrx.net/WeightExercises/HipAbductor/LVSeatedHipAbductionH"
+      },
+      {
+        "name": "Seated Hip Abduction",
+        "url": "https://exrx.net/WeightExercises/HipAbductor/LVSeatedHipAbduction"
+      },
+      {
+        "name": "Standing Hip Abduction",
+        "url": "https://exrx.net/WeightExercises/HipAbductor/LVStandHipAbduction"
+      },
+      {
+        "name": "Lying Hip Abduction",
+        "url": "https://exrx.net/WeightExercises/HipAbductor/WtLyingHipAbduction"
+      },
+      {
+        "name": "Push Pull",
+        "url": "https://exrx.net/WeightExercises/Power/CBPushPull"
+      },
+      {
+        "name": "Twist",
+        "url": "https://exrx.net/WeightExercises/Obliques/CBTwist"
+      },
+      {
+        "name": "Side Bridge Hip Abduction",
+        "url": "https://exrx.net/WeightExercises/HipAbductor/BWSideBridgeHipAbduction"
+      },
+      {
+        "name": "Hip Abduction",
+        "url": "https://exrx.net/WeightExercises/HipAbductor/STHipAbduction"
+      },
+      {
+        "name": "Side Bend",
+        "url": "https://exrx.net/WeightExercises/Obliques/STSideBend"
+      },
+      {
+        "name": "Lying Crossover",
+        "url": "https://exrx.net/Stretches/HipAbductors/LyingCrossover"
+      },
+      {
+        "name": "PNF",
+        "url": "https://exrx.net/Stretches/HipAbductors/PNFLyingCrossover"
+      },
+      {
+        "name": "Seated Hip Internal Rotator",
+        "url": "https://exrx.net/Stretches/HipAbductors/SeatedHipInternalRotator"
+      },
+      {
+        "name": "Bent Leg Down",
+        "url": "https://exrx.net/Stretches/HipAbductors/SeatedHipInternalRotatorBentLegUnder"
+      },
+      {
+        "name": "Seated Pretzel",
+        "url": "https://exrx.net/Stretches/HipAbductors/Pretzel"
+      },
+      {
+        "name": "Standing Iliotibial",
+        "url": "https://exrx.net/Stretches/HipAbductors/StandingIliotibial"
+      },
+      {
+        "name": "Wall Iliotibial",
+        "url": "https://exrx.net/Stretches/HipAbductors/WallIliotibial"
+      }
+    ]
+  },
+  {
+    "muscle": "Flexors",
+    "url": "https://exrx.net/Lists/ExList/HipsWt#Hip",
+    "exercises": [
+      {
+        "name": "Lying Leg Raise (on bench)",
+        "url": "https://exrx.net/WeightExercises/HipFlexors/CBLyingLegRaiseBench"
+      },
+      {
+        "name": "Lying Straight Leg Raise",
+        "url": "https://exrx.net/WeightExercises/HipFlexors/CBLyingStraightLegRaise"
+      },
+      {
+        "name": "Standing Leg Raise",
+        "url": "https://exrx.net/WeightExercises/HipFlexors/CBStandingLegRaise"
+      },
+      {
+        "name": "Hip Flexion",
+        "url": "https://exrx.net/WeightExercises/HipFlexors/LVHipFlexion"
+      },
+      {
+        "name": "Vertical Leg Raise",
+        "url": "https://exrx.net/WeightExercises/HipFlexors/LVVerticalLegRaise"
+      },
+      {
+        "name": "Decline Sit-up",
+        "url": "https://exrx.net/WeightExercises/HipFlexors/WtDeclineSitup"
+      },
+      {
+        "name": "Hanging Leg Raise",
+        "url": "https://exrx.net/WeightExercises/HipFlexors/WtHangLegRaise"
+      },
+      {
+        "name": "Incline Leg Raise",
+        "url": "https://exrx.net/WeightExercises/HipFlexors/WtInclineLegRaise"
+      },
+      {
+        "name": "Lying Leg Raise",
+        "url": "https://exrx.net/WeightExercises/HipFlexors/WtLyingLegRaise"
+      },
+      {
+        "name": "Roman Chair Sit-up",
+        "url": "https://exrx.net/WeightExercises/HipFlexors/WtRomanChairSitup"
+      },
+      {
+        "name": "Seated Leg Raise",
+        "url": "https://exrx.net/WeightExercises/HipFlexors/WtSeatedLegRaise"
+      },
+      {
+        "name": "Vertical Leg Raise",
+        "url": "https://exrx.net/WeightExercises/HipFlexors/WtVerticalLegRaise"
+      },
+      {
+        "name": "on Parallel Bars",
+        "url": "https://exrx.net/WeightExercises/HipFlexors/WtVerticalLegRaisePB"
+      },
+      {
+        "name": "Straight Leg",
+        "url": "https://exrx.net/WeightExercises/HipFlexors/WtVerticalStraightLegRaise"
+      },
+      {
+        "name": "Hanging Leg Raise",
+        "url": "https://exrx.net/WeightExercises/HipFlexors/BWHangingLegRaise"
+      },
+      {
+        "name": "Straight Leg",
+        "url": "https://exrx.net/WeightExercises/HipFlexors/BWHangingStraightLegRaise"
+      },
+      {
+        "name": "Incline Leg Raise",
+        "url": "https://exrx.net/WeightExercises/HipFlexors/BWInclineLegRaise"
+      },
+      {
+        "name": "Incline Straight Leg Raise",
+        "url": "https://exrx.net/WeightExercises/HipFlexors/BWInclineStraightLegRaise"
+      },
+      {
+        "name": "Lying Leg Raise",
+        "url": "https://exrx.net/WeightExercises/HipFlexors/BWLyingLegRaise"
+      },
+      {
+        "name": "on floor",
+        "url": "https://exrx.net/WeightExercises/HipFlexors/BWLyingLegRaiseFloor"
+      },
+      {
+        "name": "Lying Straight Leg Raise",
+        "url": "https://exrx.net/WeightExercises/HipFlexors/BWStraightLegRaise"
+      },
+      {
+        "name": "Seated Leg Raise",
+        "url": "https://exrx.net/WeightExercises/HipFlexors/BWSeatedLegRaise"
+      },
+      {
+        "name": "Vertical Leg Raise",
+        "url": "https://exrx.net/WeightExercises/HipFlexors/BWVerticalLegRaise"
+      },
+      {
+        "name": "on parallel bars",
+        "url": "https://exrx.net/WeightExercises/HipFlexors/BWVerticalLegRaisePB"
+      },
+      {
+        "name": "Straight Leg",
+        "url": "https://exrx.net/WeightExercises/HipFlexors/BWVerticalStraightLegRaise"
+      },
+      {
+        "name": "Roman Chair Sit-up",
+        "url": "https://exrx.net/WeightExercises/HipFlexors/BWRomanChairSitup"
+      },
+      {
+        "name": "Mountain Climber",
+        "url": "https://exrx.net/WeightExercises/HipFlexors/STMountainClimber"
+      },
+      {
+        "name": "Pike",
+        "url": "https://exrx.net/WeightExercises/HipFlexors/STPike"
+      },
+      {
+        "name": "Bentover Lunging",
+        "url": "https://exrx.net/Stretches/HipFlexors/BentoverLungeHipFlexor"
+      },
+      {
+        "name": "Kneeling",
+        "url": "https://exrx.net/Stretches/HipFlexors/KneelingHipFlexor"
+      },
+      {
+        "name": "Lever",
+        "url": "https://exrx.net/Stretches/HipFlexors/PCHipFlexor"
+      },
+      {
+        "name": "Standing",
+        "url": "https://exrx.net/Stretches/HipFlexors/Standing"
+      },
+      {
+        "name": "Standing Iliotibial",
+        "url": "https://exrx.net/Stretches/HipAbductors/StandingIliotibial"
+      },
+      {
+        "name": "Wall Iliotibial",
+        "url": "https://exrx.net/Stretches/HipAbductors/WallIliotibial"
+      },
+      {
+        "name": "Walking Lunge",
+        "url": "https://exrx.net/Stretches/Miscellaneous/WalkingLunge"
+      }
+    ]
+  },
+  {
+    "muscle": "Deep External Rotators",
+    "url": "https://exrx.net/Lists/ExList/HipsWt#DeepHip",
+    "exercises": [
+      {
+        "name": "Seated Hip External Rotation",
+        "url": "https://exrx.net/WeightExercises/HipExternalRotator/CBSeatedHipExternalRotation"
+      },
+      {
+        "name": "Cable Push Pull",
+        "url": "https://exrx.net/WeightExercises/Power/CBPushPull"
+      },
+      {
+        "name": "Lever Landmine Power Twist",
+        "url": "https://exrx.net/WeightExercises/Power/LVPowerTwist"
+      },
+      {
+        "name": "Seated Hip Abduction",
+        "url": "https://exrx.net/WeightExercises/HipAbductor/LVSeatedHipAbduction"
+      },
+      {
+        "name": "Seated Hip Abduction",
+        "url": "https://exrx.net/WeightExercises/HipAbductor/LVSeatedHipAbductionH"
+      },
+      {
+        "name": "Seated",
+        "url": "https://exrx.net/Stretches/HipExternalRotators/SeatedHipExternalRotator"
+      },
+      {
+        "name": "Lever",
+        "url": "https://exrx.net/Stretches/HipExternalRotators/PCPiriformis"
+      },
+      {
+        "name": "Lying Piriformis Stretch (single leg)",
+        "url": "https://exrx.net/Stretches/HipExternalRotators/LyingPiriformisMod"
+      },
+      {
+        "name": "PNF Lying Piriformis Stretch",
+        "url": "https://exrx.net/Stretches/HipExternalRotators/PNFLyingPiriformis"
+      },
+      {
+        "name": "Seated Piriformis Stretch (chair or bench)",
+        "url": "https://exrx.net/Stretches/HipExternalRotators/SeatedPiriformisChair"
+      }
+    ]
+  },
+  {
+    "muscle": "Quadriceps",
+    "url": "https://exrx.net/Lists/ExList/ThighWt#Quadriceps",
+    "exercises": [
+      {
+        "name": "Lunge",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/BBLunge"
+      },
+      {
+        "name": "Rear Lunge",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/BBRearLunge"
+      },
+      {
+        "name": "Single Leg Split Squat",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/BBSingleLegSplitSquat"
+      },
+      {
+        "name": "Single Leg Squat",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/BBSingleLegSquat"
+      },
+      {
+        "name": "Split Squat",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/BBSplitSquat"
+      },
+      {
+        "name": "Squat",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/BBSquat"
+      },
+      {
+        "name": "Front Squat",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/BBFrontSquat"
+      },
+      {
+        "name": "Trap Bar Squat",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/TBSquat"
+      },
+      {
+        "name": "Step-up",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/BBStepUp"
+      },
+      {
+        "name": "Rear Lunge",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/CBRearLunge"
+      },
+      {
+        "name": "Split Squat",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/CBLungeTwoArm"
+      },
+      {
+        "name": "Squat",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/CBSquat"
+      },
+      {
+        "name": "Step Down",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/CBSingleLegSquat"
+      },
+      {
+        "name": "Step-up",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/CBStepUp"
+      },
+      {
+        "name": "Lunge",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/DBLunge"
+      },
+      {
+        "name": "Rear Lunge",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/DBRearLunge"
+      },
+      {
+        "name": "Split Squat",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/DBSplitSquat"
+      },
+      {
+        "name": "Squat",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/DBSquat"
+      },
+      {
+        "name": "Front Squat",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/DBFrontSquat"
+      },
+      {
+        "name": "Step-up",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/DBStepUp"
+      },
+      {
+        "name": "Step Down",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/DBStepDown"
+      },
+      {
+        "name": "Leg Extension",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/LVLegExtensionH"
+      },
+      {
+        "name": "45° Leg Press",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/LV45LegPress"
+      },
+      {
+        "name": "Lying Leg Press",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/LVLyingLegPressH"
+      },
+      {
+        "name": "Seated Leg Press",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/LVSeatedLegPressH"
+      },
+      {
+        "name": "Single Leg Squat (plate loaded)",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/LVSingleLegSquat"
+      },
+      {
+        "name": "Split Squat",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/LVSplitSquat"
+      },
+      {
+        "name": "Squat",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/LVSquatPL"
+      },
+      {
+        "name": "Barbell Machine",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/LVBBSquat"
+      },
+      {
+        "name": "Leg Extension",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/LVLegExtension"
+      },
+      {
+        "name": "Seated Leg Press",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/LVSeatedLegPress"
+      },
+      {
+        "name": "Squat",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/LVSquat"
+      },
+      {
+        "name": "V-Squat",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/LVVSquat"
+      },
+      {
+        "name": "45° Leg Press",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/SL45LegPress"
+      },
+      {
+        "name": "Lying Leg Press",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/SLLyingLegPress"
+      },
+      {
+        "name": "Seated Leg Press",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/SLSeatedLegPress"
+      },
+      {
+        "name": "Squat",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/SLSquat"
+      },
+      {
+        "name": "Hack Squat",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/SLHackSquat"
+      },
+      {
+        "name": "Rear Lunge",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/SMRearLunge"
+      },
+      {
+        "name": "Squat",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/SMSquat"
+      },
+      {
+        "name": "Single Leg Squat",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/WTSingleLegSquat"
+      },
+      {
+        "name": "Front Squat",
+        "url": "https://exrx.net/WeightExercises/Kettlebell/KBFrontSquat"
+      },
+      {
+        "name": "Rear Lunge",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/BWRearLunge"
+      },
+      {
+        "name": "Lunge",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/BWLunge"
+      },
+      {
+        "name": "Single Leg Squat",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/BWSingleLegSquat"
+      },
+      {
+        "name": "Box",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/BWSingleLegBoxSquat"
+      },
+      {
+        "name": "Split Squat",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/BWSplitSquat"
+      },
+      {
+        "name": "Single Leg Split Squat",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/BWSingleLegSplitSquat"
+      },
+      {
+        "name": "Squat",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/BWSquat"
+      },
+      {
+        "name": "Step-up",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/BWStepUp"
+      },
+      {
+        "name": "Step-down",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/BWStepDown"
+      },
+      {
+        "name": "Single Leg Squat (leg wrapped)",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/ASSingleLegSquatSelfLeg"
+      },
+      {
+        "name": "Squat",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/ASSquatSelf"
+      },
+      {
+        "name": "Step Down",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/ASStepDownSelf"
+      },
+      {
+        "name": "Single Leg Squat",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/STSingleLegSquat"
+      },
+      {
+        "name": "Single Leg Split Squat",
+        "url": "https://exrx.net/WeightExercises/Quadriceps/STSplitSquat"
+      },
+      {
+        "name": "Kneeling",
+        "url": "https://exrx.net/Stretches/Quadriceps/Kneeling"
+      },
+      {
+        "name": "Lever",
+        "url": "https://exrx.net/Stretches/Quadriceps/PCQuad"
+      },
+      {
+        "name": "Lying (Side)",
+        "url": "https://exrx.net/Stretches/Quadriceps/SideLying"
+      },
+      {
+        "name": "Standing",
+        "url": "https://exrx.net/Stretches/Quadriceps/Standing"
+      },
+      {
+        "name": "PNF Lying (prone) Quadriceps Stretch",
+        "url": "https://exrx.net/Stretches/Quadriceps/PNFProneLying"
+      },
+      {
+        "name": "Walking Quadriceps Stretch",
+        "url": "https://exrx.net/Stretches/Quadriceps/WalkingQuadStretch"
+      }
+    ]
+  },
+  {
+    "muscle": "Hamstrings",
+    "url": "https://exrx.net/Lists/ExList/ThighWt#Hamstrings",
+    "exercises": [
+      {
+        "name": "Glute-Ham Raise",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/BBGluteHamRaise"
+      },
+      {
+        "name": "Good-morning",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/BBGoodMorning"
+      },
+      {
+        "name": "Hyperextension",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/BBHyperextension"
+      },
+      {
+        "name": "Hyperextension (45°)",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/BB45Hyperextension"
+      },
+      {
+        "name": "Straight-leg Deadlift",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/BBStraightLegDeadlift"
+      },
+      {
+        "name": "Straight-back",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/BBStrBackStrLegDeadlift"
+      },
+      {
+        "name": "Lying Leg Curl",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/CBLyingLegCurl"
+      },
+      {
+        "name": "Standing Leg Curl",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/CBStandingLegCurl"
+      },
+      {
+        "name": "Straight-back Straight-leg Deadlift",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/CBStrBackStrLegDeadlift"
+      },
+      {
+        "name": "Straight-back Straight-leg Deadlift",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/DBStrBackStrLegDeadlift"
+      },
+      {
+        "name": "Kneeling Leg Curl",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/LVKneelingLegCurlH"
+      },
+      {
+        "name": "Lying Leg Curl",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/LVLyingLegCurlH"
+      },
+      {
+        "name": "Seated Leg Curl",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/LVSeatedLegCurlH"
+      },
+      {
+        "name": "Straight-back Straight-leg Deadlift",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/LVStrBackStrLegDeadlift"
+      },
+      {
+        "name": "Bent-over Leg Curl",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/LVBentOverLegCurl"
+      },
+      {
+        "name": "Kneeling Leg Curl",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/LVKneelingLegCurl"
+      },
+      {
+        "name": "Lying Leg Curl",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/LVLyingLegCurl"
+      },
+      {
+        "name": "Seated Leg Curl",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/LVSeatedLegCurl"
+      },
+      {
+        "name": "Standing Leg Curl",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/LVStandingLegCurl"
+      },
+      {
+        "name": "Good-morning",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/SMGoodMorning"
+      },
+      {
+        "name": "Straight-back Straight-leg Deadlift",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/SMStrBackStrLegDeadlift"
+      },
+      {
+        "name": "Glute-Ham Raise",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/WTGluteHamRaise"
+      },
+      {
+        "name": "Hyperextension",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/WtHyperextension"
+      },
+      {
+        "name": "Hyperextension (45°)",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/Wt45Hyperextension"
+      },
+      {
+        "name": "Romanian Deadlift",
+        "url": "https://exrx.net/WeightExercises/OlympicLifts/RomanianDeadlift"
+      },
+      {
+        "name": "Hamstring Raise",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/ASInverseLegCurlBands"
+      },
+      {
+        "name": "Hyperextension (45°)",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/BW45HyperextensionHips"
+      },
+      {
+        "name": "arms crossed",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/BW45HyperextensionArmsCrossed"
+      },
+      {
+        "name": "hands behind neck",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/BW45HyperextensionNeck"
+      },
+      {
+        "name": "arms up",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/BW45HyperextensionArmsUp"
+      },
+      {
+        "name": "Glute-Ham Raise",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/BWGluteHamRaiseHead"
+      },
+      {
+        "name": "hands behind hips",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/BWGluteHamRaiseHips"
+      },
+      {
+        "name": "Single Leg Hanging Hamstring Bridge",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/BWSingleLegHangingHamstringBridge"
+      },
+      {
+        "name": "Single Leg Hyperextension (45°)",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/BWSingleLeg45Hyperextension"
+      },
+      {
+        "name": "Straight Hip Leg Curl (on ball)",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/BWBallStraightHipLegCurl"
+      },
+      {
+        "name": "Inverse Leg Curl",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/ASHamstringRaiseSelf"
+      },
+      {
+        "name": "Leg Curl",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/STLegCurl"
+      },
+      {
+        "name": "Hanging Leg Curl",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/STHangingLegCurl"
+      },
+      {
+        "name": "Straight Hip",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/STHangingStraightHipLegCurl"
+      },
+      {
+        "name": "Straight Hip Leg Curl",
+        "url": "https://exrx.net/WeightExercises/Hamstrings/STStraightHipLegCurl"
+      },
+      {
+        "name": "Seated",
+        "url": "https://exrx.net/Stretches/Hamstrings/PCHamstring"
+      },
+      {
+        "name": "Lying",
+        "url": "https://exrx.net/Stretches/Hamstrings/LVLyingHamstring"
+      },
+      {
+        "name": "Lying",
+        "url": "https://exrx.net/Stretches/Hamstrings/LyingSingleLeg"
+      },
+      {
+        "name": "PNF",
+        "url": "https://exrx.net/Stretches/Hamstrings/PNFLyingSingleLeg"
+      },
+      {
+        "name": "Seated",
+        "url": "https://exrx.net/Stretches/Hamstrings/Seated"
+      },
+      {
+        "name": "Single Leg",
+        "url": "https://exrx.net/Stretches/Hamstrings/SeatedSingleLeg"
+      },
+      {
+        "name": "Seated Single Leg (Bench)",
+        "url": "https://exrx.net/Stretches/Hamstrings/SeatedBenchSingleLeg"
+      },
+      {
+        "name": "Standing",
+        "url": "https://exrx.net/Stretches/Hamstrings/Standing"
+      },
+      {
+        "name": "Soldier Kick",
+        "url": "https://exrx.net/Stretches/Hamstrings/SoldierKick"
+      }
+    ]
+  },
+  {
+    "muscle": "Hip Adductors",
+    "url": "https://exrx.net/Lists/ExList/ThighWt#HipAdductors",
+    "exercises": [
+      {
+        "name": "Hip Adduction",
+        "url": "https://exrx.net/WeightExercises/HipAdductors/CBHipAdduction"
+      },
+      {
+        "name": "Seated Hip Adduction",
+        "url": "https://exrx.net/WeightExercises/HipAdductors/LVSeatedHipAdductionH"
+      },
+      {
+        "name": "Seated Hip Adduction",
+        "url": "https://exrx.net/WeightExercises/HipAdductors/LVSeatedHipAdduction"
+      },
+      {
+        "name": "Standing Hip Adduction",
+        "url": "https://exrx.net/WeightExercises/HipAdductors/LVStandHipAdduction"
+      },
+      {
+        "name": "Lying Hip Adduction",
+        "url": "https://exrx.net/WeightExercises/HipAdductors/WTLyingHipAdduction"
+      },
+      {
+        "name": "Side Bend",
+        "url": "https://exrx.net/WeightExercises/Obliques/STSideBend"
+      },
+      {
+        "name": "Lever",
+        "url": "https://exrx.net/Stretches/HipAdductors/PCGroin"
+      },
+      {
+        "name": "PNF Bent Leg Groin",
+        "url": "https://exrx.net/Stretches/HipAdductors/PNFBentLeg"
+      },
+      {
+        "name": "Lying Wall Groin",
+        "url": "https://exrx.net/Stretches/HipAdductors/LyingWallGroin"
+      },
+      {
+        "name": "Seated Groin",
+        "url": "https://exrx.net/Stretches/HipAdductors/SeatedGroinFloor"
+      },
+      {
+        "name": "Chair or Bench",
+        "url": "https://exrx.net/Stretches/HipAdductors/SeatedGroin"
+      },
+      {
+        "name": "Lever",
+        "url": "https://exrx.net/Stretches/HipAdductors/MachSeatedGroin"
+      },
+      {
+        "name": "Side Lunge",
+        "url": "https://exrx.net/Stretches/HipAdductors/SideLunge"
+      }
+    ]
+  },
+  {
+    "muscle": "General",
+    "url": "https://exrx.net/Lists/ExList/CalfWt#Gastrocnemius",
+    "exercises": [
+      {
+        "name": "Standing Calf Raise",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/BBStandingCalfRaise"
+      },
+      {
+        "name": "Belt Calf Raise",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/CBStandingCalfRaise"
+      },
+      {
+        "name": "One Arm Single Leg Calf Raise",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/CBOneArmSingleLegCalfRaise"
+      },
+      {
+        "name": "Standing Calf Raise",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/DBStandingCalfRaise"
+      },
+      {
+        "name": "Single Leg",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/DBSingleLegCalfRaise"
+      },
+      {
+        "name": "45° Calf Press",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/LV45CalfPress"
+      },
+      {
+        "name": "Calf Extension",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/LVSeatedCalfExtensionHammer"
+      },
+      {
+        "name": "Seated Calf Press",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/LVSeatedCalfPressH"
+      },
+      {
+        "name": "Standing Calf Raise",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/LVStandingCalfRaisePL"
+      },
+      {
+        "name": "45° Calf Raise",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/LV45CalfRaise"
+      },
+      {
+        "name": "Calf Extension",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/LVSeatedCalfExtension"
+      },
+      {
+        "name": "Donkey Calf Raise",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/LVDonkeyCalfRaise"
+      },
+      {
+        "name": "Seated Calf Press",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/LVSeatedCalfPress"
+      },
+      {
+        "name": "Standing Calf Raise",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/LVStandingCalfRaise"
+      },
+      {
+        "name": "45° Calf Press",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/SL45CalfPress"
+      },
+      {
+        "name": "45° Calf Raise",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/SL45CalfRaise"
+      },
+      {
+        "name": "Donkey Calf Raise",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/SLDonkeyCalfRaise"
+      },
+      {
+        "name": "Lying Calf Press",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/SLLyingCalfPress"
+      },
+      {
+        "name": "Seated Calf Press",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/SLSeatedCalfPress"
+      },
+      {
+        "name": "Standing Calf Raise",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/SLStandingCalfRaise"
+      },
+      {
+        "name": "Standing Calf Raise",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/SMStandingCalfRaise"
+      },
+      {
+        "name": "Single Leg Calf Raise",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/WTSingleLegCalfRaise"
+      },
+      {
+        "name": "Standing Calf Raise",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/BWStandingCalfRaise"
+      },
+      {
+        "name": "Single Leg",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/BWSingleLegCalfRaise"
+      },
+      {
+        "name": "Single Leg Calf Raise",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/ASSingleLegCalfRaiseSelf"
+      },
+      {
+        "name": "Forward Angled Single Leg Calf Raise",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/STSingleLegForwardAngledCalfRaise"
+      },
+      {
+        "name": "Floor Board",
+        "url": "https://exrx.net/Stretches/Gastrocnemius/FloorBoard"
+      },
+      {
+        "name": "Pike",
+        "url": "https://exrx.net/Stretches/Gastrocnemius/Bentover"
+      },
+      {
+        "name": "Step",
+        "url": "https://exrx.net/Stretches/Gastrocnemius/Step"
+      },
+      {
+        "name": "Wall",
+        "url": "https://exrx.net/Stretches/Gastrocnemius/Wall"
+      }
+    ]
+  },
+  {
+    "muscle": "Gastrocnemius",
+    "url": "https://exrx.net/Lists/ExList/CalfWt#Gastrocnemius",
+    "exercises": [
+      {
+        "name": "Standing Calf Raise",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/BBStandingCalfRaise"
+      },
+      {
+        "name": "Belt Calf Raise",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/CBStandingCalfRaise"
+      },
+      {
+        "name": "One Arm Single Leg Calf Raise",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/CBOneArmSingleLegCalfRaise"
+      },
+      {
+        "name": "Standing Calf Raise",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/DBStandingCalfRaise"
+      },
+      {
+        "name": "Single Leg",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/DBSingleLegCalfRaise"
+      },
+      {
+        "name": "45° Calf Press",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/LV45CalfPress"
+      },
+      {
+        "name": "Calf Extension",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/LVSeatedCalfExtensionHammer"
+      },
+      {
+        "name": "Seated Calf Press",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/LVSeatedCalfPressH"
+      },
+      {
+        "name": "Standing Calf Raise",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/LVStandingCalfRaisePL"
+      },
+      {
+        "name": "45° Calf Raise",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/LV45CalfRaise"
+      },
+      {
+        "name": "Calf Extension",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/LVSeatedCalfExtension"
+      },
+      {
+        "name": "Donkey Calf Raise",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/LVDonkeyCalfRaise"
+      },
+      {
+        "name": "Seated Calf Press",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/LVSeatedCalfPress"
+      },
+      {
+        "name": "Standing Calf Raise",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/LVStandingCalfRaise"
+      },
+      {
+        "name": "45° Calf Press",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/SL45CalfPress"
+      },
+      {
+        "name": "45° Calf Raise",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/SL45CalfRaise"
+      },
+      {
+        "name": "Donkey Calf Raise",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/SLDonkeyCalfRaise"
+      },
+      {
+        "name": "Lying Calf Press",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/SLLyingCalfPress"
+      },
+      {
+        "name": "Seated Calf Press",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/SLSeatedCalfPress"
+      },
+      {
+        "name": "Standing Calf Raise",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/SLStandingCalfRaise"
+      },
+      {
+        "name": "Standing Calf Raise",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/SMStandingCalfRaise"
+      },
+      {
+        "name": "Single Leg Calf Raise",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/WTSingleLegCalfRaise"
+      },
+      {
+        "name": "Standing Calf Raise",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/BWStandingCalfRaise"
+      },
+      {
+        "name": "Single Leg",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/BWSingleLegCalfRaise"
+      },
+      {
+        "name": "Single Leg Calf Raise",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/ASSingleLegCalfRaiseSelf"
+      },
+      {
+        "name": "Forward Angled Single Leg Calf Raise",
+        "url": "https://exrx.net/WeightExercises/Gastrocnemius/STSingleLegForwardAngledCalfRaise"
+      },
+      {
+        "name": "Floor Board",
+        "url": "https://exrx.net/Stretches/Gastrocnemius/FloorBoard"
+      },
+      {
+        "name": "Pike",
+        "url": "https://exrx.net/Stretches/Gastrocnemius/Bentover"
+      },
+      {
+        "name": "Step",
+        "url": "https://exrx.net/Stretches/Gastrocnemius/Step"
+      },
+      {
+        "name": "Wall",
+        "url": "https://exrx.net/Stretches/Gastrocnemius/Wall"
+      }
+    ]
+  },
+  {
+    "muscle": "Soleus",
+    "url": "https://exrx.net/Lists/ExList/CalfWt#Soleus",
+    "exercises": [
+      {
+        "name": "Safety Barbell Seated Calf Raise",
+        "url": "https://exrx.net/WeightExercises/Soleus/SBSeatedCalfRaise"
+      },
+      {
+        "name": "Seated Calf Raise",
+        "url": "https://exrx.net/WeightExercises/Soleus/LVSeatedCalfRaiseH"
+      },
+      {
+        "name": "Seated Calf Raise",
+        "url": "https://exrx.net/WeightExercises/Soleus/LVSeatedCalfRaise"
+      },
+      {
+        "name": "Seated Calf Raise",
+        "url": "https://exrx.net/WeightExercises/Soleus/SMSeatedCalfRaise"
+      },
+      {
+        "name": "Floor Board",
+        "url": "https://exrx.net/Stretches/Soleus/FloorBoard"
+      },
+      {
+        "name": "Seated",
+        "url": "https://exrx.net/Stretches/Soleus/Seated"
+      },
+      {
+        "name": "Step",
+        "url": "https://exrx.net/Stretches/Soleus/Step"
+      },
+      {
+        "name": "Wall",
+        "url": "https://exrx.net/Stretches/Soleus/Wall"
+      }
+    ]
+  },
+  {
+    "muscle": "Tibialis Anterior",
+    "url": "https://exrx.net/Lists/ExList/CalfWt#Tibialis",
+    "exercises": [
+      {
+        "name": "Safety Bar Reverse Calf Raise",
+        "url": "https://exrx.net/WeightExercises/TibialisAnterior/SBReverseCalfRaise"
+      },
+      {
+        "name": "Reverse Calf Raise",
+        "url": "https://exrx.net/WeightExercises/TibialisAnterior/CBReverseCalfRaise"
+      },
+      {
+        "name": "Single Leg",
+        "url": "https://exrx.net/WeightExercises/TibialisAnterior/CBSingleLegReverseCalfRaise"
+      },
+      {
+        "name": "Reverse Calf Raise",
+        "url": "https://exrx.net/WeightExercises/TibialisAnterior/DBReverseCalfRaise"
+      },
+      {
+        "name": "Single Leg",
+        "url": "https://exrx.net/WeightExercises/TibialisAnterior/DBSingleLegRevCalfRaise"
+      },
+      {
+        "name": "45° Reverse Calf Press",
+        "url": "https://exrx.net/WeightExercises/TibialisAnterior/LV45ReverseCalfPress"
+      },
+      {
+        "name": "45° Reverse Calf Raise",
+        "url": "https://exrx.net/WeightExercises/TibialisAnterior/LV45ReverseCalfRaise"
+      },
+      {
+        "name": "Reverse Calf Raise",
+        "url": "https://exrx.net/WeightExercises/TibialisAnterior/LVReverseCalfRaisePL"
+      },
+      {
+        "name": "Reverse Calf Extension",
+        "url": "https://exrx.net/WeightExercises/TibialisAnterior/LVSeatedReverseCalfExtHammer"
+      },
+      {
+        "name": "Reverse Calf Extension",
+        "url": "https://exrx.net/WeightExercises/TibialisAnterior/LVReverseCalfExtension"
+      },
+      {
+        "name": "Reverse Calf Raise",
+        "url": "https://exrx.net/WeightExercises/TibialisAnterior/LVReverseCalfRaise"
+      },
+      {
+        "name": "45° Reverse Calf Press",
+        "url": "https://exrx.net/WeightExercises/TibialisAnterior/SL45ReverseCalfPress"
+      },
+      {
+        "name": "45° Reverse Calf Raise (plate loaded)",
+        "url": "https://exrx.net/WeightExercises/TibialisAnterior/SL45ReverseCalfRaisePL"
+      },
+      {
+        "name": "45° Reverse Calf Raise (on hack press)",
+        "url": "https://exrx.net/WeightExercises/TibialisAnterior/SL45ReverseCalfRaiseHackPress"
+      },
+      {
+        "name": "Hack Reverse Calf Raise",
+        "url": "https://exrx.net/WeightExercises/TibialisAnterior/SLHackReverseCalfRaise"
+      },
+      {
+        "name": "Lying Reverse Calf Press",
+        "url": "https://exrx.net/WeightExercises/TibialisAnterior/SLLyingReverseCalfPress"
+      },
+      {
+        "name": "Seated Reverse Calf Press",
+        "url": "https://exrx.net/WeightExercises/TibialisAnterior/SLSeatedReverseCalfPress"
+      },
+      {
+        "name": "Reverse Calf Raise",
+        "url": "https://exrx.net/WeightExercises/TibialisAnterior/SMReverseCalfRaise"
+      },
+      {
+        "name": "Reverse Calf Raise",
+        "url": "https://exrx.net/WeightExercises/TibialisAnterior/BWReverseCalfRaise"
+      },
+      {
+        "name": "Single Leg",
+        "url": "https://exrx.net/WeightExercises/TibialisAnterior/BWSingleLegRevCalfRaise"
+      },
+      {
+        "name": "Kneeling",
+        "url": "https://exrx.net/Stretches/TibialisAnterior/Kneeling"
+      },
+      {
+        "name": "Standing",
+        "url": "https://exrx.net/Stretches/TibialisAnterior/Standing"
+      }
+    ]
+  },
+  {
+    "muscle": "Popliteus",
+    "url": "https://exrx.net/Lists/ExList/CalfWt#Popliteus",
+    "exercises": [
+      {
+        "name": "Can Foot Roll",
+        "url": "https://exrx.net/Stretches/PlantarFascia/CanFootRoll"
+      }
+    ]
+  }
+]

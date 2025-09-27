@@ -1,6 +1,11 @@
 // scrapers/exrxDirectoryScraper.ts
 import puppeteer from "puppeteer-extra";
 import * as cheerio from "cheerio";
+import path from "path";
+import fs from "fs";
+import { saveDirectoryAsJSON } from "./scraper-save/saveExrxDirectory";
+
+const jsonPath = path.resolve(__dirname, "./scraped-json/exrxDirectory.json");
 
 export interface Muscle {
 	name: string;
@@ -13,6 +18,26 @@ export interface MuscleGroup {
 	url?: string;
 	muscles: Muscle[];
 }
+
+function normalizeExrxUrl(href: string | undefined) {
+	if (!href) return undefined;
+
+	// If the URL already starts with http(s), leave it
+	if (href.startsWith("http")) return href;
+
+	// Ensure it starts with /Lists/
+	if (href.startsWith("/")) {
+		return new URL(href, "https://exrx.net").href;
+	}
+
+	// Otherwise, relative path like ExList/Neck → prefix with /Lists/
+	if (!href.startsWith("Lists")) {
+		href = `Lists/${href}`;
+	}
+
+	return new URL("/" + href, "https://exrx.net").href;
+}
+
 
 /**
  * Parse a <ul> element (direct child UL) into an array of Muscle.
@@ -32,7 +57,7 @@ function parseMuscleList($: cheerio.CheerioAPI, ul: any): Muscle[] {
 			if (directAnchor.length) {
 				const name = directAnchor.text().trim();
 				const href = directAnchor.attr("href") || undefined;
-				const url = href ? new URL(href, "https://exrx.net").href : undefined;
+				const url = normalizeExrxUrl(href);
 
 				const muscle: Muscle = { name, url };
 
@@ -81,6 +106,15 @@ function parseMuscleList($: cheerio.CheerioAPI, ul: any): Muscle[] {
  * Scrape the /Lists/Directory page for groups -> muscles -> submuscles.
  */
 export async function scrapeExrxDirectory(directoryUrl = "https://exrx.net/Lists/Directory") {
+	let groups: MuscleGroup[];
+
+	if (fs.existsSync(jsonPath)) {
+		console.log("✅ Reading directory data from JSON...");
+		const raw = fs.readFileSync(jsonPath, "utf-8");
+		groups = JSON.parse(raw) as MuscleGroup[];
+		return groups;
+	}
+
 	const browser = await puppeteer.launch({ headless: false }); // set true if you have CF solved
 	const page = await browser.newPage();
 
@@ -125,6 +159,8 @@ export async function scrapeExrxDirectory(directoryUrl = "https://exrx.net/Lists
 
 			groups.push(group);
 		});
+
+		await saveDirectoryAsJSON(groups);
 
 		return groups;
 	} finally {

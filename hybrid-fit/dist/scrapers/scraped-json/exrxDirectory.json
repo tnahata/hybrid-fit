@@ -1,0 +1,262 @@
+[
+  {
+    "name": "Neck",
+    "url": "https://exrx.net/ExList/NeckWt",
+    "muscles": [
+      {
+        "name": "Sternocleidomastoid",
+        "url": "https://exrx.net/Lists/ExList/NeckWt#Sternocleidomastoid"
+      },
+      {
+        "name": "Splenius",
+        "url": "https://exrx.net/Lists/ExList/NeckWt#Splenius"
+      }
+    ]
+  },
+  {
+    "name": "Shoulders",
+    "url": "https://exrx.net/Lists/ExList/ShouldWt",
+    "muscles": [
+      {
+        "name": "Deltoid",
+        "submuscles": [
+          {
+            "name": "Anterior",
+            "url": "https://exrx.net/Lists/ExList/ShouldWt#Anterior"
+          },
+          {
+            "name": "Lateral",
+            "url": "https://exrx.net/Lists/ExList/ShouldWt#Lateral"
+          },
+          {
+            "name": "Posterior",
+            "url": "https://exrx.net/Lists/ExList/ShouldWt#Posterior"
+          }
+        ]
+      },
+      {
+        "name": "Supraspinatus",
+        "url": "https://exrx.net/Lists/ExList/ShouldWt#Supraspinatus"
+      }
+    ]
+  },
+  {
+    "name": "Upper Arms",
+    "url": "https://exrx.net/ExList/ArmWt",
+    "muscles": [
+      {
+        "name": "Triceps Brachii",
+        "url": "https://exrx.net/Lists/ExList/ArmWt#Triceps"
+      },
+      {
+        "name": "Biceps Brachii",
+        "url": "https://exrx.net/Lists/ExList/ArmWt#Biceps"
+      },
+      {
+        "name": "Brachialis",
+        "url": "https://exrx.net/Lists/ExList/ArmWt#Brachialis"
+      }
+    ]
+  },
+  {
+    "name": "Forearms",
+    "url": "https://exrx.net/ExList/ForeArmWt",
+    "muscles": [
+      {
+        "name": "Brachioradialis",
+        "url": "https://exrx.net/Lists/ExList/ForeArmWt#Brachioradialis"
+      },
+      {
+        "name": "Wrist",
+        "submuscles": [
+          {
+            "name": "Flexors",
+            "url": "https://exrx.net/Lists/ExList/ForeArmWt#WristFlexors"
+          },
+          {
+            "name": "Extensors",
+            "url": "https://exrx.net/Lists/ExList/ForeArmWt#Extensors"
+          }
+        ]
+      },
+      {
+        "name": "Pronators",
+        "url": "https://exrx.net/Lists/ExList/ForeArmWt#Pronators"
+      },
+      {
+        "name": "Supinators",
+        "url": "https://exrx.net/Lists/ExList/ForeArmWt#Supinators"
+      }
+    ]
+  },
+  {
+    "name": "Back",
+    "url": "https://exrx.net/ExList/BackWt",
+    "muscles": [
+      {
+        "name": "General",
+        "url": "https://exrx.net/Lists/ExList/BackWt#General"
+      },
+      {
+        "name": "Latissimus Dorsi & Teres Major",
+        "url": "https://exrx.net/Lists/ExList/BackWt#Latissimus"
+      },
+      {
+        "name": "Trapezius",
+        "submuscles": [
+          {
+            "name": "Upper",
+            "url": "https://exrx.net/Lists/ExList/BackWt#UpperTrap"
+          },
+          {
+            "name": "Middle",
+            "url": "https://exrx.net/Lists/ExList/BackWt#MiddleTrap"
+          },
+          {
+            "name": "Lower",
+            "url": "https://exrx.net/Lists/ExList/BackWt#Trapezius"
+          }
+        ]
+      },
+      {
+        "name": "Levator Scapulae",
+        "url": "https://exrx.net/Lists/ExList/BackWt#UpperTrap"
+      },
+      {
+        "name": "Rhomboids",
+        "url": "https://exrx.net/Lists/ExList/BackWt#Rhomboids"
+      },
+      {
+        "name": "Infraspinatus & Teres Minor",
+        "url": "https://exrx.net/Lists/ExList/BackWt#Infraspinatus"
+      },
+      {
+        "name": "Subscapularis",
+        "url": "https://exrx.net/Lists/ExList/BackWt#Subscapularis"
+      }
+    ]
+  },
+  {
+    "name": "Chest",
+    "url": "https://exrx.net/ExList/ChestWt",
+    "muscles": [
+      {
+        "name": "General",
+        "url": "https://exrx.net/Lists/ExList/ChestWt#General"
+      },
+      {
+        "name": "Pectoralis Major",
+        "submuscles": [
+          {
+            "name": "Sternal",
+            "url": "https://exrx.net/Lists/ExList/ChestWt#General"
+          },
+          {
+            "name": "Clavicular",
+            "url": "https://exrx.net/Lists/ExList/ChestWt#Clavicular"
+          }
+        ]
+      },
+      {
+        "name": "Pectoralis Minor",
+        "url": "https://exrx.net/Lists/ExList/ChestWt#Pectoralis"
+      },
+      {
+        "name": "Serratus Anterior",
+        "url": "https://exrx.net/Lists/ExList/ChestWt#Anterior"
+      }
+    ]
+  },
+  {
+    "name": "Waist",
+    "url": "https://exrx.net/ExList/WaistWt",
+    "muscles": [
+      {
+        "name": "Rectus Abdominis",
+        "url": "https://exrx.net/Lists/ExList/WaistWt#Rectus"
+      },
+      {
+        "name": "Transverse Abdominis",
+        "url": "https://exrx.net/Lists/ExList/WaistWt#Transverse"
+      },
+      {
+        "name": "Obliques",
+        "url": "https://exrx.net/Lists/ExList/WaistWt#Obliques"
+      },
+      {
+        "name": "Quadratus Lumborum",
+        "url": "https://exrx.net/Lists/ExList/WaistWt#Quadratus"
+      },
+      {
+        "name": "Erector Spinae",
+        "url": "https://exrx.net/Lists/ExList/WaistWt#Erector"
+      }
+    ]
+  },
+  {
+    "name": "Hips",
+    "url": "https://exrx.net/ExList/HipsWt",
+    "muscles": [
+      {
+        "name": "Gluteus Maximus",
+        "url": "https://exrx.net/Lists/ExList/HipsWt#Gluteus"
+      },
+      {
+        "name": "Abductors",
+        "url": "https://exrx.net/Lists/ExList/HipsWt#Abductors"
+      },
+      {
+        "name": "Flexors",
+        "url": "https://exrx.net/Lists/ExList/HipsWt#Hip"
+      },
+      {
+        "name": "Deep External Rotators",
+        "url": "https://exrx.net/Lists/ExList/HipsWt#DeepHip"
+      }
+    ]
+  },
+  {
+    "name": "Thighs",
+    "url": "https://exrx.net/ExList/ThighWt",
+    "muscles": [
+      {
+        "name": "Quadriceps",
+        "url": "https://exrx.net/Lists/ExList/ThighWt#Quadriceps"
+      },
+      {
+        "name": "Hamstrings",
+        "url": "https://exrx.net/Lists/ExList/ThighWt#Hamstrings"
+      },
+      {
+        "name": "Hip Adductors",
+        "url": "https://exrx.net/Lists/ExList/ThighWt#HipAdductors"
+      }
+    ]
+  },
+  {
+    "name": "Calves",
+    "url": "https://exrx.net/ExList/CalfWt",
+    "muscles": [
+      {
+        "name": "General",
+        "url": "https://exrx.net/Lists/ExList/CalfWt#Gastrocnemius"
+      },
+      {
+        "name": "Gastrocnemius",
+        "url": "https://exrx.net/Lists/ExList/CalfWt#Gastrocnemius"
+      },
+      {
+        "name": "Soleus",
+        "url": "https://exrx.net/Lists/ExList/CalfWt#Soleus"
+      },
+      {
+        "name": "Tibialis Anterior",
+        "url": "https://exrx.net/Lists/ExList/CalfWt#Tibialis"
+      },
+      {
+        "name": "Popliteus",
+        "url": "https://exrx.net/Lists/ExList/CalfWt#Popliteus"
+      }
+    ]
+  }
+]
