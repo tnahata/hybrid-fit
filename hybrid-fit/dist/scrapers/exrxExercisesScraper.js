@@ -41,7 +41,7 @@ const puppeteer_extra_1 = __importDefault(require("puppeteer-extra"));
 const cheerio = __importStar(require("cheerio"));
 const path_1 = __importDefault(require("path"));
 const fs_1 = __importDefault(require("fs"));
-const saveExrxDirectory_1 = require("./scraper-save/saveExrxDirectory");
+const saveDataAsJson_1 = require("./scraper-save/saveDataAsJson");
 const jsonPath = path_1.default.resolve(__dirname, "./scraped-json/exrxExercises.json");
 // Data cleaning and validation functions
 function cleanEquipmentName(equipment) {
@@ -475,6 +475,6 @@ async function scrapeExrxExercises(groups) {
             }
         }
     }
-    await (0, saveExrxDirectory_1.saveExercisesAsJSON)(results);
+    await (0, saveDataAsJson_1.saveExercisesAsJSON)(results);
     return results;
 }

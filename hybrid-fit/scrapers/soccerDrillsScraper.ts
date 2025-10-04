@@ -1,7 +1,7 @@
 import * as cheerio from 'cheerio';
 import * as fs from 'fs';
 import path from "path";
-import { saveSoccerDrills } from './scraper-save/saveExrxDirectory';
+import { saveSoccerDrills } from './scraper-save/saveDataAsJson';
 
 const jsonPath = path.resolve(__dirname, "./scraped-json/soccerDrills.json");
 

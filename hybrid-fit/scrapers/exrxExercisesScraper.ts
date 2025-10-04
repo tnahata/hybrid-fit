@@ -3,7 +3,7 @@ import * as cheerio from "cheerio";
 import { MuscleGroup, Muscle } from "./exrxDirectoryScraper";
 import path from "path";
 import fs from "fs";
-import { saveExercisesAsJSON } from "./scraper-save/saveExrxDirectory";
+import { saveExercisesAsJSON } from "./scraper-save/saveDataAsJson";
 
 const jsonPath = path.resolve(__dirname, "./scraped-json/exrxExercises.json");
 

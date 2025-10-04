@@ -42,7 +42,7 @@ const puppeteer_extra_1 = __importDefault(require("puppeteer-extra"));
 const cheerio = __importStar(require("cheerio"));
 const path_1 = __importDefault(require("path"));
 const fs_1 = __importDefault(require("fs"));
-const saveExrxDirectory_1 = require("./scraper-save/saveExrxDirectory");
+const saveDataAsJson_1 = require("./scraper-save/saveDataAsJson");
 const jsonPath = path_1.default.resolve(__dirname, "./scraped-json/exrxDirectory.json");
 function normalizeExrxUrl(href) {
     if (!href)
@@ -160,7 +160,7 @@ async function scrapeExrxDirectory(directoryUrl = "https://exrx.net/Lists/Direct
             });
             groups.push(group);
         });
-        await (0, saveExrxDirectory_1.saveDirectoryAsJSON)(groups);
+        await (0, saveDataAsJson_1.saveDirectoryAsJSON)(groups);
         return groups;
     }
     finally {

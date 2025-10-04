@@ -40,7 +40,7 @@ exports.scrapeSoccerDrills = scrapeSoccerDrills;
 const cheerio = __importStar(require("cheerio"));
 const fs = __importStar(require("fs"));
 const path_1 = __importDefault(require("path"));
-const saveExrxDirectory_1 = require("./scraper-save/saveExrxDirectory");
+const saveDataAsJson_1 = require("./scraper-save/saveDataAsJson");
 const jsonPath = path_1.default.resolve(__dirname, "./scraped-json/soccerDrills.json");
 async function scrapeSoccerDrills() {
     if (fs.existsSync(jsonPath)) {
@@ -138,6 +138,6 @@ async function scrapeSoccerDrills() {
             console.error(`Error scraping page ${page}:`, error);
         }
     }
-    await (0, saveExrxDirectory_1.saveSoccerDrills)(allDrills);
+    await (0, saveDataAsJson_1.saveSoccerDrills)(allDrills);
     return allDrills;
 }

@@ -3,7 +3,7 @@ import puppeteer from "puppeteer-extra";
 import * as cheerio from "cheerio";
 import path from "path";
 import fs from "fs";
-import { saveDirectoryAsJSON } from "./scraper-save/saveExrxDirectory";
+import { saveDirectoryAsJSON } from "./scraper-save/saveDataAsJson";
 
 const jsonPath = path.resolve(__dirname, "./scraped-json/exrxDirectory.json");
 
