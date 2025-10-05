@@ -594,13 +594,21 @@ function createWorkoutTemplate(workoutText: string): WorkoutTemplate {
         };
     }
 
-    // Fallback
+    // Fallback - create human-readable name from template ID
+    // Convert snake_case ID to Title Case name
+    const humanReadableName = templateId
+        .split('_')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ')
+        .replace(/\s+/g, ' ') // Replace multiple spaces with single space
+        .trim();
+
     return {
         _id: templateId,
-        name: workoutText,
+        name: humanReadableName,
         sport: "running",
         category: "general",
-        description: workoutText,
+        description: humanReadableName,
         metrics: {},
         tags: ["general"]
     };
@@ -692,8 +700,10 @@ export async function scrapeHalHigdonPlan(planUrl: string, planName: string, lev
             name = $("h1").first().text().trim() || $("title").first().text().trim();
         }
 
-        // Generate plan ID
-        const planId = name.toLowerCase().replace(/[^a-z0-9]/g, "_");
+        // Generate plan ID - include race type to ensure uniqueness
+        const raceTypeSlug = raceType.toLowerCase().replace(/[^a-z0-9]/g, "_");
+        const nameSlug = name.toLowerCase().replace(/[^a-z0-9]/g, "_");
+        const planId = `${raceTypeSlug}_${nameSlug}`;
 
         // Extract weekly schedule table
         const weeks: Array<{

@@ -1,6 +1,6 @@
 [
   {
-    "_id": "novice_1",
+    "_id": "marathon_novice_1",
     "name": "Novice 1",
     "sport": "running",
     "category": "endurance",
@@ -626,7 +626,7 @@
     ]
   },
   {
-    "_id": "novice_2",
+    "_id": "marathon_novice_2",
     "name": "Novice 2",
     "sport": "running",
     "category": "endurance",
@@ -1252,7 +1252,7 @@
     ]
   },
   {
-    "_id": "intermediate_1",
+    "_id": "marathon_intermediate_1",
     "name": "Intermediate 1",
     "sport": "running",
     "category": "endurance",
@@ -1878,7 +1878,7 @@
     ]
   },
   {
-    "_id": "intermediate_2",
+    "_id": "marathon_intermediate_2",
     "name": "Intermediate 2",
     "sport": "running",
     "category": "endurance",
@@ -2504,7 +2504,7 @@
     ]
   },
   {
-    "_id": "advanced_1",
+    "_id": "marathon_advanced_1",
     "name": "Advanced 1",
     "sport": "running",
     "category": "endurance",
@@ -3130,7 +3130,7 @@
     ]
   },
   {
-    "_id": "advanced_2",
+    "_id": "marathon_advanced_2",
     "name": "Advanced 2",
     "sport": "running",
     "category": "endurance",
@@ -3756,7 +3756,7 @@
     ]
   },
   {
-    "_id": "novice_1",
+    "_id": "half_marathon_novice_1",
     "name": "Novice 1",
     "sport": "running",
     "category": "endurance",
@@ -4184,7 +4184,7 @@
     ]
   },
   {
-    "_id": "novice_2",
+    "_id": "half_marathon_novice_2",
     "name": "Novice 2",
     "sport": "running",
     "category": "endurance",
@@ -4612,7 +4612,7 @@
     ]
   },
   {
-    "_id": "intermediate_1",
+    "_id": "half_marathon_intermediate_1",
     "name": "Intermediate 1",
     "sport": "running",
     "category": "endurance",
@@ -5040,7 +5040,7 @@
     ]
   },
   {
-    "_id": "intermediate_2",
+    "_id": "half_marathon_intermediate_2",
     "name": "Intermediate 2",
     "sport": "running",
     "category": "endurance",
@@ -5468,7 +5468,7 @@
     ]
   },
   {
-    "_id": "advanced",
+    "_id": "half_marathon_advanced",
     "name": "Advanced",
     "sport": "running",
     "category": "endurance",
@@ -5896,7 +5896,7 @@
     ]
   },
   {
-    "_id": "novice",
+    "_id": "5k_novice",
     "name": "Novice",
     "sport": "running",
     "category": "endurance",
@@ -6192,7 +6192,7 @@
     ]
   },
   {
-    "_id": "intermediate",
+    "_id": "5k_intermediate",
     "name": "Intermediate",
     "sport": "running",
     "category": "endurance",
@@ -6488,7 +6488,7 @@
     ]
   },
   {
-    "_id": "advanced",
+    "_id": "5k_advanced",
     "name": "Advanced",
     "sport": "running",
     "category": "endurance",
@@ -6784,7 +6784,7 @@
     ]
   },
   {
-    "_id": "novice",
+    "_id": "8k_novice",
     "name": "Novice",
     "sport": "running",
     "category": "endurance",
@@ -7080,7 +7080,7 @@
     ]
   },
   {
-    "_id": "intermediate",
+    "_id": "8k_intermediate",
     "name": "Intermediate",
     "sport": "running",
     "category": "endurance",
@@ -7376,7 +7376,7 @@
     ]
   },
   {
-    "_id": "advanced",
+    "_id": "8k_advanced",
     "name": "Advanced",
     "sport": "running",
     "category": "endurance",
@@ -7672,7 +7672,7 @@
     ]
   },
   {
-    "_id": "novice",
+    "_id": "10k_novice",
     "name": "Novice",
     "sport": "running",
     "category": "endurance",
@@ -7968,7 +7968,7 @@
     ]
   },
   {
-    "_id": "intermediate",
+    "_id": "10k_intermediate",
     "name": "Intermediate",
     "sport": "running",
     "category": "endurance",
@@ -8264,7 +8264,7 @@
     ]
   },
   {
-    "_id": "advanced",
+    "_id": "10k_advanced",
     "name": "Advanced",
     "sport": "running",
     "category": "endurance",
@@ -8560,7 +8560,7 @@
     ]
   },
   {
-    "_id": "novice",
+    "_id": "post_marathon_recovery_novice",
     "name": "Novice",
     "sport": "running",
     "category": "endurance",
@@ -8757,7 +8757,7 @@
     ]
   },
   {
-    "_id": "intermediate",
+    "_id": "post_marathon_recovery_intermediate",
     "name": "Intermediate",
     "sport": "running",
     "category": "endurance",
@@ -8954,7 +8954,7 @@
     ]
   },
   {
-    "_id": "advanced",
+    "_id": "post_marathon_recovery_advanced",
     "name": "Advanced",
     "sport": "running",
     "category": "endurance",

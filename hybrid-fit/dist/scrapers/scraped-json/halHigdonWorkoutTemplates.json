@@ -1,10 +1,10 @@
 [
   {
     "_id": "rest_day",
-    "name": "rest_day",
+    "name": "Rest Day",
     "sport": "running",
     "category": "general",
-    "description": "rest_day",
+    "description": "Rest Day",
     "metrics": {},
     "tags": [
       "general"
@@ -1031,10 +1031,10 @@
   },
   {
     "_id": "rest_or_run_walk",
-    "name": "rest_or_run_walk",
+    "name": "Rest Or Run Walk",
     "sport": "running",
     "category": "general",
-    "description": "rest_or_run_walk",
+    "description": "Rest Or Run Walk",
     "metrics": {},
     "tags": [
       "general"
@@ -1367,10 +1367,10 @@
   },
   {
     "_id": "stretch___strength",
-    "name": "stretch___strength",
+    "name": "Stretch Strength",
     "sport": "running",
     "category": "general",
-    "description": "stretch___strength",
+    "description": "Stretch Strength",
     "metrics": {},
     "tags": [
       "general"
