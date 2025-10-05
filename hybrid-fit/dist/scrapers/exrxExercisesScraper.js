@@ -41,8 +41,8 @@ const puppeteer_extra_1 = __importDefault(require("puppeteer-extra"));
 const cheerio = __importStar(require("cheerio"));
 const path_1 = __importDefault(require("path"));
 const fs_1 = __importDefault(require("fs"));
-const saveDataAsJson_1 = require("./scraper-save/saveDataAsJson");
-const jsonPath = path_1.default.resolve(__dirname, "./scraped-json/exrxExercises.json");
+const directoryPath = path_1.default.resolve(__dirname, "./scraped-json/exrxDirectory.json");
+const transformedJsonPath = path_1.default.resolve(__dirname, "./scraped-json/exrxExercisesTransformed.json");
 // Data cleaning and validation functions
 function cleanEquipmentName(equipment) {
     if (!equipment)
@@ -151,6 +151,10 @@ function extractMuscleReferences(text) {
     });
     return found;
 }
+// Utility function to add delay between requests
+function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 function parseExerciseStructure($, container) {
     const exercises = [];
     // Find all top-level <ul> elements in the container
@@ -251,13 +255,11 @@ function parseNestedExercises($, ul, equipment, exercises, parentCategory) {
 /**
  * Scrape a single muscle page (e.g. Quadriceps list) for exercises + variations.
  */
-async function scrapeMusclePage(url, muscleName) {
+async function scrapeMusclePage(url, muscleName, page) {
     console.log(`➡️ Starting scrape for muscle: ${muscleName}`);
     console.log(`   URL: ${url}`);
-    const browser = await puppeteer_extra_1.default.launch({ headless: false });
-    const page = await browser.newPage();
     try {
-        await page.goto(url, { waitUntil: "networkidle2" });
+        await page.goto(url, { waitUntil: "networkidle2", timeout: 60000 });
         const html = await page.content();
         const $ = cheerio.load(html);
         // Clean up
@@ -444,37 +446,270 @@ async function scrapeMusclePage(url, muscleName) {
         }
         return { muscle: muscleName, url, exercises: finalExercises };
     }
-    finally {
-        await browser.close();
+    catch (error) {
+        console.error(`Error scraping ${muscleName}:`, error);
+        return { muscle: muscleName, url, exercises: [] };
     }
+}
+function inferDifficulty(exerciseName, equipment) {
+    if (!equipment)
+        return 'medium';
+    const name = exerciseName.toLowerCase();
+    const equip = equipment.toLowerCase();
+    // Body weight exercises
+    if (equip.includes('body weight') || equip.includes('bodyweight')) {
+        if (name.includes('assisted') || name.includes('wall'))
+            return 'beginner';
+        if (name.includes('weighted') || name.includes('one arm') || name.includes('one leg'))
+            return 'advanced';
+        return 'medium';
+    }
+    // Machine exercises (generally easier to control)
+    if (equip.includes('lever') || equip.includes('selectorized') || equip.includes('smith')) {
+        return 'beginner';
+    }
+    // Cable exercises
+    if (equip.includes('cable')) {
+        if (name.includes('one arm') || name.includes('single'))
+            return 'medium';
+        return 'beginner';
+    }
+    // Free weights
+    if (equip.includes('dumbbell')) {
+        if (name.includes('one arm') || name.includes('single'))
+            return 'medium';
+        return 'beginner';
+    }
+    if (equip.includes('barbell')) {
+        if (name.includes('one arm') || name.includes('snatch') || name.includes('clean'))
+            return 'advanced';
+        return 'medium';
+    }
+    // Kettlebell
+    if (equip.includes('kettlebell')) {
+        if (name.includes('snatch') || name.includes('clean') || name.includes('turkish'))
+            return 'advanced';
+        return 'medium';
+    }
+    // Bands and suspension
+    if (equip.includes('band') || equip.includes('suspension')) {
+        return 'beginner';
+    }
+    // Default
+    return 'medium';
+}
+function buildMuscleToBodyPartMap(directory) {
+    const map = new Map();
+    for (const bodyPart of directory) {
+        for (const muscle of bodyPart.muscles) {
+            // Handle muscles with submuscles (e.g., "Anterior", "Lateral", "Posterior" for Deltoid)
+            if (muscle.submuscles && muscle.submuscles.length > 0) {
+                for (const submuscle of muscle.submuscles) {
+                    // Map both the full name and just the submuscle name
+                    const fullMuscleName = `${muscle.name} ${submuscle.name}`;
+                    map.set(fullMuscleName, bodyPart.name);
+                    map.set(submuscle.name, bodyPart.name);
+                }
+            }
+            else {
+                // Regular muscle mapping
+                map.set(muscle.name, bodyPart.name);
+            }
+        }
+    }
+    return map;
+}
+function transformExercises(rawData) {
+    console.log("📖 Reading exrxDirectory.json for body part mapping...");
+    if (!fs_1.default.existsSync(directoryPath)) {
+        console.log("⚠️  Warning: exrxDirectory.json not found. Using muscle names as focus.");
+        return transformWithoutDirectory(rawData);
+    }
+    const directoryRaw = fs_1.default.readFileSync(directoryPath, "utf-8");
+    const directoryData = JSON.parse(directoryRaw);
+    console.log("🗺️  Building muscle to body part mapping...");
+    const muscleToBodyPart = buildMuscleToBodyPartMap(directoryData);
+    const transformedExercises = [];
+    console.log("🔄 Transforming exercises to exercise documents...");
+    for (const muscleGroup of rawData) {
+        const bodyPart = muscleToBodyPart.get(muscleGroup.muscle) || muscleGroup.muscle;
+        for (const exercise of muscleGroup.exercises) {
+            // Skip exercises without equipment (likely incomplete data)
+            if (!exercise.equipment) {
+                continue;
+            }
+            // Clean equipment name - remove invisible Unicode characters and trim
+            const cleanedEquipment = exercise.equipment
+                .replace(/[\u200B-\u200D\uFEFF]/g, '') // Remove zero-width spaces and similar
+                .trim();
+            // Skip invalid data (too short, doesn't start with capital letter)
+            if (!cleanedEquipment || cleanedEquipment.length < 3 || !cleanedEquipment.match(/^[A-Z]/)) {
+                continue;
+            }
+            // Check if this is a stretch exercise
+            const isStretch = cleanedEquipment.toLowerCase().includes('stretch');
+            // Add the main exercise
+            const mainExercise = {
+                name: exercise.name,
+                category: isStretch ? "stretch" : "strength",
+                sport: "strength_training",
+                focus: bodyPart,
+                difficulty: isStretch ? "beginner" : inferDifficulty(exercise.name, cleanedEquipment),
+                equipment: isStretch ? [] : [cleanedEquipment],
+                description: "",
+                sourceUrl: exercise.url,
+                details: {
+                    muscle: muscleGroup.muscle,
+                    equipmentType: isStretch ? null : cleanedEquipment,
+                    variationOf: null
+                },
+                durationMinutes: null
+            };
+            transformedExercises.push(mainExercise);
+            // Add variations if they exist
+            if (exercise.variations && exercise.variations.length > 0) {
+                for (const variation of exercise.variations) {
+                    const varEquipment = (variation.equipment || exercise.equipment)
+                        .replace(/[\u200B-\u200D\uFEFF]/g, '') // Remove zero-width spaces
+                        .trim();
+                    // Skip invalid variations
+                    if (!varEquipment || varEquipment.length < 3 || !varEquipment.match(/^[A-Z]/)) {
+                        continue;
+                    }
+                    // Check if variation is a stretch exercise
+                    const isVariationStretch = varEquipment.toLowerCase().includes('stretch');
+                    const variationExercise = {
+                        name: variation.name,
+                        category: isVariationStretch ? "stretch" : "strength",
+                        sport: "strength_training",
+                        focus: bodyPart,
+                        difficulty: isVariationStretch ? "beginner" : inferDifficulty(variation.name, varEquipment),
+                        equipment: isVariationStretch ? [] : [varEquipment],
+                        description: "",
+                        sourceUrl: variation.url,
+                        details: {
+                            muscle: muscleGroup.muscle,
+                            equipmentType: isVariationStretch ? null : varEquipment,
+                            variationOf: exercise.name
+                        },
+                        durationMinutes: null
+                    };
+                    transformedExercises.push(variationExercise);
+                }
+            }
+        }
+    }
+    console.log(`✅ Transformed ${transformedExercises.length} exercises`);
+    return transformedExercises;
+}
+function transformWithoutDirectory(rawData) {
+    const transformedExercises = [];
+    for (const muscleGroup of rawData) {
+        for (const exercise of muscleGroup.exercises) {
+            if (!exercise.equipment)
+                continue;
+            // Clean equipment name - remove invisible Unicode characters and trim
+            const cleanedEquipment = exercise.equipment
+                .replace(/[\u200B-\u200D\uFEFF]/g, '') // Remove zero-width spaces and similar
+                .trim();
+            // Skip invalid data (too short, doesn't start with capital letter)
+            if (!cleanedEquipment || cleanedEquipment.length < 3 || !cleanedEquipment.match(/^[A-Z]/)) {
+                continue;
+            }
+            // Check if this is a stretch exercise
+            const isStretch = cleanedEquipment.toLowerCase().includes('stretch');
+            transformedExercises.push({
+                name: exercise.name,
+                category: isStretch ? "stretch" : "strength",
+                sport: "strength_training",
+                focus: muscleGroup.muscle,
+                difficulty: isStretch ? "beginner" : inferDifficulty(exercise.name, cleanedEquipment),
+                equipment: isStretch ? [] : [cleanedEquipment],
+                description: "",
+                sourceUrl: exercise.url,
+                details: {
+                    muscle: muscleGroup.muscle,
+                    equipmentType: isStretch ? null : cleanedEquipment,
+                    variationOf: null
+                },
+                durationMinutes: null
+            });
+            if (exercise.variations && exercise.variations.length > 0) {
+                for (const variation of exercise.variations) {
+                    const varEquipment = (variation.equipment || exercise.equipment)
+                        .replace(/[\u200B-\u200D\uFEFF]/g, '') // Remove zero-width spaces
+                        .trim();
+                    // Skip invalid variations
+                    if (!varEquipment || varEquipment.length < 3 || !varEquipment.match(/^[A-Z]/)) {
+                        continue;
+                    }
+                    // Check if variation is a stretch exercise
+                    const isVariationStretch = varEquipment.toLowerCase().includes('stretch');
+                    transformedExercises.push({
+                        name: variation.name,
+                        category: isVariationStretch ? "stretch" : "strength",
+                        sport: "strength_training",
+                        focus: muscleGroup.muscle,
+                        difficulty: isVariationStretch ? "beginner" : inferDifficulty(variation.name, varEquipment),
+                        equipment: isVariationStretch ? [] : [varEquipment],
+                        description: "",
+                        sourceUrl: variation.url,
+                        details: {
+                            muscle: muscleGroup.muscle,
+                            equipmentType: isVariationStretch ? null : varEquipment,
+                            variationOf: exercise.name
+                        },
+                        durationMinutes: null
+                    });
+                }
+            }
+        }
+    }
+    return transformedExercises;
 }
 /**
  * Given the result of scrapeExrxDirectory, scrape all muscle exercise pages.
  */
 async function scrapeExrxExercises(groups) {
     let results = [];
-    if (fs_1.default.existsSync(jsonPath)) {
-        console.log("✅ Reading exercise data from JSON...");
-        const raw = fs_1.default.readFileSync(jsonPath, "utf-8");
-        results = JSON.parse(raw);
-        return results;
+    if (fs_1.default.existsSync(transformedJsonPath)) {
+        console.log("✅ Transformed exercise data already exists. Skipping scrape.");
+        const raw = fs_1.default.readFileSync(transformedJsonPath, "utf-8");
+        return JSON.parse(raw);
     }
-    for (const group of groups) {
-        for (const muscle of group.muscles) {
-            if (muscle.url) {
-                const muscleExercises = await scrapeMusclePage(muscle.url, muscle.name);
-                results.push(muscleExercises);
-            }
-            if (muscle.submuscles) {
-                for (const sub of muscle.submuscles) {
-                    if (sub.url) {
-                        const subExercises = await scrapeMusclePage(sub.url, sub.name);
-                        results.push(subExercises);
+    // Launch a single browser instance for all scraping
+    const browser = await puppeteer_extra_1.default.launch({ headless: false });
+    const page = await browser.newPage();
+    try {
+        for (const group of groups) {
+            for (const muscle of group.muscles) {
+                if (muscle.url) {
+                    const muscleExercises = await scrapeMusclePage(muscle.url, muscle.name, page);
+                    results.push(muscleExercises);
+                    // Add 2 second delay between requests
+                    await delay(2000);
+                }
+                if (muscle.submuscles) {
+                    for (const sub of muscle.submuscles) {
+                        if (sub.url) {
+                            const subExercises = await scrapeMusclePage(sub.url, sub.name, page);
+                            results.push(subExercises);
+                            // Add 2 second delay between requests
+                            await delay(2000);
+                        }
                     }
                 }
             }
         }
+        // Transform the raw exercises to exercise documents
+        const transformedExercises = transformExercises(results);
+        // Save only the transformed exercises
+        console.log("💾 Saving transformed exercises to exrxExercisesTransformed.json...");
+        fs_1.default.writeFileSync(transformedJsonPath, JSON.stringify(transformedExercises, null, 2), "utf-8");
+        console.log("✅ Transformed exercises saved!");
+        return transformedExercises;
     }
-    await (0, saveDataAsJson_1.saveExercisesAsJSON)(results);
-    return results;
+    finally {
+        await browser.close();
+    }
 }
