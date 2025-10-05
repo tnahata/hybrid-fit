@@ -41,8 +41,11 @@ const cheerio = __importStar(require("cheerio"));
 const fs = __importStar(require("fs"));
 const path_1 = __importDefault(require("path"));
 const saveDataAsJson_1 = require("./scraper-save/saveDataAsJson");
-const transformSoccerDrills_1 = require("./transformSoccerDrills");
 const jsonPath = path_1.default.resolve(__dirname, "./scraped-json/soccerDrills.json");
+function parseDurationMinutes(duration) {
+    const match = duration.match(/(\d+)/);
+    return match ? parseInt(match[1], 10) : 0;
+}
 async function scrapeSoccerDrills() {
     if (fs.existsSync(jsonPath)) {
         console.log("✅ Reading soccer drills from JSON...");
@@ -64,14 +67,8 @@ async function scrapeSoccerDrills() {
             $('.col.sx-card').each((_, element) => {
                 const $card = $(element);
                 const $cardBody = $card.find('.card-body');
-                // Extract title and URL
-                const titleLink = $card.find('a.btn-outline-success');
+                // Extract title
                 const title = $cardBody.find('.sx-card-title').text().trim();
-                const url = titleLink.attr('href') || '';
-                const fullUrl = url.startsWith('http') ? url : `https://www.soccerxpert.com${url}`;
-                // Extract image
-                const image = $card.find('img.card-img-top').attr('src') || '';
-                const fullImageUrl = image.startsWith('http') ? image : `https://www.soccerxpert.com${image}`;
                 // Extract description
                 const description = $cardBody.find('.card-text.sx-card-text').text().trim();
                 // Extract metadata from table
@@ -117,18 +114,21 @@ async function scrapeSoccerDrills() {
                     });
                 });
                 const drill = {
-                    title,
-                    url: fullUrl,
+                    name: title,
+                    category: 'drill',
+                    sport: 'soccer',
+                    focus: focus.toLowerCase(),
+                    difficulty: difficulty.toLowerCase(),
                     description,
-                    image: fullImageUrl,
-                    age,
-                    fieldSize,
-                    players,
-                    focus,
-                    difficulty,
-                    duration,
-                    goalkeeper,
-                    type
+                    details: {
+                        age,
+                        fieldSize,
+                        players,
+                        goalkeeper: goalkeeper.toLowerCase(),
+                        type: type.toLowerCase(),
+                        duration
+                    },
+                    durationMinutes: parseDurationMinutes(duration)
                 };
                 allDrills.push(drill);
             });
@@ -139,9 +139,7 @@ async function scrapeSoccerDrills() {
             console.error(`Error scraping page ${page}:`, error);
         }
     }
-    // Transform to new structure
-    const transformedDrills = (0, transformSoccerDrills_1.transformSoccerDrills)(allDrills);
-    // Save transformed drills
-    await (0, saveDataAsJson_1.saveSoccerDrills)(transformedDrills);
-    return transformedDrills;
+    // Save drills
+    await (0, saveDataAsJson_1.saveSoccerDrills)(allDrills);
+    return allDrills;
 }

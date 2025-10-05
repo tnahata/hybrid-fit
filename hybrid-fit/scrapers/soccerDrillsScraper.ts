@@ -2,31 +2,38 @@ import * as cheerio from 'cheerio';
 import * as fs from 'fs';
 import path from "path";
 import { saveSoccerDrills } from './scraper-save/saveDataAsJson';
-import { transformSoccerDrills, NewDrill } from './transformSoccerDrills';
 
 const jsonPath = path.resolve(__dirname, "./scraped-json/soccerDrills.json");
 
-interface SoccerDrill {
-    title: string;
-    url: string;
-    description: string;
-    image: string;
-    age: string;
-    fieldSize: string;
-    players: string;
+export interface SoccerDrill {
+    name: string;
+    category: string;
+    sport: string;
     focus: string;
     difficulty: string;
-    duration: string;
-    goalkeeper: string;
-    type: string;
+    description: string;
+    details: {
+        age: string;
+        fieldSize: string;
+        players: string;
+        goalkeeper: string;
+        type: string;
+        duration: string;
+    };
+    durationMinutes: number;
 }
 
-async function scrapeSoccerDrills(): Promise<NewDrill[]> {
+function parseDurationMinutes(duration: string): number {
+    const match = duration.match(/(\d+)/);
+    return match ? parseInt(match[1], 10) : 0;
+}
+
+async function scrapeSoccerDrills(): Promise<SoccerDrill[]> {
 
     if (fs.existsSync(jsonPath)) {
         console.log("✅ Reading soccer drills from JSON...");
         const raw = fs.readFileSync(jsonPath, "utf-8");
-        let drills = JSON.parse(raw) as NewDrill[];
+        let drills = JSON.parse(raw) as SoccerDrill[];
         return drills;
     }
 
@@ -49,15 +56,8 @@ async function scrapeSoccerDrills(): Promise<NewDrill[]> {
                 const $card = $(element);
                 const $cardBody = $card.find('.card-body');
 
-                // Extract title and URL
-                const titleLink = $card.find('a.btn-outline-success');
+                // Extract title
                 const title = $cardBody.find('.sx-card-title').text().trim();
-                const url = titleLink.attr('href') || '';
-                const fullUrl = url.startsWith('http') ? url : `https://www.soccerxpert.com${url}`;
-
-                // Extract image
-                const image = $card.find('img.card-img-top').attr('src') || '';
-                const fullImageUrl = image.startsWith('http') ? image : `https://www.soccerxpert.com${image}`;
 
                 // Extract description
                 const description = $cardBody.find('.card-text.sx-card-text').text().trim();
@@ -102,18 +102,21 @@ async function scrapeSoccerDrills(): Promise<NewDrill[]> {
                 });
 
                 const drill: SoccerDrill = {
-                    title,
-                    url: fullUrl,
+                    name: title,
+                    category: 'drill',
+                    sport: 'soccer',
+                    focus: focus.toLowerCase(),
+                    difficulty: difficulty.toLowerCase(),
                     description,
-                    image: fullImageUrl,
-                    age,
-                    fieldSize,
-                    players,
-                    focus,
-                    difficulty,
-                    duration,
-                    goalkeeper,
-                    type
+                    details: {
+                        age,
+                        fieldSize,
+                        players,
+                        goalkeeper: goalkeeper.toLowerCase(),
+                        type: type.toLowerCase(),
+                        duration
+                    },
+                    durationMinutes: parseDurationMinutes(duration)
                 };
 
                 allDrills.push(drill);
@@ -127,13 +130,10 @@ async function scrapeSoccerDrills(): Promise<NewDrill[]> {
         }
     }
 
-    // Transform to new structure
-    const transformedDrills = transformSoccerDrills(allDrills);
+    // Save drills
+    await saveSoccerDrills(allDrills);
 
-    // Save transformed drills
-    await saveSoccerDrills(transformedDrills);
-
-    return transformedDrills;
+    return allDrills;
 }
 
-export { scrapeSoccerDrills, SoccerDrill };
+export { scrapeSoccerDrills };
