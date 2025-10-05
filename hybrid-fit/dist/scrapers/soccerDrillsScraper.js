@@ -41,6 +41,7 @@ const cheerio = __importStar(require("cheerio"));
 const fs = __importStar(require("fs"));
 const path_1 = __importDefault(require("path"));
 const saveDataAsJson_1 = require("./scraper-save/saveDataAsJson");
+const transformSoccerDrills_1 = require("./transformSoccerDrills");
 const jsonPath = path_1.default.resolve(__dirname, "./scraped-json/soccerDrills.json");
 async function scrapeSoccerDrills() {
     if (fs.existsSync(jsonPath)) {
@@ -138,6 +139,9 @@ async function scrapeSoccerDrills() {
             console.error(`Error scraping page ${page}:`, error);
         }
     }
-    await (0, saveDataAsJson_1.saveSoccerDrills)(allDrills);
-    return allDrills;
+    // Transform to new structure
+    const transformedDrills = (0, transformSoccerDrills_1.transformSoccerDrills)(allDrills);
+    // Save transformed drills
+    await (0, saveDataAsJson_1.saveSoccerDrills)(transformedDrills);
+    return transformedDrills;
 }

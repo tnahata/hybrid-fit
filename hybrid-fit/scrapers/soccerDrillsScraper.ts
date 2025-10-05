@@ -2,6 +2,7 @@ import * as cheerio from 'cheerio';
 import * as fs from 'fs';
 import path from "path";
 import { saveSoccerDrills } from './scraper-save/saveDataAsJson';
+import { transformSoccerDrills, NewDrill } from './transformSoccerDrills';
 
 const jsonPath = path.resolve(__dirname, "./scraped-json/soccerDrills.json");
 
@@ -20,12 +21,12 @@ interface SoccerDrill {
     type: string;
 }
 
-async function scrapeSoccerDrills(): Promise<SoccerDrill[]> {
+async function scrapeSoccerDrills(): Promise<NewDrill[]> {
 
     if (fs.existsSync(jsonPath)) {
         console.log("✅ Reading soccer drills from JSON...");
         const raw = fs.readFileSync(jsonPath, "utf-8");
-        let drills = JSON.parse(raw) as SoccerDrill[];
+        let drills = JSON.parse(raw) as NewDrill[];
         return drills;
     }
 
@@ -126,9 +127,13 @@ async function scrapeSoccerDrills(): Promise<SoccerDrill[]> {
         }
     }
 
-    await saveSoccerDrills(allDrills);
+    // Transform to new structure
+    const transformedDrills = transformSoccerDrills(allDrills);
 
-    return allDrills;
+    // Save transformed drills
+    await saveSoccerDrills(transformedDrills);
+
+    return transformedDrills;
 }
 
 export { scrapeSoccerDrills, SoccerDrill };

@@ -2,8 +2,8 @@ import { MuscleGroup } from "../exrxDirectoryScraper";
 import { MuscleExercises } from "../exrxExercisesScraper";
 import fs from "fs";
 import path from "path";
-import { SoccerDrill } from "../soccerDrillsScraper";
 import { RunningDrill } from "../runCoachDrillsScraper";
+import { NewDrill } from "../transformSoccerDrills";
 
 export async function saveDirectoryAsJSON(groups: MuscleGroup[]) {
     try {
@@ -39,7 +39,7 @@ export async function saveExercisesAsJSON(exercises: MuscleExercises[]) {
     }
 }
 
-export async function saveSoccerDrills(drills: SoccerDrill[]) {
+export async function saveSoccerDrills(drills: NewDrill[]) {
     try {
 
         const dir = path.resolve(__dirname, "../scraped-json");
