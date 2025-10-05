@@ -72,3 +72,23 @@ export async function saveRunningDrills(drills: RunningDrill[]) {
         console.error("❌ Error saving running drills:", err);
     }
 }
+
+export async function saveHalHigdonPlans(plans: any[], templates: any[]) {
+    try {
+        const dir = path.resolve(__dirname, "../scraped-json");
+        if (!fs.existsSync(dir)) {
+            fs.mkdirSync(dir, { recursive: true });
+        }
+
+        const plansFile = path.join(dir, "halHigdonTrainingPlans.json");
+        const templatesFile = path.join(dir, "halHigdonWorkoutTemplates.json");
+
+        fs.writeFileSync(plansFile, JSON.stringify(plans, null, 2), "utf-8");
+        fs.writeFileSync(templatesFile, JSON.stringify(templates, null, 2), "utf-8");
+
+        console.log(`✅ Hal Higdon training plans saved to ${plansFile}`);
+        console.log(`✅ Hal Higdon workout templates saved to ${templatesFile}`);
+    } catch (err) {
+        console.error("❌ Error saving Hal Higdon data:", err);
+    }
+}

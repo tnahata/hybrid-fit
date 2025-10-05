@@ -11,7 +11,8 @@
     "test-directory-scraper": "npm run build:scrapers && node dist/scrapers/scraper-test/testExrxDirectoryScraper",
     "test-exercise-scraper": "npm run build:scrapers && node dist/scrapers/scraper-test/testExrxExerciseScraper",
     "test-soccer-drills-scraper": "npm run build:scrapers && node dist/scrapers/scraper-test/testSoccerDrillsScraper",
-    "test-run-coach-drills-scraper": "npm run build:scrapers && node dist/scrapers/scraper-test/testRunCoachDrillsScraper"
+    "test-run-coach-drills-scraper": "npm run build:scrapers && node dist/scrapers/scraper-test/testRunCoachDrillsScraper",
+    "test-hal-higdon-scraper": "npm run build:scrapers && node dist/scrapers/scraper-test/testHalHigdonScraper"
   },
   "dependencies": {
     "axios": "^1.12.2",
