@@ -1,203 +1,375 @@
 [
   {
+    "_id": "toe_walking",
     "name": "Toe Walking",
     "sport": "running",
-    "instructions": [
-      "Strong calves and resilient feet are important for distance runners aiming to finish a race efficiently and injury-free. The toe walking drill is a simple yet powerful way to activate the small stabilizing muscles in your feet while also strengthening your calves. Incorporating this drill into your warm-up or strength routine can improve foot control, enhance push-off power, and support better running mechanics from the ground up. Watch on YouTube."
+    "category": "drill",
+    "description": "Strong calves and resilient feet are important for distance runners aiming to finish a race efficiently and injury-free. The toe walking drill is a simple yet powerful way to activate the small stabilizing muscles in your feet while also strengthening your calves. Incorporating this drill into your warm-up or strength routine can improve foot control, enhance push-off power, and support better running mechanics from the ground up. Watch on YouTube.",
+    "focus": [
+      "form",
+      "power",
+      "calf strength",
+      "foot control",
+      "warmup"
     ],
+    "difficulty": "medium",
+    "equipment": "None",
     "sourceUrl": "https://runcoach.com/index.php?option=com_k2&view=item&id=673:running-drills-toe-walking&Itemid=444"
   },
   {
+    "_id": "heel_walking",
     "name": "Heel Walking",
     "sport": "running",
-    "instructions": [
-      "Just like toe walking strengthens your calves and feet, heel walking shifts the focus to the front of the lower leg - specifically the shin muscles. This drill activates the tibialis anterior, a key muscle for foot control and stability during running. Regularly practicing heel walking can help improve ankle mobility, reinforce proper foot mechanics, and play an important role in preventing shin splints, a common issue among distance runners logging serious miles. Watch on YouTube."
+    "category": "drill",
+    "description": "Just like toe walking strengthens your calves and feet, heel walking shifts the focus to the front of the lower leg - specifically the shin muscles. This drill activates the tibialis anterior, a key muscle for foot control and stability during running. Regularly practicing heel walking can help improve ankle mobility, reinforce proper foot mechanics, and play an important role in preventing shin splints, a common issue among distance runners logging serious miles. Watch on YouTube.",
+    "focus": [
+      "form",
+      "calf strength",
+      "shin strength",
+      "foot control",
+      "flexibility"
     ],
+    "difficulty": "easy",
+    "equipment": "None",
     "sourceUrl": "https://runcoach.com/index.php?option=com_k2&view=item&id=675:running-drills-heel-walking&Itemid=444"
   },
   {
+    "_id": "rhythm_skip",
     "name": "Rhythm Skip",
     "sport": "running",
-    "instructions": [
-      "High knee lift isn’t just for sprinters, distance runners need it too. The rhythm skip drill is a good way to strengthen your hip flexors and improve coordination. By combining lift with forward motion, this drill encourages better flexibility and helps lengthen your stride over time. Watch on YouTube."
+    "category": "drill",
+    "description": "High knee lift isn’t just for sprinters, distance runners need it too. The rhythm skip drill is a good way to strengthen your hip flexors and improve coordination. By combining lift with forward motion, this drill encourages better flexibility and helps lengthen your stride over time. Watch on YouTube.",
+    "focus": [
+      "knee lift",
+      "coordination",
+      "stride",
+      "flexibility"
     ],
+    "difficulty": "medium",
+    "equipment": "None",
     "sourceUrl": "https://runcoach.com/index.php?option=com_k2&view=item&id=680:running-drills-rhythm-skip&Itemid=444"
   },
   {
+    "_id": "bounding",
     "name": "Bounding",
     "sport": "running",
-    "instructions": [
-      "Your run stride should feel strong and springy - that’s where bounding comes in. This explosive drill focuses on developing power through your stride by exaggerating your running motion. Bounding strengthens your glutes, hamstrings, and calves while improving coordination. It teaches your body to push off the ground with more power, translating into a more efficient, faster, and stronger running stride. Watch on YouTube."
+    "category": "drill",
+    "description": "Your run stride should feel strong and springy - that’s where bounding comes in. This explosive drill focuses on developing power through your stride by exaggerating your running motion. Bounding strengthens your glutes, hamstrings, and calves while improving coordination. It teaches your body to push off the ground with more power, translating into a more efficient, faster, and stronger running stride. Watch on YouTube.",
+    "focus": [
+      "coordination",
+      "stride",
+      "power",
+      "calf strength",
+      "hamstring strength",
+      "glute strength"
     ],
+    "difficulty": "medium",
+    "equipment": "None",
     "sourceUrl": "https://runcoach.com/index.php?option=com_k2&view=item&id=677:running-drills-bounding&Itemid=444"
   },
   {
+    "_id": "high_knees",
     "name": "High Knees",
     "sport": "running",
-    "instructions": [
-      "Think quick and high: “As high as you can, as fast as you can.”  That’s the rhythm behind the high knees drill. This dynamic movement fires up your hip flexors, activates your core, and improves leg turnover - all while reinforcing powerful knee drive. When done consistently, high knees help translate speed and efficiency directly into your running form, making your stride more explosive and controlled. Watch on YouTube."
+    "category": "drill",
+    "description": "Think quick and high: “As high as you can, as fast as you can.”  That’s the rhythm behind the high knees drill. This dynamic movement fires up your hip flexors, activates your core, and improves leg turnover - all while reinforcing powerful knee drive. When done consistently, high knees help translate speed and efficiency directly into your running form, making your stride more explosive and controlled. Watch on YouTube.",
+    "focus": [
+      "knee lift",
+      "coordination",
+      "form",
+      "stride",
+      "power",
+      "speed"
     ],
+    "difficulty": "medium",
+    "equipment": "None",
     "sourceUrl": "https://runcoach.com/index.php?option=com_k2&view=item&id=676:running-drills-high-knees&Itemid=444"
   },
   {
+    "_id": "butt_kicks",
     "name": "Butt Kicks",
     "sport": "running",
-    "instructions": [
-      "Butt kicks do more than just stretch your quads, they help prepare them to stay strong and active throughout your run. This drill targets the front of the thigh, which plays a key role in knee lift and running speed. Quads often fatigue late in long races, making it harder to lift your feet and maintain form. Butt kicks help keep these muscles flexible, engaged, and ready to power you through the finish line, without the shuffle! Watch on YouTube."
+    "category": "drill",
+    "description": "Butt kicks do more than just stretch your quads, they help prepare them to stay strong and active throughout your run. This drill targets the front of the thigh, which plays a key role in knee lift and running speed. Quads often fatigue late in long races, making it harder to lift your feet and maintain form. Butt kicks help keep these muscles flexible, engaged, and ready to power you through the finish line, without the shuffle! Watch on YouTube.",
+    "focus": [
+      "knee lift",
+      "form",
+      "power",
+      "speed",
+      "quad strength"
     ],
+    "difficulty": "medium",
+    "equipment": "None",
     "sourceUrl": "https://runcoach.com/index.php?option=com_k2&view=item&id=678:running-drills-butt-kicks&Itemid=444"
   },
   {
+    "_id": "carioca",
     "name": "Carioca",
     "sport": "running",
-    "instructions": [
-      "Carioca is a dynamic drill that trains your body to move powerfully. By crossing one leg over the other while moving laterally, this drill challenges coordination, improves hip mobility, and enhances balance. For runners, Carioca is especially useful for engaging the core and activating the muscles around the hips and glutes, key for maintaining stability and efficiency on every stride when fatigue sets in. Watch on YouTube."
+    "category": "drill",
+    "description": "Carioca is a dynamic drill that trains your body to move powerfully. By crossing one leg over the other while moving laterally, this drill challenges coordination, improves hip mobility, and enhances balance. For runners, Carioca is especially useful for engaging the core and activating the muscles around the hips and glutes, key for maintaining stability and efficiency on every stride when fatigue sets in. Watch on YouTube.",
+    "focus": [
+      "coordination",
+      "stride",
+      "power",
+      "glute strength",
+      "flexibility"
     ],
+    "difficulty": "medium",
+    "equipment": "None",
     "sourceUrl": "https://runcoach.com/index.php?option=com_k2&view=item&id=679:running-drills-carioca&Itemid=444"
   },
   {
+    "_id": "strides",
     "name": "Strides",
     "sport": "running",
-    "instructions": [
-      "Think 100-meter strides are only for sprinters? Think again. Whether you train for the 5K, 10K, half marathon, or a full marathon, strides are one of the simplest and most powerful tools you can use to become a stronger, more efficient runner.",
-      "Strides teach your body how to run fast with good form. Each short burst is a chance to focus on posture, turnover, and speed. Done consistently, they reinforce better mechanics that carry over into your easy runs, tempo workouts, and race day performance.",
-      "They’re short. They’re fun. And yes, they work! Watch on YouTube."
+    "category": "drill",
+    "description": "Think 100-meter strides are only for sprinters? Think again. Whether you train for the 5K, 10K, half marathon, or a full marathon, strides are one of the simplest and most powerful tools you can use to become a stronger, more efficient runner. Strides teach your body how to run fast with good form. Each short burst is a chance to focus on posture, turnover, and speed. Done consistently, they reinforce better mechanics that carry over into your easy runs, tempo workouts, and race day performance. They’re short. They’re fun. And yes, they work! Watch on YouTube.",
+    "focus": [
+      "form",
+      "stride",
+      "power",
+      "speed"
     ],
+    "difficulty": "medium",
+    "equipment": "None",
     "sourceUrl": "https://runcoach.com/index.php?option=com_k2&view=item&id=674:running-drills-strides&Itemid=105"
   },
   {
+    "_id": "rhythm_skip",
     "name": "Rhythm Skip",
     "sport": "running",
-    "instructions": [
-      "High knee lift isn’t just for sprinters, distance runners need it too. The rhythm skip drill is a good way to strengthen your hip flexors and improve coordination. By combining lift with forward motion, this drill encourages better flexibility and helps lengthen your stride over time. Watch on YouTube."
+    "category": "drill",
+    "description": "High knee lift isn’t just for sprinters, distance runners need it too. The rhythm skip drill is a good way to strengthen your hip flexors and improve coordination. By combining lift with forward motion, this drill encourages better flexibility and helps lengthen your stride over time. Watch on YouTube.",
+    "focus": [
+      "knee lift",
+      "coordination",
+      "stride",
+      "flexibility"
     ],
+    "difficulty": "medium",
+    "equipment": "None",
     "sourceUrl": "https://runcoach.com/index.php?option=com_k2&view=item&id=680:running-drills-rhythm-skip"
   },
   {
+    "_id": "carioca",
     "name": "Carioca",
     "sport": "running",
-    "instructions": [
-      "Carioca is a dynamic drill that trains your body to move powerfully. By crossing one leg over the other while moving laterally, this drill challenges coordination, improves hip mobility, and enhances balance. For runners, Carioca is especially useful for engaging the core and activating the muscles around the hips and glutes, key for maintaining stability and efficiency on every stride when fatigue sets in. Watch on YouTube."
+    "category": "drill",
+    "description": "Carioca is a dynamic drill that trains your body to move powerfully. By crossing one leg over the other while moving laterally, this drill challenges coordination, improves hip mobility, and enhances balance. For runners, Carioca is especially useful for engaging the core and activating the muscles around the hips and glutes, key for maintaining stability and efficiency on every stride when fatigue sets in. Watch on YouTube.",
+    "focus": [
+      "coordination",
+      "stride",
+      "power",
+      "glute strength",
+      "flexibility"
     ],
+    "difficulty": "medium",
+    "equipment": "None",
     "sourceUrl": "https://runcoach.com/index.php?option=com_k2&view=item&id=679:running-drills-carioca"
   },
   {
+    "_id": "butt_kicks",
     "name": "Butt Kicks",
     "sport": "running",
-    "instructions": [
-      "Butt kicks do more than just stretch your quads, they help prepare them to stay strong and active throughout your run. This drill targets the front of the thigh, which plays a key role in knee lift and running speed. Quads often fatigue late in long races, making it harder to lift your feet and maintain form. Butt kicks help keep these muscles flexible, engaged, and ready to power you through the finish line, without the shuffle! Watch on YouTube."
+    "category": "drill",
+    "description": "Butt kicks do more than just stretch your quads, they help prepare them to stay strong and active throughout your run. This drill targets the front of the thigh, which plays a key role in knee lift and running speed. Quads often fatigue late in long races, making it harder to lift your feet and maintain form. Butt kicks help keep these muscles flexible, engaged, and ready to power you through the finish line, without the shuffle! Watch on YouTube.",
+    "focus": [
+      "knee lift",
+      "form",
+      "power",
+      "speed",
+      "quad strength"
     ],
+    "difficulty": "medium",
+    "equipment": "None",
     "sourceUrl": "https://runcoach.com/index.php?option=com_k2&view=item&id=678:running-drills-butt-kicks"
   },
   {
+    "_id": "bounding",
     "name": "Bounding",
     "sport": "running",
-    "instructions": [
-      "Your run stride should feel strong and springy - that’s where bounding comes in. This explosive drill focuses on developing power through your stride by exaggerating your running motion. Bounding strengthens your glutes, hamstrings, and calves while improving coordination. It teaches your body to push off the ground with more power, translating into a more efficient, faster, and stronger running stride. Watch on YouTube."
+    "category": "drill",
+    "description": "Your run stride should feel strong and springy - that’s where bounding comes in. This explosive drill focuses on developing power through your stride by exaggerating your running motion. Bounding strengthens your glutes, hamstrings, and calves while improving coordination. It teaches your body to push off the ground with more power, translating into a more efficient, faster, and stronger running stride. Watch on YouTube.",
+    "focus": [
+      "coordination",
+      "stride",
+      "power",
+      "calf strength",
+      "hamstring strength",
+      "glute strength"
     ],
+    "difficulty": "medium",
+    "equipment": "None",
     "sourceUrl": "https://runcoach.com/index.php?option=com_k2&view=item&id=677:running-drills-bounding"
   },
   {
+    "_id": "high_knees",
     "name": "High Knees",
     "sport": "running",
-    "instructions": [
-      "Think quick and high: “As high as you can, as fast as you can.”  That’s the rhythm behind the high knees drill. This dynamic movement fires up your hip flexors, activates your core, and improves leg turnover - all while reinforcing powerful knee drive. When done consistently, high knees help translate speed and efficiency directly into your running form, making your stride more explosive and controlled. Watch on YouTube."
+    "category": "drill",
+    "description": "Think quick and high: “As high as you can, as fast as you can.”  That’s the rhythm behind the high knees drill. This dynamic movement fires up your hip flexors, activates your core, and improves leg turnover - all while reinforcing powerful knee drive. When done consistently, high knees help translate speed and efficiency directly into your running form, making your stride more explosive and controlled. Watch on YouTube.",
+    "focus": [
+      "knee lift",
+      "coordination",
+      "form",
+      "stride",
+      "power",
+      "speed"
     ],
+    "difficulty": "medium",
+    "equipment": "None",
     "sourceUrl": "https://runcoach.com/index.php?option=com_k2&view=item&id=676:running-drills-high-knees"
   },
   {
+    "_id": "heel_walking",
     "name": "Heel Walking",
     "sport": "running",
-    "instructions": [
-      "Just like toe walking strengthens your calves and feet, heel walking shifts the focus to the front of the lower leg - specifically the shin muscles. This drill activates the tibialis anterior, a key muscle for foot control and stability during running. Regularly practicing heel walking can help improve ankle mobility, reinforce proper foot mechanics, and play an important role in preventing shin splints, a common issue among distance runners logging serious miles. Watch on YouTube."
+    "category": "drill",
+    "description": "Just like toe walking strengthens your calves and feet, heel walking shifts the focus to the front of the lower leg - specifically the shin muscles. This drill activates the tibialis anterior, a key muscle for foot control and stability during running. Regularly practicing heel walking can help improve ankle mobility, reinforce proper foot mechanics, and play an important role in preventing shin splints, a common issue among distance runners logging serious miles. Watch on YouTube.",
+    "focus": [
+      "form",
+      "calf strength",
+      "shin strength",
+      "foot control",
+      "flexibility"
     ],
+    "difficulty": "easy",
+    "equipment": "None",
     "sourceUrl": "https://runcoach.com/index.php?option=com_k2&view=item&id=675:running-drills-heel-walking"
   },
   {
+    "_id": "strides",
     "name": "Strides",
     "sport": "running",
-    "instructions": [
-      "Think 100-meter strides are only for sprinters? Think again. Whether you train for the 5K, 10K, half marathon, or a full marathon, strides are one of the simplest and most powerful tools you can use to become a stronger, more efficient runner.",
-      "Strides teach your body how to run fast with good form. Each short burst is a chance to focus on posture, turnover, and speed. Done consistently, they reinforce better mechanics that carry over into your easy runs, tempo workouts, and race day performance.",
-      "They’re short. They’re fun. And yes, they work! Watch on YouTube."
+    "category": "drill",
+    "description": "Think 100-meter strides are only for sprinters? Think again. Whether you train for the 5K, 10K, half marathon, or a full marathon, strides are one of the simplest and most powerful tools you can use to become a stronger, more efficient runner. Strides teach your body how to run fast with good form. Each short burst is a chance to focus on posture, turnover, and speed. Done consistently, they reinforce better mechanics that carry over into your easy runs, tempo workouts, and race day performance. They’re short. They’re fun. And yes, they work! Watch on YouTube.",
+    "focus": [
+      "form",
+      "stride",
+      "power",
+      "speed"
     ],
+    "difficulty": "medium",
+    "equipment": "None",
     "sourceUrl": "https://runcoach.com/index.php?option=com_k2&view=item&id=674:running-drills-strides"
   },
   {
+    "_id": "toe_walking",
     "name": "Toe Walking",
     "sport": "running",
-    "instructions": [
-      "Strong calves and resilient feet are important for distance runners aiming to finish a race efficiently and injury-free. The toe walking drill is a simple yet powerful way to activate the small stabilizing muscles in your feet while also strengthening your calves. Incorporating this drill into your warm-up or strength routine can improve foot control, enhance push-off power, and support better running mechanics from the ground up. Watch on YouTube."
+    "category": "drill",
+    "description": "Strong calves and resilient feet are important for distance runners aiming to finish a race efficiently and injury-free. The toe walking drill is a simple yet powerful way to activate the small stabilizing muscles in your feet while also strengthening your calves. Incorporating this drill into your warm-up or strength routine can improve foot control, enhance push-off power, and support better running mechanics from the ground up. Watch on YouTube.",
+    "focus": [
+      "form",
+      "power",
+      "calf strength",
+      "foot control",
+      "warmup"
     ],
+    "difficulty": "medium",
+    "equipment": "None",
     "sourceUrl": "https://runcoach.com/index.php?option=com_k2&view=item&id=673:running-drills-toe-walking"
   },
   {
+    "_id": "toe_walking_10_20m_then_stride_out_remaining_80m",
     "name": "Toe Walking 10 20m Then Stride Out Remaining 80m",
     "sport": "running",
-    "instructions": [
-      "Distance runners need strong calves and feet in order to reach the finish line of a",
-      "marathon or half marathon.  This drill will help activate all the tiny muscles in the feet",
-      "and challenge your calves."
+    "category": "drill",
+    "description": "Distance runners need strong calves and feet in order to reach the finish line of a marathon or half marathon.  This drill will help activate all the tiny muscles in the feet and challenge your calves.",
+    "focus": [
+      "stride",
+      "calf strength"
     ],
+    "difficulty": "easy",
+    "equipment": "None",
     "sourceUrl": "https://runcoach.com/index.php?option=com_k2&view=item&id=13:running-drills-toe-walking-10-20m-then-stride-out-remaining-80m"
   },
   {
+    "_id": "bounding_20_35m",
     "name": "Bounding 20 35m",
     "sport": "running",
-    "instructions": [
-      "With every step you take on a run, you want your foot to strike off the ground with as",
-      "much power as possible.  This drill will prepare your body to do that."
+    "category": "drill",
+    "description": "With every step you take on a run, you want your foot to strike off the ground with as much power as possible.  This drill will prepare your body to do that.",
+    "focus": [
+      "power",
+      "foot control"
     ],
+    "difficulty": "medium",
+    "equipment": "None",
     "sourceUrl": "https://runcoach.com/index.php?option=com_k2&view=item&id=10:running-drills-bounding-20-35m"
   },
   {
+    "_id": "high_knees_15_25m",
     "name": "High Knees 15 25m",
     "sport": "running",
-    "instructions": [
-      "As high as you can get, as quick as you can get, as high as you can get, as quick as",
-      "you can get....keep repeating that to yourself as you do this drill.  That increased",
-      "turnover and increased knee drive will soon carry over to your running form."
+    "category": "drill",
+    "description": "As high as you can get, as quick as you can get, as high as you can get, as quick as you can get....keep repeating that to yourself as you do this drill.  That increased turnover and increased knee drive will soon carry over to your running form.",
+    "focus": [
+      "knee lift",
+      "form",
+      "speed"
     ],
+    "difficulty": "easy",
+    "equipment": "None",
     "sourceUrl": "https://runcoach.com/index.php?option=com_k2&view=item&id=9:running-drills-high-knees-15-25m"
   },
   {
+    "_id": "heel_walking_10_20m",
     "name": "Heel Walking 10 20m",
     "sport": "running",
-    "instructions": [
-      "Like the previous drill, heel walking targets the muscles of the lower leg, ankle, and",
-      "foot.  More of the emphasis, however, is on the shin.  This drill plays an important role",
-      "in the prevention of shin splints (one of the most common complaints of distance"
+    "category": "drill",
+    "description": "Like the previous drill, heel walking targets the muscles of the lower leg, ankle, and foot.  More of the emphasis, however, is on the shin.  This drill plays an important role in the prevention of shin splints (one of the most common complaints of distance",
+    "focus": [
+      "shin strength",
+      "foot control"
     ],
+    "difficulty": "easy",
+    "equipment": "None",
     "sourceUrl": "https://runcoach.com/index.php?option=com_k2&view=item&id=12:running-drills-heel-walking-10-20m"
   },
   {
+    "_id": "rhythm_skip_20_35m",
     "name": "Rhythm Skip 20 35m",
     "sport": "running",
-    "instructions": [
-      "You might think that marathoners don't need high knee lift, but they do!  This drill will",
-      "help strengthen your hip flexors, improve your flexibility, and lengthen your stride."
+    "category": "drill",
+    "description": "You might think that marathoners don't need high knee lift, but they do!  This drill will help strengthen your hip flexors, improve your flexibility, and lengthen your stride.",
+    "focus": [
+      "knee lift",
+      "coordination",
+      "stride",
+      "flexibility"
     ],
+    "difficulty": "medium",
+    "equipment": "None",
     "sourceUrl": "https://runcoach.com/index.php?option=com_k2&view=item&id=11:running-drills-rhythm-skip-20-35m"
   },
   {
+    "_id": "butt_kick_15_25m",
     "name": "Butt Kick 15 25m",
     "sport": "running",
-    "instructions": [
-      "Butt kicks are a great way to stretch the quadriceps (the muscle     in the front of the",
-      "thigh).  The quads are important for lifting your knees and     increasing your speed.",
-      "Quads are often the first thing to go at the end     of marathons, causing runners to come",
-      "shuffling across the finish     line because they have a hard time lifting their feet off the",
-      "ground.  This drill will keep that muscle flexible and ready for action."
+    "category": "drill",
+    "description": "Butt kicks are a great way to stretch the quadriceps (the muscle     in the front of the thigh).  The quads are important for lifting your knees and     increasing your speed. Quads are often the first thing to go at the end     of marathons, causing runners to come shuffling across the finish     line because they have a hard time lifting their feet off the ground.  This drill will keep that muscle flexible and ready for action.",
+    "focus": [
+      "knee lift",
+      "speed",
+      "quad strength"
     ],
+    "difficulty": "easy",
+    "equipment": "None",
     "sourceUrl": "https://runcoach.com/index.php?option=com_k2&view=item&id=8:running-drills-butt-kick-15-25m"
   },
   {
+    "_id": "quick_skip_15_25m",
     "name": "Quick Skip 15 25m",
     "sport": "running",
-    "instructions": [
-      "For Quick Skips, don't worry about the distance that you cover.  This drill is all about",
-      "maximizing turnover and minimizing the amount of time that your feet spend on the"
+    "category": "drill",
+    "description": "For Quick Skips, don't worry about the distance that you cover.  This drill is all about maximizing turnover and minimizing the amount of time that your feet spend on the",
+    "focus": [
+      "speed"
     ],
+    "difficulty": "easy",
+    "equipment": "None",
     "sourceUrl": "https://runcoach.com/index.php?option=com_k2&view=item&id=7:running-drills-quick-skip-15-25m"
   }
 ]
