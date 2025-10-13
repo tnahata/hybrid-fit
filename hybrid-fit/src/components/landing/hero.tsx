@@ -13,8 +13,8 @@ export function Hero() {
                 Discover drills, exercises, and training plans personalized to your sport goals.
             </p>
             <div className="mt-8 flex gap-4">
-                <Link href="/signup">
-                    <Button size="lg">Get Started</Button>
+                <Link href="/dashboard">
+                    <Button size="lg">View Dashboard</Button>
                 </Link>
                 <Link href="/exercises">
                     <Button variant="outline" size="lg">Browse Exercises</Button>
