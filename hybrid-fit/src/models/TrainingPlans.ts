@@ -13,8 +13,6 @@ export interface TrainingPlanWeek {
 export interface TrainingPlanDetails {
     goal: string;
     planType: string;
-    weeklyStructure?: string[];
-    sessionGlossary?: Record<string, string>;
 }
 
 export interface TrainingPlanDoc extends Document {

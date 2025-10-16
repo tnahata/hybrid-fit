@@ -16,8 +16,6 @@ export interface TrainingPlanWeek {
 export interface TrainingPlanDetails {
 	goal: string;
 	planType: string;
-	weeklyStructure?: string[];
-	sessionGlossary?: Record<string, string>;
 }
 
 export interface NormalizedTrainingPlan {
@@ -60,9 +58,7 @@ function normalizeTrainingPlan(plan: any): NormalizedTrainingPlan {
 		sourceUrl: plan.sourceUrl?.trim() || undefined,
 		details: {
 			goal: plan.details?.goal?.trim() || "",
-			planType: plan.details?.planType?.trim() || "",
-			weeklyStructure: plan.details?.weeklyStructure || [],
-			sessionGlossary: plan.details?.sessionGlossary || {},
+			planType: plan.details?.planType?.trim() || ""
 		},
 		weeks: Array.isArray(plan.weeks)
 			? plan.weeks.map((week: any) => ({

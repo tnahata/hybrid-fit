@@ -9,24 +9,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/marathon-training/novice-1-marathon/",
     "details": {
       "goal": "Marathon",
-      "planType": "Novice 1",
-      "weeklyStructure": [
-        "Mon: Rest",
-        "Tue: 3 mi run",
-        "Wed: 3 mi run",
-        "Thu: 3 mi run",
-        "Fri: Rest",
-        "Sat: 6 mi run",
-        "Sun: Cross"
-      ],
-      "sessionGlossary": {
-        "Easy Run": "Run at an easy, conversational pace to build aerobic capacity.",
-        "Pace Run": "Run at your target race pace.",
-        "Long Run": "Long distance run at steady pace for endurance.",
-        "Cross Training": "Low-impact aerobic exercise (swimming, cycling, walking).",
-        "Rest": "Recovery day - no running.",
-        "Race": "Race day effort."
-      }
+      "planType": "Novice 1"
     },
     "weeks": [
       {
@@ -635,24 +618,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/marathon-training/novice-2-marathon/",
     "details": {
       "goal": "Marathon",
-      "planType": "Novice 2",
-      "weeklyStructure": [
-        "Mon: Rest",
-        "Tue: 3 mi run",
-        "Wed: 5 mi pace",
-        "Thu: 3 mi run",
-        "Fri: Rest",
-        "Sat: 8 mi run",
-        "Sun: Cross"
-      ],
-      "sessionGlossary": {
-        "Easy Run": "Run at an easy, conversational pace to build aerobic capacity.",
-        "Pace Run": "Run at your target race pace.",
-        "Long Run": "Long distance run at steady pace for endurance.",
-        "Cross Training": "Low-impact aerobic exercise (swimming, cycling, walking).",
-        "Rest": "Recovery day - no running.",
-        "Race": "Race day effort."
-      }
+      "planType": "Novice 2"
     },
     "weeks": [
       {
@@ -1261,24 +1227,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/marathon-training/intermediate-1-marathon/",
     "details": {
       "goal": "Marathon",
-      "planType": "Intermediate 1",
-      "weeklyStructure": [
-        "Mon: Cross",
-        "Tue: 3 mi run",
-        "Wed: 5 mi run",
-        "Thu: 3 mi run",
-        "Fri: Rest",
-        "Sat: 5 mi pace",
-        "Sun: 8 mi run"
-      ],
-      "sessionGlossary": {
-        "Easy Run": "Run at an easy, conversational pace to build aerobic capacity.",
-        "Pace Run": "Run at your target race pace.",
-        "Long Run": "Long distance run at steady pace for endurance.",
-        "Cross Training": "Low-impact aerobic exercise (swimming, cycling, walking).",
-        "Rest": "Recovery day - no running.",
-        "Race": "Race day effort."
-      }
+      "planType": "Intermediate 1"
     },
     "weeks": [
       {
@@ -1887,24 +1836,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/marathon-training/intermediate-2-marathon/",
     "details": {
       "goal": "Marathon",
-      "planType": "Intermediate 2",
-      "weeklyStructure": [
-        "Mon: Cross",
-        "Tue: 3 mi run",
-        "Wed: 5 mi run",
-        "Thu: 3 mi run",
-        "Fri: Rest",
-        "Sat: 5 mi pace",
-        "Sun: 10 mi run"
-      ],
-      "sessionGlossary": {
-        "Easy Run": "Run at an easy, conversational pace to build aerobic capacity.",
-        "Pace Run": "Run at your target race pace.",
-        "Long Run": "Long distance run at steady pace for endurance.",
-        "Cross Training": "Low-impact aerobic exercise (swimming, cycling, walking).",
-        "Rest": "Recovery day - no running.",
-        "Race": "Race day effort."
-      }
+      "planType": "Intermediate 2"
     },
     "weeks": [
       {
@@ -2513,24 +2445,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/marathon-training/advanced-1-marathon/",
     "details": {
       "goal": "Marathon",
-      "planType": "Advanced 1",
-      "weeklyStructure": [
-        "Mon: 3 mi run",
-        "Tue: 5 mi run",
-        "Wed: 3 mi run",
-        "Thu: 3 x hill",
-        "Fri: Rest",
-        "Sat: 5 mi pace",
-        "Sun: 10 mi run"
-      ],
-      "sessionGlossary": {
-        "Easy Run": "Run at an easy, conversational pace to build aerobic capacity.",
-        "Pace Run": "Run at your target race pace.",
-        "Long Run": "Long distance run at steady pace for endurance.",
-        "Cross Training": "Low-impact aerobic exercise (swimming, cycling, walking).",
-        "Rest": "Recovery day - no running.",
-        "Race": "Race day effort."
-      }
+      "planType": "Advanced 1"
     },
     "weeks": [
       {
@@ -3139,24 +3054,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/marathon-training/advanced-2-marathon/",
     "details": {
       "goal": "Marathon",
-      "planType": "Advanced 2",
-      "weeklyStructure": [
-        "Mon: 3 mi run",
-        "Tue: 3 x hill",
-        "Wed: 3 mi run",
-        "Thu: 30 tempo",
-        "Fri: Rest",
-        "Sat: 5 mi pace",
-        "Sun: 10 mi run"
-      ],
-      "sessionGlossary": {
-        "Easy Run": "Run at an easy, conversational pace to build aerobic capacity.",
-        "Pace Run": "Run at your target race pace.",
-        "Long Run": "Long distance run at steady pace for endurance.",
-        "Cross Training": "Low-impact aerobic exercise (swimming, cycling, walking).",
-        "Rest": "Recovery day - no running.",
-        "Race": "Race day effort."
-      }
+      "planType": "Advanced 2"
     },
     "weeks": [
       {
@@ -3765,24 +3663,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/half-marathon-training/novice-1-half-marathon/",
     "details": {
       "goal": "Half Marathon",
-      "planType": "Novice 1",
-      "weeklyStructure": [
-        "Mon: Rest",
-        "Tue: 3 mi run",
-        "Wed: 2 mi run or cross",
-        "Thu: 3 mi run",
-        "Fri: Rest",
-        "Sat: 30 min cross",
-        "Sun: 4 mi run"
-      ],
-      "sessionGlossary": {
-        "Easy Run": "Run at an easy, conversational pace to build aerobic capacity.",
-        "Pace Run": "Run at your target race pace.",
-        "Long Run": "Long distance run at steady pace for endurance.",
-        "Cross Training": "Low-impact aerobic exercise (swimming, cycling, walking).",
-        "Rest": "Recovery day - no running.",
-        "Race": "Race day effort."
-      }
+      "planType": "Novice 1"
     },
     "weeks": [
       {
@@ -4193,24 +4074,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/half-marathon-training/novice-2-half-marathon/",
     "details": {
       "goal": "Half Marathon",
-      "planType": "Novice 2",
-      "weeklyStructure": [
-        "Mon: Rest",
-        "Tue: 3 mi run",
-        "Wed: 3 mi run",
-        "Thu: 3 mi run",
-        "Fri: Rest",
-        "Sat: 4 mi run",
-        "Sun: 60 min cross"
-      ],
-      "sessionGlossary": {
-        "Easy Run": "Run at an easy, conversational pace to build aerobic capacity.",
-        "Pace Run": "Run at your target race pace.",
-        "Long Run": "Long distance run at steady pace for endurance.",
-        "Cross Training": "Low-impact aerobic exercise (swimming, cycling, walking).",
-        "Rest": "Recovery day - no running.",
-        "Race": "Race day effort."
-      }
+      "planType": "Novice 2"
     },
     "weeks": [
       {
@@ -4621,24 +4485,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/half-marathon-training/intermediate-1-half-marathon/",
     "details": {
       "goal": "Half Marathon",
-      "planType": "Intermediate 1",
-      "weeklyStructure": [
-        "Mon: 30 min cross",
-        "Tue: 3 mi run",
-        "Wed: 4 mi run",
-        "Thu: 3 mi run",
-        "Fri: Rest",
-        "Sat: 3 mi run",
-        "Sun: 4 mi run"
-      ],
-      "sessionGlossary": {
-        "Easy Run": "Run at an easy, conversational pace to build aerobic capacity.",
-        "Pace Run": "Run at your target race pace.",
-        "Long Run": "Long distance run at steady pace for endurance.",
-        "Cross Training": "Low-impact aerobic exercise (swimming, cycling, walking).",
-        "Rest": "Recovery day - no running.",
-        "Race": "Race day effort."
-      }
+      "planType": "Intermediate 1"
     },
     "weeks": [
       {
@@ -5049,24 +4896,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/half-marathon-training/intermediate-2-half-marathon/",
     "details": {
       "goal": "Half Marathon",
-      "planType": "Intermediate 2",
-      "weeklyStructure": [
-        "Mon: 30 min cross",
-        "Tue: 3 mi run",
-        "Wed: 5 x 400 5-K pace",
-        "Thu: 3 mi run",
-        "Fri: Rest",
-        "Sat: 3 mi run",
-        "Sun: 5 mi run"
-      ],
-      "sessionGlossary": {
-        "Easy Run": "Run at an easy, conversational pace to build aerobic capacity.",
-        "Pace Run": "Run at your target race pace.",
-        "Long Run": "Long distance run at steady pace for endurance.",
-        "Cross Training": "Low-impact aerobic exercise (swimming, cycling, walking).",
-        "Rest": "Recovery day - no running.",
-        "Race": "Race day effort."
-      }
+      "planType": "Intermediate 2"
     },
     "weeks": [
       {
@@ -5477,24 +5307,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/half-marathon-training/advanced-half-marathon/",
     "details": {
       "goal": "Half Marathon",
-      "planType": "Advanced",
-      "weeklyStructure": [
-        "Mon: 3 mi run",
-        "Tue: 6 x hill",
-        "Wed: 3 mi run",
-        "Thu: 40 min tempo",
-        "Fri: Rest",
-        "Sat: 3 mi run",
-        "Sun: 90 min run (3/1)"
-      ],
-      "sessionGlossary": {
-        "Easy Run": "Run at an easy, conversational pace to build aerobic capacity.",
-        "Pace Run": "Run at your target race pace.",
-        "Long Run": "Long distance run at steady pace for endurance.",
-        "Cross Training": "Low-impact aerobic exercise (swimming, cycling, walking).",
-        "Rest": "Recovery day - no running.",
-        "Race": "Race day effort."
-      }
+      "planType": "Advanced"
     },
     "weeks": [
       {
@@ -5905,24 +5718,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/5k-training/novice-5k/",
     "details": {
       "goal": "5K",
-      "planType": "Novice",
-      "weeklyStructure": [
-        "Mon: Rest or run/walk",
-        "Tue: 1.5 mi run",
-        "Wed: Rest or run/walk",
-        "Thu: 1.5 mi run",
-        "Fri: Rest",
-        "Sat: 1.5 mi run",
-        "Sun: 30 min walk"
-      ],
-      "sessionGlossary": {
-        "Easy Run": "Run at an easy, conversational pace to build aerobic capacity.",
-        "Pace Run": "Run at your target race pace.",
-        "Long Run": "Long distance run at steady pace for endurance.",
-        "Cross Training": "Low-impact aerobic exercise (swimming, cycling, walking).",
-        "Rest": "Recovery day - no running.",
-        "Race": "Race day effort."
-      }
+      "planType": "Novice"
     },
     "weeks": [
       {
@@ -6201,24 +5997,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/5k-training/intermediate-5k/",
     "details": {
       "goal": "5K",
-      "planType": "Intermediate",
-      "weeklyStructure": [
-        "Mon: Rest",
-        "Tue: 3 mi run",
-        "Wed: 5 x 400",
-        "Thu: 3 mi run",
-        "Fri: Rest",
-        "Sat: 3 mi run",
-        "Sun: 5 mi run"
-      ],
-      "sessionGlossary": {
-        "Easy Run": "Run at an easy, conversational pace to build aerobic capacity.",
-        "Pace Run": "Run at your target race pace.",
-        "Long Run": "Long distance run at steady pace for endurance.",
-        "Cross Training": "Low-impact aerobic exercise (swimming, cycling, walking).",
-        "Rest": "Recovery day - no running.",
-        "Race": "Race day effort."
-      }
+      "planType": "Intermediate"
     },
     "weeks": [
       {
@@ -6497,24 +6276,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/5k-training/advanced-5k/",
     "details": {
       "goal": "5K",
-      "planType": "Advanced",
-      "weeklyStructure": [
-        "Mon: 3 mi run",
-        "Tue: 5 x 400",
-        "Wed: Rest or easy run",
-        "Thu: 30 min tempo",
-        "Fri: Rest",
-        "Sat: 4 mi fast",
-        "Sun: 60 min run"
-      ],
-      "sessionGlossary": {
-        "Easy Run": "Run at an easy, conversational pace to build aerobic capacity.",
-        "Pace Run": "Run at your target race pace.",
-        "Long Run": "Long distance run at steady pace for endurance.",
-        "Cross Training": "Low-impact aerobic exercise (swimming, cycling, walking).",
-        "Rest": "Recovery day - no running.",
-        "Race": "Race day effort."
-      }
+      "planType": "Advanced"
     },
     "weeks": [
       {
@@ -6793,24 +6555,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/8k-training/novice-8k/",
     "details": {
       "goal": "8K",
-      "planType": "Novice",
-      "weeklyStructure": [
-        "Mon: Stretch & strength",
-        "Tue: 2 mi run",
-        "Wed: 30 min cross",
-        "Thu: 2 mi run + strength",
-        "Fri: Rest",
-        "Sat: 30 min cross",
-        "Sun: 2 mi run"
-      ],
-      "sessionGlossary": {
-        "Easy Run": "Run at an easy, conversational pace to build aerobic capacity.",
-        "Pace Run": "Run at your target race pace.",
-        "Long Run": "Long distance run at steady pace for endurance.",
-        "Cross Training": "Low-impact aerobic exercise (swimming, cycling, walking).",
-        "Rest": "Recovery day - no running.",
-        "Race": "Race day effort."
-      }
+      "planType": "Novice"
     },
     "weeks": [
       {
@@ -7089,24 +6834,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/8k-training/intermediate-8k/",
     "details": {
       "goal": "8K",
-      "planType": "Intermediate",
-      "weeklyStructure": [
-        "Mon: 3 mi run + strength",
-        "Tue: 3 mi run",
-        "Wed: 30 min tempo run",
-        "Thu: 3 mi run + strength",
-        "Fri: Rest",
-        "Sat: 60 min cross",
-        "Sun: 4 mi run"
-      ],
-      "sessionGlossary": {
-        "Easy Run": "Run at an easy, conversational pace to build aerobic capacity.",
-        "Pace Run": "Run at your target race pace.",
-        "Long Run": "Long distance run at steady pace for endurance.",
-        "Cross Training": "Low-impact aerobic exercise (swimming, cycling, walking).",
-        "Rest": "Recovery day - no running.",
-        "Race": "Race day effort."
-      }
+      "planType": "Intermediate"
     },
     "weeks": [
       {
@@ -7385,24 +7113,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/8k-training/advanced-8k/",
     "details": {
       "goal": "8K",
-      "planType": "Advanced",
-      "weeklyStructure": [
-        "Mon: 3 mi run + strength",
-        "Tue: 30 min tempo run",
-        "Wed: 6 x 400 mile pace",
-        "Thu: 4 mi run + strength",
-        "Fri: Rest or 3 mi run",
-        "Sat: Pace 4 total /2 pace",
-        "Sun: 6 mi run"
-      ],
-      "sessionGlossary": {
-        "Easy Run": "Run at an easy, conversational pace to build aerobic capacity.",
-        "Pace Run": "Run at your target race pace.",
-        "Long Run": "Long distance run at steady pace for endurance.",
-        "Cross Training": "Low-impact aerobic exercise (swimming, cycling, walking).",
-        "Rest": "Recovery day - no running.",
-        "Race": "Race day effort."
-      }
+      "planType": "Advanced"
     },
     "weeks": [
       {
@@ -7681,24 +7392,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/10k-training/novice-10k/",
     "details": {
       "goal": "10K",
-      "planType": "Novice",
-      "weeklyStructure": [
-        "Mon: Rest",
-        "Tue: 2.5 mi run",
-        "Wed: 30 min cross",
-        "Thu: 2 mi run",
-        "Fri: Rest",
-        "Sat: 40 min cross",
-        "Sun: 3 mi run"
-      ],
-      "sessionGlossary": {
-        "Easy Run": "Run at an easy, conversational pace to build aerobic capacity.",
-        "Pace Run": "Run at your target race pace.",
-        "Long Run": "Long distance run at steady pace for endurance.",
-        "Cross Training": "Low-impact aerobic exercise (swimming, cycling, walking).",
-        "Rest": "Recovery day - no running.",
-        "Race": "Race day effort."
-      }
+      "planType": "Novice"
     },
     "weeks": [
       {
@@ -7977,24 +7671,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/10k-training/intermediate-10k/",
     "details": {
       "goal": "10K",
-      "planType": "Intermediate",
-      "weeklyStructure": [
-        "Mon: 3 mi run",
-        "Tue: 3 mi run",
-        "Wed: 35 min tempo run",
-        "Thu: 3 mi run",
-        "Fri: Rest",
-        "Sat: 60 min cross",
-        "Sun: 4 mi run"
-      ],
-      "sessionGlossary": {
-        "Easy Run": "Run at an easy, conversational pace to build aerobic capacity.",
-        "Pace Run": "Run at your target race pace.",
-        "Long Run": "Long distance run at steady pace for endurance.",
-        "Cross Training": "Low-impact aerobic exercise (swimming, cycling, walking).",
-        "Rest": "Recovery day - no running.",
-        "Race": "Race day effort."
-      }
+      "planType": "Intermediate"
     },
     "weeks": [
       {
@@ -8273,24 +7950,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/10k-training/advanced-10k/",
     "details": {
       "goal": "10K",
-      "planType": "Advanced",
-      "weeklyStructure": [
-        "Mon: 3 mi run",
-        "Tue: 30 min tempo run",
-        "Wed: 6 x 400 mile pace",
-        "Thu: 3 mi run",
-        "Fri: Rest or 3 mi run",
-        "Sat: 5 mi total, 2 mi pace",
-        "Sun: 6 mi run"
-      ],
-      "sessionGlossary": {
-        "Easy Run": "Run at an easy, conversational pace to build aerobic capacity.",
-        "Pace Run": "Run at your target race pace.",
-        "Long Run": "Long distance run at steady pace for endurance.",
-        "Cross Training": "Low-impact aerobic exercise (swimming, cycling, walking).",
-        "Rest": "Recovery day - no running.",
-        "Race": "Race day effort."
-      }
+      "planType": "Advanced"
     },
     "weeks": [
       {
@@ -8569,24 +8229,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/post-marathon-recovery/novice-post-marathon/",
     "details": {
       "goal": "Post Marathon Recovery",
-      "planType": "Novice",
-      "weeklyStructure": [
-        "Mon: Rest",
-        "Tue: Rest",
-        "Wed: Rest",
-        "Thu: 2 mi jog",
-        "Fri: Cross",
-        "Sat: 3 mi run",
-        "Sun: 60 min run"
-      ],
-      "sessionGlossary": {
-        "Easy Run": "Run at an easy, conversational pace to build aerobic capacity.",
-        "Pace Run": "Run at your target race pace.",
-        "Long Run": "Long distance run at steady pace for endurance.",
-        "Cross Training": "Low-impact aerobic exercise (swimming, cycling, walking).",
-        "Rest": "Recovery day - no running.",
-        "Race": "Race day effort."
-      }
+      "planType": "Novice"
     },
     "weeks": [
       {
@@ -8766,24 +8409,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/post-marathon-recovery/intermediate-post-marathon/",
     "details": {
       "goal": "Post Marathon Recovery",
-      "planType": "Intermediate",
-      "weeklyStructure": [
-        "Mon: Rest",
-        "Tue: Rest",
-        "Wed: Rest",
-        "Thu: 2 mi jog",
-        "Fri: Cross",
-        "Sat: 3 mi run",
-        "Sun: 60 min run"
-      ],
-      "sessionGlossary": {
-        "Easy Run": "Run at an easy, conversational pace to build aerobic capacity.",
-        "Pace Run": "Run at your target race pace.",
-        "Long Run": "Long distance run at steady pace for endurance.",
-        "Cross Training": "Low-impact aerobic exercise (swimming, cycling, walking).",
-        "Rest": "Recovery day - no running.",
-        "Race": "Race day effort."
-      }
+      "planType": "Intermediate"
     },
     "weeks": [
       {
@@ -8963,24 +8589,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/post-marathon-recovery/advanced-post-marathon/",
     "details": {
       "goal": "Post Marathon Recovery",
-      "planType": "Advanced",
-      "weeklyStructure": [
-        "Mon: Rest",
-        "Tue: Rest",
-        "Wed: Rest",
-        "Thu: 2 mi jog",
-        "Fri: Cross",
-        "Sat: 3 mi run",
-        "Sun: 60 min run"
-      ],
-      "sessionGlossary": {
-        "Easy Run": "Run at an easy, conversational pace to build aerobic capacity.",
-        "Pace Run": "Run at your target race pace.",
-        "Long Run": "Long distance run at steady pace for endurance.",
-        "Cross Training": "Low-impact aerobic exercise (swimming, cycling, walking).",
-        "Rest": "Recovery day - no running.",
-        "Race": "Race day effort."
-      }
+      "planType": "Advanced"
     },
     "weeks": [
       {

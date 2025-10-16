@@ -644,15 +644,6 @@ async function scrapeHalHigdonPlan(planUrl, planName, level, raceType) {
         const planId = `${raceTypeSlug}_${nameSlug}`;
         // Extract weekly schedule table
         const weeks = [];
-        const weeklyStructure = [];
-        const sessionGlossary = {
-            "Easy Run": "Run at an easy, conversational pace to build aerobic capacity.",
-            "Pace Run": "Run at your target race pace.",
-            "Long Run": "Long distance run at steady pace for endurance.",
-            "Cross Training": "Low-impact aerobic exercise (swimming, cycling, walking).",
-            "Rest": "Recovery day - no running.",
-            "Race": "Race day effort."
-        };
         // Find the training schedule table
         const table = $("table").first();
         const rows = table.find("tr");
@@ -694,10 +685,6 @@ async function scrapeHalHigdonPlan(planUrl, planName, level, raceType) {
                             dayOfWeek: dayName,
                             workoutTemplateId: templateId
                         });
-                        // Build weekly structure from first week
-                        if (weekNumber === 1) {
-                            weeklyStructure.push(`${dayName}: ${workoutText}`);
-                        }
                     }
                 });
                 if (weekDays.length > 0) {
@@ -720,9 +707,7 @@ async function scrapeHalHigdonPlan(planUrl, planName, level, raceType) {
             sourceUrl: planUrl,
             details: {
                 goal: raceType,
-                planType: name,
-                weeklyStructure,
-                sessionGlossary
+                planType: name
             },
             weeks
         };

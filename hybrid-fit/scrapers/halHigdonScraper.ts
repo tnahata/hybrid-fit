@@ -33,8 +33,6 @@ export interface TrainingPlan {
     details: {
         goal: string;
         planType: string;
-        weeklyStructure: string[];
-        sessionGlossary: Record<string, string>;
     };
     weeks: Array<{
         weekNumber: number;
@@ -711,16 +709,6 @@ export async function scrapeHalHigdonPlan(planUrl: string, planName: string, lev
             days: Array<{ dayOfWeek: string; workoutTemplateId: string }>;
         }> = [];
 
-        const weeklyStructure: string[] = [];
-        const sessionGlossary: Record<string, string> = {
-            "Easy Run": "Run at an easy, conversational pace to build aerobic capacity.",
-            "Pace Run": "Run at your target race pace.",
-            "Long Run": "Long distance run at steady pace for endurance.",
-            "Cross Training": "Low-impact aerobic exercise (swimming, cycling, walking).",
-            "Rest": "Recovery day - no running.",
-            "Race": "Race day effort."
-        };
-
         // Find the training schedule table
         const table = $("table").first();
         const rows = table.find("tr");
@@ -769,11 +757,6 @@ export async function scrapeHalHigdonPlan(planUrl: string, planName: string, lev
                             dayOfWeek: dayName,
                             workoutTemplateId: templateId
                         });
-
-                        // Build weekly structure from first week
-                        if (weekNumber === 1) {
-                            weeklyStructure.push(`${dayName}: ${workoutText}`);
-                        }
                     }
                 });
 
@@ -799,9 +782,7 @@ export async function scrapeHalHigdonPlan(planUrl: string, planName: string, lev
             sourceUrl: planUrl,
             details: {
                 goal: raceType,
-                planType: name,
-                weeklyStructure,
-                sessionGlossary
+                planType: name
             },
             weeks
         };
