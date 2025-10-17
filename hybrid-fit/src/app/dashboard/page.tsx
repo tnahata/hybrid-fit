@@ -70,7 +70,7 @@ interface ApiResponse {
     success: boolean;
 }
 
-export default function Dashboard(): JSX.Element {
+export default function Dashboard() {
     const [currentUser, setCurrentUser] = useState<EnrichedUserDoc | null>(null);
     const [selectedPlanId, setSelectedPlanId] = useState<string>("");
     const [loading, setLoading] = useState<boolean>(true);
@@ -310,6 +310,10 @@ export default function Dashboard(): JSX.Element {
     const workoutIsCustom: boolean = isWorkoutOverridden();
     const workoutMetrics: Array<{ label: string; value: string }> = getWorkoutMetrics();
 
+    // Determine plan status for conditional rendering
+    const isPlanCompleted: boolean = !!currentUserPlan.completedAt;
+    const isPlanActive: boolean = currentUserPlan.isActive && !isPlanCompleted;
+
     return (
         <div className="min-h-screen bg-background">
             <main className="container mx-auto px-4 py-8 max-w-7xl">
@@ -318,7 +322,7 @@ export default function Dashboard(): JSX.Element {
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                         <div>
                             <h2 className="text-3xl font-bold text-foreground mb-2">
-                                {sportEmoji} Today's Workout
+                                {sportEmoji} {isPlanActive ? "Today's Workout" : "Training Plan"}
                             </h2>
                             <p className="text-muted-foreground">{today}</p>
                         </div>
@@ -346,80 +350,147 @@ export default function Dashboard(): JSX.Element {
                         </div>
                     </div>
 
-                    {/* Today's Workout Card */}
-                    <Card>
-                        <CardHeader>
-                            <div className="flex items-start justify-between">
-                                <div className="flex-1">
-                                    <div className="flex items-center gap-2 mb-2 flex-wrap">
-                                        <span className="text-xs font-semibold px-2 py-1 rounded-full bg-primary/10 text-primary">
-                                            {currentUserPlan.planDetails.level}
-                                        </span>
-                                        <span className="text-xs font-semibold px-2 py-1 rounded-full bg-muted text-muted-foreground">
-                                            {currentUserPlan.planDetails.sport}
-                                        </span>
-                                        {workoutIsCustom && (
-                                            <span className="text-xs font-semibold px-2 py-1 rounded-full bg-blue-100 text-blue-700">
-                                                Custom
-                                            </span>
-                                        )}
-                                        {todaysWorkout?.workoutDetails && (
-                                            <span className="text-xs font-semibold px-2 py-1 rounded-full bg-green-100 text-green-700">
-                                                {todaysWorkout.workoutDetails.category}
-                                            </span>
-                                        )}
+                    {/* COMPLETED PLAN VIEW */}
+                    {isPlanCompleted && (
+                        <Card className="border-green-200 bg-green-50/50">
+                            <CardHeader>
+                                <div className="flex items-center gap-3">
+                                    <div className="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center">
+                                        <span className="text-2xl">🎉</span>
                                     </div>
-                                    <CardDescription className="mb-1">
-                                        {currentUserPlan.planName} — Week {currentUserPlan.currentWeek} / Day {currentUserPlan.currentDayIndex + 1}
-                                    </CardDescription>
-                                    <CardTitle className="text-2xl">
-                                        {todaysWorkout?.workoutDetails?.name || `${currentDayName}'s Workout`}
-                                    </CardTitle>
-                                    {todaysWorkout?.workoutDetails?.description && (
-                                        <p className="text-sm text-muted-foreground mt-2">
-                                            {todaysWorkout.workoutDetails.description}
-                                        </p>
-                                    )}
+                                    <div>
+                                        <CardTitle className="text-xl text-green-900">Plan Completed!</CardTitle>
+                                        <CardDescription className="text-green-700">
+                                            Completed on {new Date(currentUserPlan.completedAt).toLocaleDateString('en-US', {
+                                                month: 'long',
+                                                day: 'numeric',
+                                                year: 'numeric'
+                                            })}
+                                        </CardDescription>
+                                    </div>
                                 </div>
-                            </div>
-                        </CardHeader>
-                        <CardContent className="space-y-4">
-                            <div className="grid grid-cols-3 gap-4 text-center">
-                                {workoutMetrics.map((metric: { label: string; value: string }, i: number) => (
-                                    <div key={i} className="p-4 rounded-lg bg-muted">
-                                        <div className="text-2xl font-bold text-primary">{metric.value}</div>
-                                        <div className="text-xs text-muted-foreground mt-1">{metric.label}</div>
+                            </CardHeader>
+                            <CardContent>
+                                <div className="space-y-3">
+                                    <p className="text-sm text-green-800">
+                                        Congratulations on completing <strong>{currentUserPlan.planName}</strong>!
+                                        You can view your historical data and progress below.
+                                    </p>
+                                    <div className="flex gap-2">
+                                        <Button variant="outline" className="flex-1">View Full History</Button>
+                                        <Button className="flex-1">Start New Plan</Button>
                                     </div>
-                                ))}
-                            </div>
+                                </div>
+                            </CardContent>
+                        </Card>
+                    )}
 
-                            {/* Plan Details Section */}
-                            {currentUserPlan.planDetails.details && (
-                                <div className="p-4 rounded-lg bg-muted/50 border border-border">
-                                    <h4 className="font-semibold text-sm mb-2">Plan Details</h4>
-                                    <div className="space-y-1 text-sm">
-                                        <p><span className="text-muted-foreground">Goal:</span> {currentUserPlan.planDetails.details.goal}</p>
-                                        <p><span className="text-muted-foreground">Type:</span> {currentUserPlan.planDetails.details.planType}</p>
-                                        {todaysWorkout?.workoutDetails?.tags && todaysWorkout.workoutDetails.tags.length > 0 && (
-                                            <p>
-                                                <span className="text-muted-foreground">Tags:</span>{' '}
-                                                {todaysWorkout.workoutDetails.tags.join(', ')}
+                    {/* INACTIVE PLAN VIEW */}
+                    {!isPlanActive && !isPlanCompleted && (
+                        <Card className="border-orange-200 bg-orange-50/50">
+                            <CardHeader>
+                                <div className="flex items-center gap-3">
+                                    <div className="h-12 w-12 rounded-full bg-orange-100 flex items-center justify-center">
+                                        <span className="text-2xl">⏸️</span>
+                                    </div>
+                                    <div>
+                                        <CardTitle className="text-xl text-orange-900">Plan Not Active</CardTitle>
+                                        <CardDescription className="text-orange-700">
+                                            {currentUserPlan.planName}
+                                        </CardDescription>
+                                    </div>
+                                </div>
+                            </CardHeader>
+                            <CardContent>
+                                <div className="space-y-3">
+                                    <p className="text-sm text-orange-800">
+                                        This training plan is not currently active. You can view its details and historical data below,
+                                        or activate it to start tracking workouts.
+                                    </p>
+                                    <div className="flex gap-2">
+                                        <Button variant="outline" className="flex-1">View Plan Details</Button>
+                                        <Button className="flex-1">Activate Plan</Button>
+                                    </div>
+                                </div>
+                            </CardContent>
+                        </Card>
+                    )}
+
+                    {/* ACTIVE PLAN - TODAY'S WORKOUT CARD */}
+                    {isPlanActive && (
+                        <Card>
+                            <CardHeader>
+                                <div className="flex items-start justify-between">
+                                    <div className="flex-1">
+                                        <div className="flex items-center gap-2 mb-2 flex-wrap">
+                                            <span className="text-xs font-semibold px-2 py-1 rounded-full bg-primary/10 text-primary">
+                                                {currentUserPlan.planDetails.level}
+                                            </span>
+                                            <span className="text-xs font-semibold px-2 py-1 rounded-full bg-muted text-muted-foreground">
+                                                {currentUserPlan.planDetails.sport}
+                                            </span>
+                                            {workoutIsCustom && (
+                                                <span className="text-xs font-semibold px-2 py-1 rounded-full bg-blue-100 text-blue-700">
+                                                    Custom
+                                                </span>
+                                            )}
+                                            {todaysWorkout?.workoutDetails && (
+                                                <span className="text-xs font-semibold px-2 py-1 rounded-full bg-green-100 text-green-700">
+                                                    {todaysWorkout.workoutDetails.category}
+                                                </span>
+                                            )}
+                                        </div>
+                                        <CardDescription className="mb-1">
+                                            {currentUserPlan.planName} — Week {currentUserPlan.currentWeek} / Day {currentUserPlan.currentDayIndex + 1}
+                                        </CardDescription>
+                                        <CardTitle className="text-2xl">
+                                            {todaysWorkout?.workoutDetails?.name || `${currentDayName}'s Workout`}
+                                        </CardTitle>
+                                        {todaysWorkout?.workoutDetails?.description && (
+                                            <p className="text-sm text-muted-foreground mt-2">
+                                                {todaysWorkout.workoutDetails.description}
                                             </p>
                                         )}
                                     </div>
                                 </div>
-                            )}
+                            </CardHeader>
+                            <CardContent className="space-y-4">
+                                <div className="grid grid-cols-3 gap-4 text-center">
+                                    {workoutMetrics.map((metric: { label: string; value: string }, i: number) => (
+                                        <div key={i} className="p-4 rounded-lg bg-muted">
+                                            <div className="text-2xl font-bold text-primary">{metric.value}</div>
+                                            <div className="text-xs text-muted-foreground mt-1">{metric.label}</div>
+                                        </div>
+                                    ))}
+                                </div>
 
-                            <div className="flex gap-3 pt-2">
-                                <Button className="flex-1" size="lg">Log Results</Button>
-                                <Button variant="secondary" className="flex-1 gap-2" size="lg">
-                                    <Calendar className="h-4 w-4" />
-                                    View Program Calendar
-                                </Button>
-                            </div>
-                        </CardContent>
-                    </Card>
+                                {/* Plan Details Section */}
+                                {currentUserPlan.planDetails.details && (
+                                    <div className="p-4 rounded-lg bg-muted/50 border border-border">
+                                        <h4 className="font-semibold text-sm mb-2">Plan Details</h4>
+                                        <div className="space-y-1 text-sm">
+                                            <p><span className="text-muted-foreground">Goal:</span> {currentUserPlan.planDetails.details.goal}</p>
+                                            <p><span className="text-muted-foreground">Type:</span> {currentUserPlan.planDetails.details.planType}</p>
+                                            {todaysWorkout?.workoutDetails?.tags && todaysWorkout.workoutDetails.tags.length > 0 && (
+                                                <p>
+                                                    <span className="text-muted-foreground">Tags:</span>{' '}
+                                                    {todaysWorkout.workoutDetails.tags.join(', ')}
+                                                </p>
+                                            )}
+                                        </div>
+                                    </div>
+                                )}
 
+                                <div className="flex gap-3 pt-2">
+                                    <Button className="flex-1" size="lg">Log Results</Button>
+                                    <Button variant="secondary" className="flex-1 gap-2" size="lg">
+                                        <Calendar className="h-4 w-4" />
+                                        View Program Calendar
+                                    </Button>
+                                </div>
+                            </CardContent>
+                        </Card>
+                    )}
                     {/* Stats Cards */}
                     <div className="grid gap-4 md:grid-cols-3">
                         <Card>
