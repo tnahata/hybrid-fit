@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { Separator } from '@/components/ui/separator';
-import { Calendar, Bell, Search, Settings, User as UserIcon } from 'lucide-react';
+import { Calendar } from 'lucide-react';
 import {
     Dialog,
     DialogContent,
@@ -70,7 +70,7 @@ interface ApiResponse {
     success: boolean;
 }
 
-export default function Dashboard() {
+export default function Dashboard(): JSX.Element {
     const [currentUser, setCurrentUser] = useState<EnrichedUserDoc | null>(null);
     const [selectedPlanId, setSelectedPlanId] = useState<string>("");
     const [loading, setLoading] = useState<boolean>(true);
@@ -93,13 +93,15 @@ export default function Dashboard() {
                 const json: ApiResponse = await response.json();
                 setCurrentUser(json.data);
 
-                // Set default to first active plan
+                // Set default to first active plan, or first plan if no active plans
                 const activePlan: EnrichedUserPlanProgress | undefined = json.data.trainingPlans?.find(
                     (p: EnrichedUserPlanProgress) => p.isActive
                 );
 
                 if (activePlan) {
                     setSelectedPlanId(activePlan.planId);
+                } else if (json.data.trainingPlans && json.data.trainingPlans.length > 0) {
+                    setSelectedPlanId(json.data.trainingPlans[0].planId);
                 }
             } catch (err: unknown) {
                 const errorMessage: string = err instanceof Error ? err.message : "Unknown error occurred";
@@ -116,10 +118,6 @@ export default function Dashboard() {
     // Get current selected plan
     const currentUserPlan: EnrichedUserPlanProgress | undefined = currentUser?.trainingPlans?.find(
         (p: EnrichedUserPlanProgress) => p.planId === selectedPlanId
-    );
-    const allPlans: EnrichedUserPlanProgress[] = currentUser?.trainingPlans || [];
-    const activePlans: EnrichedUserPlanProgress[] = allPlans.filter(
-        (p: EnrichedUserPlanProgress) => p.isActive
     );
 
     // Get today's workout with full details
@@ -148,7 +146,7 @@ export default function Dashboard() {
         const weekStart: Date = new Date();
         weekStart.setDate(weekStart.getDate() - weekStart.getDay());
 
-        return currentUserPlan.progressLog.filter((log: UserDoc['trainingPlans'][0]['progressLog'][0]) =>
+        return currentUserPlan.progressLog.filter((log) =>
             log.status === 'completed' &&
             new Date(log.date) >= weekStart
         ).length;
@@ -276,15 +274,15 @@ export default function Dashboard() {
         );
     }
 
-    // No active plans state
-    if (activePlans.length === 0) {
+    // No training plans state
+    if (!currentUser.trainingPlans || currentUser.trainingPlans.length === 0) {
         return (
             <div className="min-h-screen bg-background">
                 <main className="container mx-auto px-4 py-8 max-w-7xl">
                     <Card className="text-center py-12">
                         <CardHeader>
                             <div className="text-6xl mb-4">🏃</div>
-                            <CardTitle className="text-2xl">No Active Training Plans</CardTitle>
+                            <CardTitle className="text-2xl">No Training Plans</CardTitle>
                             <CardDescription className="mt-2">
                                 Get started by creating or joining a training plan
                             </CardDescription>
@@ -314,33 +312,9 @@ export default function Dashboard() {
 
     return (
         <div className="min-h-screen bg-background">
-            {/* Header with Navigation */}
-            <header className="border-b border-border bg-card sticky top-0 z-50">
-                <div className="container mx-auto px-4 py-4">
-                    <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-4">
-                            <h1 className="text-xl font-bold text-foreground">HybridFit</h1>
-                            <div className="hidden md:flex relative">
-                                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                                <input
-                                    type="text"
-                                    placeholder="Search workouts..."
-                                    className="pl-10 pr-4 py-2 rounded-lg bg-muted border-0 text-sm w-64 focus:outline-none focus:ring-2 focus:ring-primary"
-                                />
-                            </div>
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <Button variant="ghost" size="icon"><Bell className="h-5 w-5" /></Button>
-                            <Button variant="ghost" size="icon"><Settings className="h-5 w-5" /></Button>
-                            <Button variant="ghost" size="icon"><UserIcon className="h-5 w-5" /></Button>
-                        </div>
-                    </div>
-                </div>
-            </header>
-
             <main className="container mx-auto px-4 py-8 max-w-7xl">
                 <div className="space-y-6">
-                    {/* Plan Picker Header */}
+                    {/* Plan Picker Header - ALWAYS VISIBLE */}
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                         <div>
                             <h2 className="text-3xl font-bold text-foreground mb-2">
@@ -348,23 +322,28 @@ export default function Dashboard() {
                             </h2>
                             <p className="text-muted-foreground">{today}</p>
                         </div>
-                        {activePlans.length > 1 && (
-                            <div className="flex items-center gap-2">
-                                <span className="text-sm text-muted-foreground hidden sm:inline">Viewing:</span>
-                                <Select value={selectedPlanId} onValueChange={(value: string) => setSelectedPlanId(value)}>
-                                    <SelectTrigger className="w-[250px]">
-                                        <SelectValue placeholder="Select a plan" />
-                                    </SelectTrigger>
-                                    <SelectContent>
-                                        {activePlans.map((plan: EnrichedUserPlanProgress) => (
-                                            <SelectItem key={plan.planId} value={plan.planId}>
-                                                {getSportEmoji(plan.planDetails.sport)} {plan.planName}
-                                            </SelectItem>
-                                        ))}
-                                    </SelectContent>
-                                </Select>
-                            </div>
-                        )}
+                        <div className="flex items-center gap-2">
+                            <span className="text-sm text-muted-foreground hidden sm:inline">Training Plan:</span>
+                            <Select value={selectedPlanId} onValueChange={(value: string) => setSelectedPlanId(value)}>
+                                <SelectTrigger className="w-[280px]">
+                                    <SelectValue placeholder="Select a training plan" />
+                                </SelectTrigger>
+                                <SelectContent>
+                                    {currentUser.trainingPlans.map((plan: EnrichedUserPlanProgress) => (
+                                        <SelectItem key={plan.planId} value={plan.planId}>
+                                            <div className="flex items-center gap-2">
+                                                <span>{plan.planName}</span>
+                                                {plan.isActive && (
+                                                    <span className="text-xs px-1.5 py-0.5 rounded-full bg-primary/10 text-primary ml-1">
+                                                        Active
+                                                    </span>
+                                                )}
+                                            </div>
+                                        </SelectItem>
+                                    ))}
+                                </SelectContent>
+                            </Select>
+                        </div>
                     </div>
 
                     {/* Today's Workout Card */}
@@ -566,7 +545,7 @@ export default function Dashboard() {
                                     {currentUserPlan.progressLog
                                         .slice(-5)
                                         .reverse()
-                                        .map((log: UserDoc['trainingPlans'][0]['progressLog'][0], i: number) => {
+                                        .map((log, i: number) => {
                                             const statusEmoji: string = log.status === 'completed' ? '✅' :
                                                 log.status === 'skipped' ? '⏭️' : '❌';
 
