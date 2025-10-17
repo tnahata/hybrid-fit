@@ -3,17 +3,17 @@ import mongoose, { Document, Schema } from "mongoose";
 export interface TrainingPlanDay {
     dayOfWeek: string;
     workoutTemplateId: string;
-}
+};
 
 export interface TrainingPlanWeek {
     weekNumber: number;
     days: TrainingPlanDay[];
-}
+};
 
 export interface TrainingPlanDetails {
     goal: string;
     planType: string;
-}
+};
 
 export interface TrainingPlanDoc extends Document {
     _id: string;
@@ -25,7 +25,7 @@ export interface TrainingPlanDoc extends Document {
     sourceUrl?: string;
     details: TrainingPlanDetails;
     weeks: TrainingPlanWeek[];
-}
+};
 
 const trainingPlanSchema = new Schema<TrainingPlanDoc>(
     {

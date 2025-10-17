@@ -1,14 +1,14 @@
 import { NextResponse } from "next/server";
 import { connectToDatabase } from "@/lib/mongodb";
-import { NormalizedExercise } from "@/models/NormalizedExercise";
+import { Exercise } from "@/models/Exercise";
 
 export async function GET(req: Request) {
     try {
         await connectToDatabase();
 
         const [total, exercises] = await Promise.all([
-            NormalizedExercise.countDocuments({}),
-            NormalizedExercise.find({})
+            Exercise.countDocuments({}),
+            Exercise.find({})
         ]);
 
         return NextResponse.json({

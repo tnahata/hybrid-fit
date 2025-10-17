@@ -9,8 +9,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationPrevious, PaginationNext, PaginationEllipsis } from "@/components/ui/pagination";
 import { Badge } from "@/components/ui/badge";
 import { Search, Filter, ArrowUpDown } from "lucide-react";
-import { NormalizedExercise } from "@/models/NormalizedExercise"
-import page from "../page";
+import { ExerciseDoc } from "@/models/Exercise"
 
 export default function ExerciseContent() {
 
@@ -18,7 +17,7 @@ export default function ExerciseContent() {
     const [sort, setSort] = useState("name");
     const [difficulty, setDifficulty] = useState("all");
     const [sport, setSport] = useState("all");
-    const [exercises, setExercises] = useState<NormalizedExercise[]>([]);
+    const [exercises, setExercises] = useState<ExerciseDoc[]>([]);
     const [currentPage, setCurrentPage] = useState(1);
     const perPage = 12;
 

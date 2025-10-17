@@ -4,10 +4,8 @@ import React, { useEffect, useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select';
 import { Separator } from '@/components/ui/separator';
-import { Home, Calendar, TrendingUp, Settings, Menu, Bell, Search, User, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Calendar, Bell, Search, Settings, User as UserIcon } from 'lucide-react';
 import {
     Dialog,
     DialogContent,
@@ -16,462 +14,515 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog";
-import { UserDoc } from "@/models/User";
-import { TrainingPlanDoc } from "@models/TrainingPlans";
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select";
+import { UserDoc, WorkoutOverride, UserPlanProgress } from "@/models/User";
+import { TrainingPlanDoc, TrainingPlanDay, TrainingPlanWeek } from "@/models/TrainingPlans";
+import { WorkoutTemplateDoc } from "@/models/Workouts";
 
-export default function DashboardLayouts() {
-    const [loading, setLoading] = useState(true);
-    const [selectedPlanId, setSelectedPlanId] = useState("");
-    const [currentUser, setCurrentUser] = useState<UserDoc | null>();
+// Enriched types matching API response
+interface EnrichedTrainingPlanDay extends TrainingPlanDay {
+    workoutDetails: WorkoutTemplateDoc | null;
+}
+
+interface EnrichedTrainingPlanWeek extends Omit<TrainingPlanWeek, 'days'> {
+    days: EnrichedTrainingPlanDay[];
+}
+
+interface EnrichedTrainingPlanDoc extends Omit<TrainingPlanDoc, 'weeks'> {
+    weeks: EnrichedTrainingPlanWeek[];
+}
+
+interface EnrichedUserPlanProgress {
+    planId: string;
+    planName: string;
+    totalWeeks: number;
+    startedAt: Date;
+    completedAt?: Date;
+    currentWeek: number;
+    currentDayIndex: number;
+    isActive: boolean;
+    overrides: Array<{
+        weekNumber: number;
+        dayOfWeek: string;
+        customWorkoutId: string;
+    }>;
+    progressLog: Array<{
+        date: Date;
+        workoutTemplateId: string;
+        status: "completed" | "skipped" | "missed";
+        notes?: string;
+    }>;
+    planDetails: EnrichedTrainingPlanDoc;
+}
+
+interface EnrichedUserDoc extends Omit<UserDoc, 'trainingPlans'> {
+    trainingPlans: EnrichedUserPlanProgress[];
+}
+
+interface ApiResponse {
+    data: EnrichedUserDoc;
+    success: boolean;
+}
+
+export default function Dashboard() {
+    const [currentUser, setCurrentUser] = useState<EnrichedUserDoc | null>(null);
+    const [selectedPlanId, setSelectedPlanId] = useState<string>("");
+    const [loading, setLoading] = useState<boolean>(true);
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        const fetchCurrentUser = async () => {
-            const response: Response = await fetch("/api/users/me", {
-                method: 'GET'
-            });
-            if (response?.ok) {
-                const json = await response.json();
-                console.log(json.data);
+        const fetchUserData = async (): Promise<void> => {
+            try {
+                const response: Response = await fetch("/api/users/me", {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error("Failed to fetch user data");
+                }
+
+                const json: ApiResponse = await response.json();
                 setCurrentUser(json.data);
 
-                if (json.trainingPlans) {
-                    
+                // Set default to first active plan
+                const activePlan: EnrichedUserPlanProgress | undefined = json.data.trainingPlans?.find(
+                    (p: EnrichedUserPlanProgress) => p.isActive
+                );
+
+                if (activePlan) {
+                    setSelectedPlanId(activePlan.planId);
                 }
+            } catch (err: unknown) {
+                const errorMessage: string = err instanceof Error ? err.message : "Unknown error occurred";
+                console.error("Failed to fetch user data:", errorMessage);
+                setError(errorMessage);
+            } finally {
+                setLoading(false);
             }
-        }
-        fetchCurrentUser();
+        };
+
+        fetchUserData();
     }, []);
 
-    // Calendar/Program data
-    const programWeeks = {
-        running: {
-            previous: [
-                {
-                    week: 1, days: [
-                        { day: 'Mon', workout: 'Easy Run 3mi', completed: true, notes: 'Felt great!' },
-                        { day: 'Tue', workout: 'Rest', completed: true },
-                        { day: 'Wed', workout: 'Easy Run 3mi', completed: true, notes: '8:45 pace' },
-                        { day: 'Thu', workout: 'Easy Run 3mi', completed: true },
-                        { day: 'Fri', workout: 'Rest', completed: true },
-                        { day: 'Sat', workout: 'Long Run 5mi', completed: true, notes: 'Beautiful weather' },
-                        { day: 'Sun', workout: 'Rest', completed: true }
-                    ]
-                },
-                {
-                    week: 2, days: [
-                        { day: 'Mon', workout: 'Easy Run 3mi', completed: true },
-                        { day: 'Tue', workout: 'Easy Run 3mi', completed: true },
-                        { day: 'Wed', workout: 'Easy Run 3mi', completed: true },
-                        { day: 'Thu', workout: 'Rest', completed: true },
-                        { day: 'Fri', workout: 'Easy Run 4mi', completed: true },
-                        { day: 'Sat', workout: 'Long Run 6mi', completed: true },
-                        { day: 'Sun', workout: 'Rest', completed: true }
-                    ]
-                },
-                {
-                    week: 3, days: [
-                        { day: 'Mon', workout: 'Easy Run 3mi', completed: true },
-                        { day: 'Tue', workout: 'Easy Run 4mi', completed: true },
-                        { day: 'Wed', workout: 'Easy Run 3mi', completed: true },
-                        { day: 'Thu', workout: 'Easy Run 4mi', completed: true },
-                        { day: 'Fri', workout: 'Rest', completed: true },
-                        { day: 'Sat', workout: 'Long Run 7mi', completed: true },
-                        { day: 'Sun', workout: 'Rest', completed: true }
-                    ]
-                }
-            ],
-            current: {
-                week: 4, days: [
-                    { day: 'Mon', workout: 'Easy Run 3mi', completed: true },
-                    { day: 'Tue', workout: 'Easy Run 3mi', completed: true },
-                    { day: 'Wed', workout: 'Easy Run 5mi', completed: false, current: true },
-                    { day: 'Thu', workout: 'Rest', completed: false },
-                    { day: 'Fri', workout: 'Cross Train 30min', completed: false },
-                    { day: 'Sat', workout: 'Long Run 8mi', completed: false },
-                    { day: 'Sun', workout: 'Rest', completed: false }
-                ]
-            },
-            upcoming: [
-                {
-                    week: 5, days: [
-                        { day: 'Mon', workout: 'Easy Run 3mi' },
-                        { day: 'Tue', workout: 'Easy Run 4mi' },
-                        { day: 'Wed', workout: 'Easy Run 5mi' },
-                        { day: 'Thu', workout: 'Easy Run 3mi' },
-                        { day: 'Fri', workout: 'Rest' },
-                        { day: 'Sat', workout: 'Long Run 9mi' },
-                        { day: 'Sun', workout: 'Rest' }
-                    ]
-                },
-                {
-                    week: 6, days: [
-                        { day: 'Mon', workout: 'Easy Run 3mi' },
-                        { day: 'Tue', workout: 'Easy Run 5mi' },
-                        { day: 'Wed', workout: 'Tempo 4mi' },
-                        { day: 'Thu', workout: 'Easy Run 3mi' },
-                        { day: 'Fri', workout: 'Rest' },
-                        { day: 'Sat', workout: 'Long Run 10mi' },
-                        { day: 'Sun', workout: 'Rest' }
-                    ]
-                }
-            ]
-        },
-        strength: {
-            previous: [
-                {
-                    week: 1, days: [
-                        { day: 'Mon', workout: 'Lower Power', completed: true, notes: 'Squats felt strong' },
-                        { day: 'Tue', workout: 'Rest', completed: true },
-                        { day: 'Wed', workout: 'Upper Power', completed: true },
-                        { day: 'Thu', workout: 'Rest', completed: true },
-                        { day: 'Fri', workout: 'Lower Hypertrophy', completed: true },
-                        { day: 'Sat', workout: 'Upper Hypertrophy', completed: true },
-                        { day: 'Sun', workout: 'Active Recovery', completed: true }
-                    ]
-                }
-            ],
-            current: {
-                week: 2, days: [
-                    { day: 'Mon', workout: 'Lower Power', completed: true },
-                    { day: 'Tue', workout: 'Rest', completed: true },
-                    { day: 'Wed', workout: 'Upper Power', completed: false, current: true },
-                    { day: 'Thu', workout: 'Rest', completed: false },
-                    { day: 'Fri', workout: 'Lower Hypertrophy', completed: false },
-                    { day: 'Sat', workout: 'Upper Hypertrophy', completed: false },
-                    { day: 'Sun', workout: 'Active Recovery', completed: false }
-                ]
-            },
-            upcoming: [
-                {
-                    week: 3, days: [
-                        { day: 'Mon', workout: 'Lower Power' },
-                        { day: 'Tue', workout: 'Rest' },
-                        { day: 'Wed', workout: 'Upper Power' },
-                        { day: 'Thu', workout: 'Rest' },
-                        { day: 'Fri', workout: 'Lower Hypertrophy' },
-                        { day: 'Sat', workout: 'Upper Hypertrophy' },
-                        { day: 'Sun', workout: 'Active Recovery' }
-                    ]
-                },
-                {
-                    week: 4, days: [
-                        { day: 'Mon', workout: 'Lower Power (Deload)' },
-                        { day: 'Tue', workout: 'Rest' },
-                        { day: 'Wed', workout: 'Upper Power (Deload)' },
-                        { day: 'Thu', workout: 'Rest' },
-                        { day: 'Fri', workout: 'Lower Hypertrophy (Deload)' },
-                        { day: 'Sat', workout: 'Upper Hypertrophy (Deload)' },
-                        { day: 'Sun', workout: 'Rest' }
-                    ]
-                }
-            ]
+    // Get current selected plan
+    const currentUserPlan: EnrichedUserPlanProgress | undefined = currentUser?.trainingPlans?.find(
+        (p: EnrichedUserPlanProgress) => p.planId === selectedPlanId
+    );
+    const allPlans: EnrichedUserPlanProgress[] = currentUser?.trainingPlans || [];
+    const activePlans: EnrichedUserPlanProgress[] = allPlans.filter(
+        (p: EnrichedUserPlanProgress) => p.isActive
+    );
+
+    // Get today's workout with full details
+    const getTodaysWorkout = (): EnrichedTrainingPlanDay | null => {
+        if (!currentUserPlan) return null;
+
+        const currentWeek: EnrichedTrainingPlanWeek | undefined = currentUserPlan.planDetails.weeks.find(
+            (w: EnrichedTrainingPlanWeek) => w.weekNumber === currentUserPlan.currentWeek
+        );
+
+        if (!currentWeek || !currentWeek.days[currentUserPlan.currentDayIndex]) {
+            return null;
         }
+
+        return currentWeek.days[currentUserPlan.currentDayIndex];
     };
 
-    const CalendarDialog = () => {
-        const currentProgram = programWeeks[planType];
-        const [localCalendarView, setLocalCalendarView] = useState('current');
+    const todaysWorkout: EnrichedTrainingPlanDay | null = getTodaysWorkout();
+    const daysOfWeek: string[] = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    const currentDayName: string = currentUserPlan ? daysOfWeek[currentUserPlan.currentDayIndex] : '';
 
-        return (
-            <Dialog onOpenChange={(open) => { if (open) setLocalCalendarView('current'); }}>
-                <DialogTrigger asChild>
-                    <Button variant="outline" className="gap-2 w-full">
-                        <Calendar className="h-4 w-4" />
-                        View Program Calendar
-                    </Button>
-                </DialogTrigger>
-                <DialogContent className="max-w-4xl max-h-[85vh] overflow-hidden flex flex-col">
-                    <DialogHeader className="flex-shrink-0">
-                        <DialogTitle className="text-2xl">Training Program Calendar</DialogTitle>
-                        <DialogDescription>
-                            View past workouts, current week, and upcoming training schedule
-                        </DialogDescription>
-                    </DialogHeader>
+    // Helper functions
+    const getCompletedWorkoutsThisWeek = (): number => {
+        if (!currentUserPlan) return 0;
 
-                    <div className="overflow-y-auto flex-1 pr-2">
-                        <Tabs value={localCalendarView} onValueChange={setLocalCalendarView} className="w-full">
-                            <TabsList className="grid w-full grid-cols-3 sticky top-0 bg-background z-10">
-                                <TabsTrigger value="previous">Previous Weeks</TabsTrigger>
-                                <TabsTrigger value="current">Current Week</TabsTrigger>
-                                <TabsTrigger value="upcoming">Upcoming Weeks</TabsTrigger>
-                            </TabsList>
+        const weekStart: Date = new Date();
+        weekStart.setDate(weekStart.getDate() - weekStart.getDay());
 
-                            <TabsContent value="previous" className="space-y-4 mt-4">
-                                {currentProgram.previous.map((weekData) => (
-                                    <Card key={weekData.week}>
-                                        <CardHeader className="pb-3">
-                                            <CardTitle className="text-lg">Week {weekData.week}</CardTitle>
-                                        </CardHeader>
-                                        <CardContent>
-                                            <div className="space-y-2">
-                                                {weekData.days.map((day, i) => (
-                                                    <div key={i} className="flex items-center justify-between p-3 rounded-lg bg-muted/50 border border-border">
-                                                        <div className="flex items-center gap-3">
-                                                            <span className="text-sm font-semibold w-12 text-muted-foreground">{day.day}</span>
-                                                            <div>
-                                                                <span className="text-sm font-medium">{day.workout}</span>
-                                                                {day.notes && (
-                                                                    <p className="text-xs text-muted-foreground mt-1">{day.notes}</p>
-                                                                )}
-                                                            </div>
-                                                        </div>
-                                                        {day.completed && (
-                                                            <span className="text-green-600 text-lg">✅</span>
-                                                        )}
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        </CardContent>
-                                    </Card>
-                                ))}
-                            </TabsContent>
+        return currentUserPlan.progressLog.filter((log: UserDoc['trainingPlans'][0]['progressLog'][0]) =>
+            log.status === 'completed' &&
+            new Date(log.date) >= weekStart
+        ).length;
+    };
 
-                            <TabsContent value="current" className="space-y-4 mt-4">
-                                <Card>
-                                    <CardHeader className="pb-3">
-                                        <CardTitle className="text-lg">Week {currentProgram.current.week} (Current)</CardTitle>
-                                    </CardHeader>
-                                    <CardContent>
-                                        <div className="space-y-2">
-                                            {currentProgram.current.days.map((day, i) => (
-                                                <div
-                                                    key={i}
-                                                    className={`flex items-center justify-between p-3 rounded-lg border ${day.current
-                                                            ? 'bg-primary/10 border-primary'
-                                                            : day.completed
-                                                                ? 'bg-muted/50 border-border'
-                                                                : 'bg-background border-border'
-                                                        }`}
-                                                >
-                                                    <div className="flex items-center gap-3">
-                                                        <span className={`text-sm font-semibold w-12 ${day.current ? 'text-primary' : 'text-muted-foreground'}`}>
-                                                            {day.day}
-                                                        </span>
-                                                        <span className="text-sm font-medium">{day.workout}</span>
-                                                        {day.current && (
-                                                            <span className="text-xs bg-primary text-primary-foreground px-2 py-1 rounded-full font-semibold">
-                                                                TODAY
-                                                            </span>
-                                                        )}
-                                                    </div>
-                                                    {day.completed && (
-                                                        <span className="text-green-600 text-lg">✅</span>
-                                                    )}
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </CardContent>
-                                </Card>
-                            </TabsContent>
+    const calculatePlanProgress = (): number => {
+        if (!currentUserPlan) return 0;
+        return Math.round((currentUserPlan.currentWeek / currentUserPlan.totalWeeks) * 100);
+    };
 
-                            <TabsContent value="upcoming" className="space-y-4 mt-4">
-                                {currentProgram.upcoming.map((weekData) => (
-                                    <Card key={weekData.week}>
-                                        <CardHeader className="pb-3">
-                                            <CardTitle className="text-lg">Week {weekData.week}</CardTitle>
-                                        </CardHeader>
-                                        <CardContent>
-                                            <div className="space-y-2">
-                                                {weekData.days.map((day, i) => (
-                                                    <div key={i} className="flex items-center justify-between p-3 rounded-lg bg-background border border-border">
-                                                        <div className="flex items-center gap-3">
-                                                            <span className="text-sm font-semibold w-12 text-muted-foreground">{day.day}</span>
-                                                            <span className="text-sm">{day.workout}</span>
-                                                        </div>
-                                                        <span className="text-xs text-muted-foreground">Scheduled</span>
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        </CardContent>
-                                    </Card>
-                                ))}
-                            </TabsContent>
-                        </Tabs>
-                    </div>
-                </DialogContent>
-            </Dialog>
+    const getTotalWeekWorkouts = (): number => {
+        if (!currentUserPlan) return 7;
+
+        const currentWeek: EnrichedTrainingPlanWeek | undefined = currentUserPlan.planDetails.weeks.find(
+            (w: EnrichedTrainingPlanWeek) => w.weekNumber === currentUserPlan.currentWeek
+        );
+
+        return currentWeek?.days?.length || 7;
+    };
+
+    const today: string = new Date().toLocaleDateString('en-US', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+
+    // Get sport emoji
+    const getSportEmoji = (sport: string): string => {
+        const emojiMap: Record<string, string> = {
+            'running': '🏃',
+            'strength': '💪',
+            'cycling': '🚴',
+            'swimming': '🏊',
+            'triathlon': '🏊🚴🏃',
+        };
+        return emojiMap[sport.toLowerCase()] || '💪';
+    };
+
+    // Check if today's workout is overridden
+    const isWorkoutOverridden = (): boolean => {
+        if (!currentUserPlan) return false;
+
+        const currentDayOfWeek: string = daysOfWeek[currentUserPlan.currentDayIndex];
+        return currentUserPlan.overrides.some(o =>
+            o.weekNumber === currentUserPlan.currentWeek &&
+            o.dayOfWeek.toString() === currentDayOfWeek
         );
     };
 
-    // Dynamic content based on plan type
-    const planData = {
-        running: {
-            planName: 'Marathon Novice 1',
-            weekInfo: 'Week 4 / Day 3',
-            todayWorkout: {
-                emoji: '🏃',
-                title: 'Easy Run 5mi',
-                description: 'Aerobic base run to build endurance',
-                metrics: [
-                    { label: 'Distance', value: '5 mi' },
-                    { label: 'Pace', value: 'Easy' },
-                    { label: 'Duration', value: '45 min' }
-                ]
-            },
-            stats: [
-                { emoji: '🏃', label: 'Total Miles', value: '128', subtext: 'this month' },
-                { emoji: '🔥', label: 'Current Streak', value: '14 days', subtext: 'keep it up!' },
-                { emoji: '⏱️', label: 'Avg Pace', value: '8:12', subtext: 'per mile' }
-            ],
-            weekOverview: [
-                { day: 'Mon', workout: 'Easy 3mi', status: '✅', color: 'text-green-600' },
-                { day: 'Tue', workout: 'Easy 3mi', status: '✅', color: 'text-green-600' },
-                { day: 'Wed', workout: 'Easy 5mi', status: '🔴', color: 'text-primary' },
-                { day: 'Thu', workout: 'Rest', status: '⏳', color: 'text-muted-foreground' },
-                { day: 'Fri', workout: 'Cross Train', status: '🟡', color: 'text-muted-foreground' },
-                { day: 'Sat', workout: 'Long 8mi', status: '⏳', color: 'text-muted-foreground' },
-                { day: 'Sun', workout: 'Rest', status: '⏳', color: 'text-muted-foreground' }
-            ],
-            weeklyProgress: [
-                { week: 'Week 1', value: 12, max: 20, label: 'mi' },
-                { week: 'Week 2', value: 15, max: 20, label: 'mi' },
-                { week: 'Week 3', value: 18, max: 20, label: 'mi' },
-                { week: 'Week 4', value: 11, max: 20, label: 'mi' }
-            ],
-            goals: [
-                { label: 'Marathon Ready', value: 28, subtext: 'Week 4 of 16' },
-                { label: 'Monthly Distance', value: 64, subtext: '128 / 200 miles' }
-            ]
-        },
-        strength: {
-            planName: 'Upper/Lower Split',
-            weekInfo: 'Week 2 / Day 3',
-            todayWorkout: {
-                emoji: '💪',
-                title: 'Upper Body Power',
-                description: 'Compound movements focused on strength',
-                metrics: [
-                    { label: 'Exercises', value: '6' },
-                    { label: 'Sets', value: '18 total' },
-                    { label: 'Duration', value: '60 min' }
-                ]
-            },
-            stats: [
-                { emoji: '💪', label: 'Total Volume', value: '42,500 lbs', subtext: 'this month' },
-                { emoji: '🔥', label: 'Current Streak', value: '14 days', subtext: 'keep it up!' },
-                { emoji: '📈', label: 'PRs This Month', value: '8', subtext: 'personal records' }
-            ],
-            weekOverview: [
-                { day: 'Mon', workout: 'Lower Power', status: '✅', color: 'text-green-600' },
-                { day: 'Tue', workout: 'Rest', status: '✅', color: 'text-green-600' },
-                { day: 'Wed', workout: 'Upper Power', status: '🔴', color: 'text-primary' },
-                { day: 'Thu', workout: 'Rest', status: '⏳', color: 'text-muted-foreground' },
-                { day: 'Fri', workout: 'Lower Hyper', status: '🟡', color: 'text-muted-foreground' },
-                { day: 'Sat', workout: 'Upper Hyper', status: '⏳', color: 'text-muted-foreground' },
-                { day: 'Sun', workout: 'Active Rec', status: '⏳', color: 'text-muted-foreground' }
-            ],
-            weeklyProgress: [
-                { week: 'Week 1', value: 38000, max: 50000, label: 'lbs' },
-                { week: 'Week 2', value: 42000, max: 50000, label: 'lbs' },
-                { week: 'Week 3', value: 45000, max: 50000, label: 'lbs' },
-                { week: 'Week 4', value: 18000, max: 50000, label: 'lbs' }
-            ],
-            goals: [
-                { label: 'Strength Program', value: 37, subtext: 'Week 2 of 8' },
-                { label: 'Monthly Volume', value: 85, subtext: '42.5k / 50k lbs' }
-            ]
+    // Format workout metrics for display
+    const getWorkoutMetrics = (): Array<{ label: string; value: string }> => {
+        if (!todaysWorkout?.workoutDetails) {
+            return [
+                { label: 'Week', value: currentUserPlan?.currentWeek.toString() || '-' },
+                { label: 'Day', value: (currentUserPlan?.currentDayIndex + 1)?.toString() || '-' },
+                { label: 'Status', value: 'Scheduled' }
+            ];
         }
+
+        const workout: WorkoutTemplateDoc = todaysWorkout.workoutDetails;
+        const metrics: Array<{ label: string; value: string }> = [];
+
+        if (workout.metrics.distanceMiles) {
+            metrics.push({
+                label: 'Distance',
+                value: `${workout.metrics.distanceMiles} mi`
+            });
+        }
+
+        if (workout.metrics.durationMins) {
+            metrics.push({
+                label: 'Duration',
+                value: `${workout.metrics.durationMins} min`
+            });
+        }
+
+        metrics.push({
+            label: 'Difficulty',
+            value: workout.difficulty.charAt(0).toUpperCase() + workout.difficulty.slice(1)
+        });
+
+        // Fill remaining slots if less than 3 metrics
+        while (metrics.length < 3) {
+            metrics.push({
+                label: 'Category',
+                value: workout.category || '-'
+            });
+            break;
+        }
+
+        return metrics.slice(0, 3); // Only show 3 metrics
     };
 
-    const currentPlan = planData[planType];
+    // Loading state
+    if (loading) {
+        return (
+            <div className="min-h-screen bg-background flex items-center justify-center">
+                <div className="text-center">
+                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+                    <p className="text-muted-foreground">Loading your dashboard...</p>
+                </div>
+            </div>
+        );
+    }
 
-    // Performance Dashboard
-    const PerformanceLayout = () => (
+    // Error state
+    if (error || !currentUser) {
+        return (
+            <div className="min-h-screen bg-background flex items-center justify-center">
+                <Card className="max-w-md">
+                    <CardHeader>
+                        <CardTitle>Unable to Load Dashboard</CardTitle>
+                        <CardDescription>
+                            {error || "Please try logging in again"}
+                        </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                        <Button onClick={() => window.location.reload()}>
+                            Retry
+                        </Button>
+                    </CardContent>
+                </Card>
+            </div>
+        );
+    }
+
+    // No active plans state
+    if (activePlans.length === 0) {
+        return (
+            <div className="min-h-screen bg-background">
+                <main className="container mx-auto px-4 py-8 max-w-7xl">
+                    <Card className="text-center py-12">
+                        <CardHeader>
+                            <div className="text-6xl mb-4">🏃</div>
+                            <CardTitle className="text-2xl">No Active Training Plans</CardTitle>
+                            <CardDescription className="mt-2">
+                                Get started by creating or joining a training plan
+                            </CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                            <Button size="lg" className="mt-4">
+                                Browse Training Plans
+                            </Button>
+                        </CardContent>
+                    </Card>
+                </main>
+            </div>
+        );
+    }
+
+    // No plan selected state
+    if (!currentUserPlan) {
+        return null;
+    }
+
+    const sportEmoji: string = getSportEmoji(currentUserPlan.planDetails.sport);
+    const completedThisWeek: number = getCompletedWorkoutsThisWeek();
+    const totalWeekWorkouts: number = getTotalWeekWorkouts();
+    const planProgress: number = calculatePlanProgress();
+    const workoutIsCustom: boolean = isWorkoutOverridden();
+    const workoutMetrics: Array<{ label: string; value: string }> = getWorkoutMetrics();
+
+    return (
         <div className="min-h-screen bg-background">
+            {/* Header with Navigation */}
+            <header className="border-b border-border bg-card sticky top-0 z-50">
+                <div className="container mx-auto px-4 py-4">
+                    <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-4">
+                            <h1 className="text-xl font-bold text-foreground">HybridFit</h1>
+                            <div className="hidden md:flex relative">
+                                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                                <input
+                                    type="text"
+                                    placeholder="Search workouts..."
+                                    className="pl-10 pr-4 py-2 rounded-lg bg-muted border-0 text-sm w-64 focus:outline-none focus:ring-2 focus:ring-primary"
+                                />
+                            </div>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <Button variant="ghost" size="icon"><Bell className="h-5 w-5" /></Button>
+                            <Button variant="ghost" size="icon"><Settings className="h-5 w-5" /></Button>
+                            <Button variant="ghost" size="icon"><UserIcon className="h-5 w-5" /></Button>
+                        </div>
+                    </div>
+                </div>
+            </header>
 
             <main className="container mx-auto px-4 py-8 max-w-7xl">
                 <div className="space-y-6">
-                    <div className="flex items-center justify-between mb-6">
+                    {/* Plan Picker Header */}
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                         <div>
-                            <h2 className="text-3xl font-bold text-foreground">
-                                {currentPlan.todayWorkout.emoji} Today's Workout
+                            <h2 className="text-3xl font-bold text-foreground mb-2">
+                                {sportEmoji} Today's Workout
                             </h2>
-                            <p className="text-muted-foreground">Wednesday, October 12, 2025</p>
+                            <p className="text-muted-foreground">{today}</p>
                         </div>
-                        <div className="flex items-center gap-2">
-                            <span className="text-sm text-muted-foreground">Viewing:</span>
-                            <Select value={selectedPlanId} onValueChange={setSelectedPlanId}>
-                                <SelectTrigger className="w-[250px]">
-                                    <SelectValue placeholder="Select a plan" />
-                                </SelectTrigger>
-                                <SelectContent>
-                                    {currentUser?.trainingPlans?.map((plan) => (
-                                        <SelectItem key={plan.id} value={plan.id}>
-                                            {plan.emoji} {plan.name}
-                                        </SelectItem>
-                                    ))}
-                                </SelectContent>
-                            </Select>
-                        </div>
-                    </div>
-                    <div className="text-center">
-                        <h2 className="text-3xl font-bold text-foreground mb-2">{currentPlan.todayWorkout.emoji} Today's Workout</h2>
-                        <p className="text-muted-foreground">Wednesday, October 12, 2025</p>
+                        {activePlans.length > 1 && (
+                            <div className="flex items-center gap-2">
+                                <span className="text-sm text-muted-foreground hidden sm:inline">Viewing:</span>
+                                <Select value={selectedPlanId} onValueChange={(value: string) => setSelectedPlanId(value)}>
+                                    <SelectTrigger className="w-[250px]">
+                                        <SelectValue placeholder="Select a plan" />
+                                    </SelectTrigger>
+                                    <SelectContent>
+                                        {activePlans.map((plan: EnrichedUserPlanProgress) => (
+                                            <SelectItem key={plan.planId} value={plan.planId}>
+                                                {getSportEmoji(plan.planDetails.sport)} {plan.planName}
+                                            </SelectItem>
+                                        ))}
+                                    </SelectContent>
+                                </Select>
+                            </div>
+                        )}
                     </div>
 
+                    {/* Today's Workout Card */}
                     <Card>
                         <CardHeader>
-                            <div className="flex items-center justify-between">
-                                <div>
-                                    <CardDescription className="mb-1">{currentPlan.planName} — {currentPlan.weekInfo}</CardDescription>
-                                    <CardTitle className="text-2xl">{currentPlan.todayWorkout.title}</CardTitle>
-                                    <p className="text-sm text-muted-foreground mt-2">{currentPlan.todayWorkout.description}</p>
+                            <div className="flex items-start justify-between">
+                                <div className="flex-1">
+                                    <div className="flex items-center gap-2 mb-2 flex-wrap">
+                                        <span className="text-xs font-semibold px-2 py-1 rounded-full bg-primary/10 text-primary">
+                                            {currentUserPlan.planDetails.level}
+                                        </span>
+                                        <span className="text-xs font-semibold px-2 py-1 rounded-full bg-muted text-muted-foreground">
+                                            {currentUserPlan.planDetails.sport}
+                                        </span>
+                                        {workoutIsCustom && (
+                                            <span className="text-xs font-semibold px-2 py-1 rounded-full bg-blue-100 text-blue-700">
+                                                Custom
+                                            </span>
+                                        )}
+                                        {todaysWorkout?.workoutDetails && (
+                                            <span className="text-xs font-semibold px-2 py-1 rounded-full bg-green-100 text-green-700">
+                                                {todaysWorkout.workoutDetails.category}
+                                            </span>
+                                        )}
+                                    </div>
+                                    <CardDescription className="mb-1">
+                                        {currentUserPlan.planName} — Week {currentUserPlan.currentWeek} / Day {currentUserPlan.currentDayIndex + 1}
+                                    </CardDescription>
+                                    <CardTitle className="text-2xl">
+                                        {todaysWorkout?.workoutDetails?.name || `${currentDayName}'s Workout`}
+                                    </CardTitle>
+                                    {todaysWorkout?.workoutDetails?.description && (
+                                        <p className="text-sm text-muted-foreground mt-2">
+                                            {todaysWorkout.workoutDetails.description}
+                                        </p>
+                                    )}
                                 </div>
                             </div>
                         </CardHeader>
                         <CardContent className="space-y-4">
                             <div className="grid grid-cols-3 gap-4 text-center">
-                                {currentPlan.todayWorkout.metrics.map((metric, i) => (
+                                {workoutMetrics.map((metric: { label: string; value: string }, i: number) => (
                                     <div key={i} className="p-4 rounded-lg bg-muted">
                                         <div className="text-2xl font-bold text-primary">{metric.value}</div>
                                         <div className="text-xs text-muted-foreground mt-1">{metric.label}</div>
                                     </div>
                                 ))}
                             </div>
+
+                            {/* Plan Details Section */}
+                            {currentUserPlan.planDetails.details && (
+                                <div className="p-4 rounded-lg bg-muted/50 border border-border">
+                                    <h4 className="font-semibold text-sm mb-2">Plan Details</h4>
+                                    <div className="space-y-1 text-sm">
+                                        <p><span className="text-muted-foreground">Goal:</span> {currentUserPlan.planDetails.details.goal}</p>
+                                        <p><span className="text-muted-foreground">Type:</span> {currentUserPlan.planDetails.details.planType}</p>
+                                        {todaysWorkout?.workoutDetails?.tags && todaysWorkout.workoutDetails.tags.length > 0 && (
+                                            <p>
+                                                <span className="text-muted-foreground">Tags:</span>{' '}
+                                                {todaysWorkout.workoutDetails.tags.join(', ')}
+                                            </p>
+                                        )}
+                                    </div>
+                                </div>
+                            )}
+
                             <div className="flex gap-3 pt-2">
-                                <Button className="flex-1" size="lg">Log Results</Button>
-                                <div className="flex-1"><CalendarDialog /></div>
+                                <Button className="flex-1" size="lg">Start Workout</Button>
+                                <Button variant="secondary" className="flex-1" size="lg">Log Results</Button>
+                            </div>
+                            <Separator />
+                            <div className="flex justify-center">
+                                <Button variant="outline" className="gap-2 w-full">
+                                    <Calendar className="h-4 w-4" />
+                                    View Program Calendar
+                                </Button>
                             </div>
                         </CardContent>
                     </Card>
 
+                    {/* Stats Cards */}
                     <div className="grid gap-4 md:grid-cols-3">
-                        {currentPlan.stats.map((stat, i) => (
-                            <Card key={i}>
-                                <CardContent className="pt-6">
-                                    <div className="flex items-center justify-between">
-                                        <div>
-                                            <p className="text-sm text-muted-foreground">{stat.label}</p>
-                                            <h3 className="text-3xl font-bold text-primary mt-1">{stat.value}</h3>
-                                            <p className="text-xs text-muted-foreground mt-1">{stat.subtext}</p>
-                                        </div>
-                                        <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-                                            <span className="text-2xl">{stat.emoji}</span>
-                                        </div>
+                        <Card>
+                            <CardContent className="pt-6">
+                                <div className="flex items-center justify-between">
+                                    <div>
+                                        <p className="text-sm text-muted-foreground">Total Workouts</p>
+                                        <h3 className="text-3xl font-bold text-primary mt-1">
+                                            {currentUser.totalWorkoutsCompleted}
+                                        </h3>
+                                        <p className="text-xs text-muted-foreground mt-1">all time</p>
                                     </div>
-                                </CardContent>
-                            </Card>
-                        ))}
+                                    <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
+                                        <span className="text-2xl">{sportEmoji}</span>
+                                    </div>
+                                </div>
+                            </CardContent>
+                        </Card>
+
+                        <Card>
+                            <CardContent className="pt-6">
+                                <div className="flex items-center justify-between">
+                                    <div>
+                                        <p className="text-sm text-muted-foreground">Current Streak</p>
+                                        <h3 className="text-3xl font-bold text-primary mt-1">
+                                            {currentUser.currentStreak} days
+                                        </h3>
+                                        <p className="text-xs text-muted-foreground mt-1">
+                                            Best: {currentUser.longestStreak} days
+                                        </p>
+                                    </div>
+                                    <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
+                                        <span className="text-2xl">🔥</span>
+                                    </div>
+                                </div>
+                            </CardContent>
+                        </Card>
+
+                        <Card>
+                            <CardContent className="pt-6">
+                                <div className="flex items-center justify-between">
+                                    <div>
+                                        <p className="text-sm text-muted-foreground">Plan Progress</p>
+                                        <h3 className="text-3xl font-bold text-primary mt-1">
+                                            {planProgress}%
+                                        </h3>
+                                        <p className="text-xs text-muted-foreground mt-1">
+                                            Week {currentUserPlan.currentWeek} of {currentUserPlan.totalWeeks}
+                                        </p>
+                                    </div>
+                                    <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
+                                        <span className="text-2xl">📈</span>
+                                    </div>
+                                </div>
+                            </CardContent>
+                        </Card>
                     </div>
 
+                    {/* Progress Cards */}
                     <div className="grid gap-6 md:grid-cols-2">
                         <Card>
                             <CardHeader>
-                                <CardTitle className="text-lg">📈 Weekly {planType === 'running' ? 'Mileage' : 'Volume'}</CardTitle>
+                                <CardTitle className="text-lg">📅 This Week's Progress</CardTitle>
                             </CardHeader>
                             <CardContent>
                                 <div className="space-y-3">
-                                    {currentPlan.weeklyProgress.map((item, i) => (
-                                        <div key={i}>
-                                            <div className="flex justify-between text-sm mb-1">
-                                                <span className="text-muted-foreground">{item.week}</span>
-                                                <span className="font-semibold">
-                                                    {planType === 'running' ? item.value : (item.value / 1000).toFixed(1) + 'k'} {item.label}
-                                                </span>
-                                            </div>
-                                            <Progress value={(item.value / item.max) * 100} className="h-2" />
+                                    <div>
+                                        <div className="flex justify-between text-sm mb-1">
+                                            <span className="text-muted-foreground">Workouts Completed</span>
+                                            <span className="font-semibold">
+                                                {completedThisWeek} / {totalWeekWorkouts}
+                                            </span>
                                         </div>
-                                    ))}
+                                        <Progress
+                                            value={(completedThisWeek / totalWeekWorkouts) * 100}
+                                            className="h-2"
+                                        />
+                                    </div>
                                 </div>
                             </CardContent>
                         </Card>
@@ -482,31 +533,72 @@ export default function DashboardLayouts() {
                             </CardHeader>
                             <CardContent>
                                 <div className="space-y-4">
-                                    {currentPlan.goals.map((goal, i) => (
-                                        <React.Fragment key={i}>
-                                            {i > 0 && <Separator />}
-                                            <div>
-                                                <div className="flex justify-between mb-2">
-                                                    <span className="text-sm text-muted-foreground">{goal.label}</span>
-                                                    <span className="text-sm font-semibold">{goal.value}%</span>
-                                                </div>
-                                                <Progress value={goal.value} className="h-3" />
-                                                <p className="text-xs text-muted-foreground mt-1">{goal.subtext}</p>
-                                            </div>
-                                        </React.Fragment>
-                                    ))}
+                                    <div>
+                                        <div className="flex justify-between mb-2">
+                                            <span className="text-sm text-muted-foreground">{currentUserPlan.planName}</span>
+                                            <span className="text-sm font-semibold">{planProgress}%</span>
+                                        </div>
+                                        <Progress value={planProgress} className="h-3" />
+                                        <p className="text-xs text-muted-foreground mt-1">
+                                            Week {currentUserPlan.currentWeek} of {currentUserPlan.totalWeeks}
+                                        </p>
+                                    </div>
+                                    {currentUserPlan.startedAt && (
+                                        <div className="pt-2 border-t border-border">
+                                            <p className="text-xs text-muted-foreground">
+                                                Started: {new Date(currentUserPlan.startedAt).toLocaleDateString()}
+                                            </p>
+                                        </div>
+                                    )}
                                 </div>
                             </CardContent>
                         </Card>
                     </div>
+
+                    {/* Recent Activity */}
+                    {currentUserPlan.progressLog.length > 0 && (
+                        <Card>
+                            <CardHeader>
+                                <CardTitle className="text-lg">📊 Recent Activity</CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <div className="space-y-2">
+                                    {currentUserPlan.progressLog
+                                        .slice(-5)
+                                        .reverse()
+                                        .map((log: UserDoc['trainingPlans'][0]['progressLog'][0], i: number) => {
+                                            const statusEmoji: string = log.status === 'completed' ? '✅' :
+                                                log.status === 'skipped' ? '⏭️' : '❌';
+
+                                            return (
+                                                <div key={i} className="flex items-center justify-between p-3 rounded-lg bg-muted/50 border border-border">
+                                                    <div className="flex items-center gap-3">
+                                                        <span className="text-lg">{statusEmoji}</span>
+                                                        <div>
+                                                            <span className="text-sm font-medium">
+                                                                {new Date(log.date).toLocaleDateString('en-US', {
+                                                                    weekday: 'short',
+                                                                    month: 'short',
+                                                                    day: 'numeric'
+                                                                })}
+                                                            </span>
+                                                            {log.notes && (
+                                                                <p className="text-xs text-muted-foreground">{log.notes}</p>
+                                                            )}
+                                                        </div>
+                                                    </div>
+                                                    <span className="text-xs text-muted-foreground capitalize">
+                                                        {log.status}
+                                                    </span>
+                                                </div>
+                                            );
+                                        })}
+                                </div>
+                            </CardContent>
+                        </Card>
+                    )}
                 </div>
             </main>
-        </div>
-    );
-
-    return (
-        <div className="min-h-screen bg-slate-100">
-            <PerformanceLayout />
         </div>
     );
 }

@@ -9,7 +9,7 @@ export enum ExerciseType {
     CONDITIONING = "conditioning",
 }
 
-export interface NormalizedExercise {
+export interface ExerciseDoc extends Document {
     _id: string;
     name: string;
     type: ExerciseType;
@@ -26,9 +26,7 @@ export interface NormalizedExercise {
     tags: string[];
 }
 
-export type NormalizedExerciseDoc = Document<string, {}, NormalizedExercise> & NormalizedExercise;
-
-const exerciseSchema = new Schema<NormalizedExerciseDoc>(
+const exerciseSchema = new Schema<ExerciseDoc>(
     {
         _id: { type: String, required: true },
         name: { type: String, required: true },
@@ -52,4 +50,4 @@ const exerciseSchema = new Schema<NormalizedExerciseDoc>(
     { timestamps: true } // tells mongoose to automatically create 'createdAt' and 'updatedAt' fields in the document
 );
 
-export const NormalizedExercise = models.Exercise || mongoose.model<NormalizedExerciseDoc>("Exercise", exerciseSchema);
+export const Exercise = models.Exercise || mongoose.model<ExerciseDoc>("Exercise", exerciseSchema);

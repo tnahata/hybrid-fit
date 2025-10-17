@@ -6,7 +6,7 @@ interface WorkoutLog {
     workoutTemplateId: string; // could be from base plan or custom
     status: "completed" | "skipped" | "missed";
     notes?: string;
-}
+};
 
 enum DayOfWeek {
     MON = "Mon",
@@ -16,7 +16,7 @@ enum DayOfWeek {
     FRI = "Fri",
     SAT = "Sat",
     SUN = "Sun",
-}
+};
 
 // Custom workout override for a specific day
 export interface WorkoutOverride {
@@ -39,7 +39,7 @@ export interface UserPlanProgress {
     overrides: WorkoutOverride[]; // personalization
 
     progressLog: WorkoutLog[]; // progress tracking
-}
+};
 
 export interface UserDoc extends Document {
     email: string;
@@ -55,7 +55,7 @@ export interface UserDoc extends Document {
 
     createdAt: Date;
     updatedAt: Date;
-}
+};
 
 const workoutLogSchema = new Schema<WorkoutLog>({
     date: { type: Date, required: true },
