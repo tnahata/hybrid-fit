@@ -411,12 +411,8 @@ export default function Dashboard(): JSX.Element {
                             )}
 
                             <div className="flex gap-3 pt-2">
-                                <Button className="flex-1" size="lg">Start Workout</Button>
-                                <Button variant="secondary" className="flex-1" size="lg">Log Results</Button>
-                            </div>
-                            <Separator />
-                            <div className="flex justify-center">
-                                <Button variant="outline" className="gap-2 w-full">
+                                <Button className="flex-1" size="lg">Log Results</Button>
+                                <Button variant="secondary" className="flex-1 gap-2" size="lg">
                                     <Calendar className="h-4 w-4" />
                                     View Program Calendar
                                 </Button>
