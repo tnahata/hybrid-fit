@@ -48,4 +48,4 @@ const trainingPlanSchema = new Schema<TrainingPlanDoc>(
     { timestamps: true }
 );
 
-export const TrainingPlan = mongoose.models.TrainingPlan || mongoose.model<TrainingPlanDoc>("User", trainingPlanSchema);
+export const TrainingPlan = mongoose.models.TrainingPlan || mongoose.model<TrainingPlanDoc>("TrainingPlan", trainingPlanSchema);
