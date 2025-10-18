@@ -78,7 +78,20 @@ function normalizeWorkoutTemplate(template) {
         metrics: normalizeMetrics(template.metrics),
         difficulty: normalizeDifficultyFromTags(template),
         tags: Array.isArray(template.tags) ? template.tags.map((t) => t.toLowerCase()) : [],
+        structure: [],
     };
+    // Case 1: lifting or sport-specific workouts that have structure
+    if (Array.isArray(template.structure) && template.structure.length > 0) {
+        normalized.structure = template.structure;
+    }
+    // Case 2: Strength or conditioning workouts might be multi-exercise
+    else if (["strength", "conditioning", "cross_training"].includes(normalized.sport)) {
+        normalized.structure = [];
+    }
+    // Case 3: Running or single-activity workouts — no structure needed
+    // else {
+    //     delete (normalized as any).structure;
+    // }
     return normalized;
 }
 /**

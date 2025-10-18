@@ -12,6 +12,19 @@ export enum WorkoutDifficulty {
 }
 
 /**
+ * Represents a single exercise structure inside a workout template
+ */
+export interface WorkoutExerciseStructure {
+    exerciseId: string; // Reference to Exercise._id
+    sets?: number;
+    reps?: number;
+    durationMins?: number;
+    durationSecs?: number;
+    restSeconds?: number;
+    notes?: string;
+}
+
+/**
  * Interface for normalized workout template
  */
 export interface NormalizedWorkoutTemplate {
@@ -26,6 +39,7 @@ export interface NormalizedWorkoutTemplate {
         [key: string]: any;
     };
     difficulty: string;
+    structure?: WorkoutExerciseStructure[]; // Detailed structure of the workout
     tags: string[];
 }
 
@@ -91,8 +105,8 @@ function normalizeWorkoutTemplate(template: any): NormalizedWorkoutTemplate {
         metrics: normalizeMetrics(template.metrics),
         difficulty: normalizeDifficultyFromTags(template),
         tags: Array.isArray(template.tags) ? template.tags.map((t: string) => t.toLowerCase()) : [],
+        structure: Array.isArray(template.structure) ? template.structure : [],
     };
-
     return normalized;
 }
 
