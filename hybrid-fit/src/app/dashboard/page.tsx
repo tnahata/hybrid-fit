@@ -551,6 +551,7 @@ export default function Dashboard() {
 
                     {/* Progress Cards */}
                     <div className="grid gap-6 md:grid-cols-2">
+                        {isPlanActive &&
                         <Card>
                             <CardHeader>
                                 <CardTitle className="text-lg">📅 This Week's Progress</CardTitle>
@@ -572,8 +573,9 @@ export default function Dashboard() {
                                 </div>
                             </CardContent>
                         </Card>
+                        }
 
-                        <Card>
+                        <Card className={isPlanActive ? '' : 'md:col-span-2'}>
                             <CardHeader>
                                 <CardTitle className="text-lg">🎯 Goal Progress</CardTitle>
                             </CardHeader>
