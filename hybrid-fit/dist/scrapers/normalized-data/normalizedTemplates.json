@@ -1895,5 +1895,2291 @@
       "track"
     ],
     "structure": []
+  },
+  {
+    "_id": "strength_upper_body_push_beginner",
+    "name": "Upper Body Push - Beginner",
+    "sport": "strength",
+    "category": "strength",
+    "description": "Beginner-friendly upper body pushing workout focusing on chest, shoulders, and triceps.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 45
+    },
+    "difficulty": "beginner",
+    "tags": [
+      "strength",
+      "upper_body",
+      "push",
+      "beginner"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_ae0d899b41_strength",
+        "sets": 3,
+        "reps": 10,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "exrx_9a97c4574b_strength",
+        "sets": 3,
+        "reps": 12,
+        "restSeconds": 60
+      },
+      {
+        "exerciseId": "exrx_4d6608f486_strength",
+        "sets": 3,
+        "reps": 10,
+        "restSeconds": 60
+      }
+    ]
+  },
+  {
+    "_id": "strength_upper_body_pull_beginner",
+    "name": "Upper Body Pull - Beginner",
+    "sport": "strength",
+    "category": "strength",
+    "description": "Beginner-friendly upper body pulling workout targeting back and biceps.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 45
+    },
+    "difficulty": "beginner",
+    "tags": [
+      "strength",
+      "upper_body",
+      "pull",
+      "beginner"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_dc4ca68306_strength",
+        "sets": 3,
+        "reps": 10,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "exrx_3e8e528997_strength",
+        "sets": 3,
+        "reps": 12,
+        "restSeconds": 60
+      },
+      {
+        "exerciseId": "exrx_249730caee_strength",
+        "sets": 3,
+        "reps": 12,
+        "restSeconds": 60
+      }
+    ]
+  },
+  {
+    "_id": "strength_lower_body_beginner",
+    "name": "Lower Body Strength - Beginner",
+    "sport": "strength",
+    "category": "strength",
+    "description": "Beginner lower body workout focusing on quads, hamstrings, and glutes.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 50
+    },
+    "difficulty": "beginner",
+    "tags": [
+      "strength",
+      "lower_body",
+      "beginner"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_9b2924bdf3_strength",
+        "sets": 3,
+        "reps": 10,
+        "restSeconds": 120
+      },
+      {
+        "exerciseId": "exrx_48c5c88e3c_strength",
+        "sets": 3,
+        "reps": 10,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "exrx_36b300feba_strength",
+        "sets": 3,
+        "reps": 12,
+        "restSeconds": 60
+      },
+      {
+        "exerciseId": "exrx_0101a29f34_strength",
+        "sets": 3,
+        "reps": 15,
+        "restSeconds": 45
+      }
+    ]
+  },
+  {
+    "_id": "strength_full_body_intermediate",
+    "name": "Full Body Strength - Intermediate",
+    "sport": "strength",
+    "category": "strength",
+    "description": "Intermediate full body workout hitting all major muscle groups.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 60
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "strength",
+      "full_body",
+      "intermediate"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_3c845b27f0_strength",
+        "sets": 4,
+        "reps": 8,
+        "restSeconds": 120
+      },
+      {
+        "exerciseId": "exrx_ae0d899b41_strength",
+        "sets": 4,
+        "reps": 8,
+        "restSeconds": 120
+      },
+      {
+        "exerciseId": "exrx_dc4ca68306_strength",
+        "sets": 3,
+        "reps": 10,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "exrx_48c5c88e3c_strength",
+        "sets": 3,
+        "reps": 10,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "exrx_0c074f85f8_strength",
+        "sets": 3,
+        "reps": 15,
+        "restSeconds": 45
+      }
+    ]
+  },
+  {
+    "_id": "strength_upper_body_push_advanced",
+    "name": "Upper Body Push - Advanced",
+    "sport": "strength",
+    "category": "strength",
+    "description": "Advanced upper body pushing workout with high volume and intensity.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 60
+    },
+    "difficulty": "advanced",
+    "tags": [
+      "strength",
+      "upper_body",
+      "push",
+      "advanced"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_ae0d899b41_strength",
+        "sets": 5,
+        "reps": 5,
+        "restSeconds": 180
+      },
+      {
+        "exerciseId": "exrx_9f2ef6f28a_strength",
+        "sets": 4,
+        "reps": 8,
+        "restSeconds": 120
+      },
+      {
+        "exerciseId": "exrx_8f41120e24_strength",
+        "sets": 3,
+        "reps": 10,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "exrx_319f24a7f3_strength",
+        "sets": 3,
+        "reps": 12,
+        "restSeconds": 60
+      },
+      {
+        "exerciseId": "exrx_24628db82d_strength",
+        "sets": 3,
+        "reps": 12,
+        "restSeconds": 60
+      }
+    ]
+  },
+  {
+    "_id": "strength_upper_body_pull_advanced",
+    "name": "Upper Body Pull - Advanced",
+    "sport": "strength",
+    "category": "strength",
+    "description": "Advanced upper body pulling workout emphasizing back thickness and width.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 60
+    },
+    "difficulty": "advanced",
+    "tags": [
+      "strength",
+      "upper_body",
+      "pull",
+      "advanced"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_3c845b27f0_strength",
+        "sets": 5,
+        "reps": 5,
+        "restSeconds": 180
+      },
+      {
+        "exerciseId": "exrx_299c66f88c_strength",
+        "sets": 4,
+        "reps": 8,
+        "restSeconds": 120
+      },
+      {
+        "exerciseId": "exrx_dc4ca68306_strength",
+        "sets": 4,
+        "reps": 8,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "exrx_b93acd180a_strength",
+        "sets": 3,
+        "reps": 10,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "exrx_b3ccf76c57_strength",
+        "sets": 3,
+        "reps": 12,
+        "restSeconds": 60
+      }
+    ]
+  },
+  {
+    "_id": "strength_lower_body_advanced",
+    "name": "Lower Body Strength - Advanced",
+    "sport": "strength",
+    "category": "strength",
+    "description": "Advanced lower body workout with heavy compound movements.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 70
+    },
+    "difficulty": "advanced",
+    "tags": [
+      "strength",
+      "lower_body",
+      "advanced"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_9b2924bdf3_strength",
+        "sets": 5,
+        "reps": 5,
+        "restSeconds": 180
+      },
+      {
+        "exerciseId": "exrx_3c845b27f0_strength",
+        "sets": 4,
+        "reps": 6,
+        "restSeconds": 180
+      },
+      {
+        "exerciseId": "exrx_48c5c88e3c_strength",
+        "sets": 4,
+        "reps": 8,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "exrx_5eb34925c9_strength",
+        "sets": 3,
+        "reps": 10,
+        "restSeconds": 60
+      },
+      {
+        "exerciseId": "exrx_9a4f18a856_strength",
+        "sets": 4,
+        "reps": 15,
+        "restSeconds": 45
+      }
+    ]
+  },
+  {
+    "_id": "strength_core_abs_intermediate",
+    "name": "Core & Abs - Intermediate",
+    "sport": "strength",
+    "category": "strength",
+    "description": "Intermediate core workout for building abdominal strength and stability.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 30
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "strength",
+      "core",
+      "abs",
+      "intermediate"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_119cf7e61b_strength",
+        "durationMins": 1,
+        "sets": 3,
+        "restSeconds": 60
+      },
+      {
+        "exerciseId": "exrx_0c074f85f8_strength",
+        "sets": 3,
+        "reps": 20,
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "exrx_388af9877a_strength",
+        "sets": 3,
+        "reps": 15,
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "exrx_a913b436e9_strength",
+        "sets": 3,
+        "reps": 12,
+        "restSeconds": 60
+      }
+    ]
+  },
+  {
+    "_id": "hybrid_strength_run_beginner",
+    "name": "Strength + Run - Beginner",
+    "sport": "strength, running",
+    "category": "hybrid",
+    "description": "Beginner hybrid workout combining lower body strength work with an easy run.",
+    "metrics": {
+      "distanceMiles": 3,
+      "durationMins": 60
+    },
+    "difficulty": "beginner",
+    "tags": [
+      "hybrid",
+      "strength",
+      "running",
+      "beginner"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_9b2924bdf3_strength",
+        "sets": 3,
+        "reps": 8,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "exrx_48c5c88e3c_strength",
+        "sets": 3,
+        "reps": 10,
+        "restSeconds": 60
+      },
+      {
+        "exerciseId": "exrx_36b300feba_strength",
+        "sets": 2,
+        "reps": 12,
+        "restSeconds": 60
+      },
+      {
+        "exerciseId": "exrx_0101a29f34_strength",
+        "sets": 2,
+        "reps": 15,
+        "restSeconds": 45,
+        "notes": "Run 3 miles at easy pace after strength work"
+      }
+    ]
+  },
+  {
+    "_id": "hybrid_strength_run_drills_intermediate",
+    "name": "Strength + Run Drills - Intermediate",
+    "sport": "strength, running",
+    "category": "hybrid",
+    "description": "Intermediate workout combining strength training with running drills.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 70
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "hybrid",
+      "strength",
+      "running",
+      "drills",
+      "intermediate"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_3c845b27f0_strength",
+        "sets": 4,
+        "reps": 6,
+        "restSeconds": 120
+      },
+      {
+        "exerciseId": "exrx_48c5c88e3c_strength",
+        "sets": 3,
+        "reps": 10,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "high_knees_15_25m",
+        "sets": 3,
+        "restSeconds": 60,
+        "notes": "3 sets of 25m"
+      },
+      {
+        "exerciseId": "butt_kick_15_25m",
+        "sets": 3,
+        "restSeconds": 60,
+        "notes": "3 sets of 25m"
+      },
+      {
+        "exerciseId": "bounding_20_35m",
+        "sets": 3,
+        "restSeconds": 90,
+        "notes": "3 sets of 35m"
+      }
+    ]
+  },
+  {
+    "_id": "hybrid_upper_strength_run_intermediate",
+    "name": "Upper Body + Run - Intermediate",
+    "sport": "strength, running",
+    "category": "hybrid",
+    "description": "Upper body strength followed by moderate distance run.",
+    "metrics": {
+      "distanceMiles": 4,
+      "durationMins": 75
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "hybrid",
+      "strength",
+      "running",
+      "upper_body",
+      "intermediate"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_ae0d899b41_strength",
+        "sets": 4,
+        "reps": 8,
+        "restSeconds": 120
+      },
+      {
+        "exerciseId": "exrx_299c66f88c_strength",
+        "sets": 3,
+        "reps": 8,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "exrx_dc4ca68306_strength",
+        "sets": 3,
+        "reps": 10,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "exrx_9a97c4574b_strength",
+        "sets": 3,
+        "reps": 12,
+        "restSeconds": 60,
+        "notes": "Run 4 miles at moderate pace after strength"
+      }
+    ]
+  },
+  {
+    "_id": "hybrid_full_body_run_advanced",
+    "name": "Full Body + Run - Advanced",
+    "sport": "strength, running",
+    "category": "hybrid",
+    "description": "High intensity full body strength followed by challenging run.",
+    "metrics": {
+      "distanceMiles": 5,
+      "durationMins": 90
+    },
+    "difficulty": "advanced",
+    "tags": [
+      "hybrid",
+      "strength",
+      "running",
+      "full_body",
+      "advanced"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_3c845b27f0_strength",
+        "sets": 5,
+        "reps": 5,
+        "restSeconds": 180
+      },
+      {
+        "exerciseId": "exrx_ae0d899b41_strength",
+        "sets": 4,
+        "reps": 6,
+        "restSeconds": 120
+      },
+      {
+        "exerciseId": "exrx_299c66f88c_strength",
+        "sets": 4,
+        "reps": 6,
+        "restSeconds": 120
+      },
+      {
+        "exerciseId": "exrx_48c5c88e3c_strength",
+        "sets": 3,
+        "reps": 10,
+        "restSeconds": 90,
+        "notes": "Run 5 miles at tempo pace after strength"
+      }
+    ]
+  },
+  {
+    "_id": "hybrid_strength_soccer_drills_beginner",
+    "name": "Strength + Soccer Drills - Beginner",
+    "sport": "strength, soccer",
+    "category": "hybrid",
+    "description": "Beginner workout combining lower body strength with soccer-specific drills.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 60
+    },
+    "difficulty": "beginner",
+    "tags": [
+      "hybrid",
+      "strength",
+      "soccer",
+      "beginner"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_9b2924bdf3_strength",
+        "sets": 3,
+        "reps": 10,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "exrx_48c5c88e3c_strength",
+        "sets": 3,
+        "reps": 10,
+        "restSeconds": 60
+      },
+      {
+        "exerciseId": "soccer_1v1_dribble_attack_with_shot_drill",
+        "durationMins": 10,
+        "notes": "Focus on ball control"
+      },
+      {
+        "exerciseId": "soccer_1v1_to_goal_drill",
+        "durationMins": 10,
+        "notes": "Practice finishing"
+      }
+    ]
+  },
+  {
+    "_id": "hybrid_strength_soccer_intermediate",
+    "name": "Strength + Soccer - Intermediate",
+    "sport": "strength, soccer",
+    "category": "hybrid",
+    "description": "Intermediate workout with explosive strength and soccer drills.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 75
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "hybrid",
+      "strength",
+      "soccer",
+      "intermediate"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_9b2924bdf3_strength",
+        "sets": 4,
+        "reps": 8,
+        "restSeconds": 120
+      },
+      {
+        "exerciseId": "exrx_3c845b27f0_strength",
+        "sets": 3,
+        "reps": 8,
+        "restSeconds": 120
+      },
+      {
+        "exerciseId": "exrx_48c5c88e3c_strength",
+        "sets": 3,
+        "reps": 10,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "soccer_1v1_speed_and_reaction_game_drill",
+        "durationMins": 12,
+        "notes": "High intensity"
+      },
+      {
+        "exerciseId": "soccer_2v2_challenge_drill",
+        "durationMins": 12,
+        "notes": "Small-sided game"
+      }
+    ]
+  },
+  {
+    "_id": "hybrid_power_soccer_advanced",
+    "name": "Power + Soccer - Advanced",
+    "sport": "strength, soccer",
+    "category": "hybrid",
+    "description": "Advanced power-focused strength with competitive soccer drills.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 90
+    },
+    "difficulty": "advanced",
+    "tags": [
+      "hybrid",
+      "strength",
+      "soccer",
+      "power",
+      "advanced"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_9b2924bdf3_strength",
+        "sets": 5,
+        "reps": 5,
+        "restSeconds": 180
+      },
+      {
+        "exerciseId": "exrx_3c845b27f0_strength",
+        "sets": 4,
+        "reps": 5,
+        "restSeconds": 180
+      },
+      {
+        "exerciseId": "exrx_299c66f88c_strength",
+        "sets": 3,
+        "reps": 6,
+        "restSeconds": 120
+      },
+      {
+        "exerciseId": "soccer_3v3_in_the_18_attacking_and_shooting_drill",
+        "durationMins": 15,
+        "notes": "Finishing practice"
+      },
+      {
+        "exerciseId": "soccer_2v2_quick_attacking_soccer_drill",
+        "durationMins": 15,
+        "notes": "Fast-paced play"
+      }
+    ]
+  },
+  {
+    "_id": "strength_chest_triceps_intermediate",
+    "name": "Chest & Triceps - Intermediate",
+    "sport": "strength",
+    "category": "strength",
+    "description": "Focused chest and triceps workout for intermediate lifters.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 55
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "strength",
+      "chest",
+      "triceps",
+      "intermediate"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_ae0d899b41_strength",
+        "sets": 4,
+        "reps": 8,
+        "restSeconds": 120
+      },
+      {
+        "exerciseId": "exrx_9f2ef6f28a_strength",
+        "sets": 3,
+        "reps": 10,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "exrx_34b34d5fdd_strength",
+        "sets": 3,
+        "reps": 12,
+        "restSeconds": 60
+      },
+      {
+        "exerciseId": "exrx_319f24a7f3_strength",
+        "sets": 3,
+        "reps": 10,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "exrx_24628db82d_strength",
+        "sets": 3,
+        "reps": 12,
+        "restSeconds": 60
+      }
+    ]
+  },
+  {
+    "_id": "strength_back_biceps_intermediate",
+    "name": "Back & Biceps - Intermediate",
+    "sport": "strength",
+    "category": "strength",
+    "description": "Comprehensive back and biceps workout for muscle development.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 55
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "strength",
+      "back",
+      "biceps",
+      "intermediate"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_3c845b27f0_strength",
+        "sets": 4,
+        "reps": 6,
+        "restSeconds": 150
+      },
+      {
+        "exerciseId": "exrx_dc4ca68306_strength",
+        "sets": 4,
+        "reps": 8,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "exrx_b93acd180a_strength",
+        "sets": 3,
+        "reps": 10,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "exrx_249730caee_strength",
+        "sets": 3,
+        "reps": 12,
+        "restSeconds": 60
+      },
+      {
+        "exerciseId": "exrx_b3ccf76c57_strength",
+        "sets": 3,
+        "reps": 12,
+        "restSeconds": 60
+      }
+    ]
+  },
+  {
+    "_id": "strength_legs_glutes_beginner",
+    "name": "Legs & Glutes - Beginner",
+    "sport": "strength",
+    "category": "strength",
+    "description": "Beginner-friendly leg and glute workout.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 45
+    },
+    "difficulty": "beginner",
+    "tags": [
+      "strength",
+      "legs",
+      "glutes",
+      "beginner"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_9b2924bdf3_strength",
+        "sets": 3,
+        "reps": 12,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "exrx_48c5c88e3c_strength",
+        "sets": 3,
+        "reps": 10,
+        "restSeconds": 75
+      },
+      {
+        "exerciseId": "exrx_cbce4814bf_strength",
+        "sets": 3,
+        "reps": 12,
+        "restSeconds": 60
+      },
+      {
+        "exerciseId": "exrx_36b300feba_strength",
+        "sets": 3,
+        "reps": 12,
+        "restSeconds": 60
+      }
+    ]
+  },
+  {
+    "_id": "strength_powerlifting_beginner",
+    "name": "Powerlifting Basics - Beginner",
+    "sport": "strength",
+    "category": "strength",
+    "description": "Introduction to the big three powerlifting movements.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 60
+    },
+    "difficulty": "beginner",
+    "tags": [
+      "strength",
+      "powerlifting",
+      "beginner"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_9b2924bdf3_strength",
+        "sets": 3,
+        "reps": 8,
+        "restSeconds": 120
+      },
+      {
+        "exerciseId": "exrx_ae0d899b41_strength",
+        "sets": 3,
+        "reps": 8,
+        "restSeconds": 120
+      },
+      {
+        "exerciseId": "exrx_3c845b27f0_strength",
+        "sets": 3,
+        "reps": 8,
+        "restSeconds": 120
+      }
+    ]
+  },
+  {
+    "_id": "strength_powerlifting_intermediate",
+    "name": "Powerlifting - Intermediate",
+    "sport": "strength",
+    "category": "strength",
+    "description": "Intermediate powerlifting workout with accessory work.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 75
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "strength",
+      "powerlifting",
+      "intermediate"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_9b2924bdf3_strength",
+        "sets": 5,
+        "reps": 5,
+        "restSeconds": 180
+      },
+      {
+        "exerciseId": "exrx_ae0d899b41_strength",
+        "sets": 4,
+        "reps": 6,
+        "restSeconds": 150
+      },
+      {
+        "exerciseId": "exrx_3c845b27f0_strength",
+        "sets": 4,
+        "reps": 6,
+        "restSeconds": 150
+      },
+      {
+        "exerciseId": "exrx_48c5c88e3c_strength",
+        "sets": 3,
+        "reps": 10,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "exrx_dc4ca68306_strength",
+        "sets": 3,
+        "reps": 10,
+        "restSeconds": 90
+      }
+    ]
+  },
+  {
+    "_id": "strength_bodyweight_beginner",
+    "name": "Bodyweight Basics - Beginner",
+    "sport": "strength",
+    "category": "strength",
+    "description": "Beginner bodyweight workout requiring no equipment.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 35
+    },
+    "difficulty": "beginner",
+    "tags": [
+      "strength",
+      "bodyweight",
+      "beginner"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_9a97c4574b_strength",
+        "sets": 3,
+        "reps": 12,
+        "restSeconds": 60
+      },
+      {
+        "exerciseId": "exrx_3e8e528997_strength",
+        "sets": 3,
+        "reps": 10,
+        "restSeconds": 60
+      },
+      {
+        "exerciseId": "exrx_48c5c88e3c_strength",
+        "sets": 3,
+        "reps": 10,
+        "restSeconds": 60
+      },
+      {
+        "exerciseId": "exrx_119cf7e61b_strength",
+        "sets": 3,
+        "durationSecs": 30,
+        "restSeconds": 45
+      }
+    ]
+  },
+  {
+    "_id": "strength_bodyweight_intermediate",
+    "name": "Bodyweight Circuit - Intermediate",
+    "sport": "strength",
+    "category": "strength",
+    "description": "Intermediate bodyweight circuit for strength and conditioning.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 45
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "strength",
+      "bodyweight",
+      "circuit",
+      "intermediate"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_299c66f88c_strength",
+        "sets": 4,
+        "reps": 8,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "exrx_9a97c4574b_strength",
+        "sets": 4,
+        "reps": 15,
+        "restSeconds": 60
+      },
+      {
+        "exerciseId": "exrx_3e8e528997_strength",
+        "sets": 4,
+        "reps": 12,
+        "restSeconds": 60
+      },
+      {
+        "exerciseId": "exrx_48c5c88e3c_strength",
+        "sets": 3,
+        "reps": 12,
+        "restSeconds": 60
+      },
+      {
+        "exerciseId": "exrx_0c074f85f8_strength",
+        "sets": 3,
+        "reps": 20,
+        "restSeconds": 45
+      }
+    ]
+  },
+  {
+    "_id": "strength_bodyweight_advanced",
+    "name": "Advanced Bodyweight - Advanced",
+    "sport": "strength",
+    "category": "strength",
+    "description": "Advanced bodyweight movements for experienced athletes.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 50
+    },
+    "difficulty": "advanced",
+    "tags": [
+      "strength",
+      "bodyweight",
+      "advanced"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_63c86a5c32_strength",
+        "sets": 5,
+        "reps": 5,
+        "restSeconds": 120
+      },
+      {
+        "exerciseId": "exrx_299c66f88c_strength",
+        "sets": 5,
+        "reps": 10,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "exrx_34b34d5fdd_strength",
+        "sets": 4,
+        "reps": 15,
+        "restSeconds": 60
+      },
+      {
+        "exerciseId": "exrx_319f24a7f3_strength",
+        "sets": 4,
+        "reps": 12,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "exrx_119cf7e61b_strength",
+        "sets": 3,
+        "durationMins": 2,
+        "restSeconds": 60
+      }
+    ]
+  },
+  {
+    "_id": "hybrid_circuit_run_intermediate",
+    "name": "Circuit + Run - Intermediate",
+    "sport": "strength, running",
+    "category": "hybrid",
+    "description": "High-intensity circuit training followed by a recovery run.",
+    "metrics": {
+      "distanceMiles": 3,
+      "durationMins": 60
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "hybrid",
+      "circuit",
+      "running",
+      "intermediate"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_9a97c4574b_strength",
+        "sets": 3,
+        "reps": 15,
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "exrx_48c5c88e3c_strength",
+        "sets": 3,
+        "reps": 12,
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "exrx_3e8e528997_strength",
+        "sets": 3,
+        "reps": 12,
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "exrx_0c074f85f8_strength",
+        "sets": 3,
+        "reps": 20,
+        "restSeconds": 30,
+        "notes": "Run 3 miles easy pace after circuit"
+      }
+    ]
+  },
+  {
+    "_id": "hybrid_strength_endurance_run_advanced",
+    "name": "Strength Endurance + Run - Advanced",
+    "sport": "strength, running",
+    "category": "hybrid",
+    "description": "Strength endurance work combined with longer distance run.",
+    "metrics": {
+      "distanceMiles": 6,
+      "durationMins": 100
+    },
+    "difficulty": "advanced",
+    "tags": [
+      "hybrid",
+      "endurance",
+      "running",
+      "advanced"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_9b2924bdf3_strength",
+        "sets": 3,
+        "reps": 15,
+        "restSeconds": 60
+      },
+      {
+        "exerciseId": "exrx_48c5c88e3c_strength",
+        "sets": 3,
+        "reps": 15,
+        "restSeconds": 60
+      },
+      {
+        "exerciseId": "exrx_36b300feba_strength",
+        "sets": 3,
+        "reps": 15,
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "exrx_0101a29f34_strength",
+        "sets": 3,
+        "reps": 20,
+        "restSeconds": 45,
+        "notes": "Run 6 miles at moderate pace after strength"
+      }
+    ]
+  },
+  {
+    "_id": "hybrid_plyometric_run_drills_advanced",
+    "name": "Plyometric + Run Drills - Advanced",
+    "sport": "strength, running",
+    "category": "hybrid",
+    "description": "Explosive plyometric work with running form drills.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 60
+    },
+    "difficulty": "advanced",
+    "tags": [
+      "hybrid",
+      "plyometric",
+      "drills",
+      "running",
+      "advanced"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_9b2924bdf3_strength",
+        "sets": 3,
+        "reps": 8,
+        "restSeconds": 120
+      },
+      {
+        "exerciseId": "bounding_20_35m",
+        "sets": 4,
+        "restSeconds": 90,
+        "notes": "4x35m with full recovery"
+      },
+      {
+        "exerciseId": "high_knees_15_25m",
+        "sets": 4,
+        "restSeconds": 60,
+        "notes": "4x25m focus on form"
+      },
+      {
+        "exerciseId": "butt_kick_15_25m",
+        "sets": 4,
+        "restSeconds": 60,
+        "notes": "4x25m quick turnover"
+      },
+      {
+        "exerciseId": "strides",
+        "sets": 6,
+        "restSeconds": 90,
+        "notes": "6x100m strides"
+      }
+    ]
+  },
+  {
+    "_id": "hybrid_functional_soccer_intermediate",
+    "name": "Functional Strength + Soccer - Intermediate",
+    "sport": "strength, soccer",
+    "category": "hybrid",
+    "description": "Functional strength movements for soccer performance.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 70
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "hybrid",
+      "functional",
+      "soccer",
+      "intermediate"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_9b2924bdf3_strength",
+        "sets": 3,
+        "reps": 10,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "exrx_48c5c88e3c_strength",
+        "sets": 3,
+        "reps": 10,
+        "restSeconds": 75
+      },
+      {
+        "exerciseId": "exrx_9d25b01444_strength",
+        "sets": 3,
+        "reps": 10,
+        "restSeconds": 75
+      },
+      {
+        "exerciseId": "soccer_1v1_attacking_and_reaction_drill",
+        "durationMins": 12,
+        "notes": "Quick reactions"
+      },
+      {
+        "exerciseId": "soccer_2v2_dribbling_to_beat_the_defender_drill",
+        "durationMins": 12,
+        "notes": "Technical work"
+      }
+    ]
+  },
+  {
+    "_id": "hybrid_agility_soccer_beginner",
+    "name": "Agility + Soccer Skills - Beginner",
+    "sport": "strength, soccer",
+    "category": "hybrid",
+    "description": "Agility and coordination work combined with basic soccer skills.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 50
+    },
+    "difficulty": "beginner",
+    "tags": [
+      "hybrid",
+      "agility",
+      "soccer",
+      "beginner"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_48c5c88e3c_strength",
+        "sets": 3,
+        "reps": 10,
+        "restSeconds": 60
+      },
+      {
+        "exerciseId": "exrx_cbce4814bf_strength",
+        "sets": 2,
+        "reps": 12,
+        "restSeconds": 60
+      },
+      {
+        "exerciseId": "soccer_1v1_1st_attacker_dribbling_without_opposition_drill",
+        "durationMins": 10,
+        "notes": "Ball control basics"
+      },
+      {
+        "exerciseId": "soccer_1v1_competition_drill",
+        "durationMins": 12,
+        "notes": "Simple 1v1"
+      }
+    ]
+  },
+  {
+    "_id": "hybrid_speed_soccer_advanced",
+    "name": "Speed & Power + Soccer - Advanced",
+    "sport": "strength, soccer",
+    "category": "hybrid",
+    "description": "Advanced speed and power training for soccer athletes.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 85
+    },
+    "difficulty": "advanced",
+    "tags": [
+      "hybrid",
+      "speed",
+      "power",
+      "soccer",
+      "advanced"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_9b2924bdf3_strength",
+        "sets": 5,
+        "reps": 3,
+        "restSeconds": 180,
+        "notes": "Explosive tempo"
+      },
+      {
+        "exerciseId": "exrx_3c845b27f0_strength",
+        "sets": 4,
+        "reps": 3,
+        "restSeconds": 180
+      },
+      {
+        "exerciseId": "exrx_48c5c88e3c_strength",
+        "sets": 3,
+        "reps": 6,
+        "restSeconds": 90,
+        "notes": "Jump lunges"
+      },
+      {
+        "exerciseId": "soccer_1v1_speed_and_reaction_game_drill",
+        "durationMins": 15,
+        "notes": "Maximum intensity"
+      },
+      {
+        "exerciseId": "soccer_3v3_in_the_18_attacking_and_shooting_drill",
+        "durationMins": 15,
+        "notes": "Finishing under pressure"
+      }
+    ]
+  },
+  {
+    "_id": "strength_shoulders_arms_intermediate",
+    "name": "Shoulders & Arms - Intermediate",
+    "sport": "strength",
+    "category": "strength",
+    "description": "Complete shoulder and arm development workout.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 50
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "strength",
+      "shoulders",
+      "arms",
+      "intermediate"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_9b6e9e9d44_strength",
+        "sets": 4,
+        "reps": 10,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "exrx_44cf6ea816_strength",
+        "sets": 3,
+        "reps": 12,
+        "restSeconds": 75
+      },
+      {
+        "exerciseId": "exrx_249730caee_strength",
+        "sets": 3,
+        "reps": 12,
+        "restSeconds": 60
+      },
+      {
+        "exerciseId": "exrx_b3ccf76c57_strength",
+        "sets": 3,
+        "reps": 12,
+        "restSeconds": 60
+      },
+      {
+        "exerciseId": "exrx_24628db82d_strength",
+        "sets": 3,
+        "reps": 12,
+        "restSeconds": 60
+      }
+    ]
+  },
+  {
+    "_id": "strength_total_body_beginner",
+    "name": "Total Body Workout - Beginner",
+    "sport": "strength",
+    "category": "strength",
+    "description": "Beginner-friendly total body workout hitting all major muscles.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 50
+    },
+    "difficulty": "beginner",
+    "tags": [
+      "strength",
+      "total_body",
+      "beginner"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_9b2924bdf3_strength",
+        "sets": 3,
+        "reps": 10,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "exrx_ae0d899b41_strength",
+        "sets": 3,
+        "reps": 10,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "exrx_dc4ca68306_strength",
+        "sets": 3,
+        "reps": 10,
+        "restSeconds": 75
+      },
+      {
+        "exerciseId": "exrx_48c5c88e3c_strength",
+        "sets": 2,
+        "reps": 10,
+        "restSeconds": 60
+      },
+      {
+        "exerciseId": "exrx_0c074f85f8_strength",
+        "sets": 2,
+        "reps": 15,
+        "restSeconds": 45
+      }
+    ]
+  },
+  {
+    "_id": "strength_hypertrophy_push_intermediate",
+    "name": "Hypertrophy Push - Intermediate",
+    "sport": "strength",
+    "category": "strength",
+    "description": "Volume-focused push workout for muscle growth.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 65
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "strength",
+      "hypertrophy",
+      "push",
+      "intermediate"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_ae0d899b41_strength",
+        "sets": 4,
+        "reps": 10,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "exrx_9f2ef6f28a_strength",
+        "sets": 4,
+        "reps": 10,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "exrx_8f41120e24_strength",
+        "sets": 3,
+        "reps": 12,
+        "restSeconds": 75
+      },
+      {
+        "exerciseId": "exrx_9a97c4574b_strength",
+        "sets": 3,
+        "reps": 15,
+        "restSeconds": 60
+      },
+      {
+        "exerciseId": "exrx_319f24a7f3_strength",
+        "sets": 3,
+        "reps": 12,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "exrx_24628db82d_strength",
+        "sets": 3,
+        "reps": 15,
+        "restSeconds": 60
+      }
+    ]
+  },
+  {
+    "_id": "strength_hypertrophy_pull_intermediate",
+    "name": "Hypertrophy Pull - Intermediate",
+    "sport": "strength",
+    "category": "strength",
+    "description": "Volume-focused pull workout for back and biceps growth.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 65
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "strength",
+      "hypertrophy",
+      "pull",
+      "intermediate"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_299c66f88c_strength",
+        "sets": 4,
+        "reps": 8,
+        "restSeconds": 120
+      },
+      {
+        "exerciseId": "exrx_dc4ca68306_strength",
+        "sets": 4,
+        "reps": 10,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "exrx_b93acd180a_strength",
+        "sets": 4,
+        "reps": 10,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "exrx_3e8e528997_strength",
+        "sets": 3,
+        "reps": 12,
+        "restSeconds": 75
+      },
+      {
+        "exerciseId": "exrx_249730caee_strength",
+        "sets": 4,
+        "reps": 12,
+        "restSeconds": 60
+      },
+      {
+        "exerciseId": "exrx_b3ccf76c57_strength",
+        "sets": 3,
+        "reps": 15,
+        "restSeconds": 60
+      }
+    ]
+  },
+  {
+    "_id": "strength_hypertrophy_legs_intermediate",
+    "name": "Hypertrophy Legs - Intermediate",
+    "sport": "strength",
+    "category": "strength",
+    "description": "High-volume leg workout for maximum muscle growth.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 70
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "strength",
+      "hypertrophy",
+      "legs",
+      "intermediate"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_9b2924bdf3_strength",
+        "sets": 4,
+        "reps": 10,
+        "restSeconds": 120
+      },
+      {
+        "exerciseId": "exrx_71e362386f_strength",
+        "sets": 4,
+        "reps": 12,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "exrx_48c5c88e3c_strength",
+        "sets": 4,
+        "reps": 10,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "exrx_cbce4814bf_strength",
+        "sets": 3,
+        "reps": 12,
+        "restSeconds": 75
+      },
+      {
+        "exerciseId": "exrx_5eb34925c9_strength",
+        "sets": 3,
+        "reps": 12,
+        "restSeconds": 75
+      },
+      {
+        "exerciseId": "exrx_9a4f18a856_strength",
+        "sets": 4,
+        "reps": 15,
+        "restSeconds": 60
+      }
+    ]
+  },
+  {
+    "_id": "hybrid_sprint_strength_advanced",
+    "name": "Sprint + Strength - Advanced",
+    "sport": "strength, running",
+    "category": "hybrid",
+    "description": "Sprint training combined with explosive strength work.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 75
+    },
+    "difficulty": "advanced",
+    "tags": [
+      "hybrid",
+      "sprint",
+      "strength",
+      "advanced"
+    ],
+    "structure": [
+      {
+        "exerciseId": "high_knees_15_25m",
+        "sets": 3,
+        "restSeconds": 60,
+        "notes": "Warm-up drills"
+      },
+      {
+        "exerciseId": "butt_kick_15_25m",
+        "sets": 3,
+        "restSeconds": 60,
+        "notes": "Warm-up drills"
+      },
+      {
+        "exerciseId": "exrx_9b2924bdf3_strength",
+        "sets": 5,
+        "reps": 3,
+        "restSeconds": 180,
+        "notes": "Explosive tempo"
+      },
+      {
+        "exerciseId": "exrx_3c845b27f0_strength",
+        "sets": 4,
+        "reps": 3,
+        "restSeconds": 180
+      },
+      {
+        "exerciseId": "strides",
+        "sets": 8,
+        "restSeconds": 120,
+        "notes": "8x100m sprints at 90%"
+      }
+    ]
+  },
+  {
+    "_id": "hybrid_endurance_strength_soccer_intermediate",
+    "name": "Endurance + Strength + Soccer - Intermediate",
+    "sport": "strength, soccer",
+    "category": "hybrid",
+    "description": "Endurance-focused workout combining strength and soccer conditioning.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 80
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "hybrid",
+      "endurance",
+      "strength",
+      "soccer",
+      "intermediate"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_9b2924bdf3_strength",
+        "sets": 3,
+        "reps": 15,
+        "restSeconds": 60
+      },
+      {
+        "exerciseId": "exrx_48c5c88e3c_strength",
+        "sets": 3,
+        "reps": 15,
+        "restSeconds": 60
+      },
+      {
+        "exerciseId": "exrx_9a97c4574b_strength",
+        "sets": 3,
+        "reps": 20,
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "soccer_3v1_rotating_defenders_drill",
+        "durationMins": 12,
+        "notes": "Continuous movement"
+      },
+      {
+        "exerciseId": "soccer_2v2_with_4_small_goals_funino_drill",
+        "durationMins": 15,
+        "notes": "High tempo game"
+      }
+    ]
+  },
+  {
+    "_id": "strength_deload_beginner",
+    "name": "Deload Workout - Beginner",
+    "sport": "strength",
+    "category": "strength",
+    "description": "Light recovery workout for active rest.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 35
+    },
+    "difficulty": "beginner",
+    "tags": [
+      "strength",
+      "deload",
+      "recovery",
+      "beginner"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_9b2924bdf3_strength",
+        "sets": 2,
+        "reps": 10,
+        "restSeconds": 90,
+        "notes": "50% normal weight"
+      },
+      {
+        "exerciseId": "exrx_ae0d899b41_strength",
+        "sets": 2,
+        "reps": 10,
+        "restSeconds": 90,
+        "notes": "50% normal weight"
+      },
+      {
+        "exerciseId": "exrx_dc4ca68306_strength",
+        "sets": 2,
+        "reps": 10,
+        "restSeconds": 75,
+        "notes": "50% normal weight"
+      },
+      {
+        "exerciseId": "exrx_119cf7e61b_strength",
+        "sets": 2,
+        "durationSecs": 30,
+        "restSeconds": 60
+      }
+    ]
+  },
+  {
+    "_id": "hybrid_recovery_run_drills_beginner",
+    "name": "Recovery Run + Drills - Beginner",
+    "sport": "strength, running",
+    "category": "hybrid",
+    "description": "Easy recovery run with form drills.",
+    "metrics": {
+      "distanceMiles": 2,
+      "durationMins": 35
+    },
+    "difficulty": "beginner",
+    "tags": [
+      "hybrid",
+      "recovery",
+      "running",
+      "drills",
+      "beginner"
+    ],
+    "structure": [
+      {
+        "exerciseId": "high_knees",
+        "sets": 2,
+        "restSeconds": 45,
+        "notes": "2x20m easy"
+      },
+      {
+        "exerciseId": "butt_kicks",
+        "sets": 2,
+        "restSeconds": 45,
+        "notes": "2x20m easy"
+      },
+      {
+        "exerciseId": "carioca",
+        "sets": 2,
+        "restSeconds": 45,
+        "notes": "2x20m each direction, run 2 miles easy after drills"
+      }
+    ]
+  },
+  {
+    "_id": "hybrid_tempo_run_core_intermediate",
+    "name": "Tempo Run + Core - Intermediate",
+    "sport": "strength, running",
+    "category": "hybrid",
+    "description": "Tempo run followed by core strengthening work.",
+    "metrics": {
+      "distanceMiles": 5,
+      "durationMins": 65
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "hybrid",
+      "tempo",
+      "running",
+      "core",
+      "intermediate"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_119cf7e61b_strength",
+        "sets": 3,
+        "durationMins": 1,
+        "restSeconds": 60,
+        "notes": "Core work after 5 mile tempo run"
+      },
+      {
+        "exerciseId": "exrx_0c074f85f8_strength",
+        "sets": 3,
+        "reps": 20,
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "exrx_388af9877a_strength",
+        "sets": 3,
+        "reps": 15,
+        "restSeconds": 45
+      },
+      {
+        "exerciseId": "exrx_a913b436e9_strength",
+        "sets": 3,
+        "reps": 15,
+        "restSeconds": 60
+      }
+    ]
+  },
+  {
+    "_id": "hybrid_interval_strength_soccer_advanced",
+    "name": "Intervals + Strength + Soccer - Advanced",
+    "sport": "strength, soccer",
+    "category": "hybrid",
+    "description": "High-intensity interval training with strength and soccer conditioning.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 85
+    },
+    "difficulty": "advanced",
+    "tags": [
+      "hybrid",
+      "intervals",
+      "strength",
+      "soccer",
+      "advanced"
+    ],
+    "structure": [
+      {
+        "exerciseId": "exrx_9b2924bdf3_strength",
+        "sets": 4,
+        "reps": 6,
+        "restSeconds": 120
+      },
+      {
+        "exerciseId": "exrx_299c66f88c_strength",
+        "sets": 3,
+        "reps": 8,
+        "restSeconds": 120
+      },
+      {
+        "exerciseId": "exrx_48c5c88e3c_strength",
+        "sets": 3,
+        "reps": 10,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "soccer_1v1_elimination_challenge_drill",
+        "durationMins": 12,
+        "notes": "High intensity"
+      },
+      {
+        "exerciseId": "soccer_3v3_plus_keepers_to_fullsize_goals_drill",
+        "durationMins": 15,
+        "notes": "Game conditions"
+      }
+    ]
+  },
+  {
+    "_id": "strength_olympic_lifting_intermediate",
+    "name": "Olympic Lifting - Intermediate",
+    "sport": "strength",
+    "category": "strength",
+    "description": "Intermediate olympic weightlifting focused on power development with cleans and snatches.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 60
+    },
+    "difficulty": "intermediate",
+    "tags": ["strength", "olympic_lifting", "power", "intermediate"],
+    "structure": [
+      {
+        "exerciseId": "exrx_4ed7f8afce_strength",
+        "sets": 5,
+        "reps": 3,
+        "restSeconds": 180,
+        "notes": "Power clean"
+      },
+      {
+        "exerciseId": "exrx_ae0d899b41_strength",
+        "sets": 4,
+        "reps": 5,
+        "restSeconds": 120
+      },
+      {
+        "exerciseId": "exrx_9b2924bdf3_strength",
+        "sets": 4,
+        "reps": 5,
+        "restSeconds": 120
+      },
+      {
+        "exerciseId": "exrx_48c5c88e3c_strength",
+        "sets": 3,
+        "reps": 8,
+        "restSeconds": 90
+      }
+    ]
+  },
+  {
+    "_id": "hybrid_long_run_core_beginner",
+    "name": "Long Run + Core - Beginner",
+    "sport": "strength, running",
+    "category": "hybrid",
+    "description": "Beginner long run followed by core stabilization work.",
+    "metrics": {
+      "distanceMiles": 5,
+      "durationMins": 70
+    },
+    "difficulty": "beginner",
+    "tags": ["hybrid", "running", "core", "endurance", "beginner"],
+    "structure": [
+      {
+        "exerciseId": "exrx_0101a29f34_strength",
+        "durationMins": 50,
+        "notes": "Easy pace long run - 5 miles"
+      },
+      {
+        "exerciseId": "exrx_7e3fe06d88_strength",
+        "sets": 3,
+        "durationSecs": 45,
+        "restSeconds": 30,
+        "notes": "Plank hold"
+      },
+      {
+        "exerciseId": "exrx_cb08fc65f6_strength",
+        "sets": 3,
+        "reps": 15,
+        "restSeconds": 30
+      },
+      {
+        "exerciseId": "exrx_a1b86f050f_strength",
+        "sets": 3,
+        "reps": 12,
+        "restSeconds": 30
+      }
+    ]
+  },
+  {
+    "_id": "strength_powerlifting_advanced",
+    "name": "Powerlifting - Advanced",
+    "sport": "strength",
+    "category": "strength",
+    "description": "Advanced powerlifting session focusing on the big three: squat, bench, deadlift.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 90
+    },
+    "difficulty": "advanced",
+    "tags": ["strength", "powerlifting", "squat", "bench", "deadlift", "advanced"],
+    "structure": [
+      {
+        "exerciseId": "exrx_e2d1afbae5_strength",
+        "sets": 5,
+        "reps": 3,
+        "restSeconds": 240,
+        "notes": "Back squat - heavy"
+      },
+      {
+        "exerciseId": "exrx_ae0d899b41_strength",
+        "sets": 5,
+        "reps": 3,
+        "restSeconds": 240,
+        "notes": "Bench press - heavy"
+      },
+      {
+        "exerciseId": "exrx_3c845b27f0_strength",
+        "sets": 5,
+        "reps": 3,
+        "restSeconds": 240,
+        "notes": "Deadlift - heavy"
+      }
+    ]
+  },
+  {
+    "_id": "hybrid_fartlek_strength_intermediate",
+    "name": "Fartlek Run + Strength - Intermediate",
+    "sport": "strength, running",
+    "category": "hybrid",
+    "description": "Intermediate fartlek running session combined with upper body strength work.",
+    "metrics": {
+      "distanceMiles": 5,
+      "durationMins": 75
+    },
+    "difficulty": "intermediate",
+    "tags": ["hybrid", "running", "fartlek", "strength", "intermediate"],
+    "structure": [
+      {
+        "exerciseId": "exrx_0101a29f34_strength",
+        "durationMins": 40,
+        "notes": "Fartlek run - 5 miles with speed surges"
+      },
+      {
+        "exerciseId": "exrx_ae0d899b41_strength",
+        "sets": 4,
+        "reps": 8,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "exrx_299c66f88c_strength",
+        "sets": 4,
+        "reps": 6,
+        "restSeconds": 120
+      },
+      {
+        "exerciseId": "exrx_9a97c4574b_strength",
+        "sets": 3,
+        "reps": 12,
+        "restSeconds": 60
+      }
+    ]
+  },
+  {
+    "_id": "hybrid_soccer_possession_strength_intermediate",
+    "name": "Soccer Possession + Strength - Intermediate",
+    "sport": "strength, soccer",
+    "category": "hybrid",
+    "description": "Intermediate possession-focused soccer drills combined with lower body strength training.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 80
+    },
+    "difficulty": "intermediate",
+    "tags": ["hybrid", "soccer", "possession", "strength", "intermediate"],
+    "structure": [
+      {
+        "exerciseId": "exrx_9b2924bdf3_strength",
+        "sets": 4,
+        "reps": 6,
+        "restSeconds": 120
+      },
+      {
+        "exerciseId": "exrx_48c5c88e3c_strength",
+        "sets": 3,
+        "reps": 10,
+        "restSeconds": 90
+      },
+      {
+        "exerciseId": "soccer_rondo_drill",
+        "durationMins": 15,
+        "notes": "Possession work"
+      },
+      {
+        "exerciseId": "soccer_4v4_plus_2_possession_drill",
+        "durationMins": 20,
+        "notes": "Game-like possession"
+      }
+    ]
+  },
+  {
+    "_id": "strength_functional_fitness_beginner",
+    "name": "Functional Fitness - Beginner",
+    "sport": "strength",
+    "category": "strength",
+    "description": "Beginner functional fitness workout with compound movements and bodyweight exercises.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 45
+    },
+    "difficulty": "beginner",
+    "tags": ["strength", "functional", "compound", "bodyweight", "beginner"],
+    "structure": [
+      {
+        "exerciseId": "exrx_f63ec61b6f_strength",
+        "sets": 3,
+        "reps": 10,
+        "restSeconds": 90,
+        "notes": "Goblet squat"
+      },
+      {
+        "exerciseId": "exrx_43e8ec33ac_strength",
+        "sets": 3,
+        "reps": 8,
+        "restSeconds": 60,
+        "notes": "Push-up"
+      },
+      {
+        "exerciseId": "exrx_a34d14d754_strength",
+        "sets": 3,
+        "reps": 10,
+        "restSeconds": 60,
+        "notes": "Dumbbell row"
+      },
+      {
+        "exerciseId": "exrx_7e3fe06d88_strength",
+        "sets": 3,
+        "durationSecs": 30,
+        "restSeconds": 30,
+        "notes": "Plank"
+      }
+    ]
+  },
+  {
+    "_id": "hybrid_hill_sprints_legs_advanced",
+    "name": "Hill Sprints + Legs - Advanced",
+    "sport": "strength, running",
+    "category": "hybrid",
+    "description": "Advanced hill sprint session combined with explosive lower body strength work.",
+    "metrics": {
+      "distanceMiles": 2,
+      "durationMins": 60
+    },
+    "difficulty": "advanced",
+    "tags": ["hybrid", "running", "sprints", "hills", "legs", "advanced"],
+    "structure": [
+      {
+        "exerciseId": "exrx_0101a29f34_strength",
+        "durationMins": 30,
+        "notes": "Hill sprints - 10x30 sec with jog down recovery"
+      },
+      {
+        "exerciseId": "exrx_e2d1afbae5_strength",
+        "sets": 4,
+        "reps": 5,
+        "restSeconds": 150,
+        "notes": "Back squat"
+      },
+      {
+        "exerciseId": "exrx_4c12c3e8cf_strength",
+        "sets": 3,
+        "reps": 8,
+        "restSeconds": 90,
+        "notes": "Box jump"
+      },
+      {
+        "exerciseId": "exrx_36b300feba_strength",
+        "sets": 3,
+        "reps": 12,
+        "restSeconds": 60
+      }
+    ]
+  },
+  {
+    "_id": "hybrid_soccer_finishing_power_advanced",
+    "name": "Soccer Finishing + Power - Advanced",
+    "sport": "strength, soccer",
+    "category": "hybrid",
+    "description": "Advanced finishing drills combined with explosive power development.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 85
+    },
+    "difficulty": "advanced",
+    "tags": ["hybrid", "soccer", "finishing", "shooting", "power", "advanced"],
+    "structure": [
+      {
+        "exerciseId": "exrx_4ed7f8afce_strength",
+        "sets": 5,
+        "reps": 3,
+        "restSeconds": 180,
+        "notes": "Power clean"
+      },
+      {
+        "exerciseId": "exrx_4c12c3e8cf_strength",
+        "sets": 4,
+        "reps": 6,
+        "restSeconds": 120,
+        "notes": "Box jump"
+      },
+      {
+        "exerciseId": "soccer_1v1_to_goal_drill",
+        "durationMins": 15,
+        "notes": "Finishing practice"
+      },
+      {
+        "exerciseId": "soccer_3v3_in_the_18_attacking_and_shooting_drill",
+        "durationMins": 20,
+        "notes": "Game finishing situations"
+      }
+    ]
+  },
+  {
+    "_id": "strength_bodybuilding_arms_intermediate",
+    "name": "Bodybuilding Arms - Intermediate",
+    "sport": "strength",
+    "category": "strength",
+    "description": "Intermediate arm specialization workout focusing on biceps and triceps hypertrophy.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 50
+    },
+    "difficulty": "intermediate",
+    "tags": ["strength", "bodybuilding", "arms", "biceps", "triceps", "intermediate"],
+    "structure": [
+      {
+        "exerciseId": "exrx_8f22ba4e41_strength",
+        "sets": 4,
+        "reps": 10,
+        "restSeconds": 60,
+        "notes": "Barbell curl"
+      },
+      {
+        "exerciseId": "exrx_4d6608f486_strength",
+        "sets": 4,
+        "reps": 10,
+        "restSeconds": 60,
+        "notes": "Close grip bench"
+      },
+      {
+        "exerciseId": "exrx_dc0e38f7f8_strength",
+        "sets": 3,
+        "reps": 12,
+        "restSeconds": 45,
+        "notes": "Dumbbell curl"
+      },
+      {
+        "exerciseId": "exrx_2c4413fe8f_strength",
+        "sets": 3,
+        "reps": 12,
+        "restSeconds": 45,
+        "notes": "Tricep extension"
+      }
+    ]
+  },
+  {
+    "_id": "hybrid_recovery_run_mobility_beginner",
+    "name": "Recovery Run + Mobility - Beginner",
+    "sport": "strength, running",
+    "category": "hybrid",
+    "description": "Beginner recovery run at easy pace followed by comprehensive mobility work.",
+    "metrics": {
+      "distanceMiles": 2,
+      "durationMins": 45
+    },
+    "difficulty": "beginner",
+    "tags": ["hybrid", "running", "recovery", "mobility", "beginner"],
+    "structure": [
+      {
+        "exerciseId": "exrx_0101a29f34_strength",
+        "durationMins": 20,
+        "notes": "Easy recovery run - 2 miles"
+      },
+      {
+        "exerciseId": "exrx_58fed86ff1_strength",
+        "sets": 2,
+        "reps": 10,
+        "restSeconds": 30,
+        "notes": "Hip mobility"
+      },
+      {
+        "exerciseId": "exrx_01d7baaf70_strength",
+        "sets": 2,
+        "reps": 10,
+        "restSeconds": 30,
+        "notes": "Leg swings"
+      },
+      {
+        "exerciseId": "exrx_7e3fe06d88_strength",
+        "sets": 2,
+        "durationSecs": 30,
+        "restSeconds": 30,
+        "notes": "Core activation"
+      }
+    ]
   }
 ]

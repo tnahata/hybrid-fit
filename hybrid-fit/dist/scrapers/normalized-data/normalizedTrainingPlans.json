@@ -8758,5 +8758,3395 @@
         ]
       }
     ]
+  },
+  {
+    "_id": "hybrid_strength_running_12week_beginner",
+    "name": "Hybrid Strength & Running - Beginner",
+    "sport": "strength, running",
+    "category": "hybrid",
+    "durationWeeks": 12,
+    "level": "beginner",
+    "sourceUrl": null,
+    "details": {
+      "goal": "Build foundational strength while developing running endurance",
+      "planType": "Hybrid Beginner"
+    },
+    "weeks": [
+      {
+        "weekNumber": 1,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_lower_body_beginner"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_3mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_upper_body_push_beginner"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_upper_body_pull_beginner"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_strength_run_beginner"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 2,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_legs_glutes_beginner"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_3mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_total_body_beginner"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_bodyweight_beginner"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "easy_run_4mi"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 3,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_powerlifting_beginner"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_3mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_upper_body_push_beginner"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_upper_body_pull_beginner"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_strength_conditioning_run_beginner"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 4,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_deload_beginner"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_3mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "easy_run_3mi"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_bodyweight_beginner"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "easy_run_4mi"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 5,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_lower_body_beginner"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_4mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_upper_body_push_beginner"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_upper_body_pull_beginner"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_strength_run_beginner"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 6,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_total_body_beginner"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_4mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_powerlifting_beginner"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_bodyweight_beginner"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "easy_run_5mi"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 7,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_legs_glutes_beginner"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_4mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_upper_body_push_beginner"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_upper_body_pull_beginner"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_strength_conditioning_run_beginner"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 8,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_deload_beginner"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_3mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "easy_run_3mi"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_bodyweight_beginner"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "easy_run_5mi"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 9,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_total_body_beginner"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_4mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_powerlifting_beginner"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_upper_body_push_beginner"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_strength_run_beginner"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 10,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_lower_body_beginner"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_5mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_upper_body_pull_beginner"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_bodyweight_beginner"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "easy_run_6mi"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 11,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_legs_glutes_beginner"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_5mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_total_body_beginner"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_upper_body_push_beginner"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_strength_conditioning_run_beginner"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 12,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_powerlifting_beginner"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_4mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_upper_body_pull_beginner"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_bodyweight_beginner"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "easy_run_6mi"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "hybrid_strength_running_16week_intermediate",
+    "name": "Hybrid Performance - Intermediate",
+    "sport": "strength, running",
+    "category": "hybrid",
+    "durationWeeks": 16,
+    "level": "intermediate",
+    "sourceUrl": null,
+    "details": {
+      "goal": "Build strength and running performance simultaneously",
+      "planType": "Hybrid Intermediate"
+    },
+    "weeks": [
+      {
+        "weekNumber": 1,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_full_body_intermediate"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_4mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_chest_triceps_intermediate"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "hybrid_recovery_run_drills_beginner"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_back_biceps_intermediate"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_upper_strength_run_intermediate"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 2,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_upper_lower_split_day2"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_5mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_upper_lower_split_day1"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "easy_run_4mi"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_core_abs_intermediate"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_strength_run_drills_intermediate"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "cross_train_30min"
+          }
+        ]
+      },
+      {
+        "weekNumber": 3,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_powerlifting_intermediate"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_5mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_hypertrophy_push_intermediate"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "easy_run_4mi"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_hypertrophy_pull_intermediate"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_circuit_run_intermediate"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 4,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_bodyweight_intermediate"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_4mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "easy_run_3mi"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_core_abs_intermediate"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "easy_run_6mi"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 5,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_upper_lower_split_day2"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_5mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_upper_lower_split_day1"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "hybrid_tempo_run_core_intermediate"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_shoulders_arms_intermediate"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "easy_run_7mi"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "cross_train_30min"
+          }
+        ]
+      },
+      {
+        "weekNumber": 6,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_hypertrophy_legs_intermediate"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_5mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_chest_triceps_intermediate"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "easy_run_4mi"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_back_biceps_intermediate"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_upper_strength_run_intermediate"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 7,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_full_body_intermediate"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_5mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_powerlifting_intermediate"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "hybrid_strength_run_drills_intermediate"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_core_abs_intermediate"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "easy_run_8mi"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 8,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_bodyweight_intermediate"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_4mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "easy_run_4mi"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_athletic_performance_intermediate"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "easy_run_6mi"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "cross_train_30min"
+          }
+        ]
+      },
+      {
+        "weekNumber": 9,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_upper_lower_split_day2"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_5mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_upper_lower_split_day1"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "easy_run_5mi"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_hypertrophy_push_intermediate"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_circuit_run_intermediate"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 10,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_hypertrophy_legs_intermediate"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_6mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_hypertrophy_pull_intermediate"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "hybrid_tempo_run_core_intermediate"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_shoulders_arms_intermediate"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "easy_run_8mi"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 11,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_powerlifting_intermediate"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_6mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_chest_triceps_intermediate"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "easy_run_5mi"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_back_biceps_intermediate"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_strength_run_drills_intermediate"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "cross_train_30min"
+          }
+        ]
+      },
+      {
+        "weekNumber": 12,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_bodyweight_intermediate"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_4mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "easy_run_4mi"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_core_abs_intermediate"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "easy_run_7mi"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 13,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_full_body_intermediate"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_6mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_upper_lower_split_day1"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "easy_run_5mi"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_upper_lower_split_day2"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_upper_strength_run_intermediate"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 14,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_hypertrophy_legs_intermediate"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_6mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_athletic_performance_intermediate"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "hybrid_tempo_run_core_intermediate"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_shoulders_arms_intermediate"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "easy_run_9mi"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "cross_train_30min"
+          }
+        ]
+      },
+      {
+        "weekNumber": 15,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_powerlifting_intermediate"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_6mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_hypertrophy_push_intermediate"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "easy_run_5mi"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_hypertrophy_pull_intermediate"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_circuit_run_intermediate"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 16,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_bodyweight_intermediate"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_5mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_core_abs_intermediate"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "easy_run_4mi"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "easy_run_8mi"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "hybrid_strength_running_20week_advanced",
+    "name": "Elite Hybrid Training - Advanced",
+    "sport": "strength, running",
+    "category": "hybrid",
+    "durationWeeks": 20,
+    "level": "advanced",
+    "sourceUrl": null,
+    "details": {
+      "goal": "Peak athletic performance combining strength and endurance",
+      "planType": "Advanced Hybrid"
+    },
+    "weeks": [
+      {
+        "weekNumber": 1,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_upper_body_push_advanced"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_6mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_upper_body_pull_advanced"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "hybrid_plyometric_run_drills_advanced"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_lower_body_advanced"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_full_body_run_advanced"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 2,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_bodyweight_advanced"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_7mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_upper_body_push_advanced"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "hybrid_sprint_strength_advanced"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_upper_body_pull_advanced"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_strength_endurance_run_advanced"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "cross_train_30min"
+          }
+        ]
+      },
+      {
+        "weekNumber": 3,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_lower_body_advanced"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_7mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_upper_body_push_advanced"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "hybrid_plyometric_run_drills_advanced"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_upper_body_pull_advanced"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_full_body_run_advanced"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 4,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_bodyweight_intermediate"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_5mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "easy_run_5mi"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_core_abs_intermediate"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "easy_run_8mi"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 5,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_upper_body_push_advanced"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_8mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_upper_body_pull_advanced"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "hybrid_sprint_strength_advanced"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_lower_body_advanced"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_long_run_strength_advanced"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "cross_train_30min"
+          }
+        ]
+      },
+      {
+        "weekNumber": 6,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_bodyweight_advanced"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_8mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_upper_body_push_advanced"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "hybrid_plyometric_run_drills_advanced"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_upper_body_pull_advanced"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_strength_endurance_run_advanced"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 7,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_lower_body_advanced"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_8mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_upper_body_push_advanced"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "hybrid_sprint_strength_advanced"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_upper_body_pull_advanced"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_full_body_run_advanced"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 8,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_bodyweight_intermediate"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_6mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "easy_run_6mi"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_core_abs_intermediate"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "easy_run_9mi"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "cross_train_30min"
+          }
+        ]
+      },
+      {
+        "weekNumber": 9,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_upper_body_push_advanced"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_9mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_upper_body_pull_advanced"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "hybrid_plyometric_run_drills_advanced"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_lower_body_advanced"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_long_run_strength_advanced"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 10,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_bodyweight_advanced"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_9mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_upper_body_push_advanced"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "hybrid_sprint_strength_advanced"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_upper_body_pull_advanced"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_strength_endurance_run_advanced"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 11,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_lower_body_advanced"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_9mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_upper_body_push_advanced"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "hybrid_plyometric_run_drills_advanced"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_upper_body_pull_advanced"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_full_body_run_advanced"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "cross_train_30min"
+          }
+        ]
+      },
+      {
+        "weekNumber": 12,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_bodyweight_intermediate"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_6mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "easy_run_6mi"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_core_abs_intermediate"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "easy_run_10mi"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 13,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_upper_body_push_advanced"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_10mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_upper_body_pull_advanced"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "hybrid_sprint_strength_advanced"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_lower_body_advanced"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_long_run_strength_advanced"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 14,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_bodyweight_advanced"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_10mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_upper_body_push_advanced"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "hybrid_plyometric_run_drills_advanced"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_upper_body_pull_advanced"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_strength_endurance_run_advanced"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "cross_train_30min"
+          }
+        ]
+      },
+      {
+        "weekNumber": 15,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_lower_body_advanced"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_10mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_upper_body_push_advanced"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "hybrid_sprint_strength_advanced"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_upper_body_pull_advanced"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_full_body_run_advanced"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 16,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_bodyweight_intermediate"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_7mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "easy_run_7mi"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_core_abs_intermediate"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "easy_run_11mi"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 17,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_upper_body_push_advanced"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_11mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_upper_body_pull_advanced"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "hybrid_plyometric_run_drills_advanced"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_lower_body_advanced"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_long_run_strength_advanced"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "cross_train_30min"
+          }
+        ]
+      },
+      {
+        "weekNumber": 18,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_bodyweight_advanced"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_11mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_upper_body_push_advanced"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "hybrid_sprint_strength_advanced"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_upper_body_pull_advanced"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_strength_endurance_run_advanced"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 19,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_lower_body_advanced"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_12mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_upper_body_push_advanced"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "hybrid_plyometric_run_drills_advanced"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_upper_body_pull_advanced"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_full_body_run_advanced"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 20,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_bodyweight_intermediate"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "easy_run_6mi"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_core_abs_intermediate"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "easy_run_5mi"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "easy_run_10mi"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "hybrid_strength_soccer_10week_intermediate",
+    "name": "Soccer Performance Training - Intermediate",
+    "sport": "strength, soccer",
+    "category": "hybrid",
+    "durationWeeks": 10,
+    "level": "intermediate",
+    "sourceUrl": null,
+    "details": {
+      "goal": "Develop strength, power, and soccer-specific skills",
+      "planType": "Soccer Hybrid Intermediate"
+    },
+    "weeks": [
+      {
+        "weekNumber": 1,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_lower_body_beginner"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "hybrid_agility_soccer_beginner"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_upper_body_push_beginner"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "hybrid_strength_soccer_drills_beginner"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_functional_soccer_intermediate"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 2,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_legs_glutes_beginner"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "hybrid_technical_soccer_mobility_beginner"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_full_body_intermediate"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "hybrid_strength_soccer_intermediate"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_agility_soccer_beginner"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 3,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_powerlifting_beginner"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "hybrid_functional_soccer_intermediate"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_upper_body_pull_beginner"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "hybrid_game_day_prep_soccer_intermediate"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_strength_soccer_drills_beginner"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 4,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_deload_beginner"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "hybrid_technical_soccer_mobility_beginner"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "hybrid_agility_soccer_beginner"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_core_abs_intermediate"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_game_day_prep_soccer_intermediate"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 5,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_powerlifting_intermediate"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "hybrid_strength_soccer_intermediate"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_upper_body_push_beginner"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "hybrid_functional_soccer_intermediate"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_endurance_strength_soccer_intermediate"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 6,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_hypertrophy_legs_intermediate"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "hybrid_agility_soccer_beginner"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_chest_triceps_intermediate"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "hybrid_strength_soccer_intermediate"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_game_day_prep_soccer_intermediate"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 7,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_athletic_performance_intermediate"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "hybrid_functional_soccer_intermediate"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_back_biceps_intermediate"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "hybrid_technical_soccer_mobility_beginner"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_endurance_strength_soccer_intermediate"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 8,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_bodyweight_intermediate"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "hybrid_agility_soccer_beginner"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "hybrid_game_day_prep_soccer_intermediate"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_core_abs_intermediate"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_strength_soccer_intermediate"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 9,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_powerlifting_intermediate"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "hybrid_functional_soccer_intermediate"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_full_body_intermediate"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "hybrid_strength_soccer_intermediate"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_endurance_strength_soccer_intermediate"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 10,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_legs_glutes_beginner"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "hybrid_agility_soccer_beginner"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_upper_body_push_beginner"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "hybrid_game_day_prep_soccer_intermediate"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_functional_soccer_intermediate"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "hybrid_strength_soccer_14week_advanced",
+    "name": "Elite Soccer Athlete - Advanced",
+    "sport": "strength, soccer",
+    "category": "hybrid",
+    "durationWeeks": 14,
+    "level": "advanced",
+    "sourceUrl": null,
+    "details": {
+      "goal": "Peak soccer performance with advanced strength and power development",
+      "planType": "Soccer Hybrid Advanced"
+    },
+    "weeks": [
+      {
+        "weekNumber": 1,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_lower_body_advanced"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "hybrid_power_soccer_advanced"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_upper_body_push_advanced"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "hybrid_game_day_prep_soccer_intermediate"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_upper_body_pull_advanced"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_speed_soccer_advanced"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 2,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_bodyweight_advanced"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "hybrid_functional_soccer_intermediate"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_full_body_intermediate"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "hybrid_interval_strength_soccer_advanced"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_power_soccer_advanced"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "cross_train_30min"
+          }
+        ]
+      },
+      {
+        "weekNumber": 3,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_lower_body_advanced"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "hybrid_speed_soccer_advanced"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_upper_body_push_advanced"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "hybrid_game_day_prep_soccer_intermediate"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_upper_body_pull_advanced"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_soccer_strength_conditioning_advanced"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 4,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_bodyweight_intermediate"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "hybrid_functional_soccer_intermediate"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "hybrid_agility_soccer_beginner"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_core_abs_intermediate"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_game_day_prep_soccer_intermediate"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 5,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_lower_body_advanced"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "hybrid_power_soccer_advanced"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_upper_body_push_advanced"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_upper_body_pull_advanced"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_interval_strength_soccer_advanced"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 6,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_athletic_performance_intermediate"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "hybrid_speed_soccer_advanced"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_hypertrophy_push_intermediate"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "hybrid_game_day_prep_soccer_intermediate"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_hypertrophy_pull_intermediate"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_soccer_strength_conditioning_advanced"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "cross_train_30min"
+          }
+        ]
+      },
+      {
+        "weekNumber": 7,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_lower_body_advanced"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "hybrid_power_soccer_advanced"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_upper_body_push_advanced"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_upper_body_pull_advanced"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_speed_soccer_advanced"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 8,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_bodyweight_intermediate"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "hybrid_functional_soccer_intermediate"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "hybrid_game_day_prep_soccer_intermediate"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_core_abs_intermediate"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_interval_strength_soccer_advanced"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 9,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_lower_body_advanced"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "hybrid_power_soccer_advanced"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_upper_body_push_advanced"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_upper_body_pull_advanced"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_soccer_strength_conditioning_advanced"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "cross_train_30min"
+          }
+        ]
+      },
+      {
+        "weekNumber": 10,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_bodyweight_advanced"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "hybrid_speed_soccer_advanced"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_full_body_intermediate"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "hybrid_game_day_prep_soccer_intermediate"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_core_abs_intermediate"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_power_soccer_advanced"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 11,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_lower_body_advanced"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "hybrid_interval_strength_soccer_advanced"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_upper_body_push_advanced"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_upper_body_pull_advanced"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_speed_soccer_advanced"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 12,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_bodyweight_intermediate"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "hybrid_functional_soccer_intermediate"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "hybrid_game_day_prep_soccer_intermediate"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_athletic_performance_intermediate"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_power_soccer_advanced"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      },
+      {
+        "weekNumber": 13,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_lower_body_advanced"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "hybrid_speed_soccer_advanced"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_upper_body_push_advanced"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "strength_upper_body_pull_advanced"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_soccer_strength_conditioning_advanced"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "cross_train_30min"
+          }
+        ]
+      },
+      {
+        "weekNumber": 14,
+        "days": [
+          {
+            "dayOfWeek": "Mon",
+            "workoutTemplateId": "strength_bodyweight_intermediate"
+          },
+          {
+            "dayOfWeek": "Tue",
+            "workoutTemplateId": "hybrid_agility_soccer_beginner"
+          },
+          {
+            "dayOfWeek": "Wed",
+            "workoutTemplateId": "strength_core_abs_intermediate"
+          },
+          {
+            "dayOfWeek": "Thu",
+            "workoutTemplateId": "rest_day"
+          },
+          {
+            "dayOfWeek": "Fri",
+            "workoutTemplateId": "hybrid_game_day_prep_soccer_intermediate"
+          },
+          {
+            "dayOfWeek": "Sat",
+            "workoutTemplateId": "hybrid_functional_soccer_intermediate"
+          },
+          {
+            "dayOfWeek": "Sun",
+            "workoutTemplateId": "rest_day"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "hybrid_strength_running_12week_beginner",
+    "name": "Hybrid Strength & Running - Beginner",
+    "sport": "strength, running",
+    "category": "hybrid",
+    "durationWeeks": 12,
+    "level": "beginner",
+    "sourceUrl": null,
+    "details": {
+      "goal": "Build foundational strength while developing running endurance",
+      "planType": "Hybrid Beginner"
+    },
+    "weeks": [
+      {
+        "weekNumber": 1,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_lower_body_beginner"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_3mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_upper_body_push_beginner"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_upper_body_pull_beginner"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_strength_run_beginner"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 2,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_legs_glutes_beginner"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_3mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_total_body_beginner"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_bodyweight_beginner"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "easy_run_4mi"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 3,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_powerlifting_beginner"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_3mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_upper_body_push_beginner"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_upper_body_pull_beginner"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_strength_conditioning_run_beginner"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 4,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_deload_beginner"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_3mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "easy_run_3mi"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_bodyweight_beginner"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "easy_run_4mi"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 5,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_lower_body_beginner"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_4mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_upper_body_push_beginner"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_upper_body_pull_beginner"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_strength_run_beginner"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 6,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_total_body_beginner"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_4mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_powerlifting_beginner"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_bodyweight_beginner"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "easy_run_5mi"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 7,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_legs_glutes_beginner"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_4mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_upper_body_push_beginner"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_upper_body_pull_beginner"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_strength_conditioning_run_beginner"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 8,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_deload_beginner"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_3mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "easy_run_3mi"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_bodyweight_beginner"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "easy_run_5mi"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 9,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_total_body_beginner"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_4mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_powerlifting_beginner"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_upper_body_push_beginner"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_strength_run_beginner"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 10,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_lower_body_beginner"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_5mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_upper_body_pull_beginner"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_bodyweight_beginner"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "easy_run_6mi"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 11,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_legs_glutes_beginner"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_5mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_total_body_beginner"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_upper_body_push_beginner"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_strength_conditioning_run_beginner"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 12,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_powerlifting_beginner"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_4mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_upper_body_pull_beginner"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_bodyweight_beginner"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "easy_run_6mi"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "hybrid_strength_running_16week_intermediate",
+    "name": "Hybrid Performance - Intermediate",
+    "sport": "strength, running",
+    "category": "hybrid",
+    "durationWeeks": 16,
+    "level": "intermediate",
+    "sourceUrl": null,
+    "details": {
+      "goal": "Build strength and running performance simultaneously",
+      "planType": "Hybrid Intermediate"
+    },
+    "weeks": [
+      {
+        "weekNumber": 1,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_full_body_intermediate"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_4mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_chest_triceps_intermediate"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "hybrid_recovery_run_drills_beginner"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_back_biceps_intermediate"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_upper_strength_run_intermediate"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 2,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_upper_lower_split_day2"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_5mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_upper_lower_split_day1"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "easy_run_4mi"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_core_abs_intermediate"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_strength_run_drills_intermediate"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "cross_train_30min"}
+        ]
+      },
+      {
+        "weekNumber": 3,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_powerlifting_intermediate"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_5mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_hypertrophy_push_intermediate"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "easy_run_4mi"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_hypertrophy_pull_intermediate"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_circuit_run_intermediate"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 4,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_bodyweight_intermediate"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_4mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "easy_run_3mi"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_core_abs_intermediate"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "easy_run_6mi"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 5,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_upper_lower_split_day2"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_5mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_upper_lower_split_day1"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "hybrid_tempo_run_core_intermediate"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_shoulders_arms_intermediate"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "easy_run_7mi"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "cross_train_30min"}
+        ]
+      },
+      {
+        "weekNumber": 6,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_hypertrophy_legs_intermediate"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_5mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_chest_triceps_intermediate"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "easy_run_4mi"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_back_biceps_intermediate"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_upper_strength_run_intermediate"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 7,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_full_body_intermediate"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_5mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_powerlifting_intermediate"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "hybrid_strength_run_drills_intermediate"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_core_abs_intermediate"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "easy_run_8mi"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 8,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_bodyweight_intermediate"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_4mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "easy_run_4mi"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_athletic_performance_intermediate"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "easy_run_6mi"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "cross_train_30min"}
+        ]
+      },
+      {
+        "weekNumber": 9,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_upper_lower_split_day2"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_5mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_upper_lower_split_day1"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "easy_run_5mi"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_hypertrophy_push_intermediate"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_circuit_run_intermediate"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 10,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_hypertrophy_legs_intermediate"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_6mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_hypertrophy_pull_intermediate"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "hybrid_tempo_run_core_intermediate"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_shoulders_arms_intermediate"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "easy_run_8mi"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 11,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_powerlifting_intermediate"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_6mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_chest_triceps_intermediate"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "easy_run_5mi"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_back_biceps_intermediate"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_strength_run_drills_intermediate"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "cross_train_30min"}
+        ]
+      },
+      {
+        "weekNumber": 12,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_bodyweight_intermediate"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_4mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "easy_run_4mi"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_core_abs_intermediate"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "easy_run_7mi"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 13,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_full_body_intermediate"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_6mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_upper_lower_split_day1"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "easy_run_5mi"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_upper_lower_split_day2"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_upper_strength_run_intermediate"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 14,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_hypertrophy_legs_intermediate"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_6mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_athletic_performance_intermediate"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "hybrid_tempo_run_core_intermediate"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_shoulders_arms_intermediate"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "easy_run_9mi"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "cross_train_30min"}
+        ]
+      },
+      {
+        "weekNumber": 15,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_powerlifting_intermediate"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_6mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_hypertrophy_push_intermediate"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "easy_run_5mi"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_hypertrophy_pull_intermediate"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_circuit_run_intermediate"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 16,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_bodyweight_intermediate"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_5mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_core_abs_intermediate"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "easy_run_4mi"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "easy_run_8mi"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "hybrid_strength_running_20week_advanced",
+    "name": "Elite Hybrid Training - Advanced",
+    "sport": "strength, running",
+    "category": "hybrid",
+    "durationWeeks": 20,
+    "level": "advanced",
+    "sourceUrl": null,
+    "details": {
+      "goal": "Peak athletic performance combining strength and endurance",
+      "planType": "Advanced Hybrid"
+    },
+    "weeks": [
+      {
+        "weekNumber": 1,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_upper_body_push_advanced"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_6mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_upper_body_pull_advanced"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "hybrid_plyometric_run_drills_advanced"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_lower_body_advanced"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_full_body_run_advanced"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 2,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_bodyweight_advanced"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_7mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_upper_body_push_advanced"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "hybrid_sprint_strength_advanced"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_upper_body_pull_advanced"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_strength_endurance_run_advanced"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "cross_train_30min"}
+        ]
+      },
+      {
+        "weekNumber": 3,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_lower_body_advanced"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_7mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_upper_body_push_advanced"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "hybrid_plyometric_run_drills_advanced"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_upper_body_pull_advanced"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_full_body_run_advanced"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 4,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_bodyweight_intermediate"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_5mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "easy_run_5mi"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_core_abs_intermediate"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "easy_run_8mi"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 5,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_upper_body_push_advanced"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_8mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_upper_body_pull_advanced"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "hybrid_sprint_strength_advanced"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_lower_body_advanced"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_long_run_strength_advanced"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "cross_train_30min"}
+        ]
+      },
+      {
+        "weekNumber": 6,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_bodyweight_advanced"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_8mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_upper_body_push_advanced"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "hybrid_plyometric_run_drills_advanced"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_upper_body_pull_advanced"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_strength_endurance_run_advanced"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 7,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_lower_body_advanced"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_8mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_upper_body_push_advanced"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "hybrid_sprint_strength_advanced"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_upper_body_pull_advanced"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_full_body_run_advanced"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 8,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_bodyweight_intermediate"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_6mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "easy_run_6mi"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_core_abs_intermediate"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "easy_run_9mi"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "cross_train_30min"}
+        ]
+      },
+      {
+        "weekNumber": 9,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_upper_body_push_advanced"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_9mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_upper_body_pull_advanced"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "hybrid_plyometric_run_drills_advanced"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_lower_body_advanced"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_long_run_strength_advanced"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 10,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_bodyweight_advanced"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_9mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_upper_body_push_advanced"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "hybrid_sprint_strength_advanced"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_upper_body_pull_advanced"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_strength_endurance_run_advanced"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 11,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_lower_body_advanced"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_9mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_upper_body_push_advanced"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "hybrid_plyometric_run_drills_advanced"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_upper_body_pull_advanced"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_full_body_run_advanced"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "cross_train_30min"}
+        ]
+      },
+      {
+        "weekNumber": 12,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_bodyweight_intermediate"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_6mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "easy_run_6mi"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_core_abs_intermediate"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "easy_run_10mi"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 13,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_upper_body_push_advanced"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_10mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_upper_body_pull_advanced"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "hybrid_sprint_strength_advanced"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_lower_body_advanced"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_long_run_strength_advanced"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 14,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_bodyweight_advanced"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_10mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_upper_body_push_advanced"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "hybrid_plyometric_run_drills_advanced"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_upper_body_pull_advanced"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_strength_endurance_run_advanced"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "cross_train_30min"}
+        ]
+      },
+      {
+        "weekNumber": 15,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_lower_body_advanced"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_10mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_upper_body_push_advanced"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "hybrid_sprint_strength_advanced"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_upper_body_pull_advanced"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_full_body_run_advanced"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 16,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_bodyweight_intermediate"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_7mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "easy_run_7mi"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_core_abs_intermediate"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "easy_run_11mi"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 17,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_upper_body_push_advanced"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_11mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_upper_body_pull_advanced"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "hybrid_plyometric_run_drills_advanced"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_lower_body_advanced"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_long_run_strength_advanced"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "cross_train_30min"}
+        ]
+      },
+      {
+        "weekNumber": 18,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_bodyweight_advanced"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_11mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_upper_body_push_advanced"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "hybrid_sprint_strength_advanced"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_upper_body_pull_advanced"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_strength_endurance_run_advanced"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 19,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_lower_body_advanced"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_12mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_upper_body_push_advanced"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "hybrid_plyometric_run_drills_advanced"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_upper_body_pull_advanced"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_full_body_run_advanced"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 20,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_bodyweight_intermediate"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "easy_run_6mi"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_core_abs_intermediate"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "easy_run_5mi"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "easy_run_10mi"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "hybrid_strength_soccer_10week_intermediate",
+    "name": "Soccer Performance Training - Intermediate",
+    "sport": "strength, soccer",
+    "category": "hybrid",
+    "durationWeeks": 10,
+    "level": "intermediate",
+    "sourceUrl": null,
+    "details": {
+      "goal": "Develop strength, power, and soccer-specific skills",
+      "planType": "Soccer Hybrid Intermediate"
+    },
+    "weeks": [
+      {
+        "weekNumber": 1,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_lower_body_beginner"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "hybrid_agility_soccer_beginner"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_upper_body_push_beginner"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "hybrid_strength_soccer_drills_beginner"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_functional_soccer_intermediate"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 2,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_legs_glutes_beginner"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "hybrid_technical_soccer_mobility_beginner"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_full_body_intermediate"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "hybrid_strength_soccer_intermediate"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_agility_soccer_beginner"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 3,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_powerlifting_beginner"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "hybrid_functional_soccer_intermediate"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_upper_body_pull_beginner"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "hybrid_game_day_prep_soccer_intermediate"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_strength_soccer_drills_beginner"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 4,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_deload_beginner"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "hybrid_technical_soccer_mobility_beginner"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "hybrid_agility_soccer_beginner"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_core_abs_intermediate"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_game_day_prep_soccer_intermediate"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 5,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_powerlifting_intermediate"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "hybrid_strength_soccer_intermediate"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_upper_body_push_beginner"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "hybrid_functional_soccer_intermediate"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_endurance_strength_soccer_intermediate"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 6,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_hypertrophy_legs_intermediate"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "hybrid_agility_soccer_beginner"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_chest_triceps_intermediate"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "hybrid_strength_soccer_intermediate"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_game_day_prep_soccer_intermediate"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 7,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_athletic_performance_intermediate"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "hybrid_functional_soccer_intermediate"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_back_biceps_intermediate"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "hybrid_technical_soccer_mobility_beginner"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_endurance_strength_soccer_intermediate"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 8,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_bodyweight_intermediate"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "hybrid_agility_soccer_beginner"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "hybrid_game_day_prep_soccer_intermediate"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_core_abs_intermediate"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_strength_soccer_intermediate"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 9,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_powerlifting_intermediate"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "hybrid_functional_soccer_intermediate"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_full_body_intermediate"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "hybrid_strength_soccer_intermediate"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_endurance_strength_soccer_intermediate"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 10,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_legs_glutes_beginner"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "hybrid_agility_soccer_beginner"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_upper_body_push_beginner"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "hybrid_game_day_prep_soccer_intermediate"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_functional_soccer_intermediate"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "hybrid_strength_soccer_14week_advanced",
+    "name": "Elite Soccer Athlete - Advanced",
+    "sport": "strength, soccer",
+    "category": "hybrid",
+    "durationWeeks": 14,
+    "level": "advanced",
+    "sourceUrl": null,
+    "details": {
+      "goal": "Peak soccer performance with advanced strength and power development",
+      "planType": "Soccer Hybrid Advanced"
+    },
+    "weeks": [
+      {
+        "weekNumber": 1,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_lower_body_advanced"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "hybrid_power_soccer_advanced"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_upper_body_push_advanced"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "hybrid_game_day_prep_soccer_intermediate"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_upper_body_pull_advanced"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_speed_soccer_advanced"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 2,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_bodyweight_advanced"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "hybrid_functional_soccer_intermediate"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_full_body_intermediate"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "hybrid_interval_strength_soccer_advanced"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_power_soccer_advanced"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "cross_train_30min"}
+        ]
+      },
+      {
+        "weekNumber": 3,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_lower_body_advanced"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "hybrid_speed_soccer_advanced"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_upper_body_push_advanced"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "hybrid_game_day_prep_soccer_intermediate"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_upper_body_pull_advanced"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_soccer_strength_conditioning_advanced"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 4,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_bodyweight_intermediate"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "hybrid_functional_soccer_intermediate"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "hybrid_agility_soccer_beginner"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_core_abs_intermediate"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_game_day_prep_soccer_intermediate"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 5,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_lower_body_advanced"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "hybrid_power_soccer_advanced"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_upper_body_push_advanced"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_upper_body_pull_advanced"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_interval_strength_soccer_advanced"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 6,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_athletic_performance_intermediate"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "hybrid_speed_soccer_advanced"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_hypertrophy_push_intermediate"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "hybrid_game_day_prep_soccer_intermediate"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_hypertrophy_pull_intermediate"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_soccer_strength_conditioning_advanced"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "cross_train_30min"}
+        ]
+      },
+      {
+        "weekNumber": 7,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_lower_body_advanced"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "hybrid_power_soccer_advanced"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_upper_body_push_advanced"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_upper_body_pull_advanced"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_speed_soccer_advanced"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 8,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_bodyweight_intermediate"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "hybrid_functional_soccer_intermediate"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "hybrid_game_day_prep_soccer_intermediate"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_core_abs_intermediate"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_interval_strength_soccer_advanced"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 9,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_lower_body_advanced"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "hybrid_power_soccer_advanced"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_upper_body_push_advanced"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_upper_body_pull_advanced"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_soccer_strength_conditioning_advanced"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "cross_train_30min"}
+        ]
+      },
+      {
+        "weekNumber": 10,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_bodyweight_advanced"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "hybrid_speed_soccer_advanced"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_full_body_intermediate"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "hybrid_game_day_prep_soccer_intermediate"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_core_abs_intermediate"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_power_soccer_advanced"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 11,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_lower_body_advanced"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "hybrid_interval_strength_soccer_advanced"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_upper_body_push_advanced"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_upper_body_pull_advanced"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_speed_soccer_advanced"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 12,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_bodyweight_intermediate"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "hybrid_functional_soccer_intermediate"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "hybrid_game_day_prep_soccer_intermediate"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_athletic_performance_intermediate"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_power_soccer_advanced"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      },
+      {
+        "weekNumber": 13,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_lower_body_advanced"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "hybrid_speed_soccer_advanced"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_upper_body_push_advanced"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "strength_upper_body_pull_advanced"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_soccer_strength_conditioning_advanced"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "cross_train_30min"}
+        ]
+      },
+      {
+        "weekNumber": 14,
+        "days": [
+          {"dayOfWeek": "Mon", "workoutTemplateId": "strength_bodyweight_intermediate"},
+          {"dayOfWeek": "Tue", "workoutTemplateId": "hybrid_agility_soccer_beginner"},
+          {"dayOfWeek": "Wed", "workoutTemplateId": "strength_core_abs_intermediate"},
+          {"dayOfWeek": "Thu", "workoutTemplateId": "rest_day"},
+          {"dayOfWeek": "Fri", "workoutTemplateId": "hybrid_game_day_prep_soccer_intermediate"},
+          {"dayOfWeek": "Sat", "workoutTemplateId": "hybrid_functional_soccer_intermediate"},
+          {"dayOfWeek": "Sun", "workoutTemplateId": "rest_day"}
+        ]
+      }
+    ]
   }
 ]
