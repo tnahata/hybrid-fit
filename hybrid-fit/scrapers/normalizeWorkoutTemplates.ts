@@ -133,4 +133,6 @@ async function normalizeWorkoutTemplates(): Promise<NormalizedWorkoutTemplate[]>
 }
 
 // Run the script
-normalizeWorkoutTemplates();
+if (require.main === module) {
+    normalizeWorkoutTemplates();
+}

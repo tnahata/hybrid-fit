@@ -41,6 +41,15 @@ const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
 const normalizeWorkoutTemplates_1 = require("../normalizeWorkoutTemplates");
 const jsonPath = path_1.default.resolve(__dirname, "../normalized-data/normalizedTemplates.json");
+const workoutExerciseStructureSchema = new mongoose_1.Schema({
+    exerciseId: { type: String, ref: "Exercise", required: true },
+    sets: { type: Number },
+    reps: { type: Number },
+    durationMins: { type: Number },
+    durationSecs: { type: Number },
+    restSeconds: { type: Number },
+    notes: { type: String },
+}, { _id: false });
 const workoutTemplateSchema = new mongoose_1.Schema({
     _id: { type: String, required: true },
     name: { type: String, required: true },
@@ -57,11 +66,11 @@ const workoutTemplateSchema = new mongoose_1.Schema({
         default: normalizeWorkoutTemplates_1.WorkoutDifficulty.BEGINNER,
     },
     tags: [{ type: String }],
+    structure: [workoutExerciseStructureSchema],
 }, { timestamps: true });
 const WorkoutTemplateModel = (0, mongoose_1.model)("WorkoutTemplate", workoutTemplateSchema);
 async function seedworkoutTemplates() {
-    const mongoUri = process.env.MONGODB_URI ||
-        "mongodb://127.0.0.1:27017/hybrid-fit"; // adjust DB name as needed
+    const mongoUri = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/hybrid-fit"; // adjust DB name as needed
     let workoutTemplates = [];
     if (fs_1.default.existsSync(jsonPath)) {
         console.log("✅ Reading directory data from JSON...");

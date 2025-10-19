@@ -243,6 +243,7 @@ function normalizeExercise(ex, ids) {
             ex.details?.duration ||
             ex.duration),
         tags: [],
+        structure: []
     };
     // Add instructions if present
     if (ex.instructions) {
@@ -442,4 +443,6 @@ async function mergeAndNormalizeExercises() {
     return deduped;
 }
 // Run the script
-mergeAndNormalizeExercises();
+if (require.main === module) {
+    mergeAndNormalizeExercises();
+}

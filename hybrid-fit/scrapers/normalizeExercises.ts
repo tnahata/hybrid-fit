@@ -18,6 +18,17 @@ export enum ExerciseType {
     CONDITIONING = "conditioning",
 }
 
+export interface WorkoutExerciseStructure {
+    exerciseId: string; // Reference to Exercise._id
+    sets?: number;
+    reps?: number;
+    durationMins?: number;
+    durationSecs?: number;
+    restSeconds?: number;
+    notes?: string;
+}
+
+
 export interface NormalizedExercise {
     _id: string;
     name: string;
@@ -33,6 +44,7 @@ export interface NormalizedExercise {
     details: Record<string, any>;
     durationMinutes: number | null;
     tags: string[];
+    structure: WorkoutExerciseStructure[];
 }
 
 /**
@@ -279,6 +291,7 @@ function normalizeExercise(ex: any, ids: Set<string>): NormalizedExercise {
             ex.duration
         ),
         tags: [],
+        structure: []
     };
 
     // Add instructions if present
@@ -516,4 +529,6 @@ async function mergeAndNormalizeExercises(): Promise<NormalizedExercise[]> {
 }
 
 // Run the script
-mergeAndNormalizeExercises();
+if (require.main === module) {
+    mergeAndNormalizeExercises();
+}
