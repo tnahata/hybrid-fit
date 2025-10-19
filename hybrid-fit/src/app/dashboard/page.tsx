@@ -4,16 +4,6 @@ import React, { useEffect, useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
-import { Separator } from '@/components/ui/separator';
-import { Calendar } from 'lucide-react';
-import {
-    Dialog,
-    DialogContent,
-    DialogDescription,
-    DialogHeader,
-    DialogTitle,
-    DialogTrigger,
-} from "@/components/ui/dialog";
 import {
     Select,
     SelectContent,
@@ -24,13 +14,15 @@ import {
 import { UserDoc, WorkoutOverride, UserPlanProgress } from "@/models/User";
 import { TrainingPlanDoc, TrainingPlanDay, TrainingPlanWeek } from "@/models/TrainingPlans";
 import { WorkoutTemplateDoc } from "@/models/Workouts";
+import LogResultsDialog from '@/components/LogResultsDialog';
+import CalendarDialog from '@/components/CalendarDialog';
 
 // Enriched types matching API response
-interface EnrichedTrainingPlanDay extends TrainingPlanDay {
+export interface EnrichedTrainingPlanDay extends TrainingPlanDay {
     workoutDetails: WorkoutTemplateDoc | null;
 }
 
-interface EnrichedTrainingPlanWeek extends Omit<TrainingPlanWeek, 'days'> {
+export interface EnrichedTrainingPlanWeek extends Omit<TrainingPlanWeek, 'days'> {
     days: EnrichedTrainingPlanDay[];
 }
 
@@ -38,7 +30,7 @@ interface EnrichedTrainingPlanDoc extends Omit<TrainingPlanDoc, 'weeks'> {
     weeks: EnrichedTrainingPlanWeek[];
 }
 
-interface EnrichedUserPlanProgress {
+export interface EnrichedUserPlanProgress {
     planId: string;
     planName: string;
     totalWeeks: number;
@@ -377,7 +369,9 @@ export default function Dashboard() {
                                         You can view your historical data and progress below.
                                     </p>
                                     <div className="flex gap-2">
-                                        <Button variant="outline" className="flex-1">View Full History</Button>
+                                        <div className="flex-1">
+                                            <CalendarDialog userPlan={currentUserPlan} />
+                                        </div>
                                         <Button className="flex-1">Start New Plan</Button>
                                     </div>
                                 </div>
@@ -482,11 +476,18 @@ export default function Dashboard() {
                                 )}
 
                                 <div className="flex gap-3 pt-2">
-                                    <Button className="flex-1" size="lg">Log Results</Button>
-                                    <Button variant="secondary" className="flex-1 gap-2" size="lg">
-                                        <Calendar className="h-4 w-4" />
-                                        View Program Calendar
-                                    </Button>
+                                    <LogResultsDialog
+                                        workout={todaysWorkout?.workoutDetails}
+                                        onSubmit={(data) => {
+                                            console.log('Workout logged: ', data);
+                                            // TODO: make the actual API call
+                                            // TODO: on success, show a toast message
+                                        }}
+                                        trigger={
+                                            <Button className="flex-1" size="lg">Log Results</Button>
+                                        }
+                                    />
+                                    <CalendarDialog userPlan={currentUserPlan} className="flex-1" />
                                 </div>
                             </CardContent>
                         </Card>
