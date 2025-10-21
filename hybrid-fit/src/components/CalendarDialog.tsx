@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Calendar, CheckCircle2, XCircle, Circle, Clock } from 'lucide-react';
+import { Calendar, CheckCircle2, XCircle, Circle, Clock, CircleSlash } from 'lucide-react';
 import {
     Dialog,
     DialogContent,
@@ -57,7 +57,7 @@ export default function CalendarDialog({ userPlan, className }: CalendarDialogPr
 
         const expectedDate = getExpectedWorkoutDate(weekNumber, dayIndex);
 
-        // For completed plans, check logs by date
+        // For completed plans, match by both date AND templateId for accuracy
         if (userPlan.completedAt) {
             const log = userPlan.progressLog.find(l => {
                 const logDate = new Date(l.date);
@@ -69,7 +69,7 @@ export default function CalendarDialog({ userPlan, className }: CalendarDialogPr
                 if (log.status === 'skipped') return 'skipped';
                 if (log.status === 'missed') return 'missed';
             }
-            // If no log found for a completed plan, it was likely missed
+            // If no log found, it was missed
             return 'missed';
         }
 
@@ -119,7 +119,7 @@ export default function CalendarDialog({ userPlan, className }: CalendarDialogPr
             case 'missed':
                 return <XCircle className="h-4 w-4 text-red-600" />;
             case 'skipped':
-                return <Circle className="h-4 w-4 text-yellow-600" />;
+                return <CircleSlash className="h-4 w-4 text-yellow-600 fill-yellow-600" />;
             case 'current':
                 return <Clock className="h-4 w-4 text-blue-600" />;
             default:
@@ -330,7 +330,7 @@ export default function CalendarDialog({ userPlan, className }: CalendarDialogPr
                             <span className="text-muted-foreground">Upcoming</span>
                         </div>
                         <div className="flex items-center gap-2">
-                            <Circle className="h-4 w-4 text-yellow-600" />
+                            <CircleSlash className="h-4 w-4 text-yellow-600 fill-yellow-600" />
                             <span className="text-muted-foreground">Skipped</span>
                         </div>
                         <div className="flex items-center gap-2">
