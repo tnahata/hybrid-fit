@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Calendar, CheckCircle2, XCircle, Circle, Clock, CircleSlash } from 'lucide-react';
+import { Calendar, CheckCircle2, XCircle, Circle, Clock, CircleSlash, RotateCcw, GripVertical } from 'lucide-react';
 import {
     Dialog,
     DialogContent,
@@ -14,31 +14,39 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { Badge } from "@/components/ui/badge";
 import { EnrichedUserPlanProgress, EnrichedTrainingPlanWeek } from '../app/dashboard';
 
 interface CalendarDialogProps {
     userPlan: EnrichedUserPlanProgress;
     className?: string;
+    onUpdateOverrides?: (overrides: any[]) => Promise<void>;
 }
 
 const daysOfWeek = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
-export default function CalendarDialog({ userPlan, className }: CalendarDialogProps) {
+export default function CalendarDialog({ userPlan, className, onUpdateOverrides }: CalendarDialogProps) {
     const [open, setOpen] = useState(false);
+    const [draggedItem, setDraggedItem] = useState<{
+        weekNumber: number;
+        dayIndex: number;
+        workoutTemplateId: string;
+    } | null>(null);
+    const [localOverrides, setLocalOverrides] = useState(userPlan.overrides || []);
+    const [isSaving, setIsSaving] = useState(false);
+
     const isCompleted = !!userPlan.completedAt;
 
     // Helper to calculate the expected date for a workout
     const getExpectedWorkoutDate = (weekNumber: number, dayIndex: number): Date => {
         const startDate = new Date(userPlan.startedAt);
-        // Week 1, Day 0 starts at startedAt
-        // Each subsequent day is +1 from start
         const daysFromStart = (weekNumber - 1) * 7 + dayIndex;
         const expectedDate = new Date(startDate);
         expectedDate.setDate(startDate.getDate() + daysFromStart);
         return expectedDate;
     };
 
-    // Helper to check if two dates are the same day (ignoring time and timezone)
+    // Helper to check if two dates are the same day
     const isSameDay = (date1: Date, date2: Date): boolean => {
         const d1 = new Date(date1);
         const d2 = new Date(date2);
@@ -57,7 +65,6 @@ export default function CalendarDialog({ userPlan, className }: CalendarDialogPr
 
         const expectedDate = getExpectedWorkoutDate(weekNumber, dayIndex);
 
-        // For completed plans, match by both date AND templateId for accuracy
         if (userPlan.completedAt) {
             const log = userPlan.progressLog.find(l => {
                 const logDate = new Date(l.date);
@@ -69,11 +76,9 @@ export default function CalendarDialog({ userPlan, className }: CalendarDialogPr
                 if (log.status === 'skipped') return 'skipped';
                 if (log.status === 'missed') return 'missed';
             }
-            // If no log found, it was missed
             return 'missed';
         }
 
-        // For active plans, check based on current position
         if (weekNumber < userPlan.currentWeek) {
             const log = userPlan.progressLog.find(l => {
                 const logDate = new Date(l.date);
@@ -88,7 +93,6 @@ export default function CalendarDialog({ userPlan, className }: CalendarDialogPr
             return 'missed';
         }
 
-        // Current week
         if (weekNumber === userPlan.currentWeek) {
             if (dayIndex < userPlan.currentDayIndex) {
                 const log = userPlan.progressLog.find(l => {
@@ -107,9 +111,137 @@ export default function CalendarDialog({ userPlan, className }: CalendarDialogPr
             return 'upcoming';
         }
 
-        // Future week
         return 'upcoming';
     };
+
+    // Check if a workout is overridden
+    const isOverridden = (weekNumber: number, dayIndex: number): boolean => {
+        const dayOfWeek = daysOfWeek[dayIndex];
+        return localOverrides.some(
+            o => o.weekNumber === weekNumber && o.dayOfWeek === dayOfWeek
+        );
+    };
+
+    // Get the actual workout to display (considering overrides)
+    const getDisplayedWorkout = (weekNumber: number, dayIndex: number): string => {
+        const dayOfWeek = daysOfWeek[dayIndex];
+        const override = localOverrides.find(
+            o => o.weekNumber === weekNumber && o.dayOfWeek === dayOfWeek
+        );
+
+        if (override) {
+            return override.customWorkoutId;
+        }
+
+        const week = userPlan.planDetails.weeks.find(w => w.weekNumber === weekNumber);
+        return week?.days[dayIndex]?.workoutTemplateId || 'rest_day';
+    };
+
+    // Check if a day can be dragged
+    const canDrag = (weekNumber: number, dayIndex: number): boolean => {
+        if (isCompleted) return false; // Completed plans can't be modified
+
+        const status = getWorkoutStatus(weekNumber, dayIndex);
+        if (status === 'completed' || status === 'skipped' || status === 'missed') {
+            return false; // Past workouts can't be moved
+        }
+
+        // Only current and future weeks
+        return weekNumber >= userPlan.currentWeek;
+    };
+
+    // Handle drag start
+    const handleDragStart = (weekNumber: number, dayIndex: number, workoutTemplateId: string) => {
+        if (!canDrag(weekNumber, dayIndex)) return;
+
+        setDraggedItem({
+            weekNumber,
+            dayIndex,
+            workoutTemplateId
+        });
+    };
+
+    // Handle drag over
+    const handleDragOver = (e: React.DragEvent) => {
+        e.preventDefault();
+    };
+
+    // Handle drop
+    const handleDrop = (targetWeekNumber: number, targetDayIndex: number) => {
+        if (!draggedItem) return;
+
+        // Can only swap within the same week
+        if (draggedItem.weekNumber !== targetWeekNumber) {
+            setDraggedItem(null);
+            return;
+        }
+
+        // Can't drop on the same day
+        if (draggedItem.dayIndex === targetDayIndex) {
+            setDraggedItem(null);
+            return;
+        }
+
+        // Can't drop on past days
+        if (!canDrag(targetWeekNumber, targetDayIndex)) {
+            setDraggedItem(null);
+            return;
+        }
+
+        // Get the workouts
+        const sourceWorkoutId = getDisplayedWorkout(draggedItem.weekNumber, draggedItem.dayIndex);
+        const targetWorkoutId = getDisplayedWorkout(targetWeekNumber, targetDayIndex);
+
+        // Create new overrides for the swap
+        const newOverrides = [...localOverrides];
+
+        // Remove existing overrides for these days
+        const filteredOverrides = newOverrides.filter(o =>
+            !(o.weekNumber === draggedItem.weekNumber && o.dayOfWeek === daysOfWeek[draggedItem.dayIndex]) &&
+            !(o.weekNumber === targetWeekNumber && o.dayOfWeek === daysOfWeek[targetDayIndex])
+        );
+
+        // Add new overrides
+        filteredOverrides.push({
+            weekNumber: draggedItem.weekNumber,
+            dayOfWeek: daysOfWeek[draggedItem.dayIndex],
+            customWorkoutId: targetWorkoutId
+        });
+
+        filteredOverrides.push({
+            weekNumber: targetWeekNumber,
+            dayOfWeek: daysOfWeek[targetDayIndex],
+            customWorkoutId: sourceWorkoutId
+        });
+
+        setLocalOverrides(filteredOverrides);
+        setDraggedItem(null);
+    };
+
+    // Save overrides
+    const handleSaveOverrides = async () => {
+        if (!onUpdateOverrides) return;
+
+        setIsSaving(true);
+        try {
+            await onUpdateOverrides(localOverrides);
+        } catch (error) {
+            console.error('Failed to save overrides:', error);
+        } finally {
+            setIsSaving(false);
+        }
+    };
+
+    // Reset to original plan
+    const handleResetPlan = () => {
+        setLocalOverrides([]);
+        if (onUpdateOverrides) {
+            onUpdateOverrides([]);
+        }
+    };
+
+    // Check if there are unsaved changes
+    const hasUnsavedChanges = JSON.stringify(localOverrides) !== JSON.stringify(userPlan.overrides || []);
 
     // Get status icon
     const getStatusIcon = (status: string) => {
@@ -129,11 +261,20 @@ export default function CalendarDialog({ userPlan, className }: CalendarDialogPr
 
     // Render a single week
     const renderWeek = (week: EnrichedTrainingPlanWeek) => {
+        const weekCanBeEdited = !isCompleted && week.weekNumber >= userPlan.currentWeek;
+
         return (
             <Card key={week.weekNumber} className="mb-4">
                 <CardContent className="pt-6">
                     <div className="flex items-center justify-between mb-4">
-                        <h3 className="font-semibold text-lg">Week {week.weekNumber}</h3>
+                        <div className="flex items-center gap-2">
+                            <h3 className="font-semibold text-lg">Week {week.weekNumber}</h3>
+                            {localOverrides.some(o => o.weekNumber === week.weekNumber) && (
+                                <Badge variant="outline" className="text-xs">
+                                    Modified
+                                </Badge>
+                            )}
+                        </div>
                         <span className="text-sm text-muted-foreground">
                             {week.days.length} workouts
                         </span>
@@ -141,27 +282,52 @@ export default function CalendarDialog({ userPlan, className }: CalendarDialogPr
                     <div className="space-y-2">
                         {week.days.map((day, dayIndex) => {
                             const status = getWorkoutStatus(week.weekNumber, dayIndex);
-                            const workoutName = day.workoutDetails?.name || 'Rest Day';
+                            const displayedWorkoutId = getDisplayedWorkout(week.weekNumber, dayIndex);
+                            const isDraggable = canDrag(week.weekNumber, dayIndex);
+                            const overridden = isOverridden(week.weekNumber, dayIndex);
+
+                            // Find the workout details for the displayed workout
+                            const workoutDetails = userPlan.planDetails.weeks
+                                .flatMap(w => w.days)
+                                .find(d => d.workoutTemplateId === displayedWorkoutId)?.workoutDetails;
+
+                            const workoutName = workoutDetails?.name || (displayedWorkoutId === 'rest_day' ? 'Rest Day' : displayedWorkoutId);
 
                             return (
                                 <div
                                     key={dayIndex}
-                                    className={`flex items-center justify-between p-3 rounded-lg border ${status === 'current'
+                                    draggable={isDraggable}
+                                    onDragStart={() => handleDragStart(week.weekNumber, dayIndex, displayedWorkoutId)}
+                                    onDragOver={handleDragOver}
+                                    onDrop={() => handleDrop(week.weekNumber, dayIndex)}
+                                    className={`flex items-center justify-between p-3 rounded-lg border transition-all ${status === 'current'
                                             ? 'border-primary bg-primary/5'
                                             : 'border-border bg-muted/30'
+                                        } ${isDraggable ? 'cursor-move hover:bg-muted/50' : ''
+                                        } ${draggedItem?.weekNumber === week.weekNumber && draggedItem?.dayIndex === dayIndex
+                                            ? 'opacity-50'
+                                            : ''
                                         }`}
                                 >
                                     <div className="flex items-center gap-3 flex-1">
+                                        {isDraggable && weekCanBeEdited && (
+                                            <GripVertical className="h-4 w-4 text-muted-foreground" />
+                                        )}
                                         {getStatusIcon(status)}
                                         <div className="flex-1">
-                                            <div className="flex items-center gap-2">
+                                            <div className="flex items-center gap-2 flex-wrap">
                                                 <span className="text-sm font-medium">
                                                     {daysOfWeek[dayIndex]}
                                                 </span>
                                                 {status === 'current' && (
-                                                    <span className="text-xs px-2 py-0.5 rounded-full bg-primary text-primary-foreground">
+                                                    <Badge variant="default" className="text-xs">
                                                         Today
-                                                    </span>
+                                                    </Badge>
+                                                )}
+                                                {overridden && (
+                                                    <Badge variant="secondary" className="text-xs">
+                                                        Rescheduled
+                                                    </Badge>
                                                 )}
                                             </div>
                                             <p className="text-sm text-muted-foreground">
@@ -169,16 +335,16 @@ export default function CalendarDialog({ userPlan, className }: CalendarDialogPr
                                             </p>
                                         </div>
                                     </div>
-                                    {day.workoutDetails && (
+                                    {workoutDetails && (
                                         <div className="text-right">
-                                            {day.workoutDetails.metrics.distanceMiles && (
+                                            {workoutDetails.metrics.distanceMiles && (
                                                 <p className="text-xs text-muted-foreground">
-                                                    {day.workoutDetails.metrics.distanceMiles} mi
+                                                    {workoutDetails.metrics.distanceMiles} mi
                                                 </p>
                                             )}
-                                            {day.workoutDetails.metrics.durationMins && (
+                                            {workoutDetails.metrics.durationMins && (
                                                 <p className="text-xs text-muted-foreground">
-                                                    {day.workoutDetails.metrics.durationMins} min
+                                                    {workoutDetails.metrics.durationMins} min
                                                 </p>
                                             )}
                                         </div>
@@ -218,10 +384,23 @@ export default function CalendarDialog({ userPlan, className }: CalendarDialogPr
             </DialogTrigger>
             <DialogContent className="max-w-3xl max-h-[90vh]">
                 <DialogHeader>
-                    <DialogTitle className="flex items-center gap-2">
-                        <Calendar className="h-5 w-5" />
-                        {userPlan.planName}
-                    </DialogTitle>
+                    <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                            <Calendar className="h-5 w-5" />
+                            <DialogTitle>{userPlan.planName}</DialogTitle>
+                        </div>
+                        {!isCompleted && localOverrides.length > 0 && (
+                            <Button
+                                variant="outline"
+                                size="sm"
+                                onClick={handleResetPlan}
+                                className="gap-2"
+                            >
+                                <RotateCcw className="h-4 w-4" />
+                                Reset Plan
+                            </Button>
+                        )}
+                    </div>
                     <DialogDescription>
                         {isCompleted
                             ? `Completed on ${new Date(userPlan.completedAt!).toLocaleDateString()}`
@@ -229,6 +408,21 @@ export default function CalendarDialog({ userPlan, className }: CalendarDialogPr
                         }
                     </DialogDescription>
                 </DialogHeader>
+
+                {!isCompleted && hasUnsavedChanges && (
+                    <div className="p-3 bg-blue-50 border border-blue-200 rounded-lg flex items-center justify-between">
+                        <p className="text-sm text-blue-800">You have unsaved changes</p>
+                        <Button onClick={handleSaveOverrides} disabled={isSaving} size="sm">
+                            {isSaving ? 'Saving...' : 'Save Changes'}
+                        </Button>
+                    </div>
+                )}
+
+                {!isCompleted && (
+                    <div className="p-3 bg-muted rounded-lg text-sm text-muted-foreground">
+                        💡 Tip: Drag and drop workouts within the same week to reschedule them
+                    </div>
+                )}
 
                 {isCompleted ? (
                     // Single view for completed plans
@@ -314,7 +508,7 @@ export default function CalendarDialog({ userPlan, className }: CalendarDialogPr
                     </Tabs>
                 )}
 
-                {/* Legend - Always visible for both active and completed plans */}
+                {/* Legend */}
                 <div className="border-t pt-4 mt-4">
                     <div className="flex flex-wrap gap-4 text-sm">
                         <div className="flex items-center gap-2">
@@ -344,6 +538,6 @@ export default function CalendarDialog({ userPlan, className }: CalendarDialogPr
                     </div>
                 </div>
             </DialogContent>
-        </Dialog >
+        </Dialog>
     );
 }
