@@ -314,21 +314,25 @@ export default function CalendarDialog({ userPlan, className }: CalendarDialogPr
                     </Tabs>
                 )}
 
-                {/* Legend */}
+                {/* Legend - Always visible for both active and completed plans */}
                 <div className="border-t pt-4 mt-4">
                     <div className="flex flex-wrap gap-4 text-sm">
                         <div className="flex items-center gap-2">
                             <CheckCircle2 className="h-4 w-4 text-green-600" />
                             <span className="text-muted-foreground">Completed</span>
                         </div>
-                        <div className="flex items-center gap-2">
-                            <Clock className="h-4 w-4 text-blue-600" />
-                            <span className="text-muted-foreground">Current</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <Circle className="h-4 w-4 text-muted-foreground" />
-                            <span className="text-muted-foreground">Upcoming</span>
-                        </div>
+                        {!isCompleted && (
+                            <div className="flex items-center gap-2">
+                                <Clock className="h-4 w-4 text-blue-600" />
+                                <span className="text-muted-foreground">Current</span>
+                            </div>
+                        )}
+                        {!isCompleted && (
+                            <div className="flex items-center gap-2">
+                                <Circle className="h-4 w-4 text-muted-foreground" />
+                                <span className="text-muted-foreground">Upcoming</span>
+                            </div>
+                        )}
                         <div className="flex items-center gap-2">
                             <CircleSlash className="h-4 w-4 text-yellow-600 fill-yellow-600" />
                             <span className="text-muted-foreground">Skipped</span>
@@ -340,6 +344,6 @@ export default function CalendarDialog({ userPlan, className }: CalendarDialogPr
                     </div>
                 </div>
             </DialogContent>
-        </Dialog>
+        </Dialog >
     );
 }
