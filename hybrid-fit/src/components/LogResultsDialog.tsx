@@ -9,6 +9,7 @@ import { Slider } from '@/components/ui/slider';
 import { Separator } from '@/components/ui/separator';
 import { Plus, Trash2, Check } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 
 interface WorkoutTemplateDoc {
     _id: string;
@@ -43,6 +44,9 @@ interface LogResultsDialogProps {
 
 export default function LogResultsDialog({ workout, onSubmit, trigger }: LogResultsDialogProps) {
     const [open, setOpen] = useState<boolean>(false);
+
+    // Status selection
+    const [workoutStatus, setWorkoutStatus] = useState<'completed' | 'skipped'>('completed');
 
     // Common fields
     const [durationMinutes, setDurationMinutes] = useState<string>('');
@@ -135,50 +139,53 @@ export default function LogResultsDialog({ workout, onSubmit, trigger }: LogResu
     };
 
     const handleSubmit = (): void => {
-        console.log("entered");
         const data: any = {
             date: new Date(),
             workoutTemplateId: workout?._id,
-            status: 'completed',
-            durationMinutes: parseFloat(durationMinutes) || undefined,
-            perceivedEffort: perceivedEffort[0],
+            status: workoutStatus,
             notes: notes || undefined,
-            activityType: isStrengthWorkout() ? 'strength' : isDistanceWorkout() ? 'distance' : 'time',
-            sport: workout?.sport,
         };
 
-        // Distance-based workout data
-        if (isDistanceWorkout()) {
-            data.distance = {
-                value: parseFloat(distance),
-                unit: distanceUnit,
-            };
-            if (averagePace) {
-                data.pace = {
-                    average: parseFloat(averagePace),
-                    unit: distanceUnit === 'miles' ? 'min/mile' : 'min/km',
+        // Only include workout details if completed
+        if (workoutStatus === 'completed') {
+            data.durationMinutes = parseFloat(durationMinutes) || undefined;
+            data.perceivedEffort = perceivedEffort[0];
+            data.activityType = isStrengthWorkout() ? 'strength' : isDistanceWorkout() ? 'distance' : 'time';
+            data.sport = workout?.sport;
+
+            // Distance-based workout data
+            if (isDistanceWorkout()) {
+                data.distance = {
+                    value: parseFloat(distance),
+                    unit: distanceUnit,
+                };
+                if (averagePace) {
+                    data.pace = {
+                        average: parseFloat(averagePace),
+                        unit: distanceUnit === 'miles' ? 'min/mile' : 'min/km',
+                    };
+                }
+            }
+
+            // Strength workout data
+            if (isStrengthWorkout()) {
+                data.strengthSession = {
+                    exercises: exercises.map(ex => ({
+                        exerciseId: ex.exerciseId,
+                        exerciseName: ex.exerciseName,
+                        sets: ex.sets,
+                    })),
+                    totalVolume: calculateTotalVolume(),
+                    volumeUnit: 'lbs',
                 };
             }
-        }
 
-        // Strength workout data
-        if (isStrengthWorkout()) {
-            data.strengthSession = {
-                exercises: exercises.map(ex => ({
-                    exerciseId: ex.exerciseId,
-                    exerciseName: ex.exerciseName,
-                    sets: ex.sets,
-                })),
-                totalVolume: calculateTotalVolume(),
-                volumeUnit: 'lbs',
-            };
-        }
-
-        // Heart rate (all workouts)
-        if (averageHeartRate) {
-            data.heartRate = {
-                average: parseFloat(averageHeartRate),
-            };
+            // Heart rate (all workouts)
+            if (averageHeartRate) {
+                data.heartRate = {
+                    average: parseFloat(averageHeartRate),
+                };
+            }
         }
 
         onSubmit(data);
@@ -186,6 +193,7 @@ export default function LogResultsDialog({ workout, onSubmit, trigger }: LogResu
     };
 
     const resetForm = (): void => {
+        setWorkoutStatus('completed');
         setDurationMinutes('');
         setPerceivedEffort([5]);
         setNotes('');
@@ -218,225 +226,263 @@ export default function LogResultsDialog({ workout, onSubmit, trigger }: LogResu
                 </DialogHeader>
 
                 <div className="space-y-6 py-4">
-                    {/* Common Fields - Always Shown */}
-                    <div className="space-y-4">
-                        <div className="grid grid-cols-2 gap-4">
-                            <div className="space-y-2">
-                                <Label htmlFor="duration">Duration (minutes)</Label>
-                                <Input
-                                    id="duration"
-                                    type="number"
-                                    placeholder={workout.metrics.durationMins?.toString() || "45"}
-                                    value={durationMinutes}
-                                    onChange={(e) => setDurationMinutes(e.target.value)}
-                                />
+                    {/* Workout Status Selection */}
+                    <div className="space-y-3">
+                        <Label>Workout Status</Label>
+                        <RadioGroup value={workoutStatus} onValueChange={(val) => setWorkoutStatus(val as 'completed' | 'skipped')}>
+                            <div className="flex items-center space-x-2">
+                                <RadioGroupItem value="completed" id="completed" />
+                                <Label htmlFor="completed" className="font-normal cursor-pointer">
+                                    I completed this workout
+                                </Label>
                             </div>
+                            <div className="flex items-center space-x-2">
+                                <RadioGroupItem value="skipped" id="skipped" />
+                                <Label htmlFor="skipped" className="font-normal cursor-pointer">
+                                    I skipped this workout (intentionally)
+                                </Label>
+                            </div>
+                        </RadioGroup>
+                    </div>
 
-                            <div className="space-y-2">
-                                <Label htmlFor="heartRate">Average Heart Rate (optional)</Label>
-                                <Input
-                                    id="heartRate"
-                                    type="number"
-                                    placeholder="150"
-                                    value={averageHeartRate}
-                                    onChange={(e) => setAverageHeartRate(e.target.value)}
-                                />
-                            </div>
-                        </div>
-
-                        <div className="space-y-2">
-                            <Label>Perceived Effort (1-10)</Label>
-                            <div className="flex items-center gap-4">
-                                <Slider
-                                    value={perceivedEffort}
-                                    onValueChange={setPerceivedEffort}
-                                    min={1}
-                                    max={10}
-                                    step={1}
-                                    className="flex-1"
-                                />
-                                <span className="text-2xl font-bold text-primary w-8 text-center">
-                                    {perceivedEffort[0]}
-                                </span>
-                            </div>
-                            <p className="text-xs text-muted-foreground">
-                                1 = Very Easy, 5 = Moderate, 10 = Maximum Effort
+                    {workoutStatus === 'skipped' && (
+                        <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                            <p className="text-sm text-yellow-800">
+                                You're marking this workout as skipped. Please add a note below explaining why (optional).
                             </p>
                         </div>
-                    </div>
+                    )}
 
                     <Separator />
 
-                    {/* Distance-Based Workouts (Running, Cycling, Swimming) */}
-                    {isDistanceWorkout() && (
-                        <div className="space-y-4">
-                            <h3 className="text-lg font-semibold">Distance & Pace</h3>
+                    {/* Show workout details only if completed */}
+                    {workoutStatus === 'completed' && (
+                        <>
+                            {/* Common Fields - Always Shown */}
+                            <div className="space-y-4">
+                                <div className="grid grid-cols-2 gap-4">
+                                    <div className="space-y-2">
+                                        <Label htmlFor="duration">Duration (minutes)</Label>
+                                        <Input
+                                            id="duration"
+                                            type="number"
+                                            placeholder={workout.metrics.durationMins?.toString() || "45"}
+                                            value={durationMinutes}
+                                            onChange={(e) => setDurationMinutes(e.target.value)}
+                                        />
+                                    </div>
 
-                            <div className="grid grid-cols-3 gap-4">
-                                <div className="space-y-2 col-span-2">
-                                    <Label htmlFor="distance">Distance</Label>
-                                    <Input
-                                        id="distance"
-                                        type="number"
-                                        step="0.1"
-                                        placeholder={workout.metrics.distanceMiles?.toString() || "5.0"}
-                                        value={distance}
-                                        onChange={(e) => setDistance(e.target.value)}
-                                    />
+                                    <div className="space-y-2">
+                                        <Label htmlFor="heartRate">Average Heart Rate (optional)</Label>
+                                        <Input
+                                            id="heartRate"
+                                            type="number"
+                                            placeholder="150"
+                                            value={averageHeartRate}
+                                            onChange={(e) => setAverageHeartRate(e.target.value)}
+                                        />
+                                    </div>
                                 </div>
 
                                 <div className="space-y-2">
-                                    <Label htmlFor="distanceUnit">Unit</Label>
-                                    <Select value={distanceUnit} onValueChange={(val) => setDistanceUnit(val as 'miles' | 'kilometers')}>
-                                        <SelectTrigger id="distanceUnit">
-                                            <SelectValue />
-                                        </SelectTrigger>
-                                        <SelectContent>
-                                            <SelectItem value="miles">Miles</SelectItem>
-                                            <SelectItem value="kilometers">Kilometers</SelectItem>
-                                        </SelectContent>
-                                    </Select>
+                                    <Label>Perceived Effort (1-10)</Label>
+                                    <div className="flex items-center gap-4">
+                                        <Slider
+                                            value={perceivedEffort}
+                                            onValueChange={setPerceivedEffort}
+                                            min={1}
+                                            max={10}
+                                            step={1}
+                                            className="flex-1"
+                                        />
+                                        <span className="text-2xl font-bold text-primary w-8 text-center">
+                                            {perceivedEffort[0]}
+                                        </span>
+                                    </div>
+                                    <p className="text-xs text-muted-foreground">
+                                        1 = Very Easy, 5 = Moderate, 10 = Maximum Effort
+                                    </p>
                                 </div>
                             </div>
 
-                            <div className="space-y-2">
-                                <Label htmlFor="pace">Average Pace (min/{distanceUnit === 'miles' ? 'mile' : 'km'}) - Optional</Label>
-                                <Input
-                                    id="pace"
-                                    type="number"
-                                    step="0.1"
-                                    placeholder="8.5"
-                                    value={averagePace}
-                                    onChange={(e) => setAveragePace(e.target.value)}
-                                />
-                            </div>
-                        </div>
-                    )}
+                            <Separator />
 
-                    {/* Strength Workouts */}
-                    {isStrengthWorkout() && (
-                        <div className="space-y-4">
-                            <div className="flex items-center justify-between">
-                                <h3 className="text-lg font-semibold">Exercises</h3>
-                                <Button onClick={addExercise} variant="outline" size="sm">
-                                    <Plus className="h-4 w-4 mr-1" />
-                                    Add Exercise
-                                </Button>
-                            </div>
+                            {/* Distance-Based Workouts (Running, Cycling, Swimming) */}
+                            {isDistanceWorkout() && (
+                                <div className="space-y-4">
+                                    <h3 className="text-lg font-semibold">Distance & Pace</h3>
 
-                            <div className="space-y-4">
-                                {exercises.map((exercise, exerciseIndex) => (
-                                    <Card key={exercise.exerciseId}>
-                                        <CardContent className="pt-6">
-                                            <div className="space-y-4">
-                                                <div className="flex items-center gap-2">
-                                                    <Input
-                                                        placeholder="Exercise name (e.g., Bench Press)"
-                                                        value={exercise.exerciseName}
-                                                        onChange={(e) => updateExerciseName(exerciseIndex, e.target.value)}
-                                                        className="flex-1"
-                                                    />
-                                                    {exercises.length > 1 && (
-                                                        <Button
-                                                            onClick={() => removeExercise(exerciseIndex)}
-                                                            variant="ghost"
-                                                            size="icon"
-                                                        >
-                                                            <Trash2 className="h-4 w-4 text-destructive" />
-                                                        </Button>
-                                                    )}
-                                                </div>
+                                    <div className="grid grid-cols-3 gap-4">
+                                        <div className="space-y-2 col-span-2">
+                                            <Label htmlFor="distance">Distance</Label>
+                                            <Input
+                                                id="distance"
+                                                type="number"
+                                                step="0.1"
+                                                placeholder={workout.metrics.distanceMiles?.toString() || "5.0"}
+                                                value={distance}
+                                                onChange={(e) => setDistance(e.target.value)}
+                                            />
+                                        </div>
 
-                                                <div className="space-y-2">
-                                                    <div className="grid grid-cols-12 gap-2 text-xs font-semibold text-muted-foreground">
-                                                        <div className="col-span-1">Set</div>
-                                                        <div className="col-span-4">Weight (lbs)</div>
-                                                        <div className="col-span-3">Reps</div>
-                                                        <div className="col-span-3">Done</div>
-                                                        <div className="col-span-1"></div>
-                                                    </div>
+                                        <div className="space-y-2">
+                                            <Label htmlFor="distanceUnit">Unit</Label>
+                                            <Select value={distanceUnit} onValueChange={(val) => setDistanceUnit(val as 'miles' | 'kilometers')}>
+                                                <SelectTrigger id="distanceUnit">
+                                                    <SelectValue />
+                                                </SelectTrigger>
+                                                <SelectContent>
+                                                    <SelectItem value="miles">Miles</SelectItem>
+                                                    <SelectItem value="kilometers">Kilometers</SelectItem>
+                                                </SelectContent>
+                                            </Select>
+                                        </div>
+                                    </div>
 
-                                                    {exercise.sets.map((set, setIndex) => (
-                                                        <div key={setIndex} className="grid grid-cols-12 gap-2 items-center">
-                                                            <div className="col-span-1 text-center font-semibold">
-                                                                {set.setNumber}
-                                                            </div>
-                                                            <div className="col-span-4">
-                                                                <Input
-                                                                    type="number"
-                                                                    value={set.weight}
-                                                                    onChange={(e) => updateSet(exerciseIndex, setIndex, 'weight', parseFloat(e.target.value) || 0)}
-                                                                    placeholder="135"
-                                                                />
-                                                            </div>
-                                                            <div className="col-span-3">
-                                                                <Input
-                                                                    type="number"
-                                                                    value={set.reps}
-                                                                    onChange={(e) => updateSet(exerciseIndex, setIndex, 'reps', parseInt(e.target.value) || 0)}
-                                                                    placeholder="10"
-                                                                />
-                                                            </div>
-                                                            <div className="col-span-3 flex justify-center">
+                                    <div className="space-y-2">
+                                        <Label htmlFor="pace">Average Pace (min/{distanceUnit === 'miles' ? 'mile' : 'km'}) - Optional</Label>
+                                        <Input
+                                            id="pace"
+                                            type="number"
+                                            step="0.1"
+                                            placeholder="8.5"
+                                            value={averagePace}
+                                            onChange={(e) => setAveragePace(e.target.value)}
+                                        />
+                                    </div>
+                                </div>
+                            )}
+
+                            {/* Strength Workouts */}
+                            {isStrengthWorkout() && (
+                                <div className="space-y-4">
+                                    <div className="flex items-center justify-between">
+                                        <h3 className="text-lg font-semibold">Exercises</h3>
+                                        <Button onClick={addExercise} variant="outline" size="sm">
+                                            <Plus className="h-4 w-4 mr-1" />
+                                            Add Exercise
+                                        </Button>
+                                    </div>
+
+                                    <div className="space-y-4">
+                                        {exercises.map((exercise, exerciseIndex) => (
+                                            <Card key={exercise.exerciseId}>
+                                                <CardContent className="pt-6">
+                                                    <div className="space-y-4">
+                                                        <div className="flex items-center gap-2">
+                                                            <Input
+                                                                placeholder="Exercise name (e.g., Bench Press)"
+                                                                value={exercise.exerciseName}
+                                                                onChange={(e) => updateExerciseName(exerciseIndex, e.target.value)}
+                                                                className="flex-1"
+                                                            />
+                                                            {exercises.length > 1 && (
                                                                 <Button
-                                                                    onClick={() => updateSet(exerciseIndex, setIndex, 'completed', !set.completed)}
-                                                                    variant={set.completed ? "default" : "outline"}
-                                                                    size="sm"
-                                                                    className="w-full"
+                                                                    onClick={() => removeExercise(exerciseIndex)}
+                                                                    variant="ghost"
+                                                                    size="icon"
                                                                 >
-                                                                    {set.completed && <Check className="h-4 w-4" />}
+                                                                    <Trash2 className="h-4 w-4 text-destructive" />
                                                                 </Button>
-                                                            </div>
-                                                            <div className="col-span-1">
-                                                                {exercise.sets.length > 1 && (
-                                                                    <Button
-                                                                        onClick={() => removeSet(exerciseIndex, setIndex)}
-                                                                        variant="ghost"
-                                                                        size="icon"
-                                                                        className="h-8 w-8"
-                                                                    >
-                                                                        <Trash2 className="h-3 w-3 text-muted-foreground" />
-                                                                    </Button>
-                                                                )}
-                                                            </div>
+                                                            )}
                                                         </div>
-                                                    ))}
 
-                                                    <Button
-                                                        onClick={() => addSet(exerciseIndex)}
-                                                        variant="outline"
-                                                        size="sm"
-                                                        className="w-full mt-2"
-                                                    >
-                                                        <Plus className="h-3 w-3 mr-1" />
-                                                        Add Set
-                                                    </Button>
-                                                </div>
-                                            </div>
-                                        </CardContent>
-                                    </Card>
-                                ))}
-                            </div>
+                                                        <div className="space-y-2">
+                                                            <div className="grid grid-cols-12 gap-2 text-xs font-semibold text-muted-foreground">
+                                                                <div className="col-span-1">Set</div>
+                                                                <div className="col-span-4">Weight (lbs)</div>
+                                                                <div className="col-span-3">Reps</div>
+                                                                <div className="col-span-3">Done</div>
+                                                                <div className="col-span-1"></div>
+                                                            </div>
 
-                            <div className="p-4 bg-muted rounded-lg">
-                                <div className="flex justify-between items-center">
-                                    <span className="text-sm font-semibold">Total Volume:</span>
-                                    <span className="text-2xl font-bold text-primary">
-                                        {calculateTotalVolume().toLocaleString()} lbs
-                                    </span>
+                                                            {exercise.sets.map((set, setIndex) => (
+                                                                <div key={setIndex} className="grid grid-cols-12 gap-2 items-center">
+                                                                    <div className="col-span-1 text-center font-semibold">
+                                                                        {set.setNumber}
+                                                                    </div>
+                                                                    <div className="col-span-4">
+                                                                        <Input
+                                                                            type="number"
+                                                                            value={set.weight}
+                                                                            onChange={(e) => updateSet(exerciseIndex, setIndex, 'weight', parseFloat(e.target.value) || 0)}
+                                                                            placeholder="135"
+                                                                        />
+                                                                    </div>
+                                                                    <div className="col-span-3">
+                                                                        <Input
+                                                                            type="number"
+                                                                            value={set.reps}
+                                                                            onChange={(e) => updateSet(exerciseIndex, setIndex, 'reps', parseInt(e.target.value) || 0)}
+                                                                            placeholder="10"
+                                                                        />
+                                                                    </div>
+                                                                    <div className="col-span-3 flex justify-center">
+                                                                        <Button
+                                                                            onClick={() => updateSet(exerciseIndex, setIndex, 'completed', !set.completed)}
+                                                                            variant={set.completed ? "default" : "outline"}
+                                                                            size="sm"
+                                                                            className="w-full"
+                                                                        >
+                                                                            {set.completed && <Check className="h-4 w-4" />}
+                                                                        </Button>
+                                                                    </div>
+                                                                    <div className="col-span-1">
+                                                                        {exercise.sets.length > 1 && (
+                                                                            <Button
+                                                                                onClick={() => removeSet(exerciseIndex, setIndex)}
+                                                                                variant="ghost"
+                                                                                size="icon"
+                                                                                className="h-8 w-8"
+                                                                            >
+                                                                                <Trash2 className="h-3 w-3 text-muted-foreground" />
+                                                                            </Button>
+                                                                        )}
+                                                                    </div>
+                                                                </div>
+                                                            ))}
+
+                                                            <Button
+                                                                onClick={() => addSet(exerciseIndex)}
+                                                                variant="outline"
+                                                                size="sm"
+                                                                className="w-full mt-2"
+                                                            >
+                                                                <Plus className="h-3 w-3 mr-1" />
+                                                                Add Set
+                                                            </Button>
+                                                        </div>
+                                                    </div>
+                                                </CardContent>
+                                            </Card>
+                                        ))}
+                                    </div>
+
+                                    <div className="p-4 bg-muted rounded-lg">
+                                        <div className="flex justify-between items-center">
+                                            <span className="text-sm font-semibold">Total Volume:</span>
+                                            <span className="text-2xl font-bold text-primary">
+                                                {calculateTotalVolume().toLocaleString()} lbs
+                                            </span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    )}
+                            )}
 
-                    <Separator />
+                            <Separator />
+                        </>
+                    )}
 
                     {/* Notes - Always Shown */}
                     <div className="space-y-2">
-                        <Label htmlFor="notes">Notes (optional)</Label>
+                        <Label htmlFor="notes">
+                            Notes {workoutStatus === 'skipped' ? '(Why did you skip?)' : '(optional)'}
+                        </Label>
                         <Textarea
                             id="notes"
-                            placeholder="How did the workout feel? Any observations?"
+                            placeholder={workoutStatus === 'skipped'
+                                ? "e.g., Felt fatigued, had an injury, not enough time..."
+                                : "How did the workout feel? Any observations?"}
                             value={notes}
                             onChange={(e) => setNotes(e.target.value)}
                             rows={3}
@@ -446,7 +492,7 @@ export default function LogResultsDialog({ workout, onSubmit, trigger }: LogResu
                     {/* Submit Button */}
                     <div className="flex gap-3 pt-4">
                         <Button onClick={handleSubmit} className="flex-1" size="lg">
-                            Save Workout
+                            {workoutStatus === 'completed' ? 'Save Workout' : 'Mark as Skipped'}
                         </Button>
                         <Button onClick={() => setOpen(false)} variant="outline" className="flex-1" size="lg">
                             Cancel
