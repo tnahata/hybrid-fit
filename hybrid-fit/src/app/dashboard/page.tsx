@@ -14,8 +14,10 @@ import {
 import { UserDoc, WorkoutOverride, UserPlanProgress } from "@/models/User";
 import { TrainingPlanDoc, TrainingPlanDay, TrainingPlanWeek } from "@/models/TrainingPlans";
 import { WorkoutTemplateDoc } from "@/models/Workouts";
+import { updatePlanOverrides, logWorkout, getUserProfile, ApiError } from '@/lib/api-client';
 import LogResultsDialog from '@/components/LogResultsDialog';
 import CalendarDialog from '@/components/CalendarDialog';
+import { toast } from 'sonner'; 
 
 // Enriched types matching API response
 export interface EnrichedTrainingPlanDay extends TrainingPlanDay {
@@ -69,48 +71,105 @@ export default function Dashboard() {
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        const fetchUserData = async (): Promise<void> => {
-            try {
-                const response: Response = await fetch("/api/users/me", {
-                    method: 'GET',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                });
-
-                if (!response.ok) {
-                    throw new Error("Failed to fetch user data");
-                }
-
-                const json: ApiResponse = await response.json();
-                setCurrentUser(json.data);
-
-                // Set default to first active plan, or first plan if no active plans
-                const activePlan: EnrichedUserPlanProgress | undefined = json.data.trainingPlans?.find(
-                    (p: EnrichedUserPlanProgress) => p.isActive
-                );
-
-                if (activePlan) {
-                    setSelectedPlanId(activePlan.planId);
-                } else if (json.data.trainingPlans && json.data.trainingPlans.length > 0) {
-                    setSelectedPlanId(json.data.trainingPlans[0].planId);
-                }
-            } catch (err: unknown) {
-                const errorMessage: string = err instanceof Error ? err.message : "Unknown error occurred";
-                console.error("Failed to fetch user data:", errorMessage);
-                setError(errorMessage);
-            } finally {
-                setLoading(false);
-            }
-        };
-
         fetchUserData();
     }, []);
+
+    const fetchUserData = async () => {
+        try {
+            setLoading(true);
+            setError(null);
+
+            const userData = await getUserProfile();
+            setCurrentUser(userData);
+
+            // Set default to first active plan
+            const activePlan = userData.trainingPlans?.find(
+                (p: any) => p.isActive
+            );
+            if (activePlan) {
+                setSelectedPlanId(activePlan.planId);
+            }
+        } catch (err) {
+            const errorMessage = err instanceof ApiError
+                ? err.message
+                : 'Failed to fetch user data';
+            console.error('Error fetching user data:', err);
+            setError(errorMessage);
+        } finally {
+            setLoading(false);
+        }
+    };
 
     // Get current selected plan
     const currentUserPlan: EnrichedUserPlanProgress | undefined = currentUser?.trainingPlans?.find(
         (p: EnrichedUserPlanProgress) => p.planId === selectedPlanId
     );
+
+    // Handler for updating overrides
+    const handleUpdateOverrides = async (overrides: any[]) => {
+        if (!currentUserPlan) {
+            throw new Error('No active plan selected');
+        }
+
+        try {
+            await updatePlanOverrides(currentUserPlan.planId, overrides);
+
+            // Refresh user data to show updated overrides
+            await fetchUserData();
+
+            // Show success toast
+            toast.success('Schedule updated successfully!');
+
+            console.log('Overrides updated successfully');
+        } catch (error) {
+            console.error('Error updating overrides:', error);
+
+            const errorMessage = error instanceof ApiError
+                ? error.message
+                : 'Failed to update schedule';
+
+            // Show error toast
+            toast.error('Update Failed', {
+                description: errorMessage,
+            });
+
+            throw error; // Re-throw so CalendarDialog can show error state
+        }
+    };
+
+    // Handler for logging workout
+    const handleLogWorkout = async (data: any) => {
+        if (!currentUserPlan) {
+            throw new Error('No active plan selected');
+        }
+
+        try {
+            const result = await logWorkout(currentUserPlan.planId, data);
+
+            // Refresh user data to show updated stats and progress
+            await fetchUserData();
+
+            // Show success toast with updated stats
+            toast.success('Workout Logged!', {
+                description: `Great job! Current streak: ${result.userStats.currentStreak} days 🔥`,
+            });
+
+            console.log('Workout logged successfully:', result);
+        } catch (error) {
+            console.error('Error logging workout:', error);
+
+            const errorMessage = error instanceof ApiError
+                ? error.message
+                : 'Failed to log workout';
+
+            // Show error toast
+            toast.error('Logging Failed', {
+                description: errorMessage,
+            });
+
+            throw error;
+        }
+    };
 
     // Get today's workout with full details
     const getTodaysWorkout = (): EnrichedTrainingPlanDay | null => {
@@ -250,14 +309,12 @@ export default function Dashboard() {
         return (
             <div className="min-h-screen bg-background flex items-center justify-center">
                 <Card className="max-w-md">
-                    <CardHeader>
-                        <CardTitle>Unable to Load Dashboard</CardTitle>
-                        <CardDescription>
+                    <CardContent className="pt-6">
+                        <h2 className="text-xl font-semibold mb-2">Unable to Load Dashboard</h2>
+                        <p className="text-muted-foreground mb-4">
                             {error || "Please try logging in again"}
-                        </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                        <Button onClick={() => window.location.reload()}>
+                        </p>
+                        <Button onClick={fetchUserData}>
                             Retry
                         </Button>
                     </CardContent>
@@ -478,16 +535,16 @@ export default function Dashboard() {
                                 <div className="flex gap-3 pt-2">
                                     <LogResultsDialog
                                         workout={todaysWorkout?.workoutDetails}
-                                        onSubmit={(data) => {
-                                            console.log('Workout logged: ', data);
-                                            // TODO: make the actual API call
-                                            // TODO: on success, show a toast message
-                                        }}
+                                        onSubmit={handleLogWorkout}
                                         trigger={
                                             <Button className="flex-1" size="lg">Log Results</Button>
                                         }
                                     />
-                                    <CalendarDialog userPlan={currentUserPlan} className="flex-1" />
+                                    <CalendarDialog
+                                        userPlan={currentUserPlan}
+                                        onUpdateOverrides={handleUpdateOverrides}
+                                        className="flex-1"
+                                    />
                                 </div>
                             </CardContent>
                         </Card>
