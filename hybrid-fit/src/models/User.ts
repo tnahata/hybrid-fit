@@ -1,11 +1,55 @@
 import mongoose, { Document, Schema } from "mongoose";
 
 // For daily completion tracking
-interface WorkoutLog {
+export interface WorkoutLog {
     date: Date;
     workoutTemplateId: string; // could be from base plan or custom
     status: "completed" | "skipped" | "missed";
     notes?: string;
+
+    durationMinutes?: number;
+    perceivedEffort?: number;
+    activityType?: string;
+    sport?: string;
+
+    distance?: {
+        value: number;
+        unit: "miles" | "kilometers";
+    };
+    pace?: {
+        average: number;
+        unit: "min/mile" | "min/km";
+    };
+
+    strengthSession?: {
+        exercises: Array<{
+            exerciseId: string;
+            exerciseName: string;
+            sets: Array<{
+                setNumber: number;
+                reps: number;
+                weight: number;
+                completed: boolean;
+            }>;
+        }>;
+        totalVolume: number;
+        volumeUnit: "kgs" | "lbs";
+    };
+
+    drillSession?: {
+        activities: Array<{
+            name: string;
+            durationMinutes?: number;
+            repetitions?: number;
+            sets?: number;
+            notes?: string;
+        }>;
+        customMetrics?: Record<string, number | string>; // Flexible key-value
+    };
+
+    heartRate?: {
+        average: number;
+    };
 };
 
 enum DayOfWeek {
@@ -57,11 +101,81 @@ export interface UserDoc extends Document {
     updatedAt: Date;
 };
 
+// --- Workout Log Schema ---
 const workoutLogSchema = new Schema<WorkoutLog>({
     date: { type: Date, required: true },
     workoutTemplateId: { type: String, required: true },
-    status: { type: String, enum: ["completed", "skipped", "missed"], required: true },
-    notes: String,
+    status: {
+        type: String,
+        enum: ["completed", "skipped", "missed"],
+        required: true
+    },
+    notes: { type: String },
+
+    // Universal metrics
+    durationMinutes: { type: Number },
+    perceivedEffort: {
+        type: Number,
+        min: 1,
+        max: 10
+    },
+    activityType: { type: String },
+    sport: { type: String },
+
+    // Distance-based workouts (running, cycling, swimming)
+    distance: {
+        value: { type: Number },
+        unit: {
+            type: String,
+            enum: ["miles", "kilometers"]
+        }
+    },
+    pace: {
+        average: { type: Number },
+        unit: {
+            type: String,
+            enum: ["min/mile", "min/km"]
+        }
+    },
+
+    // Strength training workouts
+    strengthSession: {
+        exercises: [{
+            exerciseId: { type: String },
+            exerciseName: { type: String },
+            sets: [{
+                setNumber: { type: Number },
+                reps: { type: Number },
+                weight: { type: Number },
+                completed: { type: Boolean }
+            }]
+        }],
+        totalVolume: { type: Number },
+        volumeUnit: {
+            type: String,
+            enum: ["kgs", "lbs"]
+        }
+    },
+
+    // Sport-specific drills (soccer, basketball, etc.)
+    drillSession: {
+        activities: [{
+            name: { type: String },
+            durationMinutes: { type: Number },
+            repetitions: { type: Number },
+            sets: { type: Number },
+            notes: { type: String }
+        }],
+        customMetrics: {
+            type: Map,
+            of: Schema.Types.Mixed
+        }
+    },
+
+    // Heart rate (universal)
+    heartRate: {
+        average: { type: Number }
+    }
 });
 
 // --- Workout Override Schema ---

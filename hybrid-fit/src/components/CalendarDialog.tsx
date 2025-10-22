@@ -232,13 +232,22 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
         }
     };
 
-    // Reset to original plan
+    // Reset to original plan (only current and future weeks)
     const handleResetPlan = () => {
-        setLocalOverrides([]);
+        // Filter out only current and future week overrides
+        const pastOverrides = localOverrides.filter(
+            o => o.weekNumber < userPlan.currentWeek
+        );
+        setLocalOverrides(pastOverrides);
         if (onUpdateOverrides) {
-            onUpdateOverrides([]);
+            onUpdateOverrides(pastOverrides);
         }
     };
+
+    // Check if there are current/future week overrides
+    const hasCurrentOrFutureOverrides = localOverrides.some(
+        o => o.weekNumber >= userPlan.currentWeek
+    );
 
     // Check if there are unsaved changes
     const hasUnsavedChanges = JSON.stringify(localOverrides) !== JSON.stringify(userPlan.overrides || []);
@@ -389,7 +398,7 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
                             <Calendar className="h-5 w-5" />
                             <DialogTitle>{userPlan.planName}</DialogTitle>
                         </div>
-                        {!isCompleted && localOverrides.length > 0 && (
+                        {!isCompleted && hasCurrentOrFutureOverrides && (
                             <Button
                                 variant="outline"
                                 size="sm"
@@ -397,7 +406,7 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
                                 className="gap-2"
                             >
                                 <RotateCcw className="h-4 w-4" />
-                                Reset Plan
+                                Reset Upcoming Workouts
                             </Button>
                         )}
                     </div>
