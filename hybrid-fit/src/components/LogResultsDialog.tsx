@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -36,13 +36,31 @@ interface Exercise {
     sets: ExerciseSet[];
 }
 
+interface WorkoutLog {
+    date: Date;
+    workoutTemplateId: string;
+    status: "completed" | "skipped";
+    notes?: string;
+    durationMinutes?: number;
+    perceivedEffort?: number;
+    distance?: { value: number; unit: "miles" | "kilometers" };
+    pace?: { average: number; unit: "min/mile" | "min/km" };
+    strengthSession?: {
+        exercises: Exercise[];
+        totalVolume: number;
+        volumeUnit: string;
+    };
+    heartRate?: { average: number };
+}
+
 interface LogResultsDialogProps {
     workout: WorkoutTemplateDoc | null;
+    existingLog?: WorkoutLog | null; // Information from the exisiting log if present
     onSubmit: (data: any) => void;
     trigger?: React.ReactNode;
 }
 
-export default function LogResultsDialog({ workout, onSubmit, trigger }: LogResultsDialogProps) {
+export default function LogResultsDialog({ workout, existingLog, onSubmit, trigger }: LogResultsDialogProps) {
     const [open, setOpen] = useState<boolean>(false);
 
     // Status selection
@@ -53,7 +71,7 @@ export default function LogResultsDialog({ workout, onSubmit, trigger }: LogResu
     const [perceivedEffort, setPerceivedEffort] = useState<number[]>([5]);
     const [notes, setNotes] = useState<string>('');
 
-    // Distance-based fields (running, cycling, swimming)
+    // Distance-based fields
     const [distance, setDistance] = useState<string>('');
     const [distanceUnit, setDistanceUnit] = useState<'miles' | 'kilometers'>('miles');
     const [averagePace, setAveragePace] = useState<string>('');
@@ -72,6 +90,33 @@ export default function LogResultsDialog({ workout, onSubmit, trigger }: LogResu
         }
     ]);
 
+    // Load existing log data when dialog opens (for editing)
+    useEffect(() => {
+        if (open && existingLog) {
+            setWorkoutStatus(existingLog.status);
+            setNotes(existingLog.notes || '');
+
+            if (existingLog.status === 'completed') {
+                setDurationMinutes(existingLog.durationMinutes?.toString() || '');
+                setPerceivedEffort([existingLog.perceivedEffort || 5]);
+
+                if (existingLog.distance) {
+                    setDistance(existingLog.distance.value.toString());
+                    setDistanceUnit(existingLog.distance.unit);
+                }
+                if (existingLog.pace) {
+                    setAveragePace(existingLog.pace.average.toString());
+                }
+                if (existingLog.heartRate) {
+                    setAverageHeartRate(existingLog.heartRate.average.toString());
+                }
+                if (existingLog.strengthSession) {
+                    setExercises(existingLog.strengthSession.exercises);
+                }
+            }
+        }
+    }, [open, existingLog]);
+
     const isDistanceWorkout = (): boolean => {
         if (!workout) return false;
         const distanceSports = ['running', 'cycling', 'swimming'];
@@ -82,6 +127,27 @@ export default function LogResultsDialog({ workout, onSubmit, trigger }: LogResu
         if (!workout) return false;
         return workout.sport.toLowerCase() === 'strength' ||
             workout.category.toLowerCase().includes('strength');
+    };
+
+    // Validation: Check if required fields are filled
+    const isFormValid = (): boolean => {
+        if (workoutStatus === 'skipped') {
+            return true; // Skipped workouts don't need metrics
+        }
+
+        // For completed workouts, validate based on type
+        if (isDistanceWorkout()) {
+            // Distance workouts require: duration and distance
+            return !!durationMinutes && !!distance;
+        }
+
+        if (isStrengthWorkout()) {
+            // Strength workouts require: duration and at least one exercise with a name
+            return !!durationMinutes && exercises.some(ex => ex.exerciseName.trim() !== '');
+        }
+
+        // For other workout types, just require duration
+        return !!durationMinutes;
     };
 
     const addExercise = (): void => {
@@ -111,7 +177,6 @@ export default function LogResultsDialog({ workout, onSubmit, trigger }: LogResu
     const removeSet = (exerciseIndex: number, setIndex: number): void => {
         const newExercises = [...exercises];
         newExercises[exerciseIndex].sets = newExercises[exerciseIndex].sets.filter((_, i) => i !== setIndex);
-        // Renumber sets
         newExercises[exerciseIndex].sets.forEach((set, i) => {
             set.setNumber = i + 1;
         });
@@ -139,6 +204,8 @@ export default function LogResultsDialog({ workout, onSubmit, trigger }: LogResu
     };
 
     const handleSubmit = (): void => {
+        if (!isFormValid()) return;
+
         const data: any = {
             date: new Date(),
             workoutTemplateId: workout?._id,
@@ -146,14 +213,12 @@ export default function LogResultsDialog({ workout, onSubmit, trigger }: LogResu
             notes: notes || undefined,
         };
 
-        // Only include workout details if completed
         if (workoutStatus === 'completed') {
             data.durationMinutes = parseFloat(durationMinutes) || undefined;
             data.perceivedEffort = perceivedEffort[0];
             data.activityType = isStrengthWorkout() ? 'strength' : isDistanceWorkout() ? 'distance' : 'time';
             data.sport = workout?.sport;
 
-            // Distance-based workout data
             if (isDistanceWorkout()) {
                 data.distance = {
                     value: parseFloat(distance),
@@ -167,7 +232,6 @@ export default function LogResultsDialog({ workout, onSubmit, trigger }: LogResu
                 }
             }
 
-            // Strength workout data
             if (isStrengthWorkout()) {
                 data.strengthSession = {
                     exercises: exercises.map(ex => ({
@@ -180,7 +244,6 @@ export default function LogResultsDialog({ workout, onSubmit, trigger }: LogResu
                 };
             }
 
-            // Heart rate (all workouts)
             if (averageHeartRate) {
                 data.heartRate = {
                     average: parseFloat(averageHeartRate),
@@ -209,17 +272,24 @@ export default function LogResultsDialog({ workout, onSubmit, trigger }: LogResu
 
     if (!workout) return null;
 
+    const isEditing = !!existingLog;
+    const buttonText = isEditing
+        ? (workoutStatus === 'completed' ? 'Update Workout' : 'Update Status')
+        : (workoutStatus === 'completed' ? 'Save Workout' : 'Mark as Skipped');
+
     return (
         <Dialog open={open} onOpenChange={(isOpen) => {
             setOpen(isOpen);
-            if (!isOpen) resetForm();
+            if (!isOpen && !isEditing) resetForm();
         }}>
             <DialogTrigger asChild>
                 {trigger || <Button>Log Results</Button>}
             </DialogTrigger>
             <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
                 <DialogHeader>
-                    <DialogTitle className="text-2xl">Log Workout Results</DialogTitle>
+                    <DialogTitle className="text-2xl">
+                        {isEditing ? 'Edit Workout Results' : 'Log Workout Results'}
+                    </DialogTitle>
                     <DialogDescription>
                         {workout.name} - {workout.sport}
                     </DialogDescription>
@@ -255,20 +325,19 @@ export default function LogResultsDialog({ workout, onSubmit, trigger }: LogResu
 
                     <Separator />
 
-                    {/* Show workout details only if completed */}
                     {workoutStatus === 'completed' && (
                         <>
-                            {/* Common Fields - Always Shown */}
                             <div className="space-y-4">
                                 <div className="grid grid-cols-2 gap-4">
                                     <div className="space-y-2">
-                                        <Label htmlFor="duration">Duration (minutes)</Label>
+                                        <Label htmlFor="duration">Duration (minutes) *</Label>
                                         <Input
                                             id="duration"
                                             type="number"
                                             placeholder={workout.metrics.durationMins?.toString() || "45"}
                                             value={durationMinutes}
                                             onChange={(e) => setDurationMinutes(e.target.value)}
+                                            required
                                         />
                                     </div>
 
@@ -307,14 +376,13 @@ export default function LogResultsDialog({ workout, onSubmit, trigger }: LogResu
 
                             <Separator />
 
-                            {/* Distance-Based Workouts (Running, Cycling, Swimming) */}
                             {isDistanceWorkout() && (
                                 <div className="space-y-4">
                                     <h3 className="text-lg font-semibold">Distance & Pace</h3>
 
                                     <div className="grid grid-cols-3 gap-4">
                                         <div className="space-y-2 col-span-2">
-                                            <Label htmlFor="distance">Distance</Label>
+                                            <Label htmlFor="distance">Distance *</Label>
                                             <Input
                                                 id="distance"
                                                 type="number"
@@ -322,6 +390,7 @@ export default function LogResultsDialog({ workout, onSubmit, trigger }: LogResu
                                                 placeholder={workout.metrics.distanceMiles?.toString() || "5.0"}
                                                 value={distance}
                                                 onChange={(e) => setDistance(e.target.value)}
+                                                required
                                             />
                                         </div>
 
@@ -353,11 +422,10 @@ export default function LogResultsDialog({ workout, onSubmit, trigger }: LogResu
                                 </div>
                             )}
 
-                            {/* Strength Workouts */}
                             {isStrengthWorkout() && (
                                 <div className="space-y-4">
                                     <div className="flex items-center justify-between">
-                                        <h3 className="text-lg font-semibold">Exercises</h3>
+                                        <h3 className="text-lg font-semibold">Exercises *</h3>
                                         <Button onClick={addExercise} variant="outline" size="sm">
                                             <Plus className="h-4 w-4 mr-1" />
                                             Add Exercise
@@ -371,10 +439,11 @@ export default function LogResultsDialog({ workout, onSubmit, trigger }: LogResu
                                                     <div className="space-y-4">
                                                         <div className="flex items-center gap-2">
                                                             <Input
-                                                                placeholder="Exercise name (e.g., Bench Press)"
+                                                                placeholder="Exercise name (e.g., Bench Press) *"
                                                                 value={exercise.exerciseName}
                                                                 onChange={(e) => updateExerciseName(exerciseIndex, e.target.value)}
                                                                 className="flex-1"
+                                                                required
                                                             />
                                                             {exercises.length > 1 && (
                                                                 <Button
@@ -473,7 +542,6 @@ export default function LogResultsDialog({ workout, onSubmit, trigger }: LogResu
                         </>
                     )}
 
-                    {/* Notes - Always Shown */}
                     <div className="space-y-2">
                         <Label htmlFor="notes">
                             Notes {workoutStatus === 'skipped' ? '(Why did you skip?)' : '(optional)'}
@@ -489,15 +557,25 @@ export default function LogResultsDialog({ workout, onSubmit, trigger }: LogResu
                         />
                     </div>
 
-                    {/* Submit Button */}
                     <div className="flex gap-3 pt-4">
-                        <Button onClick={handleSubmit} className="flex-1" size="lg">
-                            {workoutStatus === 'completed' ? 'Save Workout' : 'Mark as Skipped'}
+                        <Button
+                            onClick={handleSubmit}
+                            className="flex-1"
+                            size="lg"
+                            disabled={!isFormValid()}
+                        >
+                            {buttonText}
                         </Button>
                         <Button onClick={() => setOpen(false)} variant="outline" className="flex-1" size="lg">
                             Cancel
                         </Button>
                     </div>
+
+                    {!isFormValid() && workoutStatus === 'completed' && (
+                        <p className="text-sm text-muted-foreground text-center">
+                            * Please fill in all required fields to continue
+                        </p>
+                    )}
                 </div>
             </DialogContent>
         </Dialog>

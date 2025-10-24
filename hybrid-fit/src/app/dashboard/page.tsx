@@ -186,7 +186,26 @@ export default function Dashboard() {
         return currentWeek.days[currentUserPlan.currentDayIndex];
     };
 
+    // Helper to get today's log entry if it exists
+    const getTodaysLog = () => {
+        if (!currentUserPlan || !todaysWorkout) return null;
+
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        const log = currentUserPlan.progressLog.find(l => {
+            const logDate = new Date(l.date);
+            logDate.setHours(0, 0, 0, 0);
+            return logDate.getTime() === today.getTime() &&
+                l.workoutTemplateId === todaysWorkout.workoutTemplateId;
+        });
+
+        return log || null;
+    };
+
     const todaysWorkout: EnrichedTrainingPlanDay | null = getTodaysWorkout();
+    const todaysLog = getTodaysLog();
+    const hasLoggedToday = !!todaysLog;
     const daysOfWeek: string[] = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
     const currentDayName: string = currentUserPlan ? daysOfWeek[currentUserPlan.currentDayIndex] : '';
 
@@ -535,9 +554,12 @@ export default function Dashboard() {
                                 <div className="flex gap-3 pt-2">
                                     <LogResultsDialog
                                         workout={todaysWorkout?.workoutDetails}
+                                        existingLog={todaysLog}
                                         onSubmit={handleLogWorkout}
                                         trigger={
-                                            <Button className="flex-1" size="lg">Log Results</Button>
+                                            <Button className="flex-1" size="lg">
+                                                {hasLoggedToday ? 'Edit Results' : 'Log Results'}
+                                            </Button>
                                         }
                                     />
                                     <CalendarDialog
