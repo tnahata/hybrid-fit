@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
@@ -11,7 +13,7 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select";
-import { UserDoc, WorkoutOverride, UserPlanProgress } from "@/models/User";
+import { UserDoc } from "@/models/User";
 import { TrainingPlanDoc, TrainingPlanDay, TrainingPlanWeek } from "@/models/TrainingPlans";
 import { WorkoutTemplateDoc } from "@/models/Workouts";
 import { updatePlanOverrides, logWorkout, getUserProfile, ApiError } from '@/lib/api-client';
@@ -69,6 +71,14 @@ export default function Dashboard() {
     const [selectedPlanId, setSelectedPlanId] = useState<string>("");
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
+    const { data: session, status } = useSession();
+    const router = useRouter();
+
+    useEffect(() => {
+        if (status === "unauthenticated") {
+            router.push("/signin");
+        }
+    }, [status, router]);
 
     useEffect(() => {
         fetchUserData();
@@ -117,7 +127,6 @@ export default function Dashboard() {
             // Refresh user data to show updated overrides
             await fetchUserData();
 
-            // Show success toast
             toast.success('Schedule updated successfully!');
 
             console.log('Overrides updated successfully');
@@ -312,7 +321,7 @@ export default function Dashboard() {
     };
 
     // Loading state
-    if (loading) {
+    if (status === "loading" || loading) {
         return (
             <div className="min-h-screen bg-background flex items-center justify-center">
                 <div className="text-center">
@@ -321,6 +330,10 @@ export default function Dashboard() {
                 </div>
             </div>
         );
+    }
+
+    if (!session) {
+        return;
     }
 
     // Error state

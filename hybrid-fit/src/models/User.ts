@@ -204,11 +204,10 @@ const userPlanProgressSchema = new Schema<UserPlanProgress>({
     progressLog: [workoutLogSchema],
 });
 
-const userSchema = new Schema<UserDoc>(
-    {
+const userSchema = new Schema<UserDoc>({
         email: { type: String, required: true, unique: true },
-        name: String,
-        passwordHash: String,
+        name: { type: String, required: true },
+        passwordHash: { type: String, required: true, select: false },
 
         trainingPlans: [userPlanProgressSchema],
 

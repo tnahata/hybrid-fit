@@ -1,5 +1,6 @@
-// app/api/users/me/route.ts
 import { NextResponse } from "next/server";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { connectToDatabase } from "@/lib/mongodb";
 import { User, UserDoc, UserPlanProgress } from "@/models/User";
 import { TrainingPlan, TrainingPlanDoc, TrainingPlanWeek, TrainingPlanDay } from "@/models/TrainingPlans";
@@ -54,12 +55,19 @@ interface ApiResponse {
 
 export async function GET(req: Request): Promise<NextResponse> {
     try {
+
+        const session = await getServerSession(authOptions);
+        
+        if (!session || !session.user) {
+            return NextResponse.json(
+                { error: "Unauthorized", success: false },
+                { status: 401 }
+            );
+        }
+
         await connectToDatabase();
-
-        // TODO: Get actual user ID from session/JWT
-        const userId: string = "670fdfb52b0012a5f4b7a111";
-
-        const user: UserDoc | null = await User.findById(userId);
+        
+        const user: UserDoc | null = await User.findById(session.user.id);
         if (!user) {
             return NextResponse.json(
                 { error: "User not found", success: false },
@@ -77,7 +85,7 @@ export async function GET(req: Request): Promise<NextResponse> {
         // Process each training plan
         const enrichedPlans: (EnrichedUserPlanProgress | null)[] = await Promise.all(
             user.trainingPlans.map(async (userPlan: UserPlanProgress) => {
-                // 1. Fetch base training plan
+                // Fetch base training plan
                 const basePlan: TrainingPlanDoc | null = await TrainingPlan.findById(userPlan.planId);
 
                 if (!basePlan) {
@@ -85,10 +93,10 @@ export async function GET(req: Request): Promise<NextResponse> {
                     return null;
                 }
 
-                // 2. Merge with user overrides
+                // Merge with user overrides
                 const mergedPlan: TrainingPlanDoc = mergePlanWithUserOverrides(basePlan, userPlan);
 
-                // 3. Collect all unique workout template IDs
+                // Collect all unique workout template IDs
                 const workoutIds: string[] = [];
                 mergedPlan.weeks.forEach((week: TrainingPlanWeek) => {
                     week.days.forEach((day: TrainingPlanDay) => {
@@ -98,18 +106,17 @@ export async function GET(req: Request): Promise<NextResponse> {
                     });
                 });
 
-                // 4. Fetch all workout templates in one query
+                // Fetch all workout templates
                 const workoutTemplates: WorkoutTemplateDoc[] = await WorkoutTemplate.find({
                     _id: { $in: workoutIds }
                 });
 
-                // 5. Create lookup map for fast access
                 const workoutMap: Record<string, WorkoutTemplateDoc> = {};
                 workoutTemplates.forEach((workout: WorkoutTemplateDoc) => {
                     workoutMap[workout._id] = workout;
                 });
 
-                // 6. Enrich plan with workout details
+                // Enrich plan with workout details
                 const enrichedWeeks: EnrichedTrainingPlanWeek[] = mergedPlan.weeks.map(
                     (week: TrainingPlanWeek): EnrichedTrainingPlanWeek => ({
                         weekNumber: week.weekNumber,
@@ -133,9 +140,8 @@ export async function GET(req: Request): Promise<NextResponse> {
                     weeks: enrichedWeeks
                 } as EnrichedTrainingPlanDoc;
 
-                // 7. Return enriched user plan progress (preserving original planId)
                 return {
-                    planId: userPlan.planId, // Keep original string ID
+                    planId: userPlan.planId,
                     planName: userPlan.planName,
                     totalWeeks: userPlan.totalWeeks,
                     startedAt: userPlan.startedAt,
@@ -150,12 +156,11 @@ export async function GET(req: Request): Promise<NextResponse> {
             })
         );
 
-        // Filter out any null plans (in case of errors)
+        // Filter out null plans
         const validEnrichedPlans: EnrichedUserPlanProgress[] = enrichedPlans.filter(
             (plan): plan is EnrichedUserPlanProgress => plan !== null
         );
 
-        // Build response
         const response: ApiResponse = {
             data: {
                 ...user.toObject(),

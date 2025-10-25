@@ -1,4 +1,5 @@
-// app/api/users/me/plans/[planId]/logs/route.ts
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { NextRequest, NextResponse } from "next/server";
 import { connectToDatabase } from "@/lib/mongodb";
 import { User, UserDoc, WorkoutLog } from "@/models/User";
@@ -51,7 +52,6 @@ interface PostWorkoutLogRequest {
         customMetrics?: Record<string, number | string>;
     };
 
-    // Heart rate
     heartRate?: {
         average: number;
     };
@@ -62,12 +62,21 @@ export async function POST(
     { params }: { params: { planId: string } }
 ): Promise<NextResponse> {
     try {
+
+        const session = await getServerSession(authOptions);
+
+        if (!session || !session.user) {
+            return NextResponse.json(
+                { error: "Unauthorized", success: false },
+                { status: 401 }
+            );
+        }
+
         await connectToDatabase();
 
         const { planId } = await params;
 
-        // TODO: Get actual user ID from session/JWT
-        const userId: string = "670fdfb52b0012a5f4b7a111";
+        const userId = session.user.id;
 
         // Parse request body
         const body: PostWorkoutLogRequest = await req.json();
@@ -81,7 +90,6 @@ export async function POST(
             );
         }
 
-        // Validate status
         if (!["completed", "skipped"].includes(status)) {
             return NextResponse.json(
                 { error: "Status must be 'completed' or 'skipped'", success: false },
@@ -89,7 +97,6 @@ export async function POST(
             );
         }
 
-        // Find user
         const user: UserDoc | null = await User.findById(userId);
         if (!user) {
             return NextResponse.json(
@@ -98,7 +105,6 @@ export async function POST(
             );
         }
 
-        // Find the specific training plan
         const planIndex = user.trainingPlans.findIndex(
             (plan) => plan.planId === planId
         );
@@ -110,7 +116,6 @@ export async function POST(
             );
         }
 
-        // Create workout log entry
         const workoutLog: WorkoutLog = {
             date: new Date(date),
             workoutTemplateId,
@@ -190,11 +195,9 @@ export async function POST(
                 user.longestStreak = user.currentStreak;
             }
         }
-        // If the workout was skipped, we dont have to update any metrics and let the user preserver their streak since it was an intentional skip
 
         user.trainingPlans[planIndex].progressLog.push(workoutLog);
 
-        // Save user document
         await user.save();
 
         return NextResponse.json({

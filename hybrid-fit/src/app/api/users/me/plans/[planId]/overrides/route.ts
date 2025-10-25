@@ -1,5 +1,7 @@
 // app/api/users/me/plans/[planId]/overrides/route.ts
 import { NextRequest, NextResponse } from "next/server";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { connectToDatabase } from "@/lib/mongodb";
 import { User, UserDoc, WorkoutOverride } from "@/models/User";
 
@@ -12,12 +14,21 @@ export async function PATCH(
     { params }: { params: { planId: string } }
 ): Promise<NextResponse> {
     try {
+
+        const session = await getServerSession(authOptions);
+
+        if (!session || !session.user) {
+            return NextResponse.json(
+                { error: "Unauthorized", success: false },
+                { status: 401 }
+            );
+        }
+
         await connectToDatabase();
 
         const { planId } = params;
 
-        // TODO: Get actual user ID from session/JWT
-        const userId: string = "670fdfb52b0012a5f4b7a111";
+        const userId = session.user.id;
 
         // Parse request body
         const body: PatchOverridesRequest = await req.json();
@@ -31,7 +42,6 @@ export async function PATCH(
             );
         }
 
-        // Find user
         const user: UserDoc | null = await User.findById(userId);
         if (!user) {
             return NextResponse.json(
@@ -40,7 +50,6 @@ export async function PATCH(
             );
         }
 
-        // Find the specific training plan
         const planIndex = user.trainingPlans.findIndex(
             (plan) => plan.planId === planId
         );
@@ -54,7 +63,7 @@ export async function PATCH(
 
         const trainingPlan = user.trainingPlans[planIndex];
 
-        // Validate: only allow overrides for current and future weeks
+        // only allow overrides for current and future weeks
         const currentWeek = trainingPlan.currentWeek;
         const invalidOverrides = overrides.filter(
             (override) => override.weekNumber < currentWeek
@@ -71,10 +80,8 @@ export async function PATCH(
             );
         }
 
-        // Update overrides
         user.trainingPlans[planIndex].overrides = overrides;
 
-        // Save user document
         await user.save();
 
         return NextResponse.json({

@@ -4,12 +4,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/dark-mode-toggle/toggle";
+import { signOut } from "next-auth/react";
 
 export function Header() {
     const pathname = usePathname();
-
-    // const isAuthRoute = pathname?.startsWith("/login") || pathname?.startsWith("/signup");
-    // if (isAuthRoute) return null; // Hide header on auth pages if desired
 
     return (
         <header className="flex items-center justify-between px-6 py-4 border-b border-border bg-background/80 backdrop-blur-md sticky top-0 z-50">
@@ -20,8 +18,8 @@ export function Header() {
             <div className="flex items-center gap-4">
                 <ModeToggle />
 
-                <Link href="/login">
-                    <Button variant="ghost">Log In</Button>
+                <Link href="/signin">
+                    <Button variant="ghost">Sign In</Button>
                 </Link>
                 <Link href="/signup">
                     <Button>Sign Up</Button>
