@@ -76,10 +76,15 @@ export async function GET(req: Request): Promise<NextResponse> {
         }
 
         if (!user.trainingPlans || user.trainingPlans.length === 0) {
-            return NextResponse.json(
-                { error: "User does not have any training plans", success: false },
-                { status: 404 }
-            );
+            const response: ApiResponse = {
+                data: {
+                    ...user.toObject(),
+                    trainingPlans: []
+                },
+                success: true
+            };
+
+            return NextResponse.json(response);
         }
 
         // Process each training plan
@@ -169,9 +174,6 @@ export async function GET(req: Request): Promise<NextResponse> {
             success: true
         };
 
-        console.log(user);
-        console.log(validEnrichedPlans);
-
         return NextResponse.json(response);
 
     } catch (error: unknown) {
@@ -185,10 +187,8 @@ export async function GET(req: Request): Promise<NextResponse> {
     }
 }
 
-function mergePlanWithUserOverrides(
-    trainingPlan: TrainingPlanDoc,
-    planProgress: UserPlanProgress
-): TrainingPlanDoc {
+function mergePlanWithUserOverrides(trainingPlan: TrainingPlanDoc, planProgress: UserPlanProgress): TrainingPlanDoc {
+    
     if (!trainingPlan) {
         throw new Error("Training plan is required");
     }

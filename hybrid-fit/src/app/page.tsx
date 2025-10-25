@@ -18,7 +18,7 @@ export default function Home() {
     <div>
       <Hero />
       <Features />
-      <CTASection /> 
+      <CTASection />
     </div>
   );
 }

@@ -19,7 +19,8 @@ import { WorkoutTemplateDoc } from "@/models/Workouts";
 import { updatePlanOverrides, logWorkout, getUserProfile, ApiError } from '@/lib/api-client';
 import LogResultsDialog from '@/components/LogResultsDialog';
 import CalendarDialog from '@/components/CalendarDialog';
-import { toast } from 'sonner'; 
+import { toast } from 'sonner';
+import Link from 'next/link';
 
 // Enriched types matching API response
 export interface EnrichedTrainingPlanDay extends TrainingPlanDay {
@@ -362,16 +363,18 @@ export default function Dashboard() {
                 <main className="container mx-auto px-4 py-8 max-w-7xl">
                     <Card className="text-center py-12">
                         <CardHeader>
-                            <div className="text-6xl mb-4">🏃</div>
                             <CardTitle className="text-2xl">No Training Plans</CardTitle>
                             <CardDescription className="mt-2">
                                 Get started by creating or joining a training plan
                             </CardDescription>
                         </CardHeader>
                         <CardContent>
-                            <Button size="lg" className="mt-4">
-                                Browse Training Plans
-                            </Button>
+                            <Link href="/plans">
+                                <Button size="lg" className="mt-4">
+                                    Browse Training Plans
+                                </Button>
+                            </Link>
+                            
                         </CardContent>
                     </Card>
                 </main>
@@ -399,7 +402,7 @@ export default function Dashboard() {
         <div className="min-h-screen bg-background">
             <main className="container mx-auto px-4 py-8 max-w-7xl">
                 <div className="space-y-6">
-                    {/* Plan Picker Header - ALWAYS VISIBLE */}
+
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                         <div>
                             <h2 className="text-3xl font-bold text-foreground mb-2">
