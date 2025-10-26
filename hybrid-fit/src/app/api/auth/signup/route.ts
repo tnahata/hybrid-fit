@@ -20,7 +20,6 @@ const signupSchema = z.object({
 export async function POST(request: NextRequest) {
     try {
         const body = await request.json();
-        console.log(body);
         const validationResult = signupSchema.safeParse(body);
 
         if (!validationResult.success) {
