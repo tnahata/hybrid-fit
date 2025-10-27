@@ -26,7 +26,8 @@ export default function TrainingPlansPage() {
 	const [selectedPlan, setSelectedPlan] = useState<TrainingPlanWithWorkouts | null>(null);
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 	const [isLoadingDetail, setIsLoadingDetail] = useState(false);
-	const perPage = 9;
+	const [isLoading, setIsLoading] = useState(true);
+	const perPage = 6;
 
 	const { data: session, status } = useSession();
 	const [enrollingPlanId, setEnrollingPlanId] = useState<string | null>(null);
@@ -34,6 +35,7 @@ export default function TrainingPlansPage() {
 
 	useEffect(() => {
 		const fetchTrainingPlans = async () => {
+			setIsLoading(true);
 			const response = await fetch("/api/training-plans", {
 				method: "GET",
 			});
@@ -41,6 +43,7 @@ export default function TrainingPlansPage() {
 				const data = await response.json();
 				setTrainingPlans(data.data);
 			}
+			setIsLoading(false);
 		};
 		fetchTrainingPlans();
 	}, []);
@@ -170,8 +173,6 @@ export default function TrainingPlansPage() {
 		switch (level.toLowerCase()) {
 			case "beginner":
 				return "bg-green-100 text-green-800 border-green-200";
-			case "novice":
-				return "bg-green-100 text-green-800 border-green-200";
 			case "intermediate":
 				return "bg-yellow-100 text-yellow-800 border-yellow-200";
 			case "advanced":
@@ -184,6 +185,7 @@ export default function TrainingPlansPage() {
 	const renderPageNumbers = () => {
 		const items: ReactNode[] = [];
 		const maxVisiblePages = 5;
+		const selectedPageClass = "bg-orange-500 text-white hover:bg-orange-600"
 
 		if (totalPages <= maxVisiblePages) {
 			for (let i = 1; i <= totalPages; i++) {
@@ -192,7 +194,7 @@ export default function TrainingPlansPage() {
 						<PaginationLink
 							isActive={currentPage === i}
 							onClick={() => setCurrentPage(i)}
-							className={currentPage === i ? "bg-orange-500 text-white hover:bg-orange-600" : ""}
+							className={currentPage === i ? selectedPageClass : ""}
 						>
 							{i}
 						</PaginationLink>
@@ -205,7 +207,7 @@ export default function TrainingPlansPage() {
 					<PaginationLink
 						isActive={currentPage === 1}
 						onClick={() => setCurrentPage(1)}
-						className={currentPage === 1 ? "bg-orange-500 text-white hover:bg-orange-600" : ""}
+						className={currentPage === 1 ? selectedPageClass : ""}
 					>
 						1
 					</PaginationLink>
@@ -229,7 +231,7 @@ export default function TrainingPlansPage() {
 						<PaginationLink
 							isActive={currentPage === i}
 							onClick={() => setCurrentPage(i)}
-							className={currentPage === i ? "bg-orange-500 text-white hover:bg-orange-600" : ""}
+							className={currentPage === i ? selectedPageClass : ""}
 						>
 							{i}
 						</PaginationLink>
@@ -249,7 +251,7 @@ export default function TrainingPlansPage() {
 				<PaginationItem key={totalPages}>
 					<PaginationLink
 						onClick={() => setCurrentPage(totalPages)}
-						className={currentPage === totalPages ? "bg-orange-500 text-white hover:bg-orange-600" : ""}
+						className={currentPage === totalPages ? selectedPageClass : ""}
 						isActive={currentPage === totalPages}
 					>
 						{totalPages}
@@ -337,77 +339,87 @@ export default function TrainingPlansPage() {
 				</div>
 			</div>
 
-			<div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-				{paginatedPlans.map((plan) => (
-					<Card
-						key={plan._id}
-						className="shadow-sm hover:shadow-lg transition-all duration-200 cursor-pointer group"
-						onClick={() => handleCardClick(plan)}
-					>
-						<CardContent className="p-6 space-y-4">
-							<div className="flex justify-between items-start">
-								<Badge className={`${getLevelColor(plan.level)} border`}>
-									{plan.level}
-								</Badge>
-								<Badge variant="outline" className="text-xs">
-									{plan.sport}
-								</Badge>
-							</div>
+			{isLoading ? (
+				<div className="min-h-screen bg-background flex items-center justify-center">
+					<div className="text-center">
+						<div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+						<p className="text-muted-foreground">Loading training plans...</p>
+					</div>
+				</div>
+			) :
+			(
+				<div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+					{paginatedPlans.map((plan) => (
+						<Card
+							key={plan._id}
+							className="shadow-sm hover:shadow-lg transition-all duration-200 cursor-pointer group"
+							onClick={() => handleCardClick(plan)}
+						>
+							<CardContent className="p-6 space-y-4">
+								<div className="flex justify-between items-start">
+									<Badge className={`${getLevelColor(plan.level)} border`}>
+										{plan.level}
+									</Badge>
+									<Badge variant="outline" className="text-xs">
+										{plan.sport}
+									</Badge>
+								</div>
 
-							<div className="space-y-2">
-								<h2 className="text-xl font-bold group-hover:text-orange-500 transition-colors">
-									{plan.name}
-								</h2>
-								<p className="text-sm text-muted-foreground line-clamp-2">
-									{plan.details.goal}
-								</p>
-							</div>
+								<div className="space-y-2">
+									<h2 className="text-xl font-bold group-hover:text-orange-500 transition-colors">
+										{plan.name}
+									</h2>
+									<p className="text-sm text-muted-foreground line-clamp-2">
+										{plan.details.goal}
+									</p>
+								</div>
 
-							<div className="grid grid-cols-2 gap-3 pt-2">
-								<div className="flex items-center gap-2 text-sm">
-									<Calendar className="h-4 w-4 text-orange-500" />
-									<span className="text-muted-foreground">
-										{plan.durationWeeks} weeks
+								<div className="grid grid-cols-2 gap-3 pt-2">
+									<div className="flex items-center gap-2 text-sm">
+										<Calendar className="h-4 w-4 text-orange-500" />
+										<span className="text-muted-foreground">
+											{plan.durationWeeks} weeks
+										</span>
+									</div>
+									<div className="flex items-center gap-2 text-sm">
+										<Target className="h-4 w-4 text-orange-500" />
+										<span className="text-muted-foreground capitalize">
+											{plan.category}
+										</span>
+									</div>
+								</div>
+
+								<div className="flex items-center gap-2 pt-2 border-t">
+									<TrendingUp className="h-4 w-4 text-orange-500" />
+									<span className="text-sm font-medium capitalize">
+										{plan.details.planType}
 									</span>
 								</div>
-								<div className="flex items-center gap-2 text-sm">
-									<Target className="h-4 w-4 text-orange-500" />
-									<span className="text-muted-foreground capitalize">
-										{plan.category}
-									</span>
+
+								<div className="flex gap-2 w-full">
+									<Button
+										variant="default"
+										className="flex-1 bg-orange-500 hover:bg-orange-600 text-white"
+										onClick={(e) => handleEnroll(plan._id, plan.name, e)}
+										disabled={enrollingPlanId === plan._id || status === "loading"}
+									>
+										{status === "authenticated" && enrollingPlanId === plan._id ? "Enrolling..." : "Enroll"}
+									</Button>
+									<Button
+										variant="outline"
+										className="flex-1"
+										disabled={isLoadingDetail}
+									>
+										{isLoadingDetail ? "Loading..." : "View Details"}
+									</Button>
 								</div>
-							</div>
+							</CardContent>
+						</Card>
+					))}
+				</div>)}
+	
 
-							<div className="flex items-center gap-2 pt-2 border-t">
-								<TrendingUp className="h-4 w-4 text-orange-500" />
-								<span className="text-sm font-medium capitalize">
-									{plan.details.planType}
-								</span>
-							</div>
-
-							<div className="flex gap-2 w-full">
-								<Button
-									variant="default"
-									className="flex-1 bg-orange-500 hover:bg-orange-600 text-white"
-									onClick={(e) => handleEnroll(plan._id, plan.name, e)}
-									disabled={enrollingPlanId === plan._id || status === "loading"}
-								>
-									{status === "authenticated" && enrollingPlanId === plan._id ? "Enrolling..." : "Enroll"}
-								</Button>
-								<Button
-									variant="outline"
-									className="flex-1"
-									disabled={isLoadingDetail}
-								>
-									{isLoadingDetail ? "Loading..." : "View Details"}
-								</Button>
-							</div>
-						</CardContent>
-					</Card>
-				))}
-			</div>
-
-			{paginatedPlans.length === 0 && (
+			{!isLoading && paginatedPlans.length === 0 && (
 				<div className="text-center py-12">
 					<p className="text-muted-foreground">No training plans found matching your criteria.</p>
 				</div>

@@ -16,19 +16,22 @@ export default function ExerciseContent() {
     const [sort, setSort] = useState("name");
     const [difficulty, setDifficulty] = useState("all");
     const [sport, setSport] = useState("all");
-    const [exercises, setExercises] = useState<ExerciseDoc[]>([]);
+	const [exercises, setExercises] = useState<ExerciseDoc[]>([]);
+	const [isLoading, setIsLoading] = useState(true);
     const [currentPage, setCurrentPage] = useState(1);
     const perPage = 12;
 
     useEffect(() => {
         const exercisesFetch = async() => {
+			setIsLoading(true);
             const response = await fetch("/api/exercises", {
                 method: 'GET'
             });
             if (response?.ok) {
                 let ex = await response.json();
                 setExercises(ex.data);
-            }
+			}
+			setIsLoading(false);
         }
         exercisesFetch();
     }, []);
@@ -73,7 +76,8 @@ export default function ExerciseContent() {
 
     const renderPageNumbers = () => {
         const items: ReactNode[] = [];
-        const maxVisiblePages = 5;
+		const maxVisiblePages = 5;
+		const selectedPageClass = "bg-orange-500 text-white hover:bg-orange-600";
 
         if (totalPages <= maxVisiblePages) {
             for (let i = 1; i <= totalPages; i++) {
@@ -82,7 +86,7 @@ export default function ExerciseContent() {
                         <PaginationLink
                             isActive={currentPage === i}
                             onClick={() => setCurrentPage(i)}
-                            className={currentPage === i ? "bg-indigo-600 text-white" : ""}
+							className={currentPage === i ? selectedPageClass : ""}
                         >
                             {i}
                         </PaginationLink>
@@ -95,7 +99,7 @@ export default function ExerciseContent() {
                     <PaginationLink
                         isActive={currentPage === 1}
                         onClick={() => setCurrentPage(1)}
-                        className={currentPage === 1 ? "bg-indigo-600 text-white" : ""}
+						className={currentPage === 1 ? selectedPageClass : ""}
                     >
                         1
                     </PaginationLink>
@@ -119,7 +123,7 @@ export default function ExerciseContent() {
                         <PaginationLink
                             isActive={currentPage === i}
                             onClick={() => setCurrentPage(i)}
-                            className={currentPage === i ? "bg-indigo-600 text-white" : ""}
+							className={currentPage === i ? selectedPageClass : ""}
                         >
                             {i}
                         </PaginationLink>
@@ -139,7 +143,7 @@ export default function ExerciseContent() {
                 <PaginationItem key={totalPages}>
                     <PaginationLink
                         onClick={() => setCurrentPage(totalPages)}
-                        className={currentPage === totalPages ? "bg-indigo-600 text-white" : ""}
+						className={currentPage === totalPages ? selectedPageClass : ""}
                         isActive={currentPage === totalPages}
                     >
                         {totalPages}
@@ -153,7 +157,6 @@ export default function ExerciseContent() {
 
     return (
         <div className="container mx-auto px-6 py-10 space-y-6">
-            {/* Controls */}
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                 <div className="relative w-full md:w-1/3">
                     <Search className="absolute left-3 top-3 text-gray-400" size={18} />
@@ -200,41 +203,59 @@ export default function ExerciseContent() {
                 </div>
             </div>
 
-            {/* Exercise List */}
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {paginatedExercises.map((ex) => (
-                    <Card key={ex._id} className="shadow-sm hover:shadow-md transition-all duration-200">
-                        <CardContent className="p-5 space-y-3">
-                            <h2 className="text-xl font-semibold">{ex.name}</h2>
-                            <p className="text-sm text-gray-500 line-clamp-3">{ex.description}</p>
-                            <div className="flex flex-wrap gap-2">
-                                {ex.focus.slice(0, 3).map((f, idx) => (
-                                    <Badge key={idx} variant="secondary">
-                                        {f}
-                                    </Badge>
-                                ))}
-                            </div>
-                            <div className="flex justify-between items-center pt-2">
-                                <Badge variant="outline">{ex.difficulty}</Badge>
-                                <Button variant="link" asChild>
-                                    <a href={ex.sourceUrl} target="_blank" rel="noopener noreferrer">
-                                        View →
-                                    </a>
-                                </Button>
-                            </div>
-                        </CardContent>
-                    </Card>
-                ))}
-            </div>
+			{isLoading ? (
+				<div className="min-h-screen bg-background flex items-center justify-center">
+					<div className="text-center">
+						<div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+						<p className="text-muted-foreground">Loading exercises...</p>
+					</div>
+				</div>
+			) :
+			(
+				<div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+					{paginatedExercises.map((ex) => (
+						<Card key={ex._id} className="shadow-sm hover:shadow-md transition-all duration-200">
+							<CardContent className="p-5 space-y-3">
+								<h2 className="text-xl font-semibold">{ex.name}</h2>
+								<p className="text-sm text-gray-500 line-clamp-3">{ex.description}</p>
+								<div className="flex flex-wrap gap-2">
+									{ex.focus.slice(0, 3).map((f, idx) => (
+										<Badge key={idx} variant="secondary">
+											{f}
+										</Badge>
+									))}
+								</div>
+								<div className="flex justify-between items-center pt-2">
+									<Badge variant="outline">{ex.difficulty}</Badge>
+									<Button variant="link" asChild>
+										<a href={ex.sourceUrl} target="_blank" rel="noopener noreferrer">
+											View →
+										</a>
+									</Button>
+								</div>
+							</CardContent>
+						</Card>
+					))}
+				</div>
+			)}
 
-            {/* Pagination */}
+			{!isLoading && paginatedExercises.length === 0 && (
+				<div className="text-center py-12">
+					<p className="text-muted-foreground">No exercises found matching your criteria.</p>
+				</div>
+			)}
+
             {totalPages > 1 && (
                 <Pagination>
                     <PaginationContent>
                         <PaginationPrevious
-                            onClick={() => handlePageChange(currentPage - 1)}>Previous</PaginationPrevious>
+							onClick={() => handlePageChange(currentPage - 1)}>
+							Previous
+						</PaginationPrevious>
                             {renderPageNumbers()}
-                        <PaginationNext onClick={() => handlePageChange(currentPage + 1)}>Next</PaginationNext>
+						<PaginationNext onClick={() => handlePageChange(currentPage + 1)}>
+							Next
+						</PaginationNext>
                     </PaginationContent>
                 </Pagination>
             )}
