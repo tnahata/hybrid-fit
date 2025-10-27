@@ -64,11 +64,11 @@ export default function TrainingPlansPage() {
 		}
 
 		if (sport !== "all") {
-			list = list.filter((plan) => plan.sport.toLowerCase() === sport.toLowerCase());
+			list = list.filter((plan) => plan.sport.toLowerCase().includes(sport.toLowerCase()));
 		}
 
 		if (category !== "all") {
-			list = list.filter((plan) => plan.category.toLowerCase() === category.toLowerCase());
+			list = list.filter((plan) => plan.category.toLowerCase().includes(category.toLowerCase()));
 		}
 
 		list = [...list].sort((a, b) => {
@@ -295,7 +295,7 @@ export default function TrainingPlansPage() {
 						<SelectContent>
 							<SelectItem value="all">All Sports</SelectItem>
 							<SelectItem value="running">Running</SelectItem>
-							<SelectItem value="strength training">Strength Training</SelectItem>
+							<SelectItem value="strength">Strength Training</SelectItem>
 							<SelectItem value="soccer">Soccer</SelectItem>
 							<SelectItem value="hybrid">Hybrid</SelectItem>
 						</SelectContent>
