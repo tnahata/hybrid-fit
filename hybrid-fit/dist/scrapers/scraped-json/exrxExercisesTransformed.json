@@ -374,7 +374,7 @@
     "durationMinutes": null
   },
   {
-    "name": "Seated",
+    "name": "Seated Military Press",
     "category": "strength",
     "sport": "strength_training",
     "focus": "Shoulders",
@@ -428,11 +428,11 @@
     "durationMinutes": null
   },
   {
-    "name": "One Arm",
+    "name": "Front Raise",
     "category": "strength",
     "sport": "strength_training",
     "focus": "Shoulders",
-    "difficulty": "medium",
+    "difficulty": "beginner",
     "equipment": [
       "Cable"
     ],
@@ -464,7 +464,7 @@
     "durationMinutes": null
   },
   {
-    "name": "Seated",
+    "name": "Shoulder Press",
     "category": "strength",
     "sport": "strength_training",
     "focus": "Shoulders",
@@ -554,7 +554,7 @@
     "durationMinutes": null
   },
   {
-    "name": "One Arm",
+    "name": "One Arm Shoulder Press",
     "category": "strength",
     "sport": "strength_training",
     "focus": "Shoulders",
@@ -784,7 +784,7 @@
     "durationMinutes": null
   },
   {
-    "name": "One Arm",
+    "name": "One Arm Lateral Raise",
     "category": "strength",
     "sport": "strength_training",
     "focus": "Shoulders",
@@ -820,7 +820,7 @@
     "durationMinutes": null
   },
   {
-    "name": "One Arm",
+    "name": "One Arm Upright Row",
     "category": "strength",
     "sport": "strength_training",
     "focus": "Shoulders",
@@ -946,7 +946,7 @@
     "durationMinutes": null
   },
   {
-    "name": "One Arm",
+    "name": "One Arm Upright Row",
     "category": "strength",
     "sport": "strength_training",
     "focus": "Shoulders",
@@ -1680,7 +1680,7 @@
     "durationMinutes": null
   },
   {
-    "name": "One Arm",
+    "name": "One Arm Pushdown",
     "category": "strength",
     "sport": "strength_training",
     "focus": "Upper Arms",
@@ -3750,7 +3750,7 @@
     "durationMinutes": null
   },
   {
-    "name": "One Arm",
+    "name": "One Arm Row",
     "category": "strength",
     "sport": "strength_training",
     "focus": "Calves",
@@ -3784,7 +3784,7 @@
     "durationMinutes": null
   },
   {
-    "name": "Lever",
+    "name": "Cross Hand",
     "category": "stretch",
     "sport": "strength_training",
     "focus": "Calves",
@@ -4428,7 +4428,7 @@
     "durationMinutes": null
   },
   {
-    "name": "Lever",
+    "name": "Underhand",
     "category": "stretch",
     "sport": "strength_training",
     "focus": "Back",
@@ -5360,7 +5360,7 @@
     "durationMinutes": null
   },
   {
-    "name": "Standing",
+    "name": "Standing Chest Press",
     "category": "strength",
     "sport": "strength_training",
     "focus": "Calves",
@@ -5792,7 +5792,7 @@
     "durationMinutes": null
   },
   {
-    "name": "Incline",
+    "name": "Incline Pushup",
     "category": "strength",
     "sport": "strength_training",
     "focus": "Calves",
@@ -6110,7 +6110,7 @@
     "durationMinutes": null
   },
   {
-    "name": "Standing",
+    "name": "Standing Chest Press",
     "category": "strength",
     "sport": "strength_training",
     "focus": "Chest",
@@ -6542,7 +6542,7 @@
     "durationMinutes": null
   },
   {
-    "name": "Incline",
+    "name": "Incline Pushup",
     "category": "strength",
     "sport": "strength_training",
     "focus": "Chest",
@@ -9904,7 +9904,7 @@
     "durationMinutes": null
   },
   {
-    "name": "Seated",
+    "name": "Seated Floor",
     "category": "stretch",
     "sport": "strength_training",
     "focus": "Waist",
@@ -10604,7 +10604,7 @@
     "durationMinutes": null
   },
   {
-    "name": "Standing",
+    "name": "Standing Hip Extension",
     "category": "strength",
     "sport": "strength_training",
     "focus": "Hips",
@@ -10622,7 +10622,7 @@
     "durationMinutes": null
   },
   {
-    "name": "alternative machine",
+    "name": "Standing Hip Extension",
     "category": "strength",
     "sport": "strength_training",
     "focus": "Hips",
@@ -10635,7 +10635,7 @@
     "details": {
       "muscle": "Gluteus Maximus",
       "equipmentType": "Lever (selectorized)",
-      "variationOf": "Standing"
+      "variationOf": "Standing Hip Extension"
     },
     "durationMinutes": null
   },
@@ -10748,7 +10748,7 @@
     "durationMinutes": null
   },
   {
-    "name": "Standing",
+    "name": "Standing Hip Extension",
     "category": "strength",
     "sport": "strength_training",
     "focus": "Hips",
@@ -12154,7 +12154,7 @@
     "durationMinutes": null
   },
   {
-    "name": "Lever",
+    "name": "Hip Flexor",
     "category": "stretch",
     "sport": "strength_training",
     "focus": "Hips",
@@ -12272,7 +12272,7 @@
     "durationMinutes": null
   },
   {
-    "name": "Seated",
+    "name": "Seated Hip External Rotator",
     "category": "stretch",
     "sport": "strength_training",
     "focus": "Hips",
@@ -12288,7 +12288,7 @@
     "durationMinutes": null
   },
   {
-    "name": "Lever",
+    "name": "Piriformis",
     "category": "stretch",
     "sport": "strength_training",
     "focus": "Hips",
@@ -13978,7 +13978,7 @@
     "durationMinutes": null
   },
   {
-    "name": "Seated",
+    "name": "Hamstring",
     "category": "stretch",
     "sport": "strength_training",
     "focus": "Thighs",
@@ -14058,7 +14058,7 @@
     "durationMinutes": null
   },
   {
-    "name": "Single Leg",
+    "name": "Seated Single Leg",
     "category": "stretch",
     "sport": "strength_training",
     "focus": "Thighs",
@@ -14310,7 +14310,7 @@
     "durationMinutes": null
   },
   {
-    "name": "Lever",
+    "name": "Seated Groin",
     "category": "stretch",
     "sport": "strength_training",
     "focus": "Thighs",
@@ -14414,7 +14414,7 @@
     "durationMinutes": null
   },
   {
-    "name": "Single Leg",
+    "name": "Single Leg Calf Raise",
     "category": "strength",
     "sport": "strength_training",
     "focus": "Calves",
@@ -14738,7 +14738,7 @@
     "durationMinutes": null
   },
   {
-    "name": "Single Leg",
+    "name": "Single Leg Calf Raise",
     "category": "strength",
     "sport": "strength_training",
     "focus": "Calves",
@@ -14928,7 +14928,7 @@
     "durationMinutes": null
   },
   {
-    "name": "Single Leg",
+    "name": "Single Leg Calf Raise",
     "category": "strength",
     "sport": "strength_training",
     "focus": "Calves",
@@ -15252,7 +15252,7 @@
     "durationMinutes": null
   },
   {
-    "name": "Single Leg",
+    "name": "Single Leg Calf Raise",
     "category": "strength",
     "sport": "strength_training",
     "focus": "Calves",
@@ -15524,7 +15524,7 @@
     "durationMinutes": null
   },
   {
-    "name": "Single Leg",
+    "name": "Single Leg Reverse Calf Raise",
     "category": "strength",
     "sport": "strength_training",
     "focus": "Calves",
@@ -15560,7 +15560,7 @@
     "durationMinutes": null
   },
   {
-    "name": "Single Leg",
+    "name": "Single Leg Rev Calf Raise",
     "category": "strength",
     "sport": "strength_training",
     "focus": "Calves",
@@ -15830,7 +15830,7 @@
     "durationMinutes": null
   },
   {
-    "name": "Single Leg",
+    "name": "Single Leg Rev Calf Raise",
     "category": "strength",
     "sport": "strength_training",
     "focus": "Calves",

@@ -67,9 +67,6 @@ async function seedworkoutTemplates() {
     }
     const TrainingPlanModel = (0, mongoose_1.model)("TrainingPlans", trainingPlanSchema);
     await mongoose_1.default.connect(mongoUri);
-    // Optional: clear existing collection first
-    // await TrainingPlanModel.deleteMany({});
-    // console.log("🧹 Cleared existing training plans collection");
     // Use bulkWrite for efficiency and deduplication safety
     const bulkOps = trainingPlans.map((pl) => ({
         updateOne: {

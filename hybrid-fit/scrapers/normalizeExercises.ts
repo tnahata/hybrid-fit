@@ -44,7 +44,6 @@ export interface NormalizedExercise {
     details: Record<string, any>;
     durationMinutes: number | null;
     tags: string[];
-    structure: WorkoutExerciseStructure[];
 }
 
 /**
@@ -234,10 +233,14 @@ function generateHybridId(ex: any, type: ExerciseType, existingIds: Set<string>)
 
     // 🔹 Collision handling
     if (existingIds.has(baseId)) {
-        // Append deterministic suffix using name + sport hash to ensure uniqueness
+        // Append deterministic suffix using ONLY stable fields
+        // For ExRx exercises: sourceUrl should always be unique, but use sport as fallback
+        // For others: use sourceUrl if available, otherwise we need the original name from input data
+        // We use ex.name (original from scraped data) not the 'name' variable (which might be modified)
+        const originalName = ex.name || name;
         const suffix = crypto
             .createHash("md5")
-            .update(`${name}_${sport}_${sourceUrl}`)
+            .update(`${originalName}_${sport}_${sourceUrl}`)  // Keep same order as old version for stability
             .digest("hex")
             .slice(0, 6);
         baseId = `${baseId}_${suffix}`;
@@ -266,12 +269,85 @@ function normalizeFocus(ex: any): string[] {
 }
 
 /**
+ * Shorten common muscle names for display in parentheses
+ */
+function shortenMuscleName(muscle: string): string {
+    const muscleShortMap: Record<string, string> = {
+        'Gluteus Maximus': 'Glutes',
+        'Gluteus Medius': 'Glute Medius',
+        'Latissimus Dorsi & Teres Major': 'Lats',
+        'Latissimus Dorsi': 'Lats',
+        'Deep External Rotators': 'Hip Rotators',
+        'Rectus Abdominis': 'Abs',
+        'Pectoralis Major': 'Pecs',
+        'Tibialis Anterior': 'Tibialis',
+    };
+
+    return muscleShortMap[muscle] || muscle;
+}
+
+/**
+ * Generate a unique, descriptive name for an exercise
+ * Priority order:
+ * 1. If variationOf exists:
+ *    - With equipment (not Bodyweight): "{equipment} {variationOf} ({name})"
+ *    - Without equipment or Bodyweight: "{variationOf} ({name})"
+ * 2. If equipment exists (not Bodyweight): "{equipment} {name}"
+ * 3. If still duplicate after #1-2: "{equipment} {name} ({muscle})"
+ * 4. Default: keep original name
+ */
+function generateUniqueName(ex: any, equipment: string[]): string {
+    const baseName = ex.name?.trim() || "Unnamed Exercise";
+    const variationOf = ex.details?.variationOf || ex.variationOf;
+    const muscle = ex.muscle || ex.details?.muscle;
+    const firstEquipment = equipment && equipment.length > 0 ? equipment[0] : null;
+
+    // Case 1: If it's a variation of another exercise
+    if (variationOf) {
+        // Convert name to title case for parentheses
+        const nameInParens = baseName.charAt(0).toUpperCase() + baseName.slice(1);
+
+        // If variation has equipment (not Bodyweight), include it in the name
+        if (firstEquipment && firstEquipment !== 'Bodyweight' && firstEquipment !== '') {
+            return `${firstEquipment} ${variationOf} (${nameInParens})`;
+        }
+
+        // Otherwise, just parent and variation name
+        return `${variationOf} (${nameInParens})`;
+    }
+
+    // Case 2: If it has equipment (and not bodyweight/empty)
+    if (firstEquipment && firstEquipment !== 'Bodyweight' && firstEquipment !== '') {
+        return `${firstEquipment} ${baseName}`;
+    }
+
+    // Case 3: Bodyweight exercises - just return base name
+    // (muscle differentiation will be added in deduplication if needed)
+    return baseName;
+}
+
+/**
+ * Add muscle suffix to name when needed for uniqueness
+ */
+function addMuscleSuffix(name: string, muscle: string | null): string {
+    if (!muscle) return name;
+
+    const shortMuscle = shortenMuscleName(muscle);
+    return `${name} (${shortMuscle})`;
+}
+
+/**
  * Normalize a single exercise into a unified format
  */
 function normalizeExercise(ex: any, ids: Set<string>): NormalizedExercise {
-    const name = ex.name?.trim() || "Unnamed Exercise";
     const type = determineExerciseType(ex);
     const sport = normalizeSport(ex.sport, ex);
+    const equipment = normalizeEquipment(ex.equipment || ex.details?.equipmentType);
+
+    // Generate unique name using our algorithm - ONLY for ExRx exercises (strength training from exrx.net)
+    // Soccer and running drills keep their original names to maintain ID stability
+    const isExrxExercise = (ex.sourceUrl || '').includes('exrx.net');
+    const name = isExrxExercise ? generateUniqueName(ex, equipment) : (ex.name?.trim() || "Unnamed Exercise");
 
     const normalized: NormalizedExercise = {
         _id: generateHybridId(ex, type, ids),
@@ -281,7 +357,7 @@ function normalizeExercise(ex: any, ids: Set<string>): NormalizedExercise {
         sport,
         focus: normalizeFocus(ex),
         difficulty: normalizeDifficulty(ex.difficulty),
-        equipment: normalizeEquipment(ex.equipment || ex.details?.equipmentType),
+        equipment,
         description: ex.description?.trim() || "",
         sourceUrl: ex.sourceUrl || ex.url || "",
         details: {},
@@ -290,8 +366,7 @@ function normalizeExercise(ex: any, ids: Set<string>): NormalizedExercise {
             ex.details?.duration ||
             ex.duration
         ),
-        tags: [],
-        structure: []
+        tags: []
     };
 
     // Add instructions if present
@@ -423,6 +498,36 @@ function deduplicateExercises(allExercises: NormalizedExercise[]): NormalizedExe
 }
 
 /**
+ * Add muscle suffixes to names when duplicates still exist after initial naming
+ */
+function ensureUniqueNames(exercises: NormalizedExercise[]): NormalizedExercise[] {
+    // Count occurrences of each name
+    const nameCounts = new Map<string, NormalizedExercise[]>();
+
+    exercises.forEach(ex => {
+        const existing = nameCounts.get(ex.name) || [];
+        existing.push(ex);
+        nameCounts.set(ex.name, existing);
+    });
+
+    // For each duplicate name group, add muscle suffix
+    nameCounts.forEach((group, name) => {
+        if (group.length > 1) {
+            console.log(`Found ${group.length} exercises with name "${name}", adding muscle suffixes`);
+
+            group.forEach(ex => {
+                const muscle = ex.details?.muscle || null;
+                if (muscle) {
+                    ex.name = addMuscleSuffix(name, muscle);
+                }
+            });
+        }
+    });
+
+    return exercises;
+}
+
+/**
  * Main entry point
  */
 async function mergeAndNormalizeExercises(): Promise<NormalizedExercise[]> {
@@ -441,13 +546,13 @@ async function mergeAndNormalizeExercises(): Promise<NormalizedExercise[]> {
         const filePath = path.join(inputDir, file);
         const exists = fs.existsSync(filePath);
         if (!exists) {
-            console.warn(`⚠️  File not found: ${file}`);
+            console.warn(`File not found: ${file}`);
         }
         return exists;
     });
 
     if (filesToProcess.length === 0) {
-        console.error("❌ No target files found in the input directory!");
+        console.error("No target files found in the input directory!");
         console.log(`Looking for files in: ${inputDir}`);
         console.log(`Expected files: ${targetFiles.join(", ")}`);
         return [];
@@ -501,8 +606,27 @@ async function mergeAndNormalizeExercises(): Promise<NormalizedExercise[]> {
 
     console.log(`${deduped.length} exercises are unique out of ${allExercises.length}`);
 
+    // Ensure unique names by adding muscle suffixes where needed
+    console.log("\nChecking for duplicate names and adding muscle suffixes...");
+    const uniqueNamed = ensureUniqueNames(deduped);
+
+    // Verify uniqueness
+    const finalNameCounts = new Map<string, number>();
+    uniqueNamed.forEach(ex => {
+        finalNameCounts.set(ex.name, (finalNameCounts.get(ex.name) || 0) + 1);
+    });
+    const remainingDuplicates = Array.from(finalNameCounts.entries()).filter(([_, count]) => count > 1);
+    if (remainingDuplicates.length > 0) {
+        console.log(`Warning: ${remainingDuplicates.length} exercise names still have duplicates:`);
+        remainingDuplicates.slice(0, 10).forEach(([name, count]) => {
+            console.log(`   - "${name}": ${count} duplicates`);
+        });
+    } else {
+        console.log(`All exercise names are now unique!`);
+    }
+
     // Sort by sport, then type, then name
-    deduped.sort((a, b) => {
+    uniqueNamed.sort((a, b) => {
         if (a.sport !== b.sport) return a.sport.localeCompare(b.sport);
         if (a.type !== b.type) return a.type.localeCompare(b.type);
         return a.name.localeCompare(b.name);
@@ -511,7 +635,7 @@ async function mergeAndNormalizeExercises(): Promise<NormalizedExercise[]> {
     console.log("\n✅ Normalization complete!");
     console.log(`📊 Statistics:`);
     console.log(`   Files processed: ${filesToProcess.length}`);
-    console.log(`   Total exercises: ${deduped.length}`);
+    console.log(`   Total exercises: ${uniqueNamed.length}`);
     if (duplicateCount > 0) {
         console.log(`   Duplicates removed: ${duplicateCount}`);
     }
@@ -523,9 +647,9 @@ async function mergeAndNormalizeExercises(): Promise<NormalizedExercise[]> {
     Object.entries(sportStats).sort().forEach(([sport, count]) => {
         console.log(`   - ${sport}: ${count}`);
     });
-    await saveNormalizedExercises(deduped);
+    await saveNormalizedExercises(uniqueNamed);
 
-    return deduped;
+    return uniqueNamed;
 }
 
 // Run the script

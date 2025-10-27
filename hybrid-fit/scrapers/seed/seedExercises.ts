@@ -43,10 +43,6 @@ async function seedExercises() {
 
     await mongoose.connect(mongoUri);
 
-    // Optional: clear existing collection first
-    // await ExerciseModel.deleteMany({});
-    // console.log("🧹 Cleared existing Exercise collection");
-
     // Assign a type if missing (default to 'drill' for safety)
     const exercisesWithType = exercises.map((ex) => ({
         ...ex,

@@ -118,9 +118,28 @@ export async function saveNormalizedWorkoutTemplates(workoutTemplates: Normalize
         }
         const templateFile = path.join(dir, "normalizedTemplates.json");
 
-        fs.writeFileSync(templateFile, JSON.stringify(workoutTemplates, null, 2));
+        // Read existing templates if file exists
+        let existingTemplates: NormalizedWorkoutTemplate[] = [];
+        if (fs.existsSync(templateFile)) {
+            const existingData = fs.readFileSync(templateFile, "utf-8");
+            existingTemplates = JSON.parse(existingData);
+            console.log(`📖 Found ${existingTemplates.length} existing templates`);
+        }
 
-        console.log(`✅ ${workoutTemplates.length} normalized workout templates saved to ${templateFile}`);
+        // Create a map of new templates by ID for efficient lookup
+        const newTemplatesMap = new Map(workoutTemplates.map(t => [t._id, t]));
+
+        // Merge: Keep existing templates that aren't in the new scraped data
+        const manualTemplates = existingTemplates.filter(t => !newTemplatesMap.has(t._id));
+
+        // Combine: manual templates + new scraped templates
+        const mergedTemplates = [...manualTemplates, ...workoutTemplates];
+
+        fs.writeFileSync(templateFile, JSON.stringify(mergedTemplates, null, 2));
+
+        console.log(`✅ ${mergedTemplates.length} total normalized workout templates saved to ${templateFile}`);
+        console.log(`   - ${manualTemplates.length} manually added templates preserved`);
+        console.log(`   - ${workoutTemplates.length} scraped templates added/updated`);
     } catch (err) {
         console.error("❌ Error saving normalized workout templates:", err);
     }
@@ -134,9 +153,28 @@ export async function saveNormalizedTrainingPlans(trainingPlans: NormalizedTrain
         }
         const templateFile = path.join(dir, "normalizedTrainingPlans.json");
 
-        fs.writeFileSync(templateFile, JSON.stringify(trainingPlans, null, 2));
+        // Read existing plans if file exists
+        let existingPlans: NormalizedTrainingPlan[] = [];
+        if (fs.existsSync(templateFile)) {
+            const existingData = fs.readFileSync(templateFile, "utf-8");
+            existingPlans = JSON.parse(existingData);
+            console.log(`📖 Found ${existingPlans.length} existing training plans`);
+        }
 
-        console.log(`✅ ${trainingPlans.length} normalized training plans saved to ${templateFile}`);
+        // Create a map of new plans by ID for efficient lookup
+        const newPlansMap = new Map(trainingPlans.map(p => [p._id, p]));
+
+        // Merge: Keep existing plans that aren't in the new scraped data
+        const manualPlans = existingPlans.filter(p => !newPlansMap.has(p._id));
+
+        // Combine: manual plans + new scraped plans
+        const mergedPlans = [...manualPlans, ...trainingPlans];
+
+        fs.writeFileSync(templateFile, JSON.stringify(mergedPlans, null, 2));
+
+        console.log(`✅ ${mergedPlans.length} total normalized training plans saved to ${templateFile}`);
+        console.log(`   - ${manualPlans.length} manually added plans preserved`);
+        console.log(`   - ${trainingPlans.length} scraped plans added/updated`);
     } catch (err) {
         console.error("❌ Error saving normalized training plans:", err);
     }

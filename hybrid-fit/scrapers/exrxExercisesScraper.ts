@@ -98,6 +98,74 @@ function cleanExerciseName(name: string): string {
         .trim();
 }
 
+/**
+ * Extract exercise name from URL when link text is incomplete/generic
+ * Examples:
+ * - "LVStandingHipExtension" → "Standing Hip Extension"
+ * - "DBOneArmShoulderPress" → "One Arm Shoulder Press"
+ * - "CBStandingChestPress" → "Standing Chest Press"
+ */
+function extractNameFromUrl(url: string): string | null {
+    const urlParts = url.split('/');
+    const filename = urlParts[urlParts.length - 1];
+
+    // Remove common equipment prefixes
+    const equipmentPrefixes = ['BB', 'DB', 'CB', 'LV', 'SM', 'SL', 'ST', 'BW', 'Wt', 'PC', 'Mach'];
+    let cleanedName = filename;
+
+    for (const prefix of equipmentPrefixes) {
+        if (cleanedName.startsWith(prefix)) {
+            cleanedName = cleanedName.substring(prefix.length);
+            break;
+        }
+    }
+
+    // Remove common suffixes (Tech, PL, 2, etc.)
+    cleanedName = cleanedName.replace(/(?:Tech|PL|H|C|2|X)$/, '');
+
+    // If the cleaned name is empty or too short, return null
+    if (!cleanedName || cleanedName.length < 3) {
+        return null;
+    }
+
+    // Split camelCase into words
+    // Insert space before uppercase letters that follow lowercase letters
+    const withSpaces = cleanedName.replace(/([a-z])([A-Z])/g, '$1 $2');
+
+    // Handle special cases like "45" degrees
+    const formatted = withSpaces.replace(/(\d+)/g, ' $1 ').replace(/\s+/g, ' ').trim();
+
+    return formatted;
+}
+
+/**
+ * Get the best exercise name from link text and URL
+ */
+function getBestExerciseName(linkText: string, url: string): string {
+    const cleanedLinkText = cleanExerciseName(linkText);
+
+    // List of generic/incomplete names that should trigger URL parsing
+    const genericNames = [
+        'standing', 'seated', 'lever', 'one arm', 'single leg',
+        'alternative machine', 'incline', 'decline', 'wide', 'narrow',
+        'close', 'reverse', 'pronated', 'supinated', 'neutral'
+    ];
+
+    const isGeneric = genericNames.some(gen =>
+        cleanedLinkText.toLowerCase() === gen
+    );
+
+    // If link text is too short or generic, try to extract from URL
+    if (!cleanedLinkText || cleanedLinkText.length < 3 || isGeneric) {
+        const urlName = extractNameFromUrl(url);
+        if (urlName && urlName.length > cleanedLinkText.length) {
+            return urlName;
+        }
+    }
+
+    return cleanedLinkText;
+}
+
 function isDuplicateExercise(exercises: Exercise[], url: string): boolean {
     return exercises.some(e => e.url === url);
 }
@@ -222,8 +290,8 @@ function parseExerciseStructure($: cheerio.CheerioAPI, container: any): Exercise
             $li.children('a[href]').each((_, el) => {
                 const href = $(el).attr('href') || '';
                 if (isExerciseLink(href)) {
-                    const exerciseName = cleanExerciseName($(el).text().trim());
                     const fullUrl = resolveUrl(href, 'https://exrx.net/Lists/ExList/ShouldWt');
+                    const exerciseName = getBestExerciseName($(el).text().trim(), fullUrl);
 
                     if (exerciseName && !isDuplicateExercise(exercises, fullUrl)) {
                         exercises.push({
@@ -249,8 +317,8 @@ function parseNestedExercises($: cheerio.CheerioAPI, ul: any, equipment: string,
         if (directLink.length > 0) {
             const href = directLink.attr('href') || '';
             if (isExerciseLink(href)) {
-                const exerciseName = cleanExerciseName(directLink.text().trim());
                 const fullUrl = resolveUrl(href, 'https://exrx.net/Lists/ExList/ShouldWt');
+                const exerciseName = getBestExerciseName(directLink.text().trim(), fullUrl);
 
                 if (exerciseName && !isDuplicateExercise(exercises, fullUrl)) {
                     const exercise: Exercise = {
@@ -422,8 +490,8 @@ async function scrapeMusclePage(url: string, muscleName: string, page: any): Pro
                             $("a[href]").each((_, el) => {
                                 const href = $(el).attr("href") || "";
                                 if (href.toLowerCase().includes('/obliques/') && isExerciseLink(href)) {
-                                    const exerciseName = cleanExerciseName($(el).text().trim());
                                     const fullUrl = resolveUrl(href, url);
+                                    const exerciseName = getBestExerciseName($(el).text().trim(), fullUrl);
                                     if (exerciseName && !isDuplicateExercise(exercises, fullUrl)) {
                                         exercises.push({
                                             name: exerciseName,
@@ -470,8 +538,8 @@ async function scrapeMusclePage(url: string, muscleName: string, page: any): Pro
                     href.toLowerCase().includes(`/${muscleAnchor.toLowerCase()}/`);
 
                 if (muscleNameInPath && isExerciseLink(href)) {
-                    const exerciseName = cleanExerciseName($(el).text().trim());
                     const fullUrl = resolveUrl(href, url);
+                    const exerciseName = getBestExerciseName($(el).text().trim(), fullUrl);
                     if (exerciseName && !isDuplicateExercise(exercises, fullUrl)) {
                         exercises.push({
                             name: exerciseName,
@@ -501,8 +569,8 @@ async function scrapeMusclePage(url: string, muscleName: string, page: any): Pro
                     linkText.includes(muscleName.toLowerCase()) ||
                     linkText.includes(muscleAnchor.toLowerCase())
                 )) {
-                    const exerciseName = cleanExerciseName($a.text().trim());
                     const fullUrl = resolveUrl(href, url);
+                    const exerciseName = getBestExerciseName($a.text().trim(), fullUrl);
                     if (exerciseName && !isDuplicateExercise(exercises, fullUrl)) {
                         exercises.push({
                             name: exerciseName,

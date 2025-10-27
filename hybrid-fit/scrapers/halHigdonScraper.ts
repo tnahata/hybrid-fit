@@ -626,7 +626,7 @@ export async function scrapeHalHigdonPlanLinks(): Promise<PlanLink[]> {
     // Find all training program sections
     $("a").each((_, el) => {
         const href = $(el).attr("href");
-        const text = $(el).text().trim();
+		const text = $(el).text().trim();
 
         if (!href || !text) return;
 
@@ -648,7 +648,7 @@ export async function scrapeHalHigdonPlanLinks(): Promise<PlanLink[]> {
             }
 
             // Determine level
-            let level = "novice";
+            let level = "beginner";
             if (text.toLowerCase().includes("intermediate") || href.includes("intermediate")) {
                 level = "intermediate";
             } else if (text.toLowerCase().includes("advanced") || href.includes("advanced")) {
@@ -669,16 +669,16 @@ export async function scrapeHalHigdonPlanLinks(): Promise<PlanLink[]> {
                         break;
                     }
                 }
-            }
+			}
 
             // Avoid duplicates
             if (!plans.find(p => p.url === fullUrl)) {
                 plans.push({
-                    name: text,
+                    name: raceType + " " + text,
                     url: fullUrl,
                     level,
                     raceType
-                });
+				});
             }
         }
     });
@@ -699,9 +699,9 @@ export async function scrapeHalHigdonPlan(planUrl: string, planName: string, lev
         }
 
         // Generate plan ID - include race type to ensure uniqueness
-        const raceTypeSlug = raceType.toLowerCase().replace(/[^a-z0-9]/g, "_");
+		const raceTypeSlug = raceType.toLowerCase().replace(/[^a-z0-9]/g, "_");
         const nameSlug = name.toLowerCase().replace(/[^a-z0-9]/g, "_");
-        const planId = `${raceTypeSlug}_${nameSlug}`;
+        const planId = nameSlug;
 
         // Extract weekly schedule table
         const weeks: Array<{
@@ -842,7 +842,7 @@ export async function scrapeAllHalHigdonPlans(): Promise<{ plans: TrainingPlan[]
         }
     }
 
-    const allTemplates = Array.from(templateMap.values());
+	const allTemplates = Array.from(templateMap.values());
 
     // Save to JSON
     await saveHalHigdonPlans(allPlans, allTemplates);

@@ -1,15 +1,15 @@
 [
   {
     "_id": "marathon_novice_1",
-    "name": "Novice 1",
+    "name": "Marathon Novice 1",
     "sport": "running",
     "category": "endurance",
     "durationWeeks": 18,
-    "level": "novice",
+    "level": "beginner",
     "sourceUrl": "https://www.halhigdon.com/training-programs/marathon-training/novice-1-marathon/",
     "details": {
       "goal": "Marathon",
-      "planType": "Novice 1"
+      "planType": "Marathon Novice 1"
     },
     "weeks": [
       {
@@ -610,15 +610,15 @@
   },
   {
     "_id": "marathon_novice_2",
-    "name": "Novice 2",
+    "name": "Marathon Novice 2",
     "sport": "running",
     "category": "endurance",
     "durationWeeks": 18,
-    "level": "novice",
+    "level": "beginner",
     "sourceUrl": "https://www.halhigdon.com/training-programs/marathon-training/novice-2-marathon/",
     "details": {
       "goal": "Marathon",
-      "planType": "Novice 2"
+      "planType": "Marathon Novice 2"
     },
     "weeks": [
       {
@@ -1219,7 +1219,7 @@
   },
   {
     "_id": "marathon_intermediate_1",
-    "name": "Intermediate 1",
+    "name": "Marathon Intermediate 1",
     "sport": "running",
     "category": "endurance",
     "durationWeeks": 18,
@@ -1227,7 +1227,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/marathon-training/intermediate-1-marathon/",
     "details": {
       "goal": "Marathon",
-      "planType": "Intermediate 1"
+      "planType": "Marathon Intermediate 1"
     },
     "weeks": [
       {
@@ -1828,7 +1828,7 @@
   },
   {
     "_id": "marathon_intermediate_2",
-    "name": "Intermediate 2",
+    "name": "Marathon Intermediate 2",
     "sport": "running",
     "category": "endurance",
     "durationWeeks": 18,
@@ -1836,7 +1836,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/marathon-training/intermediate-2-marathon/",
     "details": {
       "goal": "Marathon",
-      "planType": "Intermediate 2"
+      "planType": "Marathon Intermediate 2"
     },
     "weeks": [
       {
@@ -2437,7 +2437,7 @@
   },
   {
     "_id": "marathon_advanced_1",
-    "name": "Advanced 1",
+    "name": "Marathon Advanced 1",
     "sport": "running",
     "category": "endurance",
     "durationWeeks": 18,
@@ -2445,7 +2445,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/marathon-training/advanced-1-marathon/",
     "details": {
       "goal": "Marathon",
-      "planType": "Advanced 1"
+      "planType": "Marathon Advanced 1"
     },
     "weeks": [
       {
@@ -3046,7 +3046,7 @@
   },
   {
     "_id": "marathon_advanced_2",
-    "name": "Advanced 2",
+    "name": "Marathon Advanced 2",
     "sport": "running",
     "category": "endurance",
     "durationWeeks": 18,
@@ -3054,7 +3054,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/marathon-training/advanced-2-marathon/",
     "details": {
       "goal": "Marathon",
-      "planType": "Advanced 2"
+      "planType": "Marathon Advanced 2"
     },
     "weeks": [
       {
@@ -3655,15 +3655,15 @@
   },
   {
     "_id": "half_marathon_novice_1",
-    "name": "Novice 1",
+    "name": "Half Marathon Novice 1",
     "sport": "running",
     "category": "endurance",
     "durationWeeks": 12,
-    "level": "novice",
+    "level": "beginner",
     "sourceUrl": "https://www.halhigdon.com/training-programs/half-marathon-training/novice-1-half-marathon/",
     "details": {
       "goal": "Half Marathon",
-      "planType": "Novice 1"
+      "planType": "Half Marathon Novice 1"
     },
     "weeks": [
       {
@@ -4066,15 +4066,15 @@
   },
   {
     "_id": "half_marathon_novice_2",
-    "name": "Novice 2",
+    "name": "Half Marathon Novice 2",
     "sport": "running",
     "category": "endurance",
     "durationWeeks": 12,
-    "level": "novice",
+    "level": "beginner",
     "sourceUrl": "https://www.halhigdon.com/training-programs/half-marathon-training/novice-2-half-marathon/",
     "details": {
       "goal": "Half Marathon",
-      "planType": "Novice 2"
+      "planType": "Half Marathon Novice 2"
     },
     "weeks": [
       {
@@ -4477,7 +4477,7 @@
   },
   {
     "_id": "half_marathon_intermediate_1",
-    "name": "Intermediate 1",
+    "name": "Half Marathon Intermediate 1",
     "sport": "running",
     "category": "endurance",
     "durationWeeks": 12,
@@ -4485,7 +4485,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/half-marathon-training/intermediate-1-half-marathon/",
     "details": {
       "goal": "Half Marathon",
-      "planType": "Intermediate 1"
+      "planType": "Half Marathon Intermediate 1"
     },
     "weeks": [
       {
@@ -4888,7 +4888,7 @@
   },
   {
     "_id": "half_marathon_intermediate_2",
-    "name": "Intermediate 2",
+    "name": "Half Marathon Intermediate 2",
     "sport": "running",
     "category": "endurance",
     "durationWeeks": 12,
@@ -4896,7 +4896,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/half-marathon-training/intermediate-2-half-marathon/",
     "details": {
       "goal": "Half Marathon",
-      "planType": "Intermediate 2"
+      "planType": "Half Marathon Intermediate 2"
     },
     "weeks": [
       {
@@ -5299,7 +5299,7 @@
   },
   {
     "_id": "half_marathon_advanced",
-    "name": "Advanced",
+    "name": "Half Marathon Advanced",
     "sport": "running",
     "category": "endurance",
     "durationWeeks": 12,
@@ -5307,7 +5307,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/half-marathon-training/advanced-half-marathon/",
     "details": {
       "goal": "Half Marathon",
-      "planType": "Advanced"
+      "planType": "Half Marathon Advanced"
     },
     "weeks": [
       {
@@ -5710,15 +5710,15 @@
   },
   {
     "_id": "5k_novice",
-    "name": "Novice",
+    "name": "5K Novice",
     "sport": "running",
     "category": "endurance",
     "durationWeeks": 8,
-    "level": "novice",
+    "level": "beginner",
     "sourceUrl": "https://www.halhigdon.com/training-programs/5k-training/novice-5k/",
     "details": {
       "goal": "5K",
-      "planType": "Novice"
+      "planType": "5K Novice"
     },
     "weeks": [
       {
@@ -5989,7 +5989,7 @@
   },
   {
     "_id": "5k_intermediate",
-    "name": "Intermediate",
+    "name": "5K Intermediate",
     "sport": "running",
     "category": "endurance",
     "durationWeeks": 8,
@@ -5997,7 +5997,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/5k-training/intermediate-5k/",
     "details": {
       "goal": "5K",
-      "planType": "Intermediate"
+      "planType": "5K Intermediate"
     },
     "weeks": [
       {
@@ -6268,7 +6268,7 @@
   },
   {
     "_id": "5k_advanced",
-    "name": "Advanced",
+    "name": "5K Advanced",
     "sport": "running",
     "category": "endurance",
     "durationWeeks": 8,
@@ -6276,7 +6276,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/5k-training/advanced-5k/",
     "details": {
       "goal": "5K",
-      "planType": "Advanced"
+      "planType": "5K Advanced"
     },
     "weeks": [
       {
@@ -6547,15 +6547,15 @@
   },
   {
     "_id": "8k_novice",
-    "name": "Novice",
+    "name": "8K Novice",
     "sport": "running",
     "category": "endurance",
     "durationWeeks": 8,
-    "level": "novice",
+    "level": "beginner",
     "sourceUrl": "https://www.halhigdon.com/training-programs/8k-training/novice-8k/",
     "details": {
       "goal": "8K",
-      "planType": "Novice"
+      "planType": "8K Novice"
     },
     "weeks": [
       {
@@ -6826,7 +6826,7 @@
   },
   {
     "_id": "8k_intermediate",
-    "name": "Intermediate",
+    "name": "8K Intermediate",
     "sport": "running",
     "category": "endurance",
     "durationWeeks": 8,
@@ -6834,7 +6834,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/8k-training/intermediate-8k/",
     "details": {
       "goal": "8K",
-      "planType": "Intermediate"
+      "planType": "8K Intermediate"
     },
     "weeks": [
       {
@@ -7105,7 +7105,7 @@
   },
   {
     "_id": "8k_advanced",
-    "name": "Advanced",
+    "name": "8K Advanced",
     "sport": "running",
     "category": "endurance",
     "durationWeeks": 8,
@@ -7113,7 +7113,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/8k-training/advanced-8k/",
     "details": {
       "goal": "8K",
-      "planType": "Advanced"
+      "planType": "8K Advanced"
     },
     "weeks": [
       {
@@ -7384,15 +7384,15 @@
   },
   {
     "_id": "10k_novice",
-    "name": "Novice",
+    "name": "10K Novice",
     "sport": "running",
     "category": "endurance",
     "durationWeeks": 8,
-    "level": "novice",
+    "level": "beginner",
     "sourceUrl": "https://www.halhigdon.com/training-programs/10k-training/novice-10k/",
     "details": {
       "goal": "10K",
-      "planType": "Novice"
+      "planType": "10K Novice"
     },
     "weeks": [
       {
@@ -7663,7 +7663,7 @@
   },
   {
     "_id": "10k_intermediate",
-    "name": "Intermediate",
+    "name": "10K Intermediate",
     "sport": "running",
     "category": "endurance",
     "durationWeeks": 8,
@@ -7671,7 +7671,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/10k-training/intermediate-10k/",
     "details": {
       "goal": "10K",
-      "planType": "Intermediate"
+      "planType": "10K Intermediate"
     },
     "weeks": [
       {
@@ -7942,7 +7942,7 @@
   },
   {
     "_id": "10k_advanced",
-    "name": "Advanced",
+    "name": "10K Advanced",
     "sport": "running",
     "category": "endurance",
     "durationWeeks": 8,
@@ -7950,7 +7950,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/10k-training/advanced-10k/",
     "details": {
       "goal": "10K",
-      "planType": "Advanced"
+      "planType": "10K Advanced"
     },
     "weeks": [
       {
@@ -8221,15 +8221,15 @@
   },
   {
     "_id": "post_marathon_recovery_novice",
-    "name": "Novice",
+    "name": "Post Marathon Recovery Novice",
     "sport": "running",
     "category": "endurance",
     "durationWeeks": 5,
-    "level": "novice",
+    "level": "beginner",
     "sourceUrl": "https://www.halhigdon.com/training-programs/post-marathon-recovery/novice-post-marathon/",
     "details": {
       "goal": "Post Marathon Recovery",
-      "planType": "Novice"
+      "planType": "Post Marathon Recovery Novice"
     },
     "weeks": [
       {
@@ -8401,7 +8401,7 @@
   },
   {
     "_id": "post_marathon_recovery_intermediate",
-    "name": "Intermediate",
+    "name": "Post Marathon Recovery Intermediate",
     "sport": "running",
     "category": "endurance",
     "durationWeeks": 5,
@@ -8409,7 +8409,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/post-marathon-recovery/intermediate-post-marathon/",
     "details": {
       "goal": "Post Marathon Recovery",
-      "planType": "Intermediate"
+      "planType": "Post Marathon Recovery Intermediate"
     },
     "weeks": [
       {
@@ -8581,7 +8581,7 @@
   },
   {
     "_id": "post_marathon_recovery_advanced",
-    "name": "Advanced",
+    "name": "Post Marathon Recovery Advanced",
     "sport": "running",
     "category": "endurance",
     "durationWeeks": 5,
@@ -8589,7 +8589,7 @@
     "sourceUrl": "https://www.halhigdon.com/training-programs/post-marathon-recovery/advanced-post-marathon/",
     "details": {
       "goal": "Post Marathon Recovery",
-      "planType": "Advanced"
+      "planType": "Post Marathon Recovery Advanced"
     },
     "weeks": [
       {

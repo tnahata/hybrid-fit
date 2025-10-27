@@ -1,1902 +1,5 @@
 [
   {
-    "_id": "rest_day",
-    "name": "Rest Day",
-    "sport": "running",
-    "category": "general",
-    "description": "Rest Day",
-    "metrics": {
-      "distanceMiles": null,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "general"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "easy_run_3mi",
-    "name": "Easy Run 3mi",
-    "sport": "running",
-    "category": "endurance",
-    "description": "Run 3 miles at a conversational pace to build aerobic capacity.",
-    "metrics": {
-      "distanceMiles": 3,
-      "durationMins": null
-    },
-    "difficulty": "beginner",
-    "tags": [
-      "aerobic",
-      "base",
-      "easy"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "easy_run_6mi",
-    "name": "Easy Run 6mi",
-    "sport": "running",
-    "category": "endurance",
-    "description": "Run 6 miles at a conversational pace to build aerobic capacity.",
-    "metrics": {
-      "distanceMiles": 6,
-      "durationMins": null
-    },
-    "difficulty": "beginner",
-    "tags": [
-      "aerobic",
-      "base",
-      "easy"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "cross_train_30min",
-    "name": "Cross Training 30min",
-    "sport": "running",
-    "category": "cross_training",
-    "description": "30 minutes of cross-training (swimming, cycling, or other low-impact activity).",
-    "metrics": {
-      "distanceMiles": null,
-      "durationMins": 30
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "cross_training",
-      "aerobic",
-      "recovery"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "easy_run_7mi",
-    "name": "Easy Run 7mi",
-    "sport": "running",
-    "category": "endurance",
-    "description": "Run 7 miles at a conversational pace to build aerobic capacity.",
-    "metrics": {
-      "distanceMiles": 7,
-      "durationMins": null
-    },
-    "difficulty": "beginner",
-    "tags": [
-      "aerobic",
-      "base",
-      "easy"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "easy_run_4mi",
-    "name": "Easy Run 4mi",
-    "sport": "running",
-    "category": "endurance",
-    "description": "Run 4 miles at a conversational pace to build aerobic capacity.",
-    "metrics": {
-      "distanceMiles": 4,
-      "durationMins": null
-    },
-    "difficulty": "beginner",
-    "tags": [
-      "aerobic",
-      "base",
-      "easy"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "easy_run_5mi",
-    "name": "Easy Run 5mi",
-    "sport": "running",
-    "category": "endurance",
-    "description": "Run 5 miles at a conversational pace to build aerobic capacity.",
-    "metrics": {
-      "distanceMiles": 5,
-      "durationMins": null
-    },
-    "difficulty": "beginner",
-    "tags": [
-      "aerobic",
-      "base",
-      "easy"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "easy_run_9mi",
-    "name": "Long Run 9mi",
-    "sport": "running",
-    "category": "long_run",
-    "description": "9-mile long run at a steady pace. Focus on endurance and fueling.",
-    "metrics": {
-      "distanceMiles": 9,
-      "durationMins": null
-    },
-    "difficulty": "advanced",
-    "tags": [
-      "long_run",
-      "endurance",
-      "fueling"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "easy_run_10mi",
-    "name": "Long Run 10mi",
-    "sport": "running",
-    "category": "long_run",
-    "description": "10-mile long run at a steady pace. Focus on endurance and fueling.",
-    "metrics": {
-      "distanceMiles": 10,
-      "durationMins": null
-    },
-    "difficulty": "advanced",
-    "tags": [
-      "long_run",
-      "endurance",
-      "fueling"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "easy_run_12mi",
-    "name": "Long Run 12mi",
-    "sport": "running",
-    "category": "long_run",
-    "description": "12-mile long run at a steady pace. Focus on endurance and fueling.",
-    "metrics": {
-      "distanceMiles": 12,
-      "durationMins": null
-    },
-    "difficulty": "advanced",
-    "tags": [
-      "long_run",
-      "endurance",
-      "fueling"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "half_marathon",
-    "name": "Half Marathon",
-    "sport": "running",
-    "category": "race",
-    "description": "Half marathon distance run or race.",
-    "metrics": {
-      "distanceMiles": 13.1,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "half_marathon",
-      "race",
-      "endurance"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "easy_run_15mi",
-    "name": "Long Run 15mi",
-    "sport": "running",
-    "category": "long_run",
-    "description": "15-mile long run at a steady pace. Focus on endurance and fueling.",
-    "metrics": {
-      "distanceMiles": 15,
-      "durationMins": null
-    },
-    "difficulty": "advanced",
-    "tags": [
-      "long_run",
-      "endurance",
-      "fueling"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "easy_run_8mi",
-    "name": "Long Run 8mi",
-    "sport": "running",
-    "category": "long_run",
-    "description": "8-mile long run at a steady pace. Focus on endurance and fueling.",
-    "metrics": {
-      "distanceMiles": 8,
-      "durationMins": null
-    },
-    "difficulty": "advanced",
-    "tags": [
-      "long_run",
-      "endurance",
-      "fueling"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "easy_run_16mi",
-    "name": "Long Run 16mi",
-    "sport": "running",
-    "category": "long_run",
-    "description": "16-mile long run at a steady pace. Focus on endurance and fueling.",
-    "metrics": {
-      "distanceMiles": 16,
-      "durationMins": null
-    },
-    "difficulty": "advanced",
-    "tags": [
-      "long_run",
-      "endurance",
-      "fueling"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "easy_run_18mi",
-    "name": "Long Run 18mi",
-    "sport": "running",
-    "category": "long_run",
-    "description": "18-mile long run at a steady pace. Focus on endurance and fueling.",
-    "metrics": {
-      "distanceMiles": 18,
-      "durationMins": null
-    },
-    "difficulty": "advanced",
-    "tags": [
-      "long_run",
-      "endurance",
-      "fueling"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "easy_run_14mi",
-    "name": "Long Run 14mi",
-    "sport": "running",
-    "category": "long_run",
-    "description": "14-mile long run at a steady pace. Focus on endurance and fueling.",
-    "metrics": {
-      "distanceMiles": 14,
-      "durationMins": null
-    },
-    "difficulty": "advanced",
-    "tags": [
-      "long_run",
-      "endurance",
-      "fueling"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "easy_run_20mi",
-    "name": "Long Run 20mi",
-    "sport": "running",
-    "category": "long_run",
-    "description": "20-mile long run at a steady pace. Focus on endurance and fueling.",
-    "metrics": {
-      "distanceMiles": 20,
-      "durationMins": null
-    },
-    "difficulty": "advanced",
-    "tags": [
-      "long_run",
-      "endurance",
-      "fueling"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "easy_run_2mi",
-    "name": "Easy Run 2mi",
-    "sport": "running",
-    "category": "endurance",
-    "description": "Run 2 miles at a conversational pace to build aerobic capacity.",
-    "metrics": {
-      "distanceMiles": 2,
-      "durationMins": null
-    },
-    "difficulty": "beginner",
-    "tags": [
-      "aerobic",
-      "base",
-      "easy"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "marathon",
-    "name": "Marathon",
-    "sport": "running",
-    "category": "race",
-    "description": "Full marathon distance run or race.",
-    "metrics": {
-      "distanceMiles": 26.2,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "marathon",
-      "race",
-      "endurance"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "pace_run_5mi",
-    "name": "Pace Run 5mi",
-    "sport": "running",
-    "category": "tempo",
-    "description": "5-mile run at target race pace.",
-    "metrics": {
-      "distanceMiles": 5,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "pace",
-      "tempo",
-      "race_pace"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "pace_run_6mi",
-    "name": "Pace Run 6mi",
-    "sport": "running",
-    "category": "tempo",
-    "description": "6-mile run at target race pace.",
-    "metrics": {
-      "distanceMiles": 6,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "pace",
-      "tempo",
-      "race_pace"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "easy_run_11mi",
-    "name": "Long Run 11mi",
-    "sport": "running",
-    "category": "long_run",
-    "description": "11-mile long run at a steady pace. Focus on endurance and fueling.",
-    "metrics": {
-      "distanceMiles": 11,
-      "durationMins": null
-    },
-    "difficulty": "advanced",
-    "tags": [
-      "long_run",
-      "endurance",
-      "fueling"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "pace_run_7mi",
-    "name": "Pace Run 7mi",
-    "sport": "running",
-    "category": "tempo",
-    "description": "7-mile run at target race pace.",
-    "metrics": {
-      "distanceMiles": 7,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "pace",
-      "tempo",
-      "race_pace"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "pace_run_8mi",
-    "name": "Pace Run 8mi",
-    "sport": "running",
-    "category": "tempo",
-    "description": "8-mile run at target race pace.",
-    "metrics": {
-      "distanceMiles": 8,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "pace",
-      "tempo",
-      "race_pace"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "easy_run_17mi",
-    "name": "Long Run 17mi",
-    "sport": "running",
-    "category": "long_run",
-    "description": "17-mile long run at a steady pace. Focus on endurance and fueling.",
-    "metrics": {
-      "distanceMiles": 17,
-      "durationMins": null
-    },
-    "difficulty": "advanced",
-    "tags": [
-      "long_run",
-      "endurance",
-      "fueling"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "easy_run_13mi",
-    "name": "Long Run 13mi",
-    "sport": "running",
-    "category": "long_run",
-    "description": "13-mile long run at a steady pace. Focus on endurance and fueling.",
-    "metrics": {
-      "distanceMiles": 13,
-      "durationMins": null
-    },
-    "difficulty": "advanced",
-    "tags": [
-      "long_run",
-      "endurance",
-      "fueling"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "easy_run_19mi",
-    "name": "Long Run 19mi",
-    "sport": "running",
-    "category": "long_run",
-    "description": "19-mile long run at a steady pace. Focus on endurance and fueling.",
-    "metrics": {
-      "distanceMiles": 19,
-      "durationMins": null
-    },
-    "difficulty": "advanced",
-    "tags": [
-      "long_run",
-      "endurance",
-      "fueling"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "pace_run_4mi",
-    "name": "Pace Run 4mi",
-    "sport": "running",
-    "category": "tempo",
-    "description": "4-mile run at target race pace.",
-    "metrics": {
-      "distanceMiles": 4,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "pace",
-      "tempo",
-      "race_pace"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "pace_run_9mi",
-    "name": "Pace Run 9mi",
-    "sport": "running",
-    "category": "tempo",
-    "description": "9-mile run at target race pace.",
-    "metrics": {
-      "distanceMiles": 9,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "pace",
-      "tempo",
-      "race_pace"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "pace_run_10mi",
-    "name": "Pace Run 10mi",
-    "sport": "running",
-    "category": "tempo",
-    "description": "10-mile run at target race pace.",
-    "metrics": {
-      "distanceMiles": 10,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "pace",
-      "tempo",
-      "race_pace"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "intervals_3xhill",
-    "name": "3 x hill",
-    "sport": "running",
-    "category": "strength",
-    "description": "3 hill repeats. Run up a 200-400m (quarter-mile) hill hard, similar to 400m track intensity. Jog or walk back down for recovery between repeats. Hill training strengthens quadriceps and builds speed.",
-    "metrics": {
-      "distanceMiles": 0.375,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "intervals",
-      "hill",
-      "strength",
-      "quad_strength"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "tempo_30min",
-    "name": "Tempo Run 30min",
-    "sport": "running",
-    "category": "tempo",
-    "description": "30-minute tempo run at comfortably hard pace (approx. 80-85% effort).",
-    "metrics": {
-      "distanceMiles": null,
-      "durationMins": 30
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "tempo",
-      "threshold",
-      "speed"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "intervals_4x800",
-    "name": "4 x 800m",
-    "sport": "running",
-    "category": "speed",
-    "description": "4 repetitions of 800m intervals.",
-    "metrics": {
-      "distanceMiles": 2,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "intervals",
-      "speed",
-      "track"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "intervals_4xhill",
-    "name": "4 x hill",
-    "sport": "running",
-    "category": "strength",
-    "description": "4 hill repeats. Run up a 200-400m (quarter-mile) hill hard, similar to 400m track intensity. Jog or walk back down for recovery between repeats. Hill training strengthens quadriceps and builds speed.",
-    "metrics": {
-      "distanceMiles": 0.5,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "intervals",
-      "hill",
-      "strength",
-      "quad_strength"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "tempo_35min",
-    "name": "Tempo Run 35min",
-    "sport": "running",
-    "category": "tempo",
-    "description": "35-minute tempo run at comfortably hard pace (approx. 80-85% effort).",
-    "metrics": {
-      "distanceMiles": null,
-      "durationMins": 35
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "tempo",
-      "threshold",
-      "speed"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "intervals_5x800",
-    "name": "5 x 800m",
-    "sport": "running",
-    "category": "speed",
-    "description": "5 repetitions of 800m intervals.",
-    "metrics": {
-      "distanceMiles": 2.5,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "intervals",
-      "speed",
-      "track"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "intervals_5xhill",
-    "name": "5 x hill",
-    "sport": "running",
-    "category": "strength",
-    "description": "5 hill repeats. Run up a 200-400m (quarter-mile) hill hard, similar to 400m track intensity. Jog or walk back down for recovery between repeats. Hill training strengthens quadriceps and builds speed.",
-    "metrics": {
-      "distanceMiles": 0.625,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "intervals",
-      "hill",
-      "strength",
-      "quad_strength"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "tempo_40min",
-    "name": "Tempo Run 40min",
-    "sport": "running",
-    "category": "tempo",
-    "description": "40-minute tempo run at comfortably hard pace (approx. 80-85% effort).",
-    "metrics": {
-      "distanceMiles": null,
-      "durationMins": 40
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "tempo",
-      "threshold",
-      "speed"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "intervals_6x800",
-    "name": "6 x 800m",
-    "sport": "running",
-    "category": "speed",
-    "description": "6 repetitions of 800m intervals.",
-    "metrics": {
-      "distanceMiles": 3,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "intervals",
-      "speed",
-      "track"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "intervals_6xhill",
-    "name": "6 x hill",
-    "sport": "running",
-    "category": "strength",
-    "description": "6 hill repeats. Run up a 200-400m (quarter-mile) hill hard, similar to 400m track intensity. Jog or walk back down for recovery between repeats. Hill training strengthens quadriceps and builds speed.",
-    "metrics": {
-      "distanceMiles": 0.75,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "intervals",
-      "hill",
-      "strength",
-      "quad_strength"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "tempo_45min",
-    "name": "Tempo Run 45min",
-    "sport": "running",
-    "category": "tempo",
-    "description": "45-minute tempo run at comfortably hard pace (approx. 80-85% effort).",
-    "metrics": {
-      "distanceMiles": null,
-      "durationMins": 45
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "tempo",
-      "threshold",
-      "speed"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "intervals_7x800",
-    "name": "7 x 800m",
-    "sport": "running",
-    "category": "speed",
-    "description": "7 repetitions of 800m intervals.",
-    "metrics": {
-      "distanceMiles": 3.5,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "intervals",
-      "speed",
-      "track"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "intervals_7xhill",
-    "name": "7 x hill",
-    "sport": "running",
-    "category": "strength",
-    "description": "7 hill repeats. Run up a 200-400m (quarter-mile) hill hard, similar to 400m track intensity. Jog or walk back down for recovery between repeats. Hill training strengthens quadriceps and builds speed.",
-    "metrics": {
-      "distanceMiles": 0.875,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "intervals",
-      "hill",
-      "strength",
-      "quad_strength"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "intervals_8x800",
-    "name": "8 x 800m",
-    "sport": "running",
-    "category": "speed",
-    "description": "8 repetitions of 800m intervals.",
-    "metrics": {
-      "distanceMiles": 4,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "intervals",
-      "speed",
-      "track"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "intervals_4x400",
-    "name": "4 x 400m",
-    "sport": "running",
-    "category": "speed",
-    "description": "4 repetitions of 400m intervals.",
-    "metrics": {
-      "distanceMiles": 1,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "intervals",
-      "speed",
-      "track"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "pace_run_3mi",
-    "name": "Pace Run 3mi",
-    "sport": "running",
-    "category": "tempo",
-    "description": "3-mile run at target race pace.",
-    "metrics": {
-      "distanceMiles": 3,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "pace",
-      "tempo",
-      "race_pace"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "tempo_50min",
-    "name": "Tempo Run 50min",
-    "sport": "running",
-    "category": "tempo",
-    "description": "50-minute tempo run at comfortably hard pace (approx. 80-85% effort).",
-    "metrics": {
-      "distanceMiles": null,
-      "durationMins": 50
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "tempo",
-      "threshold",
-      "speed"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "easy_run_3_5mi",
-    "name": "Easy Run 3.5mi",
-    "sport": "running",
-    "category": "endurance",
-    "description": "Run 3.5 miles at a conversational pace to build aerobic capacity.",
-    "metrics": {
-      "distanceMiles": 3.5,
-      "durationMins": null
-    },
-    "difficulty": "beginner",
-    "tags": [
-      "aerobic",
-      "base",
-      "easy"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "cross_train_40min",
-    "name": "Cross Training 40min",
-    "sport": "running",
-    "category": "cross_training",
-    "description": "40 minutes of cross-training (swimming, cycling, or other low-impact activity).",
-    "metrics": {
-      "distanceMiles": null,
-      "durationMins": 40
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "cross_training",
-      "aerobic",
-      "recovery"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "race_5k",
-    "name": "5K Race",
-    "sport": "running",
-    "category": "race",
-    "description": "Race day - 5K",
-    "metrics": {
-      "distanceMiles": 3.1,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "race",
-      "competition"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "easy_run_4_5mi",
-    "name": "Easy Run 4.5mi",
-    "sport": "running",
-    "category": "endurance",
-    "description": "Run 4.5 miles at a conversational pace to build aerobic capacity.",
-    "metrics": {
-      "distanceMiles": 4.5,
-      "durationMins": null
-    },
-    "difficulty": "beginner",
-    "tags": [
-      "aerobic",
-      "base",
-      "easy"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "cross_train_50min",
-    "name": "Cross Training 50min",
-    "sport": "running",
-    "category": "cross_training",
-    "description": "50 minutes of cross-training (swimming, cycling, or other low-impact activity).",
-    "metrics": {
-      "distanceMiles": null,
-      "durationMins": 50
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "cross_training",
-      "aerobic",
-      "recovery"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "race_10k",
-    "name": "10K Race",
-    "sport": "running",
-    "category": "race",
-    "description": "Race day - 10K",
-    "metrics": {
-      "distanceMiles": 6.2,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "race",
-      "competition"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "cross_train_60min",
-    "name": "Cross Training 60min",
-    "sport": "running",
-    "category": "cross_training",
-    "description": "60 minutes of cross-training (swimming, cycling, or other low-impact activity).",
-    "metrics": {
-      "distanceMiles": null,
-      "durationMins": 60
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "cross_training",
-      "aerobic",
-      "recovery"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "pace_run_2mi",
-    "name": "Pace Run 2mi",
-    "sport": "running",
-    "category": "tempo",
-    "description": "2-mile run at target race pace.",
-    "metrics": {
-      "distanceMiles": 2,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "pace",
-      "tempo",
-      "race_pace"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "intervals_5x400",
-    "name": "5 x 400m",
-    "sport": "running",
-    "category": "speed",
-    "description": "5 repetitions of 400m intervals.",
-    "metrics": {
-      "distanceMiles": 1.25,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "intervals",
-      "speed",
-      "track"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "intervals_6x400",
-    "name": "6 x 400m",
-    "sport": "running",
-    "category": "speed",
-    "description": "6 repetitions of 400m intervals.",
-    "metrics": {
-      "distanceMiles": 1.5,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "intervals",
-      "speed",
-      "track"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "intervals_7x400",
-    "name": "7 x 400m",
-    "sport": "running",
-    "category": "speed",
-    "description": "7 repetitions of 400m intervals.",
-    "metrics": {
-      "distanceMiles": 1.75,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "intervals",
-      "speed",
-      "track"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "intervals_8x400",
-    "name": "8 x 400m",
-    "sport": "running",
-    "category": "speed",
-    "description": "8 repetitions of 400m intervals.",
-    "metrics": {
-      "distanceMiles": 2,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "intervals",
-      "speed",
-      "track"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "intervals_9x400",
-    "name": "9 x 400m",
-    "sport": "running",
-    "category": "speed",
-    "description": "9 repetitions of 400m intervals.",
-    "metrics": {
-      "distanceMiles": 2.25,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "intervals",
-      "speed",
-      "track"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "intervals_10x400",
-    "name": "10 x 400m",
-    "sport": "running",
-    "category": "speed",
-    "description": "10 repetitions of 400m intervals.",
-    "metrics": {
-      "distanceMiles": 2.5,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "intervals",
-      "speed",
-      "track"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "run_90min_3_1",
-    "name": "90min Run",
-    "sport": "running",
-    "category": "endurance",
-    "description": "90-minute run at steady pace.",
-    "metrics": {
-      "distanceMiles": null,
-      "durationMins": 90
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "endurance",
-      "time_based"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "run_90min",
-    "name": "90min Run",
-    "sport": "running",
-    "category": "endurance",
-    "description": "90-minute run at steady pace.",
-    "metrics": {
-      "distanceMiles": null,
-      "durationMins": 90
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "endurance",
-      "time_based"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "intervals_8xhill",
-    "name": "8 x hill",
-    "sport": "running",
-    "category": "strength",
-    "description": "8 hill repeats. Run up a 200-400m (quarter-mile) hill hard, similar to 400m track intensity. Jog or walk back down for recovery between repeats. Hill training strengthens quadriceps and builds speed.",
-    "metrics": {
-      "distanceMiles": 1,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "intervals",
-      "hill",
-      "strength",
-      "quad_strength"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "run_1h45min",
-    "name": "1:45 Run",
-    "sport": "running",
-    "category": "long_run",
-    "description": "1 hour 45 minute long run at steady pace.",
-    "metrics": {
-      "distanceMiles": null,
-      "durationMins": 105
-    },
-    "difficulty": "advanced",
-    "tags": [
-      "long_run",
-      "endurance",
-      "time_based"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "race",
-    "name": "RACE Race",
-    "sport": "running",
-    "category": "race",
-    "description": "Race day - RACE",
-    "metrics": {
-      "distanceMiles": null,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "race",
-      "competition"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "tempo_55min",
-    "name": "Tempo Run 55min",
-    "sport": "running",
-    "category": "tempo",
-    "description": "55-minute tempo run at comfortably hard pace (approx. 80-85% effort).",
-    "metrics": {
-      "distanceMiles": null,
-      "durationMins": 55
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "tempo",
-      "threshold",
-      "speed"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "run_2h00min",
-    "name": "2:00 Run",
-    "sport": "running",
-    "category": "long_run",
-    "description": "2 hour 0 minute long run at steady pace.",
-    "metrics": {
-      "distanceMiles": null,
-      "durationMins": 120
-    },
-    "difficulty": "advanced",
-    "tags": [
-      "long_run",
-      "endurance",
-      "time_based"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "tempo_60min",
-    "name": "Tempo Run 60min",
-    "sport": "running",
-    "category": "tempo",
-    "description": "60-minute tempo run at comfortably hard pace (approx. 80-85% effort).",
-    "metrics": {
-      "distanceMiles": null,
-      "durationMins": 60
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "tempo",
-      "threshold",
-      "speed"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "rest_or_run_walk",
-    "name": "Rest Or Run Walk",
-    "sport": "running",
-    "category": "general",
-    "description": "Rest Or Run Walk",
-    "metrics": {
-      "distanceMiles": null,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "general"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "easy_run_1_5mi",
-    "name": "Easy Run 1.5mi",
-    "sport": "running",
-    "category": "endurance",
-    "description": "Run 1.5 miles at a conversational pace to build aerobic capacity.",
-    "metrics": {
-      "distanceMiles": 1.5,
-      "durationMins": null
-    },
-    "difficulty": "beginner",
-    "tags": [
-      "aerobic",
-      "base",
-      "easy"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "30_min_walk",
-    "name": "30min Walk",
-    "sport": "running",
-    "category": "recovery",
-    "description": "Walk for 30 minutes at a comfortable pace.",
-    "metrics": {
-      "distanceMiles": null,
-      "durationMins": 30
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "walking",
-      "recovery",
-      "low_impact"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "easy_run_1_75mi",
-    "name": "Easy Run 1.75mi",
-    "sport": "running",
-    "category": "endurance",
-    "description": "Run 1.75 miles at a conversational pace to build aerobic capacity.",
-    "metrics": {
-      "distanceMiles": 1.75,
-      "durationMins": null
-    },
-    "difficulty": "beginner",
-    "tags": [
-      "aerobic",
-      "base",
-      "easy"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "35_min_walk",
-    "name": "35min Walk",
-    "sport": "running",
-    "category": "recovery",
-    "description": "Walk for 35 minutes at a comfortable pace.",
-    "metrics": {
-      "distanceMiles": null,
-      "durationMins": 35
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "walking",
-      "recovery",
-      "low_impact"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "40_min_walk",
-    "name": "40min Walk",
-    "sport": "running",
-    "category": "recovery",
-    "description": "Walk for 40 minutes at a comfortable pace.",
-    "metrics": {
-      "distanceMiles": null,
-      "durationMins": 40
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "walking",
-      "recovery",
-      "low_impact"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "easy_run_2_25mi",
-    "name": "Easy Run 2.25mi",
-    "sport": "running",
-    "category": "endurance",
-    "description": "Run 2.25 miles at a conversational pace to build aerobic capacity.",
-    "metrics": {
-      "distanceMiles": 2.25,
-      "durationMins": null
-    },
-    "difficulty": "beginner",
-    "tags": [
-      "aerobic",
-      "base",
-      "easy"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "45_min_walk",
-    "name": "45min Walk",
-    "sport": "running",
-    "category": "recovery",
-    "description": "Walk for 45 minutes at a comfortable pace.",
-    "metrics": {
-      "distanceMiles": null,
-      "durationMins": 45
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "walking",
-      "recovery",
-      "low_impact"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "easy_run_2_5mi",
-    "name": "Easy Run 2.5mi",
-    "sport": "running",
-    "category": "endurance",
-    "description": "Run 2.5 miles at a conversational pace to build aerobic capacity.",
-    "metrics": {
-      "distanceMiles": 2.5,
-      "durationMins": null
-    },
-    "difficulty": "beginner",
-    "tags": [
-      "aerobic",
-      "base",
-      "easy"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "50_min_walk",
-    "name": "50min Walk",
-    "sport": "running",
-    "category": "recovery",
-    "description": "Walk for 50 minutes at a comfortable pace.",
-    "metrics": {
-      "distanceMiles": null,
-      "durationMins": 50
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "walking",
-      "recovery",
-      "low_impact"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "easy_run_2_75mi",
-    "name": "Easy Run 2.75mi",
-    "sport": "running",
-    "category": "endurance",
-    "description": "Run 2.75 miles at a conversational pace to build aerobic capacity.",
-    "metrics": {
-      "distanceMiles": 2.75,
-      "durationMins": null
-    },
-    "difficulty": "beginner",
-    "tags": [
-      "aerobic",
-      "base",
-      "easy"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "55_min_walk",
-    "name": "55min Walk",
-    "sport": "running",
-    "category": "recovery",
-    "description": "Walk for 55 minutes at a comfortable pace.",
-    "metrics": {
-      "distanceMiles": null,
-      "durationMins": 55
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "walking",
-      "recovery",
-      "low_impact"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "60_min_walk",
-    "name": "60min Walk",
-    "sport": "running",
-    "category": "recovery",
-    "description": "Walk for 60 minutes at a comfortable pace.",
-    "metrics": {
-      "distanceMiles": null,
-      "durationMins": 60
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "walking",
-      "recovery",
-      "low_impact"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "5k_test",
-    "name": "5K Test",
-    "sport": "running",
-    "category": "assessment",
-    "description": "5K time trial to assess current fitness level and pace.",
-    "metrics": {
-      "distanceMiles": 3.1,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "test",
-      "assessment",
-      "5k"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "run_60min",
-    "name": "60min Run",
-    "sport": "running",
-    "category": "endurance",
-    "description": "60-minute run at steady pace.",
-    "metrics": {
-      "distanceMiles": null,
-      "durationMins": 60
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "endurance",
-      "time_based"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "intervals_8x200",
-    "name": "8 x 200m",
-    "sport": "running",
-    "category": "speed",
-    "description": "8 repetitions of 200m intervals.",
-    "metrics": {
-      "distanceMiles": 0.992,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "intervals",
-      "speed",
-      "track"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "run_65min",
-    "name": "65min Run",
-    "sport": "running",
-    "category": "endurance",
-    "description": "65-minute run at steady pace.",
-    "metrics": {
-      "distanceMiles": null,
-      "durationMins": 65
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "endurance",
-      "time_based"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "run_70min",
-    "name": "70min Run",
-    "sport": "running",
-    "category": "endurance",
-    "description": "70-minute run at steady pace.",
-    "metrics": {
-      "distanceMiles": null,
-      "durationMins": 70
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "endurance",
-      "time_based"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "intervals_9x200",
-    "name": "9 x 200m",
-    "sport": "running",
-    "category": "speed",
-    "description": "9 repetitions of 200m intervals.",
-    "metrics": {
-      "distanceMiles": 1.116,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "intervals",
-      "speed",
-      "track"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "run_75min",
-    "name": "75min Run",
-    "sport": "running",
-    "category": "endurance",
-    "description": "75-minute run at steady pace.",
-    "metrics": {
-      "distanceMiles": null,
-      "durationMins": 75
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "endurance",
-      "time_based"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "intervals_10x200",
-    "name": "10 x 200m",
-    "sport": "running",
-    "category": "speed",
-    "description": "10 repetitions of 200m intervals.",
-    "metrics": {
-      "distanceMiles": 1.24,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "intervals",
-      "speed",
-      "track"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "run_85min",
-    "name": "85min Run",
-    "sport": "running",
-    "category": "endurance",
-    "description": "85-minute run at steady pace.",
-    "metrics": {
-      "distanceMiles": null,
-      "durationMins": 85
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "endurance",
-      "time_based"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "intervals_6x200",
-    "name": "6 x 200m",
-    "sport": "running",
-    "category": "speed",
-    "description": "6 repetitions of 200m intervals.",
-    "metrics": {
-      "distanceMiles": 0.744,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "intervals",
-      "speed",
-      "track"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "stretch___strength",
-    "name": "Stretch Strength",
-    "sport": "running",
-    "category": "general",
-    "description": "Stretch Strength",
-    "metrics": {
-      "distanceMiles": null,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "general"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "cross_train_35min",
-    "name": "Cross Training 35min",
-    "sport": "running",
-    "category": "cross_training",
-    "description": "35 minutes of cross-training (swimming, cycling, or other low-impact activity).",
-    "metrics": {
-      "distanceMiles": null,
-      "durationMins": 35
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "cross_training",
-      "aerobic",
-      "recovery"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "cross_train_45min",
-    "name": "Cross Training 45min",
-    "sport": "running",
-    "category": "cross_training",
-    "description": "45 minutes of cross-training (swimming, cycling, or other low-impact activity).",
-    "metrics": {
-      "distanceMiles": null,
-      "durationMins": 45
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "cross_training",
-      "aerobic",
-      "recovery"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "easy_run_5_0mi",
-    "name": "Easy Run 5mi",
-    "sport": "running",
-    "category": "endurance",
-    "description": "Run 5 miles at a conversational pace to build aerobic capacity.",
-    "metrics": {
-      "distanceMiles": 5,
-      "durationMins": null
-    },
-    "difficulty": "beginner",
-    "tags": [
-      "aerobic",
-      "base",
-      "easy"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "easy_run_5_5mi",
-    "name": "Easy Run 5.5mi",
-    "sport": "running",
-    "category": "endurance",
-    "description": "Run 5.5 miles at a conversational pace to build aerobic capacity.",
-    "metrics": {
-      "distanceMiles": 5.5,
-      "durationMins": null
-    },
-    "difficulty": "beginner",
-    "tags": [
-      "aerobic",
-      "base",
-      "easy"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "pace_run_2of4mi",
-    "name": "Pace Run 4mi",
-    "sport": "running",
-    "category": "tempo",
-    "description": "4-mile run at target race pace.",
-    "metrics": {
-      "distanceMiles": 4,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "pace",
-      "tempo",
-      "race_pace"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "pace_run_2of5mi",
-    "name": "Pace Run 5mi",
-    "sport": "running",
-    "category": "tempo",
-    "description": "5-mile run at target race pace.",
-    "metrics": {
-      "distanceMiles": 5,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "pace",
-      "tempo",
-      "race_pace"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "pace_run_3of5mi",
-    "name": "Pace Run 5mi",
-    "sport": "running",
-    "category": "tempo",
-    "description": "5-mile run at target race pace.",
-    "metrics": {
-      "distanceMiles": 5,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "pace",
-      "tempo",
-      "race_pace"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "pace_run_3of6mi",
-    "name": "Pace Run 6mi",
-    "sport": "running",
-    "category": "tempo",
-    "description": "6-mile run at target race pace.",
-    "metrics": {
-      "distanceMiles": 6,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "pace",
-      "tempo",
-      "race_pace"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "10k_run",
-    "name": "10K Run",
-    "sport": "running",
-    "category": "endurance",
-    "description": "10K run at steady pace.",
-    "metrics": {
-      "distanceMiles": 6.2,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "10k",
-      "endurance"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "intervals_11x400",
-    "name": "11 x 400m",
-    "sport": "running",
-    "category": "speed",
-    "description": "11 repetitions of 400m intervals.",
-    "metrics": {
-      "distanceMiles": 2.75,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "intervals",
-      "speed",
-      "track"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "intervals_12x400",
-    "name": "12 x 400m",
-    "sport": "running",
-    "category": "speed",
-    "description": "12 repetitions of 400m intervals.",
-    "metrics": {
-      "distanceMiles": 3,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "intervals",
-      "speed",
-      "track"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "intervals_3xmile",
-    "name": "3 x mile",
-    "sport": "running",
-    "category": "speed",
-    "description": "3 repetitions of mile intervals.",
-    "metrics": {
-      "distanceMiles": 3,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "intervals",
-      "speed",
-      "track"
-    ],
-    "structure": []
-  },
-  {
-    "_id": "intervals_3x800",
-    "name": "3 x 800m",
-    "sport": "running",
-    "category": "speed",
-    "description": "3 repetitions of 800m intervals.",
-    "metrics": {
-      "distanceMiles": 1.5,
-      "durationMins": null
-    },
-    "difficulty": "intermediate",
-    "tags": [
-      "intervals",
-      "speed",
-      "track"
-    ],
-    "structure": []
-  },
-  {
     "_id": "strength_upper_body_push_beginner",
     "name": "Upper Body Push - Beginner",
     "sport": "strength",
@@ -3797,7 +1900,12 @@
       "durationMins": 60
     },
     "difficulty": "intermediate",
-    "tags": ["strength", "olympic_lifting", "power", "intermediate"],
+    "tags": [
+      "strength",
+      "olympic_lifting",
+      "power",
+      "intermediate"
+    ],
     "structure": [
       {
         "exerciseId": "exrx_4ed7f8afce_strength",
@@ -3837,7 +1945,13 @@
       "durationMins": 70
     },
     "difficulty": "beginner",
-    "tags": ["hybrid", "running", "core", "endurance", "beginner"],
+    "tags": [
+      "hybrid",
+      "running",
+      "core",
+      "endurance",
+      "beginner"
+    ],
     "structure": [
       {
         "exerciseId": "exrx_0101a29f34_strength",
@@ -3876,7 +1990,14 @@
       "durationMins": 90
     },
     "difficulty": "advanced",
-    "tags": ["strength", "powerlifting", "squat", "bench", "deadlift", "advanced"],
+    "tags": [
+      "strength",
+      "powerlifting",
+      "squat",
+      "bench",
+      "deadlift",
+      "advanced"
+    ],
     "structure": [
       {
         "exerciseId": "exrx_e2d1afbae5_strength",
@@ -3912,7 +2033,13 @@
       "durationMins": 75
     },
     "difficulty": "intermediate",
-    "tags": ["hybrid", "running", "fartlek", "strength", "intermediate"],
+    "tags": [
+      "hybrid",
+      "running",
+      "fartlek",
+      "strength",
+      "intermediate"
+    ],
     "structure": [
       {
         "exerciseId": "exrx_0101a29f34_strength",
@@ -3950,7 +2077,13 @@
       "durationMins": 80
     },
     "difficulty": "intermediate",
-    "tags": ["hybrid", "soccer", "possession", "strength", "intermediate"],
+    "tags": [
+      "hybrid",
+      "soccer",
+      "possession",
+      "strength",
+      "intermediate"
+    ],
     "structure": [
       {
         "exerciseId": "exrx_9b2924bdf3_strength",
@@ -3987,7 +2120,13 @@
       "durationMins": 45
     },
     "difficulty": "beginner",
-    "tags": ["strength", "functional", "compound", "bodyweight", "beginner"],
+    "tags": [
+      "strength",
+      "functional",
+      "compound",
+      "bodyweight",
+      "beginner"
+    ],
     "structure": [
       {
         "exerciseId": "exrx_f63ec61b6f_strength",
@@ -4030,7 +2169,14 @@
       "durationMins": 60
     },
     "difficulty": "advanced",
-    "tags": ["hybrid", "running", "sprints", "hills", "legs", "advanced"],
+    "tags": [
+      "hybrid",
+      "running",
+      "sprints",
+      "hills",
+      "legs",
+      "advanced"
+    ],
     "structure": [
       {
         "exerciseId": "exrx_0101a29f34_strength",
@@ -4070,7 +2216,14 @@
       "durationMins": 85
     },
     "difficulty": "advanced",
-    "tags": ["hybrid", "soccer", "finishing", "shooting", "power", "advanced"],
+    "tags": [
+      "hybrid",
+      "soccer",
+      "finishing",
+      "shooting",
+      "power",
+      "advanced"
+    ],
     "structure": [
       {
         "exerciseId": "exrx_4ed7f8afce_strength",
@@ -4109,7 +2262,14 @@
       "durationMins": 50
     },
     "difficulty": "intermediate",
-    "tags": ["strength", "bodybuilding", "arms", "biceps", "triceps", "intermediate"],
+    "tags": [
+      "strength",
+      "bodybuilding",
+      "arms",
+      "biceps",
+      "triceps",
+      "intermediate"
+    ],
     "structure": [
       {
         "exerciseId": "exrx_8f22ba4e41_strength",
@@ -4152,7 +2312,13 @@
       "durationMins": 45
     },
     "difficulty": "beginner",
-    "tags": ["hybrid", "running", "recovery", "mobility", "beginner"],
+    "tags": [
+      "hybrid",
+      "running",
+      "recovery",
+      "mobility",
+      "beginner"
+    ],
     "structure": [
       {
         "exerciseId": "exrx_0101a29f34_strength",
@@ -4181,5 +2347,1902 @@
         "notes": "Core activation"
       }
     ]
+  },
+  {
+    "_id": "rest_day",
+    "name": "Rest Day",
+    "sport": "running",
+    "category": "general",
+    "description": "Rest Day",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "general"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "easy_run_3mi",
+    "name": "Easy Run 3mi",
+    "sport": "running",
+    "category": "endurance",
+    "description": "Run 3 miles at a conversational pace to build aerobic capacity.",
+    "metrics": {
+      "distanceMiles": 3,
+      "durationMins": null
+    },
+    "difficulty": "beginner",
+    "tags": [
+      "aerobic",
+      "base",
+      "easy"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "easy_run_6mi",
+    "name": "Easy Run 6mi",
+    "sport": "running",
+    "category": "endurance",
+    "description": "Run 6 miles at a conversational pace to build aerobic capacity.",
+    "metrics": {
+      "distanceMiles": 6,
+      "durationMins": null
+    },
+    "difficulty": "beginner",
+    "tags": [
+      "aerobic",
+      "base",
+      "easy"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "cross_train_30min",
+    "name": "Cross Training 30min",
+    "sport": "running",
+    "category": "cross_training",
+    "description": "30 minutes of cross-training (swimming, cycling, or other low-impact activity).",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 30
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "cross_training",
+      "aerobic",
+      "recovery"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "easy_run_7mi",
+    "name": "Easy Run 7mi",
+    "sport": "running",
+    "category": "endurance",
+    "description": "Run 7 miles at a conversational pace to build aerobic capacity.",
+    "metrics": {
+      "distanceMiles": 7,
+      "durationMins": null
+    },
+    "difficulty": "beginner",
+    "tags": [
+      "aerobic",
+      "base",
+      "easy"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "easy_run_4mi",
+    "name": "Easy Run 4mi",
+    "sport": "running",
+    "category": "endurance",
+    "description": "Run 4 miles at a conversational pace to build aerobic capacity.",
+    "metrics": {
+      "distanceMiles": 4,
+      "durationMins": null
+    },
+    "difficulty": "beginner",
+    "tags": [
+      "aerobic",
+      "base",
+      "easy"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "easy_run_5mi",
+    "name": "Easy Run 5mi",
+    "sport": "running",
+    "category": "endurance",
+    "description": "Run 5 miles at a conversational pace to build aerobic capacity.",
+    "metrics": {
+      "distanceMiles": 5,
+      "durationMins": null
+    },
+    "difficulty": "beginner",
+    "tags": [
+      "aerobic",
+      "base",
+      "easy"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "easy_run_9mi",
+    "name": "Long Run 9mi",
+    "sport": "running",
+    "category": "long_run",
+    "description": "9-mile long run at a steady pace. Focus on endurance and fueling.",
+    "metrics": {
+      "distanceMiles": 9,
+      "durationMins": null
+    },
+    "difficulty": "advanced",
+    "tags": [
+      "long_run",
+      "endurance",
+      "fueling"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "easy_run_10mi",
+    "name": "Long Run 10mi",
+    "sport": "running",
+    "category": "long_run",
+    "description": "10-mile long run at a steady pace. Focus on endurance and fueling.",
+    "metrics": {
+      "distanceMiles": 10,
+      "durationMins": null
+    },
+    "difficulty": "advanced",
+    "tags": [
+      "long_run",
+      "endurance",
+      "fueling"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "easy_run_12mi",
+    "name": "Long Run 12mi",
+    "sport": "running",
+    "category": "long_run",
+    "description": "12-mile long run at a steady pace. Focus on endurance and fueling.",
+    "metrics": {
+      "distanceMiles": 12,
+      "durationMins": null
+    },
+    "difficulty": "advanced",
+    "tags": [
+      "long_run",
+      "endurance",
+      "fueling"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "half_marathon",
+    "name": "Half Marathon",
+    "sport": "running",
+    "category": "race",
+    "description": "Half marathon distance run or race.",
+    "metrics": {
+      "distanceMiles": 13.1,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "half_marathon",
+      "race",
+      "endurance"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "easy_run_15mi",
+    "name": "Long Run 15mi",
+    "sport": "running",
+    "category": "long_run",
+    "description": "15-mile long run at a steady pace. Focus on endurance and fueling.",
+    "metrics": {
+      "distanceMiles": 15,
+      "durationMins": null
+    },
+    "difficulty": "advanced",
+    "tags": [
+      "long_run",
+      "endurance",
+      "fueling"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "easy_run_8mi",
+    "name": "Long Run 8mi",
+    "sport": "running",
+    "category": "long_run",
+    "description": "8-mile long run at a steady pace. Focus on endurance and fueling.",
+    "metrics": {
+      "distanceMiles": 8,
+      "durationMins": null
+    },
+    "difficulty": "advanced",
+    "tags": [
+      "long_run",
+      "endurance",
+      "fueling"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "easy_run_16mi",
+    "name": "Long Run 16mi",
+    "sport": "running",
+    "category": "long_run",
+    "description": "16-mile long run at a steady pace. Focus on endurance and fueling.",
+    "metrics": {
+      "distanceMiles": 16,
+      "durationMins": null
+    },
+    "difficulty": "advanced",
+    "tags": [
+      "long_run",
+      "endurance",
+      "fueling"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "easy_run_18mi",
+    "name": "Long Run 18mi",
+    "sport": "running",
+    "category": "long_run",
+    "description": "18-mile long run at a steady pace. Focus on endurance and fueling.",
+    "metrics": {
+      "distanceMiles": 18,
+      "durationMins": null
+    },
+    "difficulty": "advanced",
+    "tags": [
+      "long_run",
+      "endurance",
+      "fueling"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "easy_run_14mi",
+    "name": "Long Run 14mi",
+    "sport": "running",
+    "category": "long_run",
+    "description": "14-mile long run at a steady pace. Focus on endurance and fueling.",
+    "metrics": {
+      "distanceMiles": 14,
+      "durationMins": null
+    },
+    "difficulty": "advanced",
+    "tags": [
+      "long_run",
+      "endurance",
+      "fueling"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "easy_run_20mi",
+    "name": "Long Run 20mi",
+    "sport": "running",
+    "category": "long_run",
+    "description": "20-mile long run at a steady pace. Focus on endurance and fueling.",
+    "metrics": {
+      "distanceMiles": 20,
+      "durationMins": null
+    },
+    "difficulty": "advanced",
+    "tags": [
+      "long_run",
+      "endurance",
+      "fueling"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "easy_run_2mi",
+    "name": "Easy Run 2mi",
+    "sport": "running",
+    "category": "endurance",
+    "description": "Run 2 miles at a conversational pace to build aerobic capacity.",
+    "metrics": {
+      "distanceMiles": 2,
+      "durationMins": null
+    },
+    "difficulty": "beginner",
+    "tags": [
+      "aerobic",
+      "base",
+      "easy"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "marathon",
+    "name": "Marathon",
+    "sport": "running",
+    "category": "race",
+    "description": "Full marathon distance run or race.",
+    "metrics": {
+      "distanceMiles": 26.2,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "marathon",
+      "race",
+      "endurance"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "pace_run_5mi",
+    "name": "Pace Run 5mi",
+    "sport": "running",
+    "category": "tempo",
+    "description": "5-mile run at target race pace.",
+    "metrics": {
+      "distanceMiles": 5,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "pace",
+      "tempo",
+      "race_pace"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "pace_run_6mi",
+    "name": "Pace Run 6mi",
+    "sport": "running",
+    "category": "tempo",
+    "description": "6-mile run at target race pace.",
+    "metrics": {
+      "distanceMiles": 6,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "pace",
+      "tempo",
+      "race_pace"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "easy_run_11mi",
+    "name": "Long Run 11mi",
+    "sport": "running",
+    "category": "long_run",
+    "description": "11-mile long run at a steady pace. Focus on endurance and fueling.",
+    "metrics": {
+      "distanceMiles": 11,
+      "durationMins": null
+    },
+    "difficulty": "advanced",
+    "tags": [
+      "long_run",
+      "endurance",
+      "fueling"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "pace_run_7mi",
+    "name": "Pace Run 7mi",
+    "sport": "running",
+    "category": "tempo",
+    "description": "7-mile run at target race pace.",
+    "metrics": {
+      "distanceMiles": 7,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "pace",
+      "tempo",
+      "race_pace"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "pace_run_8mi",
+    "name": "Pace Run 8mi",
+    "sport": "running",
+    "category": "tempo",
+    "description": "8-mile run at target race pace.",
+    "metrics": {
+      "distanceMiles": 8,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "pace",
+      "tempo",
+      "race_pace"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "easy_run_17mi",
+    "name": "Long Run 17mi",
+    "sport": "running",
+    "category": "long_run",
+    "description": "17-mile long run at a steady pace. Focus on endurance and fueling.",
+    "metrics": {
+      "distanceMiles": 17,
+      "durationMins": null
+    },
+    "difficulty": "advanced",
+    "tags": [
+      "long_run",
+      "endurance",
+      "fueling"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "easy_run_13mi",
+    "name": "Long Run 13mi",
+    "sport": "running",
+    "category": "long_run",
+    "description": "13-mile long run at a steady pace. Focus on endurance and fueling.",
+    "metrics": {
+      "distanceMiles": 13,
+      "durationMins": null
+    },
+    "difficulty": "advanced",
+    "tags": [
+      "long_run",
+      "endurance",
+      "fueling"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "easy_run_19mi",
+    "name": "Long Run 19mi",
+    "sport": "running",
+    "category": "long_run",
+    "description": "19-mile long run at a steady pace. Focus on endurance and fueling.",
+    "metrics": {
+      "distanceMiles": 19,
+      "durationMins": null
+    },
+    "difficulty": "advanced",
+    "tags": [
+      "long_run",
+      "endurance",
+      "fueling"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "pace_run_4mi",
+    "name": "Pace Run 4mi",
+    "sport": "running",
+    "category": "tempo",
+    "description": "4-mile run at target race pace.",
+    "metrics": {
+      "distanceMiles": 4,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "pace",
+      "tempo",
+      "race_pace"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "pace_run_9mi",
+    "name": "Pace Run 9mi",
+    "sport": "running",
+    "category": "tempo",
+    "description": "9-mile run at target race pace.",
+    "metrics": {
+      "distanceMiles": 9,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "pace",
+      "tempo",
+      "race_pace"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "pace_run_10mi",
+    "name": "Pace Run 10mi",
+    "sport": "running",
+    "category": "tempo",
+    "description": "10-mile run at target race pace.",
+    "metrics": {
+      "distanceMiles": 10,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "pace",
+      "tempo",
+      "race_pace"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "intervals_3xhill",
+    "name": "3 x hill",
+    "sport": "running",
+    "category": "strength",
+    "description": "3 hill repeats. Run up a 200-400m (quarter-mile) hill hard, similar to 400m track intensity. Jog or walk back down for recovery between repeats. Hill training strengthens quadriceps and builds speed.",
+    "metrics": {
+      "distanceMiles": 0.375,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "intervals",
+      "hill",
+      "strength",
+      "quad_strength"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "tempo_30min",
+    "name": "Tempo Run 30min",
+    "sport": "running",
+    "category": "tempo",
+    "description": "30-minute tempo run at comfortably hard pace (approx. 80-85% effort).",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 30
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "tempo",
+      "threshold",
+      "speed"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "intervals_4x800",
+    "name": "4 x 800m",
+    "sport": "running",
+    "category": "speed",
+    "description": "4 repetitions of 800m intervals.",
+    "metrics": {
+      "distanceMiles": 2,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "intervals",
+      "speed",
+      "track"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "intervals_4xhill",
+    "name": "4 x hill",
+    "sport": "running",
+    "category": "strength",
+    "description": "4 hill repeats. Run up a 200-400m (quarter-mile) hill hard, similar to 400m track intensity. Jog or walk back down for recovery between repeats. Hill training strengthens quadriceps and builds speed.",
+    "metrics": {
+      "distanceMiles": 0.5,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "intervals",
+      "hill",
+      "strength",
+      "quad_strength"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "tempo_35min",
+    "name": "Tempo Run 35min",
+    "sport": "running",
+    "category": "tempo",
+    "description": "35-minute tempo run at comfortably hard pace (approx. 80-85% effort).",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 35
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "tempo",
+      "threshold",
+      "speed"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "intervals_5x800",
+    "name": "5 x 800m",
+    "sport": "running",
+    "category": "speed",
+    "description": "5 repetitions of 800m intervals.",
+    "metrics": {
+      "distanceMiles": 2.5,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "intervals",
+      "speed",
+      "track"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "intervals_5xhill",
+    "name": "5 x hill",
+    "sport": "running",
+    "category": "strength",
+    "description": "5 hill repeats. Run up a 200-400m (quarter-mile) hill hard, similar to 400m track intensity. Jog or walk back down for recovery between repeats. Hill training strengthens quadriceps and builds speed.",
+    "metrics": {
+      "distanceMiles": 0.625,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "intervals",
+      "hill",
+      "strength",
+      "quad_strength"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "tempo_40min",
+    "name": "Tempo Run 40min",
+    "sport": "running",
+    "category": "tempo",
+    "description": "40-minute tempo run at comfortably hard pace (approx. 80-85% effort).",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 40
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "tempo",
+      "threshold",
+      "speed"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "intervals_6x800",
+    "name": "6 x 800m",
+    "sport": "running",
+    "category": "speed",
+    "description": "6 repetitions of 800m intervals.",
+    "metrics": {
+      "distanceMiles": 3,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "intervals",
+      "speed",
+      "track"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "intervals_6xhill",
+    "name": "6 x hill",
+    "sport": "running",
+    "category": "strength",
+    "description": "6 hill repeats. Run up a 200-400m (quarter-mile) hill hard, similar to 400m track intensity. Jog or walk back down for recovery between repeats. Hill training strengthens quadriceps and builds speed.",
+    "metrics": {
+      "distanceMiles": 0.75,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "intervals",
+      "hill",
+      "strength",
+      "quad_strength"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "tempo_45min",
+    "name": "Tempo Run 45min",
+    "sport": "running",
+    "category": "tempo",
+    "description": "45-minute tempo run at comfortably hard pace (approx. 80-85% effort).",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 45
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "tempo",
+      "threshold",
+      "speed"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "intervals_7x800",
+    "name": "7 x 800m",
+    "sport": "running",
+    "category": "speed",
+    "description": "7 repetitions of 800m intervals.",
+    "metrics": {
+      "distanceMiles": 3.5,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "intervals",
+      "speed",
+      "track"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "intervals_7xhill",
+    "name": "7 x hill",
+    "sport": "running",
+    "category": "strength",
+    "description": "7 hill repeats. Run up a 200-400m (quarter-mile) hill hard, similar to 400m track intensity. Jog or walk back down for recovery between repeats. Hill training strengthens quadriceps and builds speed.",
+    "metrics": {
+      "distanceMiles": 0.875,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "intervals",
+      "hill",
+      "strength",
+      "quad_strength"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "intervals_8x800",
+    "name": "8 x 800m",
+    "sport": "running",
+    "category": "speed",
+    "description": "8 repetitions of 800m intervals.",
+    "metrics": {
+      "distanceMiles": 4,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "intervals",
+      "speed",
+      "track"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "intervals_4x400",
+    "name": "4 x 400m",
+    "sport": "running",
+    "category": "speed",
+    "description": "4 repetitions of 400m intervals.",
+    "metrics": {
+      "distanceMiles": 1,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "intervals",
+      "speed",
+      "track"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "pace_run_3mi",
+    "name": "Pace Run 3mi",
+    "sport": "running",
+    "category": "tempo",
+    "description": "3-mile run at target race pace.",
+    "metrics": {
+      "distanceMiles": 3,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "pace",
+      "tempo",
+      "race_pace"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "tempo_50min",
+    "name": "Tempo Run 50min",
+    "sport": "running",
+    "category": "tempo",
+    "description": "50-minute tempo run at comfortably hard pace (approx. 80-85% effort).",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 50
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "tempo",
+      "threshold",
+      "speed"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "easy_run_3_5mi",
+    "name": "Easy Run 3.5mi",
+    "sport": "running",
+    "category": "endurance",
+    "description": "Run 3.5 miles at a conversational pace to build aerobic capacity.",
+    "metrics": {
+      "distanceMiles": 3.5,
+      "durationMins": null
+    },
+    "difficulty": "beginner",
+    "tags": [
+      "aerobic",
+      "base",
+      "easy"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "cross_train_40min",
+    "name": "Cross Training 40min",
+    "sport": "running",
+    "category": "cross_training",
+    "description": "40 minutes of cross-training (swimming, cycling, or other low-impact activity).",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 40
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "cross_training",
+      "aerobic",
+      "recovery"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "race_5k",
+    "name": "5K Race",
+    "sport": "running",
+    "category": "race",
+    "description": "Race day - 5K",
+    "metrics": {
+      "distanceMiles": 3.1,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "race",
+      "competition"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "easy_run_4_5mi",
+    "name": "Easy Run 4.5mi",
+    "sport": "running",
+    "category": "endurance",
+    "description": "Run 4.5 miles at a conversational pace to build aerobic capacity.",
+    "metrics": {
+      "distanceMiles": 4.5,
+      "durationMins": null
+    },
+    "difficulty": "beginner",
+    "tags": [
+      "aerobic",
+      "base",
+      "easy"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "cross_train_50min",
+    "name": "Cross Training 50min",
+    "sport": "running",
+    "category": "cross_training",
+    "description": "50 minutes of cross-training (swimming, cycling, or other low-impact activity).",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 50
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "cross_training",
+      "aerobic",
+      "recovery"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "race_10k",
+    "name": "10K Race",
+    "sport": "running",
+    "category": "race",
+    "description": "Race day - 10K",
+    "metrics": {
+      "distanceMiles": 6.2,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "race",
+      "competition"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "cross_train_60min",
+    "name": "Cross Training 60min",
+    "sport": "running",
+    "category": "cross_training",
+    "description": "60 minutes of cross-training (swimming, cycling, or other low-impact activity).",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 60
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "cross_training",
+      "aerobic",
+      "recovery"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "pace_run_2mi",
+    "name": "Pace Run 2mi",
+    "sport": "running",
+    "category": "tempo",
+    "description": "2-mile run at target race pace.",
+    "metrics": {
+      "distanceMiles": 2,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "pace",
+      "tempo",
+      "race_pace"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "intervals_5x400",
+    "name": "5 x 400m",
+    "sport": "running",
+    "category": "speed",
+    "description": "5 repetitions of 400m intervals.",
+    "metrics": {
+      "distanceMiles": 1.25,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "intervals",
+      "speed",
+      "track"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "intervals_6x400",
+    "name": "6 x 400m",
+    "sport": "running",
+    "category": "speed",
+    "description": "6 repetitions of 400m intervals.",
+    "metrics": {
+      "distanceMiles": 1.5,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "intervals",
+      "speed",
+      "track"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "intervals_7x400",
+    "name": "7 x 400m",
+    "sport": "running",
+    "category": "speed",
+    "description": "7 repetitions of 400m intervals.",
+    "metrics": {
+      "distanceMiles": 1.75,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "intervals",
+      "speed",
+      "track"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "intervals_8x400",
+    "name": "8 x 400m",
+    "sport": "running",
+    "category": "speed",
+    "description": "8 repetitions of 400m intervals.",
+    "metrics": {
+      "distanceMiles": 2,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "intervals",
+      "speed",
+      "track"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "intervals_9x400",
+    "name": "9 x 400m",
+    "sport": "running",
+    "category": "speed",
+    "description": "9 repetitions of 400m intervals.",
+    "metrics": {
+      "distanceMiles": 2.25,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "intervals",
+      "speed",
+      "track"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "intervals_10x400",
+    "name": "10 x 400m",
+    "sport": "running",
+    "category": "speed",
+    "description": "10 repetitions of 400m intervals.",
+    "metrics": {
+      "distanceMiles": 2.5,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "intervals",
+      "speed",
+      "track"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "run_90min_3_1",
+    "name": "90min Run",
+    "sport": "running",
+    "category": "endurance",
+    "description": "90-minute run at steady pace.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 90
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "endurance",
+      "time_based"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "run_90min",
+    "name": "90min Run",
+    "sport": "running",
+    "category": "endurance",
+    "description": "90-minute run at steady pace.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 90
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "endurance",
+      "time_based"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "intervals_8xhill",
+    "name": "8 x hill",
+    "sport": "running",
+    "category": "strength",
+    "description": "8 hill repeats. Run up a 200-400m (quarter-mile) hill hard, similar to 400m track intensity. Jog or walk back down for recovery between repeats. Hill training strengthens quadriceps and builds speed.",
+    "metrics": {
+      "distanceMiles": 1,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "intervals",
+      "hill",
+      "strength",
+      "quad_strength"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "run_1h45min",
+    "name": "1:45 Run",
+    "sport": "running",
+    "category": "long_run",
+    "description": "1 hour 45 minute long run at steady pace.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 105
+    },
+    "difficulty": "advanced",
+    "tags": [
+      "long_run",
+      "endurance",
+      "time_based"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "race",
+    "name": "RACE Race",
+    "sport": "running",
+    "category": "race",
+    "description": "Race day - RACE",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "race",
+      "competition"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "tempo_55min",
+    "name": "Tempo Run 55min",
+    "sport": "running",
+    "category": "tempo",
+    "description": "55-minute tempo run at comfortably hard pace (approx. 80-85% effort).",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 55
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "tempo",
+      "threshold",
+      "speed"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "run_2h00min",
+    "name": "2:00 Run",
+    "sport": "running",
+    "category": "long_run",
+    "description": "2 hour 0 minute long run at steady pace.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 120
+    },
+    "difficulty": "advanced",
+    "tags": [
+      "long_run",
+      "endurance",
+      "time_based"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "tempo_60min",
+    "name": "Tempo Run 60min",
+    "sport": "running",
+    "category": "tempo",
+    "description": "60-minute tempo run at comfortably hard pace (approx. 80-85% effort).",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 60
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "tempo",
+      "threshold",
+      "speed"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "rest_or_run_walk",
+    "name": "Rest Or Run Walk",
+    "sport": "running",
+    "category": "general",
+    "description": "Rest Or Run Walk",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "general"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "easy_run_1_5mi",
+    "name": "Easy Run 1.5mi",
+    "sport": "running",
+    "category": "endurance",
+    "description": "Run 1.5 miles at a conversational pace to build aerobic capacity.",
+    "metrics": {
+      "distanceMiles": 1.5,
+      "durationMins": null
+    },
+    "difficulty": "beginner",
+    "tags": [
+      "aerobic",
+      "base",
+      "easy"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "30_min_walk",
+    "name": "30min Walk",
+    "sport": "running",
+    "category": "recovery",
+    "description": "Walk for 30 minutes at a comfortable pace.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 30
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "walking",
+      "recovery",
+      "low_impact"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "easy_run_1_75mi",
+    "name": "Easy Run 1.75mi",
+    "sport": "running",
+    "category": "endurance",
+    "description": "Run 1.75 miles at a conversational pace to build aerobic capacity.",
+    "metrics": {
+      "distanceMiles": 1.75,
+      "durationMins": null
+    },
+    "difficulty": "beginner",
+    "tags": [
+      "aerobic",
+      "base",
+      "easy"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "35_min_walk",
+    "name": "35min Walk",
+    "sport": "running",
+    "category": "recovery",
+    "description": "Walk for 35 minutes at a comfortable pace.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 35
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "walking",
+      "recovery",
+      "low_impact"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "40_min_walk",
+    "name": "40min Walk",
+    "sport": "running",
+    "category": "recovery",
+    "description": "Walk for 40 minutes at a comfortable pace.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 40
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "walking",
+      "recovery",
+      "low_impact"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "easy_run_2_25mi",
+    "name": "Easy Run 2.25mi",
+    "sport": "running",
+    "category": "endurance",
+    "description": "Run 2.25 miles at a conversational pace to build aerobic capacity.",
+    "metrics": {
+      "distanceMiles": 2.25,
+      "durationMins": null
+    },
+    "difficulty": "beginner",
+    "tags": [
+      "aerobic",
+      "base",
+      "easy"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "45_min_walk",
+    "name": "45min Walk",
+    "sport": "running",
+    "category": "recovery",
+    "description": "Walk for 45 minutes at a comfortable pace.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 45
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "walking",
+      "recovery",
+      "low_impact"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "easy_run_2_5mi",
+    "name": "Easy Run 2.5mi",
+    "sport": "running",
+    "category": "endurance",
+    "description": "Run 2.5 miles at a conversational pace to build aerobic capacity.",
+    "metrics": {
+      "distanceMiles": 2.5,
+      "durationMins": null
+    },
+    "difficulty": "beginner",
+    "tags": [
+      "aerobic",
+      "base",
+      "easy"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "50_min_walk",
+    "name": "50min Walk",
+    "sport": "running",
+    "category": "recovery",
+    "description": "Walk for 50 minutes at a comfortable pace.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 50
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "walking",
+      "recovery",
+      "low_impact"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "easy_run_2_75mi",
+    "name": "Easy Run 2.75mi",
+    "sport": "running",
+    "category": "endurance",
+    "description": "Run 2.75 miles at a conversational pace to build aerobic capacity.",
+    "metrics": {
+      "distanceMiles": 2.75,
+      "durationMins": null
+    },
+    "difficulty": "beginner",
+    "tags": [
+      "aerobic",
+      "base",
+      "easy"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "55_min_walk",
+    "name": "55min Walk",
+    "sport": "running",
+    "category": "recovery",
+    "description": "Walk for 55 minutes at a comfortable pace.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 55
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "walking",
+      "recovery",
+      "low_impact"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "60_min_walk",
+    "name": "60min Walk",
+    "sport": "running",
+    "category": "recovery",
+    "description": "Walk for 60 minutes at a comfortable pace.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 60
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "walking",
+      "recovery",
+      "low_impact"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "5k_test",
+    "name": "5K Test",
+    "sport": "running",
+    "category": "assessment",
+    "description": "5K time trial to assess current fitness level and pace.",
+    "metrics": {
+      "distanceMiles": 3.1,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "test",
+      "assessment",
+      "5k"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "run_60min",
+    "name": "60min Run",
+    "sport": "running",
+    "category": "endurance",
+    "description": "60-minute run at steady pace.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 60
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "endurance",
+      "time_based"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "intervals_8x200",
+    "name": "8 x 200m",
+    "sport": "running",
+    "category": "speed",
+    "description": "8 repetitions of 200m intervals.",
+    "metrics": {
+      "distanceMiles": 0.992,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "intervals",
+      "speed",
+      "track"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "run_65min",
+    "name": "65min Run",
+    "sport": "running",
+    "category": "endurance",
+    "description": "65-minute run at steady pace.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 65
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "endurance",
+      "time_based"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "run_70min",
+    "name": "70min Run",
+    "sport": "running",
+    "category": "endurance",
+    "description": "70-minute run at steady pace.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 70
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "endurance",
+      "time_based"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "intervals_9x200",
+    "name": "9 x 200m",
+    "sport": "running",
+    "category": "speed",
+    "description": "9 repetitions of 200m intervals.",
+    "metrics": {
+      "distanceMiles": 1.116,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "intervals",
+      "speed",
+      "track"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "run_75min",
+    "name": "75min Run",
+    "sport": "running",
+    "category": "endurance",
+    "description": "75-minute run at steady pace.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 75
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "endurance",
+      "time_based"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "intervals_10x200",
+    "name": "10 x 200m",
+    "sport": "running",
+    "category": "speed",
+    "description": "10 repetitions of 200m intervals.",
+    "metrics": {
+      "distanceMiles": 1.24,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "intervals",
+      "speed",
+      "track"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "run_85min",
+    "name": "85min Run",
+    "sport": "running",
+    "category": "endurance",
+    "description": "85-minute run at steady pace.",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 85
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "endurance",
+      "time_based"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "intervals_6x200",
+    "name": "6 x 200m",
+    "sport": "running",
+    "category": "speed",
+    "description": "6 repetitions of 200m intervals.",
+    "metrics": {
+      "distanceMiles": 0.744,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "intervals",
+      "speed",
+      "track"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "stretch___strength",
+    "name": "Stretch Strength",
+    "sport": "running",
+    "category": "general",
+    "description": "Stretch Strength",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "general"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "cross_train_35min",
+    "name": "Cross Training 35min",
+    "sport": "running",
+    "category": "cross_training",
+    "description": "35 minutes of cross-training (swimming, cycling, or other low-impact activity).",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 35
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "cross_training",
+      "aerobic",
+      "recovery"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "cross_train_45min",
+    "name": "Cross Training 45min",
+    "sport": "running",
+    "category": "cross_training",
+    "description": "45 minutes of cross-training (swimming, cycling, or other low-impact activity).",
+    "metrics": {
+      "distanceMiles": null,
+      "durationMins": 45
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "cross_training",
+      "aerobic",
+      "recovery"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "easy_run_5_0mi",
+    "name": "Easy Run 5mi",
+    "sport": "running",
+    "category": "endurance",
+    "description": "Run 5 miles at a conversational pace to build aerobic capacity.",
+    "metrics": {
+      "distanceMiles": 5,
+      "durationMins": null
+    },
+    "difficulty": "beginner",
+    "tags": [
+      "aerobic",
+      "base",
+      "easy"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "easy_run_5_5mi",
+    "name": "Easy Run 5.5mi",
+    "sport": "running",
+    "category": "endurance",
+    "description": "Run 5.5 miles at a conversational pace to build aerobic capacity.",
+    "metrics": {
+      "distanceMiles": 5.5,
+      "durationMins": null
+    },
+    "difficulty": "beginner",
+    "tags": [
+      "aerobic",
+      "base",
+      "easy"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "pace_run_2of4mi",
+    "name": "Pace Run 4mi",
+    "sport": "running",
+    "category": "tempo",
+    "description": "4-mile run at target race pace.",
+    "metrics": {
+      "distanceMiles": 4,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "pace",
+      "tempo",
+      "race_pace"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "pace_run_2of5mi",
+    "name": "Pace Run 5mi",
+    "sport": "running",
+    "category": "tempo",
+    "description": "5-mile run at target race pace.",
+    "metrics": {
+      "distanceMiles": 5,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "pace",
+      "tempo",
+      "race_pace"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "pace_run_3of5mi",
+    "name": "Pace Run 5mi",
+    "sport": "running",
+    "category": "tempo",
+    "description": "5-mile run at target race pace.",
+    "metrics": {
+      "distanceMiles": 5,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "pace",
+      "tempo",
+      "race_pace"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "pace_run_3of6mi",
+    "name": "Pace Run 6mi",
+    "sport": "running",
+    "category": "tempo",
+    "description": "6-mile run at target race pace.",
+    "metrics": {
+      "distanceMiles": 6,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "pace",
+      "tempo",
+      "race_pace"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "10k_run",
+    "name": "10K Run",
+    "sport": "running",
+    "category": "endurance",
+    "description": "10K run at steady pace.",
+    "metrics": {
+      "distanceMiles": 6.2,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "10k",
+      "endurance"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "intervals_11x400",
+    "name": "11 x 400m",
+    "sport": "running",
+    "category": "speed",
+    "description": "11 repetitions of 400m intervals.",
+    "metrics": {
+      "distanceMiles": 2.75,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "intervals",
+      "speed",
+      "track"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "intervals_12x400",
+    "name": "12 x 400m",
+    "sport": "running",
+    "category": "speed",
+    "description": "12 repetitions of 400m intervals.",
+    "metrics": {
+      "distanceMiles": 3,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "intervals",
+      "speed",
+      "track"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "intervals_3xmile",
+    "name": "3 x mile",
+    "sport": "running",
+    "category": "speed",
+    "description": "3 repetitions of mile intervals.",
+    "metrics": {
+      "distanceMiles": 3,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "intervals",
+      "speed",
+      "track"
+    ],
+    "structure": []
+  },
+  {
+    "_id": "intervals_3x800",
+    "name": "3 x 800m",
+    "sport": "running",
+    "category": "speed",
+    "description": "3 repetitions of 800m intervals.",
+    "metrics": {
+      "distanceMiles": 1.5,
+      "durationMins": null
+    },
+    "difficulty": "intermediate",
+    "tags": [
+      "intervals",
+      "speed",
+      "track"
+    ],
+    "structure": []
   }
 ]

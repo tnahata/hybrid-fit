@@ -593,7 +593,7 @@ async function scrapeHalHigdonPlanLinks() {
                 fullUrl = href.startsWith("/") ? BASE + href : `${BASE}/${href}`;
             }
             // Determine level
-            let level = "novice";
+            let level = "beginner";
             if (text.toLowerCase().includes("intermediate") || href.includes("intermediate")) {
                 level = "intermediate";
             }
@@ -618,7 +618,7 @@ async function scrapeHalHigdonPlanLinks() {
             // Avoid duplicates
             if (!plans.find(p => p.url === fullUrl)) {
                 plans.push({
-                    name: text,
+                    name: raceType + " " + text,
                     url: fullUrl,
                     level,
                     raceType
@@ -641,7 +641,7 @@ async function scrapeHalHigdonPlan(planUrl, planName, level, raceType) {
         // Generate plan ID - include race type to ensure uniqueness
         const raceTypeSlug = raceType.toLowerCase().replace(/[^a-z0-9]/g, "_");
         const nameSlug = name.toLowerCase().replace(/[^a-z0-9]/g, "_");
-        const planId = `${raceTypeSlug}_${nameSlug}`;
+        const planId = nameSlug;
         // Extract weekly schedule table
         const weeks = [];
         // Find the training schedule table
