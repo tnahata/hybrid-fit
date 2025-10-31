@@ -9,9 +9,8 @@ import { Button } from "@/components/ui/button";
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
 import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationPrevious, PaginationNext, PaginationEllipsis } from "@/components/ui/pagination";
 import { Badge } from "@/components/ui/badge";
-import { Search, ArrowUpDown, Calendar, Target, TrendingUp, Route } from "lucide-react";
+import { Search, ArrowUpDown, Calendar, Target, TrendingUp } from "lucide-react";
 import { TrainingPlanDrawer } from "@/components/drawer/TrainingPlanDrawer";
-import { TrainingPlanWithWorkouts, TrainingPlanDetailResponse } from "../../../types/training-plan";
 import { TrainingPlanDoc } from "@/models/TrainingPlans";
 import { toast } from 'sonner';
 import LoadingSpinner from "@/components/ui/LoadingSpinner";
@@ -436,11 +435,13 @@ export default function TrainingPlansPage() {
 				</Pagination>
 			)}
 
-			<TrainingPlanDrawer
-				plan={selectedPlan}
-				open={isDrawerOpen}
-				onOpenChange={setIsDrawerOpen}
-			/>
+			{selectedPlan &&
+				<TrainingPlanDrawer
+					plan={selectedPlan}
+					open={isDrawerOpen}
+					onOpenChange={setIsDrawerOpen}
+				/>
+			}
 		</div>
 	);
 }
