@@ -1,9 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { connectToDatabase } from "@/lib/mongodb";
-import { TrainingPlan, TrainingPlanWeek } from "@/models/TrainingPlans";
-import { WorkoutTemplate } from "@/models/Workouts";
-import { Exercise } from "@/models/Exercise";
-import { WorkoutExerciseWithDetails } from "../../../../../types/training-plan";
+import { enrichUserTrainingPlans, EnrichedTrainingPlanDoc } from "@/lib/enrichTrainingPlans";
 
 export async function GET(
 	request: NextRequest,
@@ -24,9 +21,9 @@ export async function GET(
 
 		await connectToDatabase();
 
-		const trainingPlan = await TrainingPlan.findById(planId).lean();
+		const enrichedPlans = await enrichUserTrainingPlans([planId]);
 
-		if (!trainingPlan) {
+		if (!enrichedPlans || enrichedPlans.length === 0) {
 			return NextResponse.json(
 				{
 					error: "Training plan not found",
@@ -36,67 +33,32 @@ export async function GET(
 			);
 		}
 
-		const workoutTemplateIds = new Set<string>();
-		trainingPlan.weeks.forEach((week: TrainingPlanWeek) => {
-			week.days.forEach((day) => {
-				if (day.workoutTemplateId) {
-					workoutTemplateIds.add(day.workoutTemplateId);
+		const enrichedPlan: EnrichedTrainingPlanDoc = enrichedPlans[0];
+
+		const totalWorkouts = enrichedPlan.weeks.reduce((count, week) => {
+			return count + week.days.filter(day => day.workoutDetails !== null).length;
+		}, 0);
+
+		const totalExercises = new Set<string>();
+		enrichedPlan.weeks.forEach(week => {
+			week.days.forEach(day => {
+				if (day.workoutDetails?.structure) {
+					day.workoutDetails.structure.forEach(item => {
+						if (item.exercise) {
+							totalExercises.add(String(item.exercise._id));
+						}
+					});
 				}
 			});
 		});
-
-		const workoutTemplates = await WorkoutTemplate.find({
-			_id: { $in: Array.from(workoutTemplateIds) },
-		}).lean();
-
-		const exerciseIds = new Set<string>();
-		workoutTemplates.forEach((template) => {
-			template.structure?.forEach((exercise: WorkoutExerciseWithDetails) => {
-				if (exercise.exerciseId) {
-					exerciseIds.add(exercise.exerciseId);
-				}
-			});
-		});
-
-		const exercises = await Exercise.find({
-			_id: { $in: Array.from(exerciseIds) },
-		}).lean();
-
-		const exerciseMap = new Map(exercises.map((ex) => [ex._id, ex]));
-		const workoutTemplateMap = new Map(
-			workoutTemplates.map((wt) => [wt._id, wt])
-		);
-
-		const completeTrainingPlan = {
-			...trainingPlan,
-			weeks: trainingPlan.weeks.map((week: TrainingPlanWeek) => ({
-				...week,
-				days: week.days.map((day) => {
-					const workoutTemplate = workoutTemplateMap.get(day.workoutTemplateId);
-
-					return {
-						...day,
-						workoutTemplate: workoutTemplate
-							? {
-								...workoutTemplate,
-								structure: workoutTemplate.structure?.map((exerciseStructure: WorkoutExerciseWithDetails) => ({
-									...exerciseStructure,
-									exercise: exerciseMap.get(exerciseStructure.exerciseId) || null,
-								})),
-							}
-							: null,
-					};
-				}),
-			})),
-		};
 
 		return NextResponse.json(
 			{
-				data: completeTrainingPlan,
+				data: enrichedPlan,
 				meta: {
-					totalWeeks: trainingPlan.weeks.length,
-					totalWorkouts: workoutTemplates.length,
-					totalExercises: exercises.length,
+					totalWeeks: enrichedPlan.weeks.length,
+					totalWorkouts,
+					totalExercises: totalExercises.size,
 				},
 			},
 			{ status: 200 }

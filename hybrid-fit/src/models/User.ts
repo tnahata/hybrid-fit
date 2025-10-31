@@ -1,6 +1,6 @@
 import mongoose, { Document, Schema } from "mongoose";
+import { TrainingPlanDoc, TrainingPlanDay, TrainingPlanWeek, TrainingPlanDetails } from "./TrainingPlans";
 
-// For daily completion tracking
 export interface WorkoutLog {
 	_id?: mongoose.Types.ObjectId
 	date: Date;
@@ -45,7 +45,7 @@ export interface WorkoutLog {
 			sets?: number;
 			notes?: string;
 		}>;
-		customMetrics?: Record<string, number | string>; // Flexible key-value
+		customMetrics?: Record<string, number | string>;
 	};
 
 	heartRate?: {
@@ -63,27 +63,23 @@ enum DayOfWeek {
 	SUN = "Sun",
 };
 
-// Custom workout override for a specific day
 export interface WorkoutOverride {
 	weekNumber: number;
 	dayOfWeek: DayOfWeek;
-	customWorkoutId: string; // reference to a modified or alternative workout
+	customWorkoutId: string;
 }
 
-export interface UserPlanProgress {
+export interface UserPlanProgress extends Omit<TrainingPlanDoc, '_id' | 'createdAt' | 'updatedAt' | 'sourceUrl'> {
 	planId: string;
-	planName: string;
-	totalWeeks: number; // comes from the training plan
 
 	startedAt: Date;
-	completedAt?: Date; // optionally empty if not completed
+	completedAt?: Date;
 	currentWeek: number;
 	currentDayIndex: number;
 	isActive: boolean;
 
-	overrides: WorkoutOverride[]; // personalization
-
-	progressLog: WorkoutLog[]; // progress tracking
+	overrides: WorkoutOverride[];
+	progressLog: WorkoutLog[];
 };
 
 export interface UserDoc extends Document {
@@ -103,7 +99,6 @@ export interface UserDoc extends Document {
 	updatedAt: Date;
 };
 
-// --- Workout Log Schema ---
 const workoutLogSchema = new Schema<WorkoutLog>({
 	date: { type: Date, required: true },
 	workoutTemplateId: { type: String, required: true },
@@ -114,7 +109,6 @@ const workoutLogSchema = new Schema<WorkoutLog>({
 	},
 	notes: { type: String },
 
-	// Universal metrics
 	durationMinutes: { type: Number },
 	perceivedEffort: {
 		type: Number,
@@ -124,7 +118,6 @@ const workoutLogSchema = new Schema<WorkoutLog>({
 	activityType: { type: String },
 	sport: { type: String },
 
-	// Distance-based workouts (running, cycling, swimming)
 	distance: {
 		value: { type: Number },
 		unit: {
@@ -140,7 +133,6 @@ const workoutLogSchema = new Schema<WorkoutLog>({
 		}
 	},
 
-	// Strength training workouts
 	strengthSession: {
 		exercises: [{
 			exerciseId: { type: String },
@@ -159,7 +151,6 @@ const workoutLogSchema = new Schema<WorkoutLog>({
 		}
 	},
 
-	// Sport-specific drills (soccer, basketball, etc.)
 	drillSession: {
 		activities: [{
 			name: { type: String },
@@ -174,13 +165,11 @@ const workoutLogSchema = new Schema<WorkoutLog>({
 		}
 	},
 
-	// Heart rate (universal)
 	heartRate: {
 		average: { type: Number }
 	}
 });
 
-// --- Workout Override Schema ---
 const workoutOverrideSchema = new Schema<WorkoutOverride>({
 	weekNumber: { type: Number, required: true },
 	dayOfWeek: {
@@ -193,8 +182,20 @@ const workoutOverrideSchema = new Schema<WorkoutOverride>({
 
 const userPlanProgressSchema = new Schema<UserPlanProgress>({
 	planId: { type: String, required: true },
-	planName: { type: String, required: true },
-	totalWeeks: { type: Number, required: true },
+
+	name: { type: String, required: true },
+	sport: { type: String, required: true },
+	category: { type: String, required: true },
+	durationWeeks: { type: Number, required: true },
+	level: { type: String, required: true },
+	details: {
+		type: Schema.Types.Mixed as unknown as TrainingPlanDetails,
+		required: true,
+	},
+	weeks: {
+		type: [Schema.Types.Mixed as unknown as TrainingPlanWeek],
+		required: true
+	},
 
 	startedAt: { type: Date, required: true },
 	completedAt: Date,

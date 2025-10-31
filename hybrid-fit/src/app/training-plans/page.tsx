@@ -15,6 +15,7 @@ import { TrainingPlanWithWorkouts, TrainingPlanDetailResponse } from "../../../t
 import { TrainingPlanDoc } from "@/models/TrainingPlans";
 import { toast } from 'sonner';
 import LoadingSpinner from "@/components/ui/LoadingSpinner";
+import { EnrichedTrainingPlanDoc } from "@/lib/enrichTrainingPlans";
 
 export default function TrainingPlansPage() {
 	const [search, setSearch] = useState("");
@@ -24,7 +25,7 @@ export default function TrainingPlansPage() {
 	const [category, setCategory] = useState("all");
 	const [trainingPlans, setTrainingPlans] = useState<TrainingPlanDoc[]>([]);
 	const [currentPage, setCurrentPage] = useState(1);
-	const [selectedPlan, setSelectedPlan] = useState<TrainingPlanWithWorkouts | null>(null);
+	const [selectedPlan, setSelectedPlan] = useState<EnrichedTrainingPlanDoc | null>(null);
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 	const [isLoadingDetail, setIsLoadingDetail] = useState(false);
 	const [isLoading, setIsLoading] = useState(true);
@@ -97,7 +98,7 @@ export default function TrainingPlansPage() {
 		try {
 			const response = await fetch(`/api/training-plans/${plan._id}`);
 			if (response.ok) {
-				const detailResponse: TrainingPlanDetailResponse = await response.json();
+				const detailResponse = await response.json();
 				setSelectedPlan(detailResponse.data);
 				setIsDrawerOpen(true);
 			}

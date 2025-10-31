@@ -7,7 +7,6 @@ import { Separator } from "@/components/ui/separator";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { ArrowLeft, ChevronDown, ChevronUp } from "lucide-react";
-import { TrainingPlanWithWorkouts, TrainingPlanWeekWithWorkouts, TrainingPlanDayWithWorkout, WorkoutTemplateWithExercises, WorkoutExerciseWithDetails } from "../../../types/training-plan";
 import {
 	Collapsible,
 	CollapsibleContent,
@@ -17,9 +16,16 @@ import { TrainingPlanWeek } from "@/models/TrainingPlans";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import {
+	EnrichedTrainingPlanDoc,
+	EnrichedTrainingPlanWeek,
+	EnrichedTrainingPlanDay,
+	EnrichedWorkoutTemplate,
+	WorkoutStructureItem
+} from "@/lib/enrichTrainingPlans";
 
 interface TrainingPlanDrawerProps {
-	plan: TrainingPlanWithWorkouts;
+	plan: EnrichedTrainingPlanDoc;
 	open: boolean;
 	onOpenChange: (open: boolean) => void;
 }
@@ -35,7 +41,7 @@ export function TrainingPlanDrawer({ plan, open, onOpenChange }: TrainingPlanDra
 
 	if (!plan) return null;
 
-	const currentWeek: TrainingPlanWeekWithWorkouts = plan.weeks.find((w: TrainingPlanWeek) => w.weekNumber === selectedWeek);
+	const currentWeek: EnrichedTrainingPlanWeek = plan.weeks.find((w: TrainingPlanWeek) => w.weekNumber === selectedWeek);
 
 	const toggleDay = (dayNumber: number) => {
 		const newExpanded = new Set(expandedDays);
@@ -178,8 +184,8 @@ export function TrainingPlanDrawer({ plan, open, onOpenChange }: TrainingPlanDra
 										const isExpanded = expandedDays.has(dayNumber);
 
 										// Find the workout for this day (days array might not have all 7 days)
-										const dayData: TrainingPlanDayWithWorkout = currentWeek.days[dayNumber - 1];
-										const workout: WorkoutTemplateWithExercises = dayData?.workoutTemplate;
+										const dayData: EnrichedTrainingPlanDay = currentWeek.days[dayNumber - 1];
+										const workout: EnrichedWorkoutTemplate = dayData?.workoutDetails;
 
 										return newFunction(dayNumber, isExpanded, toggleDay, workout);
 									})}
@@ -203,7 +209,7 @@ export function TrainingPlanDrawer({ plan, open, onOpenChange }: TrainingPlanDra
 	);
 }
 
-function newFunction(dayNumber: number, isExpanded: boolean, toggleDay: (dayNumber: number) => void, workout: WorkoutTemplateWithExercises) {
+function newFunction(dayNumber: number, isExpanded: boolean, toggleDay: (dayNumber: number) => void, workout: EnrichedWorkoutTemplate) {
 	return <Collapsible
 		key={dayNumber}
 		open={isExpanded}
@@ -230,7 +236,7 @@ function newFunction(dayNumber: number, isExpanded: boolean, toggleDay: (dayNumb
 	</Collapsible>;
 }
 
-function dayContent(workout: WorkoutTemplateWithExercises) {
+function dayContent(workout: EnrichedWorkoutTemplate) {
 	return <CollapsibleContent>
 		<div className="px-4 pb-4 space-y-4">
 			{workout ? (
@@ -246,7 +252,7 @@ function dayContent(workout: WorkoutTemplateWithExercises) {
 						<div className="space-y-2">
 							<h4 className="text-sm font-semibold">Exercises</h4>
 							<div className="space-y-2">
-								{workout.structure.map((exerciseStructure: WorkoutExerciseWithDetails, idx: number) => {
+								{workout.structure.map((exerciseStructure: WorkoutStructureItem, idx: number) => {
 									return exerciseStructureContent(exerciseStructure, idx);
 								})}
 							</div>
@@ -262,7 +268,7 @@ function dayContent(workout: WorkoutTemplateWithExercises) {
 	</CollapsibleContent>;
 }
 
-function exerciseStructureContent(exerciseStructure: WorkoutExerciseWithDetails, idx: number) {
+function exerciseStructureContent(exerciseStructure: WorkoutStructureItem, idx: number) {
 	return (
 		<div
 			key={idx}
