@@ -33,7 +33,7 @@ export interface EnrichedUserPlanProgress extends Omit<UserPlanProgress, 'weeks'
 	weeks: EnrichedTrainingPlanWeek[];
 }
 
-export async function enrichUserTrainingPlans(
+export async function enrichTrainingPlans(
 	planIds: string[]
 ): Promise<EnrichedTrainingPlanDoc[]> {
 

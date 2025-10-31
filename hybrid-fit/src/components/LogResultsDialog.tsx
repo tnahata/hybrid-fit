@@ -11,18 +11,7 @@ import { Plus, Trash2, Check } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { WorkoutLog } from '@/models/User';
-
-interface WorkoutTemplateDoc {
-    _id: string;
-    name: string;
-    sport: string;
-    category: string;
-    description: string;
-    metrics: {
-        distanceMiles?: number;
-        durationMins?: number;
-    };
-}
+import { EnrichedWorkoutTemplate } from '@/lib/enrichTrainingPlans';
 
 interface ExerciseSet {
     setNumber: number;
@@ -38,7 +27,7 @@ interface Exercise {
 }
 
 interface LogResultsDialogProps {
-    workout: WorkoutTemplateDoc | null;
+    workout: EnrichedWorkoutTemplate | null | undefined;
     existingLog?: WorkoutLog | null;
 	onCreateLog: (data: any) => void;
 	onUpdateLog: (data: WorkoutLog, logId: string) => void;

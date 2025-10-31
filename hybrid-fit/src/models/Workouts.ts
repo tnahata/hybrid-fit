@@ -81,4 +81,4 @@ const workoutTemplateSchema = new Schema<WorkoutTemplateDoc>(
     { timestamps: true }
 );
 
-export const WorkoutTemplate = mongoose.models.WorkoutTemplate || mongoose.model<WorkoutTemplateDoc>("WorkoutTemplate", workoutTemplateSchema);
+export const WorkoutTemplate = mongoose.models?.WorkoutTemplate || mongoose.model<WorkoutTemplateDoc>("WorkoutTemplate", workoutTemplateSchema);

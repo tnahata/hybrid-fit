@@ -13,8 +13,9 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
-import { UserDoc, WorkoutLog } from "@/models/User";
-import { TrainingPlanDoc, TrainingPlanDay, TrainingPlanWeek } from "@/models/TrainingPlans";
+import { WorkoutLog } from "@/models/User";
+import { EnrichedTrainingPlanDay, EnrichedTrainingPlanWeek } from '@/lib/enrichTrainingPlans';
+import { EnrichedUserDoc, EnrichedUserPlanProgress } from '../api/users/me/route';
 import { WorkoutTemplateDoc } from "@/models/Workouts";
 import { updatePlanOverrides, logWorkout, updateWorkout, getUserProfile, ApiError } from '@/lib/api-client';
 import LogResultsDialog from '@/components/LogResultsDialog';
@@ -23,46 +24,6 @@ import { toast } from 'sonner';
 import Link from 'next/link';
 import { getStartOfDay, returnUTCDateInUSLocaleFormat } from '@/lib/dateUtils';
 import LoadingSpinner from '@/components/ui/LoadingSpinner';
-
-// Enriched types matching API response
-export interface EnrichedTrainingPlanDay extends TrainingPlanDay {
-	workoutDetails: WorkoutTemplateDoc | null;
-}
-
-export interface EnrichedTrainingPlanWeek extends Omit<TrainingPlanWeek, 'days'> {
-	days: EnrichedTrainingPlanDay[];
-}
-
-interface EnrichedTrainingPlanDoc extends Omit<TrainingPlanDoc, 'weeks'> {
-	weeks: EnrichedTrainingPlanWeek[];
-}
-
-export interface EnrichedUserPlanProgress {
-	planId: string;
-	planName: string;
-	totalWeeks: number;
-	startedAt: Date;
-	completedAt?: Date;
-	currentWeek: number;
-	currentDayIndex: number;
-	isActive: boolean;
-	overrides: Array<{
-		weekNumber: number;
-		dayOfWeek: string;
-		customWorkoutId: string;
-	}>;
-	progressLog: Array<WorkoutLog>;
-	planDetails: EnrichedTrainingPlanDoc;
-}
-
-interface EnrichedUserDoc extends Omit<UserDoc, 'trainingPlans'> {
-	trainingPlans: EnrichedUserPlanProgress[];
-}
-
-interface ApiResponse {
-	data: EnrichedUserDoc;
-	success: boolean;
-}
 
 export default function Dashboard() {
 	const [currentUser, setCurrentUser] = useState<EnrichedUserDoc | null>(null);
@@ -82,16 +43,17 @@ export default function Dashboard() {
 		fetchUserData();
 	}, []);
 
-	const fetchUserData = async () => {
+	const fetchUserData = async (): Promise<void> => {
 		try {
 			setLoading(true);
 			setError(null);
 
 			const userData = await getUserProfile();
-			const activePlan = userData.trainingPlans?.find(
-				(p: any) => p.isActive
+			const activePlan: EnrichedUserPlanProgress | undefined = userData.trainingPlans?.find(
+				(p: EnrichedUserPlanProgress) => p.isActive
 			);
-			const planIdToSelect = activePlan?.planId || userData.trainingPlans?.[0]?.planId || "";
+			const planIdToSelect = activePlan?._id || userData.trainingPlans?.[0]?._id || "";
+			console.log(planIdToSelect);
 			setSelectedPlanId(planIdToSelect);
 			setCurrentUser(userData);
 			
@@ -106,21 +68,23 @@ export default function Dashboard() {
 		}
 	};
 
-	const currentUserPlan = useMemo(() => {
-		if (!currentUser?.trainingPlans?.length || !selectedPlanId) return undefined;
+	const currentUserPlan: EnrichedUserPlanProgress | undefined = useMemo(() => {
+		if (!currentUser?.trainingPlans?.length || !selectedPlanId) {
+			return undefined;
+		}
 
 		return currentUser.trainingPlans.find(
-			(p: EnrichedUserPlanProgress) => p.planId === selectedPlanId
+			(p: EnrichedUserPlanProgress) => p._id === selectedPlanId
 		);
 	}, [currentUser, selectedPlanId]);
 
-	const handleUpdateOverrides = async (overrides: any[]) => {
+	const handleUpdateOverrides = async (overrides: any[]): Promise<void> => {
 		if (!currentUserPlan) {
 			throw new Error('No active plan selected');
 		}
 
 		try {
-			await updatePlanOverrides(currentUserPlan.planId, overrides);
+			await updatePlanOverrides(currentUserPlan._id, overrides);
 
 			// Refresh user data to show updated overrides
 			await fetchUserData();
@@ -143,13 +107,13 @@ export default function Dashboard() {
 		}
 	};
 
-	const handleUpdateWorkout = async (data: WorkoutLog, logId: string) => {
+	const handleUpdateWorkout = async (data: WorkoutLog, logId: string): Promise<void> => {
 		if (!currentUserPlan) {
 			throw new Error('No active plan selected');
 		}
 
 		try {
-			const result = await updateWorkout(logId, currentUserPlan.planId, data);
+			const result = await updateWorkout(logId, currentUserPlan._id, data);
 
 			await fetchUserData();
 
@@ -170,13 +134,13 @@ export default function Dashboard() {
 		}
 	}
 
-	const handleLogWorkout = async (data: any) => {
+	const handleLogWorkout = async (data: any): Promise<void> => {
 		if (!currentUserPlan) {
 			throw new Error('No active plan selected');
 		}
 
 		try {
-			const result = await logWorkout(currentUserPlan.planId, data);
+			const result = await logWorkout(currentUserPlan._id, data);
 
 			await fetchUserData();
 
@@ -202,7 +166,7 @@ export default function Dashboard() {
 	const getTodaysWorkout = (): EnrichedTrainingPlanDay | null => {
 		if (!currentUserPlan) return null;
 
-		const currentWeek: EnrichedTrainingPlanWeek | undefined = currentUserPlan.planDetails.weeks.find(
+		const currentWeek: EnrichedTrainingPlanWeek | undefined = currentUserPlan.weeks.find(
 			(w: EnrichedTrainingPlanWeek) => w.weekNumber === currentUserPlan.currentWeek
 		);
 
@@ -247,13 +211,13 @@ export default function Dashboard() {
 
 	const calculatePlanProgress = (): number => {
 		if (!currentUserPlan) return 0;
-		return Math.round((currentUserPlan.currentWeek / currentUserPlan.totalWeeks) * 100);
+		return Math.round((currentUserPlan.currentWeek / currentUserPlan.durationWeeks) * 100);
 	};
 
 	const getTotalWeekWorkouts = (): number => {
 		if (!currentUserPlan) return 7;
 
-		const currentWeek: EnrichedTrainingPlanWeek | undefined = currentUserPlan.planDetails.weeks.find(
+		const currentWeek: EnrichedTrainingPlanWeek | undefined = currentUserPlan.weeks.find(
 			(w: EnrichedTrainingPlanWeek) => w.weekNumber === currentUserPlan.currentWeek
 		);
 
@@ -288,7 +252,7 @@ export default function Dashboard() {
 		if (!todaysWorkout?.workoutDetails) {
 			return [
 				{ label: 'Week', value: currentUserPlan?.currentWeek.toString() || '-' },
-				{ label: 'Day', value: (currentUserPlan?.currentDayIndex + 1)?.toString() || '-' },
+				{ label: 'Day', value: (currentUserPlan?.currentDayIndex ? currentUserPlan?.currentDayIndex + 1 : 1)?.toString() || '-' },
 				{ label: 'Status', value: 'Scheduled' }
 			];
 		}
@@ -390,7 +354,7 @@ export default function Dashboard() {
 		return null;
 	}
 
-	const sportEmoji: string = getSportEmoji(currentUserPlan.planDetails.sport);
+	const sportEmoji: string = getSportEmoji(currentUserPlan.sport);
 	const completedThisWeek: number = getCompletedWorkoutsThisWeek();
 	const totalWeekWorkouts: number = getTotalWeekWorkouts();
 	const planProgress: number = calculatePlanProgress();
@@ -420,9 +384,9 @@ export default function Dashboard() {
 								</SelectTrigger>
 								<SelectContent>
 									{currentUser.trainingPlans.map((plan: EnrichedUserPlanProgress) => (
-										<SelectItem key={plan.planId} value={plan.planId}>
+										<SelectItem key={plan._id} value={plan._id}>
 											<div className="flex items-center gap-2">
-												<span>{plan.planName}</span>
+												<span>{plan.name}</span>
 												{plan.isActive && (
 													<span className="text-xs px-1.5 py-0.5 rounded-full bg-primary/10 text-primary ml-1">
 														Active
@@ -454,7 +418,7 @@ export default function Dashboard() {
 							<CardContent>
 								<div className="space-y-3">
 									<p className="text-sm text-green-800">
-										Congratulations on completing <strong>{currentUserPlan.planName}</strong>!
+										Congratulations on completing <strong>{currentUserPlan.name}</strong>!
 										You can view your historical data and progress below.
 									</p>
 									<div className="flex gap-2">
@@ -478,7 +442,7 @@ export default function Dashboard() {
 									<div>
 										<CardTitle className="text-xl text-orange-900">Plan Not Active</CardTitle>
 										<CardDescription className="text-orange-700">
-											{currentUserPlan.planName}
+											{currentUserPlan.name}
 										</CardDescription>
 									</div>
 								</div>
@@ -505,10 +469,10 @@ export default function Dashboard() {
 									<div className="flex-1">
 										<div className="flex items-center gap-2 mb-2 flex-wrap">
 											<span className="text-xs font-semibold px-2 py-1 rounded-full bg-primary/10 text-primary">
-												{currentUserPlan.planDetails.level}
+												{currentUserPlan.level}
 											</span>
 											<span className="text-xs font-semibold px-2 py-1 rounded-full bg-muted text-muted-foreground">
-												{currentUserPlan.planDetails.sport}
+												{currentUserPlan.sport}
 											</span>
 											{workoutIsCustom && (
 												<span className="text-xs font-semibold px-2 py-1 rounded-full bg-blue-100 text-blue-700">
@@ -522,7 +486,7 @@ export default function Dashboard() {
 											)}
 										</div>
 										<CardDescription className="mb-1">
-											{currentUserPlan.planName} — Week {currentUserPlan.currentWeek} / Day {currentUserPlan.currentDayIndex + 1}
+											{currentUserPlan.name} — Week {currentUserPlan.currentWeek} / Day {currentUserPlan.currentDayIndex + 1}
 										</CardDescription>
 										<CardTitle className="text-2xl">
 											{todaysWorkout?.workoutDetails?.name || `${currentDayName}'s Workout`}
@@ -546,12 +510,12 @@ export default function Dashboard() {
 								</div>
 
 								{/* Plan Details Section */}
-								{currentUserPlan.planDetails.details && (
+								{currentUserPlan.details && (
 									<div className="p-4 rounded-lg bg-muted/50 border border-border">
 										<h4 className="font-semibold text-sm mb-2">Plan Details</h4>
 										<div className="space-y-1 text-sm">
-											<p><span className="text-muted-foreground">Goal:</span> {currentUserPlan.planDetails.details.goal}</p>
-											<p><span className="text-muted-foreground">Type:</span> {currentUserPlan.planDetails.details.planType}</p>
+											<p><span className="text-muted-foreground">Goal:</span> {currentUserPlan.details.goal}</p>
+											<p><span className="text-muted-foreground">Type:</span> {currentUserPlan.details.planType}</p>
 											{todaysWorkout?.workoutDetails?.tags && todaysWorkout.workoutDetails.tags.length > 0 && (
 												<p>
 													<span className="text-muted-foreground">Tags:</span>{' '}
@@ -630,7 +594,7 @@ export default function Dashboard() {
 											{planProgress}%
 										</h3>
 										<p className="text-xs text-muted-foreground mt-1">
-											Week {currentUserPlan.currentWeek} of {currentUserPlan.totalWeeks}
+											Week {currentUserPlan.currentWeek} of {currentUserPlan.durationWeeks}
 										</p>
 									</div>
 									<div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
@@ -674,12 +638,12 @@ export default function Dashboard() {
 								<div className="space-y-4">
 									<div>
 										<div className="flex justify-between mb-2">
-											<span className="text-sm text-muted-foreground">{currentUserPlan.planName}</span>
+											<span className="text-sm text-muted-foreground">{currentUserPlan.name}</span>
 											<span className="text-sm font-semibold">{planProgress}%</span>
 										</div>
 										<Progress value={planProgress} className="h-3" />
 										<p className="text-xs text-muted-foreground mt-1">
-											Week {currentUserPlan.currentWeek} of {currentUserPlan.totalWeeks}
+											Week {currentUserPlan.currentWeek} of {currentUserPlan.durationWeeks}
 										</p>
 									</div>
 									{currentUserPlan.startedAt && (

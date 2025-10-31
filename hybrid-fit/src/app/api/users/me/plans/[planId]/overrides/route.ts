@@ -26,7 +26,7 @@ export async function PATCH(
 
         await connectToDatabase();
 
-        const { planId } = params;
+        const { planId } = await params;
 
         const userId = session.user.id;
 
@@ -37,7 +37,7 @@ export async function PATCH(
         // Validate overrides structure
         if (!Array.isArray(overrides)) {
             return NextResponse.json(
-                { error: "overrides must be an array", success: false },
+                { error: "Overrides must be an array", success: false },
                 { status: 400 }
             );
         }

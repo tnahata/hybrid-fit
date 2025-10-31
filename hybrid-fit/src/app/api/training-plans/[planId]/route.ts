@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { connectToDatabase } from "@/lib/mongodb";
-import { enrichUserTrainingPlans, EnrichedTrainingPlanDoc } from "@/lib/enrichTrainingPlans";
+import { enrichTrainingPlans, EnrichedTrainingPlanDoc } from "@/lib/enrichTrainingPlans";
 
 export async function GET(
 	request: NextRequest,
@@ -21,7 +21,7 @@ export async function GET(
 
 		await connectToDatabase();
 
-		const enrichedPlans = await enrichUserTrainingPlans([planId]);
+		const enrichedPlans = await enrichTrainingPlans([planId]);
 
 		if (!enrichedPlans || enrichedPlans.length === 0) {
 			return NextResponse.json(

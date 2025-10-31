@@ -53,7 +53,7 @@ export interface WorkoutLog {
 	};
 };
 
-enum DayOfWeek {
+export enum DayOfWeek {
 	MON = "Mon",
 	TUE = "Tue",
 	WED = "Wed",
@@ -223,4 +223,4 @@ const userSchema = new Schema<UserDoc>({
 	{ timestamps: true }
 );
 
-export const User = mongoose.models.User || mongoose.model<UserDoc>("User", userSchema);
+export const User = mongoose.models?.User || mongoose.model<UserDoc>("User", userSchema);

@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from "react";
 import { CTASection } from "@/components/landing/cta-section";
 import { Features } from "@/components/landing/features";
 import { Hero } from "@/components/landing/hero";
@@ -10,9 +11,11 @@ export default function Home() {
   const { data: session, status } = useSession();
   const router = useRouter();
 
-  if (status === 'authenticated') {
-    router.push("/dashboard");
-  }
+	useEffect(() => {
+		if (status === "authenticated") {
+			router.push("/dashboard");
+		}
+	}, [status, router]);
 
   return (
     <div>

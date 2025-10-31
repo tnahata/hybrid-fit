@@ -15,7 +15,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Badge } from "@/components/ui/badge";
-import { EnrichedUserPlanProgress, EnrichedTrainingPlanWeek } from '../app/dashboard';
+import { EnrichedUserPlanProgress } from '@/app/api/users/me/route';
+import { EnrichedTrainingPlanWeek } from '@/lib/enrichTrainingPlans';
+import { DayOfWeek } from '@/models/User';
 import { returnUTCDateInUSLocaleFormat } from '@/lib/dateUtils';
 
 interface CalendarDialogProps {
@@ -63,7 +65,7 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 
 	// Helper to get workout status for a specific day
 	const getWorkoutStatus = (weekNumber: number, dayIndex: number): 'completed' | 'missed' | 'skipped' | 'upcoming' | 'current' => {
-		const week = userPlan.planDetails.weeks.find(w => w.weekNumber === weekNumber);
+		const week = userPlan.weeks.find(w => w.weekNumber === weekNumber);
 		if (!week) {
 			return 'upcoming';
 		}
@@ -122,7 +124,7 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 			return override.customWorkoutId;
 		}
 
-		const week = userPlan.planDetails.weeks.find(w => w.weekNumber === weekNumber);
+		const week = userPlan.weeks.find(w => w.weekNumber === weekNumber);
 		return week?.days[dayIndex]?.workoutTemplateId || 'rest_day';
 	};
 
@@ -188,15 +190,28 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 			!(o.weekNumber === targetWeekNumber && o.dayOfWeek === daysOfWeek[targetDayIndex])
 		);
 
+		const mapIndexToDayOfWeek = (i: number): DayOfWeek => {
+			switch (i) {
+				case 0: return DayOfWeek.MON;
+				case 1: return DayOfWeek.TUE;
+				case 2: return DayOfWeek.WED;
+				case 3: return DayOfWeek.THU;
+				case 4: return DayOfWeek.FRI;
+				case 5: return DayOfWeek.SAT;
+				case 6: return DayOfWeek.SUN;
+				default: return daysOfWeek[i] as unknown as DayOfWeek;
+			}
+		};
+
 		filteredOverrides.push({
 			weekNumber: draggedItem.weekNumber,
-			dayOfWeek: daysOfWeek[draggedItem.dayIndex],
+			dayOfWeek: mapIndexToDayOfWeek(draggedItem.dayIndex),
 			customWorkoutId: targetWorkoutId
 		});
 
 		filteredOverrides.push({
 			weekNumber: targetWeekNumber,
-			dayOfWeek: daysOfWeek[targetDayIndex],
+			dayOfWeek: mapIndexToDayOfWeek(draggedItem.dayIndex),
 			customWorkoutId: sourceWorkoutId
 		});
 
@@ -217,9 +232,7 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 		}
 	};
 
-	// Reset to original plan (only current and future weeks)
 	const handleResetPlan = () => {
-		// Filter out only current and future week overrides
 		const pastOverrides = localOverrides.filter(
 			o => o.weekNumber < userPlan.currentWeek
 		);
@@ -229,12 +242,10 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 		}
 	};
 
-	// Check if there are current/future week overrides
 	const hasCurrentOrFutureOverrides = localOverrides.some(
 		o => o.weekNumber >= userPlan.currentWeek
 	);
 
-	// Check if there are unsaved changes
 	const hasUnsavedChanges = JSON.stringify(localOverrides) !== JSON.stringify(userPlan.overrides || []);
 
 	const getStatusIcon = (status: string) => {
@@ -279,7 +290,7 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 							const overridden = isOverridden(week.weekNumber, dayIndex);
 
 							// Find the workout details for the displayed workout
-							const workoutDetails = userPlan.planDetails.weeks
+							const workoutDetails = userPlan.weeks
 								.flatMap(w => w.days)
 								.find(d => d.workoutTemplateId === displayedWorkoutId)?.workoutDetails;
 
@@ -351,18 +362,18 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 	};
 
 	// Split weeks into previous, current, and future
-	const previousWeeks = userPlan.planDetails.weeks.filter(
+	const previousWeeks = userPlan.weeks.filter(
 		w => w.weekNumber < userPlan.currentWeek
 	);
-	const currentWeek = userPlan.planDetails.weeks.find(
+	const currentWeek = userPlan.weeks.find(
 		w => w.weekNumber === userPlan.currentWeek
 	);
-	const futureWeeks = userPlan.planDetails.weeks.filter(
+	const futureWeeks = userPlan.weeks.filter(
 		w => w.weekNumber > userPlan.currentWeek
 	);
 
 	// For completed plans, show all weeks
-	const allWeeks = userPlan.planDetails.weeks;
+	const allWeeks = userPlan.weeks;
 
 	const buttonText = isCompleted ? 'View Full History' : 'View Program Calendar';
 
@@ -379,7 +390,7 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 					<div className="flex items-center justify-between">
 						<div className="flex items-center gap-2">
 							<Calendar className="h-5 w-5" />
-							<DialogTitle>{userPlan.planName}</DialogTitle>
+							<DialogTitle>{userPlan.name}</DialogTitle>
 						</div>
 						{!isCompleted && hasCurrentOrFutureOverrides && (
 							<Button
@@ -396,7 +407,7 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 					<DialogDescription>
 						{isCompleted
 							? `Completed on ${returnUTCDateInUSLocaleFormat(new Date(userPlan.completedAt!))}`
-							: `Week ${userPlan.currentWeek} of ${userPlan.totalWeeks} • ${userPlan.planDetails.sport}`
+							: `Week ${userPlan.currentWeek} of ${userPlan.durationWeeks} • ${userPlan.sport}`
 						}
 					</DialogDescription>
 				</DialogHeader>
