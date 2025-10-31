@@ -27,7 +27,7 @@ export async function POST(request: NextRequest) {
 
 		await connectToDatabase();
 
-		const plan = await TrainingPlan.findById(planId) as TrainingPlanDoc | null;
+		const plan = await TrainingPlan.findById(planId).lean() as TrainingPlanDoc | null;
 
 		if (!plan) {
 			return NextResponse.json(
@@ -61,8 +61,6 @@ export async function POST(request: NextRequest) {
 
 		const planProg: UserPlanProgress = {
 			planId: plan._id,
-			planName: plan.name,
-			totalWeeks: plan.durationWeeks,
 			startedAt: new Date(),
 			currentWeek: 1,
 			currentDayIndex: 0,
@@ -75,14 +73,14 @@ export async function POST(request: NextRequest) {
 
 		await user.save();
 
-		console.log(`User is ${user}`);
+		console.log(`User ${user.email} enrolled in plan ${plan.name}`);
 
 		return NextResponse.json(
 			{
 				message: "Successfully enrolled in training plan",
 				plan: {
 					id: planProg.planId,
-					name: planProg.planName,
+					name: plan.name,
 					startDate: planProg.startedAt,
 				},
 			},

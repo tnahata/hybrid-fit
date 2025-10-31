@@ -28,6 +28,19 @@ interface CalendarDialogProps {
 
 const daysOfWeek = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
+const mapIndexToDayOfWeek = (i: number): DayOfWeek => {
+	const mapping: Record<number, DayOfWeek> = {
+		0: DayOfWeek.MON,
+		1: DayOfWeek.TUE,
+		2: DayOfWeek.WED,
+		3: DayOfWeek.THU,
+		4: DayOfWeek.FRI,
+		5: DayOfWeek.SAT,
+		6: DayOfWeek.SUN,
+	};
+	return mapping[i] || DayOfWeek.MON;
+};
+
 export default function CalendarDialog({ userPlan, className, onUpdateOverrides }: CalendarDialogProps) {
 	const [open, setOpen] = useState(false);
 	const [draggedItem, setDraggedItem] = useState<{
@@ -40,7 +53,6 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 
 	const isCompleted = !!userPlan.completedAt;
 
-	// Helper to calculate the expected date for a workout
 	const getExpectedWorkoutDate = (weekNumber: number, dayIndex: number): Date => {
 		const startDate = new Date(userPlan.startedAt);
 		const daysFromStart = (weekNumber - 1) * 7 + dayIndex;
@@ -54,7 +66,6 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 		return new Date(expectedDateMs);
 	};
 
-	// Helper to check if two dates are the same day
 	const isSameDay = (date1: Date, date2: Date): boolean => {
 		const d1 = new Date(date1);
 		const d2 = new Date(date2);
@@ -63,7 +74,6 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 			d1.getUTCDate() === d2.getUTCDate();
 	};
 
-	// Helper to get workout status for a specific day
 	const getWorkoutStatus = (weekNumber: number, dayIndex: number): 'completed' | 'missed' | 'skipped' | 'upcoming' | 'current' => {
 		const week = userPlan.weeks.find(w => w.weekNumber === weekNumber);
 		if (!week) {
@@ -82,7 +92,6 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 			return isSameDay(logDate, expectedDate) && l.workoutTemplateId === day.workoutTemplateId;
 		});
 
-		// If plan is completed or workout was scheduled for a previous week in the plan
 		if (userPlan.completedAt || weekNumber < userPlan.currentWeek) {
 			if (logForExpectedDate) {
 				return logForExpectedDate.status;
@@ -91,13 +100,12 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 			}
 		}
 
-		// Workouts for current week
 		if (weekNumber === userPlan.currentWeek && dayIndex <= userPlan.currentDayIndex) {
 			if (logForExpectedDate) {
 				return logForExpectedDate.status;
-			} else if (dayIndex === userPlan.currentDayIndex) { // could not find a log for current day, we just assume it is current
+			} else if (dayIndex === userPlan.currentDayIndex) {
 				return 'current';
-			} else { // previous day in the current week and log not found
+			} else {
 				return 'missed';
 			}
 		}
@@ -105,17 +113,15 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 		return 'upcoming';
 	};
 
-	// Check if a workout is overridden
 	const isOverridden = (weekNumber: number, dayIndex: number): boolean => {
-		const dayOfWeek = daysOfWeek[dayIndex];
+		const dayOfWeek = mapIndexToDayOfWeek(dayIndex);
 		return localOverrides.some(
 			o => o.weekNumber === weekNumber && o.dayOfWeek === dayOfWeek
 		);
 	};
 
-	// Get the actual workout to display (considering overrides)
 	const getDisplayedWorkout = (weekNumber: number, dayIndex: number): string => {
-		const dayOfWeek = daysOfWeek[dayIndex];
+		const dayOfWeek = mapIndexToDayOfWeek(dayIndex);
 		const override = localOverrides.find(
 			o => o.weekNumber === weekNumber && o.dayOfWeek === dayOfWeek
 		);
@@ -128,20 +134,17 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 		return week?.days[dayIndex]?.workoutTemplateId || 'rest_day';
 	};
 
-	// Check if a day can be dragged
 	const canDrag = (weekNumber: number, dayIndex: number): boolean => {
-		if (isCompleted) return false; // Completed plans can't be modified
+		if (isCompleted) return false;
 
 		const status = getWorkoutStatus(weekNumber, dayIndex);
 		if (status === 'completed' || status === 'skipped' || status === 'missed') {
-			return false; // Past workouts can't be moved
+			return false;
 		}
 
-		// Only current and future weeks
 		return weekNumber >= userPlan.currentWeek;
 	};
 
-	// Handle drag start
 	const handleDragStart = (weekNumber: number, dayIndex: number, workoutTemplateId: string) => {
 		if (!canDrag(weekNumber, dayIndex)) return;
 
@@ -159,49 +162,30 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 	const handleDrop = (targetWeekNumber: number, targetDayIndex: number) => {
 		if (!draggedItem) return;
 
-		// Can only swap within the same week
 		if (draggedItem.weekNumber !== targetWeekNumber) {
 			setDraggedItem(null);
 			return;
 		}
 
-		// Can't drop on the same day
 		if (draggedItem.dayIndex === targetDayIndex) {
 			setDraggedItem(null);
 			return;
 		}
 
-		// Can't drop on past days
 		if (!canDrag(targetWeekNumber, targetDayIndex)) {
 			setDraggedItem(null);
 			return;
 		}
 
-		// Get the workouts
 		const sourceWorkoutId = getDisplayedWorkout(draggedItem.weekNumber, draggedItem.dayIndex);
 		const targetWorkoutId = getDisplayedWorkout(targetWeekNumber, targetDayIndex);
 
-		// Create new overrides for the swap
 		const newOverrides = [...localOverrides];
 
-		// Remove existing overrides for these days
 		const filteredOverrides = newOverrides.filter(o =>
-			!(o.weekNumber === draggedItem.weekNumber && o.dayOfWeek === daysOfWeek[draggedItem.dayIndex]) &&
-			!(o.weekNumber === targetWeekNumber && o.dayOfWeek === daysOfWeek[targetDayIndex])
+			!(o.weekNumber === draggedItem.weekNumber && o.dayOfWeek === mapIndexToDayOfWeek(draggedItem.dayIndex)) &&
+			!(o.weekNumber === targetWeekNumber && o.dayOfWeek === mapIndexToDayOfWeek(targetDayIndex))
 		);
-
-		const mapIndexToDayOfWeek = (i: number): DayOfWeek => {
-			switch (i) {
-				case 0: return DayOfWeek.MON;
-				case 1: return DayOfWeek.TUE;
-				case 2: return DayOfWeek.WED;
-				case 3: return DayOfWeek.THU;
-				case 4: return DayOfWeek.FRI;
-				case 5: return DayOfWeek.SAT;
-				case 6: return DayOfWeek.SUN;
-				default: return daysOfWeek[i] as unknown as DayOfWeek;
-			}
-		};
 
 		filteredOverrides.push({
 			weekNumber: draggedItem.weekNumber,
@@ -211,7 +195,7 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 
 		filteredOverrides.push({
 			weekNumber: targetWeekNumber,
-			dayOfWeek: mapIndexToDayOfWeek(draggedItem.dayIndex),
+			dayOfWeek: mapIndexToDayOfWeek(targetDayIndex),
 			customWorkoutId: sourceWorkoutId
 		});
 
@@ -289,7 +273,6 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 							const isDraggable = canDrag(week.weekNumber, dayIndex);
 							const overridden = isOverridden(week.weekNumber, dayIndex);
 
-							// Find the workout details for the displayed workout
 							const workoutDetails = userPlan.weeks
 								.flatMap(w => w.days)
 								.find(d => d.workoutTemplateId === displayedWorkoutId)?.workoutDetails;
@@ -361,7 +344,6 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 		);
 	};
 
-	// Split weeks into previous, current, and future
 	const previousWeeks = userPlan.weeks.filter(
 		w => w.weekNumber < userPlan.currentWeek
 	);
@@ -372,7 +354,6 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 		w => w.weekNumber > userPlan.currentWeek
 	);
 
-	// For completed plans, show all weeks
 	const allWeeks = userPlan.weeks;
 
 	const buttonText = isCompleted ? 'View Full History' : 'View Program Calendar';
@@ -428,7 +409,6 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 				)}
 
 				{isCompleted ? (
-					// Single view for completed plans
 					<ScrollArea className="h-[600px] pr-4">
 						<div className="space-y-4">
 							<div className="flex items-center justify-between p-4 rounded-lg bg-green-50 border border-green-200">
@@ -446,7 +426,6 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 						</div>
 					</ScrollArea>
 				) : (
-					// Three-tab view for active plans
 					<Tabs defaultValue="current" className="w-full">
 						<TabsList className="grid w-full grid-cols-3">
 							<TabsTrigger value="previous">
@@ -511,7 +490,6 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 					</Tabs>
 				)}
 
-				{/* Legend */}
 				<div className="border-t pt-4 mt-4">
 					<div className="flex flex-wrap gap-4 text-sm">
 						<div className="flex items-center gap-2">

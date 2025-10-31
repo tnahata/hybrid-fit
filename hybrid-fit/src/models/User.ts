@@ -1,5 +1,4 @@
 import mongoose, { Document, Schema } from "mongoose";
-import { TrainingPlanDoc, TrainingPlanDay, TrainingPlanWeek, TrainingPlanDetails } from "./TrainingPlans";
 
 export interface WorkoutLog {
 	_id?: mongoose.Types.ObjectId
@@ -51,7 +50,7 @@ export interface WorkoutLog {
 	heartRate?: {
 		average: number;
 	};
-};
+}
 
 export enum DayOfWeek {
 	MON = "Mon",
@@ -61,7 +60,7 @@ export enum DayOfWeek {
 	FRI = "Fri",
 	SAT = "Sat",
 	SUN = "Sun",
-};
+}
 
 export interface WorkoutOverride {
 	weekNumber: number;
@@ -69,7 +68,7 @@ export interface WorkoutOverride {
 	customWorkoutId: string;
 }
 
-export interface UserPlanProgress extends Omit<TrainingPlanDoc, '_id' | 'createdAt' | 'updatedAt' | 'sourceUrl'> {
+export interface UserPlanProgress {
 	planId: string;
 
 	startedAt: Date;
@@ -80,7 +79,7 @@ export interface UserPlanProgress extends Omit<TrainingPlanDoc, '_id' | 'created
 
 	overrides: WorkoutOverride[];
 	progressLog: WorkoutLog[];
-};
+}
 
 export interface UserDoc extends Document {
 	email: string;
@@ -97,7 +96,7 @@ export interface UserDoc extends Document {
 
 	createdAt: Date;
 	updatedAt: Date;
-};
+}
 
 const workoutLogSchema = new Schema<WorkoutLog>({
 	date: { type: Date, required: true },
@@ -182,20 +181,6 @@ const workoutOverrideSchema = new Schema<WorkoutOverride>({
 
 const userPlanProgressSchema = new Schema<UserPlanProgress>({
 	planId: { type: String, required: true },
-
-	name: { type: String, required: true },
-	sport: { type: String, required: true },
-	category: { type: String, required: true },
-	durationWeeks: { type: Number, required: true },
-	level: { type: String, required: true },
-	details: {
-		type: Schema.Types.Mixed as unknown as TrainingPlanDetails,
-		required: true,
-	},
-	weeks: {
-		type: [Schema.Types.Mixed as unknown as TrainingPlanWeek],
-		required: true
-	},
 
 	startedAt: { type: Date, required: true },
 	completedAt: Date,

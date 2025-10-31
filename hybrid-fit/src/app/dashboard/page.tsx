@@ -174,7 +174,33 @@ export default function Dashboard() {
 			return null;
 		}
 
-		return currentWeek.days[currentUserPlan.currentDayIndex];
+		const baseDay = currentWeek.days[currentUserPlan.currentDayIndex];
+
+		const daysOfWeekMap = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+		const todayDayOfWeek = daysOfWeekMap[currentUserPlan.currentDayIndex];
+
+		const override = currentUserPlan.overrides.find(o =>
+			o.weekNumber === currentUserPlan.currentWeek &&
+			o.dayOfWeek === todayDayOfWeek
+		);
+
+		// If there's an override, find the workout with the overridden ID
+		if (override) {
+			// Search through all weeks/days to find the workout with this ID
+			for (const week of currentUserPlan.weeks) {
+				for (const day of week.days) {
+					if (day.workoutTemplateId === override.customWorkoutId) {
+						return {
+							...baseDay,
+							workoutTemplateId: day.workoutTemplateId,
+							workoutDetails: day.workoutDetails
+						};
+					}
+				}
+			}
+		}
+
+		return baseDay;
 	};
 
 	const getTodaysLog = (): WorkoutLog | null => {

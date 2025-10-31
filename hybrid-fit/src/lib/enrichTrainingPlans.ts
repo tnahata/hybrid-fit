@@ -29,7 +29,7 @@ export interface EnrichedTrainingPlanDoc extends Omit<TrainingPlanDoc, 'weeks' |
 	weeks: EnrichedTrainingPlanWeek[];
 }
 
-export interface EnrichedUserPlanProgress extends Omit<UserPlanProgress, 'weeks' | 'sourceUrl'> {
+export interface EnrichedUserPlanProgress extends Omit<UserPlanProgress, 'weeks'> {
 	weeks: EnrichedTrainingPlanWeek[];
 }
 

@@ -1,72 +1,69 @@
 import { WorkoutLog } from '@/models/User';
 
 export class ApiError extends Error {
-    constructor(public status: number, public message: string) {
-        super(message);
-        this.name = 'ApiError';
-    }
+	constructor(public status: number, public message: string) {
+		super(message);
+		this.name = 'ApiError';
+	}
 }
 
 /**
  * Update workout overrides for a training plan
  */
 export async function updatePlanOverrides(
-    planId: string,
-    overrides: any[]
+	planId: string,
+	overrides: any[]
 ): Promise<{ planId: string; overrides: any[] }> {
-    const response = await fetch(`/api/users/me/plans/${planId}/overrides`, {
-        method: 'PATCH',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ overrides }),
-    });
+	const response = await fetch(`/api/users/me/plans/${planId}/overrides`, {
+		method: 'PATCH',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify({ overrides }),
+	});
 
-    if (!response.ok) {
-        const error = await response.json();
-        throw new ApiError(
-            response.status,
-            error.error || 'Failed to update overrides'
-        );
-    }
+	if (!response.ok) {
+		const error = await response.json();
+		throw new ApiError(
+			response.status,
+			error.error || 'Failed to update overrides'
+		);
+	}
 
-    const result = await response.json();
-    return result.data;
+	const result = await response.json();
+	return result.data;
 }
 
-/**
- * Log a workout (completed or skipped)
- */
 export async function logWorkout(
-    planId: string,
-    workoutData: any
+	planId: string,
+	workoutData: any
 ): Promise<{
-    planId: string;
-    workoutLog: any;
-    userStats: {
-        totalWorkoutsCompleted: number;
-        currentStreak: number;
-        longestStreak: number;
-    };
+	planId: string;
+	workoutLog: any;
+	userStats: {
+		totalWorkoutsCompleted: number;
+		currentStreak: number;
+		longestStreak: number;
+	};
 }> {
-    const response = await fetch(`/api/users/me/plans/${planId}/logs`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(workoutData),
-    });
+	const response = await fetch(`/api/users/me/plans/${planId}/logs`, {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify(workoutData),
+	});
 
-    if (!response.ok) {
-        const error = await response.json();
-        throw new ApiError(
-            response.status,
-            error.error || 'Failed to log workout'
-        );
-    }
+	if (!response.ok) {
+		const error = await response.json();
+		throw new ApiError(
+			response.status,
+			error.error || 'Failed to log workout'
+		);
+	}
 
-    const result = await response.json();
-    return result.data;
+	const result = await response.json();
+	return result.data;
 }
 
 export async function updateWorkout(logId: string, planId: string, workoutData: WorkoutLog) {
@@ -77,7 +74,7 @@ export async function updateWorkout(logId: string, planId: string, workoutData: 
 		},
 		body: JSON.stringify(workoutData),
 	});
-	
+
 	if (!response.ok) {
 		const error = await response.json();
 		console.log("error", error.details);
@@ -91,25 +88,22 @@ export async function updateWorkout(logId: string, planId: string, workoutData: 
 	return result.data;
 }
 
-/**
- * Fetch user profile with enriched training plans
- */
 export async function getUserProfile(): Promise<any> {
-    const response = await fetch('/api/users/me', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    });
+	const response = await fetch('/api/users/me', {
+		method: 'GET',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+	});
 
-    if (!response.ok) {
-        const error = await response.json();
-        throw new ApiError(
-            response.status,
-            error.error || 'Failed to fetch user profile'
-        );
-    }
+	if (!response.ok) {
+		const error = await response.json();
+		throw new ApiError(
+			response.status,
+			error.error || 'Failed to fetch user profile'
+		);
+	}
 
-    const result = await response.json();
-    return result.data;
+	const result = await response.json();
+	return result.data;
 }

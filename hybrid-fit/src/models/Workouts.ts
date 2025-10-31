@@ -10,7 +10,7 @@ export enum WorkoutDifficulty {
  * Represents a single exercise structure inside a workout template
  */
 export interface WorkoutExerciseStructure {
-    exerciseId: string; // Reference to Exercise._id
+    exerciseId: string;
     sets?: number;
     reps?: number;
     durationMins?: number;
