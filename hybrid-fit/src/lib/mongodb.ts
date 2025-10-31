@@ -5,9 +5,6 @@ const MONGODB_URI = process.env.MONGODB_URI as string || "mongodb://127.0.0.1:27
 //     throw new Error("Missing MONGODB_URI in environment variables");
 // }
 
-/**
- * Maintains a global cached connection for hot reloads (Next.js dev mode)
- */
 let cached = (global as any).mongoose;
 
 if (!cached) {

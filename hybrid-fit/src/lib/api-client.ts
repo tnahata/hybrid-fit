@@ -1,5 +1,4 @@
-// lib/api-client.ts
-// Helper functions for making API calls with proper error handling
+import { WorkoutLog } from '@/models/User';
 
 export class ApiError extends Error {
     constructor(public status: number, public message: string) {
@@ -70,8 +69,30 @@ export async function logWorkout(
     return result.data;
 }
 
+export async function updateWorkout(logId: string, planId: string, workoutData: WorkoutLog) {
+	const response = await fetch(`/api/users/me/plans/${planId}/logs/${logId}`, {
+		method: 'PATCH',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify(workoutData),
+	});
+	
+	if (!response.ok) {
+		const error = await response.json();
+		console.log("error", error.details);
+		throw new ApiError(
+			response.status,
+			JSON.stringify(error.details) || 'Failed to log workout'
+		);
+	}
+
+	const result = await response.json();
+	return result.data;
+}
+
 /**
- * Fetch user profile with training plans
+ * Fetch user profile with enriched training plans
  */
 export async function getUserProfile(): Promise<any> {
     const response = await fetch('/api/users/me', {

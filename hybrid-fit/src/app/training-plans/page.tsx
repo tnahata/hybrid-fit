@@ -11,9 +11,10 @@ import { Pagination, PaginationContent, PaginationItem, PaginationLink, Paginati
 import { Badge } from "@/components/ui/badge";
 import { Search, ArrowUpDown, Calendar, Target, TrendingUp, Route } from "lucide-react";
 import { TrainingPlanDrawer } from "@/components/drawer/TrainingPlanDrawer";
-import { TrainingPlanWithWorkouts, TrainingPlanDetailResponse } from "@/types/training-plan";
+import { TrainingPlanWithWorkouts, TrainingPlanDetailResponse } from "../../../types/training-plan";
 import { TrainingPlanDoc } from "@/models/TrainingPlans";
 import { toast } from 'sonner';
+import LoadingSpinner from "@/components/ui/LoadingSpinner";
 
 export default function TrainingPlansPage() {
 	const [search, setSearch] = useState("");
@@ -340,12 +341,7 @@ export default function TrainingPlansPage() {
 			</div>
 
 			{isLoading ? (
-				<div className="min-h-screen bg-background flex items-center justify-center">
-					<div className="text-center">
-						<div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
-						<p className="text-muted-foreground">Loading training plans...</p>
-					</div>
-				</div>
+				<LoadingSpinner spinnerText='Loading training plans...' className='' />
 			) :
 			(
 				<div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

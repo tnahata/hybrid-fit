@@ -16,6 +16,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Badge } from "@/components/ui/badge";
 import { EnrichedUserPlanProgress, EnrichedTrainingPlanWeek } from '../app/dashboard';
+import { returnUTCDateInUSLocaleFormat } from '@/lib/dateUtils';
 
 interface CalendarDialogProps {
 	userPlan: EnrichedUserPlanProgress;
@@ -41,9 +42,14 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 	const getExpectedWorkoutDate = (weekNumber: number, dayIndex: number): Date => {
 		const startDate = new Date(userPlan.startedAt);
 		const daysFromStart = (weekNumber - 1) * 7 + dayIndex;
-		const expectedDate = new Date(startDate);
-		expectedDate.setDate(startDate.getDate() + daysFromStart);
-		return expectedDate;
+		const expectedDateMs = Date.UTC(
+			startDate.getUTCFullYear(),
+			startDate.getUTCMonth(),
+			startDate.getUTCDate() + daysFromStart,
+			0, 0, 0, 0
+		);
+
+		return new Date(expectedDateMs);
 	};
 
 	// Helper to check if two dates are the same day
@@ -58,57 +64,40 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 	// Helper to get workout status for a specific day
 	const getWorkoutStatus = (weekNumber: number, dayIndex: number): 'completed' | 'missed' | 'skipped' | 'upcoming' | 'current' => {
 		const week = userPlan.planDetails.weeks.find(w => w.weekNumber === weekNumber);
-		if (!week) return 'upcoming';
+		if (!week) {
+			return 'upcoming';
+		}
 
 		const day = week.days[dayIndex];
-		if (!day) return 'upcoming';
+		if (!day) {
+			return 'upcoming';
+		}
 
 		const expectedDate = getExpectedWorkoutDate(weekNumber, dayIndex);
 
-		if (userPlan.completedAt) {
-			const log = userPlan.progressLog.find(l => {
-				const logDate = new Date(l.date);
-				return isSameDay(logDate, expectedDate) && l.workoutTemplateId === day.workoutTemplateId;
-			});
+		const logForExpectedDate = userPlan.progressLog.find(l => {
+			const logDate = new Date(l.date);
+			return isSameDay(logDate, expectedDate) && l.workoutTemplateId === day.workoutTemplateId;
+		});
 
-			if (log) {
-				if (log.status === 'completed') return 'completed';
-				if (log.status === 'skipped') return 'skipped';
-				if (log.status === 'missed') return 'missed';
-			}
-			return 'missed';
-		}
-
-		if (weekNumber < userPlan.currentWeek) {
-			const log = userPlan.progressLog.find(l => {
-				const logDate = new Date(l.date);
-				return isSameDay(logDate, expectedDate) && l.workoutTemplateId === day.workoutTemplateId;
-			});
-
-			if (log) {
-				if (log.status === 'completed') return 'completed';
-				if (log.status === 'skipped') return 'skipped';
-				if (log.status === 'missed') return 'missed';
-			}
-			return 'missed';
-		}
-
-		if (weekNumber === userPlan.currentWeek) {
-			if (dayIndex < userPlan.currentDayIndex) {
-				const log = userPlan.progressLog.find(l => {
-					const logDate = new Date(l.date);
-					return isSameDay(logDate, expectedDate) && l.workoutTemplateId === day.workoutTemplateId;
-				});
-
-				if (log) {
-					if (log.status === 'completed') return 'completed';
-					if (log.status === 'skipped') return 'skipped';
-					if (log.status === 'missed') return 'missed';
-				}
+		// If plan is completed or workout was scheduled for a previous week in the plan
+		if (userPlan.completedAt || weekNumber < userPlan.currentWeek) {
+			if (logForExpectedDate) {
+				return logForExpectedDate.status;
+			} else {
 				return 'missed';
 			}
-			if (dayIndex === userPlan.currentDayIndex) return 'current';
-			return 'upcoming';
+		}
+
+		// Workouts for current week
+		if (weekNumber === userPlan.currentWeek && dayIndex <= userPlan.currentDayIndex) {
+			if (logForExpectedDate) {
+				return logForExpectedDate.status;
+			} else if (dayIndex === userPlan.currentDayIndex) { // could not find a log for current day, we just assume it is current
+				return 'current';
+			} else { // previous day in the current week and log not found
+				return 'missed';
+			}
 		}
 
 		return 'upcoming';
@@ -161,12 +150,10 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 		});
 	};
 
-	// Handle drag over
 	const handleDragOver = (e: React.DragEvent) => {
 		e.preventDefault();
 	};
 
-	// Handle drop
 	const handleDrop = (targetWeekNumber: number, targetDayIndex: number) => {
 		if (!draggedItem) return;
 
@@ -201,7 +188,6 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 			!(o.weekNumber === targetWeekNumber && o.dayOfWeek === daysOfWeek[targetDayIndex])
 		);
 
-		// Add new overrides
 		filteredOverrides.push({
 			weekNumber: draggedItem.weekNumber,
 			dayOfWeek: daysOfWeek[draggedItem.dayIndex],
@@ -218,7 +204,6 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 		setDraggedItem(null);
 	};
 
-	// Save overrides
 	const handleSaveOverrides = async () => {
 		if (!onUpdateOverrides) return;
 
@@ -252,7 +237,6 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 	// Check if there are unsaved changes
 	const hasUnsavedChanges = JSON.stringify(localOverrides) !== JSON.stringify(userPlan.overrides || []);
 
-	// Get status icon
 	const getStatusIcon = (status: string) => {
 		switch (status) {
 			case 'completed':
@@ -268,7 +252,6 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 		}
 	};
 
-	// Render a single week
 	const renderWeek = (week: EnrichedTrainingPlanWeek) => {
 		const weekCanBeEdited = !isCompleted && week.weekNumber >= userPlan.currentWeek;
 
@@ -412,7 +395,7 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 					</div>
 					<DialogDescription>
 						{isCompleted
-							? `Completed on ${new Date(userPlan.completedAt!).toLocaleDateString()}`
+							? `Completed on ${returnUTCDateInUSLocaleFormat(new Date(userPlan.completedAt!))}`
 							: `Week ${userPlan.currentWeek} of ${userPlan.totalWeeks} • ${userPlan.planDetails.sport}`
 						}
 					</DialogDescription>

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { useSession } from 'next-auth/react';
+import usePendingEnrollment from '@/hooks/usePendingEnrollment';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -12,51 +12,8 @@ import { signIn } from 'next-auth/react';
 import { toast } from 'sonner';
 
 export default function SignIn() {
-	const { data: session, status } = useSession();
 	const router = useRouter();
-
-	useEffect(() => {
-		if (status === "authenticated") {
-			const pendingPlanId = localStorage.getItem("pendingEnrollment");
-
-			if (pendingPlanId) {
-				// Enroll the user in the saved plan
-				enrollInPendingPlan(pendingPlanId);
-			}
-		}
-	}, [status]);
-
-	const enrollInPendingPlan = async (planId: string) => {
-		try {
-			const response = await fetch("/api/users/me/enroll", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({ planId }),
-			});
-
-			const data = await response.json();
-
-			localStorage.removeItem("pendingEnrollment");
-
-			if (response.ok) {
-				toast.success("Enrolled successfully!", {
-					description: `You've been enrolled in ${data.plan.name}`,
-				});
-				router.push("/dashboard");
-			} else {
-				toast.error("Enrollment failed", {
-					description: data.error,
-				});
-				router.push("/training-plans");
-			}
-		} catch (error) {
-			console.error("Pending enrollment error:", error);
-			localStorage.removeItem("pendingEnrollment");
-			router.push("/training-plans");
-		}
-	};
+	const { isProcessingEnrollment } = usePendingEnrollment();
 
 	const [showPassword, setShowPassword] = useState(false);
 	const [formData, setFormData] = useState({
@@ -153,10 +110,10 @@ export default function SignIn() {
 				toast.error('Login failed', {
 					description: errorMessage,
 				});
+				setIsLoading(false);
 			} else {
 				toast.success('Login successful!');
 				router.push('/dashboard');
-				router.refresh();
 			}
 		} catch (error) {
 			const errorMessage = 'Something went wrong. Please try again.';
@@ -165,9 +122,11 @@ export default function SignIn() {
 				description: errorMessage,
 			});
 			console.error('Sign in error:', error);
-		} finally {
 			setIsLoading(false);
 		}
+		//} finally {
+		//	setIsLoading(false);
+		//}
 	};
 
 	const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -226,6 +185,7 @@ export default function SignIn() {
 									onKeyPress={handleKeyPress}
 									aria-invalid={touched.email && errors.email}
 									className="w-full"
+									disabled={isProcessingEnrollment}
 								/>
 								{touched.email && errors.email && (
 									<p className="text-red-500 text-xs mt-1">Email is required</p>
@@ -256,11 +216,13 @@ export default function SignIn() {
 										onKeyPress={handleKeyPress}
 										aria-invalid={touched.password && errors.password}
 										className="w-full pr-10"
+										disabled={isProcessingEnrollment}
 									/>
 									<button
 										type="button"
 										onClick={() => setShowPassword(!showPassword)}
 										className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
+										disabled={isProcessingEnrollment}
 									>
 										{showPassword ? (
 											<EyeOff className="h-4 w-4" />
@@ -280,6 +242,7 @@ export default function SignIn() {
 									name="remember"
 									type="checkbox"
 									className="h-4 w-4 rounded border-gray-300 text-orange-500 focus:ring-orange-500"
+									disabled={isProcessingEnrollment}
 								/>
 								<label htmlFor="remember" className="ml-2 block text-sm text-gray-700">
 									Remember me
@@ -289,10 +252,10 @@ export default function SignIn() {
 							<Button
 								type="submit"
 								onClick={handleSubmit}
-								disabled={isLoading}
+								disabled={isLoading || isProcessingEnrollment}
 								className="w-full bg-orange-500 hover:bg-orange-600 text-white disabled:opacity-50 disabled:cursor-not-allowed"
 							>
-								{isLoading ? 'Signing in...' : 'Sign In'}
+								{isLoading || isProcessingEnrollment ? 'Signing you in...' : 'Sign In'}
 							</Button>
 						</div>
 

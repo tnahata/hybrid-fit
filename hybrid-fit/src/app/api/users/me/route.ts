@@ -5,6 +5,7 @@ import { connectToDatabase } from "@/lib/mongodb";
 import { User, UserDoc, UserPlanProgress } from "@/models/User";
 import { TrainingPlan, TrainingPlanDoc, TrainingPlanWeek, TrainingPlanDay } from "@/models/TrainingPlans";
 import { WorkoutTemplate, WorkoutTemplateDoc } from "@/models/Workouts";
+import { getStartOfDay, getDaysSince } from "@/lib/dateUtils";
 
 // Enriched day with workout details
 interface EnrichedTrainingPlanDay extends TrainingPlanDay {
@@ -39,18 +40,56 @@ interface EnrichedUserPlanProgress {
     progressLog: Array<{
         date: Date;
         workoutTemplateId: string;
-        status: "completed" | "skipped" | "missed";
+        status: "completed" | "skipped";
         notes?: string;
     }>;
     planDetails: EnrichedTrainingPlanDoc;
 }
 
-// Response structure
 interface ApiResponse {
     data: Omit<UserDoc, 'trainingPlans'> & {
         trainingPlans: EnrichedUserPlanProgress[];
     };
     success: boolean;
+}
+
+async function updateUserProgressIfNeeded(user: UserDoc): Promise<boolean> {
+	const today = getStartOfDay();
+
+	const lastUpdate = user.lastProgressUpdateDate
+		? getStartOfDay(user.lastProgressUpdateDate)
+		: null;
+
+	// If already updated today, skip
+	if (lastUpdate && lastUpdate.getTime() >= today.getTime()) {
+		return false;
+	}
+
+	// Update training plan progress for all active plans
+	for (const trainingPlan of user.trainingPlans) {
+		if (!trainingPlan.isActive) continue;
+
+		const daysSinceStart = getDaysSince(trainingPlan.startedAt);
+		console.log(`daysSinceStart = ${daysSinceStart}`);
+
+		if (daysSinceStart >= 0) {
+			const newWeekIndex = Math.floor(daysSinceStart / 7) + 1;
+			const newDayIndex = daysSinceStart % 7;
+			console.log(newWeekIndex, newDayIndex);
+
+			if (
+				trainingPlan.currentWeek !== newWeekIndex ||
+				trainingPlan.currentDayIndex !== newDayIndex
+			) {
+				trainingPlan.currentWeek = newWeekIndex;
+				trainingPlan.currentDayIndex = newDayIndex;
+			}
+		}
+	}
+
+	user.lastProgressUpdateDate = new Date();
+	await user.save();
+	return true;
 }
 
 export async function GET(req: Request): Promise<NextResponse> {
@@ -85,7 +124,9 @@ export async function GET(req: Request): Promise<NextResponse> {
             };
 
             return NextResponse.json(response);
-        }
+		}
+		
+		updateUserProgressIfNeeded(user);
 
         // Process each training plan
         const enrichedPlans: (EnrichedUserPlanProgress | null)[] = await Promise.all(

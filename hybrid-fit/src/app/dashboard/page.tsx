@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -13,14 +13,16 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
-import { UserDoc } from "@/models/User";
+import { UserDoc, WorkoutLog } from "@/models/User";
 import { TrainingPlanDoc, TrainingPlanDay, TrainingPlanWeek } from "@/models/TrainingPlans";
 import { WorkoutTemplateDoc } from "@/models/Workouts";
-import { updatePlanOverrides, logWorkout, getUserProfile, ApiError } from '@/lib/api-client';
+import { updatePlanOverrides, logWorkout, updateWorkout, getUserProfile, ApiError } from '@/lib/api-client';
 import LogResultsDialog from '@/components/LogResultsDialog';
 import CalendarDialog from '@/components/CalendarDialog';
 import { toast } from 'sonner';
 import Link from 'next/link';
+import { getStartOfDay, returnUTCDateInUSLocaleFormat } from '@/lib/dateUtils';
+import LoadingSpinner from '@/components/ui/LoadingSpinner';
 
 // Enriched types matching API response
 export interface EnrichedTrainingPlanDay extends TrainingPlanDay {
@@ -49,12 +51,7 @@ export interface EnrichedUserPlanProgress {
 		dayOfWeek: string;
 		customWorkoutId: string;
 	}>;
-	progressLog: Array<{
-		date: Date;
-		workoutTemplateId: string;
-		status: "completed" | "skipped" | "missed";
-		notes?: string;
-	}>;
+	progressLog: Array<WorkoutLog>;
 	planDetails: EnrichedTrainingPlanDoc;
 }
 
@@ -91,15 +88,13 @@ export default function Dashboard() {
 			setError(null);
 
 			const userData = await getUserProfile();
-			setCurrentUser(userData);
-
-			// Set default to first active plan
 			const activePlan = userData.trainingPlans?.find(
 				(p: any) => p.isActive
 			);
-			if (activePlan) {
-				setSelectedPlanId(activePlan.planId);
-			}
+			const planIdToSelect = activePlan?.planId || userData.trainingPlans?.[0]?.planId || "";
+			setSelectedPlanId(planIdToSelect);
+			setCurrentUser(userData);
+			
 		} catch (err) {
 			const errorMessage = err instanceof ApiError
 				? err.message
@@ -111,12 +106,14 @@ export default function Dashboard() {
 		}
 	};
 
-	// Get current selected plan
-	const currentUserPlan: EnrichedUserPlanProgress | undefined = currentUser?.trainingPlans?.find(
-		(p: EnrichedUserPlanProgress) => p.planId === selectedPlanId
-	);
+	const currentUserPlan = useMemo(() => {
+		if (!currentUser?.trainingPlans?.length || !selectedPlanId) return undefined;
 
-	// Handler for updating overrides
+		return currentUser.trainingPlans.find(
+			(p: EnrichedUserPlanProgress) => p.planId === selectedPlanId
+		);
+	}, [currentUser, selectedPlanId]);
+
 	const handleUpdateOverrides = async (overrides: any[]) => {
 		if (!currentUserPlan) {
 			throw new Error('No active plan selected');
@@ -146,7 +143,33 @@ export default function Dashboard() {
 		}
 	};
 
-	// Handler for logging workout
+	const handleUpdateWorkout = async (data: WorkoutLog, logId: string) => {
+		if (!currentUserPlan) {
+			throw new Error('No active plan selected');
+		}
+
+		try {
+			const result = await updateWorkout(logId, currentUserPlan.planId, data);
+
+			await fetchUserData();
+
+			toast.success('Workout log updated!', {
+				description: `Great job! Current streak: ${result.userStats.currentStreak} days 🔥`
+			});
+		} catch (error) {
+
+			const errorMessage = error instanceof ApiError
+				? error.message
+				: 'Failed to log workout';
+
+			toast.error('Failed to update workout log!', {
+				description: errorMessage,
+			});
+
+			throw error;
+		}
+	}
+
 	const handleLogWorkout = async (data: any) => {
 		if (!currentUserPlan) {
 			throw new Error('No active plan selected');
@@ -155,12 +178,10 @@ export default function Dashboard() {
 		try {
 			const result = await logWorkout(currentUserPlan.planId, data);
 
-			// Refresh user data to show updated stats and progress
 			await fetchUserData();
 
-			// Show success toast with updated stats
 			toast.success('Workout Logged!', {
-				description: `Great job! Current streak: ${result.userStats.currentStreak} days 🔥`,
+				description: `Great job! Current streak: ${result.userStats.currentStreak} days 🔥`
 			});
 
 		} catch (error) {
@@ -170,8 +191,7 @@ export default function Dashboard() {
 				? error.message
 				: 'Failed to log workout';
 
-			// Show error toast
-			toast.error('Logging Failed', {
+			toast.error('Failed to log workout!', {
 				description: errorMessage,
 			});
 
@@ -179,7 +199,6 @@ export default function Dashboard() {
 		}
 	};
 
-	// Get today's workout with full details
 	const getTodaysWorkout = (): EnrichedTrainingPlanDay | null => {
 		if (!currentUserPlan) return null;
 
@@ -194,16 +213,13 @@ export default function Dashboard() {
 		return currentWeek.days[currentUserPlan.currentDayIndex];
 	};
 
-	// Helper to get today's log entry if it exists
-	const getTodaysLog = () => {
+	const getTodaysLog = (): WorkoutLog | null => {
 		if (!currentUserPlan || !todaysWorkout) return null;
 
-		const today = new Date();
-		today.setHours(0, 0, 0, 0);
+		const today = getStartOfDay();
 
 		const log = currentUserPlan.progressLog.find(l => {
-			const logDate = new Date(l.date);
-			logDate.setHours(0, 0, 0, 0);
+			const logDate = getStartOfDay(l.date);
 			return logDate.getTime() === today.getTime() &&
 				l.workoutTemplateId === todaysWorkout.workoutTemplateId;
 		});
@@ -217,7 +233,6 @@ export default function Dashboard() {
 	const daysOfWeek: string[] = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 	const currentDayName: string = currentUserPlan ? daysOfWeek[currentUserPlan.currentDayIndex] : '';
 
-	// Helper functions
 	const getCompletedWorkoutsThisWeek = (): number => {
 		if (!currentUserPlan) return 0;
 
@@ -245,18 +260,12 @@ export default function Dashboard() {
 		return currentWeek?.days?.length || 7;
 	};
 
-	const today: string = new Date().toLocaleDateString('en-US', {
-		weekday: 'long',
-		year: 'numeric',
-		month: 'long',
-		day: 'numeric'
-	});
+	const today: string = returnUTCDateInUSLocaleFormat();
 
-	// Get sport emoji
 	const getSportEmoji = (sport: string): string => {
 		const emojiMap: Record<string, string> = {
 			'running': '🏃',
-			'strength': '💪',
+			'strength': '🏋️‍♂️',
 			'cycling': '🚴',
 			'swimming': '🏊',
 			'triathlon': '🏊🚴🏃',
@@ -264,7 +273,6 @@ export default function Dashboard() {
 		return emojiMap[sport.toLowerCase()] || '💪';
 	};
 
-	// Check if today's workout is overridden
 	const isWorkoutOverridden = (): boolean => {
 		if (!currentUserPlan) return false;
 
@@ -275,7 +283,7 @@ export default function Dashboard() {
 		);
 	};
 
-	// Format workout metrics for display
+	// Format workout metrics for display on dashboard
 	const getWorkoutMetrics = (): Array<{ label: string; value: string }> => {
 		if (!todaysWorkout?.workoutDetails) {
 			return [
@@ -321,14 +329,7 @@ export default function Dashboard() {
 
 	// Loading state
 	if (status === "loading" || loading) {
-		return (
-			<div className="min-h-screen bg-background flex items-center justify-center">
-				<div className="text-center">
-					<div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
-					<p className="text-muted-foreground">Loading your dashboard...</p>
-				</div>
-			</div>
-		);
+		return (<LoadingSpinner spinnerText='Loading your dashboard...' className='' />);
 	}
 
 	if (!session) {
@@ -380,6 +381,10 @@ export default function Dashboard() {
 		);
 	}
 
+	if (currentUser && currentUser.trainingPlans.length > 0 && !currentUserPlan) {
+		return (<LoadingSpinner spinnerText='Loading your dashboard...' className=''/>);
+	}
+
 	// No plan selected state
 	if (!currentUserPlan) {
 		return null;
@@ -392,8 +397,7 @@ export default function Dashboard() {
 	const workoutIsCustom: boolean = isWorkoutOverridden();
 	const workoutMetrics: Array<{ label: string; value: string }> = getWorkoutMetrics();
 
-	// Determine plan status for conditional rendering
-	const isPlanCompleted: boolean = !!currentUserPlan.completedAt;
+	const isPlanCompleted: boolean = !!currentUserPlan.completedAt; // double negation operator
 	const isPlanActive: boolean = currentUserPlan.isActive && !isPlanCompleted;
 
 	return (
@@ -432,7 +436,6 @@ export default function Dashboard() {
 						</div>
 					</div>
 
-					{/* COMPLETED PLAN VIEW */}
 					{isPlanCompleted && (
 						<Card className="border-green-200 bg-green-50/50">
 							<CardHeader>
@@ -443,11 +446,7 @@ export default function Dashboard() {
 									<div>
 										<CardTitle className="text-xl text-green-900">Plan Completed!</CardTitle>
 										<CardDescription className="text-green-700">
-											Completed on {new Date(currentUserPlan.completedAt).toLocaleDateString('en-US', {
-												month: 'long',
-												day: 'numeric',
-												year: 'numeric'
-											})}
+											Completed on {returnUTCDateInUSLocaleFormat(currentUserPlan.completedAt)}
 										</CardDescription>
 									</div>
 								</div>
@@ -469,7 +468,6 @@ export default function Dashboard() {
 						</Card>
 					)}
 
-					{/* INACTIVE PLAN VIEW */}
 					{!isPlanActive && !isPlanCompleted && (
 						<Card className="border-orange-200 bg-orange-50/50">
 							<CardHeader>
@@ -500,7 +498,6 @@ export default function Dashboard() {
 						</Card>
 					)}
 
-					{/* ACTIVE PLAN - TODAY'S WORKOUT CARD */}
 					{isPlanActive && (
 						<Card>
 							<CardHeader>
@@ -569,7 +566,8 @@ export default function Dashboard() {
 									<LogResultsDialog
 										workout={todaysWorkout?.workoutDetails}
 										existingLog={todaysLog}
-										onSubmit={handleLogWorkout}
+										onCreateLog={handleLogWorkout}
+										onUpdateLog={handleUpdateWorkout}
 										trigger={
 											<Button className="flex-1" size="lg">
 												{hasLoggedToday ? 'Edit Results' : 'Log Results'}
@@ -643,7 +641,6 @@ export default function Dashboard() {
 						</Card>
 					</div>
 
-					{/* Progress Cards */}
 					<div className="grid gap-6 md:grid-cols-2">
 						{isPlanActive &&
 							<Card>
@@ -718,11 +715,7 @@ export default function Dashboard() {
 														<span className="text-lg">{statusEmoji}</span>
 														<div>
 															<span className="text-sm font-medium">
-																{new Date(log.date).toLocaleDateString('en-US', {
-																	weekday: 'short',
-																	month: 'short',
-																	day: 'numeric'
-																})}
+																{returnUTCDateInUSLocaleFormat(log.date)}
 															</span>
 															{log.notes && (
 																<p className="text-xs text-muted-foreground">{log.notes}</p>

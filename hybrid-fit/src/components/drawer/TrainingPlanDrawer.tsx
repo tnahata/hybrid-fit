@@ -7,7 +7,7 @@ import { Separator } from "@/components/ui/separator";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { ArrowLeft, ChevronDown, ChevronUp } from "lucide-react";
-import { TrainingPlanWithWorkouts, TrainingPlanWeekWithWorkouts, TrainingPlanDayWithWorkout, WorkoutTemplateWithExercises, WorkoutExerciseWithDetails } from "@/types/training-plan";
+import { TrainingPlanWithWorkouts, TrainingPlanWeekWithWorkouts, TrainingPlanDayWithWorkout, WorkoutTemplateWithExercises, WorkoutExerciseWithDetails } from "../../../types/training-plan";
 import {
 	Collapsible,
 	CollapsibleContent,

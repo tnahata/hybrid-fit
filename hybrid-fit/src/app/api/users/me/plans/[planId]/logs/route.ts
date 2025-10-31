@@ -3,221 +3,139 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { NextRequest, NextResponse } from "next/server";
 import { connectToDatabase } from "@/lib/mongodb";
 import { User, UserDoc, WorkoutLog } from "@/models/User";
-
-interface PostWorkoutLogRequest {
-    date: string | Date;
-    workoutTemplateId: string;
-    status: "completed" | "skipped";
-    notes?: string;
-
-    durationMinutes?: number;
-    perceivedEffort?: number;
-    activityType?: string;
-    sport?: string;
-
-    // Distance-based fields
-    distance?: {
-        value: number;
-        unit: "miles" | "kilometers";
-    };
-    pace?: {
-        average: number;
-        unit: "min/mile" | "min/km";
-    };
-
-    // Strength fields
-    strengthSession?: {
-        exercises: Array<{
-            exerciseId: string;
-            exerciseName: string;
-            sets: Array<{
-                setNumber: number;
-                reps: number;
-                weight: number;
-                completed: boolean;
-            }>;
-        }>;
-        totalVolume: number;
-        volumeUnit: "kgs" | "lbs";
-    };
-
-    drillSession?: {
-        activities: Array<{
-            name: string;
-            durationMinutes?: number;
-            repetitions?: number;
-            sets?: number;
-            notes?: string;
-        }>;
-        customMetrics?: Record<string, number | string>;
-    };
-
-    heartRate?: {
-        average: number;
-    };
-}
+import { recalculateStreak } from "@/lib/helpers";
+import { WorkoutLogInput, WorkoutLogSchema } from "./schemas";
 
 export async function POST(
-    req: NextRequest,
-    { params }: { params: { planId: string } }
+	req: NextRequest,
+	{ params }: { params: { planId: string } }
 ): Promise<NextResponse> {
-    try {
+	try {
 
-        const session = await getServerSession(authOptions);
+		const session = await getServerSession(authOptions);
 
-        if (!session || !session.user) {
-            return NextResponse.json(
-                { error: "Unauthorized", success: false },
-                { status: 401 }
-            );
-        }
+		if (!session || !session.user) {
+			return NextResponse.json(
+				{ error: "Unauthorized", success: false },
+				{ status: 401 }
+			);
+		}
 
-        await connectToDatabase();
+		await connectToDatabase();
 
-        const { planId } = await params;
+		const { planId } = await params;
 
-        const userId = session.user.id;
+		const userId = session.user.id;
 
-        // Parse request body
-        const body: PostWorkoutLogRequest = await req.json();
-        const { date, workoutTemplateId, status, notes } = body;
+		const rawBody = await req.json();
+		const validationResult = WorkoutLogSchema.safeParse(rawBody);
 
-        // Validate required fields
-        if (!date || !workoutTemplateId || !status) {
-            return NextResponse.json(
-                { error: "Missing required fields: date, workoutTemplateId, status", success: false },
-                { status: 400 }
-            );
-        }
+		if (!validationResult.success) {
+			return NextResponse.json(
+				{
+					error: "Validation failed",
+					details: validationResult.error.errors.map(err => ({
+						field: err.path.join('.'),
+						message: err.message,
+					})),
+					success: false,
+				},
+				{ status: 400 }
+			);
+		}
 
-        if (!["completed", "skipped"].includes(status)) {
-            return NextResponse.json(
-                { error: "Status must be 'completed' or 'skipped'", success: false },
-                { status: 400 }
-            );
-        }
+		const body: WorkoutLogInput = validationResult.data;
+		const { date, workoutTemplateId, status, notes } = body;
 
-        const user: UserDoc | null = await User.findById(userId);
-        if (!user) {
-            return NextResponse.json(
-                { error: "User not found", success: false },
-                { status: 404 }
-            );
-        }
+		const user: UserDoc | null = await User.findById(userId);
+		if (!user) {
+			return NextResponse.json(
+				{ error: "User not found", success: false },
+				{ status: 404 }
+			);
+		}
 
-        const planIndex = user.trainingPlans.findIndex(
-            (plan) => plan.planId === planId
-        );
+		const planIndex = user.trainingPlans.findIndex(
+			(plan) => plan.planId === planId
+		);
 
-        if (planIndex === -1) {
-            return NextResponse.json(
-                { error: "Training plan not found", success: false },
-                { status: 404 }
-            );
-        }
+		if (planIndex === -1) {
+			return NextResponse.json(
+				{ error: `${user.name} is not enrolled in the training plan ${planId}`, success: false },
+				{ status: 404 }
+			);
+		}
 
-        const workoutLog: WorkoutLog = {
-            date: new Date(date),
-            workoutTemplateId,
-            status,
-            notes,
-        };
+		const workoutLog: WorkoutLog = {
+			date: new Date(date),
+			workoutTemplateId,
+			status,
+			notes,
+		};
 
-        if (status === "completed") {
-            // Universal metrics
-            if (body.durationMinutes !== undefined) {
-                workoutLog.durationMinutes = body.durationMinutes;
-            }
-            if (body.perceivedEffort !== undefined) {
-                workoutLog.perceivedEffort = body.perceivedEffort;
-            }
-            if (body.activityType) {
-                workoutLog.activityType = body.activityType;
-            }
-            if (body.sport) {
-                workoutLog.sport = body.sport;
-            }
+		if (status === "completed") {
 
-            // Distance-based metrics
-            if (body.distance) {
-                workoutLog.distance = body.distance;
-            }
-            if (body.pace) {
-                workoutLog.pace = body.pace;
-            }
+			if (body.durationMinutes !== undefined) {
+				workoutLog.durationMinutes = body.durationMinutes;
+			}
+			if (body.perceivedEffort !== undefined) {
+				workoutLog.perceivedEffort = body.perceivedEffort;
+			}
+			if (body.activityType) {
+				workoutLog.activityType = body.activityType;
+			}
+			if (body.sport) {
+				workoutLog.sport = body.sport;
+			}
 
-            // Strength training metrics
-            if (body.strengthSession) {
-                workoutLog.strengthSession = body.strengthSession;
-            }
 
-            // Drill session metrics (sport-specific)
-            if (body.drillSession) {
-                workoutLog.drillSession = body.drillSession;
-            }
+			if (body.distance) {
+				workoutLog.distance = body.distance;
+			}
+			if (body.pace) {
+				workoutLog.pace = body.pace;
+			}
 
-            // Heart rate
-            if (body.heartRate) {
-                workoutLog.heartRate = body.heartRate;
-            }
+			if (body.strengthSession) {
+				workoutLog.strengthSession = body.strengthSession;
+			}
 
-            // Update cumulative metrics for the user
-            user.totalWorkoutsCompleted += 1;
-            user.lastWorkoutDate = new Date(date);
+			if (body.drillSession) {
+				workoutLog.drillSession = body.drillSession;
+			}
 
-            // Update streak
-            const today = new Date();
-            today.setHours(0, 0, 0, 0);
-            const logDate = new Date(date);
-            logDate.setHours(0, 0, 0, 0);
-            const lastWorkout = user.lastWorkoutDate ? new Date(user.lastWorkoutDate) : null;
+			if (body.heartRate) {
+				workoutLog.heartRate = body.heartRate;
+			}
 
-            if (lastWorkout) {
-                lastWorkout.setHours(0, 0, 0, 0);
-                const daysDiff = Math.floor((logDate.getTime() - lastWorkout.getTime()) / (1000 * 60 * 60 * 24));
+			user.totalWorkoutsCompleted += 1;
+		}
 
-                if (daysDiff === 1) {
-                    // Consecutive day
-                    user.currentStreak += 1;
-                } else if (daysDiff === 0) {
-                    // Same day, no change to streak
-                } else {
-                    // Streak broken
-                    user.currentStreak = 1;
-                }
-            } else {
-                // First workout
-                user.currentStreak = 1;
-            }
+		user.trainingPlans[planIndex].progressLog.push(workoutLog);
+		recalculateStreak(user, planIndex);
 
-            // Update longest streak
-            if (user.currentStreak > user.longestStreak) {
-                user.longestStreak = user.currentStreak;
-            }
-        }
+		await user.save();
 
-        user.trainingPlans[planIndex].progressLog.push(workoutLog);
+		return NextResponse.json({
+			data: {
+				planId,
+				workoutLog,
+				userStats: {
+					totalWorkoutsCompleted: user.totalWorkoutsCompleted,
+					currentStreak: user.currentStreak,
+					longestStreak: user.longestStreak,
+					lastWorkoutDate: user.lastWorkoutDate
+				},
+			},
+			success: true,
+		});
 
-        await user.save();
-
-        return NextResponse.json({
-            data: {
-                planId,
-                workoutLog,
-                userStats: {
-                    totalWorkoutsCompleted: user.totalWorkoutsCompleted,
-                    currentStreak: user.currentStreak,
-                    longestStreak: user.longestStreak,
-                },
-            },
-            success: true,
-        });
-    } catch (error: unknown) {
-        const errorMessage: string = error instanceof Error ? error.message : "Unknown error occurred";
-        console.error("Error logging workout:", errorMessage);
-        return NextResponse.json(
-            { error: "Failed to log workout", success: false },
-            { status: 500 }
-        );
-    }
+	} catch (error: unknown) {
+		const errorMessage: string = error instanceof Error ? error.message : "Unknown error occurred";
+		console.error("Error logging workout:", errorMessage);
+		return NextResponse.json(
+			{ error: "Failed to log workout", success: false },
+			{ status: 500 }
+		);
+	}
 }

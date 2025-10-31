@@ -10,6 +10,7 @@ import { Separator } from '@/components/ui/separator';
 import { Plus, Trash2, Check } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { WorkoutLog } from '@/models/User';
 
 interface WorkoutTemplateDoc {
     _id: string;
@@ -36,31 +37,15 @@ interface Exercise {
     sets: ExerciseSet[];
 }
 
-interface WorkoutLog {
-    date: Date;
-    workoutTemplateId: string;
-    status: "completed" | "skipped";
-    notes?: string;
-    durationMinutes?: number;
-    perceivedEffort?: number;
-    distance?: { value: number; unit: "miles" | "kilometers" };
-    pace?: { average: number; unit: "min/mile" | "min/km" };
-    strengthSession?: {
-        exercises: Exercise[];
-        totalVolume: number;
-        volumeUnit: string;
-    };
-    heartRate?: { average: number };
-}
-
 interface LogResultsDialogProps {
     workout: WorkoutTemplateDoc | null;
-    existingLog?: WorkoutLog | null; // Information from the exisiting log if present
-    onSubmit: (data: any) => void;
+    existingLog?: WorkoutLog | null;
+	onCreateLog: (data: any) => void;
+	onUpdateLog: (data: WorkoutLog, logId: string) => void;
     trigger?: React.ReactNode;
 }
 
-export default function LogResultsDialog({ workout, existingLog, onSubmit, trigger }: LogResultsDialogProps) {
+export default function LogResultsDialog({ workout, existingLog, onCreateLog, onUpdateLog, trigger }: LogResultsDialogProps) {
     const [open, setOpen] = useState<boolean>(false);
 
     // Status selection
@@ -90,7 +75,6 @@ export default function LogResultsDialog({ workout, existingLog, onSubmit, trigg
         }
     ]);
 
-    // Load existing log data when dialog opens (for editing)
     useEffect(() => {
         if (open && existingLog) {
             setWorkoutStatus(existingLog.status);
@@ -129,10 +113,9 @@ export default function LogResultsDialog({ workout, existingLog, onSubmit, trigg
             workout.category.toLowerCase().includes('strength');
     };
 
-    // Validation: Check if required fields are filled
     const isFormValid = (): boolean => {
         if (workoutStatus === 'skipped') {
-            return true; // Skipped workouts don't need metrics
+            return true;
         }
 
         // For completed workouts, validate based on type
@@ -198,7 +181,7 @@ export default function LogResultsDialog({ workout, existingLog, onSubmit, trigg
     const calculateTotalVolume = (): number => {
         return exercises.reduce((total, exercise) => {
             return total + exercise.sets.reduce((exTotal, set) => {
-                return exTotal + (set.weight * set.reps);
+                return exTotal + (set.completed ? (set.weight * set.reps) : 0);
             }, 0);
         }, 0);
     };
@@ -206,15 +189,15 @@ export default function LogResultsDialog({ workout, existingLog, onSubmit, trigg
     const handleSubmit = (): void => {
         if (!isFormValid()) return;
 
-        const data: any = {
+        const data: WorkoutLog = {
             date: new Date(),
-            workoutTemplateId: workout?._id,
+			workoutTemplateId: workout?._id,
             status: workoutStatus,
             notes: notes || undefined,
         };
 
         if (workoutStatus === 'completed') {
-            data.durationMinutes = parseFloat(durationMinutes) || undefined;
+            data.durationMinutes = parseFloat(durationMinutes);
             data.perceivedEffort = perceivedEffort[0];
             data.activityType = isStrengthWorkout() ? 'strength' : isDistanceWorkout() ? 'distance' : 'time';
             data.sport = workout?.sport;
@@ -251,7 +234,11 @@ export default function LogResultsDialog({ workout, existingLog, onSubmit, trigg
             }
         }
 
-        onSubmit(data);
+		if (existingLog) {
+			onUpdateLog(data, existingLog._id?.toString());
+		} else {
+			onCreateLog(data);
+		}
         setOpen(false);
     };
 

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -8,66 +8,16 @@ import Image from 'next/image';
 import { XIcon, Eye, EyeOff } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { StepCard } from '@/components/signup/StepCard';
-import { signIn, useSession } from 'next-auth/react';
+import { signIn } from 'next-auth/react';
 import { toast } from 'sonner';
+import usePendingEnrollment from '@/hooks/usePendingEnrollment';
 
 export default function Signup() {
 	const router = useRouter();
-	const { data: session, status } = useSession();
 	const [step, setStep] = useState(1);
 	const [showPassword, setShowPassword] = useState(false);
 
-	useEffect(() => {
-		if (status === "authenticated") {
-			const pendingPlanId = localStorage.getItem("pendingEnrollment");
-
-			if (pendingPlanId) {
-				enrollInPendingPlan(pendingPlanId);
-			}
-		}
-	}, [status]);
-
-	const enrollInPendingPlan = async (planId: string) => {
-		try {
-			const response = await fetch("/api/users/me/enroll", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({ planId }),
-			});
-
-			const data = await response.json();
-
-			localStorage.removeItem("pendingEnrollment");
-
-			if (response.ok) {
-				toast.success("Enrolled successfully!", {
-					description: `You've been enrolled in ${data.plan.name}`,
-				});
-				router.push("/dashboard");
-				router.refresh();
-			} else {
-				if (response.status === 409) {
-					toast.info("Already enrolled", {
-						description: "You were already enrolled in this plan",
-					});
-				} else {
-					toast.error("Enrollment failed", {
-						description: data.error,
-					});
-				}
-				router.push("/training-plans");
-			}
-		} catch (error) {
-			console.error("Pending enrollment error:", error);
-			localStorage.removeItem("pendingEnrollment");
-			toast.error("Enrollment failed", {
-				description: "Please try enrolling again from training plans",
-			});
-			router.push("/training-plans");
-		}
-	};
+	const { isProcessingEnrollment } = usePendingEnrollment();
 
 	const stepData = [
 		{
@@ -82,7 +32,7 @@ export default function Signup() {
 		},
 		{
 			title: 'AI Powered Recommendations',
-			content: 'Our smart engine learns from your compeleted workouts and sport preferences to suggest what to do next - smarter training, personalized for you.', // TODO: Update with actual content
+			content: 'Our smart engine learns from your compeleted workouts and sport preferences to suggest what to do next - smarter training, personalized for you.',
 			image: '/fourth.png'
 		}
 	];
@@ -251,14 +201,12 @@ export default function Signup() {
 			} else {
 				toast.success('Welcome to HybridFit!');
 				router.push('/dashboard');
-				router.refresh();
 			}
 		} catch (error) {
 			console.error('Signup error:', error);
 			toast.error('Something went wrong', {
 				description: 'Please try again',
 			});
-		} finally {
 			setIsSubmitting(false);
 		}
 	};
@@ -307,6 +255,7 @@ export default function Signup() {
 											onBlur={() => handleBlur('name')}
 											aria-invalid={touched.name && errors.name}
 											className="w-full"
+											disabled={isProcessingEnrollment}
 										/>
 										{touched.name && errors.name && (
 											<p className="text-red-500 text-xs mt-1">Name is required</p>
@@ -327,6 +276,7 @@ export default function Signup() {
 											onBlur={() => handleBlur('email')}
 											aria-invalid={touched.email && errors.email}
 											className="w-full"
+											disabled={isProcessingEnrollment}
 										/>
 										{touched.email && errors.email && (
 											<p className="text-red-500 text-xs mt-1">Email is required</p>
@@ -348,11 +298,13 @@ export default function Signup() {
 												onBlur={() => handleBlur('password')}
 												aria-invalid={touched.password && errors.password}
 												className="w-full pr-10"
+												disabled={isProcessingEnrollment}
 											/>
 											<button
 												type="button"
 												onClick={() => setShowPassword(!showPassword)}
 												className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
+												disabled={isProcessingEnrollment}
 											>
 												{showPassword ? (
 													<EyeOff className="h-4 w-4" />
@@ -371,6 +323,7 @@ export default function Signup() {
 									<Button
 										onClick={handleContinue}
 										className="w-full bg-orange-500 hover:bg-orange-600 text-white"
+										disabled={isProcessingEnrollment}
 									>
 										Lets get started
 									</Button>
@@ -409,6 +362,7 @@ export default function Signup() {
 						image={stepData[0].image}
 						onNext={handleNext}
 						onBack={handleBack}
+						disabled={isProcessingEnrollment}
 					/>
 				)}
 
@@ -419,6 +373,7 @@ export default function Signup() {
 						image={stepData[1].image}
 						onNext={handleNext}
 						onBack={handleBack}
+						disabled={isProcessingEnrollment}
 					/>
 				)}
 
@@ -429,8 +384,8 @@ export default function Signup() {
 						image={stepData[2].image}
 						onNext={handleSubmit}
 						onBack={handleBack}
-						buttonLabel={isSubmitting ? "Creating account..." : "Get Started"}
-						disabled={isSubmitting}
+						buttonLabel={isSubmitting || isProcessingEnrollment ? "Setting you up..." : "Get Started"}
+						disabled={isSubmitting || isProcessingEnrollment}
 					/>
 				)}
 			</DialogContent>

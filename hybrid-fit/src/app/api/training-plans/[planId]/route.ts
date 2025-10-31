@@ -3,7 +3,7 @@ import { connectToDatabase } from "@/lib/mongodb";
 import { TrainingPlan, TrainingPlanWeek } from "@/models/TrainingPlans";
 import { WorkoutTemplate } from "@/models/Workouts";
 import { Exercise } from "@/models/Exercise";
-import { WorkoutExerciseWithDetails } from "@/types/training-plan";
+import { WorkoutExerciseWithDetails } from "../../../../../types/training-plan";
 
 export async function GET(
 	request: NextRequest,
