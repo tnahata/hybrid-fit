@@ -14,7 +14,7 @@ import {
 	SelectValue,
 } from "@/components/ui/select";
 import { WorkoutLog } from "@/models/User";
-import { EnrichedTrainingPlanDay, EnrichedTrainingPlanWeek } from '@/lib/enrichTrainingPlans';
+import { EnrichedTrainingPlanDay, EnrichedTrainingPlanWeek, WorkoutStructureItem } from '@/lib/enrichTrainingPlans';
 import { EnrichedUserDoc, EnrichedUserPlanProgress } from '../api/users/me/route';
 import { WorkoutTemplateDoc } from "@/models/Workouts";
 import { updatePlanOverrides, logWorkout, updateWorkout, getUserProfile, ApiError } from '@/lib/api-client';
@@ -24,6 +24,9 @@ import { toast } from 'sonner';
 import Link from 'next/link';
 import { getStartOfDay, returnUTCDateInUSLocaleFormat } from '@/lib/dateUtils';
 import LoadingSpinner from '@/components/ui/LoadingSpinner';
+import { Dumbbell, ChevronDown, PersonStanding, Dumbbell as Strength, Bike, Waves } from 'lucide-react';
+import { Trophy, TrendingUp, Goal, Logs, LoaderCircle } from 'lucide-react';
+import { Flame, Tag } from '@/components/icons/icons';
 
 export default function Dashboard() {
 	const [currentUser, setCurrentUser] = useState<EnrichedUserDoc | null>(null);
@@ -56,7 +59,7 @@ export default function Dashboard() {
 			console.log(planIdToSelect);
 			setSelectedPlanId(planIdToSelect);
 			setCurrentUser(userData);
-			
+
 		} catch (err) {
 			const errorMessage = err instanceof ApiError
 				? err.message
@@ -86,7 +89,6 @@ export default function Dashboard() {
 		try {
 			await updatePlanOverrides(currentUserPlan._id, overrides);
 
-			// Refresh user data to show updated overrides
 			await fetchUserData();
 
 			toast.success('Schedule updated successfully!');
@@ -98,12 +100,11 @@ export default function Dashboard() {
 				? error.message
 				: 'Failed to update schedule';
 
-			// Show error toast
 			toast.error('Update Failed', {
 				description: errorMessage,
 			});
 
-			throw error; // Re-throw so CalendarDialog can show error state
+			throw error;
 		}
 	};
 
@@ -184,9 +185,7 @@ export default function Dashboard() {
 			o.dayOfWeek === todayDayOfWeek
 		);
 
-		// If there's an override, find the workout with the overridden ID
 		if (override) {
-			// Search through all weeks/days to find the workout with this ID
 			for (const week of currentUserPlan.weeks) {
 				for (const day of week.days) {
 					if (day.workoutTemplateId === override.customWorkoutId) {
@@ -252,6 +251,17 @@ export default function Dashboard() {
 
 	const today: string = returnUTCDateInUSLocaleFormat();
 
+	const getSportIcon = (sport: string) => {
+		const iconMap: Record<string, React.ReactNode> = {
+			'running': <PersonStanding className="w-6 h-6" />,
+			'strength': <Dumbbell className="w-6 h-6" />,
+			'cycling': <Bike className="w-6 h-6" />,
+			'swimming': <Waves className="w-6 h-6" />,
+			'triathlon': <Trophy className="w-6 h-6" />,
+		};
+		return iconMap[sport.toLowerCase()] || <Dumbbell className="w-6 h-6" />;
+	};
+
 	const getSportEmoji = (sport: string): string => {
 		const emojiMap: Record<string, string> = {
 			'running': '🏃',
@@ -273,7 +283,6 @@ export default function Dashboard() {
 		);
 	};
 
-	// Format workout metrics for display on dashboard
 	const getWorkoutMetrics = (): Array<{ label: string; value: string }> => {
 		if (!todaysWorkout?.workoutDetails) {
 			return [
@@ -305,7 +314,6 @@ export default function Dashboard() {
 			value: workout.difficulty.charAt(0).toUpperCase() + workout.difficulty.slice(1)
 		});
 
-		// Fill remaining slots if less than 3 metrics
 		while (metrics.length < 3) {
 			metrics.push({
 				label: 'Category',
@@ -314,19 +322,101 @@ export default function Dashboard() {
 			break;
 		}
 
-		return metrics.slice(0, 3); // Only show 3 metrics
+		return metrics.slice(0, 3);
 	};
 
-	// Loading state
+	const ExpandableExercises = () => {
+		const [expanded, setExpanded] = useState(false);
+
+		if (!todaysWorkout?.workoutDetails?.structure || todaysWorkout.workoutDetails.structure.length === 0) {
+			return (
+				<div className="mb-4">
+					<button
+						disabled
+						className="w-full px-4 py-3 bg-muted/50 border-2 border-muted rounded-lg font-semibold text-muted-foreground flex justify-between items-center cursor-not-allowed"
+					>
+						<div className="flex items-center gap-2">
+							<Dumbbell className="w-5 h-5" />
+							<span>No Individual Exercises</span>
+						</div>
+					</button>
+					<p className="text-xs text-muted-foreground mt-2 text-center">
+						This workout is completed as a single continuous activity
+					</p>
+				</div>
+			);
+		}
+
+		const formatExerciseDetails = (item: WorkoutStructureItem): string => {
+			const parts: string[] = [];
+
+			if (item.sets && item.reps) {
+				parts.push(`${item.sets} sets × ${item.reps} reps`);
+			} else if (item.sets) {
+				parts.push(`${item.sets} sets`);
+			} else if (item.reps) {
+				parts.push(`${item.reps} reps`);
+			}
+
+			if (item.duration) {
+				parts.push(`${item.duration}s`);
+			}
+
+			if (item.restSeconds) {
+				parts.push(`${item.restSeconds}s rest`);
+			}
+
+			return parts.join(' • ');
+		};
+
+		return (
+			<div className="mb-4">
+				<button
+					onClick={() => setExpanded(!expanded)}
+					className="w-full px-4 py-3 bg-gradient-to-r from-primary/5 to-primary/10 border-2 border-primary rounded-lg font-semibold text-primary flex justify-between items-center hover:from-primary/10 hover:to-primary/20 transition-all"
+				>
+					<div className="flex items-center gap-2">
+						<Dumbbell className="w-5 h-5" />
+						<span>Show Exercises ({todaysWorkout.workoutDetails.structure.length})</span>
+					</div>
+					<ChevronDown className={`w-5 h-5 transition-transform ${expanded ? 'rotate-180' : ''}`} />
+				</button>
+
+				{expanded && (
+					<div className="mt-3 p-4 bg-background border-2 border-primary/20 rounded-lg">
+						<div className="text-sm space-y-3">
+							{todaysWorkout.workoutDetails.structure.map((item: WorkoutStructureItem, index: number) => (
+								<div key={index} className="pb-3 border-b border-border last:border-b-0 last:pb-0">
+									<div className="font-semibold text-foreground mb-1">
+										{index + 1}. {item.exercise?.name || 'Exercise'}
+									</div>
+									<div className="text-xs text-muted-foreground">
+										{formatExerciseDetails(item)}
+									</div>
+									{item.notes && (
+										<div className="text-xs text-muted-foreground mt-1 italic">
+											Notes: {item.notes}
+										</div>
+									)}
+								</div>
+							))}
+						</div>
+					</div>
+				)}
+			</div>
+		);
+	};
+
 	if (status === "loading" || loading) {
-		return (<LoadingSpinner spinnerText='Loading your dashboard...' className='' />);
+		return (
+			<LoadingSpinner spinnerText='Loading your dashboard...' className='' />
+		);
 	}
 
 	if (!session) {
 		return;
 	}
 
-	// Error state
 	if (error || !currentUser) {
 		return (
 			<div className="min-h-screen bg-background flex items-center justify-center">
@@ -345,7 +435,6 @@ export default function Dashboard() {
 		);
 	}
 
-	// No training plans state
 	if (!currentUser.trainingPlans || currentUser.trainingPlans.length === 0) {
 		return (
 			<div className="min-h-screen bg-background">
@@ -372,10 +461,11 @@ export default function Dashboard() {
 	}
 
 	if (currentUser && currentUser.trainingPlans.length > 0 && !currentUserPlan) {
-		return (<LoadingSpinner spinnerText='Loading your dashboard...' className=''/>);
+		return (
+			<LoadingSpinner spinnerText='Loading your dashboard...' className='' />
+		);
 	}
 
-	// No plan selected state
 	if (!currentUserPlan) {
 		return null;
 	}
@@ -387,18 +477,18 @@ export default function Dashboard() {
 	const workoutIsCustom: boolean = isWorkoutOverridden();
 	const workoutMetrics: Array<{ label: string; value: string }> = getWorkoutMetrics();
 
-	const isPlanCompleted: boolean = !!currentUserPlan.completedAt; // double negation operator
+	const isPlanCompleted: boolean = !!currentUserPlan.completedAt;
 	const isPlanActive: boolean = currentUserPlan.isActive && !isPlanCompleted;
 
 	return (
 		<div className="min-h-screen bg-background">
-			<main className="container mx-auto px-4 py-8 max-w-7xl">
+			<main className="container mx-auto px-4 py-8 max-w-7xl pb-24">
 				<div className="space-y-6">
 
 					<div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
 						<div>
 							<h2 className="text-3xl font-bold text-foreground mb-2">
-								{sportEmoji} {isPlanActive ? "Today's Workout" : "Training Plan"}
+								{isPlanActive ? "Today's Workout" : "Training Plan"}
 							</h2>
 							<p className="text-muted-foreground">{today}</p>
 						</div>
@@ -535,7 +625,6 @@ export default function Dashboard() {
 									))}
 								</div>
 
-								{/* Plan Details Section */}
 								{currentUserPlan.details && (
 									<div className="p-4 rounded-lg bg-muted/50 border border-border">
 										<h4 className="font-semibold text-sm mb-2">Plan Details</h4>
@@ -552,28 +641,17 @@ export default function Dashboard() {
 									</div>
 								)}
 
-								<div className="flex gap-3 pt-2">
-									<LogResultsDialog
-										workout={todaysWorkout?.workoutDetails}
-										existingLog={todaysLog}
-										onCreateLog={handleLogWorkout}
-										onUpdateLog={handleUpdateWorkout}
-										trigger={
-											<Button className="flex-1" size="lg">
-												{hasLoggedToday ? 'Edit Results' : 'Log Results'}
-											</Button>
-										}
-									/>
-									<CalendarDialog
-										userPlan={currentUserPlan}
-										onUpdateOverrides={handleUpdateOverrides}
-										className="flex-1"
-									/>
-								</div>
+								<ExpandableExercises />
+
+								<CalendarDialog
+									userPlan={currentUserPlan}
+									onUpdateOverrides={handleUpdateOverrides}
+									className="w-full"
+								/>
 							</CardContent>
 						</Card>
 					)}
-					{/* Stats Cards */}
+
 					<div className="grid gap-4 md:grid-cols-3">
 						<Card>
 							<CardContent className="pt-6">
@@ -586,7 +664,7 @@ export default function Dashboard() {
 										<p className="text-xs text-muted-foreground mt-1">all time</p>
 									</div>
 									<div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-										<span className="text-2xl">{sportEmoji}</span>
+										<span className="text-2xl"><Tag /></span>
 									</div>
 								</div>
 							</CardContent>
@@ -605,7 +683,7 @@ export default function Dashboard() {
 										</p>
 									</div>
 									<div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-										<span className="text-2xl">🔥</span>
+										<span className="text-2xl"><Flame /></span>
 									</div>
 								</div>
 							</CardContent>
@@ -624,7 +702,7 @@ export default function Dashboard() {
 										</p>
 									</div>
 									<div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-										<span className="text-2xl">📈</span>
+										<span className="text-2xl"><TrendingUp className='text-orange-500'></TrendingUp></span>
 									</div>
 								</div>
 							</CardContent>
@@ -635,7 +713,7 @@ export default function Dashboard() {
 						{isPlanActive &&
 							<Card>
 								<CardHeader>
-									<CardTitle className="text-lg">📅 This Week's Progress</CardTitle>
+									<CardTitle className="text-lg"><LoaderCircle className='inline' /> This Week's Progress</CardTitle>
 								</CardHeader>
 								<CardContent>
 									<div className="space-y-3">
@@ -658,7 +736,7 @@ export default function Dashboard() {
 
 						<Card className={isPlanActive ? '' : 'md:col-span-2'}>
 							<CardHeader>
-								<CardTitle className="text-lg">🎯 Goal Progress</CardTitle>
+								<CardTitle className="text-lg"><Goal className='inline'></Goal> Goal Progress</CardTitle>
 							</CardHeader>
 							<CardContent>
 								<div className="space-y-4">
@@ -684,11 +762,10 @@ export default function Dashboard() {
 						</Card>
 					</div>
 
-					{/* Recent Activity */}
 					{currentUserPlan.progressLog.length > 0 && (
 						<Card>
 							<CardHeader>
-								<CardTitle className="text-lg">📊 Recent Activity</CardTitle>
+								<CardTitle className="text-lg"><Logs className='inline'/> Activity Log</CardTitle>
 							</CardHeader>
 							<CardContent>
 								<div className="space-y-2">
@@ -724,6 +801,38 @@ export default function Dashboard() {
 					)}
 				</div>
 			</main>
+
+			{isPlanActive && (
+				<LogResultsDialog
+					workout={todaysWorkout?.workoutDetails}
+					existingLog={todaysLog}
+					onCreateLog={handleLogWorkout}
+					onUpdateLog={handleUpdateWorkout}
+					trigger={
+						<div className="fixed bottom-8 right-8 z-50">
+							<Button
+								size="lg"
+								className={`
+									px-6 py-4 rounded-xl shadow-xl transition-all hover:scale-105
+									${hasLoggedToday
+										? 'bg-gradient-to-br from-gray-500 to-gray-600 hover:from-gray-600 hover:to-gray-700 shadow-gray-500/40 hover:shadow-gray-500/60'
+										: 'bg-gradient-to-br from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-primary/40 hover:shadow-primary/60'
+									}
+								`}
+							>
+								<span className="font-bold whitespace-nowrap">
+									{hasLoggedToday ? 'Edit Results' : 'Log Results'}
+								</span>
+								{!hasLoggedToday && (
+									<div className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center animate-pulse shadow-lg">
+										<span className="text-white text-xs font-bold">!</span>
+									</div>
+								)}
+							</Button>
+						</div>
+					}
+				/>
+			)}
 		</div>
 	);
 }

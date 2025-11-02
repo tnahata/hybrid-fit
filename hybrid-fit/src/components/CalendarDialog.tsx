@@ -464,6 +464,7 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 											</p>
 										</div>
 										{renderWeek(currentWeek)}
+										{showLegend()}
 									</div>
 								) : (
 									<div className="text-center py-12 text-muted-foreground">
@@ -483,6 +484,7 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 								) : (
 									<div className="space-y-4">
 										{futureWeeks.map(week => renderWeek(week))}
+										{showLegend()}
 									</div>
 								)}
 							</ScrollArea>
@@ -490,35 +492,35 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 					</Tabs>
 				)}
 
-				<div className="border-t pt-4 mt-4">
-					<div className="flex flex-wrap gap-4 text-sm">
-						<div className="flex items-center gap-2">
-							<CheckCircle2 className="h-4 w-4 text-green-600" />
-							<span className="text-muted-foreground">Completed</span>
-						</div>
-						{!isCompleted && (
-							<div className="flex items-center gap-2">
-								<Clock className="h-4 w-4 text-blue-600" />
-								<span className="text-muted-foreground">Current</span>
-							</div>
-						)}
-						{!isCompleted && (
-							<div className="flex items-center gap-2">
-								<Circle className="h-4 w-4 text-muted-foreground" />
-								<span className="text-muted-foreground">Upcoming</span>
-							</div>
-						)}
-						<div className="flex items-center gap-2">
-							<CircleSlash className="h-4 w-4 text-yellow-600 fill-yellow-600" />
-							<span className="text-muted-foreground">Skipped</span>
-						</div>
-						<div className="flex items-center gap-2">
-							<XCircle className="h-4 w-4 text-red-600" />
-							<span className="text-muted-foreground">Missed</span>
-						</div>
-					</div>
-				</div>
 			</DialogContent>
 		</Dialog>
 	);
+}
+
+function showLegend() {
+	return (
+		<div className="border-t pt-4 mt-4">
+			<div className="flex flex-wrap gap-4 text-sm">
+				<div className="flex items-center gap-2">
+					<CheckCircle2 className="h-4 w-4 text-green-600" />
+					<span className="text-muted-foreground">Completed</span>
+				</div>
+				<div className="flex items-center gap-2">
+					<Clock className="h-4 w-4 text-blue-600" />
+					<span className="text-muted-foreground">Current</span>
+				</div>
+				<div className="flex items-center gap-2">
+					<Circle className="h-4 w-4 text-muted-foreground" />
+					<span className="text-muted-foreground">Upcoming</span>
+				</div>
+				<div className="flex items-center gap-2">
+					<CircleSlash className="h-4 w-4 text-yellow-600 fill-yellow-600" />
+					<span className="text-muted-foreground">Skipped</span>
+				</div>
+				<div className="flex items-center gap-2">
+					<XCircle className="h-4 w-4 text-red-600" />
+					<span className="text-muted-foreground">Missed</span>
+				</div>
+			</div>
+		</div>);
 }
