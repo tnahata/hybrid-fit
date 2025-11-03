@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useState, useMemo, JSX } from 'react';
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -25,8 +25,36 @@ import Link from 'next/link';
 import { getStartOfDay, returnUTCDateInUSLocaleFormat } from '@/lib/dateUtils';
 import LoadingSpinner from '@/components/ui/LoadingSpinner';
 import { Dumbbell, ChevronDown, PersonStanding, Dumbbell as Strength, Bike, Waves } from 'lucide-react';
-import { Trophy, TrendingUp, Goal, Logs, LoaderCircle } from 'lucide-react';
-import { Flame, Tag } from '@/components/icons/icons';
+import { Trophy, Goal, Logs, LoaderCircle } from 'lucide-react';
+import { Clock, Flame, Tag } from '@/components/icons/icons';
+
+interface FirstRowCardProps {
+	paragraphText: string;
+	h3Text: string | number;
+	secondParagraphText: string;
+	IconComponent: React.ComponentType<{ className?: string }>;
+}
+
+function FirstRowCard({ paragraphText, h3Text, secondParagraphText, IconComponent }: FirstRowCardProps) {
+	return ( 
+		<Card>
+			<CardContent className="pt-6">
+				<div className="flex items-center justify-between">
+					<div>
+						<p className="text-sm text-muted-foreground">{paragraphText}</p>
+						<h3 className="text-3xl font-bold text-primary mt-1">
+							{h3Text}
+						</h3>
+						<p className="text-xs text-muted-foreground mt-1">{secondParagraphText}</p>
+					</div>
+					<div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
+						<span className="text-2xl"><IconComponent /></span>
+					</div>
+				</div>
+			</CardContent>
+		</Card>
+	);
+}
 
 export default function Dashboard() {
 	const [currentUser, setCurrentUser] = useState<EnrichedUserDoc | null>(null);
@@ -225,13 +253,27 @@ export default function Dashboard() {
 	const getCompletedWorkoutsThisWeek = (): number => {
 		if (!currentUserPlan) return 0;
 
-		const weekStart: Date = new Date();
-		weekStart.setDate(weekStart.getDate() - weekStart.getDay());
+		const now = getStartOfDay();
+		const dayOfWeek = now.getUTCDay();
+		const daysToMonday = dayOfWeek === 0 ? 6 : dayOfWeek - 1;
 
-		return currentUserPlan.progressLog.filter((log) =>
-			log.status === 'completed' &&
-			new Date(log.date) >= weekStart
-		).length;
+		const weekStart = new Date(Date.UTC(
+			now.getUTCFullYear(),
+			now.getUTCMonth(),
+			now.getUTCDate() - daysToMonday,
+			0, 0, 0, 0
+		));
+
+		return currentUserPlan.progressLog.filter((log) => {
+			const logDate = new Date(log.date);
+			const logDateUTC = new Date(Date.UTC(
+				logDate.getUTCFullYear(),
+				logDate.getUTCMonth(),
+				logDate.getUTCDate(),
+				0, 0, 0, 0
+			));
+			return log.status === 'completed' && logDateUTC >= weekStart;
+		}).length;
 	};
 
 	const calculatePlanProgress = (): number => {
@@ -653,60 +695,24 @@ export default function Dashboard() {
 					)}
 
 					<div className="grid gap-4 md:grid-cols-3">
-						<Card>
-							<CardContent className="pt-6">
-								<div className="flex items-center justify-between">
-									<div>
-										<p className="text-sm text-muted-foreground">Total Workouts</p>
-										<h3 className="text-3xl font-bold text-primary mt-1">
-											{currentUser.totalWorkoutsCompleted}
-										</h3>
-										<p className="text-xs text-muted-foreground mt-1">all time</p>
-									</div>
-									<div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-										<span className="text-2xl"><Tag /></span>
-									</div>
-								</div>
-							</CardContent>
-						</Card>
-
-						<Card>
-							<CardContent className="pt-6">
-								<div className="flex items-center justify-between">
-									<div>
-										<p className="text-sm text-muted-foreground">Current Streak</p>
-										<h3 className="text-3xl font-bold text-primary mt-1">
-											{currentUser.currentStreak} days
-										</h3>
-										<p className="text-xs text-muted-foreground mt-1">
-											Best: {currentUser.longestStreak} days
-										</p>
-									</div>
-									<div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-										<span className="text-2xl"><Flame /></span>
-									</div>
-								</div>
-							</CardContent>
-						</Card>
-
-						<Card>
-							<CardContent className="pt-6">
-								<div className="flex items-center justify-between">
-									<div>
-										<p className="text-sm text-muted-foreground">Plan Progress</p>
-										<h3 className="text-3xl font-bold text-primary mt-1">
-											{planProgress}%
-										</h3>
-										<p className="text-xs text-muted-foreground mt-1">
-											Week {currentUserPlan.currentWeek} of {currentUserPlan.durationWeeks}
-										</p>
-									</div>
-									<div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-										<span className="text-2xl"><TrendingUp className='text-orange-500'></TrendingUp></span>
-									</div>
-								</div>
-							</CardContent>
-						</Card>
+						<FirstRowCard
+							paragraphText='Total Workouts'
+							h3Text={currentUser.totalWorkoutsCompleted}
+							secondParagraphText='all time'
+							IconComponent={Tag}
+						/>
+						<FirstRowCard
+							paragraphText='Current Streak'
+							h3Text={`${currentUser.currentStreak} days`}
+							secondParagraphText={`Best: ${currentUser.longestStreak} days`}
+							IconComponent={Flame}
+						/>
+						<FirstRowCard
+							paragraphText='Active Minutes'
+							h3Text={currentUserPlan.totalActiveMinutes}
+							secondParagraphText='in this plan'
+							IconComponent={Clock}
+						/>
 					</div>
 
 					<div className="grid gap-6 md:grid-cols-2">
@@ -753,7 +759,7 @@ export default function Dashboard() {
 									{currentUserPlan.startedAt && (
 										<div className="pt-2 border-t border-border">
 											<p className="text-xs text-muted-foreground">
-												Started: {new Date(currentUserPlan.startedAt).toLocaleDateString()}
+												Started: {returnUTCDateInUSLocaleFormat(currentUserPlan.startedAt)}
 											</p>
 										</div>
 									)}

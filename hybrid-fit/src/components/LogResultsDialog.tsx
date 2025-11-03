@@ -10,8 +10,10 @@ import { Separator } from '@/components/ui/separator';
 import { Plus, Trash2, Check } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { WorkoutLog } from '@/models/User';
 import { EnrichedWorkoutTemplate } from '@/lib/enrichTrainingPlans';
+import { getStartOfDay } from '@/lib/dateUtils';
 
 interface ExerciseSet {
 	setNumber: number;
@@ -24,6 +26,17 @@ interface Exercise {
 	exerciseId: string;
 	exerciseName: string;
 	sets: ExerciseSet[];
+}
+
+interface DrillActivity {
+	exerciseId: string;
+	name: string;
+	durationMinutes: number;
+	repetitions?: number;
+	sets?: number;
+	qualityRating: number;
+	notes?: string;
+	completed: boolean;
 }
 
 interface LogResultsDialogProps {
@@ -51,6 +64,7 @@ export default function LogResultsDialog({ workout, existingLog, onCreateLog, on
 	const [averageHeartRate, setAverageHeartRate] = useState<string>('');
 
 	const [exercises, setExercises] = useState<Exercise[]>([]);
+	const [drills, setDrills] = useState<DrillActivity[]>([]);
 
 	useEffect(() => {
 		if (open && existingLog) {
@@ -74,20 +88,53 @@ export default function LogResultsDialog({ workout, existingLog, onCreateLog, on
 				if (existingLog.strengthSession) {
 					setExercises(existingLog.strengthSession.exercises);
 				}
+				if (existingLog.drillSession) {
+					const mappedDrills = existingLog.drillSession.activities.map((activity, index) => ({
+						exerciseId: activity.exerciseId || index.toString(),
+						name: activity.name,
+						durationMinutes: activity.durationMinutes || 0,
+						repetitions: activity.repetitions,
+						sets: activity.sets,
+						qualityRating: 3,
+						notes: activity.notes,
+						completed: true
+					}));
+					setDrills(mappedDrills);
+				}
 			}
 			setHasUnsavedChanges(false);
-		} else if (open && !existingLog && isStrengthWorkout() && workout?.structure && workout.structure.length > 0) {
-			const prePopulatedExercises: Exercise[] = workout.structure.map((item) => ({
-				exerciseId: item.exerciseId,
-				exerciseName: item.exercise?.name || '',
-				sets: Array.from({ length: item.sets || 3 }, (_, index) => ({
-					setNumber: index + 1,
-					reps: item.reps || 8,
-					weight: 0,
-					completed: false
-				}))
-			}));
-			setExercises(prePopulatedExercises);
+		} else if (open && !existingLog && workout?.structure && workout.structure.length > 0) {
+			const strengthExercises: Exercise[] = [];
+			const drillActivities: DrillActivity[] = [];
+
+			workout.structure.forEach((item) => {
+				if (item.exercise?.type === 'drill') {
+					drillActivities.push({
+						exerciseId: item.exerciseId,
+						name: item.exercise?.name || '',
+						durationMinutes: item.duration || item.exercise?.durationMinutes || 0,
+						repetitions: item.reps,
+						sets: undefined,
+						qualityRating: 3,
+						notes: item.notes || '',
+						completed: false
+					});
+				} else {
+					strengthExercises.push({
+						exerciseId: item.exerciseId,
+						exerciseName: item.exercise?.name || '',
+						sets: Array.from({ length: item.sets || 3 }, (_, index) => ({
+							setNumber: index + 1,
+							reps: item.reps || 8,
+							weight: 0,
+							completed: false
+						}))
+					});
+				}
+			});
+
+			setExercises(strengthExercises);
+			setDrills(drillActivities);
 			setHasUnsavedChanges(false);
 		}
 	}, [open, existingLog, workout]);
@@ -105,7 +152,16 @@ export default function LogResultsDialog({ workout, existingLog, onCreateLog, on
 	const isStrengthWorkout = (): boolean => {
 		if (!workout) return false;
 		return workout.sport.toLowerCase() === 'strength' ||
-			workout.category.toLowerCase().includes('strength');
+			workout.category.toLowerCase().includes('strength') ||
+			exercises.length > 0;
+	};
+
+	const drillWorkoutExists = (): boolean => {
+		return drills.length > 0;
+	};
+
+	const hasMultipleActivityTypes = (): boolean => {
+		return exercises.length > 0 && drills.length > 0;
 	};
 
 	const isFormValid = (): boolean => {
@@ -119,6 +175,10 @@ export default function LogResultsDialog({ workout, existingLog, onCreateLog, on
 
 		if (isStrengthWorkout()) {
 			return !!durationMinutes && exercises.some(ex => ex.exerciseName.trim() !== '');
+		}
+
+		if (drillWorkoutExists()) {
+			return !!durationMinutes && drills.some(drill => drill.name.trim() !== '' && drill.durationMinutes > 0);
 		}
 
 		return !!durationMinutes;
@@ -175,6 +235,18 @@ export default function LogResultsDialog({ workout, existingLog, onCreateLog, on
 		markFormAsDirty();
 	};
 
+	const removeDrill = (index: number): void => {
+		setDrills(drills.filter((_, i) => i !== index));
+		markFormAsDirty();
+	};
+
+	const updateDrill = (index: number, field: keyof DrillActivity, value: any): void => {
+		const newDrills = [...drills];
+		newDrills[index][field] = value as never;
+		setDrills(newDrills);
+		markFormAsDirty();
+	};
+
 	const calculateTotalVolume = (): number => {
 		return exercises.reduce((total, exercise) => {
 			return total + exercise.sets.reduce((exTotal, set) => {
@@ -187,7 +259,7 @@ export default function LogResultsDialog({ workout, existingLog, onCreateLog, on
 		if (!isFormValid()) return;
 
 		const data: WorkoutLog = {
-			date: new Date(),
+			date: getStartOfDay(),
 			workoutTemplateId: workout?._id,
 			status: workoutStatus,
 			notes: notes || undefined,
@@ -196,10 +268,10 @@ export default function LogResultsDialog({ workout, existingLog, onCreateLog, on
 		if (workoutStatus === 'completed') {
 			data.durationMinutes = parseFloat(durationMinutes);
 			data.perceivedEffort = perceivedEffort[0];
-			data.activityType = isStrengthWorkout() ? 'strength' : isDistanceWorkout() ? 'distance' : 'time';
 			data.sport = workout?.sport;
 
 			if (isDistanceWorkout()) {
+				data.activityType = 'distance';
 				data.distance = {
 					value: parseFloat(distance),
 					unit: distanceUnit,
@@ -210,9 +282,17 @@ export default function LogResultsDialog({ workout, existingLog, onCreateLog, on
 						unit: distanceUnit === 'miles' ? 'min/mile' : 'min/km',
 					};
 				}
+			} else if (isStrengthWorkout() && !drillWorkoutExists()) {
+				data.activityType = 'strength';
+			} else if (drillWorkoutExists() && !isStrengthWorkout()) {
+				data.activityType = 'drill';
+			} else if (isStrengthWorkout() && drillWorkoutExists()) {
+				data.activityType = 'mixed';
+			} else {
+				data.activityType = 'time';
 			}
 
-			if (isStrengthWorkout()) {
+			if (isStrengthWorkout() && exercises.length > 0) {
 				data.strengthSession = {
 					exercises: exercises.map(ex => ({
 						exerciseId: ex.exerciseId,
@@ -221,6 +301,20 @@ export default function LogResultsDialog({ workout, existingLog, onCreateLog, on
 					})),
 					totalVolume: calculateTotalVolume(),
 					volumeUnit: 'lbs',
+				};
+			}
+
+			if (drillWorkoutExists() && drills.length > 0) {
+				data.drillSession = {
+					activities: drills.map(drill => ({
+						exerciseId: drill.exerciseId,
+						name: drill.name,
+						durationMinutes: drill.durationMinutes,
+						repetitions: drill.repetitions,
+						sets: drill.sets,
+						notes: drill.notes,
+					})),
+					customMetrics: {}
 				};
 			}
 
@@ -249,6 +343,7 @@ export default function LogResultsDialog({ workout, existingLog, onCreateLog, on
 		setAveragePace('');
 		setAverageHeartRate('');
 		setExercises([]);
+		setDrills([]);
 		setHasUnsavedChanges(false);
 	};
 
@@ -277,6 +372,229 @@ export default function LogResultsDialog({ workout, existingLog, onCreateLog, on
 	const buttonText = isEditing
 		? (workoutStatus === 'completed' ? 'Update Workout' : 'Update Status')
 		: (workoutStatus === 'completed' ? 'Save Workout' : 'Mark as Skipped');
+
+	const renderStrengthExercises = () => (
+		<div className="space-y-4">
+			{exercises.length === 0 && (
+				<p className="text-sm text-muted-foreground text-center py-4">
+					No strength exercises to log for this workout
+				</p>
+			)}
+			{exercises.map((exercise, exerciseIndex) => (
+				<Card key={exercise.exerciseId}>
+					<CardContent className="pt-6">
+						<div className="space-y-4">
+							<div className="flex items-center gap-2">
+								<Input
+									placeholder="Exercise name (e.g., Bench Press) *"
+									value={exercise.exerciseName}
+									onChange={(e) => updateExerciseName(exerciseIndex, e.target.value)}
+									className="flex-1 disabled:opacity-100"
+									required
+									disabled={!!workout?.structure && workout.structure.length > 0}
+								/>
+								{exercises.length > 1 && (
+									<Button
+										onClick={() => removeExercise(exerciseIndex)}
+										variant="ghost"
+										size="icon"
+									>
+										<Trash2 className="h-4 w-4 text-destructive" />
+									</Button>
+								)}
+							</div>
+
+							<div className="space-y-2">
+								<div className="grid grid-cols-12 gap-2 text-xs font-semibold text-muted-foreground">
+									<div className="col-span-1">Set</div>
+									<div className="col-span-4">Weight (lbs)</div>
+									<div className="col-span-3">Reps</div>
+									<div className="col-span-3">Done</div>
+									<div className="col-span-1"></div>
+								</div>
+
+								{exercise.sets.map((set, setIndex) => (
+									<div key={setIndex} className="grid grid-cols-12 gap-2 items-center">
+										<div className="col-span-1 text-center font-semibold">
+											{set.setNumber}
+										</div>
+										<div className="col-span-4">
+											<Input
+												type="number"
+												value={set.weight}
+												onChange={(e) => updateSet(exerciseIndex, setIndex, 'weight', parseFloat(e.target.value) || 0)}
+												placeholder="135"
+											/>
+										</div>
+										<div className="col-span-3">
+											<Input
+												type="number"
+												value={set.reps}
+												onChange={(e) => updateSet(exerciseIndex, setIndex, 'reps', parseInt(e.target.value) || 0)}
+												placeholder="10"
+											/>
+										</div>
+										<div className="col-span-3 flex justify-center">
+											<Button
+												onClick={() => updateSet(exerciseIndex, setIndex, 'completed', !set.completed)}
+												variant={set.completed ? "default" : "outline"}
+												size="sm"
+												className="w-full"
+											>
+												{set.completed && <Check className="h-4 w-4" />}
+											</Button>
+										</div>
+										<div className="col-span-1">
+											{exercise.sets.length > 1 && (
+												<Button
+													onClick={() => removeSet(exerciseIndex, setIndex)}
+													variant="ghost"
+													size="icon"
+													className="h-8 w-8"
+												>
+													<Trash2 className="h-3 w-3 text-muted-foreground" />
+												</Button>
+											)}
+										</div>
+									</div>
+								))}
+
+								<Button
+									onClick={() => addSet(exerciseIndex)}
+									variant="outline"
+									size="sm"
+									className="w-full mt-2"
+								>
+									<Plus className="h-3 w-3 mr-1" />
+									Add Set
+								</Button>
+							</div>
+						</div>
+					</CardContent>
+				</Card>
+			))}
+
+			{exercises.length > 0 && (
+				<div className="p-4 bg-muted rounded-lg">
+					<div className="flex justify-between items-center">
+						<span className="text-sm font-semibold">Total Volume:</span>
+						<span className="text-2xl font-bold text-primary">
+							{calculateTotalVolume().toLocaleString()} lbs
+						</span>
+					</div>
+				</div>
+			)}
+		</div>
+	);
+
+	const renderDrills = () => (
+		<div className="space-y-4">
+			{drills.length === 0 && (
+				<p className="text-sm text-muted-foreground text-center py-4">
+					No drills to log for this workout
+				</p>
+			)}
+			{drills.map((drill, drillIndex) => (
+				<Card key={drill.exerciseId}>
+					<CardContent className="pt-6">
+						<div className="space-y-4">
+							<div className="flex items-center gap-2">
+								<div className="flex items-center gap-2 flex-1">
+									<Button
+										onClick={() => updateDrill(drillIndex, 'completed', !drill.completed)}
+										variant={drill.completed ? "default" : "outline"}
+										size="icon"
+										className="shrink-0"
+									>
+										{drill.completed && <Check className="h-4 w-4" />}
+									</Button>
+									<Input
+										placeholder="Drill name *"
+										value={drill.name}
+										onChange={(e) => updateDrill(drillIndex, 'name', e.target.value)}
+										className="flex-1 disabled:opacity-100"
+										required
+										disabled={!!workout?.structure && workout.structure.length > 0}
+									/>
+								</div>
+								{drills.length > 1 && (
+									<Button
+										onClick={() => removeDrill(drillIndex)}
+										variant="ghost"
+										size="icon"
+									>
+										<Trash2 className="h-4 w-4 text-destructive" />
+									</Button>
+								)}
+							</div>
+
+							<div className="grid grid-cols-2 gap-4">
+								<div className="space-y-2">
+									<Label>Duration (minutes) *</Label>
+									<Input
+										type="number"
+										value={drill.durationMinutes}
+										onChange={(e) => updateDrill(drillIndex, 'durationMinutes', parseFloat(e.target.value) || 0)}
+										placeholder="20"
+										required
+									/>
+								</div>
+
+								<div className="space-y-2">
+									<Label>Repetitions/Rounds</Label>
+									<Input
+										type="number"
+										value={drill.repetitions || ''}
+										onChange={(e) => updateDrill(drillIndex, 'repetitions', e.target.value ? parseInt(e.target.value) : undefined)}
+										placeholder="5"
+									/>
+								</div>
+							</div>
+
+							<div className="grid grid-cols-2 gap-4">
+								<div className="space-y-2">
+									<Label>Sets (optional)</Label>
+									<Input
+										type="number"
+										value={drill.sets || ''}
+										onChange={(e) => updateDrill(drillIndex, 'sets', e.target.value ? parseInt(e.target.value) : undefined)}
+										placeholder="3"
+									/>
+								</div>
+
+								<div className="space-y-2">
+									<Label>Quality Rating (1-5)</Label>
+									<div className="flex items-center gap-2">
+										<Slider
+											value={[drill.qualityRating]}
+											onValueChange={(val) => updateDrill(drillIndex, 'qualityRating', val[0])}
+											min={1}
+											max={5}
+											step={1}
+											className="flex-1"
+										/>
+										<span className="text-xl font-bold text-primary w-8 text-center">
+											{drill.qualityRating}
+										</span>
+									</div>
+								</div>
+							</div>
+
+							<div className="space-y-2">
+								<Label>Notes</Label>
+								<Textarea
+									value={drill.notes || ''}
+									onChange={(e) => updateDrill(drillIndex, 'notes', e.target.value)}
+									placeholder="Any observations, modifications, player count, etc."
+									rows={2}
+								/>
+							</div>
+						</div>
+					</CardContent>
+				</Card>
+			))}
+		</div>
+	);
 
 	return (
 		<Dialog open={open} onOpenChange={(isOpen) => {
@@ -395,178 +713,98 @@ export default function LogResultsDialog({ workout, existingLog, onCreateLog, on
 							<Separator />
 
 							{isDistanceWorkout() && (
-								<div className="space-y-4">
-									<h3 className="text-lg font-semibold">Distance & Pace</h3>
+								<>
+									<div className="space-y-4">
+										<h3 className="text-lg font-semibold">Distance & Pace</h3>
 
-									<div className="grid grid-cols-3 gap-4">
-										<div className="space-y-2 col-span-2">
-											<Label htmlFor="distance">Distance *</Label>
-											<Input
-												id="distance"
-												type="number"
-												step="0.1"
-												placeholder={workout.metrics.distanceMiles?.toString() || "5.0"}
-												value={distance}
-												onChange={(e) => {
-													setDistance(e.target.value);
-													markFormAsDirty();
-												}}
-												required
-											/>
+										<div className="grid grid-cols-3 gap-4">
+											<div className="space-y-2 col-span-2">
+												<Label htmlFor="distance">Distance *</Label>
+												<Input
+													id="distance"
+													type="number"
+													step="0.1"
+													placeholder={workout.metrics.distanceMiles?.toString() || "5.0"}
+													value={distance}
+													onChange={(e) => {
+														setDistance(e.target.value);
+														markFormAsDirty();
+													}}
+													required
+												/>
+											</div>
+
+											<div className="space-y-2">
+												<Label htmlFor="distanceUnit">Unit</Label>
+												<Select
+													value={distanceUnit}
+													onValueChange={(val) => {
+														setDistanceUnit(val as 'miles' | 'kilometers');
+														markFormAsDirty();
+													}}
+												>
+													<SelectTrigger id="distanceUnit">
+														<SelectValue />
+													</SelectTrigger>
+													<SelectContent>
+														<SelectItem value="miles">Miles</SelectItem>
+														<SelectItem value="kilometers">Kilometers</SelectItem>
+													</SelectContent>
+												</Select>
+											</div>
 										</div>
 
 										<div className="space-y-2">
-											<Label htmlFor="distanceUnit">Unit</Label>
-											<Select
-												value={distanceUnit}
-												onValueChange={(val) => {
-													setDistanceUnit(val as 'miles' | 'kilometers');
+											<Label htmlFor="pace">Average Pace (min/{distanceUnit === 'miles' ? 'mile' : 'km'}) - Optional</Label>
+											<Input
+												id="pace"
+												type="number"
+												step="0.1"
+												placeholder="8.5"
+												value={averagePace}
+												onChange={(e) => {
+													setAveragePace(e.target.value);
 													markFormAsDirty();
 												}}
-											>
-												<SelectTrigger id="distanceUnit">
-													<SelectValue />
-												</SelectTrigger>
-												<SelectContent>
-													<SelectItem value="miles">Miles</SelectItem>
-													<SelectItem value="kilometers">Kilometers</SelectItem>
-												</SelectContent>
-											</Select>
+											/>
 										</div>
 									</div>
-
-									<div className="space-y-2">
-										<Label htmlFor="pace">Average Pace (min/{distanceUnit === 'miles' ? 'mile' : 'km'}) - Optional</Label>
-										<Input
-											id="pace"
-											type="number"
-											step="0.1"
-											placeholder="8.5"
-											value={averagePace}
-											onChange={(e) => {
-												setAveragePace(e.target.value);
-												markFormAsDirty();
-											}}
-										/>
-									</div>
-								</div>
+									<Separator />
+								</>
 							)}
 
-							{isStrengthWorkout() && (
+							{(isStrengthWorkout() || drillWorkoutExists()) && (
 								<div className="space-y-4">
-									<div className="flex items-center justify-between">
-										<h3 className="text-lg font-semibold">Exercises *</h3>
-									</div>
-
-									<div className="space-y-4">
-										{exercises.length === 0 && (
-											<p className="text-sm text-muted-foreground text-center py-4">
-												No exercises to log for this workout
-											</p>
-										)}
-										{exercises.map((exercise, exerciseIndex) => (
-											<Card key={exercise.exerciseId}>
-												<CardContent className="pt-6">
-													<div className="space-y-4">
-														<div className="flex items-center gap-2">
-															<Input
-																placeholder="Exercise name (e.g., Bench Press) *"
-																value={exercise.exerciseName}
-																onChange={(e) => updateExerciseName(exerciseIndex, e.target.value)}
-																className="flex-1"
-																required
-															/>
-															{exercises.length > 1 && (
-																<Button
-																	onClick={() => removeExercise(exerciseIndex)}
-																	variant="ghost"
-																	size="icon"
-																>
-																	<Trash2 className="h-4 w-4 text-destructive" />
-																</Button>
-															)}
-														</div>
-
-														<div className="space-y-2">
-															<div className="grid grid-cols-12 gap-2 text-xs font-semibold text-muted-foreground">
-																<div className="col-span-1">Set</div>
-																<div className="col-span-4">Weight (lbs)</div>
-																<div className="col-span-3">Reps</div>
-																<div className="col-span-3">Done</div>
-																<div className="col-span-1"></div>
-															</div>
-
-															{exercise.sets.map((set, setIndex) => (
-																<div key={setIndex} className="grid grid-cols-12 gap-2 items-center">
-																	<div className="col-span-1 text-center font-semibold">
-																		{set.setNumber}
-																	</div>
-																	<div className="col-span-4">
-																		<Input
-																			type="number"
-																			value={set.weight}
-																			onChange={(e) => updateSet(exerciseIndex, setIndex, 'weight', parseFloat(e.target.value) || 0)}
-																			placeholder="135"
-																		/>
-																	</div>
-																	<div className="col-span-3">
-																		<Input
-																			type="number"
-																			value={set.reps}
-																			onChange={(e) => updateSet(exerciseIndex, setIndex, 'reps', parseInt(e.target.value) || 0)}
-																			placeholder="10"
-																		/>
-																	</div>
-																	<div className="col-span-3 flex justify-center">
-																		<Button
-																			onClick={() => updateSet(exerciseIndex, setIndex, 'completed', !set.completed)}
-																			variant={set.completed ? "default" : "outline"}
-																			size="sm"
-																			className="w-full"
-																		>
-																			{set.completed && <Check className="h-4 w-4" />}
-																		</Button>
-																	</div>
-																	<div className="col-span-1">
-																		{exercise.sets.length > 1 && (
-																			<Button
-																				onClick={() => removeSet(exerciseIndex, setIndex)}
-																				variant="ghost"
-																				size="icon"
-																				className="h-8 w-8"
-																			>
-																				<Trash2 className="h-3 w-3 text-muted-foreground" />
-																			</Button>
-																		)}
-																	</div>
-																</div>
-															))}
-
-															<Button
-																onClick={() => addSet(exerciseIndex)}
-																variant="outline"
-																size="sm"
-																className="w-full mt-2"
-															>
-																<Plus className="h-3 w-3 mr-1" />
-																Add Set
-															</Button>
-														</div>
-													</div>
-												</CardContent>
-											</Card>
-										))}
-									</div>
-
-									{exercises.length > 0 && (
-										<div className="p-4 bg-muted rounded-lg">
-											<div className="flex justify-between items-center">
-												<span className="text-sm font-semibold">Total Volume:</span>
-												<span className="text-2xl font-bold text-primary">
-													{calculateTotalVolume().toLocaleString()} lbs
-												</span>
-											</div>
-										</div>
+									{hasMultipleActivityTypes() ? (
+										<Tabs defaultValue="strength" className="w-full">
+											<TabsList className="grid w-full grid-cols-2">
+												<TabsTrigger value="strength">Strength Exercises</TabsTrigger>
+												<TabsTrigger value="drills">Drills</TabsTrigger>
+											</TabsList>
+											<TabsContent value="strength" className="mt-4">
+												<h3 className="text-lg font-semibold mb-4">Strength Exercises *</h3>
+												{renderStrengthExercises()}
+											</TabsContent>
+											<TabsContent value="drills" className="mt-4">
+												<h3 className="text-lg font-semibold mb-4">Drills *</h3>
+												{renderDrills()}
+											</TabsContent>
+										</Tabs>
+									) : (
+										<>
+											{isStrengthWorkout() && (
+												<>
+													<h3 className="text-lg font-semibold">Exercises *</h3>
+													{renderStrengthExercises()}
+												</>
+											)}
+											{drillWorkoutExists() && (
+												<>
+													<h3 className="text-lg font-semibold">Drills *</h3>
+													{renderDrills()}
+												</>
+											)}
+										</>
 									)}
 								</div>
 							)}

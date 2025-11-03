@@ -14,6 +14,10 @@ export interface EnrichedUserPlanProgress extends EnrichedTrainingPlanDoc {
 	isActive: boolean;
 	overrides: WorkoutOverride[];
 	progressLog: WorkoutLog[];
+	totalActiveMinutes: number;
+	averageWorkoutDuration: number;
+	totalDistanceMiles: number;
+	totalWeightLifted: number;
 }
 
 export interface EnrichedUserDoc extends Omit<UserDoc, 'trainingPlans'> {
@@ -24,6 +28,44 @@ export interface UserApiResponse {
 	data: EnrichedUserDoc
 	success: boolean;
 }
+
+const calculateTotalActiveMinutes = (progressLogs: WorkoutLog[]): number => {
+	return progressLogs.reduce((total, log) => {
+		if (log.status === 'completed' && log.durationMinutes) {
+			return total + log.durationMinutes;
+		}
+		return total;
+	}, 0);
+};
+
+const calculateAverageWorkoutDuration = (progressLogs: WorkoutLog[]): number => {
+	const completedWorkouts = progressLogs.filter(log => log.status === 'completed' && log.durationMinutes);
+	if (completedWorkouts.length === 0) return 0;
+
+	const totalMinutes = completedWorkouts.reduce((sum, log) => sum + (log.durationMinutes || 0), 0);
+	return Math.round(totalMinutes / completedWorkouts.length);
+};
+
+const calculateTotalDistanceMiles = (progressLogs: WorkoutLog[]): number => {
+	return progressLogs.reduce((total, log) => {
+		if (log.status === 'completed' && log.distance) {
+			const miles = log.distance.unit === 'kilometers'
+				? log.distance.value * 0.621371
+				: log.distance.value;
+			return total + miles;
+		}
+		return total;
+	}, 0);
+};
+
+const calculateTotalWeightLifted = (progressLogs: WorkoutLog[]): number => {
+	return progressLogs.reduce((total, log) => {
+		if (log.status === 'completed' && log.strengthSession) {
+			return total + (log.strengthSession.totalVolume || 0);
+		}
+		return total;
+	}, 0);
+};
 
 async function updateUserProgressIfNeeded(user: UserDoc): Promise<boolean> {
 	const today = getStartOfDay();
@@ -119,6 +161,10 @@ export async function GET(req: Request): Promise<NextResponse> {
 				isActive: userPlan.isActive,
 				overrides: userPlan.overrides,
 				progressLog: userPlan.progressLog,
+				totalActiveMinutes: calculateTotalActiveMinutes(userPlan.progressLog),
+				averageWorkoutDuration: calculateAverageWorkoutDuration(userPlan.progressLog),
+				totalDistanceMiles: calculateTotalDistanceMiles(userPlan.progressLog),
+				totalWeightLifted: calculateTotalWeightLifted(userPlan.progressLog)
 			};
 		}).filter((plan): plan is EnrichedUserPlanProgress => plan !== null);
 

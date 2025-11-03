@@ -41,7 +41,7 @@ export function TrainingPlanDrawer({ plan, open, onOpenChange }: TrainingPlanDra
 
 	if (!plan) return null;
 
-	const currentWeek: EnrichedTrainingPlanWeek = plan.weeks.find((w: TrainingPlanWeek) => w.weekNumber === selectedWeek);
+	const currentWeek: EnrichedTrainingPlanWeek | undefined = plan.weeks.find((w: TrainingPlanWeek) => w.weekNumber === selectedWeek);
 
 	const toggleDay = (dayNumber: number) => {
 		const newExpanded = new Set(expandedDays);
@@ -185,9 +185,9 @@ export function TrainingPlanDrawer({ plan, open, onOpenChange }: TrainingPlanDra
 
 										// Find the workout for this day (days array might not have all 7 days)
 										const dayData: EnrichedTrainingPlanDay = currentWeek.days[dayNumber - 1];
-										const workout: EnrichedWorkoutTemplate = dayData?.workoutDetails;
+										const workout: EnrichedWorkoutTemplate | null = dayData?.workoutDetails;
 
-										return newFunction(dayNumber, isExpanded, toggleDay, workout);
+										return showDayWorkout(dayNumber, isExpanded, toggleDay, workout);
 									})}
 								</div>
 							)}
@@ -209,7 +209,7 @@ export function TrainingPlanDrawer({ plan, open, onOpenChange }: TrainingPlanDra
 	);
 }
 
-function newFunction(dayNumber: number, isExpanded: boolean, toggleDay: (dayNumber: number) => void, workout: EnrichedWorkoutTemplate) {
+function showDayWorkout(dayNumber: number, isExpanded: boolean, toggleDay: (dayNumber: number) => void, workout: EnrichedWorkoutTemplate | null) {
 	return <Collapsible
 		key={dayNumber}
 		open={isExpanded}
@@ -236,7 +236,7 @@ function newFunction(dayNumber: number, isExpanded: boolean, toggleDay: (dayNumb
 	</Collapsible>;
 }
 
-function dayContent(workout: EnrichedWorkoutTemplate) {
+function dayContent(workout: EnrichedWorkoutTemplate | null) {
 	return <CollapsibleContent>
 		<div className="px-4 pb-4 space-y-4">
 			{workout ? (
@@ -287,11 +287,8 @@ function exerciseStructureContent(exerciseStructure: WorkoutStructureItem, idx: 
 				{exerciseStructure.reps && (
 					<p>Reps: {exerciseStructure.reps}</p>
 				)}
-				{exerciseStructure.durationMins && (
-					<p>Duration: {exerciseStructure.durationMins} mins</p>
-				)}
-				{exerciseStructure.durationSecs && (
-					<p>Duration: {exerciseStructure.durationSecs} secs</p>
+				{exerciseStructure.duration && (
+					<p>Duration: {exerciseStructure.duration} mins</p>
 				)}
 				{exerciseStructure.restSeconds && (
 					<p>Rest: {exerciseStructure.restSeconds}s</p>
