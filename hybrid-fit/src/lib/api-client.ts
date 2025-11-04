@@ -1,4 +1,5 @@
-import { WorkoutLog } from '@/models/User';
+import { WorkoutLog, WorkoutOverride } from '@/models/User';
+import { EnrichedUserDoc } from 'types/enrichedTypes';
 
 export class ApiError extends Error {
 	constructor(public status: number, public message: string) {
@@ -12,8 +13,8 @@ export class ApiError extends Error {
  */
 export async function updatePlanOverrides(
 	planId: string,
-	overrides: any[]
-): Promise<{ planId: string; overrides: any[] }> {
+	overrides: WorkoutOverride[]
+): Promise<{ planId: string; overrides: WorkoutOverride[] }> {
 	const response = await fetch(`/api/users/me/plans/${planId}/overrides`, {
 		method: 'PATCH',
 		headers: {
@@ -36,10 +37,10 @@ export async function updatePlanOverrides(
 
 export async function logWorkout(
 	planId: string,
-	workoutData: any
+	workoutData: WorkoutLog
 ): Promise<{
 	planId: string;
-	workoutLog: any;
+	workoutLog: WorkoutLog;
 	userStats: {
 		totalWorkoutsCompleted: number;
 		currentStreak: number;
@@ -88,7 +89,7 @@ export async function updateWorkout(logId: string, planId: string, workoutData: 
 	return result.data;
 }
 
-export async function getUserProfile(): Promise<any> {
+export async function getUserProfile(): Promise<EnrichedUserDoc> {
 	const response = await fetch('/api/users/me', {
 		method: 'GET',
 		headers: {

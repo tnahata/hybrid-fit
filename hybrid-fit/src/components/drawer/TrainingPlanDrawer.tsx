@@ -17,15 +17,15 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import {
-	EnrichedTrainingPlanDoc,
+	EnrichedTrainingPlan,
 	EnrichedTrainingPlanWeek,
 	EnrichedTrainingPlanDay,
 	EnrichedWorkoutTemplate,
 	WorkoutStructureItem
-} from "@/lib/enrichTrainingPlans";
+} from "../../../types/enrichedTypes";
 
 interface TrainingPlanDrawerProps {
-	plan: EnrichedTrainingPlanDoc;
+	plan: EnrichedTrainingPlan;
 	open: boolean;
 	onOpenChange: (open: boolean) => void;
 }
@@ -35,7 +35,7 @@ export function TrainingPlanDrawer({ plan, open, onOpenChange }: TrainingPlanDra
 	const [selectedWeek, setSelectedWeek] = useState(1);
 	const [expandedDays, setExpandedDays] = useState<Set<number>>(new Set());
 
-	const { data: session, status } = useSession();
+	const { status } = useSession();
 	const router = useRouter();
 	const [isEnrolling, setIsEnrolling] = useState(false);
 

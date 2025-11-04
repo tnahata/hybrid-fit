@@ -12,8 +12,9 @@ import { Card, CardContent } from '@/components/ui/card';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { WorkoutLog } from '@/models/User';
-import { EnrichedWorkoutTemplate } from '@/lib/enrichTrainingPlans';
+import { EnrichedWorkoutTemplate } from '../../types/enrichedTypes';
 import { getStartOfDay } from '@/lib/dateUtils';
+import { toast } from 'sonner';
 
 interface ExerciseSet {
 	setNumber: number;
@@ -42,7 +43,7 @@ interface DrillActivity {
 interface LogResultsDialogProps {
 	workout: EnrichedWorkoutTemplate | null | undefined;
 	existingLog?: WorkoutLog | null;
-	onCreateLog: (data: any) => void;
+	onCreateLog: (data: WorkoutLog) => void;
 	onUpdateLog: (data: WorkoutLog, logId: string) => void;
 	trigger?: React.ReactNode;
 }
@@ -184,15 +185,6 @@ export default function LogResultsDialog({ workout, existingLog, onCreateLog, on
 		return !!durationMinutes;
 	};
 
-	const addExercise = (): void => {
-		setExercises([...exercises, {
-			exerciseId: Date.now().toString(),
-			exerciseName: '',
-			sets: [{ setNumber: 1, reps: 10, weight: 0, completed: false }]
-		}]);
-		markFormAsDirty();
-	};
-
 	const removeExercise = (index: number): void => {
 		setExercises(exercises.filter((_, i) => i !== index));
 		markFormAsDirty();
@@ -240,7 +232,7 @@ export default function LogResultsDialog({ workout, existingLog, onCreateLog, on
 		markFormAsDirty();
 	};
 
-	const updateDrill = (index: number, field: keyof DrillActivity, value: any): void => {
+	const updateDrill = (index: number, field: keyof DrillActivity, value: string | number | boolean | undefined): void => {
 		const newDrills = [...drills];
 		newDrills[index][field] = value as never;
 		setDrills(newDrills);
@@ -258,9 +250,16 @@ export default function LogResultsDialog({ workout, existingLog, onCreateLog, on
 	const handleSubmit = (): void => {
 		if (!isFormValid()) return;
 
+		if (!workout?._id) {
+			toast.error('Unable to save workout', {
+				description: 'Workout information is missing. Please try refreshing the page.'
+			});
+			return;
+		}
+
 		const data: WorkoutLog = {
 			date: getStartOfDay(),
-			workoutTemplateId: workout?._id,
+			workoutTemplateId: workout._id,
 			status: workoutStatus,
 			notes: notes || undefined,
 		};
@@ -312,6 +311,8 @@ export default function LogResultsDialog({ workout, existingLog, onCreateLog, on
 						durationMinutes: drill.durationMinutes,
 						repetitions: drill.repetitions,
 						sets: drill.sets,
+						qualityRating: drill.qualityRating,
+						completed: drill.completed,
 						notes: drill.notes,
 					})),
 					customMetrics: {}
@@ -326,7 +327,13 @@ export default function LogResultsDialog({ workout, existingLog, onCreateLog, on
 		}
 
 		if (existingLog) {
-			onUpdateLog(data, existingLog._id?.toString());
+			if (!existingLog._id) {
+				toast.error('Unable to update workout', {
+					description: 'Workout log ID is missing. Please try again.'
+				});
+				return;
+			}
+			onUpdateLog(data, existingLog._id.toString());
 		} else {
 			onCreateLog(data);
 		}
@@ -645,7 +652,7 @@ export default function LogResultsDialog({ workout, existingLog, onCreateLog, on
 					{workoutStatus === 'skipped' && (
 						<div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
 							<p className="text-sm text-yellow-800">
-								You're marking this workout as skipped. Please add a note below explaining why (optional).
+								You&apos;re marking this workout as skipped. Please add a note below explaining why (optional).
 							</p>
 						</div>
 					)}

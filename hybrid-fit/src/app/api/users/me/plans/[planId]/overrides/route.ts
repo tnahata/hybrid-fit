@@ -10,7 +10,7 @@ interface PatchOverridesRequest {
 
 export async function PATCH(
 	req: NextRequest,
-	{ params }: { params: { planId: string } }
+	{ params }: { params: Promise<{ planId: string }> }
 ): Promise<NextResponse> {
 	try {
 
@@ -84,7 +84,7 @@ export async function PATCH(
 
 		return NextResponse.json({
 			data: {
-				planId,
+				planId: planId,
 				overrides: user.trainingPlans[planIndex].overrides,
 			},
 			success: true,

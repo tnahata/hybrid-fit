@@ -31,11 +31,11 @@ export interface WorkoutTemplateDoc extends Document {
     metrics: {
         distanceMiles?: number | null;
         durationMins?: number | null;
-        [key: string]: any;
+		additionalMetrics?: Record<string, number | string | boolean | null | undefined>;
     };
     difficulty: WorkoutDifficulty;
     tags: string[];
-    structure?: WorkoutExerciseStructure[]; // Detailed structure of the workout
+    structure?: WorkoutExerciseStructure[];
     createdAt?: Date;
     updatedAt?: Date;
 }

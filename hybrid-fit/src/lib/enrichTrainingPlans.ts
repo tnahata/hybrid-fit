@@ -1,41 +1,11 @@
-import { WorkoutTemplate, WorkoutTemplateDoc, WorkoutExerciseStructure } from "@/models/Workouts";
-import { Exercise, ExerciseDoc } from "@/models/Exercise";
-import { TrainingPlan, TrainingPlanDoc, TrainingPlanWeek, TrainingPlanDay } from "@/models/TrainingPlans";
-import { UserPlanProgress } from "@/models/User";
-
-export interface WorkoutStructureItem {
-	exerciseId: string;
-	sets?: number;
-	reps?: number;
-	duration?: number;
-	restSeconds?: number;
-	notes?: string;
-	exercise: ExerciseDoc | null;
-}
-
-export interface EnrichedWorkoutTemplate extends Omit<WorkoutTemplateDoc, 'structure'> {
-	structure?: WorkoutStructureItem[];
-}
-
-export interface EnrichedTrainingPlanDay extends TrainingPlanDay {
-	workoutDetails: EnrichedWorkoutTemplate | null;
-}
-
-export interface EnrichedTrainingPlanWeek extends Omit<TrainingPlanWeek, 'days'> {
-	days: EnrichedTrainingPlanDay[];
-}
-
-export interface EnrichedTrainingPlanDoc extends Omit<TrainingPlanDoc, 'weeks' | 'sourceUrl'> {
-	weeks: EnrichedTrainingPlanWeek[];
-}
-
-export interface EnrichedUserPlanProgress extends Omit<UserPlanProgress, 'weeks'> {
-	weeks: EnrichedTrainingPlanWeek[];
-}
+import { WorkoutTemplate, WorkoutExerciseStructure } from "@/models/Workouts";
+import { Exercise } from "@/models/Exercise";
+import { TrainingPlan, TrainingPlanWeek, TrainingPlanDay } from "@/models/TrainingPlans";
+import { EnrichedTrainingPlan } from "types/enrichedTypes";
 
 export async function enrichTrainingPlans(
 	planIds: string[]
-): Promise<EnrichedTrainingPlanDoc[]> {
+): Promise<EnrichedTrainingPlan[]> {
 
 	const trainingPlans = await TrainingPlan.find({
 		_id: { $in: planIds }
@@ -72,11 +42,22 @@ export async function enrichTrainingPlans(
 	const exerciseMap = new Map(exercises.map((ex) => [String(ex._id), ex]));
 	const workoutTemplateMap = new Map(workoutTemplates.map((wt) => [String(wt._id), wt]));
 
-	const enriched: EnrichedTrainingPlanDoc[] = trainingPlans.map((plan) => {
+	const enriched: EnrichedTrainingPlan[] = trainingPlans.map((plan) => {
 		const { sourceUrl, ...planWithoutSource } = plan;
 
 		return {
-			...planWithoutSource,
+			_id: String(plan._id),
+			name: plan.name,
+			sport: plan.sport,
+			goal: plan.goal,
+			level: plan.level,
+			details: plan.details,
+			planType: plan.planType,
+			description: plan.description,
+			durationWeeks: plan.durationWeeks,
+			tags: plan.tags,
+			createdAt: plan.createdAt,
+			updatedAt: plan.updatedAt,
 			weeks: plan.weeks?.map((week: TrainingPlanWeek) => ({
 				...week,
 				days: week.days.map((day: TrainingPlanDay) => {

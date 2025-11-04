@@ -1,13 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/dark-mode-toggle/toggle";
 import { signOut } from "next-auth/react";
 
 export function Header() {
-    const pathname = usePathname();
 
     const handleSignOut = async () => {
         await signOut({

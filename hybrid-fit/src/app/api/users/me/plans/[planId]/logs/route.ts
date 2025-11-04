@@ -8,7 +8,7 @@ import { WorkoutLogInput, WorkoutLogSchema } from "./schemas";
 
 export async function POST(
 	req: NextRequest,
-	{ params }: { params: { planId: string } }
+	{ params }: { params: Promise<{ planId: string }> }
 ): Promise<NextResponse> {
 	try {
 

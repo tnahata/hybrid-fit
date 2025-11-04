@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { connectToDatabase } from "@/lib/mongodb";
 import { Exercise } from "@/models/Exercise";
 
-export async function GET(req: Request) {
+export async function GET() {
     try {
         await connectToDatabase();
 
@@ -17,7 +17,7 @@ export async function GET(req: Request) {
                 total
             },
         });
-    } catch (err: any) {
+    } catch (err) {
         console.error("Error fetching exercises:", err);
         return NextResponse.json(
             { error: "Failed to load exercises" },

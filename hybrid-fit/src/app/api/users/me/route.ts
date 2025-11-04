@@ -2,32 +2,13 @@ import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { connectToDatabase } from "@/lib/mongodb";
-import { User, UserDoc, WorkoutOverride, WorkoutLog } from "@/models/User";
+import { User, UserDoc, WorkoutLog } from "@/models/User";
 import { getStartOfDay, getDaysSince } from "@/lib/dateUtils";
-import { enrichTrainingPlans, EnrichedTrainingPlanDoc } from "@/lib/enrichTrainingPlans";
-
-export interface EnrichedUserPlanProgress extends EnrichedTrainingPlanDoc {
-	startedAt: Date;
-	completedAt?: Date;
-	currentWeek: number;
-	currentDayIndex: number;
-	isActive: boolean;
-	overrides: WorkoutOverride[];
-	progressLog: WorkoutLog[];
-	totalActiveMinutes: number;
-	averageWorkoutDuration: number;
-	totalDistanceMiles: number;
-	totalWeightLifted: number;
-}
-
-export interface EnrichedUserDoc extends Omit<UserDoc, 'trainingPlans'> {
-	trainingPlans: EnrichedUserPlanProgress[];
-}
-
-export interface UserApiResponse {
-	data: EnrichedUserDoc
-	success: boolean;
-}
+import { enrichTrainingPlans } from "@/lib/enrichTrainingPlans";
+import {
+	EnrichedUserPlanProgress,
+	UserApiResponse
+} from "../../../../../types/enrichedTypes";
 
 const calculateTotalActiveMinutes = (progressLogs: WorkoutLog[]): number => {
 	return progressLogs.reduce((total, log) => {
@@ -102,7 +83,7 @@ async function updateUserProgressIfNeeded(user: UserDoc): Promise<boolean> {
 	return true;
 }
 
-export async function GET(req: Request): Promise<NextResponse> {
+export async function GET(): Promise<NextResponse> {
 	try {
 		const session = await getServerSession(authOptions);
 
@@ -126,8 +107,16 @@ export async function GET(req: Request): Promise<NextResponse> {
 		if (!user.trainingPlans || user.trainingPlans.length === 0) {
 			const response: UserApiResponse = {
 				data: {
-					...user.toObject(),
-					trainingPlans: []
+					_id: String(user._id),
+					email: user.email,
+					name: user.name,
+					totalWorkoutsCompleted: user.totalWorkoutsCompleted,
+					currentStreak: user.currentStreak,
+					longestStreak: user.longestStreak,
+					lastProgressUpdateDate: user.lastProgressUpdateDate,
+					trainingPlans: [],
+					createdAt: user.createdAt,
+					updatedAt: user.updatedAt
 				},
 				success: true
 			};
@@ -149,7 +138,7 @@ export async function GET(req: Request): Promise<NextResponse> {
 
 			if (!enrichedPlan) {
 				console.error(`Enriched plan not found for planId: ${userPlan.planId}`);
-				return [] as unknown as EnrichedUserPlanProgress;
+				return null as unknown as EnrichedUserPlanProgress;
 			}
 
 			return {
@@ -170,8 +159,16 @@ export async function GET(req: Request): Promise<NextResponse> {
 
 		const response: UserApiResponse = {
 			data: {
-				...user.toObject(),
-				trainingPlans: mergedPlans
+				_id: String(user._id),
+				email: user.email,
+				name: user.name,
+				totalWorkoutsCompleted: user.totalWorkoutsCompleted,
+				currentStreak: user.currentStreak,
+				longestStreak: user.longestStreak,
+				lastProgressUpdateDate: user.lastProgressUpdateDate,
+				trainingPlans: mergedPlans,
+				createdAt: user.createdAt,
+				updatedAt: user.updatedAt
 			},
 			success: true
 		};

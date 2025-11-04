@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
 import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationPrevious, PaginationNext, PaginationEllipsis } from "@/components/ui/pagination";
 import { Badge } from "@/components/ui/badge";
-import { Search, Filter, ArrowUpDown } from "lucide-react";
+import { Search, ArrowUpDown } from "lucide-react";
 import { ExerciseDoc } from "@/models/Exercise"
 
 export default function ExerciseContent() {
@@ -28,7 +28,7 @@ export default function ExerciseContent() {
                 method: 'GET'
             });
             if (response?.ok) {
-                let ex = await response.json();
+                const ex = await response.json();
                 setExercises(ex.data);
 			}
 			setIsLoading(false);

@@ -14,7 +14,7 @@ import { TrainingPlanDrawer } from "@/components/drawer/TrainingPlanDrawer";
 import { TrainingPlanDoc } from "@/models/TrainingPlans";
 import { toast } from 'sonner';
 import LoadingSpinner from "@/components/ui/LoadingSpinner";
-import { EnrichedTrainingPlanDoc } from "@/lib/enrichTrainingPlans";
+import { EnrichedTrainingPlan } from "../../../types/enrichedTypes";
 
 export default function TrainingPlansPage() {
 	const [search, setSearch] = useState("");
@@ -24,13 +24,13 @@ export default function TrainingPlansPage() {
 	const [category, setCategory] = useState("all");
 	const [trainingPlans, setTrainingPlans] = useState<TrainingPlanDoc[]>([]);
 	const [currentPage, setCurrentPage] = useState(1);
-	const [selectedPlan, setSelectedPlan] = useState<EnrichedTrainingPlanDoc | null>(null);
+	const [selectedPlan, setSelectedPlan] = useState<EnrichedTrainingPlan | null>(null);
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 	const [isLoadingDetail, setIsLoadingDetail] = useState(false);
 	const [isLoading, setIsLoading] = useState(true);
 	const perPage = 6;
 
-	const { data: session, status } = useSession();
+	const { status } = useSession();
 	const [enrollingPlanId, setEnrollingPlanId] = useState<string | null>(null);
 	const router = useRouter();
 

@@ -8,7 +8,7 @@ import { WorkoutLogSchema, WorkoutLogInput } from "../schemas";
 
 export async function PATCH(
 	req: NextRequest,
-	{ params }: { params: { planId: string, logId: string } }
+	{ params }: { params: Promise<{ planId: string, logId: string }> }
 ): Promise<NextResponse> {
 	try {
 		const session = await getServerSession(authOptions);

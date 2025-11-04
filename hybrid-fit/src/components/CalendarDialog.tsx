@@ -15,15 +15,14 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Badge } from "@/components/ui/badge";
-import { EnrichedUserPlanProgress } from '@/app/api/users/me/route';
-import { EnrichedTrainingPlanWeek } from '@/lib/enrichTrainingPlans';
-import { DayOfWeek } from '@/models/User';
+import { EnrichedTrainingPlanWeek, EnrichedUserPlanProgress } from '../../types/enrichedTypes';
+import { DayOfWeek, WorkoutOverride } from '@/models/User';
 import { returnUTCDateInUSLocaleFormat } from '@/lib/dateUtils';
 
 interface CalendarDialogProps {
 	userPlan: EnrichedUserPlanProgress;
 	className?: string;
-	onUpdateOverrides?: (overrides: any[]) => Promise<void>;
+	onUpdateOverrides?: (overrides: WorkoutOverride[]) => Promise<void>;
 }
 
 const daysOfWeek = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
@@ -460,7 +459,7 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 									<div className="space-y-4">
 										<div className="p-4 rounded-lg bg-primary/5 border border-primary/20">
 											<p className="text-sm font-medium">
-												You're on Week {userPlan.currentWeek}, Day {userPlan.currentDayIndex + 1}
+												You&apos;re on Week {userPlan.currentWeek}, Day {userPlan.currentDayIndex + 1}
 											</p>
 										</div>
 										{renderWeek(currentWeek)}
@@ -479,7 +478,7 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 								{futureWeeks.length === 0 ? (
 									<div className="text-center py-12 text-muted-foreground">
 										<p>No upcoming weeks</p>
-										<p className="text-sm mt-2">You're almost done! 🎉</p>
+										<p className="text-sm mt-2">You&apos;re almost done! 🎉</p>
 									</div>
 								) : (
 									<div className="space-y-4">

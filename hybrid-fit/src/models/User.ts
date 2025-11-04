@@ -38,11 +38,14 @@ export interface WorkoutLog {
 
 	drillSession?: {
 		activities: Array<{
+			exerciseId: string,
 			name: string;
 			durationMinutes?: number;
 			repetitions?: number;
 			sets?: number;
 			notes?: string;
+			qualityRating: number;
+			completed: boolean;
 		}>;
 		customMetrics?: Record<string, number | string>;
 	};
@@ -152,10 +155,13 @@ const workoutLogSchema = new Schema<WorkoutLog>({
 
 	drillSession: {
 		activities: [{
+			exerciseId: { type: String },
 			name: { type: String },
 			durationMinutes: { type: Number },
 			repetitions: { type: Number },
 			sets: { type: Number },
+			qualityRating: { type: Number, min: 1, max: 5 },
+			completed: { type: Boolean },
 			notes: { type: String }
 		}],
 		customMetrics: {

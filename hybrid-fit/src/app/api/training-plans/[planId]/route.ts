@@ -1,10 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import { connectToDatabase } from "@/lib/mongodb";
-import { enrichTrainingPlans, EnrichedTrainingPlanDoc } from "@/lib/enrichTrainingPlans";
+import { enrichTrainingPlans } from "@/lib/enrichTrainingPlans";
+import { EnrichedTrainingPlan } from "../../../../../types/enrichedTypes";
 
 export async function GET(
 	request: NextRequest,
-	{ params }: { params: { planId: string } }
+	{ params }: { params: Promise<{ planId: string }> }
 ) {
 	try {
 		const { planId } = await params;
@@ -33,7 +34,7 @@ export async function GET(
 			);
 		}
 
-		const enrichedPlan: EnrichedTrainingPlanDoc = enrichedPlans[0];
+		const enrichedPlan: EnrichedTrainingPlan = enrichedPlans[0];
 
 		const totalWorkouts = enrichedPlan.weeks.reduce((count, week) => {
 			return count + week.days.filter(day => day.workoutDetails !== null).length;

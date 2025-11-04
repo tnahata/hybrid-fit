@@ -38,11 +38,14 @@ const WorkoutMetricsSchema = z.object({
 	drillSession: z.object({
 		activities: z.array(
 			z.object({
+				exerciseId: z.string(),
 				name: z.string(),
 				durationMinutes: z.number().min(0).optional(),
 				repetitions: z.number().int().min(0).optional(),
 				sets: z.number().int().positive().optional(),
 				notes: z.string().optional(),
+				completed: z.boolean(),
+				qualityRating: z.number().int().min(1).max(5)
 			})
 		),
 		customMetrics: z.record(z.union([z.number(), z.string()])).optional(),

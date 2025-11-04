@@ -21,7 +21,7 @@ export interface ExerciseDoc extends Document {
     description: string;
     instructions?: string;
     sourceUrl: string;
-    details: Record<string, any>;
+    details: Record<string, string | number>;
     durationMinutes: number | null;
     tags: string[];
 }

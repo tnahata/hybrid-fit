@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useMemo, JSX } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -13,9 +13,8 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
-import { WorkoutLog } from "@/models/User";
-import { EnrichedTrainingPlanDay, EnrichedTrainingPlanWeek, WorkoutStructureItem } from '@/lib/enrichTrainingPlans';
-import { EnrichedUserDoc, EnrichedUserPlanProgress } from '../api/users/me/route';
+import { WorkoutLog, WorkoutOverride } from "@/models/User";
+import { EnrichedTrainingPlanDay, EnrichedTrainingPlanWeek, WorkoutStructureItem, EnrichedUserPlanProgress, EnrichedUserDoc } from '../../../types/enrichedTypes';
 import { WorkoutTemplateDoc } from "@/models/Workouts";
 import { updatePlanOverrides, logWorkout, updateWorkout, getUserProfile, ApiError } from '@/lib/api-client';
 import LogResultsDialog from '@/components/LogResultsDialog';
@@ -24,8 +23,8 @@ import { toast } from 'sonner';
 import Link from 'next/link';
 import { getStartOfDay, returnUTCDateInUSLocaleFormat } from '@/lib/dateUtils';
 import LoadingSpinner from '@/components/ui/LoadingSpinner';
-import { Dumbbell, ChevronDown, PersonStanding, Dumbbell as Strength, Bike, Waves } from 'lucide-react';
-import { Trophy, Goal, Logs, LoaderCircle } from 'lucide-react';
+import { Dumbbell, ChevronDown } from 'lucide-react';
+import { Goal, Logs, LoaderCircle } from 'lucide-react';
 import { Clock, Flame, Tag } from '@/components/icons/icons';
 
 interface FirstRowCardProps {
@@ -109,7 +108,7 @@ export default function Dashboard() {
 		);
 	}, [currentUser, selectedPlanId]);
 
-	const handleUpdateOverrides = async (overrides: any[]): Promise<void> => {
+	const handleUpdateOverrides = async (overrides: WorkoutOverride[]): Promise<void> => {
 		if (!currentUserPlan) {
 			throw new Error('No active plan selected');
 		}
@@ -163,7 +162,7 @@ export default function Dashboard() {
 		}
 	}
 
-	const handleLogWorkout = async (data: any): Promise<void> => {
+	const handleLogWorkout = async (data: WorkoutLog): Promise<void> => {
 		if (!currentUserPlan) {
 			throw new Error('No active plan selected');
 		}
@@ -292,28 +291,6 @@ export default function Dashboard() {
 	};
 
 	const today: string = returnUTCDateInUSLocaleFormat();
-
-	const getSportIcon = (sport: string) => {
-		const iconMap: Record<string, React.ReactNode> = {
-			'running': <PersonStanding className="w-6 h-6" />,
-			'strength': <Dumbbell className="w-6 h-6" />,
-			'cycling': <Bike className="w-6 h-6" />,
-			'swimming': <Waves className="w-6 h-6" />,
-			'triathlon': <Trophy className="w-6 h-6" />,
-		};
-		return iconMap[sport.toLowerCase()] || <Dumbbell className="w-6 h-6" />;
-	};
-
-	const getSportEmoji = (sport: string): string => {
-		const emojiMap: Record<string, string> = {
-			'running': '🏃',
-			'strength': '🏋️‍♂️',
-			'cycling': '🚴',
-			'swimming': '🏊',
-			'triathlon': '🏊🚴🏃',
-		};
-		return emojiMap[sport.toLowerCase()] || '💪';
-	};
 
 	const isWorkoutOverridden = (): boolean => {
 		if (!currentUserPlan) return false;
@@ -512,7 +489,6 @@ export default function Dashboard() {
 		return null;
 	}
 
-	const sportEmoji: string = getSportEmoji(currentUserPlan.sport);
 	const completedThisWeek: number = getCompletedWorkoutsThisWeek();
 	const totalWeekWorkouts: number = getTotalWeekWorkouts();
 	const planProgress: number = calculatePlanProgress();
@@ -719,7 +695,7 @@ export default function Dashboard() {
 						{isPlanActive &&
 							<Card>
 								<CardHeader>
-									<CardTitle className="text-lg"><LoaderCircle className='inline' /> This Week's Progress</CardTitle>
+									<CardTitle className="text-lg"><LoaderCircle className='inline' /> This Week&apos;s Progress</CardTitle>
 								</CardHeader>
 								<CardContent>
 									<div className="space-y-3">

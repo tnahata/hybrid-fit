@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 
 export default function usePendingEnrollment() {
-	const { data: session, status } = useSession();
+	const { status } = useSession();
 	const router = useRouter();
 	const [isProcessingEnrollment, setIsProcessingEnrollment] = useState(false);
 	const hasProcessed = useRef(false);
