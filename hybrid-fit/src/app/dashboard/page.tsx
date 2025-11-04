@@ -557,7 +557,10 @@ export default function Dashboard() {
 									</p>
 									<div className="flex gap-2">
 										<div className="flex-1">
-											<CalendarDialog userPlan={currentUserPlan} />
+											<CalendarDialog
+												key={currentUserPlan._id}
+												userPlan={currentUserPlan}
+											/>
 										</div>
 										<Button className="flex-1">Start New Plan</Button>
 									</div>
@@ -662,6 +665,7 @@ export default function Dashboard() {
 								<ExpandableExercises />
 
 								<CalendarDialog
+									key={currentUserPlan._id}
 									userPlan={currentUserPlan}
 									onUpdateOverrides={handleUpdateOverrides}
 									className="w-full"

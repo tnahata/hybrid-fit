@@ -85,10 +85,11 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 		}
 
 		const expectedDate = getExpectedWorkoutDate(weekNumber, dayIndex);
+		const displayedWorkoutId = getDisplayedWorkout(weekNumber, dayIndex);
 
 		const logForExpectedDate = userPlan.progressLog.find(l => {
 			const logDate = new Date(l.date);
-			return isSameDay(logDate, expectedDate) && l.workoutTemplateId === day.workoutTemplateId;
+			return isSameDay(logDate, expectedDate) && l.workoutTemplateId === displayedWorkoutId;
 		});
 
 		if (userPlan.completedAt || weekNumber < userPlan.currentWeek) {
