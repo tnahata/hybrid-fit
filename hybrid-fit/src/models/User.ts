@@ -189,7 +189,7 @@ const userPlanProgressSchema = new Schema<UserPlanProgress>({
 	planId: { type: String, required: true },
 
 	startedAt: { type: Date, required: true },
-	completedAt: Date,
+	completedAt: { type: Date },
 	currentWeek: { type: Number, default: 1 },
 	currentDayIndex: { type: Number, default: 0 },
 	isActive: { type: Boolean, default: true },

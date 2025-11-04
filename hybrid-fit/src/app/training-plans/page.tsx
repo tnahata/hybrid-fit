@@ -151,8 +151,6 @@ export default function TrainingPlansPage() {
 					return;
 				}
 
-				console.log("I should be enrolled in plan ", planId);
-
 				toast.success("Enrolled successfully!", {
 					description: `You're now enrolled in ${planName}`,
 				});

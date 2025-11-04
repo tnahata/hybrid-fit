@@ -73,8 +73,6 @@ export async function POST(request: NextRequest) {
 
 		await user.save();
 
-		console.log(`User ${user.email} enrolled in plan ${plan.name}`);
-
 		return NextResponse.json(
 			{
 				message: "Successfully enrolled in training plan",

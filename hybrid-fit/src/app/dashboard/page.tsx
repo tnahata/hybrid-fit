@@ -83,7 +83,6 @@ export default function Dashboard() {
 				(p: EnrichedUserPlanProgress) => p.isActive
 			);
 			const planIdToSelect = activePlan?._id || userData.trainingPlans?.[0]?._id || "";
-			console.log(planIdToSelect);
 			setSelectedPlanId(planIdToSelect);
 			setCurrentUser(userData);
 

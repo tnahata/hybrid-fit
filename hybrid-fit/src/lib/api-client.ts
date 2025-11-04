@@ -78,7 +78,6 @@ export async function updateWorkout(logId: string, planId: string, workoutData: 
 
 	if (!response.ok) {
 		const error = await response.json();
-		console.log("error", error.details);
 		throw new ApiError(
 			response.status,
 			JSON.stringify(error.details) || 'Failed to log workout'
