@@ -5,6 +5,8 @@ import { connectToDatabase } from "@/lib/mongodb";
 import { User, UserDoc, WorkoutLog } from "@/models/User";
 import { recalculateStreak } from "@/lib/helpers";
 import { WorkoutLogInput, WorkoutLogSchema } from "./schemas";
+import { TrainingPlan, TrainingPlanDoc } from "@/models/TrainingPlans";
+import { getDaysSince } from "@/lib/dateUtils";
 
 export async function POST(
 	req: NextRequest,
@@ -113,6 +115,31 @@ export async function POST(
 
 		user.trainingPlans[planIndex].progressLog.push(workoutLog);
 		recalculateStreak(user, planIndex);
+
+		const trainingPlan: TrainingPlanDoc | null = await TrainingPlan.findById(planId);
+
+		if (trainingPlan) {
+			const userPlan = user.trainingPlans[planIndex];
+
+			const finalWeek = trainingPlan.durationWeeks;
+			const finalWeekData = trainingPlan.weeks?.find(w => w.weekNumber === finalWeek);
+			const finalDayIndex = finalWeekData ? finalWeekData.days.length - 1 : 6;
+
+			const daysSinceStart = getDaysSince(userPlan.startedAt);
+			const totalPlanDays = (finalWeek - 1) * 7 + (finalDayIndex + 1);
+
+			const hasReachedEnd = (
+				userPlan.currentWeek > finalWeek ||
+				(userPlan.currentWeek === finalWeek && userPlan.currentDayIndex >= finalDayIndex)
+			);
+
+			const hasPassedEndDate = daysSinceStart >= totalPlanDays;
+
+			if ((hasReachedEnd || hasPassedEndDate) && !userPlan.completedAt) {
+				user.trainingPlans[planIndex].completedAt = new Date();
+				user.trainingPlans[planIndex].isActive = false;
+			}
+		}
 
 		await user.save();
 

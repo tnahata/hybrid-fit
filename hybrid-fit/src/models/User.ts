@@ -4,7 +4,7 @@ export interface WorkoutLog {
 	_id?: mongoose.Types.ObjectId
 	date: Date;
 	workoutTemplateId: string;
-	status: "completed" | "skipped";
+	status: "completed" | "skipped" | "missed";
 	notes?: string;
 
 	durationMinutes?: number;
@@ -106,7 +106,7 @@ const workoutLogSchema = new Schema<WorkoutLog>({
 	workoutTemplateId: { type: String, required: true },
 	status: {
 		type: String,
-		enum: ["completed", "skipped"],
+		enum: ["completed", "skipped", "missed"],
 		required: true
 	},
 	notes: { type: String },

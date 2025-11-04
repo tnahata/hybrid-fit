@@ -43,3 +43,15 @@ export function returnUTCDateInUSLocaleFormat(date: Date = new Date()): string {
 		day: 'numeric'
 	});
 };
+
+/**
+ * Adds a specified number of days to a date
+ * @param date - The starting date
+ * @param days - Number of days to add (can be negative)
+ * @returns New Date object with days added
+ */
+export function addDays(date: Date, days: number): Date {
+	const result = new Date(date);
+	result.setUTCDate(result.getUTCDate() + days);
+	return getStartOfDay(result);
+}

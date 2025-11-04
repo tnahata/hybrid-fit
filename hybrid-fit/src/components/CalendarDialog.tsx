@@ -92,22 +92,12 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 			return isSameDay(logDate, expectedDate) && l.workoutTemplateId === displayedWorkoutId;
 		});
 
-		if (userPlan.completedAt || weekNumber < userPlan.currentWeek) {
-			if (logForExpectedDate) {
-				return logForExpectedDate.status;
-			} else {
-				return 'missed';
-			}
+		if (logForExpectedDate) {
+			return logForExpectedDate.status;
 		}
 
-		if (weekNumber === userPlan.currentWeek && dayIndex <= userPlan.currentDayIndex) {
-			if (logForExpectedDate) {
-				return logForExpectedDate.status;
-			} else if (dayIndex === userPlan.currentDayIndex) {
-				return 'current';
-			} else {
-				return 'missed';
-			}
+		if (weekNumber === userPlan.currentWeek && dayIndex === userPlan.currentDayIndex) {
+			return 'current';
 		}
 
 		return 'upcoming';

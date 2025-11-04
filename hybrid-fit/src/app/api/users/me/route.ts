@@ -3,7 +3,8 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { connectToDatabase } from "@/lib/mongodb";
 import { User, UserDoc, WorkoutLog } from "@/models/User";
-import { getStartOfDay, getDaysSince } from "@/lib/dateUtils";
+import { TrainingPlan } from "@/models/TrainingPlans";
+import { getStartOfDay, getDaysSince, isSameDay, addDays } from "@/lib/dateUtils";
 import { enrichTrainingPlans } from "@/lib/enrichTrainingPlans";
 import {
 	EnrichedUserPlanProgress,
@@ -83,6 +84,86 @@ async function updateUserProgressIfNeeded(user: UserDoc): Promise<boolean> {
 	return true;
 }
 
+async function fillMissingWorkoutLogs(user: UserDoc): Promise<void> {
+	const today = getStartOfDay();
+	let hasChanges = false;
+
+	for (const trainingPlan of user.trainingPlans) {
+		if (!trainingPlan.isActive || trainingPlan.completedAt) {
+			continue;
+		}
+
+		const planDoc = await TrainingPlan.findById(trainingPlan.planId);
+		if (!planDoc) {
+			continue;
+		}
+
+		// Calculate how many days to check (up to current week/day)
+		const currentWeek = trainingPlan.currentWeek;
+		const currentDayIndex = trainingPlan.currentDayIndex;
+
+		// Iterate through each week up to current week
+		for (let weekNum = 1; weekNum <= currentWeek; weekNum++) {
+			const week = planDoc.weeks?.find((w: any) => w.weekNumber === weekNum);
+			if (!week) {
+				continue;
+			}
+
+			const daysToCheck = weekNum === currentWeek
+				? currentDayIndex  // Only check up to current day (not including current day)
+				: week.days.length; // Check all days for past weeks
+
+			for (let dayIdx = 0; dayIdx < daysToCheck; dayIdx++) {
+				const day = week.days[dayIdx];
+				if (!day) {
+					continue;
+				}
+
+				// Calculate the expected date for this workout
+				const daysFromStart = (weekNum - 1) * 7 + dayIdx;
+				const expectedDate = addDays(trainingPlan.startedAt, daysFromStart);
+
+				// Don't process today or future dates
+				if (expectedDate >= today) continue;
+
+				// Check for overrides
+				const daysOfWeekMap = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+				const dayOfWeek = daysOfWeekMap[dayIdx];
+				const override = trainingPlan.overrides.find(
+					o => o.weekNumber === weekNum && o.dayOfWeek === dayOfWeek
+				);
+
+				// Get the workout template ID (use override if exists)
+				const workoutTemplateId = override?.customWorkoutId || day.workoutTemplateId;
+
+				const logExists = trainingPlan.progressLog.some(log =>
+					isSameDay(getStartOfDay(new Date(log.date)), getStartOfDay(expectedDate)) &&
+					log.workoutTemplateId === workoutTemplateId
+				);
+
+				if (!logExists) {
+					const isRestDay = workoutTemplateId.toLowerCase().includes('rest');
+
+					const newLog: WorkoutLog = {
+						date: expectedDate,
+						workoutTemplateId: workoutTemplateId,
+						status: isRestDay ? 'completed' : 'missed',
+						notes: isRestDay ? 'Rest day' : 'Workout marked as missed'
+					};
+
+					trainingPlan.progressLog.push(newLog);
+					hasChanges = true;
+				}
+			}
+		}
+	}
+
+	if (hasChanges) {
+		await user.save();
+		console.log(`Filled missing workout logs for user: ${user.email}`);
+	}
+}
+
 export async function GET(): Promise<NextResponse> {
 	try {
 		const session = await getServerSession(authOptions);
@@ -125,6 +206,8 @@ export async function GET(): Promise<NextResponse> {
 		}
 
 		await updateUserProgressIfNeeded(user);
+
+		await fillMissingWorkoutLogs(user);
 
 		const planIds = user.trainingPlans.map(tp => tp.planId);
 		const enrichedPlans = await enrichTrainingPlans(planIds);
