@@ -15,8 +15,8 @@ interface CTASectionProps {
 
 export function CTASection({
 	tagline = 'Got a moment?',
-	heading = "Let's build your personalized workout plan.",
-	description = 'Join thousands of athletes tracking progress, staying consistent, and achieving their fitness goals with intelligent training tools.',
+	heading = "Let's get started on a training journey based on your goals.",
+	description = 'Join thousands of athletes tracking progress, staying consistent, and achieving their fitness goals with our intelligent training tools.',
 	buttonText = 'START NOW',
 	buttonLink = '/signup',
 	backgroundImage = '/images/cta-athlete.png'
@@ -58,24 +58,6 @@ export function CTASection({
 						className="object-cover"
 						priority
 					/>
-
-					<div className="absolute top-8 right-8 bg-white px-4 py-3 rounded-xl shadow-lg">
-						<p className="text-xs text-gray-600 font-medium mb-1">
-							Plan Progress
-						</p>
-						<p className="text-xl font-bold text-green-500">
-							90% achieved
-						</p>
-					</div>
-
-					<div className="absolute bottom-8 left-8 bg-white px-4 py-3 rounded-xl shadow-lg">
-						<p className="text-xs text-gray-600 font-medium mb-1">
-							Streaks Completed
-						</p>
-						<p className="text-xl font-bold text-green-500">
-							80% achieved
-						</p>
-					</div>
 				</div>
 			</div>
 		</section>

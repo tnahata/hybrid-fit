@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { CTASection } from "@/components/landing/cta-section";
 import { FeaturesSection } from "@/components/landing/features";
+import { FAQSection } from "@/components/landing/faq-section";
 import { HeroSection } from "@/components/landing/hero";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
@@ -60,7 +61,8 @@ export default function Home() {
     <div>
       <HeroSection />
       <FeaturesSection features={features}/>
-      <CTASection />
+		  <CTASection />
+		  <FAQSection />
     </div>
   );
 }
