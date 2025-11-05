@@ -1,37 +1,83 @@
-"use client";
+'use client';
 
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import Link from "next/link";
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import Image from 'next/image';
 
-export function CTASection() {
+interface CTASectionProps {
+	tagline?: string;
+	heading?: string;
+	description?: string;
+	buttonText?: string;
+	buttonLink?: string;
+	backgroundImage?: string;
+}
+
+export function CTASection({
+	tagline = 'Got a moment?',
+	heading = "Let's build your personalized workout plan.",
+	description = 'Join thousands of athletes tracking progress, staying consistent, and achieving their fitness goals with intelligent training tools.',
+	buttonText = 'START NOW',
+	buttonLink = '/signup',
+	backgroundImage = '/images/cta-athlete.png'
+}: CTASectionProps) {
 	return (
-		<section className="py-24 bg-primary text-primary-foreground text-center">
-			<motion.div
-				initial={{ opacity: 0, y: 30 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.6 }}
-				className="max-w-2xl mx-auto px-6"
-			>
-				<h2 className="text-4xl font-bold mb-4">Start Training Smarter Today</h2>
-				<p className="text-lg mb-8 text-primary-foreground/90">
-					Join thousands of athletes using our intelligent training tools to track, plan, and improve.
-				</p>
-				<div className="flex justify-center gap-4">
-					<Button size="lg" asChild variant="secondary">
-						<Link href="/signup">Get Started</Link>
-					</Button>
-					<Button variant="outline" size="lg" asChild className="bg-transparent text-primary-foreground border-white">
-						<Link href="/exercises">Browse Exercises</Link>
-					</Button>
-				</div>
-			</motion.div>
+		<section className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
+			<div className="min-h-screen grid lg:grid-cols-2">
+				<div className="container mx-auto">
+					<div className="flex items-center justify-start min-h-screen p-12 lg:p-20">
+						<div className="max-w-xl text-white">
+							<p className="text-[#ff6b35] text-sm font-semibold mb-4 uppercase tracking-wider">
+								{tagline}
+							</p>
 
-			<footer className="mt-16 text-sm text-primary-foreground/70">
-				© {new Date().getFullYear()} HybridFit •{" "}
-				<Link href="/privacy" className="underline hover:text-white">Privacy</Link> •{" "}
-				<Link href="/terms" className="underline hover:text-white">Terms</Link>
-			</footer>
+							<h2 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+								{heading}
+							</h2>
+
+							<p className="text-lg text-gray-300 mb-8 leading-relaxed">
+								{description}
+							</p>
+
+							<Button
+								asChild
+								className="bg-[#ff6b35] hover:bg-[#ff5722] text-white px-8 py-6 text-lg rounded-lg font-semibold"
+								size="lg"
+							>
+								<Link href={buttonLink}>{buttonText}</Link>
+							</Button>
+						</div>
+					</div>
+				</div>
+
+				<div className="relative min-h-screen">
+					<Image
+						src={backgroundImage}
+						alt="Athlete"
+						fill
+						className="object-cover"
+						priority
+					/>
+
+					<div className="absolute top-8 right-8 bg-white px-4 py-3 rounded-xl shadow-lg">
+						<p className="text-xs text-gray-600 font-medium mb-1">
+							Plan Progress
+						</p>
+						<p className="text-xl font-bold text-green-500">
+							90% achieved
+						</p>
+					</div>
+
+					<div className="absolute bottom-8 left-8 bg-white px-4 py-3 rounded-xl shadow-lg">
+						<p className="text-xs text-gray-600 font-medium mb-1">
+							Streaks Completed
+						</p>
+						<p className="text-xl font-bold text-green-500">
+							80% achieved
+						</p>
+					</div>
+				</div>
+			</div>
 		</section>
 	);
 }
