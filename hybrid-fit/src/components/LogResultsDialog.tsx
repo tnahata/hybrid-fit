@@ -53,7 +53,7 @@ export default function LogResultsDialog({ workout, existingLog, onCreateLog, on
 	const [hasUnsavedChanges, setHasUnsavedChanges] = useState<boolean>(false);
 	const [showConfirmDialog, setShowConfirmDialog] = useState<boolean>(false);
 
-	const [workoutStatus, setWorkoutStatus] = useState<'completed' | 'skipped'>('completed');
+	const [workoutStatus, setWorkoutStatus] = useState<'completed' | 'skipped' | 'missed'>('completed');
 
 	const [durationMinutes, setDurationMinutes] = useState<string>('');
 	const [perceivedEffort, setPerceivedEffort] = useState<number[]>([5]);
