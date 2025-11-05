@@ -3,7 +3,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { connectToDatabase } from "@/lib/mongodb";
 import { User, UserDoc, WorkoutLog } from "@/models/User";
-import { TrainingPlan } from "@/models/TrainingPlans";
+import { TrainingPlan, TrainingPlanDoc, TrainingPlanWeek } from "@/models/TrainingPlans";
 import { getStartOfDay, getDaysSince, isSameDay, addDays } from "@/lib/dateUtils";
 import { enrichTrainingPlans } from "@/lib/enrichTrainingPlans";
 import {
@@ -93,7 +93,7 @@ async function fillMissingWorkoutLogs(user: UserDoc): Promise<void> {
 			continue;
 		}
 
-		const planDoc = await TrainingPlan.findById(trainingPlan.planId);
+		const planDoc: TrainingPlanDoc | null = await TrainingPlan.findById(trainingPlan.planId);
 		if (!planDoc) {
 			continue;
 		}
@@ -104,7 +104,7 @@ async function fillMissingWorkoutLogs(user: UserDoc): Promise<void> {
 
 		// Iterate through each week up to current week
 		for (let weekNum = 1; weekNum <= currentWeek; weekNum++) {
-			const week = planDoc.weeks?.find((w: any) => w.weekNumber === weekNum);
+			const week = planDoc.weeks?.find((w: TrainingPlanWeek) => w.weekNumber === weekNum);
 			if (!week) {
 				continue;
 			}
