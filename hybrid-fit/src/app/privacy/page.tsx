@@ -10,11 +10,11 @@ export default function PrivacyPage() {
 		<>
 			<main className="max-w-3xl mx-auto px-6 py-16">
 				<h1 className="text-4xl font-bold mb-6">Privacy Policy</h1>
-				<p className="text-gray-600 mb-8">
+				<p className="mb-8">
 					Effective Date: November 2025
 				</p>
 
-				<div className="space-y-6 text-gray-800 leading-relaxed">
+				<div className="space-y-6 leading-relaxed">
 					<p>
 						At <strong>HybridFit</strong>, we take your privacy seriously. Our goal is
 						to help you train smarter — not to sell or misuse your information.
