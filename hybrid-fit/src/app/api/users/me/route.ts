@@ -148,7 +148,7 @@ async function fillMissingWorkoutLogs(user: UserDoc): Promise<void> {
 						date: expectedDate,
 						workoutTemplateId: workoutTemplateId,
 						status: isRestDay ? 'completed' : 'missed',
-						notes: isRestDay ? 'Rest day' : 'Workout marked as missed'
+						notes: isRestDay ? 'Rest day' : 'Workout marked as missed automatically'
 					};
 
 					trainingPlan.progressLog.push(newLog);

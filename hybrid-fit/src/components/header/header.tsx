@@ -4,8 +4,11 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/dark-mode-toggle/toggle";
 import { signOut } from "next-auth/react";
+import { useSession } from "next-auth/react"; 
 
 export function Header() {
+
+	const { status } = useSession();
 
 	const handleSignOut = async () => {
 		await signOut({
@@ -22,12 +25,16 @@ export function Header() {
 
 			<div className="flex items-center gap-4">
 				<ModeToggle />
-				<Link href="/signin">
-					<Button className="bg-[#ff6b35] hover:bg-[#ff5722] text-white">Sign In</Button>
-				</Link>
+				{status === 'loading' || status === 'unauthenticated' ?
+					<Link href="/signin">
+						<Button className="bg-[#ff6b35] hover:bg-[#ff5722] text-white">Sign In</Button>
+					</Link>
+					:
 				<Button onClick={handleSignOut} variant="outline" className="border-gray-700 hover:bg-gray-900">
 					Sign Out
 				</Button>
+				}
+				
 			</div>
 		</header>
 	);
