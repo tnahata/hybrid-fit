@@ -9,8 +9,8 @@ import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 
 export default function Home() {
-  const { status } = useSession();
-  const router = useRouter();
+	const { status } = useSession();
+	const router = useRouter();
 
 	useEffect(() => {
 		if (status === "authenticated") {
@@ -57,12 +57,12 @@ export default function Home() {
 		}
 	];
 
-  return (
-    <div>
-      <HeroSection />
-      <FeaturesSection features={features}/>
-		  <CTASection />
-		  <FAQSection />
-    </div>
-  );
+	return (
+		<div>
+			<HeroSection />
+			<FeaturesSection features={features} />
+			<CTASection />
+			<FAQSection />
+		</div>
+	);
 }
