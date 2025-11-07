@@ -20,7 +20,7 @@ export function Header() {
 
 	return (
 		<header className="flex items-center justify-between px-6 py-4 border-b border-gray-800 bg-black sticky top-0 z-50">
-			<Link href="/" className="text-2xl text-white font-bold tracking-tight hover:opacity-80 transition-opacity">
+			<Link href="/" className="text-2xl font-bold tracking-tight hover:opacity-80 transition-opacity">
 				Hybrid Fit
 			</Link>
 
@@ -28,10 +28,10 @@ export function Header() {
 				{pathname !== '/' && <ModeToggle />}
 				{status === 'loading' || status === 'unauthenticated' ? (
 					<Link href="/signin">
-						<Button className="bg-[#ff6b35] hover:bg-[#ff5722] text-white">Sign In</Button>
+						<Button>Sign In</Button>
 					</Link>
 				) : (
-					<Button onClick={handleSignOut} variant="outline" className="border-gray-700 hover:bg-gray-900">
+					<Button onClick={handleSignOut}>
 						Sign Out
 					</Button>
 				)}
