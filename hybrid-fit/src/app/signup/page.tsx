@@ -224,9 +224,9 @@ export default function Signup() {
 
 				<button
 					onClick={handleClose}
-					className="absolute top-4 right-4 z-10 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none"
+					className="absolute top-4 right-4 z-10 rounded-full bg-white/90 hover:bg-white p-2 shadow-lg transition-all hover:scale-110 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
 				>
-					<XIcon className="h-4 w-4" />
+					<XIcon className="h-5 w-5 text-gray-700" />
 					<span className="sr-only">Close</span>
 				</button>
 				{step === 1 && (
@@ -337,8 +337,8 @@ export default function Signup() {
 
 								<div className="text-xs text-gray-500">
 									By clicking &quot;Continue with Email&quot; you agree to the{' '}
-									<a href="#" className="underline">Terms of Service</a> and acknowledge the{' '}
-									<a href="#" className="underline">Privacy Notice</a>.
+									<a href="/terms" className="underline">Terms of Service</a> and acknowledge the{' '}
+									<a href="/privacy" className="underline">Privacy Notice</a>.
 								</div>
 							</div>
 						</div>

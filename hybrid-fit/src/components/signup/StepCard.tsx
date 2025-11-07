@@ -14,30 +14,30 @@ interface StepCardProps {
 
 export function StepCard({ title, content, image, onNext, onBack, buttonLabel = 'Next', disabled = false }: StepCardProps) {
 	return (
-		<div className="grid md:grid-cols-2 h-full">
-			{/* Left side - Content */}
-			<div className="p-8 flex flex-col justify-between">
-				<div className="mb-8">
+		<div className="grid md:grid-cols-2 h-full w-full">
+
+			<div className="p-8 flex flex-col justify-between w-full overflow-x-hidden">
+				<div className="mb-8 flex-shrink-0">
 					<h2 className="text-xl font-bold mb-1">HYBRID FIT</h2>
 				</div>
 
 				<div className="flex-1 flex flex-col justify-center space-y-6">
 					<h1 className="text-2xl font-bold">{title}</h1>
-					<p className="text-gray-600">{content}</p>
+					<p>{content}</p>
 				</div>
 
-				<div className="mt-8 flex gap-3">
+				<div className="mt-8 flex gap-3 flex-shrink-0 max-w-full">
 					<Button
 						onClick={onBack}
 						variant="outline"
-						className="w-full md:w-auto px-8"
+						className="flex-1 px-4 md:px-8 whitespace-nowrap min-w-0"
 						disabled={disabled}
 					>
 						Back
 					</Button>
 					<Button
 						onClick={onNext}
-						className="w-full md:w-auto bg-orange-500 hover:bg-orange-600 text-white px-8"
+						className="flex-1 px-4 md:px-8 whitespace-nowrap min-w-0"
 						disabled={disabled}
 					>
 						{buttonLabel}
@@ -45,8 +45,7 @@ export function StepCard({ title, content, image, onNext, onBack, buttonLabel = 
 				</div>
 			</div>
 
-			{/* Right side - Image */}
-			<div className="hidden md:block relative bg-gradient-to-br from-orange-400 via-orange-300 to-teal-400">
+			<div className="hidden md:block relative bg-gradient-to-br from-orange-400 via-orange-300 to-teal-400 w-full">
 				<Image
 					src={image}
 					alt={title}
