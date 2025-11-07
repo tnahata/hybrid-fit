@@ -78,7 +78,7 @@ export default function TrainingPlansPage() {
 			if (sort === "level") return a.level.localeCompare(b.level);
 			return 0;
 		});
-
+		setCurrentPage(1);
 		return list;
 	}, [trainingPlans, search, level, sport, category, sort]);
 

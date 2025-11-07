@@ -36,7 +36,6 @@ export default function ExerciseContent() {
         exercisesFetch();
     }, []);
 
-    // Filtering and sorting logic
     const filtered = useMemo(() => {
         let list = exercises;
 
@@ -61,6 +60,7 @@ export default function ExerciseContent() {
             return 0;
         });
 
+		setCurrentPage(1);
         return list;
     }, [exercises, search, difficulty, sport, sort]);
 
