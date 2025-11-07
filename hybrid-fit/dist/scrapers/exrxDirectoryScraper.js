@@ -40,6 +40,26 @@ exports.scrapeExrxDirectory = scrapeExrxDirectory;
 // scrapers/exrxDirectoryScraper.ts
 const puppeteer_extra_1 = __importDefault(require("puppeteer-extra"));
 const cheerio = __importStar(require("cheerio"));
+const path_1 = __importDefault(require("path"));
+const fs_1 = __importDefault(require("fs"));
+const saveDataAsJson_1 = require("./scraper-save/saveDataAsJson");
+const jsonPath = path_1.default.resolve(__dirname, "./scraped-json/exrxDirectory.json");
+function normalizeExrxUrl(href) {
+    if (!href)
+        return undefined;
+    // If the URL already starts with http(s), leave it
+    if (href.startsWith("http"))
+        return href;
+    // Ensure it starts with /Lists/
+    if (href.startsWith("/")) {
+        return new URL(href, "https://exrx.net").href;
+    }
+    // Otherwise, relative path like ExList/Neck → prefix with /Lists/
+    if (!href.startsWith("Lists")) {
+        href = `Lists/${href}`;
+    }
+    return new URL("/" + href, "https://exrx.net").href;
+}
 /**
  * Parse a <ul> element (direct child UL) into an array of Muscle.
  * Only traverses one extra nested <ul> for submuscles.
@@ -56,7 +76,7 @@ function parseMuscleList($, ul) {
         if (directAnchor.length) {
             const name = directAnchor.text().trim();
             const href = directAnchor.attr("href") || undefined;
-            const url = href ? new URL(href, "https://exrx.net").href : undefined;
+            const url = normalizeExrxUrl(href);
             const muscle = { name, url };
             // check for nested ULs directly inside this li (submuscles)
             const nestedUl = $li.children("ul").first();
@@ -95,6 +115,13 @@ function parseMuscleList($, ul) {
  * Scrape the /Lists/Directory page for groups -> muscles -> submuscles.
  */
 async function scrapeExrxDirectory(directoryUrl = "https://exrx.net/Lists/Directory") {
+    let groups;
+    if (fs_1.default.existsSync(jsonPath)) {
+        console.log("✅ Reading directory data from JSON...");
+        const raw = fs_1.default.readFileSync(jsonPath, "utf-8");
+        groups = JSON.parse(raw);
+        return groups;
+    }
     const browser = await puppeteer_extra_1.default.launch({ headless: false }); // set true if you have CF solved
     const page = await browser.newPage();
     try {
@@ -133,6 +160,7 @@ async function scrapeExrxDirectory(directoryUrl = "https://exrx.net/Lists/Direct
             });
             groups.push(group);
         });
+        await (0, saveDataAsJson_1.saveDirectoryAsJSON)(groups);
         return groups;
     }
     finally {

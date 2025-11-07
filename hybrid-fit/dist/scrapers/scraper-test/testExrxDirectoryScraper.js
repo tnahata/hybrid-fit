@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.printGroups = printGroups;
 // testExrxScraper.ts
 const exrxDirectoryScraper_1 = require("../exrxDirectoryScraper");
 /** pretty-printer */
@@ -21,6 +20,7 @@ function printGroups(groups) {
     }
 }
 (async () => {
-    const groups = await (0, exrxDirectoryScraper_1.scrapeExrxDirectory)("https://exrx.net/Lists/Directory");
+    let groups;
+    groups = await (0, exrxDirectoryScraper_1.scrapeExrxDirectory)("https://exrx.net/Lists/Directory");
     printGroups(groups);
 })();

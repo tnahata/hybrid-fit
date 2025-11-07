@@ -1,0 +1,4269 @@
+[
+  {
+    "name": "3-Man Box Passing Warmup",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "medium",
+    "description": "This drill focuses on teaching players how to open up their body, scan the field, and play accurate passes while moving continuously. It helps reinforce technical habits that translate directly to in-game situations.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "10X10",
+      "players": "3+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "3-Man Passing and Moving Warmup",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "medium",
+    "description": "This soccer drill sharpens short-range passing, encourages constant movement after the pass, and prepares players physically and mentally for training. It reinforces clean technique and fitness through repetition.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "10X10",
+      "players": "3+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "1v1 Corner Escape",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "attacking",
+    "difficulty": "medium",
+    "description": "This drill sharpens a player’s ability to receive under pressure, recognize defensive cues, and dribble into space. It emphasizes decision-making, ball protection, and breaking away from pressure in tight areas.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "6X6",
+      "players": "4+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "4v4 + Keeper to Full-Size Goals",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "game-like",
+    "difficulty": "medium",
+    "description": "This drill simulates real match conditions by developing players' ability to attack, defend, and transition in small-sided play. It encourages quick decision-making, team communication, and finishing with the added challenge of goalkeepers.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "40X30",
+      "players": "10+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "3v3 Plus Keepers to Full-Size Goals",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "game-like",
+    "difficulty": "medium",
+    "description": "This drill improves small-group attacking and defending, finishing under pressure, and goalkeeper distribution. It simulates game-like conditions in a compact space, encouraging quick decisions and dynamic play.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "40X30",
+      "players": "8+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "2v1 with Keepers",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "game-like",
+    "difficulty": "medium",
+    "description": "Develops attacking players' ability to exploit numerical advantages in a 2v1 situation. Encourages defenders to delay and disrupt play while improving goalkeeper distribution and decision-making.",
+    "details": {
+      "age": "9-14",
+      "fieldSize": "30X15",
+      "players": "8+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Troll Crossing Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "easy",
+    "description": "Develops dribbling under pressure, decision-making in 1v1 situations, and ball protection. Players learn to change direction and use feints to evade defenders.",
+    "details": {
+      "age": "4-9",
+      "fieldSize": "18X25",
+      "players": "6+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Escape",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "agility",
+    "difficulty": "easy",
+    "description": "This drill enhances a player’s ability to move under pressure while maintaining balance and control. It also encourages teamwork and coordination among defenders using their hips to contain the central player.",
+    "details": {
+      "age": "4-10",
+      "fieldSize": "10X10",
+      "players": "6",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "5-10 Mins."
+    },
+    "durationMinutes": 5
+  },
+  {
+    "name": "Y Passing Drill - Variation 3",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "medium",
+    "description": "Develops players' ability to execute quick one-two passes, play accurate long balls, and transition into new positions efficiently. Encourages decision-making and proper body positioning for receiving and distributing passes.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "20X20",
+      "players": "6+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Y Passing Drill - Variation 2",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "combination",
+    "difficulty": "medium",
+    "description": "Develops passing accuracy, movement off the ball, and one-two combination play. Encourages quick decision-making, communication, and proper body positioning for receiving and distributing the ball.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "15X20",
+      "players": "5+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Y Passing Drill - Variation 1",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "combination",
+    "difficulty": "medium",
+    "description": "Develops players' ability to receive with an open body position, execute accurate passes, and transition quickly between roles. Encourages movement, decision-making, and proper body positioning when receiving the ball.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "15x20",
+      "players": "5+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Fixed Distance Passing Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "easy",
+    "description": "This drill helps players develop passing accuracy, weight of pass, and first-touch control. It also reinforces teamwork and focus while progressively increasing difficulty by narrowing the passing gate.",
+    "details": {
+      "age": "4-10",
+      "fieldSize": "20X30",
+      "players": "2+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "1v1 to Tall Cones",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "1v1",
+    "difficulty": "medium",
+    "description": "This drill develops individual attacking and defending skills by challenging players to dribble under pressure, protect the ball, and accurately pass or shoot to knock over cones for points.",
+    "details": {
+      "age": "4-14",
+      "fieldSize": "20X30",
+      "players": "4+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "3v3 to Goals",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "game-like",
+    "difficulty": "medium",
+    "description": "This drill develops players' ability to attack and defend in small spaces while encouraging quick decision-making, teamwork, and fitness through constant movement.",
+    "details": {
+      "age": "4+",
+      "fieldSize": "20X30",
+      "players": "6+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Variable Distance Passing Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "easy",
+    "description": "This drill improves passing accuracy, technique, and decision-making at varying distances. Players learn to adjust power and precision while maintaining consistency under pressure.",
+    "details": {
+      "age": "4-10",
+      "fieldSize": "20X30",
+      "players": "2+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Dribbling and Turning with Pressure on the Back",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "turning",
+    "difficulty": "medium",
+    "description": "This drill teaches players how to turn effectively when under defensive pressure. It improves awareness, body positioning, and ball protection while developing confidence in 1v1 situations.",
+    "details": {
+      "age": "6-13",
+      "fieldSize": "20X15",
+      "players": "2+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Dribbling with Pressure on the Back",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "medium",
+    "description": "This drill improves a player's ability to protect the ball while dribbling under pressure. It teaches awareness, quick reactions, and body positioning to maintain possession against a defender.",
+    "details": {
+      "age": "4-12",
+      "fieldSize": "20X15",
+      "players": "2+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "2v2 with 4 Small Goals Funino",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "2v2",
+    "difficulty": "medium",
+    "description": "This drill enhances small-group play by developing combination play, defensive communication, and finishing under pressure. Players work on quick transitions between attack and defense in a game-like setting.",
+    "details": {
+      "age": "6+",
+      "fieldSize": "20X30",
+      "players": "8+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "1v1 with 4 Small Goals  Funino",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "1v1",
+    "difficulty": "medium",
+    "description": "This drill improves 1v1 attacking skills, defensive positioning, and finishing under pressure. Players learn to recognize attacking opportunities while also being responsible for defending their assigned goals.",
+    "details": {
+      "age": "4+",
+      "fieldSize": "20X30",
+      "players": "4+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "15 MINS."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Dribblers vs. Defenders Challenge",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "easy",
+    "description": "This drill develops dribbling under pressure, defensive tackling skills, and quick decision-making. Dribblers learn to protect the ball while defenders work on pressing and winning possession.",
+    "details": {
+      "age": "4-8",
+      "fieldSize": "20X15",
+      "players": "6+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Dribble Speed Tag",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "easy",
+    "description": "This drill enhances dribbling under pressure, quick changes of direction, and spatial awareness. Players learn to protect the ball while navigating through a crowded area at speed.",
+    "details": {
+      "age": "4-9",
+      "fieldSize": "15X15",
+      "players": "6+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "1v1 Elimination Challenge",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "game-like",
+    "difficulty": "easy",
+    "description": "This drill sharpens 1v1 attacking, defending, and finishing under pressure. Players must react quickly after scoring, transition between attack and defense, and stay composed in high-pressure situations.",
+    "details": {
+      "age": "7+",
+      "fieldSize": "20X30",
+      "players": "4+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "4v4+1 Corner Support Rondo",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "possession",
+    "difficulty": "medium",
+    "description": "This drill improves quick passing, spatial awareness, and teamwork by encouraging players to use both central and corner support players to maintain possession. Players develop composure under pressure and transition awareness.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "15X15",
+      "players": "9+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "4v4+4 Corner Rondo",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "game-like",
+    "difficulty": "medium",
+    "description": "This drill enhances passing accuracy, spatial awareness, and teamwork by encouraging players to use the four corner players as outlets to maintain possession. It also develops defensive pressure and quick transitions.",
+    "details": {
+      "age": "12+",
+      "fieldSize": "25X25",
+      "players": "12+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "4v4+4 Continuous Transition Rondo",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "game-like",
+    "difficulty": "hard",
+    "description": "This drill enhances quick decision-making, possession retention, and defensive pressing. Players develop composure under pressure, transition speed, and teamwork through a continuous cycle of possession and defending.",
+    "details": {
+      "age": "13+",
+      "fieldSize": "10X20",
+      "players": "12+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "4v4+3 Continuous Transition Rondo",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "game-like",
+    "difficulty": "hard",
+    "description": "This drill develops quick decision-making, first-touch passing, defensive pressing, and transition play. Players learn to maintain possession under pressure while reacting instantly to role changes when possession shifts.",
+    "details": {
+      "age": "13+",
+      "fieldSize": "10X20",
+      "players": "11+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "1v1 Reaction Gate Challenge",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "attacking",
+    "difficulty": "medium",
+    "description": "This drill enhances 1v1 attacking and defending skills by training quick decision-making, reaction speed, and close ball control. Attackers learn to use deception, while defenders focus on anticipation and body positioning.",
+    "details": {
+      "age": "4+",
+      "fieldSize": "10X10",
+      "players": "6+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "3v3, 4-Goal Small-Sided Game  Funino",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "game-like",
+    "difficulty": "medium",
+    "description": "This drill encourages players to recognize attacking opportunities by creating space, making quick decisions, and choosing the best option between two goals. Defensively, players learn to cover space effectively and transition quickly.",
+    "details": {
+      "age": "4-14",
+      "fieldSize": "20X30",
+      "players": "6+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Hexagonal Rondo",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "medium",
+    "description": "The Hexagonal Rondo drill focuses on quick passing and movement within a six-sided grid, emphasizing control and spatial awareness. Players work to maintain possession by creating passing angles and exploiting gaps in the defensive shape. The objective is to enhance technical precision, quick decision-making, and fluid team coordination.",
+    "details": {
+      "age": "10+",
+      "fieldSize": "10x15",
+      "players": "10",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 min."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "4-Goal Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "possession",
+    "difficulty": "medium",
+    "description": "The 4-Goal Game drill simulates match conditions, encouraging players to switch the point of attack while maintaining team shape. This drill focuses on quick ball circulation to retain possession and balance the field to prevent counterattacks. The objective is to develop players' spatial awareness, movement, and strategic positioning under game-like pressure.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "25x35",
+      "players": "4-16",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 min."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "3v1 Transition Rondo",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "possession",
+    "difficulty": "medium",
+    "description": "The 3v1 Transition Rondo drill emphasizes quick combination passing to unbalance the defender and shift the point of attack to an adjacent grid. This exercise challenges the defender to transition rapidly between areas, enhancing their ability to react under pressure. The focus is on sharp passing and strategic movement to exploit defensive weaknesses.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "7x14",
+      "players": "5",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 min."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Tail Tag - Fun Soccer Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "awareness",
+    "difficulty": "easy",
+    "description": "Tail Tag is an energetic game designed to enhance agility, spatial awareness, and quick decision-making for U6 players. This drill encourages young players to stay alert and react swiftly to changing situations. The focus is on developing foundational movement skills in a fun and engaging environment.",
+    "details": {
+      "age": "4-8",
+      "fieldSize": "20x20",
+      "players": "10",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "10 min."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Red Light, Green Light, Bumper Cars",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "easy",
+    "description": "Red Light, Green Light, Bumper Cars drill enhances dribbling, coordination, and agility while introducing players to controlled body contact. This exercise helps young players develop comfort with physical play and improves their ability to maintain control under pressure. The goal is to build confidence in handling body contact while refining fundamental soccer skills.",
+    "details": {
+      "age": "4-8",
+      "fieldSize": "20x20",
+      "players": "10",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "10 min."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Hospital Tag Soccer Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "easy",
+    "description": "Hospital Tag combines fun with skill development, reinforcing dribbling techniques in a lively, competitive setting. This drill keeps young players engaged while challenging them to maintain control of the ball under pressure. The focus is on improving dribbling accuracy and agility in a dynamic environment.",
+    "details": {
+      "age": "4-8",
+      "fieldSize": "20x20",
+      "players": "10",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "10 min."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "4v4 Scrimmage to Mini-Goals",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "game-like",
+    "difficulty": "medium",
+    "description": "The objective of a 4v4 soccer scrimmage to mini-goals is to replicate the dynamics of a full-sided game in a smaller, more controlled environment. This format encourages players to focus on quick decision-making, positioning, and maintaining possession under pressure, as well as improving their ability to transition between attacking and defending. The mini-goals emphasize accuracy and composure in front of the goal, helping players develop finishing skills without the presence of a goalkeeper.",
+    "details": {
+      "age": "4+",
+      "fieldSize": "30x20",
+      "players": "8",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 min."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Stop and Turn Dribbling Relay Race",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribble/turn",
+    "difficulty": "easy",
+    "description": "Introduce a competitive element with the Stop and Turn Soccer Dribbling Relay Race, emphasizing stopping, turning, and directional changes. This drill reinforces quick transitions and sharpens players' ability to control the ball during directional shifts. The objective is to improve precision and speed in executing turns under pressure.",
+    "details": {
+      "age": "4-8",
+      "fieldSize": "10x30",
+      "players": "10+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "10 min."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Dribbling Through Gates Competition",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "easy",
+    "description": "Develop players' dribbling skills by challenging them to navigate through multiple gates within a 1-minute timeframe. This drill emphasizes quick decision-making and ball control under pressure. The goal is to enhance agility and precision while maintaining speed during dribbling.",
+    "details": {
+      "age": "4-10",
+      "fieldSize": "25x20",
+      "players": "10+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "10 min."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Simple Obstacle Course",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "agility",
+    "difficulty": "easy",
+    "description": "This simple obstacle course is fun for young players and focuses on agility, dribbling, and scoring goals. This simple, fun obstacle course develops young players' agility, dribbling, and goal-scoring abilities. This drill sharpens dribbling technique and enhances coordination while navigating through obstacles. The focus is on building control and precision under dynamic conditions.",
+    "details": {
+      "age": "4-8",
+      "fieldSize": "10x20",
+      "players": "10+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "10 min."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Dribbling and Passing Warm-up Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribble/pass",
+    "difficulty": "medium",
+    "description": "This dribbling and passing drill is a great start to a dribbling or passing training session and will quickly get the blood pumping and players legs warm.",
+    "details": {
+      "age": "10+",
+      "fieldSize": "20x30",
+      "players": "2+",
+      "goalkeeper": "no",
+      "type": "",
+      "duration": "10 min."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Follow the Leader Dribbling",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "easy",
+    "description": "In this drill, players follow a leader who dribbles the ball around the field, performing various movements and turns. The followers must mimic the leader's actions, encouraging them to pay close attention and react quickly. Use this drill to help enhance dribbling skills and agility and to develop the ability to imitate and react to different movements and techniques.",
+    "details": {
+      "age": "4-8",
+      "fieldSize": "20x20",
+      "players": "2+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "10 min."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Obstacle Course Dribble Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "medium",
+    "description": "The Obstacle Course dribbling drill is a fun way for young players to practice dribbling in a more dynamic and challenging environment. This drill involves an obstacle course with cones through which players dribble their soccer balls. It's designed to mimic game situations where players must navigate opponents or tight spaces. It helps develop their ability to control the ball under various conditions, an essential skill for soccer players of all levels. This drill helps to improve dribbling skills and agility and enhances coordination and control while maneuvering the ball around obstacles.",
+    "details": {
+      "age": "8-12",
+      "fieldSize": "20x20",
+      "players": "2+",
+      "goalkeeper": "no",
+      "type": "",
+      "duration": "10 min."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Soccer Dribbling Basics",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "easy",
+    "description": "This soccer dribbling drill is fundamental to young player's development, laying the foundation for more advanced dribbling skills. Keeping the environment fun and encouraging is important, allowing players to build confidence in their ball-handling abilities. This drill introduces and improves basic dribbling skills and helps develop coordination and control of the ball with both feet.",
+    "details": {
+      "age": "4-8",
+      "fieldSize": "10x20",
+      "players": "2+",
+      "goalkeeper": "no",
+      "type": "",
+      "duration": "10 min."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Shark Attack Soccer Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "easy",
+    "description": "The Shark Attack drill is excellent for developing dribbling skills in a fun and engaging environment, encouraging young players to think and move quickly while maintaining control of the ball. This drill will help improve dribbling skills under pressure and to develop spatial awareness and agility.",
+    "details": {
+      "age": "4-8",
+      "fieldSize": "15x25",
+      "players": "2+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "10 min."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "4v2 Rondo",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "possession",
+    "difficulty": "medium",
+    "description": "The 4v2 Rondo is a great soccer possession game to work on passing, angles of support, and movement off the ball to maintain possession.",
+    "details": {
+      "age": "10+",
+      "fieldSize": "10x10",
+      "players": "6",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "10 min."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Three-Cone Passing Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "easy",
+    "description": "The three-cone passing drill focuses on passing, awareness, and movement after the pass. This is a great warmup to focus on passing technique and movement after the pass.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "10X10",
+      "players": "2",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "10 MINS."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Four-Cone Passing Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "easy",
+    "description": "This four-cone passing drill focuses on soccer passing technique and movement after the pass. This is a great passing warm-up drill or a good start to a passing session.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "12X12",
+      "players": "3",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "10 MINS."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Six-Cone Passing Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "medium",
+    "description": "The six-cone passing drill focuses on passing, awareness, and movement after the pass. This is a great warmup or to focus on passing technique and movement after the pass.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "15X25",
+      "players": "5+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 MINS."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Four-Corner Shielding Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "shielding",
+    "difficulty": "medium",
+    "description": "This is a great drill for teaching the basics of shielding as it focuses on positioning your body between the ball and the defender to protect the ball.",
+    "details": {
+      "age": "8+",
+      "fieldSize": "12X12",
+      "players": "5+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 MINS."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "2v2 + 1 to Two Goals",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "game-like",
+    "difficulty": "medium",
+    "description": "This is a 2v2 + 1 attacking soccer game is played to two goals with a free attacker on the end line between the two goals. This game focuses on playing the ball forward to your target player before going to goal.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "25X40",
+      "players": "8+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "1v1 Transition Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "1v1",
+    "difficulty": "medium",
+    "description": "That is a fast paced 1v1 transition game mean to focus on beating the defender and getting it into your teammate, or quickly transition to defense if the ball is lost.",
+    "details": {
+      "age": "7+",
+      "fieldSize": "15X15",
+      "players": "6+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 MINS."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "One-Touch Passing Combination with a Dribble; Series 2",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "medium",
+    "description": "This is the second series to a fast-paced one-touch passing combination warmup drill with a light dribble at the end.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "20X20",
+      "players": "6+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "One-Touch Passing Combination with a Dribble; Series 1",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "medium",
+    "description": "This is the first series to a great one-touch passing combination warmup drill with a light dribble. This is a passing pattern drill that focuses on one-touch passing, receiving, movement off the ball with touches on the ball.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "20X20",
+      "players": "6+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "1v1 Transition",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "attacking",
+    "difficulty": "medium",
+    "description": "This is a fast-paced 1v1 game that focuses on quickly transitioning from the attack to defense.",
+    "details": {
+      "age": "8+",
+      "fieldSize": "25X25",
+      "players": "6+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "4v4, Thirds of the Field, Shape and Positioning",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "game-like",
+    "difficulty": "medium",
+    "description": "This 4v4 drill is great for improving shape and positioning. Each player has their own responsibility: 1) attacker/target player stretches the field closer to the goal they are attacking. 2) winger players stretch the width of the field. 3) defensive player gives support to wingers and target player while staying the last man.",
+    "details": {
+      "age": "7-14",
+      "fieldSize": "25X40",
+      "players": "8+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "1v1 Speed and Reaction Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "game-like",
+    "difficulty": "medium",
+    "description": "This 1v1 Speed and Reaction Game is a fun addition to any practice that focuses on quick reaction and speed, ending with a 1v1 to small goals.",
+    "details": {
+      "age": "7+",
+      "fieldSize": "15X25",
+      "players": "4+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 MINS."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Soccer Tic-Tac-Toe Warm-up",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "fun",
+    "difficulty": "easy",
+    "description": "Soccer Tic-Tac-Toe is a fun warmup drill that focuses on making good decisions while under pressure.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "20X20",
+      "players": "6+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "10 MINS."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "2v2 with Target Players to Small Goals",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "game-like",
+    "difficulty": "medium",
+    "description": "This 2v2 drill focuses on penetrating passes to a target player to stretch the field and finish on goal.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "25X40",
+      "players": "6+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "1v1 Attacking to a Full-Size Goal",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "attacking",
+    "difficulty": "medium",
+    "description": "This 1v1 attacking drill that focuses on beating the defender in a 1v1 situation and finishing on a full-size goal.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "30X30",
+      "players": "6+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "1v1 Three Grid Gauntlet Attacking Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "1v1",
+    "difficulty": "medium",
+    "description": "The 1v1 three grid attacking drill focuses on dribbling to beat multiple defenders.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "10X40",
+      "players": "6+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Passing Warm-up Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "medium",
+    "description": "This is a passing warm-up drill that is a great start to every practice and before a game. Players will get a lot of touches on the ball and can focus on receiving and passing while getting in a good warm-up.",
+    "details": {
+      "age": "7+",
+      "fieldSize": "20X30",
+      "players": "4+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "15 MINS."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Defensive Clearances- Up and Out",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "clearance",
+    "difficulty": "medium",
+    "description": "This defensive soccer drill focuses on clearing balls from the defensive third of the field. Defenders are taught to handle difficult balls and clearing them high and wide.",
+    "details": {
+      "age": "12+",
+      "fieldSize": "HALF FIELD",
+      "players": "4+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "15 MINS."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "4v1 Rondo",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "possession",
+    "difficulty": "medium",
+    "description": "This rondo variation is geared for younger player or players you are just introducing to the rondo training.",
+    "details": {
+      "age": "8+",
+      "fieldSize": "10X10",
+      "players": "5+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Rondo Soccer Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "possession",
+    "difficulty": "medium",
+    "description": "This rondo soccer drill is the rondo at its simplest. This rondo game is great as a warm-up drill to a game, or a drill for your practice session.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "12X12",
+      "players": "6+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 MINS."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Circle Rondo Soccer Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "possession",
+    "difficulty": "medium",
+    "description": "This circle rondo soccer drill is a great warm-up drill before a game, or a drill for your practice session.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "10X10",
+      "players": "8+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 MINS."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Soccer Shooting on the Dribble",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "finishing",
+    "difficulty": "medium",
+    "description": "This soccer shooting drill focuses on receiving a flighted ball, quickly dribble on the attack, and finishing with a shot on goal.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "HALF FIELD",
+      "players": "8+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Two-Goal Soccer Shooting Training Session",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "shooting",
+    "difficulty": "medium",
+    "description": "This soccer shooting training session focuses on receiving a ground pass and shooting followed up with receiving a long ball and shooting on target.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "HALF FIELD",
+      "players": "8+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Combination Play Through the Central Midfielders",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "medium",
+    "description": "This soccer passing and combination drill focus on passing combination play through the central midfielder players.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "20X30",
+      "players": "8+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 MINS."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Finishing In Front of the Goal",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "finishing",
+    "difficulty": "medium",
+    "description": "This finishing soccer drill focuses on collecting a flighted serve, knocking it to a forward, and finishing on goal.",
+    "details": {
+      "age": "13+",
+      "fieldSize": "HALF FIELD",
+      "players": "8+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Combination - Pass and Move",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "medium",
+    "description": "This passing and moving combination soccer drill focuses on crisp, clean passing, timing, movement off the ball, and the speed of play.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "20X30",
+      "players": "8+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 MINS."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "1v1 Battle - Attacking and Reaction Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "attacking",
+    "difficulty": "medium",
+    "description": "This 1v1 soccer battle drill will focus on the attacker's change of direction, change of pace, and burst of speed to the goal all while working on the defender's ability to close down the attacker quickly, reaction time, speed of recovery, and angles of defense.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "30X40",
+      "players": "4+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "2v2 Battle - Attacking and Defending Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "attacking",
+    "difficulty": "medium",
+    "description": "This 2v2 soccer attacking and defending drill focuses on the attacker's decision to dribble, pass, or shoot. From the defensive side, they must quickly close down the attackers and deny space.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "30X40",
+      "players": "8+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "The Cristiano Ronaldo Speed Test",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "speed",
+    "difficulty": "medium",
+    "description": "The Cristiano Ronaldo Speed Test is an individual assessment of ones ability to dribble the ball at pace while maintaining control.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "30X40",
+      "players": "1+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "10 MINS."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "4v2 Soccer Game to Goal",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "game-like",
+    "difficulty": "medium",
+    "description": "This 4v2 game will focus on building an attack near the penalty area and getting shots on goal. Forwards will have to make a decision to turn and score or lay the ball off to the mid-fielder. The focus of this drill is score, score, score!",
+    "details": {
+      "age": "9+",
+      "fieldSize": "HALF FIELD",
+      "players": "10+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "One-Touch Diamond Passing Combination",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "medium",
+    "description": "The One-Touch Diamond Passing Combination drill focuses on a number of quick one-touch combination passes and movement off the ball.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "30X30",
+      "players": "6+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Goalkeeper Footwork Exercise with Hurdle",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "goalkeeper",
+    "difficulty": "medium",
+    "description": "This goalkeeping drill will focus on footwork as well as handling the ball. This is a great goalkeeper warm-up or agility drill to do during keeper training.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "10X10",
+      "players": "1+",
+      "goalkeeper": "yes",
+      "type": "individual",
+      "duration": "10 MINS."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Goalkeeper Footwork Exercise; Scooping Ground Balls",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "goalkeeper",
+    "difficulty": "medium",
+    "description": "This goalkeeper footwork exercise is a great warm-up or training drill to focus on goalkeeper footwork and scooping ground balls.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "10X10",
+      "players": "1+",
+      "goalkeeper": "yes",
+      "type": "individual",
+      "duration": "10 MINS."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Goalkeeper Footwork Exercise - Shuffle Dives",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "goalkeeper",
+    "difficulty": "medium",
+    "description": "This goalkeeping footwork drill focuses on the goalkeeper's footwork while shuffling to the side and diving forward towards the ball.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "10X20",
+      "players": "1+",
+      "goalkeeper": "yes",
+      "type": "individual",
+      "duration": "10 MINS."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "1v1 Attacking and Reaction Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "attacking",
+    "difficulty": "medium",
+    "description": "This 1v1 soccer attacking drill focuses on the attacker making quick faints, a change of direction, and a burst of speed while causing the defender to react quickly to the attacker's movements.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "30X40",
+      "players": "4+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Figure Eight Dribbling Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "easy",
+    "description": "The Figure Eight soccer dribbling drill is a good change to weaving in and out of cones and is great for dribbling with the inside and outside of the foot.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "10X10",
+      "players": "1",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "10 MINS."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Zig-Zag Dribbling Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "easy",
+    "description": "The Zig-Zag soccer dribbling drill focuses on dribbling with speed with the inside, the outside, and the bottom of the foot.",
+    "details": {
+      "age": "4-12",
+      "fieldSize": "20X20",
+      "players": "4+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "15 MINS."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "T-Cone Dribbling Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "easy",
+    "description": "The T-Cone soccer dribbling drill is a great drill to focus on dribbling with speed, controlled touches, turns, and fitness.",
+    "details": {
+      "age": "7+",
+      "fieldSize": "10X10",
+      "players": "2+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "10 MINS."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Catch Me If You Can",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "easy",
+    "description": "The soccer dribbling drill is a fun and competitive exercise that focuses on dribbling with speed.",
+    "details": {
+      "age": "4-12",
+      "fieldSize": "10X10",
+      "players": "2+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "10 MINS."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Hot-Box Passing and Receiving Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "medium",
+    "description": "The hot-box passing and receiving soccer drill focuses on small group and individual passing and receiving skills.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "20X20",
+      "players": "4+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "10 MINS."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Shooting Agility Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "shooting",
+    "difficulty": "easy",
+    "description": "This soccer shooting drill focuses on agility and check-runs after the pass.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "HALF FIELD",
+      "players": "4+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Inside of the Foot Passing Warm-up",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "easy",
+    "description": "This passing warm-up drill will focus on accuracy when passing with the inside of the foot.",
+    "details": {
+      "age": "8+",
+      "fieldSize": "10X20",
+      "players": "5+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "6 vs 4 Team Training Numbers",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "game-like",
+    "difficulty": "medium",
+    "description": "This 6 vs 4 team training drill focuses on team movement, communication, and passing. This is a great session to end on after an intense passing practice.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "HALF FIELD",
+      "players": "12+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "7v7 Scrimmage",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "game-like",
+    "difficulty": "medium",
+    "description": "A 7v7 scrimmage is a great way to end most of your training sessions. The 7 vs 7 allows players to focus on team tactics in realistic training situations and respond to problems presented in the full-sided game.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "40x60",
+      "players": "14",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20-30 mins."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Shooting Agility Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "shooting",
+    "difficulty": "easy",
+    "description": "This soccer shooting drill will focus on passing combination along with agility. This drill is an excellent pre-game warmup for passing and shooting.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "HALF FIELD",
+      "players": "6+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "1v1 Diamond Shooting Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "shooting",
+    "difficulty": "easy",
+    "description": "This 1v1 drill focuses on a passing combination with movement off the ball and finishes with a one vs. one to goal. If players miss they become the keeper and the game continues. Players love the fun, competitive twist of being able to make a player become a goalkeeper.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "PENALTY AREA",
+      "players": "6+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "15 MINS."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Alien Tag Soccer Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "easy",
+    "description": "This is a fun game for 3 through 6 year-olds. This will focus on agility, vision, and awareness, but best of all, it's fun.",
+    "details": {
+      "age": "4-8",
+      "fieldSize": "20X20",
+      "players": "6+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "10 MINS."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Clean Your Room",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "defending",
+    "difficulty": "medium",
+    "description": "This soccer game is a great drill for U5 through U8 players. The clean your room soccer drill will focus on dribbling under pressure while also working on defensive pressure as an individual or a small group.",
+    "details": {
+      "age": "4-8",
+      "fieldSize": "15X15",
+      "players": "6+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "10 MINS."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Center Mid Passing Combination 1",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "medium",
+    "description": "This is a great combination passing drill that will help focus on combination play and playing diagonal balls.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "20X20",
+      "players": "6+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 MINS."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Center Mid Passing Combination 2",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "medium",
+    "description": "This combination passing drill focuses on center mid play and playing diagonal balls in the direction they are facing.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "20X20",
+      "players": "6+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 MINS."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Combination Shooting Drills",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "shooting",
+    "difficulty": "medium",
+    "description": "This shooting drill focuses on combination play and building up for a shot on goal. There are multiple combination ideas to make the shooting drill more difficult progressively.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "HALF FIELD",
+      "players": "12+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Triangle Combination Passing Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "medium",
+    "description": "This passing drill focuses on combination play in a small area. You can concentrate on the pace of the pass, angle of the pass, the weight of the pass, timing of the runs before and after the pass, one-two’s, and movement.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "10X10",
+      "players": "3+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "10 MINS."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Line Passing Overlap Warm-up",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "medium",
+    "description": "This passing and overlapping warm-up soccer drill will help perfect the introduction of overlapping runs, playing off the pass, as well as teamwork through communication.",
+    "details": {
+      "age": "8-14",
+      "fieldSize": "HALF FIELD",
+      "players": "4+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "10 MINS."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Line Passing Combination Warm-up",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "medium",
+    "description": "This combination passing drill is designed to work on combination play while advancing up the field. This passing drill focuses on the timing of passes, runs, combination play, and will be a great warm-up to passing practices.",
+    "details": {
+      "age": "8-12",
+      "fieldSize": "HALF FIELD",
+      "players": "4+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "10 MINS."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Three Person Passing Combination",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "medium",
+    "description": "This passing combination drill that involves three players at a time. The combination sequence that will help perfect passing, combination play, movement off the ball, and will help improve player’s fitness level.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "10X20",
+      "players": "3",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "10 MINS."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "3v1 Rotating Defenders",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "possession",
+    "difficulty": "medium",
+    "description": "This 3v1 game will focus on keeping possession in a tight space. Work on passing, decision making, movement on and off the ball as well as improve communication.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "10X10",
+      "players": "6+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 MINS."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Circle Passing Overlap Combination",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "medium",
+    "description": "The circle passing overlap combination drill will focus on passing, combination play, overlapping, playing with speed, and playing to feet. This combination drill is an excellent passing warm-up drill that can be a great start to a passing practice that incorporates overlapping.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "20X20",
+      "players": "10+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Circle Passing Combination Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "easy",
+    "description": "The circle passing combination drill will focus on passing, communication, playing with speed, and playing to feet. This soccer passing drill is an excellent passing warm-up drill that can be a great start to a passing practice.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "20X20",
+      "players": "8+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Combination Crossing Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "crossing",
+    "difficulty": "medium",
+    "description": "This combination crossing and finishing drill will focus on crosses within the 18 and is designed to help players become comfortable on crosses inside the 18.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "HALF FIELD",
+      "players": "10+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Combination Shooting with Dummy Run",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "shooting",
+    "difficulty": "medium",
+    "description": "This combination shooting drill focuses on shooting and finishing within the 18. It starts with a dummy run stepping over the ball, then a combination play ending with a shot on goal.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "HALF FIELD",
+      "players": "12+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "2v2 Quick Attacking Soccer Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "attacking",
+    "difficulty": "medium",
+    "description": "This 2v2 soccer drill is a great game to work on quick attacking and defending skills. It is a very fast-paced and dynamic soccer game that the kids will love.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "25X40",
+      "players": "8+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "2v2+4 Passing, Possession, Combination",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "medium",
+    "description": "This 2v2+4 soccer drill will focus on passing, possession, and combination play. This is a great small-sided soccer game when you want to perfect the composure of players in tight spaces.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "20X20",
+      "players": "8+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Pirate Treasure Dribbling Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "medium",
+    "description": "This soccer dribbling game is designed for young players ages 3-8. The Pirate Treasure Dribbling Game will focus on young players dribbling skills and is great fun for the kids.",
+    "details": {
+      "age": "4-8",
+      "fieldSize": "30X30",
+      "players": "6+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Passing Combination | 1-2 | Wall Pass | One-Two",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "medium",
+    "description": "This soccer passing and combination drill focuses on passing and receiving ground balls and performing a one-two (1-2) and a wall pass around the defender.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "10X20",
+      "players": "6+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 MINS."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Diamond Passing Combination",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "medium",
+    "description": "This soccer passing drill focuses on quick ball movement and combinations. Use this soccer combination drill to clean up first touch and tight passing, or spread it out and work on long passing.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "10X20",
+      "players": "8+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 MINS."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Triangle Goal Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "game-like",
+    "difficulty": "medium",
+    "description": "The Triangle Goal Soccer Game will focus on all aspects of the game such as passing, moving, and finishing. The players will have to work together as a team to quickly off-balance the defender and catch the goalkeeper off guard.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "35X35",
+      "players": "8+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Shooting Combo, 1v1 Shooting Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "attacking",
+    "difficulty": "medium",
+    "description": "This is a great shooting drill that focuses on making a move before shooting, making a 1-2 combination play before shooting, then taking on a defender 1v1 before shooting.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "HALF FIELD",
+      "players": "8+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Combination Shooting & Finishing Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "attacking",
+    "difficulty": "easy",
+    "description": "This is a dynamic shooting and finishing soccer drill that will focus on the timing of the combination play, touching the ball with your back to the defender, and having a quick tight turn and finish with a shot on goal.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "HALF FIELD",
+      "players": "6+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "1v1 Defending the Dribble with Teammate",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "defending",
+    "difficulty": "medium",
+    "description": "The purpose of this drill is to isolate the defender to focus on the first defender and defending the dribble while working with a teammate. This teaches young soccer players to work together with your teammate to shut down the attacker.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "HALF FIELD",
+      "players": "8+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "1v1 Dribble Attack with Shot",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "attacking",
+    "difficulty": "easy",
+    "description": "The purpose of this 1v1 drill is to focus on dribbling to beat a defender and finishing with a shot. This drill can also be used to focus on defensive players defending the dribble.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "30X30",
+      "players": "6+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "10 MINS."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "1v1 Defending the Dribble",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "defending",
+    "difficulty": "medium",
+    "description": "This 1v1 soccer defending drill will isolate the defender to focus on the first defender and defending the dribble. Modify this drill to focus on the first attacker taking on the defender.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "20X20",
+      "players": "8+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Dribbling Warm-up Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "easy",
+    "description": "This soccer dribbling exercise is an excellent dribbling warm-up drill that will get players many touches on the ball in a short time.",
+    "details": {
+      "age": "4+",
+      "fieldSize": "10X20",
+      "players": "4+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "10 MINS."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "5 Pass Possession Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "possession",
+    "difficulty": "medium",
+    "description": "This passing drill focuses on holding possession and completing a series of passes. This possession passing drill will work on awareness, speed of play, support, and movement to maintain possession.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "40X30",
+      "players": "10",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Combination Shooting Rotation Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "shooting",
+    "difficulty": "medium",
+    "description": "This soccer shooting and finishing drill focus on combination play and build-up before getting the shot off. It is a great shooting soccer drill to focus on burying the ball with a shot after a small combination play.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "30X30",
+      "players": "10+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "15 MINS."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "4v2 Angle of Support",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "possession",
+    "difficulty": "medium",
+    "description": "This 4v2 soccer game will help perfect early support, movement without the ball, and good angle and support distance.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "18X36",
+      "players": "8",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 MINS."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "3v1 Early Support",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "possession",
+    "difficulty": "medium",
+    "description": "This 3v1 soccer drill focuses on supporting the player with the ball, early support, moving without the ball, proper supporting angle, and good distance of support.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "12X24",
+      "players": "6",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Passing to Beat the Defender",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "medium",
+    "description": "This passing game focuses on passing to beat the defender. This 2v2 game works on passing, moving, and finding open space behind two defenders.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "25X30",
+      "players": "8+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Check-in Passing Warm-up",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "easy",
+    "description": "This passing and receiving warm-up drill is a great soccer drill to help with timing and striking a ball while checking in to a pass.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "15X30",
+      "players": "4+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Diagonal Soccer Shooting Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "shooting",
+    "difficulty": "easy",
+    "description": "This simple soccer shooting drill is great for warm-up to a shooting practice or warm-up before a game.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "30X30",
+      "players": "5+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Cross - Finish Under Pressure",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "crossing",
+    "difficulty": "easy",
+    "description": "This crossing and finishing drill is excellent for focusing on crossing and finishing under pressure. It is also a great drill to improve the player's fitness level.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "HALF FIELD",
+      "players": "6+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Shooting on the Turn",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "shooting",
+    "difficulty": "easy",
+    "description": "This soccer shooting exercise will focus on shooting on the turn. Players will need to turn quickly towards the goal to get a shot on goal.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "HALF FIELD",
+      "players": "5+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Soccer Fitness; Improving Reaction and Acceleration",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "fitness",
+    "difficulty": "easy",
+    "description": "This soccer fitness exercise focuses on improving player's reaction time and acceleration.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "30X30",
+      "players": "8+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "10 MINS."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Three Goal Shooting Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "shooting",
+    "difficulty": "medium",
+    "description": "This soccer shooting fitness exercise is a great finishing drill for getting rapid shots on multiple goals and is also great for fitness.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "HALF FIELD",
+      "players": "6+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Team Tactics Dribbling in the Attacking Third",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "attacking",
+    "difficulty": "medium",
+    "description": "This soccer attacking drill is a great team tactic dribbling drill that focuses on when and where to dribble in the attacking third.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "HALF FIELD",
+      "players": "14",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Teaching 1st Defender without Opposition",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "defending",
+    "difficulty": "medium",
+    "description": "This soccer defending drill is excellent for teaching young players how to defend when they are the closest player to the opponent with the ball.",
+    "details": {
+      "age": "8-14",
+      "fieldSize": "30X30",
+      "players": "6+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Winger Taking on Outside Fullback",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "attacking",
+    "difficulty": "medium",
+    "description": "This dribbling game focuses on the winger players taking on the outside fullbacks in the offensive third of the field.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "HALF FIELD",
+      "players": "14+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Circle Keep-Away Passing Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "possession",
+    "difficulty": "medium",
+    "description": "This keep-away game is a fun passing exercise for younger players that focuses on the passing game while playing keep away.",
+    "details": {
+      "age": "6-14",
+      "fieldSize": "10X10",
+      "players": "6+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Combination Play with Crossing and Finishing",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "crossing",
+    "difficulty": "medium",
+    "description": "This combination crossing and finishing drill is a great cross and finish drill that allows you to focus on a short build-up, combination play, timing of runs, and crossing and finishing.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "HALF FIELD",
+      "players": "10+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Indoor Shooting Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "shooting",
+    "difficulty": "medium",
+    "description": "This is a great indoor soccer shooting drill to use while practicing indoors. This indoor soccer shooting drill also touches on dribbling, passing, using the walls, and finally shooting on goal.",
+    "details": {
+      "age": "4+",
+      "fieldSize": "INDOOR",
+      "players": "6+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Indoor Dribbling and Passing Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "easy",
+    "description": "This indoor soccer drill is great for warm-up to your indoor soccer practice. This focuses on dribbling and passing warm-up indoors.",
+    "details": {
+      "age": "4+",
+      "fieldSize": "30X30",
+      "players": "4+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "10 MINS."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Soccer Control and Trapping Small Sided Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "receiving",
+    "difficulty": "medium",
+    "description": "This control and trapping game is a great exercise that focuses on controlling balls out of the air. Players throw the balls into their teammates, making it easier to focus on controlling balls out of the air and deciding where to direct your touches.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "40X60",
+      "players": "10",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Receiving the Ball with Back to Goal",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "receiving",
+    "difficulty": "medium",
+    "description": "This soccer receiving drill will focus on chest, thigh, and fast traps and control. This receiving exercise teaches players to turn, shield, or play the way they face when their back is to the goal.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "20X30",
+      "players": "4+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "2v1, Receiving while Facing the Defender",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "receiving",
+    "difficulty": "medium",
+    "description": "This soccer ball control drill aims to work on trapping and control with the foot, thigh, and chest while facing an opponent.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "20X30",
+      "players": "3+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Trapping with Passive Opposition",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "receiving",
+    "difficulty": "medium",
+    "description": "This soccer trapping drill focus on trapping and control with the addition of a passive defender. The defender causes the receiving player to be more aware of their surroundings.",
+    "details": {
+      "age": "8+",
+      "fieldSize": "20X20",
+      "players": "3+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Trapping and Control with No Opposition",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "easy",
+    "description": "This soccer skills drill aims to practice trapping and control with the foot, chest, and thigh.",
+    "details": {
+      "age": "6+",
+      "fieldSize": "10X20",
+      "players": "2+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "15 MINS."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "World Cup Soccer Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "attacking",
+    "difficulty": "medium",
+    "description": "The World Cup Soccer Drill is a great shooting game for kids of all ages. The World Cup Soccer game is a great drill to work on game-like situations while numbers down.",
+    "details": {
+      "age": "6+",
+      "fieldSize": "PENALTY AREA",
+      "players": "10+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "4v4 + Target Players with 2 Goals",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "game-like",
+    "difficulty": "medium",
+    "description": "The 4v4 + Target Players to 2 Goals is a great 4v4 soccer game that teaches players to play into their target player. This game adds a more realistic twist to the typical 4-on-4 soccer game.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "30X40",
+      "players": "10",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Reaction, Acceleration, and Winning the Ball",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "warm-up",
+    "difficulty": "easy",
+    "description": "This soccer drill focuses on reaction, acceleration, and winning 50-50 balls. This is a great warm-up drill when focusing on fitness, reaction time, or winning 50-50 balls.",
+    "details": {
+      "age": "7+",
+      "fieldSize": "20X20",
+      "players": "3+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "10 MINS."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Team Reaction Dribbling Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "medium",
+    "description": "The team reaction dribbling drill is a fun soccer dribbling drill that focuses on dribbling and reacting to teammates.",
+    "details": {
+      "age": "4-12",
+      "fieldSize": "30X30",
+      "players": "4+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Coach's Revenge",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "agility",
+    "difficulty": "easy",
+    "description": "This drill is a fun soccer drill. It will focus a bit on young players' agility while dodging balls kicked at them and is a great ice breaker or a fun warm-up game at the beginning of practice.",
+    "details": {
+      "age": "4-8",
+      "fieldSize": "25X30",
+      "players": "4+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "2v2+1 (2 vs. 2 plus target attacker)",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "attacking",
+    "difficulty": "medium",
+    "description": "This 2v2+1 soccer drill is a great situational game that focuses on numbers up attacking situations or numbers down defending situations.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "30X40",
+      "players": "8+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "1v1 50/50 to Goal Team Competition",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "attacking",
+    "difficulty": "medium",
+    "description": "This 1v1 soccer drill focuses on soccer fitness, scoring goals, shooting, goalkeeping, and winning 50-50 balls. This is a fun soccer drill for the younger soccer player.",
+    "details": {
+      "age": "4-12",
+      "fieldSize": "PENALTY AREA",
+      "players": "6+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Crossing, Finishing, Shooting Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "crossing",
+    "difficulty": "medium",
+    "description": "This crossing, finishing soccer drill is all about scoring goals. This drill is a great training tool to perfect crossing, finishing, and heading in soccer.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "PENALTY AREA",
+      "players": "8+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Goalkeeper - Arc Drill 2",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "goalkeeper",
+    "difficulty": "medium",
+    "description": "This soccer goalkeeping drill is a great keeper drill designed to focus on the goalkeeper's movement along the goalkeeper's arc to keep the proper angle in the goal.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "PENALTY AREA",
+      "players": "4+",
+      "goalkeeper": "yes",
+      "type": "individual",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Goalkeeper - Arc Drill 1",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "goalkeeper",
+    "difficulty": "easy",
+    "description": "This soccer goalkeeper drill focuses on the keeper's proper footwork, stance, and movement along the goalkeeper arc.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "PENALTY AREA",
+      "players": "1-2",
+      "goalkeeper": "yes",
+      "type": "individual",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Goalkeeper - Side-to-Side",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "goalkeeper",
+    "difficulty": "medium",
+    "description": "This goalkeeper soccer drill focuses on the goalkeeper's side shuffle (side-to-side) movement and quickly getting up from the ground recovering from a dive.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "PENALTY AREA",
+      "players": "1-2",
+      "goalkeeper": "yes",
+      "type": "individual",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Goalkeeper - Down Up Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "goalkeeper",
+    "difficulty": "easy",
+    "description": "This goalkeeper drill focuses on helping the goalkeeper get up quickly from the ground and get set for a shot.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "PENALTY AREA",
+      "players": "1-2",
+      "goalkeeper": "yes",
+      "type": "individual",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Goalkeeper - Shooting Angle",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "goalkeeper",
+    "difficulty": "easy",
+    "description": "This Goalkeeping Shooting Angle Drill is excellent for improving Goalkeeper positioning and angles when handling shots. This drill focuses on correct footwork, proper angles, and quickly setting the goalkeeper's feet for the shot.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "20X30",
+      "players": "4-8",
+      "goalkeeper": "yes",
+      "type": "individual",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Small-Sided Shooting and Finishing Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "attacking",
+    "difficulty": "medium",
+    "description": "This small-sided shooting and finishing game is a great shooting drill that focuses on shooting and finishing.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "40X40",
+      "players": "12+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "5v5 Dribbling Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "medium",
+    "description": "This 5v5 soccer dribbling game is more of a realistic setting to help focus on improving dribbling skills. Because of a large number of players, players are forced to make decisions to dribble, pass, or shoot.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "30X40",
+      "players": "12+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Defensive Speed Course",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "defending",
+    "difficulty": "medium",
+    "description": "This soccer fitness drill is designed to improve defensive speed and quickness in front of the goal. This exercise is intended to be more of a fitness training drill than a technical or tactical defensive soccer training drill.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "25x40",
+      "players": "4+",
+      "goalkeeper": "yes",
+      "type": "individual",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "2v2 Dribbling to Beat the Defender",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "attacking",
+    "difficulty": "medium",
+    "description": "The 2v2 Dribbling to Beat the Defender soccer dribbling drill helps players recognize when to dribble, pass, or get off a shot once they beat the first defender.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "10X30",
+      "players": "8+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "2v1 Dribbling with Opposition",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "attacking",
+    "difficulty": "medium",
+    "description": "In this 2v1 Dribbling with Opposition dribbling drill, we put the players in a 2v1 situation forcing the players to decide whether they should dribble or pass.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "15X30",
+      "players": "6+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "1v1 1st Attacker Dribbling Without Opposition",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "1v1",
+    "difficulty": "easy",
+    "description": "This 1v1 dribbling exercise allows coaches to focus on the 1st attacker's ability to beat the defender on the dribble. In this soccer drill, the coach should focus on the attacker's approach, make sure the attacker has a change in direction, and finish with a burst of speed (change of pace). This drill helps beginners get a feel for moving around defenders.",
+    "details": {
+      "age": "4+",
+      "fieldSize": "30X30",
+      "players": "4+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Shadow Dribbling",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "easy",
+    "description": "This shadow soccer dribbling drill uses partners who do not attempt to gain possession of the ball but adds extra pressure as they follow the dribbler around and tries to imitate the lead dribblers every move.",
+    "details": {
+      "age": "4-8",
+      "fieldSize": "20X20",
+      "players": "6+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Speed of Play Warm-up",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "speed of play",
+    "difficulty": "medium",
+    "description": "This soccer drill is a great warm-up to sessions relating to the speed of play in a soccer game. Players must have a good grasp of necessary passing and receiving skills to execute this soccer drill successfully.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "30X40",
+      "players": "12",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "The Passing Name Game Warm-up",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "easy",
+    "description": "The objective of this soccer drill is to help young players improve the speed of play by thinking a step-ahead of the play.",
+    "details": {
+      "age": "4-12",
+      "fieldSize": "20X20",
+      "players": "6+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "1v1, 1v2, 2v2 - 4 goal game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "small sided",
+    "difficulty": "medium",
+    "description": "This 1v1, 2v2 to multiple goals soccer drill puts soccer players in 1v1 and 2v2 situations with multiple goals. 1v1 soccer helps players focus on penetration by forcing the player to dribble to beat their opponent and allows players to make the attack unpredictable through creativity. Your kids will love this soccer drill!",
+    "details": {
+      "age": "9+",
+      "fieldSize": "20X35",
+      "players": "8+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Lane Spacing and Separation Soccer Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "possession",
+    "difficulty": "medium",
+    "description": "This soccer game uses lanes to divide the soccer field into three equal areas to teach spacing and separation to young soccer players.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "40X30",
+      "players": "8",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Can You Do This?",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "warm-up",
+    "difficulty": "easy",
+    "description": "The Can You Do This? soccer drill focuses on players under 6 years old. It is designed to work on simple body movement, coordination, and balance.",
+    "details": {
+      "age": "4-8",
+      "fieldSize": "20X20",
+      "players": "4+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Snake in the Grass Soccer Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "easy",
+    "description": "This is a great soccer game for under 6 and under 8 soccer players. This soccer game is designed to work on young players coordination and body movements.",
+    "details": {
+      "age": "4-8",
+      "fieldSize": "15X15",
+      "players": "6+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Defensive Overlapping Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "attacking",
+    "difficulty": "medium",
+    "description": "The Defensive Overlapping Drill is a great drill to teach fullbacks to overlap midfielders and getting the defenders into the attack. This is a great starting point to teaching defensive overlaps.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "HALF FIELD",
+      "players": "6+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Dribbling to Beat Defenders, Take on Defenders",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "medium",
+    "description": "The Dribbling to Beat Defenders, Take on Defenders drill is a great soccer drill to teach players to dribble at and beat defenders. It also focuses on other aspects of the game such as passing, receiving, and support. Teaches players to take on defenders.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "30X45",
+      "players": "12",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Dribbling with Speed,Recognizing When to Dribble",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "hard",
+    "description": "This dribbling soccer drill will help players recognize when to make runs and get comfortable making those runs with speed.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "20X50",
+      "players": "12",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Soccer Dribbling and Juggling Warm-up",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "medium",
+    "description": "This soccer drill is a great warm-up drill that allows players to work on touching the ball with all parts of the foot. If you want to improve players footwork and dribbling skills, this is an excellent start to each practice.",
+    "details": {
+      "age": "8-14",
+      "fieldSize": "20X20",
+      "players": "5+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Soccer Pass and Move Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "1st touch",
+    "difficulty": "medium",
+    "description": "This soccer passing drill is a great drill to teach players movement, awareness, accuracy, timing, first touch and passing with all parts of the foot. This exercise is a good passing and moving soccer drill.",
+    "details": {
+      "age": "4+",
+      "fieldSize": "20X20",
+      "players": "6+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "1v1 to Goal",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "1v1",
+    "difficulty": "medium",
+    "description": "The 1v1 Soccer Drill to Goal is a great soccer drill to improve goal scoring opportunities. This drill focuses on beating the last defender, staying in control of the ball and finishing with a good shot on goal.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "25X30",
+      "players": "4+",
+      "goalkeeper": "yes",
+      "type": "individual",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Improving Combination Play",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "possession",
+    "difficulty": "medium",
+    "description": "The Improving Combination Play drill will help improve combination play as well as switching the point of attack. Use this soccer drill when you are organizing a soccer practice around passing and moving.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "40X40",
+      "players": "6-16",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Attack vs. Defence Shooting and Defending Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "1v1",
+    "difficulty": "medium",
+    "description": "The Attack vs. Defence Shooting and Defending drill is one that the kids love. The players will get to work on both attacking (shooting) and defending skills and if ran correctly, very fast paced.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "30X40",
+      "players": "5+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Improving Speed of Play - Passing Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "medium",
+    "description": "This soccer drill is designed to improve the speed of play, decision making, and passing accuracy under pressure.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "15X15",
+      "players": "4+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Goalkeeper Warm-up Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "goalkeeper",
+    "difficulty": "medium",
+    "description": "The Goalkeeper Warm-up Drill is a great soccer goalkeeper warm-up drill to add to the pregame warm-up. Goalkeepers will love this warm-up.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "20X20",
+      "players": "2",
+      "goalkeeper": "yes",
+      "type": "individual",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "The Flag Game - Dribbling in Tight Spaces",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "easy",
+    "description": "This soccer drill is designed to focus on young soccer players learning to dribble in tight spaces. This dribbling drill will help young players keep their eyes up and to become aware of their surroundings. This soccer drill also helps players keep close possession while dribbling.",
+    "details": {
+      "age": "4-8",
+      "fieldSize": "10X25",
+      "players": "6+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Jam-Packed Soccer Dribbling Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "medium",
+    "description": "The Jam-Packed Soccer Dribbling Drill will give players confidence while dribbling through congested areas on the soccer field.",
+    "details": {
+      "age": "8-14",
+      "fieldSize": "20X20",
+      "players": "5+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Extreme Tag Soccer Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "easy",
+    "description": "The Extreme Tag soccer game is a fun soccer drill that focuses on young soccer players dribbling skills and aids in player awareness. It is a great drill that causes players to change directions quickly to find space to avoid being tagged.",
+    "details": {
+      "age": "4-8",
+      "fieldSize": "20X20",
+      "players": "4+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Soccer Ball Smash",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "easy",
+    "description": "The Soccer Ball Smash soccer passing drill will focus on the player who is just learning to pass, as this drill will focus on passing accuracy.",
+    "details": {
+      "age": "4-8",
+      "fieldSize": "HALF FIELD",
+      "players": "4+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Quick Transition Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "game-like",
+    "difficulty": "medium",
+    "description": "This soccer drill is an excellent way to focus on attacking and defending and is ideal for teaching the basic principals of soccer. The game can be modified to illustrate many aspects of the game.",
+    "details": {
+      "age": "10+",
+      "fieldSize": "HALF FIELD",
+      "players": "10",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Soccer End Zone Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "attacking",
+    "difficulty": "medium",
+    "description": "The soccer end zone game is a great soccer drill that will help coaches focus on all aspects of attacking and defending in soccer. With incorporating end zones into the game, it gives players a chance to learn to attack space behind the defense and allows defenders to learn how to deny space behind them.",
+    "details": {
+      "age": "10+",
+      "fieldSize": "HALF FIELD",
+      "players": "8+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Finding the Target Player",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "attacking",
+    "difficulty": "hard",
+    "description": "The Finding the Target Player possession passing drill is designed to encourage midfield and defensive players to look up the field to find the \"Target Player\" and play into that Target player.",
+    "details": {
+      "age": "12+",
+      "fieldSize": "40X40",
+      "players": "8+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Dribbling at the Cone",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "easy",
+    "description": "The Dribbling at the Cone youth soccer dribbling drill is a good soccer dribbling drill for young soccer players to learn to dribble without opposition. It is a fabulous drill to introduce different fakes and faints to gain an edge on the defender.",
+    "details": {
+      "age": "4-12",
+      "fieldSize": "10X20",
+      "players": "2+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Dribbling to Beat a Defender",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "easy",
+    "description": "The Dribbling to Beat a Defender soccer dribbling drill is wonderful when teaching young players when and where to dribble, and how to beat the defenders on the dribble. This dribbling drill is best for U8-U12 Soccer Players. The emphasis is on allowing the dribbling player to unbalance the defender while approaching unchallenged.",
+    "details": {
+      "age": "4-12",
+      "fieldSize": "10X20",
+      "players": "3+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Angle of Support Soccer Possession Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "possession",
+    "difficulty": "medium",
+    "description": "The Angle of Support Soccer Possession Drill is a soccer passing drill for teaching young players angle of support and spacing.",
+    "details": {
+      "age": "5-14",
+      "fieldSize": "10X10",
+      "players": "4+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Split the Defenders Passing Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "possession",
+    "difficulty": "medium",
+    "description": "The split the defenders passing game, soccer passing drill is excellent for a little more advanced player from 10 years old to 14 years and focuses on passing to split two defenders.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "18x18",
+      "players": "6+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Four Corners Passing Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "game-like",
+    "difficulty": "medium",
+    "description": "The Four Corners Passing Game is a great soccer passing drill to focus on changing the point of the attack, and timing of runs and passes.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "40X40",
+      "players": "6+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Guard the Castle",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "2v2",
+    "difficulty": "medium",
+    "description": "The Guard the Castle drill is a great small-sided game that focuses on passing in numbers up situations. This soccer passing game is a fun drill the kids will love it!",
+    "details": {
+      "age": "4-12",
+      "fieldSize": "12X12",
+      "players": "4+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Soccer Tennis",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "1st touch",
+    "difficulty": "hard",
+    "description": "Soccer Tennis is a great game to focus on volleys and balls out of the air. It can be played virtually anywhere, and the older kids will love it.",
+    "details": {
+      "age": "10+",
+      "fieldSize": "12X24",
+      "players": "4+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "1 on 1 (1v1) Soccer Progression",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "1v1",
+    "difficulty": "medium",
+    "description": "This one-on-one (1v1)progression will focus on required dribbling skills, body feints, and the required burst of speed to beat a defender.",
+    "details": {
+      "age": "4-16",
+      "fieldSize": "15X25",
+      "players": "2+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Shooters and Shaggers Soccer Shooting Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "shooting",
+    "difficulty": "easy",
+    "description": "The Shooters and Shaggers Soccer Shooting Game is a great drill to improve shooting on target, leg strength and the instep drive when shooting with the shoelaces.",
+    "details": {
+      "age": "4+",
+      "fieldSize": "20X30",
+      "players": "4+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Fun Soccer Dribbling Warm-up",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "easy",
+    "description": "This is a fun soccer dribbling warm-up game that is an excellent ice-breaker at the beginning of the season or the beginning of a camp to get the kids warmed up with a light, fun dribbling game. These exercises might are a bit advanced for the beginner soccer player.",
+    "details": {
+      "age": "4-12",
+      "fieldSize": "20X20",
+      "players": "4+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Partner Pass and Move Soccer Warm-up",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "easy",
+    "description": "This soccer passing drill will help you focus and teach a young player how to pass with the correct surface on the foot, how to receive a ball and move after receiving the pass.",
+    "details": {
+      "age": "6-14",
+      "fieldSize": "20X20",
+      "players": "4+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Traffic Jam Dribbling Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "medium",
+    "description": "This game is just out right fun! The kids will have a blast playing this game. This drill is ideal for kids who know how to dribble but just need to learn to get their heads up and dribble under the pressures of mere congestion.",
+    "details": {
+      "age": "4-12",
+      "fieldSize": "30X30",
+      "players": "8+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "The Soccer Gauntlet",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "easy",
+    "description": "The primary focus of THE SOCCER GAUNTLET is centered around proper dribbling technique in traffic which requires vision and awareness.",
+    "details": {
+      "age": "4-10",
+      "fieldSize": "15X20",
+      "players": "5+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "1v1v1 Triangle Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "1v1",
+    "difficulty": "medium",
+    "description": "The 1v1v1 Triangle Game soccer drill focuses on attacking in a number-down situation. This game will encourage players to dribble, take players on, shield the ball from the defensive players, and the vision to find the open goal. Defensively this drill promotes players to stay aware of their defensive shape and tackling players on the dribble.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "15X20",
+      "players": "3+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Soccer Tag Dribbling Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "easy",
+    "description": "Soccer Tag is an excellent soccer drill for young players ages under 5 through under 8. Soccer Tag is a fun soccer drill that allows players to gain confidence on the ball while getting a lot of touches.",
+    "details": {
+      "age": "4-8",
+      "fieldSize": "20X20",
+      "players": "5+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "HItters and Dodgers",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "easy",
+    "description": "The hitters and dodgers soccer drill is a great warm-up and exercise for younger players under 5 through under 9. This soccer drill is excellent for teaching players to dribble and then getting their heads up to make a pass. This soccer drill is so much fun, and the younger players love this game.",
+    "details": {
+      "age": "4-10",
+      "fieldSize": "15X15",
+      "players": "4+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Down and Back Dribbling Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "easy",
+    "description": "This drill is most effective with young players just learning to dribble. This drill teaches players to dribble in high traffic, high-pressure situations while staying in control. It's a great warm-up to focus on controlling the ball with all parts of the foot.",
+    "details": {
+      "age": "4-10",
+      "fieldSize": "20X20",
+      "players": "6+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Body Parts Warm-up Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "fun",
+    "difficulty": "easy",
+    "description": "This fun soccer dribbling drill focuses on the younger player's dribbling skills, and the ability to listen to directions and think quick on their feet while holding the ball close. This drill is an excellent dribbling warm-up exercise for Under 4, Under 5, and Under 6 soccer players.",
+    "details": {
+      "age": "4-8",
+      "fieldSize": "15X15",
+      "players": "4+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "3-Minute Shooting Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "shooting",
+    "difficulty": "medium",
+    "description": "This soccer drill allows the coach to focus on shooting, goalkeeping and clearing balls from the back. This drill is an excellent warmup to a shooting or clearing practice.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "HALF FIELD",
+      "players": "6+",
+      "goalkeeper": "yes",
+      "type": "individual",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "1v1 Transition Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "1v1",
+    "difficulty": "medium",
+    "description": "This dynamic game will allow you to focus on the transition from offense to defense. This soccer transitional drill is designed to be played at a quick pace.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "15X20",
+      "players": "6+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Combination Play - Improving 1-2 Combinations",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "medium",
+    "description": "This soccer passing drill focuses on improving 1-2 combination play. This drill focuses on short and long 1-2's and enhancing movement off the ball.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "20X25",
+      "players": "5+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Combination Play; Improving 1-2 Combinations Part II",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "medium",
+    "description": "This soccer passing drill focuses on improving 1-2 combination play. This passing combination drill encourages good movement off the ball.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "20X25",
+      "players": "5+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Goalkeeper Pressure Cooker Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "goalkeeper",
+    "difficulty": "medium",
+    "description": "This soccer drill is a great goal keeper warm-up drill. It will give your keeper a great workout while working on passing and shooting with accuracy.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "20X20",
+      "players": "8+",
+      "goalkeeper": "yes",
+      "type": "individual",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "1v1 to Multiple Goals (Dribbling)",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "medium",
+    "description": "This 1v1 soccer drill is an excellent drill for focusing on teaching players attacking skills such as taking on their opponent or learning to attack space. Defensively it will teach players the responsibility of man-marking.",
+    "details": {
+      "age": "4+",
+      "fieldSize": "30X30",
+      "players": "6+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Instep Shooting Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "shooting",
+    "difficulty": "easy",
+    "description": "This soccer shooting drill focuses on the instep drive. This shooting technique is an essential method of striking a ball when shooting. The instep drive hits the shot with the foot's shoelace with the toe pointed down and the ankle locked.",
+    "details": {
+      "age": "4-10",
+      "fieldSize": "25X25",
+      "players": "4+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Four Corners Aggressiveness and Fitness Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "receiving",
+    "difficulty": "easy",
+    "description": "This soccer drill focuses on aggressiveness in winning 50/50 balls and fitness. This drill will be more beneficial for players under 8 and older.",
+    "details": {
+      "age": "4+",
+      "fieldSize": "20X20",
+      "players": "8+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Diagonal 1v1 Soccer Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "1v1",
+    "difficulty": "medium",
+    "description": "This 1v1 soccer drill is great to focus on 1v1 play whether it is on the offensive or the defensive side. On the offensive side, you can get attackers to attack the defenders with speed, quick change of pace with an explosive touch to get away, and getting behind the defensive players. On the defensive side, you can focus on closing down quickly, forcing the attacker to the side and closing down the attack.",
+    "details": {
+      "age": "4+",
+      "fieldSize": "20X20",
+      "players": "8+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Flighted Balls in the 18",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "attacking",
+    "difficulty": "medium",
+    "description": "This soccer drill is designed to focus on chipping, trapping and shooting inside the 18. If you need your team to feel more comfortable inside the penalty box, you have to practice there.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "20X40",
+      "players": "6+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Passing and Receiving Warm-up",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "passing",
+    "difficulty": "medium",
+    "description": "This soccer warm-up drill focuses on passing and receiving and can be used for players 9 years and older. It's a good drill that can be tweaked to focus on any types of passing or receiving skills.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "20X20",
+      "players": "8+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "5v2 Angle of Support Passing Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "possession",
+    "difficulty": "medium",
+    "description": "The purpose of this soccer passing drill is to focus on players angle of support, the weight of passes and the quality of 1st touch.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "12X12",
+      "players": "7",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Pressure/Cover Tactical Defending Soccer Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "defending",
+    "difficulty": "medium",
+    "description": "This soccer drill is designed to help players identify the roles of the first defender (the closest player to the ball) and the second defender (the supporting player providing cover). It focuses on teaching players how to effectively pressure the ball handler while maintaining proper positioning for defensive support.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "60X40",
+      "players": "10",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 mins."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "3v3 in the 18 - Attacking and Shooting Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "attacking",
+    "difficulty": "hard",
+    "description": "This soccer drill is perfect for working on attacking in the final third of the field, quick combination play near the goal, and shooting around the 18 yard line.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "18x44",
+      "players": "12+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 mins."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Head/Catch Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "heading",
+    "difficulty": "easy",
+    "description": "This soccer game is more of a fun activity. When players need a break from the normal drills, need a reward from hard work, or if you just want to let the players goof around. It focuses on listening and reaction skills.",
+    "details": {
+      "age": "10-14",
+      "fieldSize": "20X20",
+      "players": "5+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Pirates of the Pugg",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "attacking",
+    "difficulty": "easy",
+    "description": "This soccer dribbling drill is a great soccer drill using a Pugg Goal that can be tweaked to focus on many aspects of the game. For younger players ages 8-11, the primary focus should be on proper dribbling technique in traffic which requires vision and awareness. The coach can also focus on the transition from offense to defense if the ball is lost, or recovering from a tackle and finding safety. Defensively, this allows defenders to steal the ball from attackers and play to a particular goal or target.",
+    "details": {
+      "age": "8-12",
+      "fieldSize": "30X30",
+      "players": "8+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "1v1 Competition",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "attacking",
+    "difficulty": "easy",
+    "description": "This drill is great to focus on 1v1 play. It is flexible and can be used to work on the offensive side or the defensive side. On the offensive side you can get attackers to attack the defenders with speed, quick change of pace with an explosive touch to get away, getting behind the defensive players and shooting at half chances. On the defensive side, you can focus on closing down quickly, forcing the attacker to the side and closing down the attack.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "18x25",
+      "players": "5+",
+      "goalkeeper": "yes",
+      "type": "individual",
+      "duration": "20 mins."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "1v1 Tunnel of Death",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "attacking",
+    "difficulty": "medium",
+    "description": "This drill can be used to focus on either attacking or defending. It teaches players to take advantage of an off balanced defender by attacking with speed or could be used to focus on good defensive posture and transition.",
+    "details": {
+      "age": "9-16",
+      "fieldSize": "35X15",
+      "players": "5+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "20 mins."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Criss-Cross Dribbling Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "easy",
+    "description": "The Criss-Cross dribbling drill focuses on the younger player. This dribbling drill assists players play with speed while keeping their heads up. Be warned, this drill can be dangerous for players who have a tendency of dribbling with their head down.",
+    "details": {
+      "age": "4-12",
+      "fieldSize": "30X30",
+      "players": "12+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Knock Out",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "easy",
+    "description": "This drill is a great warm-up drill for dribbling sessions as it focuses on dribbling and ball control, keeping the head up, change of direction and change of pace.",
+    "details": {
+      "age": "4-12",
+      "fieldSize": "20X20",
+      "players": "6+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "2v2 Challenge",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "attacking",
+    "difficulty": "medium",
+    "description": "This 2v2 soccer drill focuses on putting players in 2 vs. 2 situations while attacking the goal. The dynamics of the games works on transitioning, and fitness demands on the players can be intense at times.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "25X30",
+      "players": "8+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 mins."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "4v4 Playing Wide Out of the Back",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "game-like",
+    "difficulty": "medium",
+    "description": "This drill is designed to get players to play balls wide when playing from the back, the defensive third of the field. Players recognize that they find more time and space on the outsides of the field and they are relieving the center of the pitch from dangerous play.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "40X25",
+      "players": "8",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 mins."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Sharks and Minnows Soccer Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "easy",
+    "description": "This soccer drill is designed for U6 and U8 players, emphasizing their ability to dribble effectively under pressure. It also teaches young players how to shield the ball by positioning their body between the ball and the defender, building essential dribbling and ball-protection skills.",
+    "details": {
+      "age": "4-8",
+      "fieldSize": "20X25",
+      "players": "5+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "The Numbers Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "game-like",
+    "difficulty": "medium",
+    "description": "The Numbers Game soccer drill focuses on the 1v1 situational play for younger players. This  1v1 drill works on all dynamics of this game such as dribbling, shooting, shielding, turning and beating an opponent.",
+    "details": {
+      "age": "4-14",
+      "fieldSize": "15X20",
+      "players": "8+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 mins."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "1v1 or 2v2 - Get Outta Here",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "game-like",
+    "difficulty": "hard",
+    "description": "This drill is a very fast paced 1v1 or 2v2 soccer game that focuses on aspects of the small sided game such as dribbling, passing, and scoring.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "15X25",
+      "players": "8+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 mins."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Monster Turns",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "easy",
+    "description": "This fun youth soccer drill focuses on the U6 and U8 players dribbling skills. The added pressure allows the players to turn away from pressure while remaining in control of the ball.",
+    "details": {
+      "age": "4-8",
+      "fieldSize": "20X25",
+      "players": "5+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "The Greeting Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "easy",
+    "description": "This soccer drill is specifically designed for younger players (U-6 and U-8). This drill will get the players moving, greeting each other, and a building block to introduce dribbling. Good for Camp activities for the younger players.",
+    "details": {
+      "age": "4-8",
+      "fieldSize": "15X20",
+      "players": "5+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "4V4 With 5 Goals Inside The 18",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "attacking",
+    "difficulty": "medium",
+    "description": "This 4v4 finishing drill is one of my favorite soccer finishing drills as it works on every aspect of finishing inside the 18-yard box. This drill focuses on soccer finishing skills such as chipping, crossing, heading, finishing and composure in the 18.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "20x40",
+      "players": "9+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 mins."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Dribbling with Speed",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "fitness",
+    "difficulty": "easy",
+    "description": "This dribbling exercise that works on speed dribbling and getting the ball under control while dribbling with speed.",
+    "details": {
+      "age": "8+",
+      "fieldSize": "20X40",
+      "players": "5+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "4v4 Zone Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "possession",
+    "difficulty": "hard",
+    "description": "This 4v4 possession soccer drill helps players keep possession for a purpose with short and long passing combinations. This drill also allows one to focus on defensive transition by quickly close down space and eliminate passing lanes.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "15X24",
+      "players": "12+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 mins."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Shooting Warmup",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "shooting",
+    "difficulty": "medium",
+    "description": "This shooting warm-up drill will focus on long-range passing, accuracy, and finishing. It can also be used as a fitness exercise by manipulating the numbers.",
+    "details": {
+      "age": "8+",
+      "fieldSize": "20X40",
+      "players": "3+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "4v2 and 3v1 Rondo; Finding Target Players",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "possession",
+    "difficulty": "hard",
+    "description": "This 4v2 and 3v1 rondo soccer drill focuses on playing the target players from the attacking third of the field.",
+    "details": {
+      "age": "12+",
+      "fieldSize": "25X25",
+      "players": "8+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Red Light, Green Light Soccer Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "easy",
+    "description": "This soccer dribbling drill, designed for U4, U6, and U8 players, combines fun with skill-building by incorporating a familiar childhood game. It emphasizes close ball control and quick stopping, helping players refine their dribbling precision and responsiveness.",
+    "details": {
+      "age": "4-8",
+      "fieldSize": "20X20",
+      "players": "5+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Ouch!",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "fun",
+    "difficulty": "easy",
+    "description": "\"Ouch!\" is an exciting and engaging soccer drill designed for younger players (U6, U7, and U8). It introduces essential skills like dribbling, keeping their heads up, and accurately striking the ball at a target. Best of all, it's a fun and interactive game that both players and coaches will enjoy!",
+    "details": {
+      "age": "4-8",
+      "fieldSize": "20X20",
+      "players": "4+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Frogger - Youth Dribbling Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "easy",
+    "description": "This youth dribbling drill, \"Frogger,\" is perfect for U6 and U8 soccer players, focusing on building confidence and improving dribbling skills under minimal pressure. This fun and engaging activity helps young players develop control and technique in a supportive environment.",
+    "details": {
+      "age": "4-8",
+      "fieldSize": "20X30",
+      "players": "5+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Simon Says - Youth Soccer Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "dribbling",
+    "difficulty": "easy",
+    "description": "The \"Simon Says Youth Soccer Drill\" is a fun and engaging activity designed for U6 and U8 players, focusing on improving dribbling skills and close ball control. This drill helps young soccer players develop quick responses to instructions while also enhancing their listening skills in a dynamic and enjoyable way.",
+    "details": {
+      "age": "4-8",
+      "fieldSize": "20X30",
+      "players": "4+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Power and Finesse with a Twist",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "finishing",
+    "difficulty": "easy",
+    "description": "The power and finesse shooting and finishing soccer drill focuses on being comfortable while striking long shots as well as close range shots, volleys, and headers.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "25X25",
+      "players": "6+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 mins."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "2v1 and 1v1 Possession Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "possession",
+    "difficulty": "medium",
+    "description": "This soccer drill focuses on both possession and penetration. It helps to teach communication and switching the point of attack to keep possession and penetrate the defense.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "20X20",
+      "players": "5+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Crossing/Finishing Drill",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "attacking",
+    "difficulty": "medium",
+    "description": "This crossing and finishing drill focuses on attacking within the 18 yard box. This soccer drill mainly focuses on crossing, shooting, and heading.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "HALF FIELD",
+      "players": "10+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "2v1 ATTACKING RONDO",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "possession",
+    "difficulty": "medium",
+    "description": "This drill focuses on attacking in a number’s up situation and opening up and finding the attacker in a 1v1 situation. This drill puts much emphasis on good passing, receiving and general possession.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "20X20",
+      "players": "5+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Attacking from the Midfield",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "attacking",
+    "difficulty": "medium",
+    "description": "This attacking soccer drill focuses on building an attack from the midfield and focuses on the midfield players getting forward into the attacking third.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "HALF FIELD",
+      "players": "12+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Attacking from the Back",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "attacking",
+    "difficulty": "medium",
+    "description": "This soccer drill focuses on building an attack from the back starting with the keeper’s distribution. When performed on a full field this drill demands a great deal of fitness as it should be executed at top speed in a continuous fashion.",
+    "details": {
+      "age": "12+",
+      "fieldSize": "HALF FIELD",
+      "players": "8+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "3v1 - Attacking the Goal",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "attacking",
+    "difficulty": "medium",
+    "description": "This attacking soccer drill focus on the attacking movement and composure in front of the goal. Players will become comfortable in front of the goal and will be able to recognize situational play.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "25x40",
+      "players": "8+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 mins."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "4v3 Attack vs. Defense",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "attacking",
+    "difficulty": "medium",
+    "description": "This attacking soccer drill is a great drill to focus on finishing. Since the attackers have the numerical advantage, they should learn how to exploit their advantage and finish with a shot on goal.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "30X30",
+      "players": "8+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Attacking the End Line Crossing Game",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "crossing",
+    "difficulty": "medium",
+    "description": "This drill focuses on attacking from the end line from the flanks and serving a ball in. This is a great crossing game to isolate the flank players and getting them to serve the ball in front of the goal.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "40x50",
+      "players": "10",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 MINS."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "Across-Field Warm-Up",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "warm-up",
+    "difficulty": "easy",
+    "description": "This soccer drill is mainly focused on technical skills during warm up. This is a great drill to do at the beginning of each game.",
+    "details": {
+      "age": "8+",
+      "fieldSize": "35X40",
+      "players": "2+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "10 MINS."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "Handling Flighted Balls",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "receiving",
+    "difficulty": "medium",
+    "description": "This receiving soccer drill focuses on passing and receiving flighted balls during warm-up.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "20X20",
+      "players": "8+",
+      "goalkeeper": "no",
+      "type": "individual",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "Accuracy Passing Under Pressure",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "fitness",
+    "difficulty": "medium",
+    "description": "This drill focuses on accurately passing under pressure, agility, and fitness.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "20X20",
+      "players": "6",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "10 mins."
+    },
+    "durationMinutes": 10
+  },
+  {
+    "name": "5v2 Rotating Defenders",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "possession",
+    "difficulty": "medium",
+    "description": "This 5v2 drill will focus on keeping possession by making good passes as well as good passing decisions, moving to open space, and good communication.",
+    "details": {
+      "age": "8+",
+      "fieldSize": "15X15",
+      "players": "9+",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "3v2 Flying Changes",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "game-like",
+    "difficulty": "hard",
+    "description": "This drill is designed to focus on all aspects of the game in a 3v2 situation. Mainly runs of attackers, angle of support, passing vs. shooting decisions, defensive shape, and recovery runs, along with working on mental attentiveness.",
+    "details": {
+      "age": "10+",
+      "fieldSize": "35X40",
+      "players": "12+",
+      "goalkeeper": "yes",
+      "type": "team",
+      "duration": "20 mins."
+    },
+    "durationMinutes": 20
+  },
+  {
+    "name": "3v3 Plus 3",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "possession",
+    "difficulty": "medium",
+    "description": "This drill focuses on keeping possession. Passing, receiving, movement, and angle of support can be singled out. Causes players to look up and be aware of the surrounding players.",
+    "details": {
+      "age": "9+",
+      "fieldSize": "20X20",
+      "players": "9",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "15 mins."
+    },
+    "durationMinutes": 15
+  },
+  {
+    "name": "4v4 Soccer to a Small Gate",
+    "category": "drill",
+    "sport": "soccer",
+    "focus": "gamelike",
+    "difficulty": "easy",
+    "description": "In Soccer, 4v4 is the smallest version of a full-sided game. While on the attack, to be successful in a four vs. four soccer match, players must penetrate via the pass, dribble, or shot; players must provide support to the player with the ball, and players need to create width to the field. On the defensive side, a player must pressure the ball to delay the attack, another player should cover for the player pressuring the ball, and the remaining two players balance the field of play. This 4v4 practice focuses on all aspects of the match, including attacking, defending, passing, receiving, supporting, penetrating, and spreading the field.",
+    "details": {
+      "age": "4+",
+      "fieldSize": "25X35",
+      "players": "8",
+      "goalkeeper": "no",
+      "type": "team",
+      "duration": "20 min."
+    },
+    "durationMinutes": 20
+  }
+]

@@ -1,8 +1,8 @@
 // testExrxScraper.ts
-import { scrapeExrxDirectory, Muscle, MuscleGroup } from "../exrxDirectoryScraper";
+import { scrapeExrxDirectory, MuscleGroup } from "../exrxDirectoryScraper";
 
 /** pretty-printer */
-export function printGroups(groups: MuscleGroup[]) {
+function printGroups(groups: MuscleGroup[]) {
 	const indent = (n: number) => " ".repeat(n * 2);
 
 	for (const g of groups) {
@@ -12,7 +12,7 @@ export function printGroups(groups: MuscleGroup[]) {
 		}
 	}
 
-	function printMuscle(m: Muscle, level: number) {
+	function printMuscle(m: any, level: number) {
 		console.log(`${indent(level)}- ${m.name} (${m.url || "no link"})`);
 		if (m.submuscles) {
 			for (const s of m.submuscles) printMuscle(s, level + 1);
@@ -21,6 +21,8 @@ export function printGroups(groups: MuscleGroup[]) {
 }
 
 (async () => {
-  const groups = await scrapeExrxDirectory("https://exrx.net/Lists/Directory");
-  printGroups(groups);
+	let groups: MuscleGroup[];
+	groups = await scrapeExrxDirectory("https://exrx.net/Lists/Directory");
+
+	printGroups(groups);
 })();
