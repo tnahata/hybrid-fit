@@ -22,7 +22,7 @@ import CalendarDialog from '@/components/CalendarDialog';
 import { toast } from 'sonner';
 import Link from 'next/link';
 import { getStartOfDay, returnUTCDateInUSLocaleFormat } from '@/lib/dateUtils';
-import LoadingSpinner from '@/components/ui/LoadingSpinner';
+import LoadingSpinner from '@/components/LoadingSpinner';
 import { Dumbbell, ChevronDown } from 'lucide-react';
 import { Goal, Logs, LoaderCircle } from 'lucide-react';
 import { Clock, Flame, Tag } from '@/components/icons/icons';
@@ -35,7 +35,7 @@ interface FirstRowCardProps {
 }
 
 function FirstRowCard({ paragraphText, h3Text, secondParagraphText, IconComponent }: FirstRowCardProps) {
-	return ( 
+	return (
 		<Card>
 			<CardContent className="pt-6">
 				<div className="flex items-center justify-between">
@@ -750,7 +750,7 @@ export default function Dashboard() {
 					{currentUserPlan.progressLog.length > 0 && (
 						<Card>
 							<CardHeader>
-								<CardTitle className="text-lg"><Logs className='inline'/> Activity Log</CardTitle>
+								<CardTitle className="text-lg"><Logs className='inline' /> Activity Log</CardTitle>
 							</CardHeader>
 							<CardContent>
 								<div className="space-y-2">
