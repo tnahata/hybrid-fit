@@ -65,10 +65,10 @@ export default function ForgotPasswordPage() {
 					<div className="text-center">
 						<h2 className="text-3xl font-bold">Check Your Email</h2>
 						<p className="text-sm">
-							If an account exists with that email address, we've sent you a password reset link.
+							If an account exists with that email address, we&apos;ve sent you a password reset link.
 						</p>
 						<p className="mt-4 font-small">
-							Didn't receive an email? Check your spam folder or{' '}
+							Didn&apos;t receive an email? Check your spam folder or{' '}
 							<Button
 								variant='link'
 								onClick={() => setIsSubmitted(false)}
