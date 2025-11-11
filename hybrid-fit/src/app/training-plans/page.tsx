@@ -13,7 +13,7 @@ import { Search, ArrowUpDown, Calendar, Target, TrendingUp } from "lucide-react"
 import { TrainingPlanDrawer } from "@/components/drawer/TrainingPlanDrawer";
 import { TrainingPlanDoc } from "@/models/TrainingPlans";
 import { toast } from 'sonner';
-import LoadingSpinner from "@/components/ui/LoadingSpinner";
+import LoadingSpinner from "@/components/LoadingSpinner";
 import { EnrichedTrainingPlan } from "../../../types/enrichedTypes";
 
 export default function TrainingPlansPage() {
@@ -341,77 +341,77 @@ export default function TrainingPlansPage() {
 			{isLoading ? (
 				<LoadingSpinner spinnerText='Loading training plans...' className='' />
 			) :
-			(
-				<div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-					{paginatedPlans.map((plan) => (
-						<Card
-							key={plan._id}
-							className="shadow-sm hover:shadow-lg transition-all duration-200 cursor-pointer group"
-							onClick={() => handleCardClick(plan)}
-						>
-							<CardContent className="p-6 space-y-4">
-								<div className="flex justify-between items-start">
-									<Badge className={`${getLevelColor(plan.level)} border`}>
-										{plan.level}
-									</Badge>
-									<Badge variant="outline" className="text-xs">
-										{plan.sport}
-									</Badge>
-								</div>
+				(
+					<div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+						{paginatedPlans.map((plan) => (
+							<Card
+								key={plan._id}
+								className="shadow-sm hover:shadow-lg transition-all duration-200 cursor-pointer group"
+								onClick={() => handleCardClick(plan)}
+							>
+								<CardContent className="p-6 space-y-4">
+									<div className="flex justify-between items-start">
+										<Badge className={`${getLevelColor(plan.level)} border`}>
+											{plan.level}
+										</Badge>
+										<Badge variant="outline" className="text-xs">
+											{plan.sport}
+										</Badge>
+									</div>
 
-								<div className="space-y-2">
-									<h2 className="text-xl font-bold group-hover:text-orange-500 transition-colors">
-										{plan.name}
-									</h2>
-									<p className="text-sm text-muted-foreground line-clamp-2">
-										{plan.details.goal}
-									</p>
-								</div>
+									<div className="space-y-2">
+										<h2 className="text-xl font-bold group-hover:text-orange-500 transition-colors">
+											{plan.name}
+										</h2>
+										<p className="text-sm text-muted-foreground line-clamp-2">
+											{plan.details.goal}
+										</p>
+									</div>
 
-								<div className="grid grid-cols-2 gap-3 pt-2">
-									<div className="flex items-center gap-2 text-sm">
-										<Calendar className="h-4 w-4 text-orange-500" />
-										<span className="text-muted-foreground">
-											{plan.durationWeeks} weeks
+									<div className="grid grid-cols-2 gap-3 pt-2">
+										<div className="flex items-center gap-2 text-sm">
+											<Calendar className="h-4 w-4 text-orange-500" />
+											<span className="text-muted-foreground">
+												{plan.durationWeeks} weeks
+											</span>
+										</div>
+										<div className="flex items-center gap-2 text-sm">
+											<Target className="h-4 w-4 text-orange-500" />
+											<span className="text-muted-foreground capitalize">
+												{plan.category}
+											</span>
+										</div>
+									</div>
+
+									<div className="flex items-center gap-2 pt-2 border-t">
+										<TrendingUp className="h-4 w-4 text-orange-500" />
+										<span className="text-sm font-medium capitalize">
+											{plan.details.planType}
 										</span>
 									</div>
-									<div className="flex items-center gap-2 text-sm">
-										<Target className="h-4 w-4 text-orange-500" />
-										<span className="text-muted-foreground capitalize">
-											{plan.category}
-										</span>
+
+									<div className="flex gap-2 w-full">
+										<Button
+											variant="default"
+											className="flex-1 bg-orange-500 hover:bg-orange-600 text-white"
+											onClick={(e) => handleEnroll(plan._id, plan.name, e)}
+											disabled={enrollingPlanId === plan._id || status === "loading"}
+										>
+											{status === "authenticated" && enrollingPlanId === plan._id ? "Enrolling..." : "Enroll"}
+										</Button>
+										<Button
+											variant="outline"
+											className="flex-1"
+											disabled={isLoadingDetail}
+										>
+											{isLoadingDetail ? "Loading..." : "View Details"}
+										</Button>
 									</div>
-								</div>
+								</CardContent>
+							</Card>
+						))}
+					</div>)}
 
-								<div className="flex items-center gap-2 pt-2 border-t">
-									<TrendingUp className="h-4 w-4 text-orange-500" />
-									<span className="text-sm font-medium capitalize">
-										{plan.details.planType}
-									</span>
-								</div>
-
-								<div className="flex gap-2 w-full">
-									<Button
-										variant="default"
-										className="flex-1 bg-orange-500 hover:bg-orange-600 text-white"
-										onClick={(e) => handleEnroll(plan._id, plan.name, e)}
-										disabled={enrollingPlanId === plan._id || status === "loading"}
-									>
-										{status === "authenticated" && enrollingPlanId === plan._id ? "Enrolling..." : "Enroll"}
-									</Button>
-									<Button
-										variant="outline"
-										className="flex-1"
-										disabled={isLoadingDetail}
-									>
-										{isLoadingDetail ? "Loading..." : "View Details"}
-									</Button>
-								</div>
-							</CardContent>
-						</Card>
-					))}
-				</div>)}
-	
 
 			{!isLoading && paginatedPlans.length === 0 && (
 				<div className="text-center py-12">

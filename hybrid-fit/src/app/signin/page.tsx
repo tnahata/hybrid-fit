@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import usePendingEnrollment from '@/hooks/usePendingEnrollment';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
+import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { XIcon, Eye, EyeOff } from 'lucide-react';
 import { useRouter } from 'next/navigation';
@@ -101,7 +102,6 @@ export default function SignIn() {
 			});
 
 			if (result?.error) {
-				// Authentication failed
 				const errorMessage = result.error === 'CredentialsSignin'
 					? 'Invalid email or password. Please try again.'
 					: result.error;
@@ -124,9 +124,6 @@ export default function SignIn() {
 			console.error('Sign in error:', error);
 			setIsLoading(false);
 		}
-		//} finally {
-		//	setIsLoading(false);
-		//}
 	};
 
 	const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -194,9 +191,9 @@ export default function SignIn() {
 
 							<div>
 								<div className="flex items-center justify-between mb-2">
-									<label htmlFor="password" className="block text-xs font-medium uppercase">
+									<Label htmlFor="password" className="block text-xs font-medium uppercase">
 										Password
-									</label>
+									</Label>
 									<Link
 										href="/forgot-password"
 										className="text-xs text-blue-600 hover:underline"
@@ -237,16 +234,16 @@ export default function SignIn() {
 							</div>
 
 							<div className="flex items-center">
-								<input
+								<Input
 									id="remember"
 									name="remember"
 									type="checkbox"
 									className="h-4 w-4 rounded border-gray-300 text-orange-500 focus:ring-orange-500"
 									disabled={isProcessingEnrollment}
 								/>
-								<label htmlFor="remember" className="ml-2 block text-sm text-gray-700">
+								<Label htmlFor="remember" className="ml-2 block text-sm text-gray-700">
 									Remember me
-								</label>
+								</Label>
 							</div>
 
 							<Button
@@ -262,14 +259,14 @@ export default function SignIn() {
 						<div className="text-center">
 							<span className="text-sm text-gray-600">Don&apos;t have an account? </span>
 							<Link href="/signup" className="text-sm text-blue-600 hover:underline">
-								Sign up
+								Sign Up
 							</Link>
 						</div>
 
 						<div className="text-xs text-gray-500 text-center">
 							By signing in, you agree to our{' '}
-							<a href="#" className="underline">Terms of Service</a> and{' '}
-							<a href="#" className="underline">Privacy Policy</a>.
+							<Link href="/terms" className="underline">Terms of Service</Link> and{' '}
+							<Link href="/privacy" className="underline">Privacy Policy</Link>.
 						</div>
 					</form>
 				</div>

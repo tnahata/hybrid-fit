@@ -86,7 +86,7 @@ export interface UserPlanProgress {
 
 export interface UserDoc extends Document {
 	email: string;
-	name?: string;
+	name: string;
 	passwordHash?: string;
 
 	trainingPlans: UserPlanProgress[];
@@ -99,6 +99,9 @@ export interface UserDoc extends Document {
 
 	createdAt: Date;
 	updatedAt: Date;
+
+	resetPasswordToken?: string;
+	resetPasswordExpiry?: Date;
 }
 
 const workoutLogSchema = new Schema<WorkoutLog>({
@@ -210,6 +213,8 @@ const userSchema = new Schema<UserDoc>({
 	longestStreak: { type: Number, default: 0 },
 	lastWorkoutDate: { type: Date },
 	lastProgressUpdateDate: { type: Date },
+	resetPasswordToken: { type: String },
+	resetPasswordExpiry: { type: Date },
 },
 	{ timestamps: true }
 );
