@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { toast } from 'sonner';
@@ -11,6 +11,14 @@ import { Eye, EyeOff } from 'lucide-react';
 import LoadingSpinner from '@/components/LoadingSpinner';
 
 export default function ResetPasswordPage() {
+	return (
+		<Suspense fallback={<LoadingSpinner spinnerText="Loading..." />}>
+			<ResetPasswordContent />
+		</Suspense>
+	);
+}
+
+function ResetPasswordContent() {
 	const router = useRouter();
 	const searchParams = useSearchParams();
 	const [token, setToken] = useState<string | null>(null);
@@ -212,8 +220,8 @@ export default function ResetPasswordPage() {
 		}
 	};
 
-	if (!token) {
-		<LoadingSpinner spinnerText="Loading..." />;
+	if (token === null) {
+		return <LoadingSpinner spinnerText="Loading..." />;
 	}
 
 	return (
