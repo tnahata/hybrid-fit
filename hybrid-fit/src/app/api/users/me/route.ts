@@ -88,12 +88,24 @@ async function fillMissingWorkoutLogs(user: UserDoc): Promise<void> {
 	const today = getStartOfDay();
 	let hasChanges = false;
 
+	// FIX: Batch fetch all training plan documents to avoid N+1 query
+	const activePlanIds = user.trainingPlans
+		.filter(tp => tp.isActive && !tp.completedAt)
+		.map(tp => tp.planId);
+
+	if (activePlanIds.length === 0) {
+		return;
+	}
+
+	const planDocs = await TrainingPlan.find({ _id: { $in: activePlanIds } }).lean();
+	const planDocMap = new Map(planDocs.map(plan => [String(plan._id), plan]));
+
 	for (const trainingPlan of user.trainingPlans) {
 		if (!trainingPlan.isActive || trainingPlan.completedAt) {
 			continue;
 		}
 
-		const planDoc: TrainingPlanDoc | null = await TrainingPlan.findById(trainingPlan.planId);
+		const planDoc = planDocMap.get(trainingPlan.planId);
 		if (!planDoc) {
 			continue;
 		}

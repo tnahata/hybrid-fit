@@ -25,6 +25,12 @@ export async function connectToDatabase() {
 			.connect(MONGODB_URI, {
 				dbName: "hybrid-fit",
 				bufferCommands: false,
+				// Connection pool configuration for better scaling
+				maxPoolSize: 50, // Maximum number of connections in the pool
+				minPoolSize: 10, // Minimum number of connections to maintain
+				maxIdleTimeMS: 30000, // Close connections after 30 seconds of inactivity
+				serverSelectionTimeoutMS: 5000, // Timeout for server selection (5 seconds)
+				socketTimeoutMS: 45000, // Socket timeout (45 seconds)
 			})
 			.then((mongoose) => mongoose);
 	}
