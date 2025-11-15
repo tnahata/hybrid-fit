@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import { connectToDatabase } from "@/lib/mongodb";
 import { TrainingPlan } from "@/models/TrainingPlans";
 
-// Cache configuration for static data
 export const revalidate = 3600; // Revalidate every 1 hour
 export const dynamic = 'force-static'; // Force static rendering for caching
 
