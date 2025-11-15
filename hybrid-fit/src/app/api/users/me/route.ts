@@ -60,6 +60,8 @@ async function updateUserProgressIfNeeded(user: UserDoc): Promise<boolean> {
 		return false;
 	}
 
+	let hasChanges = false;
+
 	for (const trainingPlan of user.trainingPlans) {
 		if (!trainingPlan.isActive) continue;
 
@@ -75,13 +77,18 @@ async function updateUserProgressIfNeeded(user: UserDoc): Promise<boolean> {
 			) {
 				trainingPlan.currentWeek = newWeekIndex;
 				trainingPlan.currentDayIndex = newDayIndex;
+				hasChanges = true;
 			}
 		}
 	}
 
-	user.lastProgressUpdateDate = new Date();
-	await user.save();
-	return true;
+	// Only save to database if there were actual changes
+	if (hasChanges) {
+		user.lastProgressUpdateDate = new Date();
+		await user.save();
+	}
+
+	return hasChanges;
 }
 
 async function fillMissingWorkoutLogs(user: UserDoc): Promise<void> {

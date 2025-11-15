@@ -22,9 +22,22 @@ export async function enrichTrainingPlans(
 		);
 	});
 
-	const workoutTemplates = await WorkoutTemplate.find({
-		_id: { $in: Array.from(workoutTemplateIds) },
-	}).lean();
+	// Field projection: Only fetch needed fields to reduce payload size
+	const workoutTemplates = await WorkoutTemplate.find(
+		{ _id: { $in: Array.from(workoutTemplateIds) } },
+		{
+			_id: 1,
+			name: 1,
+			sport: 1,
+			category: 1,
+			description: 1,
+			metrics: 1,
+			difficulty: 1,
+			tags: 1,
+			structure: 1,
+			// Exclude: createdAt, updatedAt (not needed for client)
+		}
+	).lean();
 
 	const exerciseIds = new Set<string>();
 	workoutTemplates.forEach((wt) =>
@@ -35,9 +48,25 @@ export async function enrichTrainingPlans(
 		})
 	);
 
-	const exercises = await Exercise.find({
-		_id: { $in: Array.from(exerciseIds) }
-	}).lean();
+	// Field projection: Only fetch needed fields to reduce payload size
+	const exercises = await Exercise.find(
+		{ _id: { $in: Array.from(exerciseIds) } },
+		{
+			_id: 1,
+			name: 1,
+			type: 1,
+			category: 1,
+			sport: 1,
+			focus: 1,
+			difficulty: 1,
+			equipment: 1,
+			description: 1,
+			instructions: 1,
+			durationMinutes: 1,
+			tags: 1,
+			// Exclude: sourceUrl, details, createdAt, updatedAt (not needed for enriched response)
+		}
+	).lean();
 
 	const exerciseMap = new Map(exercises.map((ex) => [String(ex._id), ex]));
 	const workoutTemplateMap = new Map(workoutTemplates.map((wt) => [String(wt._id), wt]));
