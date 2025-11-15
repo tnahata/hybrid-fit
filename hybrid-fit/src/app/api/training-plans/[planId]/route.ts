@@ -3,6 +3,10 @@ import { connectToDatabase } from "@/lib/mongodb";
 import { enrichTrainingPlans } from "@/lib/enrichTrainingPlans";
 import { EnrichedTrainingPlan } from "../../../../../types/enrichedTypes";
 
+// Cache this route's response for 1 hour (3600 seconds)
+// Training plan details are static data that rarely change
+export const revalidate = 3600;
+
 export async function GET(
 	request: NextRequest,
 	{ params }: { params: Promise<{ planId: string }> }

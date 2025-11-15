@@ -2,6 +2,10 @@ import { NextResponse } from "next/server";
 import { connectToDatabase } from "@/lib/mongodb";
 import { Exercise } from "@/models/Exercise";
 
+// Cache this route's response for 1 hour (3600 seconds)
+// Exercises are static data that rarely change
+export const revalidate = 3600;
+
 export async function GET() {
     try {
         await connectToDatabase();
