@@ -2,9 +2,9 @@ import { NextResponse } from "next/server";
 import { connectToDatabase } from "@/lib/mongodb";
 import { Exercise } from "@/models/Exercise";
 
-// Cache this route's response for 1 hour (3600 seconds)
-// Exercises are static data that rarely change
-export const revalidate = 3600;
+// Cache configuration for static data
+export const revalidate = 3600; // Revalidate every 1 hour
+export const dynamic = 'force-static'; // Force static rendering for caching
 
 export async function GET() {
     try {
@@ -12,7 +12,7 @@ export async function GET() {
 
         const [total, exercises] = await Promise.all([
             Exercise.countDocuments({}),
-            Exercise.find({})
+            Exercise.find({}).lean() // Use .lean() for plain objects (better caching)
         ]);
 
         return NextResponse.json({

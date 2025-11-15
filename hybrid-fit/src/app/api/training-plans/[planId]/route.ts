@@ -3,9 +3,9 @@ import { connectToDatabase } from "@/lib/mongodb";
 import { enrichTrainingPlans } from "@/lib/enrichTrainingPlans";
 import { EnrichedTrainingPlan } from "../../../../../types/enrichedTypes";
 
-// Cache this route's response for 1 hour (3600 seconds)
-// Training plan details are static data that rarely change
-export const revalidate = 3600;
+// Cache configuration for static data
+// Each planId will be cached separately for 1 hour
+export const revalidate = 3600; // Revalidate every 1 hour
 
 export async function GET(
 	request: NextRequest,

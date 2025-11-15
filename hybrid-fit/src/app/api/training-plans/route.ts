@@ -2,9 +2,9 @@ import { NextResponse } from "next/server";
 import { connectToDatabase } from "@/lib/mongodb";
 import { TrainingPlan } from "@/models/TrainingPlans";
 
-// Cache this route's response for 1 hour (3600 seconds)
-// Training plans are static data that rarely change
-export const revalidate = 3600;
+// Cache configuration for static data
+export const revalidate = 3600; // Revalidate every 1 hour
+export const dynamic = 'force-static'; // Force static rendering for caching
 
 export async function GET() {
 	try {
