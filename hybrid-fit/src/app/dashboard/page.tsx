@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -14,18 +14,17 @@ import {
 	SelectValue,
 } from "@/components/ui/select";
 import { WorkoutLog, WorkoutOverride } from "@/models/User";
-import { EnrichedTrainingPlanDay, EnrichedTrainingPlanWeek, WorkoutStructureItem, EnrichedUserPlanProgress, EnrichedUserDoc } from '../../../types/enrichedTypes';
+import { EnrichedTrainingPlanDay, EnrichedTrainingPlanWeek, WorkoutStructureItem, EnrichedUserPlanProgress } from '../../../types/enrichedTypes';
 import { WorkoutTemplateDoc } from "@/models/Workouts";
-import { updatePlanOverrides, logWorkout, updateWorkout, getUserProfile, ApiError } from '@/lib/api-client';
 import LogResultsDialog from '@/components/LogResultsDialog';
 import CalendarDialog from '@/components/CalendarDialog';
-import { toast } from 'sonner';
 import Link from 'next/link';
 import { getStartOfDay, returnUTCDateInUSLocaleFormat } from '@/lib/dateUtils';
 import LoadingSpinner from '@/components/ui/LoadingSpinner';
 import { Dumbbell, ChevronDown } from 'lucide-react';
 import { Goal, Logs, LoaderCircle } from 'lucide-react';
 import { Clock, Flame, Tag } from '@/components/icons/icons';
+import { useUserStore } from '@/stores/useUserStore';
 
 interface FirstRowCardProps {
 	paragraphText: string;
@@ -56,13 +55,31 @@ function FirstRowCard({ paragraphText, h3Text, secondParagraphText, IconComponen
 }
 
 export default function Dashboard() {
-	const [currentUser, setCurrentUser] = useState<EnrichedUserDoc | null>(null);
-	const [selectedPlanId, setSelectedPlanId] = useState<string>("");
-	const [loading, setLoading] = useState<boolean>(true);
-	const [error, setError] = useState<string | null>(null);
+	// ========================================
+	// ZUSTAND STORE (replaces local useState)
+	// ========================================
+	const {
+		currentUser,
+		selectedPlanId,
+		loading,
+		error,
+		fetchUser,
+		setSelectedPlan,
+		logWorkout: storeLogWorkout,
+		updateWorkout: storeUpdateWorkout,
+		updateOverrides: storeUpdateOverrides,
+		getCurrentPlan
+	} = useUserStore();
+
 	const { data: session, status } = useSession();
 	const router = useRouter();
 
+	// Get current plan using store's selector (replaces useMemo)
+	const currentUserPlan = getCurrentPlan();
+
+	// ========================================
+	// EFFECTS
+	// ========================================
 	useEffect(() => {
 		if (status === "unauthenticated") {
 			router.push("/signin");
@@ -70,68 +87,18 @@ export default function Dashboard() {
 	}, [status, router]);
 
 	useEffect(() => {
-		fetchUserData();
-	}, []);
+		fetchUser();
+	}, [fetchUser]);
 
-	const fetchUserData = async (): Promise<void> => {
-		try {
-			setLoading(true);
-			setError(null);
-
-			const userData = await getUserProfile();
-			const activePlan: EnrichedUserPlanProgress | undefined = userData.trainingPlans?.find(
-				(p: EnrichedUserPlanProgress) => p.isActive
-			);
-			const planIdToSelect = activePlan?._id || userData.trainingPlans?.[0]?._id || "";
-			setSelectedPlanId(planIdToSelect);
-			setCurrentUser(userData);
-
-		} catch (err) {
-			const errorMessage = err instanceof ApiError
-				? err.message
-				: 'Failed to fetch user data';
-			console.error('Error fetching user data:', err);
-			setError(errorMessage);
-		} finally {
-			setLoading(false);
-		}
-	};
-
-	const currentUserPlan: EnrichedUserPlanProgress | undefined = useMemo(() => {
-		if (!currentUser?.trainingPlans?.length || !selectedPlanId) {
-			return undefined;
-		}
-
-		return currentUser.trainingPlans.find(
-			(p: EnrichedUserPlanProgress) => p._id === selectedPlanId
-		);
-	}, [currentUser, selectedPlanId]);
-
+	// ========================================
+	// HANDLERS (now use store actions)
+	// ========================================
 	const handleUpdateOverrides = async (overrides: WorkoutOverride[]): Promise<void> => {
 		if (!currentUserPlan) {
 			throw new Error('No active plan selected');
 		}
 
-		try {
-			await updatePlanOverrides(currentUserPlan._id, overrides);
-
-			await fetchUserData();
-
-			toast.success('Schedule updated successfully!');
-
-		} catch (error) {
-			console.error('Error updating overrides:', error);
-
-			const errorMessage = error instanceof ApiError
-				? error.message
-				: 'Failed to update schedule';
-
-			toast.error('Update Failed', {
-				description: errorMessage,
-			});
-
-			throw error;
-		}
+		await storeUpdateOverrides(currentUserPlan._id, overrides);
 	};
 
 	const handleUpdateWorkout = async (data: WorkoutLog, logId: string): Promise<void> => {
@@ -139,26 +106,7 @@ export default function Dashboard() {
 			throw new Error('No active plan selected');
 		}
 
-		try {
-			const result = await updateWorkout(logId, currentUserPlan._id, data);
-
-			await fetchUserData();
-
-			toast.success('Workout log updated!', {
-				description: `Great job! Current streak: ${result.userStats.currentStreak} days 🔥`
-			});
-		} catch (error) {
-
-			const errorMessage = error instanceof ApiError
-				? error.message
-				: 'Failed to log workout';
-
-			toast.error('Failed to update workout log!', {
-				description: errorMessage,
-			});
-
-			throw error;
-		}
+		await storeUpdateWorkout(logId, currentUserPlan._id, data);
 	}
 
 	const handleLogWorkout = async (data: WorkoutLog): Promise<void> => {
@@ -166,28 +114,7 @@ export default function Dashboard() {
 			throw new Error('No active plan selected');
 		}
 
-		try {
-			const result = await logWorkout(currentUserPlan._id, data);
-
-			await fetchUserData();
-
-			toast.success('Workout Logged!', {
-				description: `Great job! Current streak: ${result.userStats.currentStreak} days 🔥`
-			});
-
-		} catch (error) {
-			console.error('Error logging workout:', error);
-
-			const errorMessage = error instanceof ApiError
-				? error.message
-				: 'Failed to log workout';
-
-			toast.error('Failed to log workout!', {
-				description: errorMessage,
-			});
-
-			throw error;
-		}
+		await storeLogWorkout(currentUserPlan._id, data);
 	};
 
 	const getTodaysWorkout = (): EnrichedTrainingPlanDay | null => {
@@ -444,7 +371,7 @@ export default function Dashboard() {
 						<p className="text-muted-foreground mb-4">
 							{error || "Please try logging in again"}
 						</p>
-						<Button onClick={fetchUserData}>
+						<Button onClick={fetchUser}>
 							Retry
 						</Button>
 					</CardContent>
@@ -511,7 +438,7 @@ export default function Dashboard() {
 						</div>
 						<div className="flex items-center gap-2">
 							<span className="text-sm text-muted-foreground hidden sm:inline">Training Plan:</span>
-							<Select value={selectedPlanId} onValueChange={(value: string) => setSelectedPlanId(value)}>
+							<Select value={selectedPlanId} onValueChange={setSelectedPlan}>
 								<SelectTrigger className="w-[280px]">
 									<SelectValue placeholder="Select a training plan" />
 								</SelectTrigger>
