@@ -220,7 +220,7 @@ export default function ExerciseContent() {
 								<p className="text-sm text-gray-500 line-clamp-3">{ex.description}</p>
 								<div className="flex flex-wrap gap-2">
 									{ex.focus.slice(0, 3).map((f, idx) => (
-										<Badge key={idx} variant="secondary">
+										<Badge key={`${ex._id}-focus-${idx}-${f}`} variant="secondary">
 											{f}
 										</Badge>
 									))}

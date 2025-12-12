@@ -48,7 +48,7 @@ export function FAQSection() {
 				<div className="space-y-4">
 					{faqs.map((faq, index) => (
 						<div
-							key={index}
+							key={faq.question}
 							className="border-b border-gray-700"
 						>
 							<button

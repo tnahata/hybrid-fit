@@ -269,9 +269,12 @@ export default function CalendarDialog({ userPlan, className, onUpdateOverrides 
 
 							const workoutName = workoutDetails?.name || (displayedWorkoutId === 'rest_day' ? 'Rest Day' : displayedWorkoutId);
 
+							// Create unique key from week number and day index
+							const dayKey = `week-${week.weekNumber}-day-${dayIndex}`;
+
 							return (
 								<div
-									key={dayIndex}
+									key={dayKey}
 									draggable={isDraggable}
 									onDragStart={() => handleDragStart(week.weekNumber, dayIndex, displayedWorkoutId)}
 									onDragOver={handleDragOver}
