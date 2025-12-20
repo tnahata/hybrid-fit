@@ -22,7 +22,6 @@ export async function enrichTrainingPlans(
 		);
 	});
 
-	// Field projection: Only fetch needed fields to reduce payload size
 	const workoutTemplates = await WorkoutTemplate.find(
 		{ _id: { $in: Array.from(workoutTemplateIds) } },
 		{
@@ -48,7 +47,6 @@ export async function enrichTrainingPlans(
 		})
 	);
 
-	// Field projection: Only fetch needed fields to reduce payload size
 	const exercises = await Exercise.find(
 		{ _id: { $in: Array.from(exerciseIds) } },
 		{

@@ -95,7 +95,7 @@ async function fillMissingWorkoutLogs(user: UserDoc): Promise<void> {
 	const today = getStartOfDay();
 	let hasChanges = false;
 
-	// FIX: Batch fetch all training plan documents to avoid N+1 query
+	// Batch fetch all training plan documents
 	const activePlanIds = user.trainingPlans
 		.filter(tp => tp.isActive && !tp.completedAt)
 		.map(tp => tp.planId);

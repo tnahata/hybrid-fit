@@ -220,7 +220,6 @@ const userSchema = new Schema<UserDoc>({
 );
 
 // Database indexes for performance optimization
-// Note: email already has unique index from schema definition (unique: true)
 userSchema.index({ resetPasswordToken: 1 }); // Fast password reset token lookups
 userSchema.index({ 'trainingPlans.planId': 1 }); // Fast plan lookups
 userSchema.index({ 'trainingPlans.isActive': 1 }); // Fast active plan queries
