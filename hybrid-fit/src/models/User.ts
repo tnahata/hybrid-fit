@@ -219,4 +219,9 @@ const userSchema = new Schema<UserDoc>({
 	{ timestamps: true }
 );
 
+// Database indexes for performance optimization
+userSchema.index({ resetPasswordToken: 1 }); // Fast password reset token lookups
+userSchema.index({ 'trainingPlans.planId': 1 }); // Fast plan lookups
+userSchema.index({ 'trainingPlans.isActive': 1 }); // Fast active plan queries
+
 export const User = mongoose.models?.User || mongoose.model<UserDoc>("User", userSchema);

@@ -3,6 +3,8 @@ import { connectToDatabase } from "@/lib/mongodb";
 import { enrichTrainingPlans } from "@/lib/enrichTrainingPlans";
 import { EnrichedTrainingPlan } from "../../../../../types/enrichedTypes";
 
+export const revalidate = 3600; // Revalidate every 1 hour
+
 export async function GET(
 	request: NextRequest,
 	{ params }: { params: Promise<{ planId: string }> }

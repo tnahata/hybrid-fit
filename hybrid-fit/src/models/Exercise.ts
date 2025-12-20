@@ -50,4 +50,10 @@ const exerciseSchema = new Schema<ExerciseDoc>(
     { timestamps: true } // tells mongoose to automatically create 'createdAt' and 'updatedAt' fields in the document
 );
 
+// Database indexes for performance optimization
+exerciseSchema.index({ sport: 1, type: 1 }); // Fast filtering by sport and type
+exerciseSchema.index({ category: 1 }); // Fast category lookups
+exerciseSchema.index({ tags: 1 }); // Fast tag-based searches
+exerciseSchema.index({ difficulty: 1 }); // Fast difficulty filtering
+
 export const Exercise = models.Exercise || mongoose.model<ExerciseDoc>("Exercise", exerciseSchema);

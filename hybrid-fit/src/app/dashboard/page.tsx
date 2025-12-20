@@ -403,8 +403,11 @@ export default function Dashboard() {
 				{expanded && (
 					<div className="mt-3 p-4 bg-background border-2 border-primary/20 rounded-lg">
 						<div className="text-sm space-y-3">
-							{todaysWorkout.workoutDetails.structure.map((item: WorkoutStructureItem, index: number) => (
-								<div key={index} className="pb-3 border-b border-border last:border-b-0 last:pb-0">
+							{todaysWorkout.workoutDetails.structure.map((item: WorkoutStructureItem, index: number) => {
+								// Use exerciseId if available, otherwise fall back to index
+								const itemKey = item.exerciseId || `exercise-${index}`;
+								return (
+								<div key={itemKey} className="pb-3 border-b border-border last:border-b-0 last:pb-0">
 									<div className="font-semibold text-foreground mb-1">
 										{index + 1}. {item.exercise?.name || 'Exercise'}
 									</div>
@@ -417,7 +420,8 @@ export default function Dashboard() {
 										</div>
 									)}
 								</div>
-							))}
+								);
+							})}
 						</div>
 					</div>
 				)}
@@ -757,12 +761,16 @@ export default function Dashboard() {
 									{currentUserPlan.progressLog
 										.slice(-5)
 										.reverse()
-										.map((log, i: number) => {
+										.map((log) => {
 											const statusEmoji: string = log.status === 'completed' ? '✅' :
 												log.status === 'skipped' ? '⏭️' : '❌';
+											// Use _id if available, otherwise create unique key from date and workoutTemplateId
+											const logKey = log._id 
+												? String(log._id) 
+												: `${log.date}-${log.workoutTemplateId}`;
 
 											return (
-												<div key={i} className="flex items-center justify-between p-3 rounded-lg bg-muted/50 border border-border">
+												<div key={logKey} className="flex items-center justify-between p-3 rounded-lg bg-muted/50 border border-border">
 													<div className="flex items-center gap-3">
 														<span className="text-lg">{statusEmoji}</span>
 														<div>

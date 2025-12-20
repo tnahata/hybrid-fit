@@ -81,4 +81,9 @@ const workoutTemplateSchema = new Schema<WorkoutTemplateDoc>(
     { timestamps: true }
 );
 
+// Database indexes for performance optimization
+workoutTemplateSchema.index({ sport: 1, category: 1 }); // Fast filtering by sport and category
+workoutTemplateSchema.index({ difficulty: 1 }); // Fast difficulty filtering
+workoutTemplateSchema.index({ tags: 1 }); // Fast tag-based searches
+
 export const WorkoutTemplate = mongoose.models?.WorkoutTemplate || mongoose.model<WorkoutTemplateDoc>("WorkoutTemplate", workoutTemplateSchema);

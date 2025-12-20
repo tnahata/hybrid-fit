@@ -420,8 +420,11 @@ export default function LogResultsDialog({ workout, existingLog, onCreateLog, on
 									<div className="col-span-1"></div>
 								</div>
 
-								{exercise.sets.map((set, setIndex) => (
-									<div key={setIndex} className="grid grid-cols-12 gap-2 items-center">
+								{exercise.sets.map((set, setIndex) => {
+									// Use setNumber if available, otherwise use index
+									const setKey = set.setNumber ? `set-${exercise.exerciseId}-${set.setNumber}` : `set-${exercise.exerciseId}-${setIndex}`;
+									return (
+									<div key={setKey} className="grid grid-cols-12 gap-2 items-center">
 										<div className="col-span-1 text-center font-semibold">
 											{set.setNumber}
 										</div>
@@ -464,7 +467,8 @@ export default function LogResultsDialog({ workout, existingLog, onCreateLog, on
 											)}
 										</div>
 									</div>
-								))}
+									);
+								})}
 
 								<Button
 									onClick={() => addSet(exerciseIndex)}

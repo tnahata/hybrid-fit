@@ -48,4 +48,9 @@ const trainingPlanSchema = new Schema<TrainingPlanDoc>(
     { timestamps: true }
 );
 
+// Database indexes for performance optimization
+trainingPlanSchema.index({ sport: 1, level: 1 }); // Fast filtering by sport and level
+trainingPlanSchema.index({ category: 1 }); // Fast category lookups
+trainingPlanSchema.index({ durationWeeks: 1 }); // Fast duration filtering
+
 export const TrainingPlan = mongoose.models?.TrainingPlan || mongoose.model<TrainingPlanDoc>("TrainingPlan", trainingPlanSchema);
