@@ -61,24 +61,34 @@ export async function PATCH(
 		}
 		const trainingPlan = user.trainingPlans[planIndex];
 
-		// only allow overrides for current and future weeks
 		const currentWeek = trainingPlan.currentWeek;
-		const invalidOverrides = overrides.filter(
-			(override) => override.weekNumber < currentWeek
+		
+		// Filter out past overrides from the incoming request
+		const validOverrides = overrides.filter(
+			(override) => override.weekNumber >= currentWeek
 		);
 
-		if (invalidOverrides.length > 0) {
+		// Reject requests that only contain past overrides
+		if (overrides.length > 0 && validOverrides.length === 0) {
 			return NextResponse.json(
 				{
 					error: "Cannot modify overrides for past weeks",
-					invalidOverrides,
 					success: false
 				},
 				{ status: 400 }
 			);
 		}
 
-		user.trainingPlans[planIndex].overrides = overrides;
+		// Get existing overrides
+		const existingOverrides = trainingPlan.overrides || [];
+		
+		// Keep past overrides (they shouldn't be modified)
+		const pastOverrides = existingOverrides.filter(
+			(override) => override.weekNumber < currentWeek
+		);
+
+		// Merge: past overrides (unchanged) + new valid overrides (current and future)
+		user.trainingPlans[planIndex].overrides = [...pastOverrides, ...validOverrides];
 
 		await user.save();
 
